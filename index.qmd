@@ -85,29 +85,37 @@ format:
 
 <font size = "5">$-$ Explore, Learn, and Grow with the DANL Microcredential! 🌟</font>
 
+<div style="display:block; margin:10px;"></div>
 
-:::: {.columns}
+<p align="center" >
+  <img src="img/coding-combined.gif" width="75%">
+</p>
 
-::: {.column width="5%"}
-
-:::
-
-::: {.column width="30%"}
-![](img/coding-sea-lion.gif){width=80%}
-
-:::
-
-::: {.column width="30%"}
-![](img/geneseo-logo.gif){width=80%}
-:::
+<div style="display:block; margin:10px;"></div>
 
 
-::: {.column width="30%"}
-![](img/coding-sea-turtle.gif){width=80%}
+<!-- :::: {.columns} -->
 
-:::
+<!-- ::: {.column width="5%"} -->
 
-::::
+<!-- ::: -->
+
+<!-- ::: {.column width="30%"} -->
+<!-- ![](img/coding-sea-lion.gif){width=80%} -->
+
+<!-- ::: -->
+
+<!-- ::: {.column width="30%"} -->
+<!-- ![](img/geneseo-logo.gif){width=80%} -->
+<!-- ::: -->
+
+
+<!-- ::: {.column width="30%"} -->
+<!-- ![](img/coding-sea-turtle.gif){width=80%} -->
+
+<!-- ::: -->
+
+<!-- :::: -->
 
 
 <div style="display:block; margin:-20px;"></div>
