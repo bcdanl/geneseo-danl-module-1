@@ -662,7 +662,7 @@
     "href": "listing-danl-module-1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 10, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 9, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 10, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-module-1-qa-01.html",
@@ -796,5 +796,397 @@
     "title": "Homework Assignment 1",
     "section": "Q3c.",
     "text": "Q3c.\n\nVisualize the yearly trend of the total coal production from each type of mine.\n\n\n# selecting the columns 'year', 'production_underground', and 'production_surface' from the original DataFrame coal, grouping them by year, and summing the values of each group.\nq3c = (\n  coal[['year','production_underground', 'production_surface']]\n    .groupby(['year']).sum()\n    )\n\n\n# create a line plot for the 'production_underground' column of the q3c DataFrame.\nq3c['production_underground'].plot()\n\n&lt;Axes: xlabel='year'&gt;\n\n\n\n\n\n\n# create a line plot for the 'production_surface' column of the q3c DataFrame.\nq3c['production_surface'].plot()\n\n&lt;Axes: xlabel='year'&gt;\n\n\n\n\n\n\n# create a line plot for the 'production_underground' and 'production_surface' columns of the q3c DataFrame on the same graph.\nq3c.plot()\n\n&lt;Axes: xlabel='year'&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Name: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics at School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea\n\nMinor in Business Administration.\nConcentration in Finance.\n\n\n\n\n\n\n\n\n\nChoe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-1",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-1",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Name: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics at School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea\n\nMinor in Business Administration.\nConcentration in Finance."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-2",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-2",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Choe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-1",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-1",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttps://bcdanl.github.io/\n\nOffice: South Hall 301B.\nOffice Hours:\n\nMondays 12:30 P.M.-1:30 P.M.\nWednesdays 12:30 P.M.-2:30 P.M."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-2",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-2",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Prerequisites\n\nBusiness & Economics Statistics or Equivalent:\n\nEconomics 205, Geography 278, Mathematics 242, Mathematics 262, Political Science 251, Psychology 250, or Sociology 211.\n\nProgramming for Data Analytics:\n\nData Analytics 100."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-3",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-3",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nTextbooks\n\nPython for Data Analysis by Wes McKinney\n\nA free online version of this book is available at https://wesmckinney.com/book/.\n\nPython Data Science Handbook by Jake VanderPlas\n\nA free online version of this book is available at https://jakevdp.github.io/PythonDataScienceHandbook/"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-4",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-4",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nReference Materials\n\nCoding for Economists by Arthur Turrell\n\nA free online version of this book is available at https://aeturrell.github.io/coding-for-economists/.\n\nQuantEcon DataScience - pandas by Chase Coleman, Spencer Lyon, and Jesse Perla\n\nA free online version of this book is available at ttps://datascience.quantecon.org/pandas/index.html"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-5",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-5",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Description\n\nThis course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with hands-on and practical case studies.\nThis course will cover topics such as (1) loading, cleaning, transforming, merging, and reshaping data, (2) creating informative visualizations (3) dataset slicing, dicing, and summarizing, and (4) collecting data using web scrapping, API, and SQL.\nWe will cover these topics to solve real-world data analysis problems with thorough, detailed examples.\nDuring the course, you will work hands-on with the Python programming language and its associated data analysis libraries."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-6",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-6",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nIt is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.\n\nHomework: There will be six homework assignments.\nExams: There will be midterm and final exams.\n\nThe final exam is comprehensive."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-7",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-7",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Contents\n\nThere will be tentatively 28 class sessions:\n\n27 lectures;\n1 midterm exam.\n\nThere will be no class on February 28, 2023.\nThe midterm exam will be tentatively scheduled on March 9, 2023.\nThe final exam will be tentatively scheduled on May 16, 2023, from noon to 2 P.M."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-8",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-8",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Contents\n\nBasics in pandas\n\n\n\n\n\n\nWeek\nContents\nHW\n\n\n\n\n1\nSyllabus, Python & Pandas Basics\n1\n\n\n2\nPandas Basics\n1\n\n\n3\nData Visualization with matplotlib and seaborn\n1\n\n\n4\nTidy Data\n2\n\n\n4\nApply Functions\n2"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-9",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-9",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Contents\n\nData Transformation\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n5\nRelational Data\n2\n\n\n6--7\nDuplicate Data & Groupby Operations\n2\n\n\n7\nMidterm Exam"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-10",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-10",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Contents\n\nData Type\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n8\nMissing Data\n3\n\n\n8\nData Types\n3\n\n\n9\nString Data\n3\n\n\n9\nDates and Times Data\n3"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-11",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-11",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCourse Contents\n\nWeb Scrapping and Databases\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n10--12\nWeb Scrapping with Python selenium\n4--5\n\n\n13\nData Collection with APIs\n5\n\n\n14--15\nDatabases with SQL and Google BigQuery\n6"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-12",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-12",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nAttendance\n\nYou are allowed up to 7 absences without penalty.\nThere will be no additional absences available for standard excused reasons (illness, family emergency, transportation problems, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-13",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-13",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nGrading\n\nAttendance accounts for 5% of the total percentage grade.\nProject accounts for 10% of the total percentage grade.\nHomework assignments account for 25% of the total percentage grade.\nExams account for 60% of the total percentage grade.\n\n\\[\n\\begin{align}\n&\\;(\\text{Total Percentage Grade})  \\notag\\\\\n=&\\quad 0.05\\times(\\text{Attendance Score})  \\notag\\\\\n&\\,+\\, 0.35\\times(\\text{Total Homework Score}) \\,+\\, 0.60\\times(\\text{Total Exam Score}).\\notag\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-14",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-14",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nGrading\n\nThe lowest homework score will be dropped when calculating the total homework score.\nEach of the four homework accounts for 20% of the total homework score."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-15",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-15",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nGrading\n\nThe total exam score is the maximum between the following two average scores:\n\nthe simple average of two exam scores;\nthe weighted average of them with one-fourth weight on the midterm exam score and three-fourth weight on the final exam score.\n\n\n\\[\n\\begin{align}\n&(\\text{Total Exam Score}) \\notag\\\\\n=\\; &\\max\\,\\left\\{0.5\\times(\\text{Midterm Exam Score}) \\,+\\, 0.5\\times(\\text{Final Exam Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam Score}) \\,+\\, 0.75\\times(\\text{Final Exam Score})\\right\\}.\\notag\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-16",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-16",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nGrading\n\nLetter grades will be determined by the total percentage grade:\n\n\\[\n\\begin{align*}\n\\! 100\\; \\geq\\; A\\;\\;\\, \\geq \\;93&gt;\\; A- \\geq 90;\\\\\n90 &gt;\\; B+ \\geq 87\\; &gt;\\; B\\;\\;\\, \\geq \\;83 &gt;\\; B- \\geq 80;\\\\\n80 &gt;\\; C+ \\geq 77\\; &gt;\\; C\\;\\;\\, \\geq \\;73 &gt;\\; C- \\geq 70;\\\\\n70\\; &gt;\\; D\\;\\;\\, \\geq\\; 60 &gt;\\; E.\\qquad\\quad\\;\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-17",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-17",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nMake-up exams\n\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-18",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-18",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nAcademic Integrity and Plagiarism\n\nAll homework assignments and exams must be the original work by you.\nExamples of academic dishonesty include:\n\nrepresenting the work, thoughts, and ideas of another person as your own\nallowing others to represent your work, thoughts, or ideas as theirs, and\nbeing complicit in academic dishonesty by suspecting or knowing of it and not taking action.\n\nGeneseo’s Library offers frequent workshops to help you understand how to paraphrase, quote, and cite outside sources properly.\n\nSee https://www.geneseo.edu/library/library-workshops."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-19",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-19",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nAccessibility\n\nThe Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.\nPlease contact me and the Office of Accessibility Services for questions related to access and accommodations."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-20",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-20",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nWell-being\n\nYou are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.\nLiz Felski, the School of Business Student Advocate (felski@geneseo.edu, South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.\nFor more information, see https://www.geneseo.edu/dean_students."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-21",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-21",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nCareer Design\n\nTo get information about career development, you can visit the Career Development Events Calendar (https://www.geneseo.edu/career_development/events/calendar).\nYou can stop by South 112 to get assistance in completing your Handshake Profile https://app.joinhandshake.com/login.\n\nHandshake is ranked #1 by students as the best place to find full-time jobs.\n50% of the 2018-2020 graduates received a job or internship offer on Handshake.\nHandshake is trusted by all 500 of the Fortune 500."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-1",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-1",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\n\nAnaconda\n\nAnaconda is an all-in-one Python distribution.\n\nAnaconda includes Python 3.x and its standard modules such as pip, pandas, matplotlib, etc.\nAnaconda also includes several software applications of integrated development environment (IDE), which is a software for editing codes.\nFor the Python code, we will use Spyder IDE.\n\nDo not use RStudio from Anaconda, because RStudio from Anaconda is out-dated.\n\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-2",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-2",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\n\nSpyder IDE\n\nIf Spyder IDE from Anaconda is lagging, consider installing it additionally.\nTo install Spyder IDE in addition to Anaconda, go to the following download page:\n\nhttps://www.spyder-ide.org.\nClick the “DOWNLOAD” menu."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-3",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-3",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\n\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nRed box is Script Editor where you can create, open and edit files."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-4",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-4",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\n\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlue box is Console Pane that allows you to interact directly with the Python interpreter and type commands where Python will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-5",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-5",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\n\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nYellow box is Variable Explorer where you can see the values of variables, data frames, and other objects that are currently stored in memory.\n\nDouble-clicking a variable will open a specialized viewer, allowing you to inspect its contents."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#coding-workflow",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#coding-workflow",
+    "title": "Lecture 1",
+    "section": "Coding Workflow",
+    "text": "Coding Workflow\n\nCode and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Spyder’s comment character.\n\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider using block commenting for separating code sections.\n\n# %% defines a coding block in Spyder.\n\nBreak down long lines and long algebraic expressions."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#coding-workflow-1",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#coding-workflow-1",
+    "title": "Lecture 1",
+    "section": "Coding Workflow",
+    "text": "Coding Workflow\n\nShortcuts\n\n\n\n\nMac\n\nF9 runs a current line (where the blinking cursor is) or selected lines.\ncommand + return runs a current block.\ncommand + 1 is the shortcut for #.\ncommand + 4 is the shortcut for block comment.\n\n\n\n\nWindows\n\nF9 runs a current line (where the blinking cursor is) or selected lines.\nCtrl + Enter runs a current block.\nCtrl + 1 is the shortcut for #.\nCtrl + 4 is the shortcut for block comment."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-1",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-1",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nValues, Variables, and Types\n\nA value is datum (literal) such as a number or text.\nThere are different types of values: 352.3 is known as a float or double, 22 is an integer, and “Hello World!” is a string.\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\n\na = 10\nprint(a)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-2",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-2",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nValues, Variables, and Types\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-3",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-3",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nAssignment\n\nIn Python, we use = to assign a value to a variable.\n\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-4",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-4",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nAssignment\n\nIn programs, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-5",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-5",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nVariables Are Names, Not Places\n\nIn Python, variables are just names.\n\n\n\n\n\n\nNames point to objects (variable a points to an integer object with value 7)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-6",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-6",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nVariables Are Names, Not Places\n\nThe most basic built-in data types that you’ll need to know about are: integers 10, floats 1.23, strings like this, booleans True, and nothing None.\nPython also has a built-in type called a list [10, 15, 20] that can contain anything, even different types\n\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-7",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-7",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nTypes\n\n\n\n\n\n\n\nPython’s basic data types\n\n\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-8",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-8",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBrackets\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\n\n[] is used to denote a list or to signify accessing a position using an index.\n\nvector = ['a', 'b']\nvector[0]\n\n\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n{'a', 'b'}\n{'first_letter': 'a', 'second_letter': 'b'}\n\n\n\n() is used to denote a tuple, or the arguments to a function, e.g., function(x) where x is the input passed to the function, or to indicate the order operations are carried out.\n\nnum_tup = (1, 2, 3)\nsum(num_tup)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-9",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-9",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nLists and Slicing\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries:\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nprint(list_example)\n\nWe can access earlier entries using an index, which begins at 0 and ends at one less than the length of the list.\n\nprint(list_example[0])\nprint(list_example[-1])"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-10",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-10",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nLists and Slicing\n\nSlicing can be even more elaborate than that because we can jump entries using a second colon.\n\n# range() produces a list of integers from the value to one less than the last\nlist_of_numbers = list(range(1, 11))\nstart = 1\nstop = -1\nstep = 2\nprint(list_of_numbers[ start : stop : step ])"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-11",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-11",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nOperators\n\nAll of the basic operators you see in mathematics are available to use: + for addition, - for subtraction, * for multiplication, ** for powers, / for division, // for integer division, and % for modulo.\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\n\nWe can ‘sum’ strings (which really concatenates them):\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-12",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-12",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nOperators\n\n\n\nIt works for lists too:\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n\nWe can multiply strings!\n\nstring = \"apples, \"\nprint(string * 3)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-13",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-13",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nOperators\n\nWe can combine the arithmetic operators with assignment by putting the operator before the =.\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nx = 3\nx += 1\n\n\na -= 2 is equivalent to a = a - 2.\n\na = 2\na -= 2"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-14",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-14",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nOperators\nQ. Using Python operations only, what is \\[\\frac{2^5}{7 \\cdot (4 - 2^3)} \\quad\\text{?}\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-15",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-15",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nStrings\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nBoth lists and strings will allow us to use the len() command to get their length:\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nstring = \"cheesecake\"\nprint( \"String has length:\" )\nprint( len(string) )\n\n\na -= 2 is equivalent to a = a - 2.\n\nlist_of_numbers = range(1, 20)\nprint( \"List of numbers has length:\" )\nprint( len(list_of_numbers) )"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-16",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-16",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nf-string\n\nf-string can combine a number and a string (these begin with an f for formatting):\n\nvalue = 20\nsqrt_val = 20 ** 0.5\nprint(f\"The square root of {value:d} is {sqrt_val:.2f}\")\n\nThe formatting command :d is an instruction to treat value like an integer, while :.2f is an instruction to print it like a float with 2 decimal places."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-17",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-17",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nBoolean data have either True or False value.\nThere are two types of operation that are associated with booleans: boolean operations.\n\nExisting booleans are combined, and condition operations, which create a boolean when executed.\n\n\n\n\n\n\n\nOperator\nDescription\n\n\n\n\nx and y\nAre x and y both True?\n\n\nx or y\nIs at least one of x and y True?\n\n\nnot x\nIs x False?"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-18",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-18",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\nConditions are expressions that evaluate as booleans.\n\n\n\n\n\nOperator\nDescription\n\n\n\n\nx == y\nIs x equal to y?\n\n\nx != y\nIs x greater than y?\n\n\nx &gt; y\nIs x greater than or equal to y?\n\n\nx &gt;= y\nIs x greater than or equal to y?\n\n\nx &lt; y\nIs x less than y?\n\n\nx &lt;= y\nIs x less than or equal to y?\n\n\nx is y\nIs x the same object as y?"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-19",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-19",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\n\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\nQ. What does not (not True) evaluate to?"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-20",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-20",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements.\n\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-21",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-21",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nGiven that == and != test for equality and not equal, respectively, you may be wondering what the keyword is is for.\n\nRemember that everything in Python is an object, and that values can be assigned to objects.\n== and != compare values, while is compare objects.\n\n\n\n\nname_list = [\"Ada\", \"Adam\"]\nname_list_two = [\"Ada\", \"Adam\"]\n\n# Compare values\nprint(name_list == name_list_two)\n\n# Compare objects\nprint(name_list is name_list_two)"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-22",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-22",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\n\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-23",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-23",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:\n\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-24",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-24",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\nQ. Create a new if-else chain that prints “well done” if a score is over 90, “good” if between 40 and 90, and “bad luck” otherwise."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-25",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#python-basics-25",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\n\nBooleans and Conditions\n\nWe can make multiple assignment or multiple boolean comparisons in a single line.\n\na, b = 3, 6\n\n1 &lt; a &lt; b &lt; 20"
   }
 ]
