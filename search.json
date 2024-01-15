@@ -81,7 +81,7 @@
     "href": "danl-hw/danl-module-1-hw-2.html#q2d",
     "title": "Homework Assignment 2",
     "section": "Q2d",
-    "text": "Q2d\nProvide both seaborn code and a simple comment to describe the distribution of the ratio between adaptation contribution and mitigation contribution, which is calculated in Q2c.\n\n# Graph 1\nsns.histplot(q2c, x='am_ratio', bins=100)\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x1691bff50&gt;\n\n\n\n\n\n\n# Graph 2\nsns.histplot(q2c, x=np.log(q2c['am_ratio']), bins=100)\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x1690ffe10&gt;\n\n\n\n\n\n\n# Graph 3\nsns.kdeplot(q2c, x='am_ratio')\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x1690e9550&gt;\n\n\n\n\n\n\n# Graph 4\nsns.kdeplot(q2c, x=np.log(q2c['am_ratio']))\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x169449c50&gt;"
+    "text": "Q2d\nProvide both seaborn code and a simple comment to describe the distribution of the ratio between adaptation contribution and mitigation contribution, which is calculated in Q2c.\n\n# Graph 1\nsns.histplot(q2c, x='am_ratio', bins=100)\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x14ff4cb50&gt;\n\n\n\n\n\n\n# Graph 2\nsns.histplot(q2c, x=np.log(q2c['am_ratio']), bins=100)\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x1593a87d0&gt;\n\n\n\n\n\n\n# Graph 3\nsns.kdeplot(q2c, x='am_ratio')\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x14dde7690&gt;\n\n\n\n\n\n\n# Graph 4\nsns.kdeplot(q2c, x=np.log(q2c['am_ratio']))\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x15952fb10&gt;"
   },
   {
     "objectID": "danl-hw/danl-module-1-hw-2.html#q2e",
@@ -109,7 +109,7 @@
     "href": "index.html#bullet-lecture",
     "title": "Geneseo Data Analytics Microcredential, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 10, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-q-a",
@@ -137,7 +137,7 @@
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-1",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nCurrent Appointment & Education\n\nName: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics at School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea\n\nMinor in Business Administration.\nConcentration in Finance."
+    "text": "Instructor\nCurrent Appointment & Education\n\nName: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics, School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea.\n\nMinor in Business Administration.\nConcentration in Finance."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#instructor-2",
@@ -151,147 +151,161 @@
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-1",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttps://bcdanl.github.io/\n\nOffice: South Hall 301B.\nOffice Hours:\n\nMondays 12:30 P.M.-1:30 P.M.\nWednesdays 12:30 P.M.-2:30 P.M."
+    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttp://bcdanl.github.io/geneseo-danl-module-1/\n\nOffice: South Hall 301\nOffice Hours:\n\nBy appointment via email"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-2",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-2",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Prerequisites\n\nBusiness & Economics Statistics or Equivalent:\n\nEconomics 205, Geography 278, Mathematics 242, Mathematics 262, Political Science 251, Psychology 250, or Sociology 211.\n\nProgramming for Data Analytics:\n\nData Analytics 100."
+    "text": "Syllabus\nCourse Description\n\nThis course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with practical case studies.\nThis course will cover topics such as (1) loading, slicing, filtering, transforming, reshaping, and merging data, (2) summarizing and visualizing data, and (3) exploratory data analysis.\nWe will cover these topics to solve real-world data analysis problems with thorough, detailed examples."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-3",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-3",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nTextbooks\n\nPython for Data Analysis by Wes McKinney\n\nA free online version of this book is available at https://wesmckinney.com/book/.\n\nPython Data Science Handbook by Jake VanderPlas\n\nA free online version of this book is available at https://jakevdp.github.io/PythonDataScienceHandbook/"
+    "text": "Syllabus\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nIt is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.\n\nHomework: There will be six homework assignments.\nExams: There will be one take-home exam."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-4",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-4",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nReference Materials\n\nCoding for Economists by Arthur Turrell\n\nA free online version of this book is available at https://aeturrell.github.io/coding-for-economists/.\n\nQuantEcon DataScience - pandas by Chase Coleman, Spencer Lyon, and Jesse Perla\n\nA free online version of this book is available at ttps://datascience.quantecon.org/pandas/index.html"
+    "text": "Syllabus\nCourse Contents\n\nThere will be tentatively 28 class sessions:\n\n7 lectures\n1 take-home exam"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-5",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-5",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Description\n\nThis course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with hands-on and practical case studies.\nThis course will cover topics such as (1) loading, cleaning, transforming, merging, and reshaping data, (2) creating informative visualizations (3) dataset slicing, dicing, and summarizing, and (4) collecting data using web scrapping, API, and SQL.\nWe will cover these topics to solve real-world data analysis problems with thorough, detailed examples.\nDuring the course, you will work hands-on with the Python programming language and its associated data analysis libraries."
+    "text": "Syllabus\nCourse Contents"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-6",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-6",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nIt is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.\n\nHomework: There will be six homework assignments.\nExams: There will be midterm and final exams.\n\nThe final exam is comprehensive."
+    "text": "Syllabus\nAssessments\n\nEach of the six homework assignments accounts for 10% of the total percentage grade.\nThe exam account for 30% of the total percentage grade.\nParticipation in discussions accounts for 10% of the total percentage grade.\n\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =\\quad\\, &0.60\\times(\\text{Total Homework Score})\\notag\\\\\n\\,+\\, &0.30\\times(\\text{Take-Home Exam Score})\\notag\\\\\n\\,+\\, &0.10\\times(\\text{Total Discussion Score})\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-7",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-7",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents\n\nThere will be tentatively 28 class sessions:\n\n27 lectures;\n1 midterm exam.\n\nThere will be no class on February 28, 2023.\nThe midterm exam will be tentatively scheduled on March 9, 2023.\nThe final exam will be tentatively scheduled on May 16, 2023, from noon to 2 P.M."
+    "text": "Syllabus\nCourse Contents\n\nData Type\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n8\nMissing Data\n3\n\n\n8\nData Types\n3\n\n\n9\nString Data\n3\n\n\n9\nDates and Times Data\n3"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-8",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-8",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents\n\nBasics in pandas\n\n\n\n\n\n\nWeek\nContents\nHW\n\n\n\n\n1\nSyllabus, Python & Pandas Basics\n1\n\n\n2\nPandas Basics\n1\n\n\n3\nData Visualization with matplotlib and seaborn\n1\n\n\n4\nTidy Data\n2\n\n\n4\nApply Functions\n2"
+    "text": "Syllabus\nCourse Contents\n\nWeb Scrapping and Databases\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n10--12\nWeb Scrapping with Python selenium\n4--5\n\n\n13\nData Collection with APIs\n5\n\n\n14--15\nDatabases with SQL and Google BigQuery\n6"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-9",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-9",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents\n\nData Transformation\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n5\nRelational Data\n2\n\n\n6--7\nDuplicate Data & Groupby Operations\n2\n\n\n7\nMidterm Exam"
+    "text": "Syllabus\nAttendance\n\nYou are allowed up to 7 absences without penalty.\nThere will be no additional absences available for standard excused reasons (illness, family emergency, transportation problems, etc.)."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-10",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-10",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents\n\nData Type\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n8\nMissing Data\n3\n\n\n8\nData Types\n3\n\n\n9\nString Data\n3\n\n\n9\nDates and Times Data\n3"
+    "text": "Syllabus\nGrading\n\nAttendance accounts for 5% of the total percentage grade.\nProject accounts for 10% of the total percentage grade.\nHomework assignments account for 25% of the total percentage grade.\nExams account for 60% of the total percentage grade.\n\n\\[\n\\begin{align}\n&\\;(\\text{Total Percentage Grade})  \\notag\\\\\n=&\\quad 0.05\\times(\\text{Attendance Score})  \\notag\\\\\n&\\,+\\, 0.35\\times(\\text{Total Homework Score}) \\,+\\, 0.60\\times(\\text{Total Exam Score}).\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-11",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-11",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents\n\nWeb Scrapping and Databases\n\n\n\n\n\n\nLecture\nContents\nHW\n\n\n\n\n10--12\nWeb Scrapping with Python selenium\n4--5\n\n\n13\nData Collection with APIs\n5\n\n\n14--15\nDatabases with SQL and Google BigQuery\n6"
+    "text": "Syllabus\nGrading\n\nThe lowest homework score will be dropped when calculating the total homework score.\nEach of the four homework accounts for 20% of the total homework score."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-12",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-12",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nAttendance\n\nYou are allowed up to 7 absences without penalty.\nThere will be no additional absences available for standard excused reasons (illness, family emergency, transportation problems, etc.)."
+    "text": "Syllabus\nGrading\n\nThe total exam score is the maximum between the following two average scores:\n\nthe simple average of two exam scores;\nthe weighted average of them with one-fourth weight on the midterm exam score and three-fourth weight on the final exam score.\n\n\n\\[\n\\begin{align}\n&(\\text{Total Exam Score}) \\notag\\\\\n=\\; &\\max\\,\\left\\{0.5\\times(\\text{Midterm Exam Score}) \\,+\\, 0.5\\times(\\text{Final Exam Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam Score}) \\,+\\, 0.75\\times(\\text{Final Exam Score})\\right\\}.\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-13",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-13",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\nAttendance accounts for 5% of the total percentage grade.\nProject accounts for 10% of the total percentage grade.\nHomework assignments account for 25% of the total percentage grade.\nExams account for 60% of the total percentage grade.\n\n\\[\n\\begin{align}\n&\\;(\\text{Total Percentage Grade})  \\notag\\\\\n=&\\quad 0.05\\times(\\text{Attendance Score})  \\notag\\\\\n&\\,+\\, 0.35\\times(\\text{Total Homework Score}) \\,+\\, 0.60\\times(\\text{Total Exam Score}).\\notag\n\\end{align}\n\\]"
+    "text": "Syllabus\nGrading\n\nLetter grades will be determined by the total percentage grade:\n\n\\[\n\\begin{align*}\n\\! 100\\; \\geq\\; A\\;\\;\\, \\geq \\;93&gt;\\; A- \\geq 90;\\\\\n90 &gt;\\; B+ \\geq 87\\; &gt;\\; B\\;\\;\\, \\geq \\;83 &gt;\\; B- \\geq 80;\\\\\n80 &gt;\\; C+ \\geq 77\\; &gt;\\; C\\;\\;\\, \\geq \\;73 &gt;\\; C- \\geq 70;\\\\\n70\\; &gt;\\; D\\;\\;\\, \\geq\\; 60 &gt;\\; E.\\qquad\\quad\\;\n\\end{align*}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-14",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-14",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\nThe lowest homework score will be dropped when calculating the total homework score.\nEach of the four homework accounts for 20% of the total homework score."
+    "text": "Syllabus\nMake-up exams\n\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-15",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-15",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\nThe total exam score is the maximum between the following two average scores:\n\nthe simple average of two exam scores;\nthe weighted average of them with one-fourth weight on the midterm exam score and three-fourth weight on the final exam score.\n\n\n\\[\n\\begin{align}\n&(\\text{Total Exam Score}) \\notag\\\\\n=\\; &\\max\\,\\left\\{0.5\\times(\\text{Midterm Exam Score}) \\,+\\, 0.5\\times(\\text{Final Exam Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam Score}) \\,+\\, 0.75\\times(\\text{Final Exam Score})\\right\\}.\\notag\n\\end{align}\n\\]"
+    "text": "Syllabus\nAcademic Integrity and Plagiarism\n\nAll homework assignments and exams must be the original work by you.\nExamples of academic dishonesty include:\n\nrepresenting the work, thoughts, and ideas of another person as your own\nallowing others to represent your work, thoughts, or ideas as theirs, and\nbeing complicit in academic dishonesty by suspecting or knowing of it and not taking action.\n\nGeneseo’s Library offers frequent workshops to help you understand how to paraphrase, quote, and cite outside sources properly.\n\nSee https://www.geneseo.edu/library/library-workshops."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-16",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-16",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\nLetter grades will be determined by the total percentage grade:\n\n\\[\n\\begin{align*}\n\\! 100\\; \\geq\\; A\\;\\;\\, \\geq \\;93&gt;\\; A- \\geq 90;\\\\\n90 &gt;\\; B+ \\geq 87\\; &gt;\\; B\\;\\;\\, \\geq \\;83 &gt;\\; B- \\geq 80;\\\\\n80 &gt;\\; C+ \\geq 77\\; &gt;\\; C\\;\\;\\, \\geq \\;73 &gt;\\; C- \\geq 70;\\\\\n70\\; &gt;\\; D\\;\\;\\, \\geq\\; 60 &gt;\\; E.\\qquad\\quad\\;\n\\end{align*}\n\\]"
+    "text": "Syllabus\nAccessibility\n\nThe Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.\nPlease contact me and the Office of Accessibility Services for questions related to access and accommodations."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-17",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-17",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nMake-up exams\n\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero."
+    "text": "Syllabus\nWell-being\n\nYou are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.\nLiz Felski, the School of Business Student Advocate (felski@geneseo.edu, South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.\nFor more information, see https://www.geneseo.edu/dean_students."
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-18",
     "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-18",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nAcademic Integrity and Plagiarism\n\nAll homework assignments and exams must be the original work by you.\nExamples of academic dishonesty include:\n\nrepresenting the work, thoughts, and ideas of another person as your own\nallowing others to represent your work, thoughts, or ideas as theirs, and\nbeing complicit in academic dishonesty by suspecting or knowing of it and not taking action.\n\nGeneseo’s Library offers frequent workshops to help you understand how to paraphrase, quote, and cite outside sources properly.\n\nSee https://www.geneseo.edu/library/library-workshops."
-  },
-  {
-    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-19",
-    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-19",
-    "title": "Lecture 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nAccessibility\n\nThe Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.\nPlease contact me and the Office of Accessibility Services for questions related to access and accommodations."
-  },
-  {
-    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-20",
-    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-20",
-    "title": "Lecture 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nWell-being\n\nYou are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.\nLiz Felski, the School of Business Student Advocate (felski@geneseo.edu, South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.\nFor more information, see https://www.geneseo.edu/dean_students."
-  },
-  {
-    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-21",
-    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#syllabus-21",
-    "title": "Lecture 1",
-    "section": "Syllabus",
     "text": "Syllabus\nCareer Design\n\nTo get information about career development, you can visit the Career Development Events Calendar (https://www.geneseo.edu/career_development/events/calendar).\nYou can stop by South 112 to get assistance in completing your Handshake Profile https://app.joinhandshake.com/login.\n\nHandshake is ranked #1 by students as the best place to find full-time jobs.\n50% of the 2018-2020 graduates received a job or internship offer on Handshake.\nHandshake is trusted by all 500 of the Fortune 500."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#what-is-github",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#what-is-github",
+    "title": "Lecture 1",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nhttps://github.com/ is a platform for storing, managing, and sharing code.\nCourse contents will be posted not only Brightspace but also our GitHub repositories (“repos”).\nOnline discussion and Q & A will be hosted on GitHub repository.\nClicking “Sign Up” or https://github.com/signup will direct you to the sign up page."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#getting-a-github-account",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#getting-a-github-account",
+    "title": "Lecture 1",
+    "section": "Getting a GitHub account",
+    "text": "Getting a GitHub account\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.\nSharing and editing code for a large group is easy with Github\nIt also automatically maintains a history of all changes to the repo. You can see the history of committed changes, and even go into detail about what those changes entailed.\nYou can also revert to old versions of your repo, and all edits will be saved in this history."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#what-is-google-colab",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#what-is-google-colab",
+    "title": "Lecture 1",
+    "section": "What is Google Colab",
+    "text": "What is Google Colab\n\nhttps://colab.research.google.com/ is analogous to Google Drive, but specifically for writing and executing Python code in your browser.\n\nThe base Colab link listed above leads to a Python notebook introducing Colab and how to use it.\n\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nhttps://www.youtube.com/watch?v=inN8seMm7UI"
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#why-use-colab",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#why-use-colab",
+    "title": "Lecture 1",
+    "section": "Why use Colab?",
+    "text": "Why use Colab?\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.\nColab notebooks don’t just contain Python code. They can contain text, images, and HTML!\nUltimately, they’re intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a laptop or PC."
+  },
+  {
+    "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#colab-has-github-integration",
+    "href": "danl-lec/danl-module-1-lec-01-2024-0205.html#colab-has-github-integration",
+    "title": "Lecture 1",
+    "section": "Colab has GitHub integration!",
+    "text": "Colab has GitHub integration!"
   },
   {
     "objectID": "danl-lec/danl-module-1-lec-01-2024-0205.html#installing-the-tools-1",
@@ -522,7 +536,7 @@
     "href": "listing-danl-module-1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 10, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-module-1-qa-01.html",

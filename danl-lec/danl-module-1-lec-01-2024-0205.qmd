@@ -4,6 +4,7 @@ subtitle: Syllabus, Course Outline, Etc.
 format:
   clean-revealjs:
     self-contained: true
+    # logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
@@ -14,16 +15,6 @@ callout-icon: false
 # include-after-body: backwards.html
 
 ---
-
-<script>
-document.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        Reveal.next(); // Scroll down to go to the next slide
-    } else {
-        Reveal.prev(); // Scroll up to go to the previous slide
-    }
-}, false);
-</script>
 
 ```{r setup}
 #| include: false
@@ -43,21 +34,21 @@ knitr::knit_engines$set("markdown")
 ```
 
 
-# Instructor {background-color="#40666e"}
+# Instructor {background-color="#1c4982"}
 
 ## Instructor
 ### Current Appointment & Education
 
 - Name: Byeong-Hak Choe.
-- Assistant Professor of Data Analytics and Economics at School of Business at SUNY Geneseo.
+- Assistant Professor of Data Analytics and Economics, School of Business at SUNY Geneseo.
 
 
 - Ph.D. in Economics from University of Wyoming.
 - M.S. in Economics from Arizona State University.
 - M.A. in Economics from SUNY Stony Brook.
-- B.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea
-  i) Minor in Business Administration.
-  ii) Concentration in Finance.
+- B.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea.
+  - Minor in Business Administration.
+  - Concentration in Finance.
   
 
 
@@ -69,16 +60,16 @@ knitr::knit_engines$set("markdown")
 - Question: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?
 
 - Data include:
-  i) 5.0 million tweets with #climatechange/#globalwarming around the globe;
-  ii) 12.0 million retweets/likes to those tweets;
-  iii) 0.8 million Twitter users who wrote those tweets;
-  iv) 1.4 million Twitter users who retweeted or liked those tweets;
-  v) 0.3 million US Twitter users with their location at a city level;
-  vi) Firm-level lobbying data (expenses, targeted bills, etc.). 
+  - 5.0 million tweets with #climatechange/#globalwarming around the globe;
+  - 12.0 million retweets/likes to those tweets;
+  - 0.8 million Twitter users who wrote those tweets;
+  - 1.4 million Twitter users who retweeted or liked those tweets;
+  - 0.3 million US Twitter users with their location at a city level;
+  - Firm-level lobbying data (expenses, targeted bills, etc.). 
 
 
 
-# Syllabus {background-color="#40666e"}
+# Syllabus {background-color="#1c4982"}
 
 ## Syllabus
 
@@ -89,48 +80,12 @@ knitr::knit_engines$set("markdown")
 
 - Class Homepage: 
   i. [https://brightspace.geneseo.edu/](https://brightspace.geneseo.edu/)
-  i. [https://bcdanl.github.io/](https://bcdanl.github.io/)
+  i. [http://bcdanl.github.io/geneseo-danl-module-1/](http://bcdanl.github.io/geneseo-danl-module-1/)
   
   
-- Office: South Hall 301B.
+- Office: South Hall 301
 - Office Hours: 
-  i. Mondays 12:30 P.M.-1:30 P.M.
-  i. Wednesdays 12:30 P.M.-2:30 P.M.
-
-
-## Syllabus
-### Course Prerequisites
-
-- Business & Economics Statistics or Equivalent:
-  - Economics 205, Geography 278, Mathematics 242, Mathematics 262, Political Science 251, Psychology 250, or Sociology 211.
-  
-- Programming for Data Analytics:
-  - Data Analytics 100.
-
-
-## Syllabus
-### Textbooks
-  
-- **Python for Data Analysis** by Wes McKinney
-  - A free online version of this book is available at [https://wesmckinney.com/book/](https://wesmckinney.com/book/).
-
-
-- **Python Data Science Handbook** by Jake VanderPlas
-  - A free online version of this book is available at [https://jakevdp.github.io/PythonDataScienceHandbook/](https://jakevdp.github.io/PythonDataScienceHandbook/)
-
-
-
-## Syllabus
-### Reference Materials
-  
-- **Coding for Economists** by Arthur Turrell
-  - A free online version of this book is available at [https://aeturrell.github.io/coding-for-economists/](https://aeturrell.github.io/coding-for-economists/).
-
-
-- **QuantEcon DataScience - pandas** by Chase Coleman, Spencer Lyon, and Jesse Perla
-  - A free online version of this book is available at [ttps://datascience.quantecon.org/pandas/index.html](ttps://datascience.quantecon.org/pandas/index.html)
-
-
+  - By appointment via email
 
 
 
@@ -138,13 +93,11 @@ knitr::knit_engines$set("markdown")
 
 ### Course Description
 
-- This course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with hands-on and practical case studies.
+- This course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with practical case studies.
 
-- This course will cover topics such as (1) loading, cleaning, transforming, merging, and reshaping data, (2) creating informative visualizations (3) dataset slicing, dicing, and summarizing, and (4) collecting data using web scrapping, API, and SQL. 
+- This course will cover topics such as (1) loading, slicing, filtering, transforming, reshaping, and merging data, (2)  summarizing and visualizing data, and (3) exploratory data analysis.
 
 - We will cover these topics to solve real-world data analysis problems with thorough, detailed examples. 
-
-- During the course, you will work hands-on with the Python programming language and its associated data analysis libraries.
 
 
 
@@ -155,53 +108,56 @@ knitr::knit_engines$set("markdown")
 - Laptop: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
   - It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.
   
-  
 - Homework: There will be six homework assignments.
 
-- Exams: There will be midterm and final exams. 
-  - The final exam is comprehensive.
+- Exams: There will be one take-home exam. 
 
 
 ## Syllabus
 ### Course Contents
 
 - There will be tentatively 28 class sessions:
-  - 27 lectures;
-  - 1 midterm exam.
+  - 7 lectures
+  - 1 take-home exam
 
-
-- There will be no class on February 28, 2023. 
-
-
-- The midterm exam will be tentatively scheduled on March 9, 2023. 
-
-
-- The final exam will be tentatively scheduled on May 16, 2023, from noon to 2 P.M. 
 
 
 
 ## Syllabus
 ### Course Contents
 
-- Basics in pandas
-
 ```{r, out.width='100%', fig.align='center'}
 text_tbl <- data.frame(
-  Week = c("1", "2", "3", "4", "4"),
+  Week = c("1", "2", "3", "4", "5", "6", "7"),
   Contents = c("Syllabus, Python & Pandas Basics",
-"Pandas Basics",
-"Data Visualization with matplotlib and seaborn",
-"Tidy Data",
-"Apply Functions"),
-  HW = c("1", "1", "1", "2", "2")
+"The Series object and Series methods",
+"The DataFrame object and filtering DataFrame",
+"The GroupBy object",
+"Reshaping and pivoting",
+"Merging, joining, and concatenating",
+"Python data visualization and course wrap-up"),
+  `HW Exam` = c("HW 1", "HW 2", "HW 3", "HW 4", "HW 5", "HW 6", "Take-home Exam")
   )
 
 
-kable(text_tbl, format = "html") %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial',
-                bootstrap_options = c("hover", "condensed") )
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Change row background and text color
+  $('tbody tr').css('background-color', '#f2f2f2');
+  $('tbody tr').css('color', 'black');
+"))
 
 ```
 
@@ -209,218 +165,71 @@ kable(text_tbl, format = "html") %>%
 
 
 ## Syllabus
-### Course Contents
+### Assessments
+- Each of the six homework assignments accounts for 10\% of the total percentage grade. 
+- The exam account for 30\% of the total percentage grade. 
+- Participation in discussions accounts for 10\% of the total percentage grade.
 
-- Data Transformation
-
-```{r, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  Lecture = c("5", "6--7", "7"),
-  Contents = c(
-"Relational Data",
-"Duplicate Data & Groupby Operations",
-"Midterm Exam"),
-  HW = c("2", "2", "")
-  )
-
-
-kable(text_tbl, format = "html") %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial',
-                bootstrap_options = c("hover", "condensed") ) 
-
-```
-
-
-## Syllabus
-### Course Contents
-- Data Type
-
-```{r, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  Lecture = c("8", "8", "9", "9"),
-  Contents = c("Missing Data",
-               "Data Types",
-               "String Data",
-               "Dates and Times Data"),
-  HW = c("3", "3", "3", "3")
-  )
-
-
-kbl(text_tbl) %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial', bootstrap_options = c("hover", "condensed"))
-
-```
-
-## Syllabus
-### Course Contents
-
-- Web Scrapping and Databases
-
-```{r, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  Lecture = c("10--12", "13", "14--15"),
-  Contents = c("Web Scrapping with Python selenium",
-               "Data Collection with APIs",
-               "Databases with SQL and Google BigQuery"),
-  HW = c("4--5", "5", "6")
-  )
-
-
-kbl(text_tbl) %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial', bootstrap_options = c("hover", "condensed"))
-
-```
-
-
-## Syllabus
-### Attendance
-- You are allowed up to 7 absences without penalty. 
-
-- There will be no additional absences available for standard excused reasons (illness, family emergency, transportation problems, etc.).
-
-
-
-## Syllabus
-### Grading
-- Attendance accounts for 5% of the total percentage grade.
-
-- Project accounts for 10% of the total percentage grade.
-
-- Homework assignments account for 25% of the total percentage grade.
-
-- Exams account for 60% of the total percentage grade.
-
-$$ 
-\begin{align}
-&\;(\text{Total Percentage Grade})  \notag\\
-=&\quad 0.05\times(\text{Attendance Score})  \notag\\
-&\,+\, 0.35\times(\text{Total Homework Score}) \,+\, 0.60\times(\text{Total Exam Score}).\notag
-\end{align}
-$$
-
-
-## Syllabus
-
-### Grading
-
-- The lowest homework score will be dropped when calculating the total homework score.
-
-- Each of the four homework accounts for 20% of the total homework score.
-
-
-
-## Syllabus
-
-### Grading
-
-- The total exam score is the maximum between the following two average scores:
-  1. the simple average of two exam scores;
-  2. the weighted average of them with one-fourth weight on the midterm exam score and three-fourth weight on the final exam score.
-  
 $$
 \begin{align}
-&(\text{Total Exam Score}) \notag\\
-=\; &\max\,\left\{0.5\times(\text{Midterm Exam Score}) \,+\, 0.5\times(\text{Final Exam Score})\right.,\notag\\ 
-&\qquad\;\,\left.0.25\times(\text{Midterm Exam Score}) \,+\, 0.75\times(\text{Final Exam Score})\right\}.\notag
+(\text{Total Percentage Grade}) =\quad\, &0.60\times(\text{Total Homework Score})\notag\\
+\,+\, &0.30\times(\text{Take-Home Exam Score})\notag\\
+\,+\, &0.10\times(\text{Total Discussion Score})\notag
 \end{align}
 $$
 
 
 
-## Syllabus
+# GitHub and Google Colab {background-color="#1c4982"}
 
-### Grading
+## What is GitHub?
+- [https://github.com/](https://github.com/) is a platform for storing, managing, and sharing code. 
 
-- Letter grades will be determined by the total percentage grade:
+- Course contents will be posted not only Brightspace but also our GitHub repositories ("repos").
+
+- Online discussion and Q & A will be hosted on GitHub repository.
+
+- Clicking "Sign Up" or [https://github.com/signup](https://github.com/signup) will direct you to the sign up page.
+
+
+
+## Getting a GitHub account
+
+Github is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.
+
+Sharing and editing code for a large group is easy with Github
+
+It also automatically maintains a history of all changes to the repo. 
+You can see the history of committed changes, and even go into detail about what those changes entailed. 
+
+You can also revert to old versions of your repo, and all edits will be saved in this history.
+
+
+## What is Google Colab
+- [https://colab.research.google.com/](https://colab.research.google.com/) is analogous to Google Drive, but specifically for writing and
+executing Python code in your browser.
+  - The base Colab link listed above leads to a Python notebook introducing Colab and how to use it.
+
+- This video also helps get started with Colab if you are unfamiliar with the format!
+  - [https://www.youtube.com/watch?v=inN8seMm7UI](https://www.youtube.com/watch?v=inN8seMm7UI)
+
+
+## Why use Colab?
+- A key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed. 
+  - It allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.
   
-$$
-\begin{align*}
-\! 100\; \geq\; A\;\;\, \geq \;93>\; A- \geq 90;\\
-90 >\; B+ \geq 87\; >\; B\;\;\, \geq \;83 >\; B- \geq 80;\\
-80 >\; C+ \geq 77\; >\; C\;\;\, \geq \;73 >\; C- \geq 70;\\
-70\; >\; D\;\;\, \geq\; 60 >\; E.\qquad\quad\;
-\end{align*}
-$$
+- Using Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.
+
+- Colab notebooks don’t just contain Python code. They can contain text, images, and HTML!
+
+- Ultimately, they’re intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a laptop or PC.
+
+
+## Colab has GitHub integration!
 
 
 
-
-## Syllabus
-
-### Make-up exams
-
--  Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.
-
-- If you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.
-
-- A missed exam without an excused absence earns a grade of zero.
-  
-
-
-
-## Syllabus
-
-### Academic Integrity and Plagiarism
-
--  All homework assignments and exams must be the original work by you. 
-
-- Examples of academic dishonesty include:
-  - *representing the work, thoughts, and ideas of another person as your own*
-  - *allowing others to represent your work, thoughts, or ideas as theirs*, and
-  - *being complicit in academic dishonesty by suspecting or knowing of it and not taking action*.
-
-
-- Geneseo’s Library offers frequent workshops to help you understand how to **paraphrase**, **quote**, and **cite** outside sources properly. 
-  - See [https://www.geneseo.edu/library/library-workshops](https://www.geneseo.edu/library/\\library-workshops).
-  
-
-
-
-## Syllabus
-
-### Accessibility
-
--  The Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.
-
-- Please contact me and the Office of Accessibility Services for questions related to access and accommodations.
-  
-
-
-
-
-## Syllabus
-
-### Well-being
-
-- You are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.
-
-- Liz Felski, the School of Business Student Advocate ([felski@geneseo.edu](felski@geneseo.edu), South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.
-
-- For more information, see [https://www.geneseo.edu/dean_students](https://www.geneseo.edu/dean_students).
-  
-
-
-## Syllabus
-
-### Career Design
-
-- To get information about career development, you can visit the Career Development Events Calendar ([https://www.geneseo.edu/career_development/events/calendar](https://www.geneseo.edu/career_development/events/calendar)).
-
-- You can stop by South 112 to get assistance in completing your Handshake Profile [https://app.joinhandshake.com/login](https://app.joinhandshake.com/login).
-  - Handshake is ranked #1 by students as the best place to find full-time jobs.
-  - 50% of the 2018-2020 graduates received a job or internship offer on Handshake.
-  - Handshake is trusted by all 500 of the Fortune 500.
-  
-
-
-
-# Installing the Tools {background-color="#40666e"}
+# Installing the Tools {background-color="#1c4982"}
 
 ## Installing the Tools
 ### Anaconda
@@ -552,7 +361,7 @@ knitr::include_graphics("lec_figs/spyder_env.png")
 
 
 
-# Python Basics {background-color="#40666e"}
+# Python Basics {background-color="#1c4982"}
 
 
 
@@ -1088,3 +897,14 @@ a, b = 3, 6
 1 < a < b < 20
 ```
 
+
+
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+</script>

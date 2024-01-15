@@ -1,5 +1,5 @@
 system("quarto render")
-quarto::quarto_render("index.qmd")
+# quarto::quarto_render("index.qmd")
 
 # Replace the values
 lec_no <- '01'
