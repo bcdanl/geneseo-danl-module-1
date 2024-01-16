@@ -14,8 +14,8 @@ from: markdown+emoji
 fig-align: center
 
 listing: 
-  - id: danl-module-1-lec
-    contents: "danl-lec/danl-module-1*.qmd"
+  - id: danl-m1-lec
+    contents: "danl-lec/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -23,8 +23,8 @@ listing:
     filter-ui: false
     page-size: 36
     table-striped: false
-  - id: danl-module-1-qa
-    contents: "danl-qa/danl-module-1*.qmd"
+  - id: danl-m1-qa
+    contents: "danl-qa/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -32,16 +32,16 @@ listing:
     filter-ui: false
     page-size: 36
     table-striped: false
-  - id: danl-module-1-cw
-    contents: "danl-cw/danl-module-1*.qmd"
+  - id: danl-m1-cw
+    contents: "danl-cw/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
     sort-ui: false
     filter-ui: false
     page-size: 36
-  - id: danl-module-1-hw
-    contents: "danl-hw/danl-module-1*.qmd"
+  - id: danl-m1-hw
+    contents: "danl-hw/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -91,34 +91,7 @@ format:
   <img src="img/coding-combined.gif" width="75%">
 </p>
 
-<div style="display:block; margin:25px;"></div>
-
-
-<!-- :::: {.columns} -->
-
-<!-- ::: {.column width="5%"} -->
-
-<!-- ::: -->
-
-<!-- ::: {.column width="30%"} -->
-<!-- ![](img/coding-sea-lion.gif){width=80%} -->
-
-<!-- ::: -->
-
-<!-- ::: {.column width="30%"} -->
-<!-- ![](img/geneseo-logo.gif){width=80%} -->
-<!-- ::: -->
-
-
-<!-- ::: {.column width="30%"} -->
-<!-- ![](img/coding-sea-turtle.gif){width=80%} -->
-
-<!-- ::: -->
-
-<!-- :::: -->
-
-
-<div style="display:block; margin:-20px;"></div>
+<div style="display:block; margin:5px;"></div>
 
 
 :::: {.columns}
@@ -126,7 +99,7 @@ format:
 ::: {.column width="45%"}
 ## $\bullet\,$ Lecture  :rocket:
 
-:::{#danl-module-1-lec}
+:::{#danl-m1-lec}
 :::
 
 :::
@@ -139,7 +112,7 @@ format:
 ::: {.column width="45%"}
 ## $\bullet\,$ Q & A  :question:
 
-:::{#danl-module-1-qa}
+:::{#danl-m1-qa}
 :::
 
 :::
@@ -153,7 +126,7 @@ format:
 ::: {.column width="45%"}
 ## $\bullet\,$ Classwork  :keyboard:
 
-:::{#danl-module-1-cw}
+:::{#danl-m1-cw}
 :::
 
 :::
@@ -166,17 +139,10 @@ format:
 ::: {.column width="45%"}
 ## $\bullet\,$ Homework  :computer:
 
-:::{#danl-module-1-hw}
+:::{#danl-m1-hw}
 :::
 
 :::
 
 ::::
-
-
-
-
-
-
-
 

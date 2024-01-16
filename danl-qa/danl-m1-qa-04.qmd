@@ -1,0 +1,27 @@
+---
+title: "Lecture 4 - Discussion and Q & A"
+# date: last-modified
+date: 2023-02-27
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  message: false
+
+comments:
+  hypothesis: 
+    theme: clean
+---
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(knitr)
+
+knitr::opts_chunk$set(fig.width=8, fig.height=5,
+                      echo = T, eval = T, 
+                      message=F, warning = F, fig.cap = " ")  
+```
+
+
+
