@@ -1,6 +1,6 @@
 ---
 title: Lecture 7
-subtitle: Missing Data
+subtitle: Missing Data and Time-series Data
 format:
   clean-revealjs:
     self-contained: true
