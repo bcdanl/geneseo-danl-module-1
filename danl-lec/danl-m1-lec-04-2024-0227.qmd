@@ -1,6 +1,6 @@
 ---
 title: Lecture 4
-subtitle: Pandas basics
+subtitle: Filtering, Sorting, Ranking, and Visualization
 format:
   clean-revealjs:
     self-contained: true

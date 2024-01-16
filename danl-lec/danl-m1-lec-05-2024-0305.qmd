@@ -1,6 +1,6 @@
 ---
 title: Lecture 5
-subtitle: Groupby Opeation
+subtitle: Group Opeations
 format:
   clean-revealjs:
     self-contained: true

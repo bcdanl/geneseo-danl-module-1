@@ -1,6 +1,6 @@
 ---
 title: Lecture 3
-subtitle: Pandas basics
+subtitle: Pandas Data Structures
 format:
   clean-revealjs:
     self-contained: true
