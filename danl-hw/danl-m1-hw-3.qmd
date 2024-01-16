@@ -2,7 +2,7 @@
 title: Homework Assignment 3
 subtitle: DANL Module 1
 author: Byeong-Hak Choe
-date: 2023-02-20
+date: 2024-02-20
 execute: 
   echo: false
   eval: false
@@ -30,6 +30,8 @@ comments:
 -   Import all the Python libraries we need here.
 
 ```{python}
+#| echo: true
+#| eval: true
 import pandas as pd
 ```
 

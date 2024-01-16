@@ -2,7 +2,7 @@
 title: Homework Assignment 6
 subtitle: DANL Module 1
 author: Byeong-Hak Choe
-date: 2023-03-12
+date: 2024-03-12
 execute: 
   echo: false
   eval: false

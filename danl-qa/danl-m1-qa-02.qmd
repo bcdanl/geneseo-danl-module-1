@@ -1,7 +1,7 @@
 ---
 title: "Lecture 2 - Discussion and Q & A"
 # date: last-modified
-date: 2023-02-13
+date: 2024-02-13
 execute: 
   echo: true
   eval: true

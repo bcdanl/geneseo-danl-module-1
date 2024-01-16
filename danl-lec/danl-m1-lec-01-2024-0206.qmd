@@ -3,15 +3,13 @@ title: Lecture 1
 subtitle: Syllabus, Course Outline, Python Basics
 format:
   clean-revealjs:
-    execute: 
-      eval: false
-      echo: true
+    self-contained: true
     # logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
     affiliations: SUNY Geneseo
-date: 2023-02-06
+date: 2024-02-06
 execute: 
   eval: false
   echo: true
