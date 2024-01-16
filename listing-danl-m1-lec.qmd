@@ -2,7 +2,7 @@
 title: DANL Module 1 - Lecture
 date-modified: ""
 listing:
-  contents: "danl-lec/*.qmd"
+  contents: "lec/*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "date desc"

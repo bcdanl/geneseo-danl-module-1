@@ -15,7 +15,7 @@ fig-align: center
 
 listing: 
   - id: danl-m1-lec
-    contents: "danl-lec/danl-m1*.qmd"
+    contents: "lec/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -24,7 +24,7 @@ listing:
     page-size: 36
     table-striped: false
   - id: danl-m1-qa
-    contents: "danl-qa/danl-m1*.qmd"
+    contents: "qa/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -33,7 +33,7 @@ listing:
     page-size: 36
     table-striped: false
   - id: danl-m1-cw
-    contents: "danl-cw/danl-m1*.qmd"
+    contents: "cw/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"
@@ -41,7 +41,7 @@ listing:
     filter-ui: false
     page-size: 36
   - id: danl-m1-hw
-    contents: "danl-hw/danl-m1*.qmd"
+    contents: "hw/danl-m1*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"

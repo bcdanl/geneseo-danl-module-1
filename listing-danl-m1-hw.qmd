@@ -2,7 +2,7 @@
 title: DANL Module 1 - Homework
 date-modified: ""
 listing:
-  contents: "danl-hw/*.qmd"
+  contents: "hw/*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "date desc"

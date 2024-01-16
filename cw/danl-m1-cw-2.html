@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2024-02-13">
 
-<title>DANL Module 1 - Lecture Discussion | Byeong-Hak Choe</title>
+<title>Classwork 2 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +22,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -65,62 +99,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<style>
-#toc-welcome {
-      font-size: 1.67em;
-}
-#toc-bullet-lecture {
-      font-size: 1.67em;
-}
-#toc-bullet-classwork {
-      font-size: 1.67em;
-}
-#toc-bullet-homework {
-      font-size: 1.67em;
-}
-a {
-text-decoration: none; /* This removes the underline */
-padding: 5px 10px; /* Top & Bottom, Left & Right Padding */
-border-radius: 5px; /* Rounds the corners */
-}
-</style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/font.css">
-<link rel="stylesheet" href="front.css">
-<meta property="og:title" content="DANL Module 1 - Lecture Discussion | Byeong-Hak Choe">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<meta property="og:title" content="Classwork 2 | Byeong-Hak Choe">
+<meta property="og:description" content="Pandas Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="B.H. CHOE&amp;nbsp;&amp;nbsp;&amp;nbsp;">
 </head>
@@ -132,10 +121,10 @@ border-radius: 5px; /* Rounds the corners */
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">B.H. CHOE&nbsp;&nbsp;&nbsp;</span>
     </a>
   </div>
@@ -174,14 +163,14 @@ border-radius: 5px; /* Rounds the corners */
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-m1-qa.html"><font size="5"><b>- Q &amp; A </b></font><font size="5" color="#194493">{{&lt; fa solid commenting &gt;}}</font></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 2</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -191,25 +180,25 @@ border-radius: 5px; /* Rounds the corners */
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-m1-lec.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-m1-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><font size="5"><b>- Lecture </b></font><font size="5" color="#194493"><i class="fa-solid fa-laptop" aria-label="laptop"></i></font></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-m1-qa.html" class="sidebar-item-text sidebar-link active">
+  <a href="../listing-danl-m1-qa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><font size="5"><b>- Q &amp; A </b></font><font size="5" color="#194493"><i class="fa-solid fa-commenting" aria-label="commenting"></i></font></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-m1-cw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-m1-cw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><font size="5"><b>- Classwork </b></font><font size="5" color="#194493"><i class="fa-solid fa-keyboard" aria-label="keyboard"></i></font></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-m1-hw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-m1-hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><font size="5"><b>- Homework </b></font><font size="5" color="#194493"><i class="fa-solid fa-level-up" aria-label="level-up"></i></font></span></a>
   </div>
 </li>
@@ -218,140 +207,294 @@ border-radius: 5px; /* Rounds the corners */
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a>
+  <ul>
+  <li><a href="#q1a" id="toc-q1a" class="nav-link" data-scroll-target="#q1a">Q1a</a></li>
+  <li><a href="#q1b" id="toc-q1b" class="nav-link" data-scroll-target="#q1b">Q1b</a></li>
+  <li><a href="#q1c" id="toc-q1c" class="nav-link" data-scroll-target="#q1c">Q1c</a></li>
+  <li><a href="#q1d" id="toc-q1d" class="nav-link" data-scroll-target="#q1d">Q1d</a></li>
+  <li><a href="#q1e" id="toc-q1e" class="nav-link" data-scroll-target="#q1e">Q1e</a></li>
+  <li><a href="#q1f" id="toc-q1f" class="nav-link" data-scroll-target="#q1f">Q1f</a></li>
+  <li><a href="#q1g" id="toc-q1g" class="nav-link" data-scroll-target="#q1g">Q1g</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DANL Module 1 - Lecture Discussion</h1>
+<h1 class="title">Classwork 2</h1>
+<p class="subtitle lead">Pandas Basics</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Byeong-Hak Choe </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            SUNY Geneseo
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2024</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 16, 2024</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<ul>
+<li>The following is the Python libraries we need for this homework.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<table class="quarto-listing-table table">
+<section id="question-1" class="level1">
+<h1>Question 1</h1>
+<p>Load the CSV file, <code>beer_markets_cleaned.csv</code>, from the class website:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>beer_markets <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets_cleaned.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Description of DataFrame <code>beer_markets</code>
+<ul>
+<li>One single observation (row) corresponds to information regarding one household and its beer purchase.</li>
+<li>DataFrame <code>beer_markets</code> does not have any missing values.</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Variable (column) description
+<ul>
+<li><code>hh</code>: an identifier of the household;</li>
+<li><code>purchase_desc</code>: details on the purchased item;</li>
+<li><code>quantity</code>: the number of items purchased;</li>
+<li><code>brand</code>: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;</li>
+<li><code>spent</code>: total dollar value of purchase;</li>
+<li><code>beer_floz</code>: total volume of beer, in fluid ounces;</li>
+<li><code>price_per_floz</code>: price per fl.oz. (i.e., beer spent/beer floz);</li>
+<li><code>container</code>: the type of container;</li>
+<li><code>promo</code>: Whether the item was promoted (coupon or otherwise);</li>
+<li><code>market</code>: Scan-track market (or state if rural);</li>
+<li>demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.</li>
+</ul></li>
+</ul>
+<p><br><br></p>
+<section id="q1a" class="level2">
+<h2 class="anchored" data-anchor-id="q1a">Q1a</h2>
+<ul>
+<li>Sort the DataFrame <code>beer_markets</code> by <code>hh</code> in ascending order.</li>
+</ul>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br></p>
+</section>
+<section id="q1b" class="level2">
+<h2 class="anchored" data-anchor-id="q1b">Q1b</h2>
+<p>Count the number of households for each market. <br></p>
+<p><em>Answer</em></p>
+<p><br><br></p>
+</section>
+<section id="q1c" class="level2">
+<h2 class="anchored" data-anchor-id="q1c">Q1c</h2>
+<p>Find the top 5 beer markets in terms of the number of households that purchased beer.</p>
+<p><br></p>
+<p><em>Answer</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-<th>
-Date
-</th>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">market</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n</th>
 </tr>
 </thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1710820800000" data-listing-file-modified-sort="1705389145083" data-listing-date-modified-sort="1705389145000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 7 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-07.qmd">
-<td>
-<a href="./qa/danl-m1-qa-07.html" class="title listing-title">Lecture 7 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">March 19, 2024</span>
-</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">TAMPA</td>
+<td style="text-align: right; width: 5em;">280</td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1710216000000" data-listing-file-modified-sort="1705389148006" data-listing-date-modified-sort="1705389148000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 6 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-06.qmd">
-<td>
-<a href="./qa/danl-m1-qa-06.html" class="title listing-title">Lecture 6 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">March 12, 2024</span>
-</td>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">DETROIT</td>
+<td style="text-align: right; width: 5em;">214</td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1709614800000" data-listing-file-modified-sort="1705389150998" data-listing-date-modified-sort="1705389150000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 5 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-05.qmd">
-<td>
-<a href="./qa/danl-m1-qa-05.html" class="title listing-title">Lecture 5 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">March 5, 2024</span>
-</td>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">COLUMBUS</td>
+<td style="text-align: right; width: 5em;">184</td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1709010000000" data-listing-file-modified-sort="1705389153497" data-listing-date-modified-sort="1705389153000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 4 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-04.qmd">
-<td>
-<a href="./qa/danl-m1-qa-04.html" class="title listing-title">Lecture 4 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">February 27, 2024</span>
-</td>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">MIAMI</td>
+<td style="text-align: right; width: 5em;">178</td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1708405200000" data-listing-file-modified-sort="1705389155671" data-listing-date-modified-sort="1705389155000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 3 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-03.qmd">
-<td>
-<a href="./qa/danl-m1-qa-03.html" class="title listing-title">Lecture 3 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">February 20, 2024</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1707800400000" data-listing-file-modified-sort="1705389158245" data-listing-date-modified-sort="1705389158000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 2 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-02.qmd">
-<td>
-<a href="./qa/danl-m1-qa-02.html" class="title listing-title">Lecture 2 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">February 13, 2024</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1707195600000" data-listing-file-modified-sort="1705389160697" data-listing-date-modified-sort="1705389160000" data-listing-reading-time-sort="1" data-listing-title-sort="Lecture 1 - Discussion and Q &amp; A" data-listing-filename-sort="danl-m1-qa-01.qmd">
-<td>
-<a href="./qa/danl-m1-qa-01.html" class="title listing-title">Lecture 1 - Discussion and Q &amp; A</a>
-</td>
-<td>
-<span class="listing-subtitle">undefined</span>
-</td>
-<td>
-<span class="listing-date">February 6, 2024</span>
-</td>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">PHOENIX</td>
+<td style="text-align: right; width: 5em;">168</td>
 </tr>
 </tbody>
-
 </table>
-<div class="listing-no-matching d-none">
-No matching items
+
+
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div>
+<p><br><br></p>
+</section>
+<section id="q1d" class="level2">
+<h2 class="anchored" data-anchor-id="q1d">Q1d</h2>
+<p>Sum of <code>beer_floz</code> for each <code>market</code>. <br></p>
+<p><em>Answer</em></p>
+<p><br><br></p>
+</section>
+<section id="q1e" class="level2">
+<h2 class="anchored" data-anchor-id="q1e">Q1e</h2>
+<p>Find the top 5 beer markets in terms of the amount of total beer consumption. <br></p>
+<p><em>Answer</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">market</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">beer_floz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">TAMPA</td>
+<td style="text-align: right; width: 5em;">462904</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">PHOENIX</td>
+<td style="text-align: right; width: 5em;">388824</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">DETROIT</td>
+<td style="text-align: right; width: 5em;">309588</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">MIAMI</td>
+<td style="text-align: right; width: 5em;">271870</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; border-right: 1px solid;">COLUMBUS</td>
+<td style="text-align: right; width: 5em;">266896</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="q1f" class="level2">
+<h2 class="anchored" data-anchor-id="q1f">Q1f</h2>
+<ul>
+<li>Variable <code>price_per_floz</code> is continuous.</li>
+<li>Variable <code>brand</code> is categorical.</li>
+</ul>
+<p>Describe the distribution of <code>price_per_floz</code> for each <code>brand</code> using <code>seaborn</code>.</p>
+<p>Make a simple comment on comparison for the distribution of <code>price_per_floz</code> across brands. <br></p>
+<p><em>Answer</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-11-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-11-5.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><br></p>
+<ul>
+<li><p><code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> have the similar distribution of <code>price_per_floz</code> with each other.</p></li>
+<li><p><code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code> have the similar distribution of <code>price_per_floz</code> with each other.</p></li>
+<li><p>Overall, <code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> are more expensive than <code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code>.</p></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="q1g" class="level2">
+<h2 class="anchored" data-anchor-id="q1g">Q1g</h2>
+<ul>
+<li><p>Both variables <code>price_per_floz</code> and <code>beer_floz</code> are continuous.</p></li>
+<li><p>Describe the relationship between <code>price_per_floz</code> and <code>beer_floz</code> by brand using <code>seaborn</code>.</p></li>
+<li><p>Make a simple comment on the visualization result regarding how the relationship between <code>price_per_floz</code> and <code>beer_floz</code> varies by <code>brand</code>.</p></li>
+</ul>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="danl-m1-cw-2_files/figure-html/unnamed-chunk-13-6.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><br></p>
+<ul>
+<li><p>The law of demand holds in the beer market:</p>
+<ul>
+<li>From the fitted straight line, we see the downward-sloping demand curve for each beer brand.</li>
+</ul></li>
+<li><p>The demand curves for <code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> are steeper than those for <code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code>.</p></li>
+<li><p>According to the demand curves, <code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> have larger demands than <code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code> given the same level of <code>price_per_floz</code> <span class="math inline">\(\geq\)</span> 0.0375.</p></li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div>© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.</div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-choe2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Choe, Byeong-Hak, and Byeong-Hak Choe. 2024. <span>“Classwork 2.”</span>
+February 13, 2024.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -714,6 +857,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/danl-giscuss" data-repo-id="R_kgDOLC1iDw" data-category="General" data-category-id="DIC_kwDOLC1iD84CcUB_" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -727,8 +872,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 <div id="scroll-padding"></div>
-<script src="./assets/js/site.js"></script>
-<script src="./assets/js/posts.js"></script>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
 
 
 
