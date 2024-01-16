@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -94,12 +94,32 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>
+#toc-welcome {
+      font-size: 1.67em;
+}
+#toc-bullet-lecture {
+      font-size: 1.67em;
+}
+#toc-bullet-classwork {
+      font-size: 1.67em;
+}
+#toc-bullet-homework {
+      font-size: 1.67em;
+}
+a {
+text-decoration: none; /* This removes the underline */
+padding: 5px 10px; /* Top & Bottom, Left & Right Padding */
+border-radius: 5px; /* Rounds the corners */
+}
+</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="assets/css/font.css">
+<link rel="stylesheet" href="front.css">
 <meta property="og:title" content="DANL Module 1 - Lecture | Byeong-Hak Choe">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="B.H. CHOE&amp;nbsp;&amp;nbsp;&amp;nbsp;">
@@ -161,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,11 +218,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -240,6 +260,9 @@ ul.task-list li input[type="checkbox"] {
 Title
 </th>
 <th>
+Subtitle
+</th>
+<th>
 Date
 </th>
 </tr>
@@ -250,12 +273,18 @@ Date
 <a href="./danl-lec/danl-m1-lec-07-2024-0319.html" class="title listing-title">Lecture 7</a>
 </td>
 <td>
+<span class="listing-subtitle">Missing Data and Time-series Data</span>
+</td>
+<td>
 <span class="listing-date">March 19, 2024</span>
 </td>
 </tr>
 <tr data-index="1" data-listing-date-sort="1710216000000" data-listing-file-modified-sort="1705389097597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-title-sort="Lecture 6" data-listing-filename-sort="danl-m1-lec-06-2024-0312.qmd">
 <td>
 <a href="./danl-lec/danl-m1-lec-06-2024-0312.html" class="title listing-title">Lecture 6</a>
+</td>
+<td>
+<span class="listing-subtitle">Tidy Data</span>
 </td>
 <td>
 <span class="listing-date">March 12, 2024</span>
@@ -266,12 +295,18 @@ Date
 <a href="./danl-lec/danl-m1-lec-05-2024-0305.html" class="title listing-title">Lecture 5</a>
 </td>
 <td>
+<span class="listing-subtitle">Group Opeations</span>
+</td>
+<td>
 <span class="listing-date">March 5, 2024</span>
 </td>
 </tr>
 <tr data-index="3" data-listing-date-sort="1709010000000" data-listing-file-modified-sort="1705389102614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-title-sort="Lecture 4" data-listing-filename-sort="danl-m1-lec-04-2024-0227.qmd">
 <td>
 <a href="./danl-lec/danl-m1-lec-04-2024-0227.html" class="title listing-title">Lecture 4</a>
+</td>
+<td>
+<span class="listing-subtitle">Filtering, Sorting, Ranking, and Visualization</span>
 </td>
 <td>
 <span class="listing-date">February 27, 2024</span>
@@ -282,6 +317,9 @@ Date
 <a href="./danl-lec/danl-m1-lec-03-2024-0220.html" class="title listing-title">Lecture 3</a>
 </td>
 <td>
+<span class="listing-subtitle">Pandas Data Structures</span>
+</td>
+<td>
 <span class="listing-date">February 20, 2024</span>
 </td>
 </tr>
@@ -290,12 +328,18 @@ Date
 <a href="./danl-lec/danl-m1-lec-02-2024-0213.html" class="title listing-title">Lecture 2</a>
 </td>
 <td>
+<span class="listing-subtitle">Pandas basics</span>
+</td>
+<td>
 <span class="listing-date">February 13, 2024</span>
 </td>
 </tr>
 <tr data-index="6" data-listing-date-sort="1707195600000" data-listing-file-modified-sort="1705389125127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-title-sort="Lecture 1" data-listing-filename-sort="danl-m1-lec-01-2024-0206.qmd">
 <td>
 <a href="./danl-lec/danl-m1-lec-01-2024-0206.html" class="title listing-title">Lecture 1</a>
+</td>
+<td>
+<span class="listing-subtitle">Syllabus, Course Outline, Python Basics</span>
 </td>
 <td>
 <span class="listing-date">February 6, 2024</span>
