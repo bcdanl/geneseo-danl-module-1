@@ -1,8 +1,8 @@
 ---
-title: DANL Module 1 - Classwork
+title: '<font style="font-family:Optima"><b>DANL 210 - Classwork</b></font>'
 date-modified: ""
 listing:
-  contents: "cw/*.qmd"
+  contents: "danl-cw/*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "date desc"

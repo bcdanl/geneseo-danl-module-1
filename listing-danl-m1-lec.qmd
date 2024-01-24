@@ -1,10 +1,10 @@
 ---
-title: DANL Module 1 - Lecture
+title: '<font style="font-family:Optima"><b>DANL 210 - Lecture</b></font>'
 date-modified: ""
 listing:
-  contents: "lec/*.qmd"
+  contents: "danl-lec/*.qmd"
   type: table
-  fields: [title, subtitle, date]
+  fields: [title, date]
   sort: "date desc"
   sort-ui: false
   page-size: 36

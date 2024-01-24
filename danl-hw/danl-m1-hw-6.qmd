@@ -1,0 +1,78 @@
+---
+title: Homework Assignment 6
+subtitle: Merging, Joining, and Concaternating DataFrames
+date: 2024-03-12
+execute: 
+  echo: false
+  eval: false
+  warning: false
+  message: false
+
+code-tools: true
+# title-block-banner: true
+
+comments:
+  hypothesis: 
+    theme: clean
+---
+
+# Direction
+
+-   Write a Python code to answer each question.
+
+-   Make at least some simple comment (`# ...`) in each question.
+
+-   Import Python libraries you need here.
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+<br><br><br>
+
+Citi Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at [https://www.citibikenyc.com/system-data](https://www.citibikenyc.com/system-data). `citibike.csv` is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a `citi_bike` variable:
+
+```{python}
+#| echo: true
+citi_bike = pd.read_csv("citibike.csv")
+```
+
+
+# Question 1
+Convert the start_time and stop_time columns to store datetime (`Timestamp`) values instead of strings.
+
+<br><br>
+
+# Question 2
+Count the rides that occurred on each day of the week (Monday, Tuesday, and
+so on). Which weekday is the most popular for a bike ride? Use the start_time
+column as your starting point.
+
+<br><br>
+
+# Question 3
+Count the rides per week for each week within the month. To do so, round
+each date in the start_time column to its previous or current Monday. Assume
+that each week starts on a Monday and ends on a Sunday. Thus, the first week of
+June would be Monday, June 1 through Sunday, June 7.
+
+<br><br>
+
+# Question 4
+Calculate the duration of each ride, and save the results to a new duration
+column.
+
+<br><br>
+
+# Question 5
+Find the average duration of a bike ride.
+
+<br><br>
+
+# Question 6
+Extract the five longest bike rides by duration from the data set.
+
+<br><br>

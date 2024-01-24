@@ -1,14 +1,14 @@
 ---
-title: DANL Module 1 - Homework
+title: '<font style="font-family:Optima"><b>DANL 210 - Homework</b></font>'
 date-modified: ""
 listing:
-  contents: "hw/*.qmd"
+  contents: "danl-hw/*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "date desc"
   sort-ui: false
   page-size: 36
-
+  
 page-layout: full
 comments: false
 css: front.css

@@ -1,5 +1,5 @@
-system("quarto render")
-# quarto::quarto_render("index.qmd")
+# system("quarto render")
+quarto::quarto_render("index.qmd")
 library(stringr)
 
 # Read the HTML file
