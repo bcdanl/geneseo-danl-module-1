@@ -2,7 +2,7 @@
 title: '<font style="font-family:Optima"><b>DANL 210 - Lecture</b></font>'
 date-modified: ""
 listing:
-  contents: "danl-lec/*.qmd"
+  contents: "danl-lec/danl*.qmd"
   type: table
   fields: [title, date]
   sort: "date desc"

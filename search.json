@@ -1008,6 +1008,27 @@
     "text": "Data Visualization with seaborn\nFaceting\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\nStep 1. FacetGrid()Step2. FacetGrid().map()\n\n\n\nFirst, we create a FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\n\ng = sns.FacetGrid(\n      data = titanic,\n      row='class',\n      col='sex')\n\n\n\nSecodn, we use the FacetGrid().map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\ng.map(sns.histplot, 'age', kde=True)  ## kde: kernel density (probability density function)"
   },
   {
+    "objectID": "danl-lec/why-colab-github.html",
+    "href": "danl-lec/why-colab-github.html",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "",
+    "text": "Google Colab, short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:\n\nAccessibility: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.\nReal-time Collaboration: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.\nPowerful Resources: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.\nVersion Control: It supports version control through integration with GitHub, making it easy to manage and track changes in code."
+  },
+  {
+    "objectID": "danl-lec/why-colab-github.html#setting-up-github-access-from-colab",
+    "href": "danl-lec/why-colab-github.html#setting-up-github-access-from-colab",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Setting up GitHub access from Colab",
+    "text": "Setting up GitHub access from Colab\nIn order to access Git repositories, you need to allow Colab to access the repositories. To set this up, make sure you are logged in to your Github account. Then, follow the steps below.\n\nGo to the main Google Colab page. You will get a splash page that looks like this.\n\n\n\n\n\n\n\n\n\n\nClick on the “GitHub” tab of the orange bar.\n\nClick the checkbox for including private repos if you also want to include repositories you have set to be private.\nAn authorization window from GitHub will pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your repositories.\nUnder where it says “Enter a GitHub URL or search by organization or user,” search for the desired repository name. Underneath the search bar, you will have a pulldown menu of available notebooks. Select the one you want to work on."
+  },
+  {
+    "objectID": "danl-lec/why-colab-github.html#pushing-your-notebook-to-the-repository",
+    "href": "danl-lec/why-colab-github.html#pushing-your-notebook-to-the-repository",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Pushing your notebook to the repository",
+    "text": "Pushing your notebook to the repository\nAfter you have made changes to your notebook, you can commit and push them to the repository. To do so from within a Colab notebook, click File → Save a copy in GitHub in GitHub. You will be prompted to add a commit message, and after you click OK, the notebook will be pushed to your repository."
+  },
+  {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-data-structures-basics-1",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-data-structures-basics-1",
     "title": "Lecture 3",
@@ -2147,26 +2168,5 @@
     "title": "DANL 210 - Homework",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 6\n\n\nMerging, Joining, and Concaternating DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nHomework Assignment 5\n\n\nReshaping and Pivoting DataFrames\n\n\nMarch 5, 2024\n\n\n\n\nHomework Assignment 4\n\n\nGroup Operations with GroupBy Objects\n\n\nFebruary 27, 2024\n\n\n\n\nHomework Assignment 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames\n\n\nFebruary 20, 2024\n\n\n\n\nHomework Assignment 2\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nHomework Assignment 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "why-colab-github.html",
-    "href": "why-colab-github.html",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "",
-    "text": "Google Colab, short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:\n\nAccessibility: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.\nReal-time Collaboration: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.\nPowerful Resources: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.\nVersion Control: It supports version control through integration with GitHub, making it easy to manage and track changes in code."
-  },
-  {
-    "objectID": "why-colab-github.html#setting-up-github-access-from-colab",
-    "href": "why-colab-github.html#setting-up-github-access-from-colab",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "Setting up GitHub access from Colab",
-    "text": "Setting up GitHub access from Colab\nIn order to access Git repositories, you need to allow Colab to access the repositories. To set this up, make sure you are logged in to your Github account. Then, follow the steps below.\n\nGo to the main Google Colab page. You will get a splash page that looks like this.\n\n\n\n\n\n\n\n\n\n\nClick on the “GitHub” tab of the orange bar.\n\nClick the checkbox for including private repos if you also want to include repositories you have set to be private.\nAn authorization window from GitHub will pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your repositories.\nUnder where it says “Enter a GitHub URL or search by organization or user,” search for the desired repository name. Underneath the search bar, you will have a pulldown menu of available notebooks. Select the one you want to work on."
-  },
-  {
-    "objectID": "why-colab-github.html#pushing-your-notebook-to-the-repository",
-    "href": "why-colab-github.html#pushing-your-notebook-to-the-repository",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "Pushing your notebook to the repository",
-    "text": "Pushing your notebook to the repository\nAfter you have made changes to your notebook, you can commit and push them to the repository. To do so from within a Colab notebook, click File → Save a copy in GitHub in GitHub. You will be prompted to add a commit message, and after you click OK, the notebook will be pushed to your repository."
   }
 ]
