@@ -1,0 +1,43 @@
+---
+title: "Why Google Coalb and GitHub?"
+author: 
+  - name: Byeong-Hak Choe
+    affiliations: SUNY Geneseo
+format: html
+---
+
+# Google Colab
+
+{{< video https://www.youtube.com/watch?v=inN8seMm7UI >}}
+
+
+[Google Colab](http://colab.research.google.com/), short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable students to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:
+
+1.  **Accessibility**: Google Colab is accessible from any device with an internet connection, making it convenient for students to work on coding assignments from anywhere.
+
+2.  **Real-time Collaboration**: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.
+
+3.  **Powerful Resources**: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.
+
+4.  **Version Control**: It supports version control through integration with GitHub, making it easy to manage and track changes in code.
+
+
+<br><br>
+
+
+
+# GitHub
+
+{{< video https://www.youtube.com/watch?v=pBy1zgt0XPc >}}
+
+GitHub is another external tool used in our course, primarily for version control and collaborative software development. It is a web-based platform that offers Git repository hosting and a range of collaboration features. The purpose of using GitHub is to facilitate code management and collaboration among students and instructors. Here's why we use GitHub:
+
+1.  **Version Control**: GitHub allows us to track changes to code, making it easier to review, revert, or merge modifications. It ensures that code is organized and that the history of changes is preserved.
+
+2.  **Collaboration**: Students can collaborate on coding assignments by sharing repositories, working on branches, and resolving issues. It promotes teamwork and peer learning.
+
+3.  **Transparency**: GitHub provides transparency in code development. Instructors can review students' code, provide feedback, and monitor progress throughout the course.
+
+4.  **Integration**: GitHub seamlessly integrates with other tools, such as Google Colab, making it convenient for students to sync their code between platforms.
+
+By using Google Colab and GitHub, we aim to create a dynamic interactive learning environment that enhances students' coding skills, fosters teamwork, and simplifies code management, ultimately enriching the educational experience in our course.
