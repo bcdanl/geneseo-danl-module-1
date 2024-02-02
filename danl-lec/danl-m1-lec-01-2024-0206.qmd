@@ -1060,7 +1060,6 @@ else:
 
 - We can make multiple assignment or multiple boolean comparisons in a single line.
 
-
 ```{.python}
 a, b = 3, 6
 

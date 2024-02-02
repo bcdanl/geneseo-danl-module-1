@@ -16,11 +16,15 @@ website:
     right:
       - icon: github
         menu: 
-        - text: website
+        - text: Website
           href: https://github.com/bcdanl/module-1
           target: _blank
           rel: me
-        - text: colab
+        - text: Discussions
+          href: https://github.com/bcdanl/module-1/discussions
+          target: _blank
+          rel: me
+        - text: Colab
           href: https://github.com/bcdanl/module-1-colab
           target: _blank
           rel: me
