@@ -13,7 +13,7 @@ format: html
 
 [Google Colab](http://colab.research.google.com/), short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:
 
-1.  **Accessibility**: Google Colab is accessible from any device with an internet connection without setting Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.
+1.  **Accessibility**: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.
 
 2.  **Real-time Collaboration**: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.
 
