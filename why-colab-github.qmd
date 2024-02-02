@@ -54,11 +54,13 @@ In order to access Git repositories, you need to allow Colab to access the repos
 
 1. Go to the [main Google Colab page](https://colab.research.google.com/). You will get a splash page that looks like this.
 
+
 ```{r}
 #| echo: false
+#| eval: true
 #| fig-align: center
 
-knitr::include_graphics("http://bcdanl.github.io/lec_figs/colab_splash.png")
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/colab_splash.png")
 ```
 
 Click on the “GitHub” tab of the orange bar.
