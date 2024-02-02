@@ -1,5 +1,5 @@
 ---
-title: "Why Google Coalb and GitHub?"
+title: "Why and How Do We Use Google Coalb and GitHub?"
 author: 
   - name: Byeong-Hak Choe
     affiliations: SUNY Geneseo
@@ -11,9 +11,9 @@ format: html
 {{< video https://www.youtube.com/watch?v=inN8seMm7UI >}}
 
 
-[Google Colab](http://colab.research.google.com/), short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable students to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:
+[Google Colab](http://colab.research.google.com/), short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:
 
-1.  **Accessibility**: Google Colab is accessible from any device with an internet connection, making it convenient for students to work on coding assignments from anywhere.
+1.  **Accessibility**: Google Colab is accessible from any device with an internet connection without setting Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.
 
 2.  **Real-time Collaboration**: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.
 
@@ -30,7 +30,7 @@ format: html
 
 {{< video https://www.youtube.com/watch?v=pBy1zgt0XPc >}}
 
-GitHub is another external tool used in our course, primarily for version control and collaborative software development. It is a web-based platform that offers Git repository hosting and a range of collaboration features. The purpose of using GitHub is to facilitate code management and collaboration among students and instructors. Here's why we use GitHub:
+[GitHub](https://github.com) is another external tool used in our course, primarily for version control and collaborative features for software development and data science projects. In this course, GitHub will primarily be used as a repository for storing Jupyter Notebooks. Its integration with Google Colab allows students to access and work on their notebooks conveniently from anywhere with an internet connection. It can also serve as a version control tool, helping learners maintain a history of their work and develop good coding practices.
 
 1.  **Version Control**: GitHub allows us to track changes to code, making it easier to review, revert, or merge modifications. It ensures that code is organized and that the history of changes is preserved.
 
@@ -41,3 +41,35 @@ GitHub is another external tool used in our course, primarily for version contro
 4.  **Integration**: GitHub seamlessly integrates with other tools, such as Google Colab, making it convenient for students to sync their code between platforms.
 
 By using Google Colab and GitHub, we aim to create a dynamic interactive learning environment that enhances students' coding skills, fosters teamwork, and simplifies code management, ultimately enriching the educational experience in our course.
+
+
+# Using GitHub with Google Colab
+
+Google Colab has convenient Git integration. This will enable you to edit notebooks in Colab and then commit and push changes back to the repository without ever leaving Colab in your browser.
+
+
+## Setting up GitHub access from Colab
+
+In order to access Git repositories, you need to allow Colab to access the repositories. To set this up, make sure you are logged in to your Github account. Then, follow the steps below.
+
+1. Go to the [main Google Colab page](https://colab.research.google.com/). You will get a splash page that looks like this.
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+knitr::include_graphics("http://bcdanl.github.io/lec_figs/colab_splash.png")
+```
+
+Click on the “GitHub” tab of the orange bar.
+
+2. Click the checkbox for including private repos if you also want to include repositories you have set to be private.
+
+3. An authorization window from GitHub will pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your repositories.
+
+4. Under where it says “Enter a GitHub URL or search by organization or user,” search for the desired repository name. Underneath the search bar, you will have a pulldown menu of available notebooks. Select the one you want to work on.
+
+
+## Pushing your notebook to the repository
+
+After you have made changes to your notebook, you can commit and push them to the repository. To do so from within a Colab notebook, click `File` → `Save a copy in GitHub` in GitHub. You will be prompted to add a commit message, and after you click `OK`, the notebook will be pushed to your repository.
