@@ -1,5 +1,5 @@
 ---
-title: '<font style="font-family:Optima"><b>DANL 210 - Lecture Discussion</b></font>'
+title: '<font style="font-family:Optima"><b>DANL Module 1 - Lecture Discussion</b></font>'
 date-modified: ""
 listing:
   contents: "danl-qa/*.qmd"
