@@ -16,6 +16,13 @@ comments:
     theme: clean
 ---
 
+```{r}
+#| echo: false
+
+use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
 # Direction
 
 -   Write a Python code to answer each question.
@@ -358,3 +365,9 @@ print("Interview region: " + response[0])
 print("Happiness level: " + response[1])
 ```
     
+
+<br><br><br>
+
+# Discussion
+
+
