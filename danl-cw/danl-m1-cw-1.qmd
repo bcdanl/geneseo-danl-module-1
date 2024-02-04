@@ -9,6 +9,14 @@ execute:
   message: false
 ---
 
+```{r}
+#| echo: false
+
+use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+
 # Question 1
 
 ```{python}
@@ -221,3 +229,9 @@ while i < 5:
 - Step 6. This continues until `i` is incremented from 4 to 5 at the bottom of the loop.
 
 - Step 7. On the next trip to the top, `i < 5` is now `False`, and the `while` loop ends.
+
+
+<br><br><br>
+  
+# Discussion
+
