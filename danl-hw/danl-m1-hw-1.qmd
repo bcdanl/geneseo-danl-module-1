@@ -7,13 +7,8 @@ execute:
   eval: false
   warning: false
   message: false
-
-# code-tools: true
-# title-block-banner: true
-
-comments:
-  hypothesis: 
-    theme: clean
+  
+from: markdown+emoji
 ---
 
 ```{r}
@@ -370,4 +365,10 @@ print("Happiness level: " + response[1])
 
 # Discussion
 
+<font size = "5">Hello everyone! Welcome to the Homework 1 Discussion Board! 🌟</font>
 
+This board is all about connecting and discussing Homework 1 with your fellow students.
+
+If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 1 questions or need a bit more clarity on some parts, feel free to post them here.
+
+Together, let's boost our understanding and make learning more fun!
