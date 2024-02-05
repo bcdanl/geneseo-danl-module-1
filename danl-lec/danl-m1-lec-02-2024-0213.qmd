@@ -1,0 +1,570 @@
+---
+title: Lecture 2
+subtitle: Pandas basics [The Lecture 2 slides may be subject to change during the Module.]
+format:
+  clean-revealjs:
+    self-contained: true
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-02-13
+callout-icon: false
+execute: 
+  eval: false
+  echo: true
+# bibliography: refs.bib
+# include-after-body: backwards.html
+
+---
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## `pandas` Libraries
+
+- Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
+
+- A *library* is a collection of packages that includes a bunch of related Python codes.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: center
+
+knitr::include_graphics("lec_figs/pandas-logo.png")
+```
+
+
+- `pandas` is a Python library that provides high-performance data structures and data analysis tools:
+  - Data manipulation and analysis
+  - `DataFrame` and `Series` objects
+  - Export and import data from files and web
+  - Handling of missing data
+
+
+
+## Importing `pandas` Libraries
+
+- We refer to code of libraries by using the Python `import` statement. 
+  - This makes the code and variables in the imported module available to our programming codes.
+  - We can use the `as` *keyword* when importing the libraries using their canonical names.
+  
+```{.python}
+import pandas as pd
+```
+
+
+##  `Pandas`
+###   Load Data Sets
+
+
+- When given a data set, we first load it and begin looking at its structure and contents. 
+
+- The simplest way of looking at a data set is to look at and subset specific rows and columns. 
+
+- We can see what type of information is stored in each column, and can start looking for patterns by aggregating descriptive statistics.
+
+
+
+
+##  `Pandas`
+###   Load Data Sets
+
+- With the library loaded we can use the `read_csv()` function to load a CSV data file.
+
+- In order to access the `read_csv()` function from pandas, we use something called "dot" notation.
+
+  - We write `pd.read_csv()` to say: within the pandas library we just loaded, look inside for the `read_csv()` function.
+
+```{.python}
+# *.tsv is a file of tab-separated values.
+# we can use the sep parameter and indicate a tab with \t
+df  = pd.read_csv('https://bcdanl.github.io/data/gapminder.tsv', sep='\t')
+df
+```
+
+
+
+
+##  `Pandas` - Load Data Sets
+
+::: {.panel-tabset}
+
+## `type()`
+
+- We can check to see if we are working with a Pandas `Dataframe` by using the built-in `type()` function (i.e., it comes directly from Python, not a separate library such as Pandas).
+
+```{.python}
+type(df)
+```
+
+- The `type()` function is handy when we begin working with many different types of Python objects and need to know what object we are currently working on.
+
+
+## `.shape`
+
+- Every DataFrame object has a `.shape` attribute that will give us the number of rows and columns of the `DataFrame`.
+
+
+```{.python}
+df.shape
+#  It’s written as df.shape and not df.shape()
+```
+
+-  Since `.shape` is an **attribute** of the `DataFrame` object, and not a **function** or **method** of the `DataFrame` object, it does not have round parentheses after the period.
+
+
+
+## `.columns`
+
+- To get a gist of what information the data set contains, we look at the column names. 
+
+- The column names are given using the `.column` attribute of the `DataFrame` object.
+
+
+```{.python}
+df.columns
+```
+
+- Q. What is the `type` of the column names?
+
+
+
+
+## `.dtypes`
+
+-  Each column (i.e., `Series`) has to be the same type, whereas each row can contain mixed types.
+
+- We can use the `.dtypes` attribute or the `.info()` method to see the type of each column in `DataFrame`.
+
+```{.python}
+df.dtypes
+df.info()
+```
+
+:::
+
+
+
+
+
+## Look at Columns, Rows, and Cells
+###   Select and Subset Columns by Name
+
+
+::: {.panel-tabset}
+
+## `head()`
+
+- We can use the `.head()` method of a `DataFrame` to look at the first 5 rows of our data.
+  - This is useful to see if our data loaded properly, and to get a better sense of the columns and contents.
+
+```{.python}
+df.head()
+```
+
+
+
+
+## `[ ]`
+
+- If we want only a specific column from our data, we can access the data using square brackets, `[ ]`.
+
+```{.python}
+# just get the country column and save it to its own variable
+country_df = df['country']
+# show the first 5 observations
+country_df.head()
+```
+
+
+
+## `[ [] ]`
+
+- In order to specify multiple columns by the column name, we need to pass in a Python list between the square brackets.
+
+
+```{.python}
+# Looking at country, continent, and year
+subset = df[['country', 'continent', 'year']]
+subset
+```
+
+
+
+:::
+
+
+
+
+## Look at Columns, Rows, and Cells
+###    Single Value Returns `DataFrame` or `Series`
+
+::: {.panel-tabset}
+
+## `Series`
+
+- When we first select a single column, a `Series` object comes out.
+
+```{.python}
+country_df = df['country']
+type(country_df)
+country_df
+```
+
+
+
+##  `DataFrame`
+- Compare `df['country']` with `df[ ['country'] ]`
+```{.python}
+country_df_list = df[ ['country'] ]
+type(country_df_list)
+country_df_list
+```
+
+-  If we use a list to subset, we will always get a `DataFrame` object back.
+
+
+
+:::
+
+
+
+## Look at Columns, Rows, and Cells
+###  Using Dot Notation to Pull a Column of Values
+
+- There is a shorthand notation where we can pull the column by treating it as a `DataFrame` attribute, or using dot (`.`).
+
+```{.python}
+df['country']
+df.country
+```
+
+- We do have to be mindful of what our columns are named if we want to use the dot notation. 
+  - If there is a column named `shape`, the `df.shape` will return the number of rows and columns
+  - If our column name has spaces or special characters, we will not be able to use the dot notation to select that column of values.
+
+
+
+
+## Look at Columns, Rows, and Cells
+###   Subset Rows
+
+- Rows can be subset in multiple ways, by row name or row index.
+
+
+```{r, out.width='100%', fig.align='center'}
+text_tbl <- data.frame(
+  `Subset Attribute` = c(".loc[]", ".iloc[]"),
+  Description = c("Subset based on index lable (row name)",
+"Subset based on row index (row number)")
+  )
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+```
+
+
+
+
+
+## Look at Columns, Rows, and Cells
+###    Subset Rows by `index` Label: `.loc[]`
+
+
+::: {.panel-tabset}
+
+## Index
+
+- Let's take a look at our gapminder data:
+```{.python}
+df
+```
+
+- We can see on the left side of the printed `DataFrame`, what appear to be row numbers.
+  -  This column-less row of values is the "index" label of the `DataFrame`.
+
+
+-  By default, Pandas fills in the index labels with the row numbers starting from 0.
+
+
+
+## `.loc[]`
+- We can use the `.loc[]` attribute on the `DataFrame` to subset rows based on the index label.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+# get the first row
+df.loc[0]
+
+# get the 100th row
+df.loc[99]
+```
+
+::: {.column width="50%"}
+```{.python}
+# get the last row
+df.loc[ -1]
+```
+- Does `df.loc[ -1]` work?
+::::
+
+
+## last row
+- Here, passing -1 to the `.loc[]` causes an error.
+  - It is actually looking for the row index label (i.e., row number -1), which does not exist in our example DataFrame.
+
+```{.python}
+# use the first value given from shape to get the number of rows
+number_of_rows = df.shape[0]
+# subtract 1 from the value since we want the last index value
+last_row_index = number_of_rows - 1
+
+# finally do the subset using the index of the last row
+df.loc[last_row_index]
+```
+
+
+
+## `.tail()`
+- We can use the `.tail()` method to return the last `n = 1` row, instead of the default 5.
+```{.python}
+df.tail(n = 1)
+```
+
+- Using `.tail()` and `.loc[]` prints out the results differently.
+```{.python}
+type( df.tail(n = 1) )
+type( df.loc[last_row_index] )
+```
+
+
+
+
+## multiple rows
+- We can filter multiple rows.
+```{.python}
+df.loc[ [0, 99, 999] ]
+```
+
+
+
+
+
+:::
+
+
+
+## Look at Columns, Rows, and Cells
+###   Subset Rows by Row Number: `.iloc[]`
+
+- `.iloc[]` does the same thing as `.loc[]`, but is used to subset by the row index number. 
+
+- In our current example, gapminder DataFrame, `.iloc[]` and `.loc[]` behave exactly the same way because the index labels are the same as the row numbers.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+# get the 2nd row
+df.iloc[1]
+
+# get the 100th row
+df.iloc[99]
+```
+:::
+::: {.column width="50%"}
+```{.python}
+# get the last row
+df.iloc[ -1]. # does it work?
+
+# get the first, 100th, and 1000th row
+df.iloc[ [0, 99, 999] ]
+```
+:::
+:::: 
+
+
+## Look at Columns, Rows, and Cells
+###   Mix It Up
+
+- We can use `.loc[]` and `.iloc[]` to obtain rows, columns, or both.
+-  The general syntax for `.loc[]` and `.iloc[]` uses square brackets with a comma.
+  - `df.loc[ [rows], [columns] ]`
+  - `df.iloc[ [rows], [columns] ]`
+  
+  
+- To just subset columns, we can use the slicing methods.
+  -  If we are subsetting columns, we are getting all the rows for the specified column.
+  -  So, we need a method to capture all the rows.
+  -  If we have just a colon (`:`) when using slicing methods, it "slices" all the values in that axis.
+
+
+
+## Look at Columns, Rows, and Cells
+###   Selecting Columns
+
+-  We can write `df.loc[:, [columns]]` or `df.iloc[:, [columns]]` to subset the column(s).
+
+```{.python}
+# subset columns with loc
+subset_1 = df.loc[:, ['year', 'pop']]
+subset_1
+
+# subset columns with iloc
+# iloc will allow us to use integers -1 to select the last column
+subset_2 = df.iloc[:, [2, 4, -1]]
+subset_2
+
+# do the followings work?
+subset = df.loc[:, [2, 4, -1]] 
+subset = df.iloc[:, ['year', 'pop']]
+```
+
+
+
+## Look at Columns, Rows, and Cells
+###    Subsetting with `range()`
+
+- We can use the built-in `range()` function to create a range of integer values. 
+  - By default, `range(start, stop)` creates all integer values between the beginning and the end (inclusive left, exclusive right).
+  - FYI, we can also pass in a 3rd parameter into `range(start, stop, step)`, `step`, that allows us to change how to increment between the start and stop values (defaults to `step=1`).
+
+
+```{.python}
+# create a range of integers from 0 to 4 inclusive
+small_range = list( range(5) )   # equivalent to range(0, 5)
+small_range
+# subset the dataframe with the range
+subset = df.iloc[:, small_range]
+subset
+```
+
+
+
+
+
+## Look at Columns, Rows, and Cells
+###    Subsetting with `range()`
+
+- Let's consider one more example with `range()`:
+
+```{.python}
+#  create a range from 3 to 5 inclusive
+small_range = list( range(3, 6) )
+
+subset = df.iloc[:, small_range]
+subset
+```
+
+
+- **Q**. What happens when you specify a `range()` that’s beyond the number of columns you have?
+
+
+
+
+## Look at Columns, Rows, and Cells
+###    Subsetting with Slicing `:`
+
+- Unlike the `range()` function, the slicing method separates the values with the colon within the square bracket, `[start : end : step ]`.
+
+- Let's see the columns of the DataFrame:
+```{.python}
+df.columns
+```
+
+- See how `range()` and `:` are used to slice the first 3 columns.
+```{.python}
+small_range = list( range(3) )
+subset_1 = df.iloc[ : , small_range ]
+
+subset_2 = df.iloc[ : , :3 ]
+```
+
+
+
+
+## Look at Columns, Rows, and Cells
+### Subsetting with Slicing `:`
+
+**Q**. Let's slice the columns 3 to 5 inclusive using (1) the `range()` function and (2) the slicing method.
+
+
+**Q**. What happens if we use the slicing method with 2 colons, but leave a value out? For example:
+```{.python}
+ df.iloc[: , 0 : 6 :   ]
+ df.iloc[: , 0 :   : 2 ]
+ df.iloc[: ,   : 6 : 2 ]
+ df.iloc[: ,   :   : 2 ]
+ df.iloc[: ,   :   :   ]
+```
+
+
+
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+</script>

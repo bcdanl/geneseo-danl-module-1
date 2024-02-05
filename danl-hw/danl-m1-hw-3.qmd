@@ -1,0 +1,324 @@
+---
+title: Homework Assignment 3
+subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [The Homework Assignment 3 may be subject to change during the Module.]
+date: 2024-02-20
+execute: 
+  echo: false
+  eval: false
+  warning: false
+  message: false
+from: markdown+emoji
+---
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+# Direction
+
+-   Write a Python code to answer each question.
+
+-   Make at least some simple comment (`# ...`) in each question.
+
+-   Use your working directory with the subfolder, `data`, so that the relative pathname of CSV files in the subfolder `data` is sufficient to import the CSV files.
+
+# Load Libraries
+
+-   Import all the Python libraries we need here.
+
+```{python}
+#| echo: true
+#| eval: true
+import pandas as pd
+```
+
+# Question 1
+
+-   Consider the probability of survival in `titanic_1.csv`.
+
+```{python}
+#| echo: true
+#| eval: true
+titanic_1 = pd.read_csv('https://bcdanl.github.io/data/titanic_1.csv')
+```
+
+```{python}
+#| echo: true
+#| eval: true
+titanic_1.head()
+```
+
+```{python}
+#| echo: true
+#| eval: true
+titanic_1.describe()
+```
+
+## Q1a
+
+-   Calculate the simple difference between the probability of survival when passengers are first-class and the probability of survival when they are not.
+
+
+code-tools: true
+# title-block-banner: true
+
+comments:
+  hypothesis: 
+    theme: clean
+
+## Q1b
+
+-   How much does the probability of survival increase for first-class passengers relative to those who are not first-class passengers?
+
+-   `SDP` tells us what would happen to the probability of survival if non-first-class passengers were first-class.
+
+    -   In other words, `SDP` means the effect of being the first-class on the probability of survival from the Titanic Disaster.
+
+## Q1c
+
+-   Consider the probability of survival in `titanic_2.csv`.
+
+```{python}
+titanic_2 = pd.read_csv('https://bcdanl.github.io/data/titanic_2.csv')
+```
+
+```{python}
+titanic_2.head()
+```
+
+```{python}
+titanic_2.describe()
+```
+
+-   After stratifying on gender and age, what happens to the difference in the probabilities of survival between first-class passengers and non-first-class passengers?
+
+-   Explain in your own words what stratifying on gender and age did for this difference in probabilities of survival between first-class passengers and non-first-class passengers.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+# Question 2
+
+-   Consider the data file, `NHL-1617.csv`.
+
+```{python}
+#| echo: true
+#| eval: true
+nhl1617 = pd.read_csv('https://bcdanl.github.io/data/NHL-1617.csv')
+```
+
+```{python}
+#| echo: true
+#| eval: true
+nhl1617.head()
+```
+
+```{python}
+#| echo: true
+#| eval: true
+nhl1617.describe()
+```
+
+## Q2a
+
+-   How many players have been recorded?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2b.
+
+-   A column `points` ("`P`") is missing in the data. The number of points of a player is defined as the sum of his goals ("`G`") and `assists` ("`A`").
+
+-   Add the point column "`P`" to your DataFrame.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2c.
+
+-   Who is the top scorer in terms of points?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2d.
+
+-   How many Russian (non-goalie) players had some ice time in there 2016/2017 regular season?
+
+-   Hint: Nationality of a player can be found in "Nat". Russians are indicated by "RUS".
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2e.
+
+-   What are their names?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2f.
+
+-   Who performed best among the Russian players in terms of points ("`P`")?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2g.
+
+-   How many points ("`P`") did he have?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2h.
+
+-   How well did he perform in the entire league? Put differently, what was his rank in terms of points?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2i.
+
+-   Find the top ten scorers (in terms of points) and print them including their number of point and their respective team.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q2j.
+
+-   What are the three countries with the most players originating from?
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+# Question 3
+
+-   Consider the data file, `coal_production_county.csv`.
+
+```{python}
+#| echo: true
+#| eval: true
+coal = pd.read_csv('https://bcdanl.github.io/data/coal_production_county.csv')
+```
+
+## Q3a.
+
+-   For each type of mine, calculate the total coal production for each pair of state-year.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+## Q3b.
+
+-   Find the top 5 coal-producing states for each year.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+## Q3c.
+
+-   Visualize the yearly trend of the total coal production from each type of mine.
+<br>
+
+*Answer*
+
+```{python}
+
+```
+
+
+
+
+<br><br><br>
+
+# Discussion
+
+<font size = "5">Hello everyone! Welcome to the Homework 3 Discussion Board! 🌟</font>
+
+This board is all about connecting and discussing Homework 3 with your fellow students.
+
+If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 3 questions or need a bit more clarity on some parts, feel free to post them here.
+
+Together, let's boost our understanding and make learning more fun!
+
