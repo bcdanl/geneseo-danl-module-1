@@ -1,0 +1,35 @@
+---
+title: Take-home Exam
+subtitle: [Take-home Exam may be subject to change during the Module.]
+date: 2024-03-19
+execute: 
+  echo: false
+  eval: false
+  warning: false
+  message: false
+from: markdown+emoji
+---
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+# Direction
+
+-   Write a Python code to answer each question.
+
+-   Make at least some simple comment (`# ...`) in each question.
+
+-   Import Python libraries you need here.
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+<br><br><br>
+

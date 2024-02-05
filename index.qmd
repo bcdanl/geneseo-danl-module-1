@@ -41,7 +41,7 @@ listing:
     filter-ui: false
     page-size: 36
   - id: danl-m1-hw
-    contents: "danl-hw/danl-m1*.qmd"
+    contents: "danl-hw/danl-m1-hw*.qmd"
     type: table
     fields: [title, date]
     sort: "date desc"

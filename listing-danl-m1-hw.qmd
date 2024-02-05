@@ -2,7 +2,7 @@
 title: '<font style="font-family:Optima"><b>DANL Module 1 - Homework</b></font>'
 date-modified: ""
 listing:
-  contents: "danl-hw/*.qmd"
+  contents: "danl-hw/danl-m1-hw*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "date desc"
