@@ -1,6 +1,6 @@
 ---
 title: Lecture 4
-subtitle: Filtering, Sorting, Ranking, and Visualization [The Lecture 4 slides may be subject to change during the Module.]
+subtitle: Filtering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

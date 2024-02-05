@@ -1,12 +1,15 @@
 ---
 title: Classwork 3
-subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [The Classwork 3 may be subject to change during the Module.]
+subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]
 date: 2024-02-20
 execute: 
   eval: false
   echo: false
   warning: false
   message: false
+  
+from: markdown+emoji
+comments: false
 ---
 # Load Data
 
@@ -81,16 +84,4 @@ df_ny.head(10)
 
 ```
 
-
-<br><br><br>
-  
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 </font>
-
-This board is here for you to connect with peer classmates over the content presented in Classwork 1. 
-
-If you have specific questions for Byeong-Hak (**@bcdanl**) related to Classwork 1 or if you're seeking more detailed explanations on any topics, don't hesitate to post them here.
-
-Let's work together and enrich our learning experience!
 

@@ -1,5 +1,5 @@
 ---
-title: Lecture 3 - Q & A
+title: Week 3 - Q & A
 # date: last-modified
 date: 2024-02-20
 execute: 
@@ -13,15 +13,13 @@ from: markdown+emoji
 
 <br>
 
-<font size = "5">Welcome to our Lecture 3 Discussion Board! 👋 </font>
+<font size = "5">Welcome to our Week 3 Discussion Board! 👋 </font>
 
 
-This space is designed for you to engage with your classmates about the material covered in Lecture 3 slides. 
+This space is designed for you to engage with your classmates about the material covered in Week 3, including Lecture 3 slides, Classwork 3, and Homework Assignment 3. 
 
 Whether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.
 
-If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding Lecture 3's slides or need clarification on any points, don't hesitate to ask here. 
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Week 3 materials or need clarification on any points, don't hesitate to ask here. 
 
 Let's collaborate and learn from each other!
-
-

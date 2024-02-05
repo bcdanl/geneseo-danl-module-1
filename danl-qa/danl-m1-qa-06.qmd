@@ -1,5 +1,5 @@
 ---
-title: Lecture 6 - Q & A
+title: Week 6 - Q & A
 # date: last-modified
 date: 2024-03-12
 execute: 
@@ -13,15 +13,15 @@ from: markdown+emoji
 
 <br>
 
-<font size = "5">Welcome to our Lecture 6 Discussion Board! 👋 </font>
+
+<font size = "5">Welcome to our Week 6 Discussion Board! 👋 </font>
 
 
-This space is designed for you to engage with your classmates about the material covered in Lecture 6 slides. 
+This space is designed for you to engage with your classmates about the material covered in Week 6, including Lecture 6 slides, Classwork 6, and Homework Assignment 6. 
 
 Whether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.
 
-If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding Lecture 6's slides or need clarification on any points, don't hesitate to ask here. 
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Week 6 materials or need clarification on any points, don't hesitate to ask here. 
 
 Let's collaborate and learn from each other!
-
 

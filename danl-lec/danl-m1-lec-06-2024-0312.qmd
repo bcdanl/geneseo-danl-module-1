@@ -1,6 +1,6 @@
 ---
 title: Lecture 6
-subtitle: Tidy Data [The Lecture 6 slides may be subject to change during the Module.]
+subtitle: Tidy Data [Lecture 6 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

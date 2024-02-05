@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 3
-subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [The Homework Assignment 3 may be subject to change during the Module.]
+title: Homework 3
+subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]
 date: 2024-02-20
 execute: 
   echo: false
@@ -8,6 +8,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -309,16 +310,4 @@ coal = pd.read_csv('https://bcdanl.github.io/data/coal_production_county.csv')
 
 
 
-
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 3 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 3 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 3 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 

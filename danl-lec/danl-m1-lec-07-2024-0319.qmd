@@ -1,6 +1,6 @@
 ---
 title: Lecture 7
-subtitle: Missing Data and Time-series Data [The Lecture 7 slides may be subject to change during the Module.]
+subtitle: Missing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

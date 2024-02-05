@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 6
-subtitle: Merging, Joining, and Concaternating DataFrames [The Homework Assignment 6 may be subject to change during the Module.]
+title: Homework 6
+subtitle: Merging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]
 date: 2024-03-12
 execute: 
   echo: false
@@ -8,6 +8,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -71,15 +72,4 @@ Extract the five longest bike rides by duration from the data set.
 
 
 
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 6 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 6 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 6 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 

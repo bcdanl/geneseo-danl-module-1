@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 5
-subtitle: Reshaping and Pivoting DataFrames [The Homework Assignment 5 may be subject to change during the Module.]
+title: Homework 5
+subtitle: Reshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]
 date: 2024-03-05
 execute: 
   echo: false
@@ -8,6 +8,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -64,16 +65,4 @@ Identify which customers came in only on Week 1 and only on Week 2.
 Each row in the `week1` DataFrame identifies a customer who purchased a food item. For each row, pull in the customer’s information from the customers DataFrame.
 
 
-
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 5 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 5 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 5 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 

@@ -1,6 +1,6 @@
 ---
 title: Lecture 2
-subtitle: Pandas basics [The Lecture 2 slides may be subject to change during the Module.]
+subtitle: Pandas basics [Lecture 2 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

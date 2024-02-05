@@ -1,12 +1,15 @@
 ---
 title: Classwork 6
-subtitle: Merging, Joining, and Concaternating DataFrames [The Classwork 6 may be subject to change during the Module.]
+subtitle: Merging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]
 date: 2024-03-12
 execute: 
   eval: false
   echo: false
   warning: false
   message: false
+  
+from: markdown+emoji
+comments: false
 ---
 
 ## Load Libraries
@@ -146,17 +149,3 @@ Find the airline that has the largest proportion of flights with longer than 30-
 
 ```
 
-
-
-
-<br><br><br>
-  
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 </font>
-
-This board is here for you to connect with peer classmates over the content presented in Classwork 1. 
-
-If you have specific questions for Byeong-Hak (**@bcdanl**) related to Classwork 1 or if you're seeking more detailed explanations on any topics, don't hesitate to post them here.
-
-Let's work together and enrich our learning experience!

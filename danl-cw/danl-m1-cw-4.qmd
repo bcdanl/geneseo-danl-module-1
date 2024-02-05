@@ -1,13 +1,23 @@
 ---
 title: Classwork 4
-subtitle: Group Operations with GroupBy Objects [The Classwork 4 may be subject to change during the Module.]
+subtitle: Group Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]
 date: 2024-02-27
 execute: 
   eval: false
   echo: false
   warning: false
   message: false
+  
+from: markdown+emoji
+comments: false
 ---
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
 
 ## Load Libraries
 
@@ -93,19 +103,5 @@ beer_mkt.head(10)
 ```{python}
 
 ```
-
-
-
-<br><br><br>
-  
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 </font>
-
-This board is here for you to connect with peer classmates over the content presented in Classwork 1. 
-
-If you have specific questions for Byeong-Hak (**@bcdanl**) related to Classwork 1 or if you're seeking more detailed explanations on any topics, don't hesitate to post them here.
-
-Let's work together and enrich our learning experience!
 
 

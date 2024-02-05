@@ -1,5 +1,5 @@
 ---
-title: Lecture 7 - Q & A
+title: Week 7 - Q & A
 # date: last-modified
 date: 2024-03-19
 execute: 
@@ -13,15 +13,15 @@ from: markdown+emoji
 
 <br>
 
-<font size = "5">Welcome to our Lecture 7 Discussion Board! 👋 </font>
+
+<font size = "5">Welcome to our Week 7 Discussion Board! 👋 </font>
 
 
-This space is designed for you to engage with your classmates about the material covered in Lecture 7 slides. 
+This space is designed for you to engage with your classmates about the material covered in Week 7, including Lecture 7 slides and Classwork 7.
 
 Whether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.
 
-If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding Lecture 7's slides or need clarification on any points, don't hesitate to ask here. 
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Week 7 materials or need clarification on any points, don't hesitate to ask here. 
 
 Let's collaborate and learn from each other!
-
 

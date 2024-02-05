@@ -1,6 +1,6 @@
 ---
 title: Lecture 5
-subtitle: Group Opeations [The Lecture 5 slides may be subject to change during the Module.]
+subtitle: Group Opeations [Lecture 5 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

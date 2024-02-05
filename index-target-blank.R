@@ -25,6 +25,13 @@ for (i in 1:length(lec_nos)){
                                   new_content)
 }
 
+old_content <- '<img src="./img/microcredential-badge.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">'
+new_content <- '<img src="./img/microcredential-badge.png" alt="Home" title="Home - SUNY Geneseo Data Analytics Microcredential" class="sidebar-logo py-0 d-lg-inline d-none">'
+
+html_as_text <- str_replace_all(html_as_text,
+                                old_content,
+                                new_content)
+
 writeLines(html_as_text, 
            "index.html")
 

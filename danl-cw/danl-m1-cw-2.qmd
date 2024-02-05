@@ -1,12 +1,15 @@
 ---
 title: Classwork 2
-subtitle: Pandas Basics [The Classwork 2 may be subject to change during the Module.]
+subtitle: Pandas Basics [Classwork 2 may be subject to change during the Module.]
 date: 2024-02-13
 execute: 
   eval: false
   echo: false
   warning: false
   message: false
+  
+from: markdown+emoji
+comments: false
 ---
 
 - The following is the Python libraries we need for this homework.
@@ -171,18 +174,4 @@ Make a simple comment on comparison for the distribution of `price_per_floz` acr
 ```
 
 
-<br><br><br>
-  
-# Discussion
 
-<font size = "5">Hello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 </font>
-
-This board is here for you to connect with peer classmates over the content presented in Classwork 1. 
-
-If you have specific questions for Byeong-Hak (**@bcdanl**) related to Classwork 1 or if you're seeking more detailed explanations on any topics, don't hesitate to post them here.
-
-Let's work together and enrich our learning experience!
-
-
-
-  

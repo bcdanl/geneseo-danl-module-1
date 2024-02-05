@@ -4,131 +4,131 @@
     "href": "listing-danl-m1-qa.html",
     "title": "DANL Module 1 - Lecture Discussion",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 7 - Q & A\n\n\nMarch 19, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nMarch 12, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nMarch 5, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nWeek 1 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nWeek 2 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nWeek 3 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nWeek 4 - Q & A\n\n\nFebruary 27, 2024\n\n\n\n\nWeek 5 - Q & A\n\n\nMarch 5, 2024\n\n\n\n\nWeek 6 - Q & A\n\n\nMarch 12, 2024\n\n\n\n\nWeek 7 - Q & A\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-1.html",
     "href": "danl-hw/danl-m1-hw-1.html",
-    "title": "Homework Assignment 1",
+    "title": "Homework 1",
     "section": "",
-    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files.\n\n\n\nLoad Libraries\n\nImport all the Python libraries we need here.\n\n\n\nQuestion 1\n\nages = (55, 28, 24, 34, 59, 22, 19, 72, 21, 37)\n\nWrite a Python code that uses a list comprehension to create a list of ages that are over 30 based on the ages list.\n\nAnswer\n\n\n\nQuestion 2\nWrite a Python code that uses (1) input() function with a message in the Console “Please enter a number less than 100:” and (2) if-else statement to print (a) “The value entered is greater than or equal to 75.” if the value entered from the Spyder Console is greater than or equal to 75, and (b) “The value entered is greater than or equal to 50.” and “The value entered is also less than 75.” if the value entered from the Spyder Console is less than 75 and greater than or equal to 50, and (c) “The value entered is less than 50.” otherwise.\n\nAnswer\n\n\n\nQuestion 3\n\nsequence = [1, 2, None, 4, None, 5, None, None, 6, 7, 8, None, 9, 10]\n\nWrite a Python code that uses a for-loop statement to process each element of sequence to calculate the sum of all the numeric values in the sequence list.\n\nAnswer\n\n\n\nQuestion 4\n\nWordle = [\"shark\", \n\"wheal\", \n\"cheat\", \n\"stand\", \n\"table\", \n\"fight\", \n\"crane\", \n\"pease\", \n\"sweet\", \n\"lamed\", \n\"stope\", \n\"hints\", \n\"month\", \n\"shade\", \n\"mayor\", \n\"faith\", \n\"cable\", \n\"today\", \n\"tidal\", \n\"stick\", \n\"lochs\", \n\"short\", \n\"docus\", \n\"split\", \n\"swift\", \n\"sweat\", \n\"skeet\", \n\"swelt\", \n\"blast\", \n\"trash\", \n\"tiger\", \n\"setup\", \n\"fiest\", \n\"belly\", \n\"pokey\", \n\"sting\", \n\"blond\", \n\"goldy\", \n\"stamp\", \n\"hooly\", \n\"moray\", \n\"dumas\", \n\"roast\", \n\"chino\", \n\"chest\", \n\"check\", \n\"roast\", \n\"blind\", \n\"check\", \n\"fogle\", \n\"cheek\", \n\"oxide\", \n\"olive\", \n\"deash\", \n\"paves\", \n\"steam\", \n\"absey\", \n\"pesty\", \n\"mardy\", \n\"strap\", \n\"forum\", \n\"forby\", \n\"baste\", \n\"bagie\", \n\"stomp\", \n\"misty\", \n\"adieu\", \n\"balky\", \n\"stick\", \n\"couch\", \n\"dutch\", \n\"steam\", \n\"stomp\", \n\"calos\", \n\"pasty\", \n\"guild\", \n\"meril\", \n\"hasty\", \n\"birch\", \n\"grind\", \n\"filer\", \n\"paler\", \n\"glide\", \n\"fudge\", \n\"kedge\", \n\"wedge\", \n\"hedge\", \n\"plica\", \n\"chirp\", \n\"manor\", \n\"maids\", \n\"crest\", \n\"covin\", \n\"blart\", \n\"chart\", \n\"comma\", \n\"gavel\", \n\"aphid\", \n\"orbit\", \n\"sloth\", \n\"stear\", \n\"blurs\"] \n\nWrite a Python code that uses a for-loop statement and a if-else statement to create a Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 5\n\nWordle_by_letter = {'s': ['shark',\n  'stand',\n  'sweet',\n  'stope',\n  'shade',\n  'stick',\n  'short',\n  'split',\n  'swift',\n  'sweat',\n  'skeet',\n  'swelt',\n  'setup',\n  'sting',\n  'stamp',\n  'steam',\n  'strap',\n  'stomp',\n  'stick',\n  'steam',\n  'stomp',\n  'sloth',\n  'stear'],\n 'w': ['wheal', 'wedge'],\n 'c': ['cheat',\n  'crane',\n  'cable',\n  'chino',\n  'chest',\n  'check',\n  'check',\n  'cheek',\n  'couch',\n  'calos',\n  'chirp',\n  'crest',\n  'covin',\n  'chart',\n  'comma'],\n 't': ['table', 'today', 'tidal', 'trash', 'tiger'],\n 'f': ['fight', 'faith', 'fiest', 'fogle', 'forum', 'forby', 'filer', 'fudge'],\n 'p': ['pease', 'pokey', 'paves', 'pesty', 'pasty', 'paler', 'plica'],\n 'l': ['lamed', 'lochs'],\n 'h': ['hints', 'hooly', 'hasty', 'hedge'],\n 'm': ['month', 'mayor', 'moray', 'mardy', 'misty', 'meril', 'manor', 'maids'],\n 'd': ['docus', 'dumas', 'deash', 'dutch'],\n 'b': ['blast',\n  'belly',\n  'blond',\n  'blind',\n  'baste',\n  'bagie',\n  'balky',\n  'birch',\n  'blart',\n  'blurs'],\n 'g': ['goldy', 'guild', 'grind', 'glide', 'gavel'],\n 'r': ['roast', 'roast'],\n 'o': ['oxide', 'olive', 'orbit'],\n 'a': ['absey', 'adieu', 'aphid'],\n 'k': ['kedge']}\n\nWrite a Python code that uses (1) a dictionary, Wordle_by_letter (2) sorted(), and (3) dictionary comprehension to create an alphabetically-ordered Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 6\nThis Python code uses a function to look up code meanings for variables, region and happy, using dictionaries:\n\ndef code_lookup(codes):\n    region, happy = codes\n    print(\"region, happy: \", (region, happy))\n    region_dict = {1:\"New England\", \n                   2:\"Middle Atlantic\",\n                   3:\"East North Central\", \n                   4:\"West North Central\",\n                   5:\"South Atlantic\", \n                   6:\"East South Central\",\n                   7:\"West South Central\", \n                   8:\"Mountain\", \n                   9:\"Pacific\"}\n    happy_dict = {1:\"Very happy\", \n                  2:\"Pretty happy\", \n                  3:\"Not too happy\",\n                  8:\"Don't know\", \n                  9:\"No answer\", \n                  0:\"Not applicable\"}\n    return(region_dict[region], happy_dict[happy])\n\nWrite a Python code that uses the function code_lookup() and the print() function to print the followings:\n\nInterview region: East North Central\n\n\nHappiness level: Pretty happy\n\n\nAnswer\n\n\n\nDiscussion\nHello everyone! Welcome to the Homework 1 Discussion Board! 🌟\nThis board is all about connecting and discussing Homework 1 with your fellow students.\nIf you’ve got any questions for Byeong-Hak (@bcdanl) about the Homework 1 questions or need a bit more clarity on some parts, feel free to post them here.\nTogether, let’s boost our understanding and make learning more fun!\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework Assignment 1.” February\n6, 2024."
+    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files.\n\n\n\nLoad Libraries\n\nImport all the Python libraries we need here.\n\n\n\nQuestion 1\n\nages = (55, 28, 24, 34, 59, 22, 19, 72, 21, 37)\n\nWrite a Python code that uses a list comprehension to create a list of ages that are over 30 based on the ages list.\n\nAnswer\n\n\n\nQuestion 2\nWrite a Python code that uses (1) input() function with a message in the Console “Please enter a number less than 100:” and (2) if-else statement to print (a) “The value entered is greater than or equal to 75.” if the value entered from the Spyder Console is greater than or equal to 75, and (b) “The value entered is greater than or equal to 50.” and “The value entered is also less than 75.” if the value entered from the Spyder Console is less than 75 and greater than or equal to 50, and (c) “The value entered is less than 50.” otherwise.\n\nAnswer\n\n\n\nQuestion 3\n\nsequence = [1, 2, None, 4, None, 5, None, None, 6, 7, 8, None, 9, 10]\n\nWrite a Python code that uses a for-loop statement to process each element of sequence to calculate the sum of all the numeric values in the sequence list.\n\nAnswer\n\n\n\nQuestion 4\n\nWordle = [\"shark\", \n\"wheal\", \n\"cheat\", \n\"stand\", \n\"table\", \n\"fight\", \n\"crane\", \n\"pease\", \n\"sweet\", \n\"lamed\", \n\"stope\", \n\"hints\", \n\"month\", \n\"shade\", \n\"mayor\", \n\"faith\", \n\"cable\", \n\"today\", \n\"tidal\", \n\"stick\", \n\"lochs\", \n\"short\", \n\"docus\", \n\"split\", \n\"swift\", \n\"sweat\", \n\"skeet\", \n\"swelt\", \n\"blast\", \n\"trash\", \n\"tiger\", \n\"setup\", \n\"fiest\", \n\"belly\", \n\"pokey\", \n\"sting\", \n\"blond\", \n\"goldy\", \n\"stamp\", \n\"hooly\", \n\"moray\", \n\"dumas\", \n\"roast\", \n\"chino\", \n\"chest\", \n\"check\", \n\"roast\", \n\"blind\", \n\"check\", \n\"fogle\", \n\"cheek\", \n\"oxide\", \n\"olive\", \n\"deash\", \n\"paves\", \n\"steam\", \n\"absey\", \n\"pesty\", \n\"mardy\", \n\"strap\", \n\"forum\", \n\"forby\", \n\"baste\", \n\"bagie\", \n\"stomp\", \n\"misty\", \n\"adieu\", \n\"balky\", \n\"stick\", \n\"couch\", \n\"dutch\", \n\"steam\", \n\"stomp\", \n\"calos\", \n\"pasty\", \n\"guild\", \n\"meril\", \n\"hasty\", \n\"birch\", \n\"grind\", \n\"filer\", \n\"paler\", \n\"glide\", \n\"fudge\", \n\"kedge\", \n\"wedge\", \n\"hedge\", \n\"plica\", \n\"chirp\", \n\"manor\", \n\"maids\", \n\"crest\", \n\"covin\", \n\"blart\", \n\"chart\", \n\"comma\", \n\"gavel\", \n\"aphid\", \n\"orbit\", \n\"sloth\", \n\"stear\", \n\"blurs\"] \n\nWrite a Python code that uses a for-loop statement and a if-else statement to create a Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 5\n\nWordle_by_letter = {'s': ['shark',\n  'stand',\n  'sweet',\n  'stope',\n  'shade',\n  'stick',\n  'short',\n  'split',\n  'swift',\n  'sweat',\n  'skeet',\n  'swelt',\n  'setup',\n  'sting',\n  'stamp',\n  'steam',\n  'strap',\n  'stomp',\n  'stick',\n  'steam',\n  'stomp',\n  'sloth',\n  'stear'],\n 'w': ['wheal', 'wedge'],\n 'c': ['cheat',\n  'crane',\n  'cable',\n  'chino',\n  'chest',\n  'check',\n  'check',\n  'cheek',\n  'couch',\n  'calos',\n  'chirp',\n  'crest',\n  'covin',\n  'chart',\n  'comma'],\n 't': ['table', 'today', 'tidal', 'trash', 'tiger'],\n 'f': ['fight', 'faith', 'fiest', 'fogle', 'forum', 'forby', 'filer', 'fudge'],\n 'p': ['pease', 'pokey', 'paves', 'pesty', 'pasty', 'paler', 'plica'],\n 'l': ['lamed', 'lochs'],\n 'h': ['hints', 'hooly', 'hasty', 'hedge'],\n 'm': ['month', 'mayor', 'moray', 'mardy', 'misty', 'meril', 'manor', 'maids'],\n 'd': ['docus', 'dumas', 'deash', 'dutch'],\n 'b': ['blast',\n  'belly',\n  'blond',\n  'blind',\n  'baste',\n  'bagie',\n  'balky',\n  'birch',\n  'blart',\n  'blurs'],\n 'g': ['goldy', 'guild', 'grind', 'glide', 'gavel'],\n 'r': ['roast', 'roast'],\n 'o': ['oxide', 'olive', 'orbit'],\n 'a': ['absey', 'adieu', 'aphid'],\n 'k': ['kedge']}\n\nWrite a Python code that uses (1) a dictionary, Wordle_by_letter (2) sorted(), and (3) dictionary comprehension to create an alphabetically-ordered Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 6\nThis Python code uses a function to look up code meanings for variables, region and happy, using dictionaries:\n\ndef code_lookup(codes):\n    region, happy = codes\n    print(\"region, happy: \", (region, happy))\n    region_dict = {1:\"New England\", \n                   2:\"Middle Atlantic\",\n                   3:\"East North Central\", \n                   4:\"West North Central\",\n                   5:\"South Atlantic\", \n                   6:\"East South Central\",\n                   7:\"West South Central\", \n                   8:\"Mountain\", \n                   9:\"Pacific\"}\n    happy_dict = {1:\"Very happy\", \n                  2:\"Pretty happy\", \n                  3:\"Not too happy\",\n                  8:\"Don't know\", \n                  9:\"No answer\", \n                  0:\"Not applicable\"}\n    return(region_dict[region], happy_dict[happy])\n\nWrite a Python code that uses the function code_lookup() and the print() function to print the followings:\n\nInterview region: East North Central\n\n\nHappiness level: Pretty happy\n\n\nAnswer\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 1.” February 6, 2024."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html",
     "href": "danl-hw/danl-m1-hw-2.html",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "",
     "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1a",
     "href": "danl-hw/danl-m1-hw-2.html#q1a",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q1a",
     "text": "Q1a\nWrite a Python code that uses the list, a, to create the following Numpy Array:\n\narray([0.1, 1.2, 2.3, 3.4, 4.5])\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1b",
     "href": "danl-hw/danl-m1-hw-2.html#q1b",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q1b",
     "text": "Q1b\nWrite a Python code that uses the list, a, to create the following pandas Series:\n\n########################\n# Index      0\n\n# 0         0.1\n# 1         1.2\n# 2         2.3\n# 3         3.4\n# 4         4.5\n\n# dtype: float64    \n########################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1c",
     "href": "danl-hw/danl-m1-hw-2.html#q1c",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q1c",
     "text": "Q1c\nWrite a Python code that uses the list, a, to create the following pandas Series:\n\n########################\n# Index      0\n\n# a         0.1\n# b         1.2\n# c         2.3\n# d         3.4\n# e         4.5\n\n# dtype: float64    \n########################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1d",
     "href": "danl-hw/danl-m1-hw-2.html#q1d",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q1d",
     "text": "Q1d\nWrite a Python code that uses (1) the Series created in Q1c and (2) Boolean indexing to get the following Series:\n\n########################\n# Index      0\n\n# c         2.3\n# d         3.4\n# e         4.5\n\n# dtype: float64    \n########################  \n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q2a",
     "href": "danl-hw/danl-m1-hw-2.html#q2a",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q2a",
     "text": "Q2a\nWrite a Python code that uses the list, hh_income, to assign the object, hh_income_array, to the following Numpy array:\n\n############################\n\n# array([[    10,  14629],\n#        [    20,  25600],\n#        [    30,  37002],\n#        [    40,  50000],\n#        [    50,  63179],\n#        [    60,  79542],\n#        [    70, 100162],\n#        [    80, 130000],\n#        [    90, 184292]])\n\n############################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q2b",
     "href": "danl-hw/danl-m1-hw-2.html#q2b",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q2b",
     "text": "Q2b\nWrite a Python code that uses the print() function to report the dimensions of the ndarray and the number of elements in hh_income_array as follows:\n\nDimensions of the NumPy array, hh_income_array, is: (9, 2)\n\n\nNumber of elements in the NumPy array, hh_income_array, is: 18\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q3a.",
     "href": "danl-hw/danl-m1-hw-2.html#q3a.",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q3a.",
     "text": "Q3a.\nWrite a Python code that uses the NumPy array, c, to create the following DataFrame:\n\n############################\n\n# index     0    1\n# 0         1.0  2.0\n# 1         3.0  4.0\n\n############################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q3b.",
     "href": "danl-hw/danl-m1-hw-2.html#q3b.",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q3b.",
     "text": "Q3b.\nWrite a Python code that uses the NumPy array, c, to create the following DataFrame:\n\n############################\n\n# index     dogs    cats\n# 0         1.0     2.0\n# 1         3.0     4.0\n\n############################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q3c.",
     "href": "danl-hw/danl-m1-hw-2.html#q3c.",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q3c.",
     "text": "Q3c.\nWrite a Python code that uses the NumPy array, c, to create the following DataFrame:\n\n############################\n\n# index             dogs    cats\n# byeong-hak        1.0     2.0\n# your_first_name   3.0     4.0\n\n############################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4a",
     "href": "danl-hw/danl-m1-hw-2.html#q4a",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4a",
     "text": "Q4a\nRead the data file, US_state_GDP.csv, as the object name, state_gdp, using (1) path_csv and (2) pd.read_csv() function.\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4b",
     "href": "danl-hw/danl-m1-hw-2.html#q4b",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4b",
     "text": "Q4b\nWrite a Python code that uses the DataFrame, state_gdp, to create the DataFrame, whose first five rows are as follows:\n\n############################################\n\n# index    state_code           state\n\n# 0          AK                Alaska\n# 1          AL               Alabama\n# 2          AR              Arkansas\n# 3          AZ               Arizona\n# 4          CA            California\n\n############################################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4c",
     "href": "danl-hw/danl-m1-hw-2.html#q4c",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4c",
     "text": "Q4c\nWrite a Python code that uses (1) the DataFrame, state_gdp, and (2) state_gdp.columns to create the DataFrame, whose first five rows are as follows:\n\n############################################\n\n#                    state  gdp_2009\n\n# 0                 Alaska     44215\n# 1                Alabama    149843\n# 2               Arkansas     89776\n# 3                Arizona    221405\n# 4             California   1667152\n\n############################################\n\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4d",
     "href": "danl-hw/danl-m1-hw-2.html#q4d",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4d",
     "text": "Q4d\nWrite a Python code to get the first three rows of the DataFrame, state_gdp:\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4e",
     "href": "danl-hw/danl-m1-hw-2.html#q4e",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4e",
     "text": "Q4e\nWrite a Python code to get all the rows of the DataFrame, state_gdp, for which the value of gdp_growth_2010 is less than 0\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4f",
     "href": "danl-hw/danl-m1-hw-2.html#q4f",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4f",
     "text": "Q4f\nWrite a Python code that uses state_gdp.loc[] to get the following DataFrame:\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q4g",
     "href": "danl-hw/danl-m1-hw-2.html#q4g",
-    "title": "Homework Assignment 2",
+    "title": "Homework 2",
     "section": "Q4g",
     "text": "Q4g\nWrite a Python code that uses state_gdp.iloc[] to get the following DataFrame:\n\nAnswer"
   },
@@ -142,128 +142,128 @@
   {
     "objectID": "danl-hw/danl-m1-hw-4.html",
     "href": "danl-hw/danl-m1-hw-4.html",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "",
     "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1a",
     "href": "danl-hw/danl-m1-hw-4.html#q1a",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1a",
     "text": "Q1a\nWhat are the minimum, first quartile, median, thrid quartile, maximum, mean, and standard deviation of Close and Volume for each company? \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1b",
     "href": "danl-hw/danl-m1-hw-4.html#q1b",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1b",
     "text": "Q1b\nFind the 10 largest values for Volume. What are the companies and dates associated with those 10 largest values for Volume? \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1c",
     "href": "danl-hw/danl-m1-hw-4.html#q1c",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1c",
     "text": "Q1c\nCalculate the Z-scores of Open and Close for each company using apply(). \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1d",
     "href": "danl-hw/danl-m1-hw-4.html#q1d",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1d",
     "text": "Q1d\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\nTo do so, divide all values for each company by the values of the first date in the data for that company. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1e",
     "href": "danl-hw/danl-m1-hw-4.html#q1e",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1e",
     "text": "Q1e\nProvide both seaborn code and a simple comment to describe the daily trend of normalized values of Close for each company in one plot. The normalized values of Close are the one calculated from Q1d. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q1f",
     "href": "danl-hw/danl-m1-hw-4.html#q1f",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q1f",
     "text": "Q1f\nCreate a box plot of Close for each company in one plot. Make a simple comment on the plot. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q2a",
     "href": "danl-hw/danl-m1-hw-4.html#q2a",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q2a",
     "text": "Q2a\nHow many parties have provided or disbursed positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018? \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q2b",
     "href": "danl-hw/danl-m1-hw-4.html#q2b",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q2b",
     "text": "Q2b\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q2c",
     "href": "danl-hw/danl-m1-hw-4.html#q2c",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q2c",
     "text": "Q2c\nFor each party, calculate the ratio between adaptation contribution and mitigation contribution for each type of Status for each year. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q2d",
     "href": "danl-hw/danl-m1-hw-4.html#q2d",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q2d",
     "text": "Q2d\nProvide both seaborn code and a simple comment to describe the distribution of the ratio between adaptation contribution and mitigation contribution, which is calculated in Q2c. \nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-4.html#q2e",
     "href": "danl-hw/danl-m1-hw-4.html#q2e",
-    "title": "Homework Assignment 4",
+    "title": "Homework 4",
     "section": "Q2e",
     "text": "Q2e\nProvide both seaborn code and a simple comment to describe how the distribution of Contribution varies by Type of support and Status. \nAnswer"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-03.html",
     "href": "danl-qa/danl-m1-qa-03.html",
-    "title": "Lecture 3 - Q & A",
+    "title": "Week 3 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 3 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 3 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 3’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 3 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 3, including Lecture 3 slides, Classwork 3, and Homework Assignment 3.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 3 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-01.html",
     "href": "danl-qa/danl-m1-qa-01.html",
-    "title": "Lecture 1 - Q & A",
+    "title": "Week 1 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 1 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 1’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 1, including Lecture 1 slides, Classwork 1, and Homework Assignment 1.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-04.html",
     "href": "danl-qa/danl-m1-qa-04.html",
-    "title": "Lecture 4 - Q & A",
+    "title": "Week 4 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 4 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 4 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 1’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 4 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 4, including Lecture 4 slides, Classwork 4, and Homework Assignment 1.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 4 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-07.html",
     "href": "danl-qa/danl-m1-qa-07.html",
-    "title": "Lecture 7 - Q & A",
+    "title": "Week 7 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 7 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 7 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 7’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 7 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 7, including Lecture 7 slides and Classwork 7.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 7 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "listing-danl-m1-lec.html",
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [The Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [The Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [The Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [The Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [The Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics [The Lecture 2 slides may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics [Lecture 1 slides may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics [Lecture 2 slides may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
     "href": "danl-cw/danl-m1-cw-1.html",
     "title": "Classwork 1",
     "section": "",
-    "text": "Question 1\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nThe smallest value in the list is: 8\n\n\nAnswer\n\n\n\nQuestion 2\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer\n\n\n\nQuestion 3\n\nx = 4.0\ny = .5\n\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\nbool(0) != bool('')\nx &lt; y or 3*y &lt; x\nnot (100 == '100' and 25 &lt; 36)\n\n\nAnswer\n\n\n\nQuestion 4\nThis Python code creates a tuple with seven different ages:\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\nWrite a Python code that uses a for-loop statement and a if-else statement to assign the list, under40_list, to [29, 25, 35, 23, 19] and the list, over40_list, to [65, 58].\n\nAnswer\n\n\n\nQuestion 5\n\ntuple_var = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\ntotal = 0\n\nWrite a Python code that uses the following two lines (1) a for-loop statement to process each element of tuple_var and (2) the following line.\n\nprint(\"The total of the values in the tuple is: \", total)\n\n\nAnswer\n\n\n\nQuestion 6\nWrite a Python code that uses a while-loop and the print() function to print out the following message 5 times:\n\nProgramming for Data Analytics is so fun!\n\n\nAnswer\n\n\n\nDiscussion\nHello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 \nThis board is here for you to connect with peer classmates over the content presented in Classwork 1.\nIf you have specific questions for Byeong-Hak (@bcdanl) related to Classwork 1 or if you’re seeking more detailed explanations on any topics, don’t hesitate to post them here.\nLet’s work together and enrich our learning experience!\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 1.” February 6, 2024."
+    "text": "Question 1\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nThe smallest value in the list is: 8\n\n\nAnswer\n\n\n\nQuestion 2\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer\n\n\n\nQuestion 3\n\nx = 4.0\ny = .5\n\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\nbool(0) != bool('')\nx &lt; y or 3*y &lt; x\nnot (100 == '100' and 25 &lt; 36)\n\n\nAnswer\n\n\n\nQuestion 4\nThis Python code creates a tuple with seven different ages:\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\nWrite a Python code that uses a for-loop statement and a if-else statement to assign the list, under40_list, to [29, 25, 35, 23, 19] and the list, over40_list, to [65, 58].\n\nAnswer\n\n\n\nQuestion 5\n\ntuple_var = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\ntotal = 0\n\nWrite a Python code that uses the following two lines (1) a for-loop statement to process each element of tuple_var and (2) the following line.\n\nprint(\"The total of the values in the tuple is: \", total)\n\n\nAnswer\n\n\n\nQuestion 6\nWrite a Python code that uses a while-loop and the print() function to print out the following message 5 times:\n\nProgramming for Data Analytics is so fun!\n\n\nAnswer\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 1.” February 6, 2024."
   },
   {
     "objectID": "danl-cw/danl-m1-cw-2.html",
@@ -1950,7 +1950,7 @@
     "href": "danl-cw/danl-m1-cw-3.html",
     "title": "Classwork 3",
     "section": "",
-    "text": "Load Data\n\nimport pandas as pd\ndf_ny = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_pop.csv')\ndf_ny.head(10)\n\n\nVariable Description\n\nFIPS: ID number for a county\npincp: average personal income in a county X in year Y\npop_18_24: population 18 to 24 years\npop_25_over: population 25 years and over\n\n\n\n\nQ1a\n\nUse .sort_values() to find the top 5 rich counties in NY for each year.\n\nDo not use .apply().\n\n\n\nAnswer\n\n\nQ1b\n\nUse .rank() to find the top 5 rich counties in NY for each year.\n\nDo not use apply().\n\n\n\nAnswer\n\n\nQ1c\n\nUse apply() with a lambda function and .sort_values() to find the top 5 rich counties in NY for each year. \n\nAnswer\n\n\nQ1d\n\nWrite a function with def and .sort_values() that selects the top 5 pincp values.\nThen, use the defined function in apply() to find the top 5 rich counties in NY for each year. \n\nAnswer\n\n\nQ1e\n\nVisualize the yearly trend of the mean level of pincp. \n\nAnswer\n\n\n\nDiscussion\nHello everyone! Welcome to our Classwork 1 Discussion Board! 🌟 \nThis board is here for you to connect with peer classmates over the content presented in Classwork 1.\nIf you have specific questions for Byeong-Hak (@bcdanl) related to Classwork 1 or if you’re seeking more detailed explanations on any topics, don’t hesitate to post them here.\nLet’s work together and enrich our learning experience!\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 3.” February 20, 2024."
+    "text": "Load Data\n\nimport pandas as pd\ndf_ny = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_pop.csv')\ndf_ny.head(10)\n\n\nVariable Description\n\nFIPS: ID number for a county\npincp: average personal income in a county X in year Y\npop_18_24: population 18 to 24 years\npop_25_over: population 25 years and over\n\n\n\n\nQ1a\n\nUse .sort_values() to find the top 5 rich counties in NY for each year.\n\nDo not use .apply().\n\n\n\nAnswer\n\n\nQ1b\n\nUse .rank() to find the top 5 rich counties in NY for each year.\n\nDo not use apply().\n\n\n\nAnswer\n\n\nQ1c\n\nUse apply() with a lambda function and .sort_values() to find the top 5 rich counties in NY for each year. \n\nAnswer\n\n\nQ1d\n\nWrite a function with def and .sort_values() that selects the top 5 pincp values.\nThen, use the defined function in apply() to find the top 5 rich counties in NY for each year. \n\nAnswer\n\n\nQ1e\n\nVisualize the yearly trend of the mean level of pincp. \n\nAnswer\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 3.” February 20, 2024."
   },
   {
     "objectID": "index.html",
@@ -1964,187 +1964,187 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nMarch 19, 2024\n\n\n\n\nLecture 6\n\n\nMarch 12, 2024\n\n\n\n\nLecture 5\n\n\nMarch 5, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 3\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 2\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 1\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#bullet-lecture-q-a",
-    "href": "index.html#bullet-lecture-q-a",
-    "title": "DANL Module 1: Data Preparation and Management, 2024",
-    "section": "\\(\\bullet\\,\\) Lecture Q & A ❓",
-    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7 - Q & A\n\n\nMarch 19, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nMarch 12, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nMarch 5, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\nClasswork 6\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-weekly-q-a",
+    "href": "index.html#bullet-weekly-q-a",
+    "title": "DANL Module 1: Data Preparation and Management, 2024",
+    "section": "\\(\\bullet\\,\\) Weekly Q & A ❓",
+    "text": "\\(\\bullet\\,\\) Weekly Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nWeek 1 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nWeek 2 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nWeek 3 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nWeek 4 - Q & A\n\n\nFebruary 27, 2024\n\n\n\n\nWeek 5 - Q & A\n\n\nMarch 5, 2024\n\n\n\n\nWeek 6 - Q & A\n\n\nMarch 12, 2024\n\n\n\n\nWeek 7 - Q & A\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
     "href": "index.html#bullet-homework",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 6\n\n\nMarch 12, 2024\n\n\n\n\nHomework Assignment 5\n\n\nMarch 5, 2024\n\n\n\n\nHomework Assignment 4\n\n\nFebruary 27, 2024\n\n\n\n\nHomework Assignment 3\n\n\nFebruary 20, 2024\n\n\n\n\nHomework Assignment 2\n\n\nFebruary 13, 2024\n\n\n\n\nHomework Assignment 1\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-06.html",
     "href": "danl-qa/danl-m1-qa-06.html",
-    "title": "Lecture 6 - Q & A",
+    "title": "Week 6 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 6 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 6 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 6’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 6 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 6, including Lecture 6 slides, Classwork 6, and Homework Assignment 6.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 6 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-05.html",
     "href": "danl-qa/danl-m1-qa-05.html",
-    "title": "Lecture 5 - Q & A",
+    "title": "Week 5 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 5 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 5 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 1’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 5, including Lecture 5 slides, Classwork 5, and Homework Assignment 5.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 5 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-02.html",
     "href": "danl-qa/danl-m1-qa-02.html",
-    "title": "Lecture 2 - Q & A",
+    "title": "Week 2 - Q & A",
     "section": "",
-    "text": "Welcome to our Lecture 2 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 2 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding Lecture 1’s slides or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+    "text": "Welcome to our Week 2 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 2, including Lecture 2 slides, Classwork 2, and Homework Assignment 2.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Week 2 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   },
   {
     "objectID": "listing-danl-m1-cw.html",
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [The Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [The Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [The Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [The Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [The Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics [The Classwork 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics [Classwork 1 may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics [Classwork 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
     "href": "danl-hw/danl-m1-hw-5.html",
-    "title": "Homework Assignment 5",
+    "title": "Homework 5",
     "section": "",
-    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\n\n\nQuestion 1\nConcatenate the two weeks of sales data into one DataFrame. Assign the week1 DataFrame a key of “Week 1” and the week2 DataFrame a key of “Week 2”.\n\n\n\nQuestion 2\nFind the customers who ate at the restaurant both weeks.\n\n\n\nQuestion 3\nFind the customers who ate at the restaurant both weeks and ordered the same item each week.\n\nHINT You can join data sets on multiple columns by passing the on parameter a list of columns.\n\n\n\n\nQuestion 4\nIdentify which customers came in only on Week 1 and only on Week 2.\n\n\n\nQuestion 5\nEach row in the week1 DataFrame identifies a customer who purchased a food item. For each row, pull in the customer’s information from the customers DataFrame.\n\n\n\nDiscussion\nHello everyone! Welcome to the Homework 5 Discussion Board! 🌟\nThis board is all about connecting and discussing Homework 5 with your fellow students.\nIf you’ve got any questions for Byeong-Hak (@bcdanl) about the Homework 5 questions or need a bit more clarity on some parts, feel free to post them here.\nTogether, let’s boost our understanding and make learning more fun!\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework Assignment 5.” March 5,\n2024."
+    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\n\n\nQuestion 1\nConcatenate the two weeks of sales data into one DataFrame. Assign the week1 DataFrame a key of “Week 1” and the week2 DataFrame a key of “Week 2”.\n\n\n\nQuestion 2\nFind the customers who ate at the restaurant both weeks.\n\n\n\nQuestion 3\nFind the customers who ate at the restaurant both weeks and ordered the same item each week.\n\nHINT You can join data sets on multiple columns by passing the on parameter a list of columns.\n\n\n\n\nQuestion 4\nIdentify which customers came in only on Week 1 and only on Week 2.\n\n\n\nQuestion 5\nEach row in the week1 DataFrame identifies a customer who purchased a food item. For each row, pull in the customer’s information from the customers DataFrame.\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 5.” March 5, 2024."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html",
     "href": "danl-hw/danl-m1-hw-6.html",
-    "title": "Homework Assignment 6",
+    "title": "Homework 6",
     "section": "",
-    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\nCiti Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at https://www.citibikenyc.com/system-data. citibike.csv is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a citi_bike variable:\n\nciti_bike = pd.read_csv(\"citibike.csv\")\n\n\n\nQuestion 1\nConvert the start_time and stop_time columns to store datetime (Timestamp) values instead of strings.\n\n\n\nQuestion 2\nCount the rides that occurred on each day of the week (Monday, Tuesday, and so on). Which weekday is the most popular for a bike ride? Use the start_time column as your starting point.\n\n\n\nQuestion 3\nCount the rides per week for each week within the month. To do so, round each date in the start_time column to its previous or current Monday. Assume that each week starts on a Monday and ends on a Sunday. Thus, the first week of June would be Monday, June 1 through Sunday, June 7.\n\n\n\nQuestion 4\nCalculate the duration of each ride, and save the results to a new duration column.\n\n\n\nQuestion 5\nFind the average duration of a bike ride.\n\n\n\nQuestion 6\nExtract the five longest bike rides by duration from the data set.\n\n\n\nDiscussion\nHello everyone! Welcome to the Homework 6 Discussion Board! 🌟\nThis board is all about connecting and discussing Homework 6 with your fellow students.\nIf you’ve got any questions for Byeong-Hak (@bcdanl) about the Homework 6 questions or need a bit more clarity on some parts, feel free to post them here.\nTogether, let’s boost our understanding and make learning more fun!\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework Assignment 6.” March 12,\n2024."
+    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\nCiti Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at https://www.citibikenyc.com/system-data. citibike.csv is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a citi_bike variable:\n\nciti_bike = pd.read_csv(\"citibike.csv\")\n\n\n\nQuestion 1\nConvert the start_time and stop_time columns to store datetime (Timestamp) values instead of strings.\n\n\n\nQuestion 2\nCount the rides that occurred on each day of the week (Monday, Tuesday, and so on). Which weekday is the most popular for a bike ride? Use the start_time column as your starting point.\n\n\n\nQuestion 3\nCount the rides per week for each week within the month. To do so, round each date in the start_time column to its previous or current Monday. Assume that each week starts on a Monday and ends on a Sunday. Thus, the first week of June would be Monday, June 1 through Sunday, June 7.\n\n\n\nQuestion 4\nCalculate the duration of each ride, and save the results to a new duration column.\n\n\n\nQuestion 5\nFind the average duration of a bike ride.\n\n\n\nQuestion 6\nExtract the five longest bike rides by duration from the data set.\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 6.” March 12, 2024."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html",
     "href": "danl-hw/danl-m1-hw-3.html",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "",
     "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q1a",
     "href": "danl-hw/danl-m1-hw-3.html#q1a",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q1a",
     "text": "Q1a\n\nCalculate the simple difference between the probability of survival when passengers are first-class and the probability of survival when they are not.\n\ncode-tools: true # title-block-banner: true\ncomments: hypothesis: theme: clean"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q1b",
     "href": "danl-hw/danl-m1-hw-3.html#q1b",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q1b",
     "text": "Q1b\n\nHow much does the probability of survival increase for first-class passengers relative to those who are not first-class passengers?\nSDP tells us what would happen to the probability of survival if non-first-class passengers were first-class.\n\nIn other words, SDP means the effect of being the first-class on the probability of survival from the Titanic Disaster."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q1c",
     "href": "danl-hw/danl-m1-hw-3.html#q1c",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q1c",
     "text": "Q1c\n\nConsider the probability of survival in titanic_2.csv.\n\n\nAfter stratifying on gender and age, what happens to the difference in the probabilities of survival between first-class passengers and non-first-class passengers?\nExplain in your own words what stratifying on gender and age did for this difference in probabilities of survival between first-class passengers and non-first-class passengers. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2a",
     "href": "danl-hw/danl-m1-hw-3.html#q2a",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2a",
     "text": "Q2a\n\nHow many players have been recorded? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2b.",
     "href": "danl-hw/danl-m1-hw-3.html#q2b.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2b.",
     "text": "Q2b.\n\nA column points (“P”) is missing in the data. The number of points of a player is defined as the sum of his goals (“G”) and assists (“A”).\nAdd the point column “P” to your DataFrame. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2c.",
     "href": "danl-hw/danl-m1-hw-3.html#q2c.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2c.",
     "text": "Q2c.\n\nWho is the top scorer in terms of points? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2d.",
     "href": "danl-hw/danl-m1-hw-3.html#q2d.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2d.",
     "text": "Q2d.\n\nHow many Russian (non-goalie) players had some ice time in there 2016/2017 regular season?\nHint: Nationality of a player can be found in “Nat”. Russians are indicated by “RUS”. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2e.",
     "href": "danl-hw/danl-m1-hw-3.html#q2e.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2e.",
     "text": "Q2e.\n\nWhat are their names? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2f.",
     "href": "danl-hw/danl-m1-hw-3.html#q2f.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2f.",
     "text": "Q2f.\n\nWho performed best among the Russian players in terms of points (“P”)? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2g.",
     "href": "danl-hw/danl-m1-hw-3.html#q2g.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2g.",
     "text": "Q2g.\n\nHow many points (“P”) did he have? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2h.",
     "href": "danl-hw/danl-m1-hw-3.html#q2h.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2h.",
     "text": "Q2h.\n\nHow well did he perform in the entire league? Put differently, what was his rank in terms of points? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2i.",
     "href": "danl-hw/danl-m1-hw-3.html#q2i.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2i.",
     "text": "Q2i.\n\nFind the top ten scorers (in terms of points) and print them including their number of point and their respective team. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q2j.",
     "href": "danl-hw/danl-m1-hw-3.html#q2j.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q2j.",
     "text": "Q2j.\n\nWhat are the three countries with the most players originating from? \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q3a.",
     "href": "danl-hw/danl-m1-hw-3.html#q3a.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q3a.",
     "text": "Q3a.\n\nFor each type of mine, calculate the total coal production for each pair of state-year. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q3b.",
     "href": "danl-hw/danl-m1-hw-3.html#q3b.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q3b.",
     "text": "Q3b.\n\nFind the top 5 coal-producing states for each year. \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#q3c.",
     "href": "danl-hw/danl-m1-hw-3.html#q3c.",
-    "title": "Homework Assignment 3",
+    "title": "Homework 3",
     "section": "Q3c.",
     "text": "Q3c.\n\nVisualize the yearly trend of the total coal production from each type of mine. \n\nAnswer"
   },
@@ -2153,6 +2153,6 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 6\n\n\nMerging, Joining, and Concaternating DataFrames [The Homework Assignment 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nHomework Assignment 5\n\n\nReshaping and Pivoting DataFrames [The Homework Assignment 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework Assignment 4\n\n\nGroup Operations with GroupBy Objects [The Homework Assignment 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework Assignment 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [The Homework Assignment 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework Assignment 2\n\n\nPandas Basics [The Homework Assignment 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nHomework Assignment 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics [Homework 1 may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics [Homework 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]

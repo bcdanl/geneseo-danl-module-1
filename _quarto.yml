@@ -3,7 +3,7 @@ project:
   output-dir: "." 
   
 website:
-  title: "[{{< fa solid home >}}]{class='quarto-navbar-tools-item'} &nbsp;Home &nbsp; "
+  title: Home # "[{{< fa solid home >}}]{class='quarto-navbar-tools-item'} &nbsp;Home &nbsp; "
   favicon: img/favicon.ico
   description: 'A collection of data analytics course contents by Byeong-Hak Choe'
   reader-mode: false
@@ -11,7 +11,7 @@ website:
 
   navbar:
     background: "#1c4982" #194493 
-    # logo: img/geneseo-logo-squared.png
+    logo: img/geneseo-logo-squared.png
     pinned: true
     right:
       - icon: github
@@ -46,14 +46,14 @@ website:
       - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
         href: listing-danl-m1-lec.qmd
       - text: &nbsp;
-      - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-        href: listing-danl-m1-qa.qmd
-      - text: &nbsp;
       - text: <font size ="5" ><b>- Classwork </b></font><font size ="5" color="#194493">{{< fa solid keyboard >}}</font>
         href: listing-danl-m1-cw.qmd
       - text: &nbsp;
       - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
         href: listing-danl-m1-hw.qmd
+      - text: &nbsp;
+      - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
+        href: listing-danl-m1-qa.qmd
 
   page-footer: 
     border: false

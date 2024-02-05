@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 1
-subtitle: Python Basics
+title: Homework 1
+subtitle: Python Basics [Homework 1 may be subject to change during the Module.]
 date: 2024-02-06
 execute: 
   echo: false
@@ -9,6 +9,7 @@ execute:
   message: false
   
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -333,16 +334,4 @@ Write a Python code that uses the function `code_lookup()` and the `print()` fun
 
 ```
 
-
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 1 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 1 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 1 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 

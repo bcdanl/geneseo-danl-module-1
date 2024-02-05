@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 4
-subtitle: Group Operations with GroupBy Objects [The Homework Assignment 4 may be subject to change during the Module.]
+title: Homework 4
+subtitle: Group Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]
 date: 2024-02-27
 execute: 
   echo: false
@@ -8,6 +8,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -203,16 +204,4 @@ Provide both seaborn code and a simple comment to describe how the distribution 
 
 
 
-
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 4 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 4 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 4 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 

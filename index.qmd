@@ -18,7 +18,7 @@ listing:
     contents: "danl-lec/danl-m1*.qmd"
     type: table
     fields: [title, date]
-    sort: "date desc"
+    sort: "date"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -27,7 +27,7 @@ listing:
     contents: "danl-qa/danl-m1*.qmd"
     type: table
     fields: [title, date]
-    sort: "date desc"
+    sort: "date"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -36,7 +36,7 @@ listing:
     contents: "danl-cw/danl-m1*.qmd"
     type: table
     fields: [title, date]
-    sort: "date desc"
+    sort: "date"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -44,7 +44,7 @@ listing:
     contents: "danl-hw/danl-m1-hw*.qmd"
     type: table
     fields: [title, date]
-    sort: "date desc"
+    sort: "date"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -110,9 +110,9 @@ format:
 
 
 ::: {.column width="45%"}
-## $\bullet\,$ Lecture Q & A :question:
+## $\bullet\,$ Classwork :keyboard:
 
-:::{#danl-m1-qa}
+:::{#danl-m1-cw}
 :::
 
 :::
@@ -124,16 +124,20 @@ format:
 :::: {.columns}
 
 ::: {.column width="45%"}
-## $\bullet\,$ Classwork :keyboard:
+## $\bullet\,$ Weekly Q & A :question:
 
-:::{#danl-m1-cw}
+:::{#danl-m1-qa}
 :::
 
 :::
+
+
 
 ::: {.column width="10%"}
 
 :::
+
+
 
 
 ::: {.column width="45%"}
@@ -143,6 +147,7 @@ format:
 :::
 
 :::
+
 
 ::::
 

@@ -1,6 +1,6 @@
 ---
-title: Homework Assignment 2
-subtitle: Pandas Basics [The Homework Assignment 2 may be subject to change during the Module.]
+title: Homework 2
+subtitle: Pandas Basics [Homework 2 may be subject to change during the Module.]
 date: 2024-02-13
 execute: 
   echo: false
@@ -8,6 +8,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
@@ -463,15 +464,4 @@ Write a Python code that uses `state_gdp.iloc[]` to get the following DataFrame:
 
     
 
-<br><br><br>
-
-# Discussion
-
-<font size = "5">Hello everyone! Welcome to the Homework 2 Discussion Board! 🌟</font>
-
-This board is all about connecting and discussing Homework 2 with your fellow students.
-
-If you've got any questions for Byeong-Hak (**@bcdanl**) about the Homework 2 questions or need a bit more clarity on some parts, feel free to post them here.
-
-Together, let's boost our understanding and make learning more fun!
 
