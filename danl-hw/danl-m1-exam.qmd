@@ -1,6 +1,6 @@
 ---
 title: Take-home Exam
-subtitle: [Take-home Exam may be subject to change during the Module.]
+subtitle: "[Take-home Exam may be subject to change during the Module.]"
 date: 2024-03-19
 execute: 
   echo: false
