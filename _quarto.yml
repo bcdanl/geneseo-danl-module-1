@@ -3,7 +3,7 @@ project:
   output-dir: "." 
   
 website:
-  title: "B.H. CHOE&nbsp;&nbsp;&nbsp;"
+  title: "[{{< fa solid home >}}]{class='quarto-navbar-tools-item'} &nbsp;Home &nbsp; "
   favicon: img/favicon.ico
   description: 'A collection of data analytics course contents by Byeong-Hak Choe'
   reader-mode: false
@@ -11,7 +11,7 @@ website:
 
   navbar:
     background: "#1c4982" #194493 
-    logo: img/geneseo-logo-squared.png
+    # logo: img/geneseo-logo-squared.png
     pinned: true
     right:
       - icon: github
@@ -41,6 +41,8 @@ website:
     contents:
       # - text: <a href="./index.html"><font size ="6" ><b>Welcome! </b></font><font size ="5" color="#194493"><i class="fa fa-user-circle" aria-hidden="true"></i> <i class="fa fa-sun" aria-hidden="true"></i></font></a>
       # - text: &nbsp;
+      - text: <font size ="5"><b>- Home </b></font><font size ="5" color="#194493">{{< fa solid home >}}</font>
+        href: https://bcdanl.github.io/module-1/
       - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
         href: listing-danl-m1-lec.qmd
       - text: &nbsp;
