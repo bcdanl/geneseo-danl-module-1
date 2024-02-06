@@ -1103,7 +1103,7 @@
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-39",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\npandasnumpymatplotlib and seaborn\n\n\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format.\n\n\n\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;\n\n\n\n\n\n\n\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\n\npandasnumpymatplotlib and seaborn\n\n\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format.\n\n\n\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;\n\n\n\n\n\n\n\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-40",

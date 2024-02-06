@@ -1362,6 +1362,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 ## Python Basics
 ### Importing Modules, Packages, and Libraries
 
+:::{.nonincremental}
 ::: {.panel-tabset}
 
 ## `pandas`
@@ -1392,7 +1393,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 
 :::
-
+:::
 
 ## Python Basics
 ### Importing Modules, Packages, and Libraries
