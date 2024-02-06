@@ -1075,7 +1075,7 @@
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-35",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions.\n\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")"
+    "text": "Python Basics\nFunctions\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-36",

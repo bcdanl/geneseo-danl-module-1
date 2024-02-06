@@ -1298,6 +1298,14 @@ suny[-6 : -4]
 ## Python Basics
 ### Functions
 
+```{.python}
+int("20") 
+float("14.3")
+str(5)
+int("xyz")
+```
+
+
 - A function can take any number and type of input *parameters* and **return** any number and type of output *results*.
 
 - Python ships with more than 65 built-in functions. 
@@ -1305,14 +1313,6 @@ suny[-6 : -4]
 - Python also allows a user to define a new function.
 
 - We will mostly use built-in functions. 
-
-
-```{.python}
-int("20") 
-float("14.3")
-str(5)
-int("xyz")
-```
 
 
 
