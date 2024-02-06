@@ -9,7 +9,6 @@ execute:
   message: false
   
 from: markdown+emoji
-comments: false
 ---
 
 ```{r}
@@ -18,7 +17,9 @@ comments: false
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
-# Question 1
+# Part I - Python Basics
+
+## Question 1
 Using Python operations only, calculate below:
 $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
@@ -31,7 +32,7 @@ $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 <br><br><br>
 
 
-# Question 2
+## Question 2
 
 For each expression below, what is the value of the expression? Explain thoroughly.
 
@@ -60,7 +61,7 @@ x < y or 3*y < x
 
 
 
-# Question 3
+## Question 3
 
 
 ```{python}
@@ -84,7 +85,7 @@ Write a Python code that uses *slicing* and the `print()` function to print out 
 
 <br><br><br>
 
-# Question 4
+## Question 4
 
 ```{python}
 #| echo: true
@@ -108,7 +109,7 @@ Write a Python code that uses `print()` and `max()` functions to print out the l
 <br><br><br>
 
 
-# Question 5
+## Question 5
 
 Import the `pandas` library as `pd`
 
@@ -120,4 +121,96 @@ Import the `pandas` library as `pd`
 
 <br><br><br>
 
+
+# Part II - Introduction to Markdown
+
+Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.
+
+## Basic Syntax
+
+### Headings
+Headings are created by adding one or more `#` symbols before your heading text. The number of `#` symbols indicates the level of the heading.
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+### Emphasis
+You can make text **bold** by wrapping it with two asterisks `**`, and *italic* by using one asterisk `*`.
+
+```markdown
+*italic* or _italic_
+**bold** or __bold__
+```
+
+### Lists
+Unordered lists are created using `*`, `-`, or `+`, while ordered lists are numbered.
+
+```markdown
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+```
+
+```markdown
+1. First item
+2. Second item
+```
+
+### Links and Images
+Links are created using `[Link Text](URL)`, and images with `![Alt Text](Image URL)`.
+
+```markdown
+[DANL 210](https://bcdanl.github.io/210)
+![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)
+```
+
+## Advanced Syntax
+
+### Blockquote
+
+```markdown
+> Be yourself. Everyone else is already taken. - Oscar Wilde.
+```
+
+
+### Emojis
+
+- A ton of markdown emojis are available here :smile: (`:smile:`)
+  - [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+
+
+
+### Code Blocks
+Code blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.
+
+
+````markdown
+```
+"string"
+```
+````
+
+````markdown
+```python
+# Python code block
+import numpy as np
+```
+````
+
+
+## Question 6
+
+- Do the following tasks on this Classwork 1 Discussion Board:
+  1. **Basic Syntax**: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.
+  2. **Advanced Syntax**: Write a comment that includes a Python code block, a blockquote, and an emoji.
+
+
+
+## References
+- [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Start writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 

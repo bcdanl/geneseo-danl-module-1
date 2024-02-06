@@ -105,9 +105,7 @@ knitr::knit_engines$set("markdown")
 ## Syllabus
 ### Reference Materials
 
-- [**Python for Data Analysis** (3rd Edition)](https://wesmckinney.com/book){target="_blank"} by [Wes McKinney](https://wesmckinney.com/){target="_blank"}
-
-- [Guide for Quarto](https://quarto.org/docs/guide){target="_blank"}
+- [Python for Data Analysis (3rd Edition)](https://wesmckinney.com/book){target="_blank"} by [Wes McKinney](https://wesmckinney.com/){target="_blank"}
 
 - [Python Programming for Data Science](https://www.tomasbeuzen.com/python-programming-for-data-science){target="_blank"} by Tomas Beuzen
 
@@ -127,8 +125,8 @@ knitr::knit_engines$set("markdown")
 ### Course Requirements
 
 - Laptop or personal computer
-  - Operating System: It is recommended to have **Mac** or **Windows**.
-  - Specification: It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.
+  - Operating System: **Mac** or **Windows**.
+  - Specification: 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.
   
 - **Homework**: There will be six homework assignments.
 
@@ -141,6 +139,8 @@ knitr::knit_engines$set("markdown")
 
 ## Syllabus
 ### Course Schedule and Contents
+
+There will be tentatively 7 class sessions.
 
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
@@ -203,7 +203,6 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
-- There will be tentatively 7 class sessions.
 
 
 
@@ -325,24 +324,6 @@ From 2008 to 2023
 
 
 
-
-## The State of the Art
-### Generative AI and ChatGPT
-
-- **Generative AI** refers to a category of artificial intelligence (AI) that is capable of generating new content, ranging from text, images, and videos to music and code. 
-
-:::{}
-
-- In the early 2020s, advances in transformer-based deep neural networks enabled a number of generative AI systems notable for accepting natural language prompts as input.
-  - These include large language model (LLM) chatbots such as ChatGPT, Copilot, Bard, and LLaMA.
-
-- **ChatGPT** (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched on November 30, 2022. 
-  - By January 2023, it had become what was then the fastest-growing consumer software application in history.
-
-:::
-
-
-
 ## The State of the Art
 ### Generative AI and ChatGPT
 
@@ -373,31 +354,10 @@ From 2008 to 2023
 :::{}
 - Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
   - It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
-  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
+  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to AI and scientific computing.
 
 :::
 
-
-
-## What is Git?
-
-:::: {.columns}
-
-::: {.column width="45%"}
-![](https://bcdanl.github.io/lec_figs/git-version.png)
-:::
-
-::: {.column width="55%"}
-
-$\quad$
-
-- **Git** is the most popular **version control** tool for any software development.
-  - It tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions.
-  - It is the industry standard and ubiquitous for coding collaboration.
-
-:::
-
-::::
 
 
 
@@ -422,31 +382,19 @@ $\quad$
 ## What is Google Colab?
 
 :::{}
-- [Google Colab](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your browser.
-  - The base Colab link listed above leads to a Python notebook introducing Colab and how to use it.
+- [Google Colab](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your web browser.
 
 - A key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed. 
   - It allows for CPU or GPU usage, even for free users, and stores the files in Google's servers so you can access your files from anywhere you can connect to the Internet.
   
 - Using Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.
 
-
-:::
-
-
-
-
-## What is Google Colab?
-
-
-:::{}
-
-- Colab notebooks don't just contain Python code. They can contain text, images, and HTML via Markdown!
-
-- Ultimately, they are intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer.
+- Colab notebooks don't just contain Python code. They can contain text, images, and HTML via **Markdown**!
 
 
 :::
+
+
 
 
 ## How do we use Google Colab with GitHub?
