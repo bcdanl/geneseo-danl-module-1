@@ -312,14 +312,14 @@
     "href": "danl-cw/danl-m1-cw-1.html#advanced-syntax",
     "title": "Classwork 1",
     "section": "Advanced Syntax",
-    "text": "Advanced Syntax\n\nBlockquote\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\nEmojis\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\nCode Blocks\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+    "text": "Advanced Syntax\n\nBlockquote\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\nEmojis\n\nA ton of markdown emojis are available here 😄 ( :smile: )\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\nCode Blocks\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html#question-6",
     "href": "danl-cw/danl-m1-cw-1.html#question-6",
     "title": "Classwork 1",
     "section": "Question 6",
-    "text": "Question 6\n\nDo the following tasks on this Classwork 1 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+    "text": "Question 6\n\nDo the following tasks on this Classwork 1 Discussion Board:\n\nBasic Syntax: Write a comment with your name, a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html#references",

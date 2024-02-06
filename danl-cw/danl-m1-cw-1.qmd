@@ -124,7 +124,7 @@ Import the `pandas` library as `pd`
 
 # Part II - Introduction to Markdown
 
-Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.
+Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Jupyter Notebooks in Google Colab. 
 
 ## Basic Syntax
 
@@ -179,7 +179,7 @@ Links are created using `[Link Text](URL)`, and images with `![Alt Text](Image U
 
 ### Emojis
 
-- A ton of markdown emojis are available here :smile: (`:smile:`)
+- A ton of markdown emojis are available here :smile: ( `:smile:` )
   - [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
 
 
@@ -205,7 +205,7 @@ import numpy as np
 ## Question 6
 
 - Do the following tasks on this Classwork 1 Discussion Board:
-  1. **Basic Syntax**: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.
+  1. **Basic Syntax**: Write a comment with your name, a heading, an unordered list, an ordered list, a link, and an image.
   2. **Advanced Syntax**: Write a comment that includes a Python code block, a blockquote, and an emoji.
 
 
