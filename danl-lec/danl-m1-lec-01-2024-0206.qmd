@@ -237,7 +237,7 @@ $$
 - Data analytics skills are largely distinct from (and complementary to) the core quantitative works familiar to business undergrads.
   - Data visualization, cleaning and wrangling; databases; machine learning; etc.
 
-- In short, we will cover things that I wish someone had taught me when I was undergraduate.
+- In short, we will cover things that I wish someone had taught me when I was undergraduate to prepare my post-graduate career.
 
 :::
 
@@ -304,7 +304,7 @@ $$
 ::: {.column width="50%"}
 ### Data Science and Big Data Trend
 
-From 2008 to 2023
+From 2008 to **2023**
  
 ![](https://bcdanl.github.io/lec_figs/stackoverflow-datascience-r-sql-2024.png)
 
@@ -328,7 +328,7 @@ From 2008 to 2023
 ### Generative AI and ChatGPT
 
   
-- Users around the world have explored how to best utilize GPT for writing essays and programming codes.
+- Users around the world have explored how to best utilize generative pre-trained transformer (GPT) for writing essays and programming codes.
 
 
 ::::{}
@@ -339,8 +339,8 @@ From 2008 to 2023
 :::
 
 :::{}
-- If you use Generative AI such as ChatGPT, please try to understand what ChatGPT gives you.
-  - Copying and pasting it without any understanding harms your learning opportunity.
+- If we use Generative AI such as ChatGPT, we should try to understand what Generative AI gives us.
+  - Copying and pasting it without understanding harms our learning opportunity.
 :::
 
 ::::
@@ -352,13 +352,10 @@ From 2008 to 2023
 ## What is Python?
 
 :::{}
-- Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
-  - It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
-  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to AI and scientific computing.
+- Python is a, simple, easy-to-read, and fast programming language, making it an excellent choice for beginners and experienced developers alike.
+  - Versatility: Python's extensive library and the vast ecosystem of third-party modules make it suitable for a wide range of applications, from *web development* and *data analysis* to *machine learning*, *AI* and *scientific computing*.
 
 :::
-
-
 
 
 
@@ -399,7 +396,7 @@ From 2008 to 2023
 
 ## How do we use Google Colab with GitHub?
 
-- [How do we use Google Colab with GitHub?](https://bcdanl.github.io/module-1/why-colab-github.html)
+- [How do we use Google Colab with GitHub?](https://bcdanl.github.io/module-1/why-colab-github.html){target="_blank"}
 
 
 
@@ -417,7 +414,10 @@ From 2008 to 2023
 
 - A **value** is datum (literal) such as a number or text. 
 
-
+- There are different types of values: 
+  - 352.3 is known as a float or double;
+  - 22 is an integer;
+  - "Hello World!" is a string.
 
 ## Python Basics
 ###  Values, Variables, and Types
@@ -428,12 +428,27 @@ print(a)
 ```
 
 
+:::: {.columns}
 
-- There are different **types** of values: `352.3` is known as a *float* or *double*, `22` is an *integer*, and `"Hello World!"` is a *string*. 
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-fig2-3.png" width="400">
+</p>
+
+:::
+
+::: {.column width="50%"}
+
 
 - A **variable** is a name that refers to a value.
   - We can think of a **variable** as a box that has a value, or multiple values, packed inside it.
+  
+- A **variable** is just a name!
 
+:::
+
+::::
 
 ## Python Basics
 ###  Values, Variables, and Types
@@ -441,13 +456,13 @@ print(a)
 ::: {}
 - Sometimes you will hear variables referred to as **objects**.
 
-- Everything that is not a literal value, such as `10`, is an *object*. 
+- Everything that is not a *literal value*, such as `10`, is an **object**. 
 
 :::
 
 
 ## Python Basics
-###  Assignment
+###  Assignment ( `=` )
 
 
 ```{.python}
@@ -490,24 +505,13 @@ y
   - The right side can be a literal value, or a variable that has already been assigned a value, or a combination.
   
 - When Python reads `y = x + 12`, it does the following:
-  - Sees the `=` in the middle.
-  - Knows that this is an assignment.
-  - Calculates the right side (gets the value of the object referred to by `x` and adds it to `12`).
-  - Assigns the result to the left-side variable, `y`.
+  1. Sees the `=` in the middle.
+  2. Knows that this is an assignment.
+  3. Calculates the right side (gets the value of the object referred to by `x` and adds it to `12`).
+  4. Assigns the result to the left-side variable, `y`.
 
 
 
-
-
-## Python Basics
-###  Variables Are Names, Not Places
-
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/int-py-fig2-3.png" width="400">
-</p>
-
-- In Python, *variables* are just names.
 
 
 
@@ -521,14 +525,14 @@ type(list_example)
 ```
 
 
-- The most basic built-in data types that you'll need to know about are: 
+- The most basic built-in data types that we'll need to know about are: 
   - **integers** `10`
   - **floats** `1.23`
   - **strings** `"like this"`
   - **booleans** `True`
   - **nothing** `None`
 
-- Python also has a built-in type called a **list** (e.g., `[10, 15, 20]`) that can *contain* anything, even different **types** 
+- Python also has a built-in type of data container called a **list** (e.g., `[10, 15, 20]`) that can *contain* anything, even different **types** 
 
 
 ## Python Basics
@@ -548,6 +552,8 @@ type(list_example)
 
 ## Python Basics
 ###  Brackets
+
+::: {.nonincremental}
 
 - There are several kinds of brackets in Python, including `[]`, `{}`, and `()`. 
 
@@ -571,8 +577,8 @@ vector[0]
 
 
 ```{.python}
-{'a', 'b'}
-{'first_letter': 'a', 'second_letter': 'b'}
+{'a', 'b'}  # set
+{'first_letter': 'a', 'second_letter': 'b'}  # dictionary
 ```
 
 - `{}` is used to denote a **set** or a **dictionary** (with key-value pairs).
@@ -585,12 +591,14 @@ num_tup = (1, 2, 3)
 sum(num_tup)
 ```
 
-- `()` is used to denote a **tuple**, or the *arguments* to a *function*, e.g., function(x)  where x is the input passed to the function, or to indicate the order operations are carried out.
+- `()` is used to denote 
+  - a **tuple**, or 
+  - the *arguments* to a *function*, e.g., function(x) where x is the input passed to the function.
 
 
 :::
 
-
+::: 
 
 ## Python Basics
 ###  Lists and Slicing
@@ -632,7 +640,8 @@ list_of_numbers = list(range(1, 11))
 start = 1
 stop = -1
 step = 2
-print(list_of_numbers[ start : stop : step ])
+
+list_of_numbers[ start : stop : step ]
 ```
 
 - Slicing can be even more elaborate than that because we can jump entries using a second colon. 
@@ -651,7 +660,7 @@ print(string_full)
 
 
 
-- All of the basic operators you see in mathematics are available to use:
+- All of the basic operators we see in mathematics are available to use:
 
 :::: {.columns}
 ::: {.column width="33.3%"}
@@ -679,7 +688,7 @@ print(string_full)
 
 - These work as you'd expect on numbers. 
 - These operators are sometimes defined for other built-in data types too. 
-  - We can 'sum' strings (which really *concatenates* them):
+  - We can 'sum' strings (which really *concatenates* them).
 
 
 
@@ -725,41 +734,18 @@ $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
 
 
+
+
 ## Python Basics
-###  Strings
-
+###  Booleans and Conditions
 
 
 ```{.python}
-string = "cheesecake"
-print( string[-4:] )
+10 == 20
+10 == '10'
 ```
 
-- From strings, we can access the individual characters via slicing and indexing. 
-
-
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-string = "cheesecake"
-print("String has length:")
-print( len(string) )
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-list_of_numbers = range(1, 20)
-print("List of numbers has length:")
-print( len(list_of_numbers) )
-```
-:::
-::::
-
-- Both lists and strings will allow us to use the `len()` command to get their length:
-
-
+- Boolean data have either `True` or `False` value.
 
 
 
@@ -820,8 +806,6 @@ DT::datatable(text_tbl, rownames = FALSE,
 ```
 
 
-
-- Boolean data have either `True` or `False` value.
 
 - Existing booleans can be combined, which create a boolean when executed.
 
@@ -1134,6 +1118,44 @@ cities_to_temps.items()
 
 
 
+
+## Python Basics
+###  Strings
+
+
+
+```{.python}
+string = "cheesecake"
+print( string[-4:] )
+```
+
+- From strings, we can access the individual characters via slicing and indexing. 
+
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+string = "cheesecake"
+print("String has length:")
+print( len(string) )
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+list_of_numbers = range(1, 20)
+print("List of numbers has length:")
+print( len(list_of_numbers) )
+```
+:::
+::::
+
+- Both lists and strings will allow us to use the `len()` command to get their length:
+
+
+
+
 ## Python Basics
 ### Strings and Slicing
 
@@ -1370,17 +1392,53 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 
 
+
+
 ## Python Basics
 ### Importing Modules, Packages, and Libraries
 
 - Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
 
+- The core libraries that enable Python to store and analyze data efficiently are:
+  - `pandas`
+  - `numpy`
+  - `matplotlib` and `seaborn`
 
-- The core libraries that enable Python to store and analyze data efficiently are in Python libraries.
-  - `numpy` provides the basic array block used throughout numerical Python.
-  - `pandas` provides DataFrames which are used to store data in an easy-to-use format.
-  - `matplotlib` provides graphics. The most important submodule would be `matplotlib.pyplot`.
-  - `seaborn` provides a general improvement in the default appearance of `matplotlib`-produced plots.
+
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+::: {.panel-tabset}
+
+## `pandas`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-logo.png">
+</p>
+
+- `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
+
+
+## `numpy`
+  
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/numpy-logo.png">
+</p>
+
+- `numpy`, numerical Python, provides the array block (`np.array()`) for doing fast and efficient computations;
+
+## `matplotlib` and `seaborn`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/matplotlib-logo.png"><img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png">
+</p>
+
+- `matplotlib` provides graphics. The most important submodule would be `matplotlib.pyplot`.
+- `seaborn` provides a general improvement in the default appearance of `matplotlib`-produced plots.
+
+
+:::
 
 
 ## Python Basics

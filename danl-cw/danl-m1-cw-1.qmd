@@ -1,6 +1,6 @@
 ---
 title: Classwork 1
-subtitle: Python Basics [Classwork 1 may be subject to change during the Module.]
+subtitle: Python Basics
 date: 2024-02-06
 execute: 
   eval: false
