@@ -11,7 +11,7 @@
     "href": "danl-hw/danl-m1-hw-1.html",
     "title": "Homework 1",
     "section": "",
-    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files.\n\n\n\nLoad Libraries\n\nImport all the Python libraries we need here.\n\n\n\nQuestion 1\n\nages = (55, 28, 24, 34, 59, 22, 19, 72, 21, 37)\n\nWrite a Python code that uses a list comprehension to create a list of ages that are over 30 based on the ages list.\n\nAnswer\n\n\n\nQuestion 2\nWrite a Python code that uses (1) input() function with a message in the Console “Please enter a number less than 100:” and (2) if-else statement to print (a) “The value entered is greater than or equal to 75.” if the value entered from the Spyder Console is greater than or equal to 75, and (b) “The value entered is greater than or equal to 50.” and “The value entered is also less than 75.” if the value entered from the Spyder Console is less than 75 and greater than or equal to 50, and (c) “The value entered is less than 50.” otherwise.\n\nAnswer\n\n\n\nQuestion 3\n\nsequence = [1, 2, None, 4, None, 5, None, None, 6, 7, 8, None, 9, 10]\n\nWrite a Python code that uses a for-loop statement to process each element of sequence to calculate the sum of all the numeric values in the sequence list.\n\nAnswer\n\n\n\nQuestion 4\n\nWordle = [\"shark\", \n\"wheal\", \n\"cheat\", \n\"stand\", \n\"table\", \n\"fight\", \n\"crane\", \n\"pease\", \n\"sweet\", \n\"lamed\", \n\"stope\", \n\"hints\", \n\"month\", \n\"shade\", \n\"mayor\", \n\"faith\", \n\"cable\", \n\"today\", \n\"tidal\", \n\"stick\", \n\"lochs\", \n\"short\", \n\"docus\", \n\"split\", \n\"swift\", \n\"sweat\", \n\"skeet\", \n\"swelt\", \n\"blast\", \n\"trash\", \n\"tiger\", \n\"setup\", \n\"fiest\", \n\"belly\", \n\"pokey\", \n\"sting\", \n\"blond\", \n\"goldy\", \n\"stamp\", \n\"hooly\", \n\"moray\", \n\"dumas\", \n\"roast\", \n\"chino\", \n\"chest\", \n\"check\", \n\"roast\", \n\"blind\", \n\"check\", \n\"fogle\", \n\"cheek\", \n\"oxide\", \n\"olive\", \n\"deash\", \n\"paves\", \n\"steam\", \n\"absey\", \n\"pesty\", \n\"mardy\", \n\"strap\", \n\"forum\", \n\"forby\", \n\"baste\", \n\"bagie\", \n\"stomp\", \n\"misty\", \n\"adieu\", \n\"balky\", \n\"stick\", \n\"couch\", \n\"dutch\", \n\"steam\", \n\"stomp\", \n\"calos\", \n\"pasty\", \n\"guild\", \n\"meril\", \n\"hasty\", \n\"birch\", \n\"grind\", \n\"filer\", \n\"paler\", \n\"glide\", \n\"fudge\", \n\"kedge\", \n\"wedge\", \n\"hedge\", \n\"plica\", \n\"chirp\", \n\"manor\", \n\"maids\", \n\"crest\", \n\"covin\", \n\"blart\", \n\"chart\", \n\"comma\", \n\"gavel\", \n\"aphid\", \n\"orbit\", \n\"sloth\", \n\"stear\", \n\"blurs\"] \n\nWrite a Python code that uses a for-loop statement and a if-else statement to create a Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 5\n\nWordle_by_letter = {'s': ['shark',\n  'stand',\n  'sweet',\n  'stope',\n  'shade',\n  'stick',\n  'short',\n  'split',\n  'swift',\n  'sweat',\n  'skeet',\n  'swelt',\n  'setup',\n  'sting',\n  'stamp',\n  'steam',\n  'strap',\n  'stomp',\n  'stick',\n  'steam',\n  'stomp',\n  'sloth',\n  'stear'],\n 'w': ['wheal', 'wedge'],\n 'c': ['cheat',\n  'crane',\n  'cable',\n  'chino',\n  'chest',\n  'check',\n  'check',\n  'cheek',\n  'couch',\n  'calos',\n  'chirp',\n  'crest',\n  'covin',\n  'chart',\n  'comma'],\n 't': ['table', 'today', 'tidal', 'trash', 'tiger'],\n 'f': ['fight', 'faith', 'fiest', 'fogle', 'forum', 'forby', 'filer', 'fudge'],\n 'p': ['pease', 'pokey', 'paves', 'pesty', 'pasty', 'paler', 'plica'],\n 'l': ['lamed', 'lochs'],\n 'h': ['hints', 'hooly', 'hasty', 'hedge'],\n 'm': ['month', 'mayor', 'moray', 'mardy', 'misty', 'meril', 'manor', 'maids'],\n 'd': ['docus', 'dumas', 'deash', 'dutch'],\n 'b': ['blast',\n  'belly',\n  'blond',\n  'blind',\n  'baste',\n  'bagie',\n  'balky',\n  'birch',\n  'blart',\n  'blurs'],\n 'g': ['goldy', 'guild', 'grind', 'glide', 'gavel'],\n 'r': ['roast', 'roast'],\n 'o': ['oxide', 'olive', 'orbit'],\n 'a': ['absey', 'adieu', 'aphid'],\n 'k': ['kedge']}\n\nWrite a Python code that uses (1) a dictionary, Wordle_by_letter (2) sorted(), and (3) dictionary comprehension to create an alphabetically-ordered Wordle dictionary for which a key is an alphabet and a value is a list of words.\n\nAnswer\n\n\n\nQuestion 6\nThis Python code uses a function to look up code meanings for variables, region and happy, using dictionaries:\n\ndef code_lookup(codes):\n    region, happy = codes\n    print(\"region, happy: \", (region, happy))\n    region_dict = {1:\"New England\", \n                   2:\"Middle Atlantic\",\n                   3:\"East North Central\", \n                   4:\"West North Central\",\n                   5:\"South Atlantic\", \n                   6:\"East South Central\",\n                   7:\"West South Central\", \n                   8:\"Mountain\", \n                   9:\"Pacific\"}\n    happy_dict = {1:\"Very happy\", \n                  2:\"Pretty happy\", \n                  3:\"Not too happy\",\n                  8:\"Don't know\", \n                  9:\"No answer\", \n                  0:\"Not applicable\"}\n    return(region_dict[region], happy_dict[happy])\n\nWrite a Python code that uses the function code_lookup() and the print() function to print the followings:\n\nInterview region: East North Central\n\n\nHappiness level: Pretty happy\n\n\nAnswer\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 1.” February 6, 2024."
+    "text": "Direction\n\nWrite a Python Notebook (*.ipynb) to answer each question.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files.\n\n\n\n\nQuestion 1\nHow do you assign the value 5 to a variable named x?\nAnswer\n\n\n\nQuestion 2\nGiven lst = [1, 2, 3, 4, 5], what does lst[1:4] return?\nAnswer\n\n\n\nQuestion 3\n\nHow do you create a dictionary with keys \"apple\", \"banana\", and \"cherry\", each with the corresponding values 5, 3, and 7?\nHow do you access the value associated with the key \"banana\" in the dictionary created above?\n\nAnswer\n\n\n\nQuestion 4\nFor the expressions below, what is the value of the expression? Explain thoroughly.\n\nTrue and False\n\n\nTrue or False\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nAnswer\n\n\n\nQuestion 5\n\nCreate a new if-elif-else chain that prints \"well done\" if a score is over 90, “good” if between 40 and 90, and \"bad luck\" otherwise.\n\nAnswer\n\n\n\nQuestion 6\nWrite a for loop that prints out \"coding for data analysts\" so that each word is printed in a successive iteration.\nAnswer\n\n\n\nQuestion 7\n\nHow do you import the math module in a Python script?\nAfter importing math, how do you use its sqrt function to find the square root of 16?\n\nAnswer\n\n\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 1.” February 6, 2024."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html",
@@ -256,14 +256,14 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics [Lecture 1 slides may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics [Lecture 2 slides may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics [Lecture 2 slides may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
     "href": "danl-cw/danl-m1-cw-1.html",
     "title": "Classwork 1",
     "section": "",
-    "text": "Question 1\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nThe smallest value in the list is: 8\n\n\nAnswer\n\n\n\nQuestion 2\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer\n\n\n\nQuestion 3\n\nx = 4.0\ny = .5\n\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\nbool(0) != bool('')\nx &lt; y or 3*y &lt; x\nnot (100 == '100' and 25 &lt; 36)\n\n\nAnswer\n\n\n\nQuestion 4\nThis Python code creates a tuple with seven different ages:\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\nWrite a Python code that uses a for-loop statement and a if-else statement to assign the list, under40_list, to [29, 25, 35, 23, 19] and the list, over40_list, to [65, 58].\n\nAnswer\n\n\n\nQuestion 5\n\ntuple_var = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\ntotal = 0\n\nWrite a Python code that uses the following two lines (1) a for-loop statement to process each element of tuple_var and (2) the following line.\n\nprint(\"The total of the values in the tuple is: \", total)\n\n\nAnswer\n\n\n\nQuestion 6\nWrite a Python code that uses a while-loop and the print() function to print out the following message 5 times:\n\nProgramming for Data Analytics is so fun!\n\n\nAnswer\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 1.” February 6, 2024."
+    "text": "Question 1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer\n\n\n\nQuestion 2\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\n\n\nx = 4.0\ny = .5\n\nx &lt; y or 3*y &lt; x\n\nAnswer\n\n\n\nQuestion 3\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer\n\n\n\nQuestion 4\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nAnswer\n\n\n\nQuestion 5\nImport the pandas library as pd\nAnswer\n\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 1.” February 6, 2024."
   },
   {
     "objectID": "danl-cw/danl-m1-cw-2.html",
@@ -655,7 +655,7 @@
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-1",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttp://bcdanl.github.io/module-1/\n\nOffice: South Hall 301\nOffice Hours:\n\nBy appointment via email"
+    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nBrightspace\nGitHub Website\n\nOffice: South Hall 301\nOffice Hours:\n\nTo be determined; By appointment via email."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-2",
@@ -676,21 +676,21 @@
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-4",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nIt is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.\n\nHomework: There will be six homework assignments.\nExam: There will be one take-home exam.\nDiscussions: You are encouraged to participate in GitHub-based online discussions for each lecture, classwork, and homework.\n\nCheckout the netiquette policy in the syllabus."
+    "text": "Syllabus\nCourse Requirements\n\nLaptop or personal computer\n\nOperating System: It is recommended to have Mac or Windows.\nSpecification: It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.\n\nHomework: There will be six homework assignments.\nExam: There will be one take-home exam.\nDiscussions: You are encouraged to participate in GitHub-based online discussions.\n\nCheckout the netiquette policy in the syllabus."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-5",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-5",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Schedule and Contents\n\nThere will be tentatively 7 class sessions."
+    "text": "Syllabus\nCourse Schedule and Contents\n\n\n\n\n\n\n\n\nThere will be tentatively 7 class sessions."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-6",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#syllabus-6",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nAssessments\n\nEach of the six homework assignments accounts for 10% of the total percentage grade.\nThe exam account for 30% of the total percentage grade.\nParticipation in discussions accounts for 10% of the total percentage grade.\n\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =\\quad\\, &0.60\\times(\\text{Total Homework Score})\\notag\\\\\n\\,+\\, &0.30\\times(\\text{Take-Home Exam Score})\\notag\\\\\n\\,+\\, &0.10\\times(\\text{Total Discussion Score})\\notag\n\\end{align}\n\\]"
+    "text": "Syllabus\nAssessments\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =\\quad\\, &0.60\\times(\\text{Total Homework Score})\\notag\\\\\n\\,+\\, &0.30\\times(\\text{Take-Home Exam Score})\\notag\\\\\n\\,+\\, &0.10\\times(\\text{Total Discussion Score})\\notag\n\\end{align}\n\\]\n\nEach of the six homework assignments accounts for 10% of the total percentage grade.\nThe exam account for 30% of the total percentage grade.\nParticipation in discussions accounts for 10% of the total percentage grade."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#why-data-analytics",
@@ -714,13 +714,6 @@
     "text": "Why Data Analytics?\n\nData analysts use analytical tools and techniques to extract meaningful insights from data.\n\nSkills in data analytics are also useful for business analysts or market analysts.\n\nBreau of Labor Statistics forecasts that the projected growth rate of the employment in the industry related to data analytics from 2021 to 2031 is 36%.\n\nThe average growth rate for all occupations is 5%."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#why-personal-website",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#why-personal-website",
-    "title": "Lecture 1",
-    "section": "Why Personal Website?",
-    "text": "Why Personal Website?\nBenefits of a Personal Website in Data Analytics\n\n\nHere are the example websites:\n\nByeong-Hak’s Website\nDANL Website Template\n\n\n\n\n\nProfessional Showcase: Display skills and projects\nVisibility and Networking: Increase online presence\nControlled Narrative: Manage your professional brand\nContent Sharing and Engagement: Publish articles, insights\nJob Opportunities: Attract potential employers and clients\nLong-term Asset: A growing repository of your career journey\nReproducible Research: Showcase data-driven reports"
-  },
-  {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#why-python-r-and-databases",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#why-python-r-and-databases",
     "title": "Lecture 1",
@@ -732,7 +725,7 @@
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#why-python-r-and-databases-1",
     "title": "Lecture 1",
     "section": "Why Python, R, and Databases?",
-    "text": "Why Python, R, and Databases?\n\nStack Overflow is the most popular Q & A website specifically for programmers and software developers in the world.\nSee how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022.\n\n\n\nMost Popular Languagues\n\n\nData Science and Big Data"
+    "text": "Why Python, R, and Databases?\n\n\nMost Popular Languagues\n\n\nData Science and Big Data\n\n\n\n\nStack Overflow is the most popular Q & A website specifically for programmers and software developers in the world.\nSee how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#the-state-of-the-art",
@@ -756,27 +749,6 @@
     "text": "The State of the Art\nGenerative AI and ChatGPT\n\nUsers around the world have explored how to best utilize GPT for writing essays and programming codes.\n\n\n\n\nIs AI a threat to data analytics?\n\nFundamental understanding of the subject matter is still crucial for effectively utilizing AI’s capabilities.\n\n\n\n\n\nIf you use Generative AI such as ChatGPT, please try to understand what ChatGPT gives you.\n\nCopying and pasting it without any understanding harms your learning opportunity."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git",
-    "title": "Lecture 1",
-    "section": "What is Git?",
-    "text": "What is Git?\n\n\n\n\n\\(\\quad\\)\n\nGit is the most popular version control tool for any software development.\n\nIt tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions.\nIt is the industry standard and ubiquitous for coding collaboration."
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git-1",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git-1",
-    "title": "Lecture 1",
-    "section": "What is Git?",
-    "text": "What is Git?\n\n\n\n\ngit add .\ngit commit -m \"any message is here\"\ngit push -u origin main\n\\(\\quad\\)\n\n\nGit operates primarily through command-line tools (e.g., Terminal) and is local to a user’s computer.\n\nIt has a steep learning curve.\n\nWe will not do git collaboration but use only the 3-step git commands on Terminal to update a website."
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-github",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-github",
-    "title": "Lecture 1",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nGitHub is a web-based hosting platform for Git repositories to store, manage, and share code.\n\n\n\nYour personal website will be hosted on a GitHub repository.\nCourse contents will be posted not only in Brightspace but also in our GitHub repositories (“repos”) and websites.\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code."
-  },
-  {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-python",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-python",
     "title": "Lecture 1",
@@ -784,179 +756,333 @@
     "text": "What is Python?\n\n\nPython is an interpreted, object-oriented, high-level programming language with dynamic semantics.\n\nIt supports multiple programming paradigms, including procedural, object-oriented, and functional programming.\nIts extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing."
   },
   {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-git",
+    "title": "Lecture 1",
+    "section": "What is Git?",
+    "text": "What is Git?\n\n\n\n\n\\(\\quad\\)\n\nGit is the most popular version control tool for any software development.\n\nIt tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions.\nIt is the industry standard and ubiquitous for coding collaboration."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-github",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-github",
+    "title": "Lecture 1",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\n\nGitHub is a web-based hosting platform for Git repositories to store, manage, and share code.\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.\nWe will use a GitHub repository to store Python Notebooks.\nCourse contents will be posted not only in Brightspace but also in our GitHub repositories (“repos”) and websites."
+  },
+  {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-google-colab",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-google-colab",
     "title": "Lecture 1",
     "section": "What is Google Colab?",
-    "text": "What is Google Colab?\n\nhttps://colab.research.google.com/ is analogous to Google Drive, but specifically for writing and executing Python code in your browser.\n\nThe base Colab link listed above leads to a Python notebook introducing Colab and how to use it.\n\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nhttps://www.youtube.com/watch?v=inN8seMm7UI"
+    "text": "What is Google Colab?\n\n\nGoogle Colab is analogous to Google Drive, but specifically for writing and executing Python code in your browser.\n\nThe base Colab link listed above leads to a Python notebook introducing Colab and how to use it.\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#why-use-colab",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#why-use-colab",
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-google-colab-1",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-google-colab-1",
     "title": "Lecture 1",
-    "section": "Why use Colab?",
-    "text": "Why use Colab?\n\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.\nColab notebooks don’t just contain Python code. They can contain text, images, and HTML!\nUltimately, they’re intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer."
+    "section": "What is Google Colab?",
+    "text": "What is Google Colab?\n\n\nColab notebooks don’t just contain Python code. They can contain text, images, and HTML via Markdown!\nUltimately, they are intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-r",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-r",
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#how-do-we-use-google-colab-with-github",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#how-do-we-use-google-colab-with-github",
     "title": "Lecture 1",
-    "section": "What is R?",
-    "text": "What is R?\n\nR is a programming language and software environment designed for statistical computing and graphics.\nR has become a major tool in data analysis, statistical modeling, and visualization.\n\nIt is widely used among statisticians and data scientists for developing statistical software and performing data analysis.\nR is open source and freely available."
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-rstudio",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#what-is-rstudio",
-    "title": "Lecture 1",
-    "section": "What is RStudio?",
-    "text": "What is RStudio?\n\n\nRStudio is an integrated development environment (IDE) mainly for R.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\nIt integrates well with Git."
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-vs.-r",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-vs.-r",
-    "title": "Lecture 1",
-    "section": "Python vs. R",
-    "text": "Python vs. R\n\n\n\nPython\n\nPython can be used for a wide range of applications, from web and game development to machine learning, making it a highly versatile language.\nPython has the largest community in the programming world, providing a wealth of resources, libraries, and frameworks.\n\n\nR\n\nR is particularly strong in statistical analysis and visualization, with a vast number of packages for statistical methods, including machine learning.\nThe community around R, particularly in academia and research, is very active.\n\n\n\n\nBoth Python and R hold significant value in industry and government sectors.\n\nHowever, Python is often more favored for roles in the industry, whereas R tends to be preferred for positions in the public sector."
+    "section": "How do we use Google Colab with GitHub?",
+    "text": "How do we use Google Colab with GitHub?\n\nHow do we use Google Colab with GitHub?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-1",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-1",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nObjectives\n\nIn this Section, we will discuss the basics of objects, types, operations, and imports.\n\nThese are the basic building blocks of almost all programming languages and will serve you well for your coding journey.\n\nEverything is an object, and every object has a type."
+    "text": "Python Basics\nVariables Are Names, Not Places\n\n\n\n\nA value is datum (literal) such as a number or text."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-2",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-2",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nVariables Are Names, Not Places\n\nThe most basic built-in data types that you’ll need to know about are: integers 10, floats 1.23, strings like this, booleans True, and nothing None.\nPython also has a built-in type called a list [10, 15, 20] that can contain anything, even different types\n\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)"
+    "text": "Python Basics\nValues, Variables, and Types\na = 10\nprint(a)\n\nThere are different types of values: 352.3 is known as a float or double, 22 is an integer, and \"Hello World!\" is a string.\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-3",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-3",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nTypes\n\n\n\n\n\n\n\nPython’s basic data types\n\n\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
+    "text": "Python Basics\nValues, Variables, and Types\n\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-4",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-4",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBrackets\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\n\n[] is used to denote a list or to signify accessing a position using an index.\n\nvector = ['a', 'b']\nvector[0]\n\n\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n{'a', 'b'}\n{'first_letter': 'a', 'second_letter': 'b'}\n\n\n\n() is used to denote a tuple, or the arguments to a function, e.g., function(x) where x is the input passed to the function, or to indicate the order operations are carried out.\n\nnum_tup = (1, 2, 3)\nsum(num_tup)"
+    "text": "Python Basics\nAssignment\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn Python, we use = to assign a value to a variable.\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-5",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-5",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries:\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nprint(list_example)\n\nWe can access earlier entries using an index, which begins at 0 and ends at one less than the length of the list.\n\nprint(list_example[0])\nprint(list_example[-1])"
+    "text": "Python Basics\nCode and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Google Colab’s comment character.\n\nThe # character has many names: hash, sharp, pound, or octothorpe.\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider adding more comments on code cells and their results using text cells."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-6",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-6",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\nSlicing can be even more elaborate than that because we can jump entries using a second colon.\n\n# range() produces a list of integers from the value to one less than the last\nlist_of_numbers = list(range(1, 11))\nstart = 1\nstop = -1\nstep = 2\nprint(list_of_numbers[ start : stop : step ])"
+    "text": "Python Basics\nAssignment\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-7",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-7",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nOperators\n\nAll of the basic operators you see in mathematics are available to use: + for addition, - for subtraction, * for multiplication, ** for powers, / for division, // for integer division, and % for modulo.\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\n\nWe can ‘sum’ strings (which really concatenates them):\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)"
+    "text": "Python Basics\nVariables Are Names, Not Places\n\n\n\n\nIn Python, variables are just names."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-8",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-8",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nOperators\n\n\n\nIt works for lists too:\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n\nWe can multiply strings!\n\nstring = \"apples, \"\nprint(string * 3)"
+    "text": "Python Basics\nVariables Are Names, Not Places\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)\n\nThe most basic built-in data types that you’ll need to know about are:\n\nintegers 10\nfloats 1.23\nstrings \"like this\"\nbooleans True\nnothing None\n\nPython also has a built-in type called a list (e.g., [10, 15, 20]) that can contain anything, even different types"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-9",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-9",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nOperators\n\nWe can combine the arithmetic operators with assignment by putting the operator before the =.\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nx = 3\nx += 1\n\n\na -= 2 is equivalent to a = a - 2.\n\na = 2\na -= 2"
+    "text": "Python Basics\nTypes\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-10",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-10",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nOperators\nQ. Using Python operations only, what is \\[\\frac{2^5}{7 \\cdot (4 - 2^3)} \\quad\\text{?}\\]"
+    "text": "Python Basics\nBrackets\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\nvector = ['a', 'b']\nvector[0]\n\n[] is used to denote a list or to signify accessing a position using an index.\n\n\n\n{'a', 'b'}\n{'first_letter': 'a', 'second_letter': 'b'}\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n\n\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n() is used to denote a tuple, or the arguments to a function, e.g., function(x) where x is the input passed to the function, or to indicate the order operations are carried out."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-11",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-11",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nStrings\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nBoth lists and strings will allow us to use the len() command to get their length:\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nstring = \"cheesecake\"\nprint( \"String has length:\" )\nprint( len(string) )\n\n\na -= 2 is equivalent to a = a - 2.\n\nlist_of_numbers = range(1, 20)\nprint( \"List of numbers has length:\" )\nprint( len(list_of_numbers) )"
+    "text": "Python Basics\nLists and Slicing\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nlist_example\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-12",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-12",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nBoolean data have either True or False value.\nThere are two types of operation that are associated with booleans: boolean operations.\n\nExisting booleans are combined, and condition operations, which create a boolean when executed."
+    "text": "Python Basics\nLists and Slicing\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example[0]\nlist_example[-1]\n\nWe can access earlier entries using an index, which begins at 0 and ends at one less than the length of the list."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-13",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-13",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nConditions are expressions that evaluate as booleans."
+    "text": "Python Basics\nLists and Slicing\n# range() produces a list of integers from the value to one less than the last\nlist_of_numbers = list(range(1, 11))\nstart = 1\nstop = -1\nstep = 2\nprint(list_of_numbers[ start : stop : step ])\n\nSlicing can be even more elaborate than that because we can jump entries using a second colon."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-14",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-14",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\n\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\nQ. What does not (not True) evaluate to?"
+    "text": "Python Basics\nOperators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nAll of the basic operators you see in mathematics are available to use:\n\n\n\n\n+ for addition\n- for subtraction\n\n\n\n* for multiplication\n** for powers\n\n\n\n/ for division\n// for integer division\n\n\n\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\nWe can ‘sum’ strings (which really concatenates them):"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-15",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-15",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements.\n\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")"
+    "text": "Python Basics\nOperators\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-16",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-16",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nGiven that == and != test for equality and not equal, respectively, you may be wondering what the keyword is is for.\n\nRemember that everything in Python is an object, and that values can be assigned to objects.\n== and != compare values, while is compare objects.\n\n\n\n\nname_list = [\"Ada\", \"Adam\"]\nname_list_two = [\"Ada\", \"Adam\"]\n\n# Compare values\nprint(name_list == name_list_two)\n\n# Compare objects\nprint(name_list is name_list_two)"
+    "text": "Python Basics\nOperators\nQ. Classwork 1.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-17",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-17",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\n\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
+    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-18",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-18",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:\n\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")"
+    "text": "Python Basics\nBooleans and Conditions\n\n\n\n\n\n\n\n\nBoolean data have either True or False value.\nExisting booleans can be combined, which create a boolean when executed."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-19",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-19",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nQ. Create a new if-else chain that prints “well done” if a score is over 90, “good” if between 40 and 90, and “bad luck” otherwise."
+    "text": "Python Basics\nBooleans and Conditions\nConditions are expressions that evaluate as booleans."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-20",
     "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-20",
     "title": "Lecture 1",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\nWe can make multiple assignment or multiple boolean comparisons in a single line.\n\na, b = 3, 6\n\n1 &lt; a &lt; b &lt; 20"
+    "text": "Python Basics\nBooleans and Conditions\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 1.2"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-21",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-21",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-22",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-22",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\n\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-23",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-23",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-24",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-24",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nCasting Variables\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like str(), int(), and float().\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-25",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-25",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nTuples and (im)mutability\n\n\nA tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.)\nTuples are immutable, while lists are mutable.\nImmutable objects, such as tuples and strings, can’t have their elements changed, appended, extended, or removed.\n\nMutable objects, such as lists, can do all of these things.\n\nIn everyday programming, we use lists and dictionaries more than tuples."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-26",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-26",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\n\nWe have seen that certain parts of the code examples are indented.\nCode that is part of a function, a conditional clause, or loop is indented.\nIndention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-27",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-27",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\nHere’s a basic example of indentation as part of an if statement.\nThe standard practice for indentation is that each sub-statement should be indented by 4 spaces."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-28",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-28",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nfor Loops\nname_list = [\"Ben\", \"Chris\", \"Kate\", \"Mary\"]\n\nfor name in name_list:\n    print(name)\n\nA loop is a way of executing a similar piece of code over and over in a similar way.\n\nThe most useful loop is for loops.\n\nAs long as our object is an iterable, then it can be used in this way in a for loop.\nLists, tuples, strings, and dictionaries are iterable."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-29",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-29",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nDictionaries\ncities_to_temps = {\"Paris\": 28, \"London\": 22, \"Seville\": 36, \"Wellesley\": 29}\n\ncities_to_temps.keys()\ncities_to_temps.values()\ncities_to_temps.items()\n\nAnother built-in Python type that is enormously useful is the dictionary.\n\nThis provides a mapping one set of variables to another (either one-to-one or many-to-one).\nIf you need to create associations between objects, use a dictionary.\n\nWe can obtain keys, values, or key-value paris from dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-30",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-30",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nRunning on Empty\n\nBeing able to create empty containers is sometimes useful, especially when using loops.\nThe commands to create empty lists, tuples, dictionaries, and sets are lst = [], tup=(), dic={}, and st = set() respectively.\nQ. What is the type of an empty list?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-31",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-31",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nSlicing Methods\n\n\n\n\nWith slicing methods, we can get subset of the data object.\nSlicing methods can apply for strings, lists, arrays, and DataFrames.\nThe above example describes indexing in Python"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-32",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-32",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings and Slicing\n\nWe can extract a substring (a part of a string) from a string by using a slice.\nWe define a slice by using square brackets ([]), a start index, an end index, and an optional step count between them.\n\nWe can omit some of these.\n\nThe slice will include characters from index start to one before end:"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-33",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-33",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nGet a Substring with a Slice\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-34",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-34",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-35",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-35",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-36",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-36",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-37",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-37",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nQ Classwork 1.3"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-38",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-38",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions.\n\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-39",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-39",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-40",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-40",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 1.4"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-41",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-41",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are in Python libraries.\n\nnumpy provides the basic array block used throughout numerical Python.\npandas provides DataFrames which are used to store data in an easy-to-use format.\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-42",
+    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-42",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 1.5"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-data-structures-basics-1",
@@ -1146,6 +1272,27 @@
     "title": "Lecture 3",
     "section": "Making Changes to Series and DataFrames",
     "text": "Making Changes to Series and DataFrames\nDropping Values\n\nColumnsRows\n\n\n\nTo drop a column, we can select columns to drop with the .drop() method with axis = 1 or axis = \"columns\" on our dataframe.\n\n## all the current columns in our data\nscientists.columns\n\n## drop the shuffled age column\n## we provide the axis=1 argument to drop column-wise\nscientists_dropped = scientists.drop( ['Age'], axis =\"columns\")\nscientists_dropped.columns\n\n\n\nTo drop rows, we can select rows by index to drop with the .drop() method with axis = 0, which is default.\n\n## all the current columns in our data\nscientists.columns\n\n## drop rows by their indices\nscientists_rows_dropped = scientists.drop( [2, 4, 6] )\nscientists_rows_dropped"
+  },
+  {
+    "objectID": "why-colab-github.html",
+    "href": "why-colab-github.html",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "",
+    "text": "Google Colab, short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:\n\nAccessibility: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.\nReal-time Collaboration: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.\nPowerful Resources: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.\nVersion Control: It supports version control through integration with GitHub, making it easy to manage and track changes in code."
+  },
+  {
+    "objectID": "why-colab-github.html#setting-up-github-access-from-colab",
+    "href": "why-colab-github.html#setting-up-github-access-from-colab",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Setting up GitHub access from Colab",
+    "text": "Setting up GitHub access from Colab\n\n\n\n\n\n\n\n\n\nIn order to access GitHub repositories, you need to allow Colab to access the repositories. To set this up, please follow the steps below.\n\nLogin on GitHub.\nGo to the page for creating a new repository. Then, click the + icon to create a new repository.\nName the repository\nGo to the main Google Colab page. You will get a splash page that looks like this.\n\n\n\n\n\n\n\n\n\n\n\nClick on the + New notebook button, located at the bottom left.\nSave the Python Notebook on your GitHub repository.\n\n\nFrom the menu bar, click File → Save a copy in GitHub.\n\n\nAn authorization window from GitHub may pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your GitHub repositories, as shown below YouTube video:\n\n\n\nAfter finishing the authorization, choose the repository you created, and type the file name.."
+  },
+  {
+    "objectID": "why-colab-github.html#updating-your-notebook-to-the-repository",
+    "href": "why-colab-github.html#updating-your-notebook-to-the-repository",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Updating your notebook to the repository",
+    "text": "Updating your notebook to the repository\nAfter you have made changes to your notebook, you can save the changes to the GitHub repository. To do so from within a Colab notebook, click File → Save a copy in GitHub in GitHub. You will be prompted to add a commit message, and after you click OK, the notebook will be pushed to your repository."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes",
@@ -2154,26 +2301,5 @@
     "title": "DANL Module 1 - Homework",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics [Homework 1 may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics [Homework 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "why-colab-github.html",
-    "href": "why-colab-github.html",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "",
-    "text": "Google Colab, short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:\n\nAccessibility: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.\nReal-time Collaboration: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.\nPowerful Resources: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.\nVersion Control: It supports version control through integration with GitHub, making it easy to manage and track changes in code."
-  },
-  {
-    "objectID": "why-colab-github.html#setting-up-github-access-from-colab",
-    "href": "why-colab-github.html#setting-up-github-access-from-colab",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "Setting up GitHub access from Colab",
-    "text": "Setting up GitHub access from Colab\n\n\n\n\n\n\n\n\n\nIn order to access GitHub repositories, you need to allow Colab to access the repositories. To set this up, please follow the steps below.\n\nLogin on GitHub.\nGo to the page for creating a new repository. Then, click the + icon to create a new repository.\nName the repository\nGo to the main Google Colab page. You will get a splash page that looks like this.\n\n\n\n\n\n\n\n\n\n\n\nClick on the + New notebook button, located at the bottom left.\nSave the Python Notebook on your GitHub repository.\n\n\nFrom the menu bar, click File → Save a copy in GitHub.\n\n\nAn authorization window from GitHub may pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your GitHub repositories, as shown below YouTube video:\n\n\n\nAfter finishing the authorization, choose the repository you created, and type the file name.."
-  },
-  {
-    "objectID": "why-colab-github.html#updating-your-notebook-to-the-repository",
-    "href": "why-colab-github.html#updating-your-notebook-to-the-repository",
-    "title": "Why and How Do We Use Google Coalb and GitHub?",
-    "section": "Updating your notebook to the repository",
-    "text": "Updating your notebook to the repository\nAfter you have made changes to your notebook, you can save the changes to the GitHub repository. To do so from within a Colab notebook, click File → Save a copy in GitHub in GitHub. You will be prompted to add a commit message, and after you click OK, the notebook will be pushed to your repository."
   }
 ]

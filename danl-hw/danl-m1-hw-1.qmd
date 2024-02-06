@@ -21,313 +21,102 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Direction
 
--   Write a Python code to answer each question.
+-   Write a Python Notebook (`*.ipynb`) to answer each question.
 
 -   Make at least some simple comment (`# ...`) in each question.
 
+-   Make one text cell to explain things in each question.
+
+
 -   Use your working directory with the subfolder, `data`, so that the relative pathname of CSV files in the subfolder `data` is sufficient to import the CSV files.
 
-# Load Libraries
 
--   Import all the Python libraries we need here.
+<br><br>
 
-```{python}
-import pandas as pd
-```
 
 # Question 1
 
-```{python, eval = F, echo = T}
-ages = (55, 28, 24, 34, 59, 22, 19, 72, 21, 37)
-```
-
-
-Write a Python code that uses a list comprehension to create a list of ages that are over 30 based on the `ages` list.
-
-
-
-<br>
+How do you assign the value 5 to a variable named `x`?
 
 *Answer*
 ```{python}
 
 ```
 
+<br><br><br>
 
-<br><br><br> 
 
 # Question 2
 
-Write a Python code that uses (1) input() function with a message in the Console "Please enter a number less than 100: " and (2) if-else statement to print  (a) "The value entered is greater than or equal to 75." if the value entered from the Spyder Console is greater than or equal to 75, and  (b) "The value entered is greater than or equal to 50." and "The value entered is also less than 75." if the value entered from the Spyder Console is less than 75 and greater than or equal to 50, and (c) "The value entered is less than 50." otherwise.
-
-<br>
+Given `lst = [1, 2, 3, 4, 5]`, what does `lst[1:4]` return?
 
 *Answer*
 ```{python}
 
 ```
 
-    
 <br><br><br>
 
 # Question 3
 
-```{python, eval = F, echo = T}
-sequence = [1, 2, None, 4, None, 5, None, None, 6, 7, 8, None, 9, 10]
-```
+- How do you create a dictionary with keys `"apple"`, `"banana"`, and `"cherry"`, each with the corresponding values `5`, `3`, and `7`?
 
-Write a Python code that uses a for-loop statement to process each element of `sequence` to calculate the sum of all the numeric values in the `sequence` list.
-
-
-
-<br>
+- How do you access the value associated with the key `"banana"` in the dictionary created above?
 
 *Answer*
 ```{python}
 
 ```
-
-    
 
 <br><br><br>
 
 # Question 4
 
-```{python, eval = F, echo = T}
-Wordle = ["shark", 
-"wheal", 
-"cheat", 
-"stand", 
-"table", 
-"fight", 
-"crane", 
-"pease", 
-"sweet", 
-"lamed", 
-"stope", 
-"hints", 
-"month", 
-"shade", 
-"mayor", 
-"faith", 
-"cable", 
-"today", 
-"tidal", 
-"stick", 
-"lochs", 
-"short", 
-"docus", 
-"split", 
-"swift", 
-"sweat", 
-"skeet", 
-"swelt", 
-"blast", 
-"trash", 
-"tiger", 
-"setup", 
-"fiest", 
-"belly", 
-"pokey", 
-"sting", 
-"blond", 
-"goldy", 
-"stamp", 
-"hooly", 
-"moray", 
-"dumas", 
-"roast", 
-"chino", 
-"chest", 
-"check", 
-"roast", 
-"blind", 
-"check", 
-"fogle", 
-"cheek", 
-"oxide", 
-"olive", 
-"deash", 
-"paves", 
-"steam", 
-"absey", 
-"pesty", 
-"mardy", 
-"strap", 
-"forum", 
-"forby", 
-"baste", 
-"bagie", 
-"stomp", 
-"misty", 
-"adieu", 
-"balky", 
-"stick", 
-"couch", 
-"dutch", 
-"steam", 
-"stomp", 
-"calos", 
-"pasty", 
-"guild", 
-"meril", 
-"hasty", 
-"birch", 
-"grind", 
-"filer", 
-"paler", 
-"glide", 
-"fudge", 
-"kedge", 
-"wedge", 
-"hedge", 
-"plica", 
-"chirp", 
-"manor", 
-"maids", 
-"crest", 
-"covin", 
-"blart", 
-"chart", 
-"comma", 
-"gavel", 
-"aphid", 
-"orbit", 
-"sloth", 
-"stear", 
-"blurs"] 
+For the expressions below, what is the value of the expression? Explain thoroughly.
+
+```{python}
+#| echo: true
+
+True and False
 ```
 
-Write a Python code that uses a *for-loop* statement and a *if-else* statement to create a `Wordle` dictionary for which a key is an alphabet and a value is a list of words.
 
+```{python}
+#| echo: true
 
+True or False
+```
 
+```{python}
+#| echo: true
 
-<br>
+not (100 == '100' and 25 < 36)
+```
+
 
 *Answer*
 ```{python}
 
 ```
 
-    
 <br><br><br>
+
 
 # Question 5
 
-```{python, eval = F, echo = T}
-Wordle_by_letter = {'s': ['shark',
-  'stand',
-  'sweet',
-  'stope',
-  'shade',
-  'stick',
-  'short',
-  'split',
-  'swift',
-  'sweat',
-  'skeet',
-  'swelt',
-  'setup',
-  'sting',
-  'stamp',
-  'steam',
-  'strap',
-  'stomp',
-  'stick',
-  'steam',
-  'stomp',
-  'sloth',
-  'stear'],
- 'w': ['wheal', 'wedge'],
- 'c': ['cheat',
-  'crane',
-  'cable',
-  'chino',
-  'chest',
-  'check',
-  'check',
-  'cheek',
-  'couch',
-  'calos',
-  'chirp',
-  'crest',
-  'covin',
-  'chart',
-  'comma'],
- 't': ['table', 'today', 'tidal', 'trash', 'tiger'],
- 'f': ['fight', 'faith', 'fiest', 'fogle', 'forum', 'forby', 'filer', 'fudge'],
- 'p': ['pease', 'pokey', 'paves', 'pesty', 'pasty', 'paler', 'plica'],
- 'l': ['lamed', 'lochs'],
- 'h': ['hints', 'hooly', 'hasty', 'hedge'],
- 'm': ['month', 'mayor', 'moray', 'mardy', 'misty', 'meril', 'manor', 'maids'],
- 'd': ['docus', 'dumas', 'deash', 'dutch'],
- 'b': ['blast',
-  'belly',
-  'blond',
-  'blind',
-  'baste',
-  'bagie',
-  'balky',
-  'birch',
-  'blart',
-  'blurs'],
- 'g': ['goldy', 'guild', 'grind', 'glide', 'gavel'],
- 'r': ['roast', 'roast'],
- 'o': ['oxide', 'olive', 'orbit'],
- 'a': ['absey', 'adieu', 'aphid'],
- 'k': ['kedge']}
-```
-
-Write a Python code that uses (1) a dictionary, `Wordle_by_letter` (2) `sorted()`, and (3) dictionary comprehension to create an alphabetically-ordered Wordle dictionary for which a key is an alphabet and a value is a list of words.
-
-
-
-
-<br>
+- Create a new `if-elif-else` chain that prints `"well done"` if a score is over `90`, "good" if between `40` and `90`, and `"bad luck"` otherwise.
 
 *Answer*
 ```{python}
 
 ```
-
-    
 
 <br><br><br>
-  
+
+
 # Question 6
 
-This Python code uses a function to look up code meanings for variables, region and happy, using dictionaries:
-```{python, eval = F, echo = T}
-def code_lookup(codes):
-    region, happy = codes
-    print("region, happy: ", (region, happy))
-    region_dict = {1:"New England", 
-                   2:"Middle Atlantic",
-                   3:"East North Central", 
-                   4:"West North Central",
-                   5:"South Atlantic", 
-                   6:"East South Central",
-                   7:"West South Central", 
-                   8:"Mountain", 
-                   9:"Pacific"}
-    happy_dict = {1:"Very happy", 
-                  2:"Pretty happy", 
-                  3:"Not too happy",
-                  8:"Don't know", 
-                  9:"No answer", 
-                  0:"Not applicable"}
-    return(region_dict[region], happy_dict[happy])
-```
-Write a Python code that uses the function `code_lookup()` and the `print()` function to print the followings:
-
-<div style="font-family:courier">Interview region: East North Central</div>
-<div style="font-family:courier">Happiness level: Pretty happy</div>
-
-
-
-
-<br>
+Write a for loop that prints out `"coding for data analysts"` so that each word is printed in a successive iteration.
 
 *Answer*
 ```{python}
@@ -335,3 +124,18 @@ Write a Python code that uses the function `code_lookup()` and the `print()` fun
 ```
 
 
+<br><br><br>
+
+# Question 7
+
+- How do you import the `math` module in a Python script?
+- After importing `math`, how do you use its `sqrt` function to find the square root of `16`?
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+<br><br><br>

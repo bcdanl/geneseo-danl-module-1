@@ -1,9 +1,10 @@
 ---
 title: Lecture 1
-subtitle: Syllabus, Course Outline, Python Basics [Lecture 1 slides may be subject to change during the Module.]
+subtitle: Syllabus, Course Outline, Python Basics
 format:
   clean-revealjs:
     self-contained: true
+    incremental: true   
     # logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
@@ -76,13 +77,13 @@ knitr::knit_engines$set("markdown")
 
 
 - Class Homepage: 
-  i. [https://brightspace.geneseo.edu/](https://brightspace.geneseo.edu/)
-  i. [http://bcdanl.github.io/module-1/](http://bcdanl.github.io/module-1/)
+  i. [Brightspace](https://mylearning.suny.edu/d2l/home/1231033)
+  i. [GitHub Website](http://bcdanl.github.io/module-1/)
   
   
 - Office: South Hall 301
 - Office Hours: 
-  - By appointment via email
+  - To be determined; By appointment via email.
 
 
 
@@ -125,35 +126,35 @@ knitr::knit_engines$set("markdown")
 
 ### Course Requirements
 
-- Laptop: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
-  - It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.
+- Laptop or personal computer
+  - Operating System: It is recommended to have **Mac** or **Windows**.
+  - Specification: It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.
   
 - **Homework**: There will be six homework assignments.
 
 - **Exam**: There will be one take-home exam. 
 
-- **Discussions**: You are encouraged to participate in GitHub-based online discussions for each lecture, classwork, and homework.
+- **Discussions**: You are encouraged to participate in GitHub-based online discussions.
   - Checkout the netiquette policy in the syllabus.
   
 
 
 ## Syllabus
 ### Course Schedule and Contents
-- There will be tentatively 7 class sessions.
 
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
   Week = c("1", "2", "3", "4", "5", "6", "7"),
-  Contents = c("Syllabus, Python & Pandas Basics",
-"The Series object and Series methods",
-"The DataFrame object and filtering DataFrame",
-"The GroupBy object",
-"Reshaping and pivoting",
-"Merging, joining, and concatenating",
-"Python data visualization and course wrap-up"),
-  `HW Exam` = c("HW 1", "HW 2", "HW 3", "HW 4", "HW 5", "HW 6", "Take-home Exam")
+  Contents = c("Syllabus, Python Basics",
+"Pandas Basics; Slicing Series and DataFrame objects",
+"Filtering, Sorting, Ranking, and Visualizing Data",
+"Group Operations",
+"Reshaping DataFrames",
+"Joining DataFrames",
+"Missing Data; Time-series Data; Course wrap-up"),
+  `HW Exam` = c("HW 1", "HW 2", "HW 3", "HW 4", "HW 5", "HW 6", "Exam")
   )
 
 
@@ -202,14 +203,12 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
+- There will be tentatively 7 class sessions.
 
 
 
 ## Syllabus
 ### Assessments
-- Each of the six homework assignments accounts for 10% of the total percentage grade. 
-- The exam account for 30% of the total percentage grade. 
-- Participation in discussions accounts for 10% of the total percentage grade.
 
 $$
 \begin{align}
@@ -219,12 +218,18 @@ $$
 \end{align}
 $$
 
+
+- Each of the six homework assignments accounts for 10% of the total percentage grade. 
+- The exam account for 30% of the total percentage grade. 
+- Participation in discussions accounts for 10% of the total percentage grade.
+
+
 # Prologue {background-color="#1c4982"}
 
 
 ## Why Data Analytics?
 
-::: {.incremental}
+::: {}
 
 - Fill in the gaps left by traditional business and economics classes.
   - Practical skills that will benefit your future career.
@@ -240,7 +245,7 @@ $$
 ## You, at the end of this course
 
 <p align="center">
-  <img src="lec_figs/yes-that-s-awesome.jpeg">
+  <img src="https://bcdanl.github.io/lec_figs/yes-that-s-awesome.jpeg">
 </p>
 
 
@@ -257,37 +262,12 @@ $$
 
 
 
-## Why Personal Website?
-### Benefits of a Personal Website in Data Analytics
-
-:::{}
-- Here are the example websites:
-  - [Byeong-Hak's Website](https://bcecon.github.io){target="_blank"}
-  - [DANL Website Template](https://bcdanl.github.io/danl-website-template){target="_blank"}
-:::
-
-:::{.incremental}
-- **Professional Showcase**: Display skills and projects
-- **Visibility and Networking**: Increase online presence
-- **Controlled Narrative**: Manage your professional brand
-- **Content Sharing and Engagement**: Publish articles, insights
-- **Job Opportunities**: Attract potential employers and clients
-- **Long-term Asset**: A growing repository of your career journey
-- **Reproducible Research**: Showcase data-driven reports
-:::
-
-
 
 ## Why Python, R, and Databases?
 
 ![](https://bcdanl.github.io/lec_figs/indeed-py-r-sql.png)
 
 ## Why Python, R, and Databases?
-
-- [Stack Overflow](https://stackoverflow.com){target="_blank"}  is the most popular Q & A website specifically for programmers and software developers in the world.
-
-- See how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022.
-
 
 :::: {.columns}
 
@@ -307,6 +287,11 @@ $$
 
 :::: 
 
+
+
+- [Stack Overflow](https://stackoverflow.com){target="_blank"}  is the most popular Q & A website specifically for programmers and software developers in the world.
+
+- See how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022.
 
 
 
@@ -341,15 +326,12 @@ From 2008 to 2023
 
 
 
-
-
-
 ## The State of the Art
 ### Generative AI and ChatGPT
 
 - **Generative AI** refers to a category of artificial intelligence (AI) that is capable of generating new content, ranging from text, images, and videos to music and code. 
 
-:::{.incremental}
+:::{}
 
 - In the early 2020s, advances in transformer-based deep neural networks enabled a number of generative AI systems notable for accepting natural language prompts as input.
   - These include large language model (LLM) chatbots such as ChatGPT, Copilot, Bard, and LLaMA.
@@ -368,7 +350,7 @@ From 2008 to 2023
 - Users around the world have explored how to best utilize GPT for writing essays and programming codes.
 
 
-::::{.incremental}
+::::{}
 
 :::{}
 - Is AI a threat to data analytics?
@@ -384,6 +366,17 @@ From 2008 to 2023
 
 
 # DANL Tools {background-color="#1c4982"}
+
+
+## What is Python?
+
+:::{}
+- Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
+  - It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
+  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
+
+:::
+
 
 
 ## What is Git?
@@ -406,139 +399,59 @@ $\quad$
 
 ::::
 
-## What is Git?
 
-:::: {.columns}
-
-::: {.column width="40%"}
-![](https://bcdanl.github.io/lec_figs/git-simple.png)
-
-:::
-
-::: {.column width="60%"}
-
-```{.bash}
-git add .
-git commit -m "any message is here"
-git push -u origin main
-```
-
-$\quad$
-
-
-::: {.incremental}
-- Git operates primarily through command-line tools (e.g., **Terminal**) and is local to a user's computer.
-
-  - It has a steep learning curve.
-
-  
-- We will not do *git collaboration* but use only the 3-step git commands on Terminal to update a website.
-
-:::
-:::
-
-:::: 
 
 
 ## What is GitHub?
 
+::: {}
+
 - [GitHub](https://github.com/){target="_blank"} is a web-based hosting platform for Git repositories to store, manage, and share code. 
-
-::: {.incremental}
-
-- Your personal website will be hosted on a GitHub repository.
-
-- Course contents will be posted not only in Brightspace but also in our GitHub repositories ("repos") and websites.
 
 - Github is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.
 
+- We will use a GitHub repository to store Python Notebooks.
+
+- Course contents will be posted not only in Brightspace but also in our GitHub repositories ("repos") and websites.
+
+
 :::
 
-
-## What is Python?
-
-:::{.incremental}
-- Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
-  - It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
-  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
-:::
 
 
 ## What is Google Colab?
-- [https://colab.research.google.com/](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your browser.
+
+:::{}
+- [Google Colab](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your browser.
   - The base Colab link listed above leads to a Python notebook introducing Colab and how to use it.
 
-- This video also helps get started with Colab if you are unfamiliar with the format!
-  - [https://www.youtube.com/watch?v=inN8seMm7UI](https://www.youtube.com/watch?v=inN8seMm7UI){target="_blank"}
-
-
-## Why use Colab?
-:::{.incremental}
 - A key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed. 
-  - It allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.
+  - It allows for CPU or GPU usage, even for free users, and stores the files in Google's servers so you can access your files from anywhere you can connect to the Internet.
   
 - Using Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.
 
-- Colab notebooks don’t just contain Python code. They can contain text, images, and HTML!
-
-- Ultimately, they're intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer.
-:::
-
-## What is R?
-
-- **R** is a programming language and software environment designed for statistical computing and graphics. 
-
-- R has become a major tool in data analysis, statistical modeling, and visualization. 
-  - It is widely used among statisticians and data scientists for developing statistical software and performing data analysis. 
-  - R is open source and freely available. 
-
-
-## What is RStudio?
-
-:::{.incremental}
-- **RStudio** is an integrated development environment (IDE) mainly for R. 
-
-- RStudio is a user-friendly interface that makes using R easier and more interactive. 
-  - It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.
-  - It integrates well with Git. 
-  
-:::
-
-
-
-
-## Python vs. R
-
-:::: {.incremental}
-:::: {.columns}
-
-::: {.column width="50%"}
-
-### Python
-
-- Python can be used for a wide range of applications, from web and game development to machine learning, making it a highly versatile language.
-
-- Python has the largest community in the programming world, providing a wealth of resources, libraries, and frameworks. 
 
 :::
 
-::: {.column width="50%"}
-### R
-- R is particularly strong in statistical analysis and visualization, with a vast number of packages for statistical methods, including machine learning.
 
-- The community around R, particularly in academia and research, is very active.
+
+
+## What is Google Colab?
+
+
+:::{}
+
+- Colab notebooks don't just contain Python code. They can contain text, images, and HTML via Markdown!
+
+- Ultimately, they are intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer.
 
 
 :::
 
-::::
 
-- Both Python and R hold significant value in industry and government sectors. 
-  - However, Python is often more favored for roles in the industry, whereas R tends to be preferred for positions in the public sector.
+## How do we use Google Colab with GitHub?
 
-
-
-::::
+- [How do we use Google Colab with GitHub?](https://bcdanl.github.io/module-1/why-colab-github.html)
 
 
 
@@ -546,22 +459,112 @@ $\quad$
 
 # Python Basics {background-color="#1c4982"}
 
+
 ## Python Basics
-### Objectives
-- In this Section, we will discuss the basics of objects, types, operations, and imports. 
+###  Variables Are Names, Not Places
 
-These are the basic building blocks of almost all programming languages and will serve you well for your coding journey.
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-basic-box.png">
+</p>
+
+- A **value** is datum (literal) such as a number or text. 
 
 
-- Everything is an __object__, and every _object_ has a __type__.
+
+## Python Basics
+###  Values, Variables, and Types
+
+```{.python}
+a = 10
+print(a)
+```
 
 
-##  Python Basics
-### Variables Are Names, Not Places
 
-- The most basic built-in data types that you’ll need to know about are: **integers** 10, **floats** 1.23, **strings** like this, **booleans** True, and **nothing** None.
+- There are different **types** of values: `352.3` is known as a *float* or *double*, `22` is an *integer*, and `"Hello World!"` is a *string*. 
 
-- Python also has a built-in type called a **list** [10, 15, 20] that can *contain* anything, even different **types** 
+- A **variable** is a name that refers to a value.
+  - We can think of a **variable** as a box that has a value, or multiple values, packed inside it.
+
+
+## Python Basics
+###  Values, Variables, and Types
+
+::: {}
+- Sometimes you will hear variables referred to as **objects**.
+
+- Everything that is not a literal value, such as `10`, is an *object*. 
+
+:::
+
+
+## Python Basics
+###  Assignment
+
+
+```{.python}
+# Here we assign the integer value 5 to the variable x.
+x = 5   
+
+# Now we can use the variable x in the next line.
+y = x + 12  
+y
+```
+
+- In Python, we use `=` to assign a value to a variable.
+
+- In math, `=` means *equality* of both sides.
+- In programs, `=` means **assignment**: *assign the value on the right side to the variable on the left side*.
+
+
+
+## Python Basics
+###  Code and comment style 
+- The two main principles for coding and managing data are:
+  - Make things easier for your future self.
+  - Don't trust your future self.
+
+- The `#` mark is Google Colab's comment character.
+  - The `#` character has many names: `hash`, `sharp`, `pound`, or `octothorpe`.
+  - `#` indicates that the rest of the line is to be ignored.
+  - Write comments before the line that you want the comment to apply to.
+
+- Consider adding more comments on code cells and their results using text cells.
+
+
+
+
+## Python Basics
+###  Assignment
+
+
+- In programming code, everything on the right side needs to have a value.
+  - The right side can be a literal value, or a variable that has already been assigned a value, or a combination.
+  
+- When Python reads `y = x + 12`, it does the following:
+  - Sees the `=` in the middle.
+  - Knows that this is an assignment.
+  - Calculates the right side (gets the value of the object referred to by `x` and adds it to `12`).
+  - Assigns the result to the left-side variable, `y`.
+
+
+
+
+
+## Python Basics
+###  Variables Are Names, Not Places
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-fig2-3.png" width="400">
+</p>
+
+- In Python, *variables* are just names.
+
+
+
+## Python Basics
+###  Variables Are Names, Not Places
 
 ```{.python}
 list_example = [10, 1.23, "like this", True, None]
@@ -570,36 +573,33 @@ type(list_example)
 ```
 
 
+- The most basic built-in data types that you'll need to know about are: 
+  - **integers** `10`
+  - **floats** `1.23`
+  - **strings** `"like this"`
+  - **booleans** `True`
+  - **nothing** `None`
+
+- Python also has a built-in type called a **list** (e.g., `[10, 15, 20]`) that can *contain* anything, even different **types** 
 
 
+## Python Basics
+###  Types
 
-##  Python Basics
-### Types
 
-:::: {.columns}
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| out-width: "100%"
-#| fig-align: 'center'
-#| fig-cap: "Python’s basic data types"
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-tab2-1.png" width="600">
+</p>
 
-knitr::include_graphics("lec_figs/int-py-tab2-1.png")
-```
-:::
 
-::: {.column width="50%"}
 - The second column (Type) contains the Python name of that type. 
 
 - The third column (Mutable?) indicates whether the value can be changed after creation.
-:::
-::::
 
 
 
-
-##  Python Basics
-### Brackets
+## Python Basics
+###  Brackets
 
 - There are several kinds of brackets in Python, including `[]`, `{}`, and `()`. 
 
@@ -607,68 +607,76 @@ knitr::include_graphics("lec_figs/int-py-tab2-1.png")
 ::: {.panel-tabset}
 
 ## `[]`
-- `[]` is used to denote a **list** or to signify accessing a *position* using an index.
+
 
 ```{.python}
 vector = ['a', 'b']
 vector[0]
 ```
 
+- `[]` is used to denote a **list** or to signify accessing a *position* using an index.
 
 
 
 
 ## `{}`
-- `{}` is used to denote a **set** or a **dictionary** (with key-value pairs).
+
 
 ```{.python}
 {'a', 'b'}
 {'first_letter': 'a', 'second_letter': 'b'}
 ```
 
-
+- `{}` is used to denote a **set** or a **dictionary** (with key-value pairs).
 
 
 ## `()`
-- `()` is used to denote a **tuple**, or the *arguments* to a *function*, e.g., function(x)  where x is the input passed to the function, or to indicate the order operations are carried out.
 
 ```{.python}
 num_tup = (1, 2, 3)
 sum(num_tup)
 ```
 
+- `()` is used to denote a **tuple**, or the *arguments* to a *function*, e.g., function(x)  where x is the input passed to the function, or to indicate the order operations are carried out.
 
 
 :::
 
 
 
-##  Python Basics
-### Lists and Slicing
+## Python Basics
+###  Lists and Slicing
 
-- Lists are a really useful way to work with lots of data at once. 
-  - We can also construct them by appending entries:
 
 ```{.python}
 list_example = [10, 1.23, "like this", True, None]
 list_example.append("one more entry")
-print(list_example)
+list_example
+```
+
+
+- Lists are a really useful way to work with lots of data at once. 
+  - We can also construct them by appending entries.
+
+
+
+## Python Basics
+###  Lists and Slicing
+
+
+```{.python}
+list_example = [10, 1.23, "like this", True, None]
+list_example[0]
+list_example[-1]
 ```
 
 - We can access earlier entries using an *index*, which begins at 0 and ends at one less than the length of the list.
 
-```{.python}
-print(list_example[0])
-print(list_example[-1])
-```
 
 
+## Python Basics
+###  Lists and Slicing
 
-
-##  Python Basics
-### Lists and Slicing
-
-- Slicing can be even more elaborate than that because we can jump entries using a second colon. 
 
 ```{.python}
 # range() produces a list of integers from the value to one less than the last
@@ -679,17 +687,12 @@ step = 2
 print(list_of_numbers[ start : stop : step ])
 ```
 
+- Slicing can be even more elaborate than that because we can jump entries using a second colon. 
 
 
 
-##  Python Basics
-### Operators
-
-- All of the basic operators you see in mathematics are available to use: `+` for addition, `-` for subtraction, `*` for multiplication, `**` for powers, `/` for division, `//` for integer division, and `%` for modulo.
-
-  i. These work as you’d expect on numbers. 
-  i. These operators are sometimes defined for other built-in data types too. 
-    - We can ‘sum’ strings (which really concatenates them):
+## Python Basics
+###  Operators
 
 ```{.python}
 string_one = "This is an example "
@@ -700,12 +703,42 @@ print(string_full)
 
 
 
-##  Python Basics
-### Operators
+- All of the basic operators you see in mathematics are available to use:
 
 :::: {.columns}
+::: {.column width="33.3%"}
+
+  - `+` for addition
+  - `-` for subtraction 
+
+:::
+
+::: {.column width="33.4%"}
+
+  - `*` for multiplication
+  - `**` for powers
+
+:::
+
+::: {.column width="33.3%"}
+
+  - `/` for division
+  - `//` for integer division
+
+:::
+
+::::
+
+- These work as you'd expect on numbers. 
+- These operators are sometimes defined for other built-in data types too. 
+  - We can 'sum' strings (which really *concatenates* them):
+
+
+
+## Python Basics
+###  Operators
+:::: {.columns}
 ::: {.column width="50%"}
-- It works for lists too:
 
 ```{.python}
 list_one = ["apples", "oranges"]
@@ -714,61 +747,39 @@ list_full = list_one + list_two
 print(list_full)
 ```
 
+- It works for lists too:
+
 :::
 
 ::: {.column width="50%"}
-- We can multiply strings!
 
 ```{.python}
 string = "apples, "
 print(string * 3)
 ```
 
+- We can multiply strings!
+
+
 :::
 ::::
 
 
 
-##  Python Basics
-### Operators
 
-- We can combine the arithmetic operators with assignment by putting the operator before the `=`.
+## Python Basics
+###  Operators
 
-:::: {.columns}
-::: {.column width="50%"}
-- `x += 1` is equivalent to `x = x + 1`.
-```{.python}
-x = 3
-x += 1
-```
-:::
+**Q**. [Classwork 1.1](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-1)
 
-::: {.column width="50%"}
-- `a -= 2` is equivalent to `a = a - 2`.
-```{.python}
-a = 2
-a -= 2
-```
-:::
-:::: 
+Using Python operations only, calculate below:
+$$\frac{2^5}{7 \cdot (4 - 2^3)}$$ 
 
 
 
-##  Python Basics
-### Operators
+## Python Basics
+###  Strings
 
-**Q**. Using Python operations only, what is
-$$\frac{2^5}{7 \cdot (4 - 2^3)} \quad\text{?}$$ 
-
-
-
-
-
-
-##  Python Basics
-### Strings
-
-- From strings, we can access the individual characters via slicing and indexing. 
 
 
 ```{.python}
@@ -776,44 +787,38 @@ string = "cheesecake"
 print( string[-4:] )
 ```
 
+- From strings, we can access the individual characters via slicing and indexing. 
 
-- Both lists and strings will allow us to use the `len()` command to get their length:
+
 
 :::: {.columns}
 ::: {.column width="50%"}
-- `x += 1` is equivalent to `x = x + 1`.
 ```{.python}
 string = "cheesecake"
-print( "String has length:" )
+print("String has length:")
 print( len(string) )
 ```
 :::
 
 ::: {.column width="50%"}
-- `a -= 2` is equivalent to `a = a - 2`.
 ```{.python}
 list_of_numbers = range(1, 20)
-print( "List of numbers has length:" )
+print("List of numbers has length:")
 print( len(list_of_numbers) )
 ```
 :::
 ::::
 
+- Both lists and strings will allow us to use the `len()` command to get their length:
 
 
 
-##  Python Basics
-### Booleans and Conditions
-
-- Boolean data have either `True` or `False` value.
 
 
-- There are two types of operation that are associated with booleans: boolean operations.
-  - Existing booleans are combined, and condition operations, which create a boolean when executed.
+## Python Basics
+###  Booleans and Conditions
 
-
-
-```{r, out.width='100%', fig.align='center'}
+```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
 text_tbl <- data.frame(
   Operator = c("x and y", "x or y", "not x"),
   Description = c("Are x and y both True?",
@@ -821,6 +826,8 @@ text_tbl <- data.frame(
 "Is x False?")
   )
 
+
+# Create a DT datatable without search box and 'Show entries' dropdown
 DT::datatable(text_tbl, rownames = FALSE,
               options = list(
   dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
@@ -862,31 +869,33 @@ DT::datatable(text_tbl, rownames = FALSE,
   );
 ")
 )
-
-
 ```
 
 
 
-##  Python Basics
-### Booleans and Conditions
+- Boolean data have either `True` or `False` value.
+
+- Existing booleans can be combined, which create a boolean when executed.
+
+
+
+## Python Basics
+###  Booleans and Conditions
 
 Conditions are expressions that evaluate as booleans. 
 
-```{r, out.width='100%', fig.align='center'}
+```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
 text_tbl <- data.frame(
-  Operator = c("x == y", "x != y", "x > y", "x >= y", "x < y", "x <= y", "x is y"),
+  Operator = c("x == y", "x != y", "x > y", "x >= y", "x < y", "x <= y"),
   Description = c("Is x equal to y?",
 "Is x greater than y?",
 "Is x greater than or equal to y?",
 "Is x greater than or equal to y?",
 "Is x less than y?",
-"Is x less than or equal to y?",
-"Is x the same object as y?" )
+"Is x less than or equal to y?")
 )
 
-
-
+# Create a DT datatable without search box and 'Show entries' dropdown
 DT::datatable(text_tbl, rownames = FALSE,
               options = list(
   dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
@@ -929,14 +938,14 @@ DT::datatable(text_tbl, rownames = FALSE,
 ")
 )
 
+
 ```
 
 
 
-##  Python Basics
-### Booleans and Conditions
+## Python Basics
+###  Booleans and Conditions
 
-- The `==` is an operator that compares the objects on either side and returns `True` if they have the same values
 
 ```{.python}
 boolean_condition1 = 10 == 20
@@ -946,16 +955,18 @@ boolean_condition2 = 10 == '10'
 print(boolean_condition2)
 ```
 
-**Q**. What does `not (not True)` evaluate to?
+
+- The `==` is an operator that compares the objects on either side and returns `True` if they have the same values
+
+
+- **Q**. What does `not (not True)` evaluate to?
+
+- **Q**. [Classwork 1.2](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-2)
 
 
 
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- The real power of conditions comes when we start to use them in more complex examples, such as `if` statements.
+## Python Basics
+###  Booleans and Conditions
 
 
 ```{.python}
@@ -972,42 +983,13 @@ if name != "Geneseo" and score > 90:
     print("You are not called Geneseo and you have a high score")
 ```
 
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- Given that `==` and `!=` test for equality and not equal, respectively, you may be wondering what the keyword `is`  is for.
-  - Remember that everything in Python is an object, and that values can be assigned to objects.
-  - `==` and `!=` compare values, while `is` compare objects.
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-name_list = ["Ada", "Adam"]
-name_list_two = ["Ada", "Adam"]
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-# Compare values
-print(name_list == name_list_two)
-
-# Compare objects
-print(name_list is name_list_two)
-```
-:::
-::::
+- The real power of conditions comes when we start to use them in more complex examples, such as `if` statements.
 
 
 
-##  Python Basics
-### Booleans and Conditions
-
-- One of the most useful conditional keywords is `in`. 
-  - This one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.
-
+  
+## Python Basics
+###  Booleans and Conditions
 
 ```{.python}
 name_list = ["Lovelace", "Smith", "Hopper", "Babbage"]
@@ -1017,15 +999,20 @@ print("Lovelace" in name_list)
 print("Bob" in name_list)
 ```
 
-**Q**. Check if “a” is in the string “Sun Devil Arena” using `in`. Is “a” in “Anyone”?
+
+
+- One of the most useful conditional keywords is `in`. 
+  - This one must pop up ten times a day in most coders' lives because it can pick out a variable or make sure something is where it's supposed to be.
+
+
+**Q**. Check if "a" is in the string "Sun Devil Arena" using `in`. Is "a" in "Anyone"?
 
 
 
 
-##  Python Basics
-### Booleans and Conditions
+## Python Basics
+###  Booleans and Conditions
 
-- One conditional construct we're bound to use at some point, is the `if-else` chain:
 
 ```{.python}
 score = 98
@@ -1040,35 +1027,429 @@ else:
     print("Better luck next time.")
 ```
 
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-
-**Q**. Create a new `if-else` chain that prints “well done” if a score is over 90, “good” if between 40 and 90, and “bad luck” otherwise.
+- One conditional construct we're bound to use at some point, is the `if-else` chain:
 
 
 
 
 
 
-##  Python Basics
-### Booleans and Conditions
 
 
-- We can make multiple assignment or multiple boolean comparisons in a single line.
+## Python Basics
+###  Casting Variables
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+orig_number = 4.39898498
+type(orig_number)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+mod_number = int(orig_number)
+mod_number
+type(mod_number)
+```
+:::
+::::
+
+
+- Sometimes we need to explicitly cast a value from one type to another. 
+
+  - We can do this using built-in functions like `str()`, `int()`, and `float()`. 
+  - If we try these, Python will do its best to interpret the input and convert it to the output type we'd like and, if they can't, the code will throw a great big error.
+  
+
+
+## Python Basics
+###  Tuples and (im)mutability
+::: {}
+
+- A tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.) 
+
+- Tuples are immutable, while lists are mutable.
+
+- Immutable objects, such as tuples and strings, can't have their elements changed, appended, extended, or removed. 
+  - Mutable objects, such as lists, can do all of these things. 
+
+- In everyday programming, we use **lists** and **dictionaries** more than *tuples*.
+
+:::
+
+
+## Python Basics
+###  Indentation
+
+- We have seen that certain parts of the code examples are indented. 
+
+- Code that is part of a function, a conditional clause, or loop is indented. 
+
+- Indention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.
+
+
+
+
+## Python Basics
+###  Indentation
+
 
 ```{.python}
-a, b = 3, 6
+x = 10
 
-1 < a < b < 20
+if x > 2:
+    print("x is greater than 2")
+```
+
+- Here's a basic example of indentation as part of an `if` statement.
+
+- The standard practice for indentation is that each sub-statement should be indented by 4 spaces.
+
+
+
+
+
+## Python Basics
+###  `for` Loops
+
+
+
+```{.python}
+name_list = ["Ben", "Chris", "Kate", "Mary"]
+
+for name in name_list:
+    print(name)
+```
+
+
+- A loop is a way of executing a similar piece of code over and over in a similar way. 
+  - The most useful loop is **for loops**.
+  
+- As long as our object is an iterable, then it can be used in this way in a *for loop*.
+
+- Lists, tuples, strings, and dictionaries are iterable.
+
+
+
+
+
+## Python Basics
+###  Dictionaries
+
+
+
+```{.python}
+cities_to_temps = {"Paris": 28, "London": 22, "Seville": 36, "Wellesley": 29}
+
+cities_to_temps.keys()
+cities_to_temps.values()
+cities_to_temps.items()
+```
+
+- Another built-in Python type that is enormously useful is the dictionary. 
+  - This provides a mapping one set of variables to another (either one-to-one or many-to-one). 
+  - If you need to create associations between objects, use a dictionary.
+  
+  
+- We can obtain keys, values, or key-value paris from dictionaries.
+
+
+
+
+## Python Basics
+###  Running on Empty
+
+- Being able to create empty containers is sometimes useful, especially when using loops. 
+
+- The commands to create empty lists, tuples, dictionaries, and sets are `lst = []`, `tup=()`, `dic={}`, and `st = set()` respectively.
+
+- **Q.** What is the type of an empty list?
+
+
+## Python Basics
+### Slicing Methods
+
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python_string_index.png">
+</p>
+
+
+- With slicing methods, we can get subset of the data object.
+
+- Slicing methods can apply for strings, lists, arrays, and DataFrames.
+
+- The above example describes indexing in Python
+
+
+
+## Python Basics
+### Strings and Slicing
+
+- We can extract a substring (a part of a string) from a string by using a **slice**. 
+
+- We define a slice by using square brackets (`[]`), a *start* index, an *end* index, and an optional *step* count between them. 
+
+  - We can omit some of these. 
+
+- The slice will include characters from index *start* to one before *end*:
+
+
+
+
+
+## Python Basics
+### Get a Substring with a Slice
+
+
+::: {.panel-tabset}
+## `[:]`
+```{.python}
+letters = 'abcdefghij'
+letters[:]
+```
+- `[:]` extracts the entire sequence from start to end.
+
+
+## `[ start :]`
+```{.python}
+letters = 'abcdefghij'
+letters[4:]
+letters[2:]
+letters[-3:]
+letters[-50:]
+```
+- `[ start :]` specifies from the *start* index to the end.
+
+
+## `[: end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[:3]
+letters[:-3]
+letters[:70]
+```
+- `[: end ]` specifies from the beginning to the *end* index minus 1.
+
+
+
+## `[ start : end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2:5]
+letters[-26:-24]
+letters[35:37]
+```
+- `[ start : end ]` indicates from the *start* index to the *end* index minus 1.
+
+
+## `[ start : end : step ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters
+letters[ : : 3]     # From the start to the end, in steps of 3 characters
+letters[ 6 : : 4 ]    # From index 19 to the end, by 4
+letters[ : 7 : 5 ]    # From the start to index 6 by 5:
+letters[-1 : : -1 ]   # Starts at the end and ends at the start
+letters[: : -1 ]
+```
+- `[ start : end : step ]` extracts from the *start* index to the *end* index minus 1, skipping characters by *step*.
+
+
+:::
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+- Python is 
+  - a zero-indexed language (things start counting from zero);
+  - left inclusive;
+  - right exclusive when we are specifying a range of values.
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+  
+```{.python}
+list_example = ['one', 'two', 'three']
+list_example[ 0 : 1 ]
+list_example[ 1 : 3 ]
+```
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python-slicing-fence.png">
+</p>
+
+
+- We can think of items in a list-like object as being fenced in. 
+  - The index represents the fence post.
+
+## Python Basics
+### Lists and Slicing
+
+::: {.panel-tabset}
+## `[index]`
+### Get an Item by `[index]`
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+```
+
+- We can extract a single value from a list by specifying its index:
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[0]
+suny[1]
+suny[2]
+suny[7]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[-1]
+suny[-2]
+suny[-3]
+suny[-7]
+```
+:::
+
+::::
+
+
+
+## slice
+### Get an Item with a Slice
+- We can extract a subsequence of a list by using a *slice*:
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+suny[0:2]    # A slice of a list is also a list.
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[ : : 2]
+suny[ : : -2]
+suny[ : : -1]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[4 : ]
+suny[-6 : ]
+suny[-6 : -2]
+suny[-6 : -4]
+```
+:::
+
+
+::::
+
+:::
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+- **Q** [Classwork 1.3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-3)
+
+
+## Python Basics
+### Functions
+
+- A function can take any number and type of input *parameters* and **return** any number and type of output *results*.
+
+- Python ships with more than 65 built-in functions. 
+
+- Python also allows a user to define a new function.
+
+- We will mostly use built-in functions. 
+
+
+```{.python}
+int("20") 
+float("14.3")
+str(5)
+int("xyz")
 ```
 
 
 
+## Python Basics
+### Functions, Arguments, and Parameters
 
+```{.python}
+print("Cherry", "Strawberry", "Key Lime")
+print("Cherry", "Strawberry", "Key Lime", sep = "!")
+print("Cherry", "Strawberry", "Key Lime", sep=" ")
+```
+
+
+- We invoke a function by entering its name and a pair of opening and closing parentheses. 
+
+- Much as a cooking recipe can accept ingredients, a function invocation can accept inputs called **arguments**. 
+
+- We pass arguments sequentially inside the parentheses (, separated by commas).
+
+- A **parameter** is a name given to an expected function argument.
+
+- A *default argument* is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one.
+
+
+## Python Basics
+### Functions, Arguments, and Parameters
+
+- **Q**. [Classwork 1.4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-4)
+
+
+
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+- Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
+
+
+- The core libraries that enable Python to store and analyze data efficiently are in Python libraries.
+  - `numpy` provides the basic array block used throughout numerical Python.
+  - `pandas` provides DataFrames which are used to store data in an easy-to-use format.
+  - `matplotlib` provides graphics. The most important submodule would be `matplotlib.pyplot`.
+  - `seaborn` provides a general improvement in the default appearance of `matplotlib`-produced plots.
+
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+- A **module** is basically a bunch of related codes saved in a file with the extension `.py`.
+
+- A **package** is basically a directory of a collection of modules. 
+
+- A **library** is a collection of packages
+
+
+- We refer to code of other modules/pacakges/libraries by using the Python `import` statement. 
+  - This makes the code and variables in the imported module available to our programming codes.
+  - We can use the `as` *keyword* when importing the modules using their canonical names.
+
+- **Q**. [Classwork 1.5](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-5)
 
 
 <script>
