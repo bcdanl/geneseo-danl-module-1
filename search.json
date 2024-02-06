@@ -2154,5 +2154,26 @@
     "title": "DANL Module 1 - Homework",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics [Homework 1 may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics [Homework 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "why-colab-github.html",
+    "href": "why-colab-github.html",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "",
+    "text": "Google Colab, short for Google Colaboratory, is an external tool that we integrate into our course to provide students with a dynamic and collaborative coding environment. It is a cloud-based platform developed by Google that offers a free, web-based Python programming environment. The purpose of using Google Colab is to enable learners to write, run, and collaborate on Python code without the need for complex local installations. It provides several advantages:\n\nAccessibility: Google Colab is accessible from any device with an internet connection without setting up Python environment for data analysis on a local computer, making it convenient for learners to work on coding assignments from anywhere.\nReal-time Collaboration: Multiple users can work on the same Colab notebook simultaneously, allowing for real-time collaboration on coding projects and assignments.\nPowerful Resources: Google Colab provides access to powerful computing resources, including GPUs and TPUs, which can be useful for computationally intensive tasks like machine learning.\nVersion Control: It supports version control through integration with GitHub, making it easy to manage and track changes in code."
+  },
+  {
+    "objectID": "why-colab-github.html#setting-up-github-access-from-colab",
+    "href": "why-colab-github.html#setting-up-github-access-from-colab",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Setting up GitHub access from Colab",
+    "text": "Setting up GitHub access from Colab\n\n\n\n\n\n\n\n\n\nIn order to access GitHub repositories, you need to allow Colab to access the repositories. To set this up, please follow the steps below.\n\nLogin on GitHub.\nGo to the page for creating a new repository. Then, click the + icon to create a new repository.\nName the repository\nGo to the main Google Colab page. You will get a splash page that looks like this.\n\n\n\n\n\n\n\n\n\n\n\nClick on the + New notebook button, located at the bottom left.\nSave the Python Notebook on your GitHub repository.\n\n\nFrom the menu bar, click File → Save a copy in GitHub.\n\n\nAn authorization window from GitHub may pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your GitHub repositories, as shown below YouTube video:\n\n\n\nAfter finishing the authorization, choose the repository you created, and type the file name.."
+  },
+  {
+    "objectID": "why-colab-github.html#updating-your-notebook-to-the-repository",
+    "href": "why-colab-github.html#updating-your-notebook-to-the-repository",
+    "title": "Why and How Do We Use Google Coalb and GitHub?",
+    "section": "Updating your notebook to the repository",
+    "text": "Updating your notebook to the repository\nAfter you have made changes to your notebook, you can save the changes to the GitHub repository. To do so from within a Colab notebook, click File → Save a copy in GitHub in GitHub. You will be prompted to add a commit message, and after you click OK, the notebook will be pushed to your repository."
   }
 ]

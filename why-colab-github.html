@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,10 +71,10 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:title" content="Why and How Do We Use Google Coalb and GitHub? | Byeong-Hak Choe">
 <meta property="og:description" content="">
 <meta property="og:image" content="/assets/img/posts.png">
-<meta property="og:site-name" content="B.H. CHOE">
+<meta property="og:site-name" content="Home">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">B.H. CHOE&nbsp;&nbsp;&nbsp;</span>
+    <span class="navbar-title">Home</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,11 +103,11 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
         <li>
     <a class="dropdown-item" href="https://github.com/bcdanl/module-1" rel="me" target="_blank">
- <span class="dropdown-text">Website</span></a>
+ <span class="dropdown-text">Website Repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://github.com/bcdanl/module-1/discussions" rel="me" target="_blank">
- <span class="dropdown-text">Discussions</span></a>
+ <span class="dropdown-text">Discussion Boards</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://github.com/bcdanl/module-1-colab" rel="me" target="_blank">
@@ -135,6 +136,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -167,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 2, 2024</p>
+      <p class="date-modified">February 5, 2024</p>
     </div>
   </div>
     
@@ -199,15 +204,28 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Integration</strong>: GitHub seamlessly integrates with other tools, such as Google Colab, making it convenient for students to sync their code between platforms.</p></li>
 </ol>
 <p>By using Google Colab and GitHub, we aim to create a dynamic interactive learning environment that enhances students’ coding skills, fosters teamwork, and simplifies code management, ultimately enriching the educational experience in our course.</p>
+<p><br><br></p>
 </section>
 <section id="using-github-with-google-colab" class="level1">
 <h1>Using GitHub with Google Colab</h1>
-<p>Google Colab has convenient Git integration. This will enable you to edit notebooks in Colab and then commit and push changes back to the repository without ever leaving Colab in your browser.</p>
+<p>Google Colab has convenient GitHub integration. This will enable you to edit notebooks in Colab and then commit and push changes back to the repository without ever leaving Colab in your browser.</p>
 <section id="setting-up-github-access-from-colab" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-github-access-from-colab">Setting up GitHub access from Colab</h2>
-<p>In order to access Git repositories, you need to allow Colab to access the repositories. To set this up, make sure you are logged in to your Github account. Then, follow the steps below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://bcdanl.github.io/lec_figs/git-new-repo-colab.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In order to access GitHub repositories, you need to allow Colab to access the repositories. To set this up, please follow the steps below.</p>
 <ol type="1">
-<li>Go to the <a href="https://colab.research.google.com/">main Google Colab page</a>. You will get a splash page that looks like this.</li>
+<li><p>Login on <a href="https://github.com">GitHub</a>.</p></li>
+<li><p>Go to the <a href="https://github.com/new">page for creating a new repository</a>. Then, click the + icon to create a new repository.</p></li>
+<li><p>Name the repository</p></li>
+<li><p>Go to the <a href="https://colab.research.google.com/">main Google Colab page</a>. You will get a splash page that looks like this.</p></li>
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -218,17 +236,24 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Click on the "+ New notebook" button, located at the bottom left.</p>
-<ol start="2" type="1">
-<li><p>From the menu bar, click "File" -> "Save a copy in GitHub".</p></li>
-<li><p>Click the checkbox for including private repos if you also want to include repositories you have set to be private.</p></li>
-<li><p>An authorization window from GitHub will pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your repositories.</p></li>
-<li><p>Under where it says “Enter a GitHub URL or search by organization or user,” search for the desired repository name. Underneath the search bar, you will have a pulldown menu of available notebooks. Select the one you want to work on.</p></li>
+<ol start="5" type="1">
+<li><p>Click on the <code>+ New notebook</code> button, located at the bottom left.</p></li>
+<li><p>Save the Python Notebook on your GitHub repository.</p></li>
+</ol>
+<ul>
+<li>From the menu bar, click <code>File</code> → <code>Save a copy in GitHub</code>.</li>
+</ul>
+<ol start="7" type="1">
+<li>An authorization window from GitHub may pop up. (Make sure you are not blocking pop-up windows.) You should authorize Colab to access your GitHub repositories, as shown below YouTube video:</li>
+</ol>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/uBY06NpnLcs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol start="8" type="1">
+<li>After finishing the authorization, choose the repository you created, and type the file name..</li>
 </ol>
 </section>
-<section id="pushing-your-notebook-to-the-repository" class="level2">
-<h2 class="anchored" data-anchor-id="pushing-your-notebook-to-the-repository">Pushing your notebook to the repository</h2>
-<p>After you have made changes to your notebook, you can commit and push them to the repository. To do so from within a Colab notebook, click <code>File</code> → <code>Save a copy in GitHub</code> in GitHub. You will be prompted to add a commit message, and after you click <code>OK</code>, the notebook will be pushed to your repository.</p>
+<section id="updating-your-notebook-to-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="updating-your-notebook-to-the-repository">Updating your notebook to the repository</h2>
+<p>After you have made changes to your notebook, you can save the changes to the GitHub repository. To do so from within a Colab notebook, click <code>File</code> → <code>Save a copy in GitHub</code> in GitHub. You will be prompted to add a commit message, and after you click <code>OK</code>, the notebook will be pushed to your repository.</p>
 
 
 </section>
@@ -597,15 +622,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="bcecon/bcecon.github.io" data-repo-id="R_kgDOHcmHaA" data-category="General" data-category-id="DIC_kwDOHcmHaM4CcxRh" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2024</div>
+    <div class="nav-footer-center"><span data-line-height="0.2"><font size="2">powered with github, quarto, and rstudio</font></span><br><span style="display:block; margin:-5px;"></span> <span data-line-height="0.7"><font size="2">byeong-hak choe, 2024</font></span></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
