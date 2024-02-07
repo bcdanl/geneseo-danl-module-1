@@ -1113,27 +1113,6 @@
     "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 1.5"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-41",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-41",
-    "title": "Lecture 1",
-    "section": "Python Basics",
-    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are:\n\npandas\nnumpy\nmatplotlib and seaborn"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-42",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-42",
-    "title": "Lecture 1",
-    "section": "Python Basics",
-    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\npandasnumpymatplotlib and seaborn\n\n\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format.\n\n\n\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;\n\n\n\n\n\n\n\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-43",
-    "href": "danl-lec/danl-m1-lec-01-2024-0206.html#python-basics-43",
-    "title": "Lecture 1",
-    "section": "Python Basics",
-    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 1.5"
-  },
-  {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-data-structures-basics-1",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-data-structures-basics-1",
     "title": "Lecture 3",
@@ -2188,7 +2167,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics [Classwork 1 may be subject to change during the Module.]\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics [Classwork 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics [Classwork 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
