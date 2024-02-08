@@ -28,7 +28,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 -   Make one text cell to explain things in each question.
 
 
--   Use your working directory with the subfolder, `data`, so that the relative pathname of CSV files in the subfolder `data` is sufficient to import the CSV files.
+<!-- -   Use your working directory with the subfolder, `data`, so that the relative pathname of CSV files in the subfolder `data` is sufficient to import the CSV files. -->
 
 
 <br><br>
@@ -137,5 +137,11 @@ Write a for loop that prints out `"coding for data analysts"` so that each word 
 ```
 
 <br><br><br>
+
+
+# Question 8
+
+- Do Question 6 in [Classwork 1](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-1.html#question-6)
+
 
 <br><br><br>
