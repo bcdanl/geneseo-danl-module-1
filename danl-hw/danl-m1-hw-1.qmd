@@ -1,6 +1,6 @@
 ---
 title: Homework 1
-subtitle: Python Basics [Homework 1 may be subject to change during the Module.]
+subtitle: Python Basics
 date: 2024-02-06
 execute: 
   echo: false
@@ -20,6 +20,16 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 
 # Direction
+
+
+- Please submit your Jupyter Notebook for Homework 1 to the Brightspace with the name below:
+
+  - `danl-m1-hw1-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-m1-hw1-choe-byeonghak.ipynb` )
+
+- The due is February 20, 2024, 3:30 P.M.
+
+- Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
 
 -   Write a Python Notebook (`*.ipynb`) to answer each question.
 
