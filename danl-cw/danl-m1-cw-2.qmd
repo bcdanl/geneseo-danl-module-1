@@ -1,6 +1,6 @@
 ---
 title: Classwork 2
-subtitle: Pandas Basics [Classwork 2 may be subject to change during the Module.]
+subtitle: Pandas Basics
 date: 2024-02-13
 execute: 
   eval: false
@@ -9,169 +9,115 @@ execute:
   message: false
   
 from: markdown+emoji
-comments: false
 ---
 
-- The following is the Python libraries we need for this homework.
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+# Direction
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+The `nfl.csv` file contains a list of players in the National Football League with similar `Name`, `Team`, `Position`, `Birthday`, and `Salary` variables in the `nba.csv` file. 
+
+:::
+
+
+::: {.column width="50%"}
+[](https://bcdanl.github.io/lec_figs/nfl-logo.png)
+:::
+
+::::
+
 ```{python}
 #| echo: true
 import pandas as pd
-import seaborn as sns
+nfl = pd.read_csv("https://bcdanl.github.io/data/nfl.csv")
 ```
 
-
+<br><br>
 
 # Question 1
+- How can we import the *nfl.csv* file? 
+- What is an effective way to convert the values in its `Birthday` variable to `datetimes`?
 
-Load the CSV file, `beer_markets_cleaned.csv`, from the class website:
-```{python}
-#| echo: true
-beer_markets = pd.read_csv('https://bcdanl.github.io/data/beer_markets_cleaned.csv')
-```
-
-
-- Description of DataFrame `beer_markets` 
-  - One single observation (row) corresponds to information regarding one household and its beer purchase.
-  - DataFrame `beer_markets` does not have any missing values.
-
-<br>
-
-- Variable (column) description
-  - `hh`: an identifier of the household;
-  - `purchase_desc`: details on the purchased item;
-  - `quantity`: the number of items purchased;
-  - `brand`: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;
-  - `spent`: total dollar value of purchase;
-  - `beer_floz`: total volume of beer, in fluid ounces;
-  - `price_per_floz`: price per fl.oz. (i.e., beer spent/beer floz);
-  - `container`: the type of container;
-  - `promo`: Whether the item was promoted (coupon or otherwise);
-  - `market`: Scan-track market (or state if rural);
-  - demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.
-
-<br><br>
-
-## Q1a
-- Sort the DataFrame `beer_markets` by `hh` in ascending order.
-
-
-<br>
-
-*Answer*
-
-```{python}
-```
-
-<br><br>
-
-## Q1b
-Count the number of households for each market.
-<br>
-
-*Answer*
-
+*Answer:*
 ```{python}
 
 ```
 
-<br><br>
-
-## Q1c
-
-Find the top 5 beer markets in terms of the number of households that purchased beer.
-
 <br>
 
-*Answer*
+# Question 2
 
+What are the two ways we can set the `DataFrame` index to store the player names?
+
+*Answer:*
 ```{python}
 
 ```
 
-```{r}
-
-```
-
-<br><br>
-
-## Q1d
-Sum of `beer_floz` for each `market`.
 <br>
 
-*Answer*
+# Question 3
+How can we count the number of players per team in this data set?
 
+*Answer:*
 ```{python}
 
 ```
 
-<br><br>
-
-## Q1e
-Find the top 5 beer markets in terms of the amount of total beer consumption.
 <br>
 
-*Answer*
+# Question 4
+Who are the five highest-paid players?
 
+*Answer:*
 ```{python}
 
 ```
 
-
-```{r}
-
-```
-
-<br><br>
-
-## Q1f
-- Variable `price_per_floz` is continuous.
-- Variable `brand` is categorical.
-
-Describe the distribution of `price_per_floz` for each `brand` using `seaborn`.
-
-Make a simple comment on comparison for the distribution of `price_per_floz` across brands.
 <br>
 
-*Answer*
+# Question 5
+How can we sort the `DataFrame` first by `Team` in alphabetical order and then by `Salary` in descending order?
 
+*Answer:*
 ```{python}
 
 ```
 
-```{r}
-
-```
-
 <br>
 
-- `BUD LIGHT`, `COORS LIGHT`, and `MILLER LITE` have the similar distribution of `price_per_floz` with each other.
 
-- `BUSCH LIGHT` and `NATURAL LIGHT` have the similar distribution of `price_per_floz` with each other.
+# Question 6
+Who is the oldest player on the New York Jets roster, and what is his birthday?
 
-- Overall, `BUD LIGHT`, `COORS LIGHT`, and `MILLER LITE` are more expensive than `BUSCH LIGHT` and `NATURAL LIGHT`.
-
-
-
-<br><br>
-
-## Q1g
-
-- Both variables `price_per_floz` and `beer_floz` are continuous.
-
-- Describe the relationship between `price_per_floz` and `beer_floz` by brand using `seaborn`.
-
-- Make a simple comment on the visualization result regarding how the relationship between `price_per_floz` and `beer_floz` varies by `brand`.
-<br>
-
-*Answer*
-
+*Answer:*
 ```{python}
 
 ```
 
-```{r}
+<br>
 
-```
 
+# Discussion
+
+<font size = "5">Welcome to our Classwork 2 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 2.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 2 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
 
 

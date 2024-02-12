@@ -256,7 +256,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics [Lecture 2 slides may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas basics; Filtering DataFrame\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -333,56 +333,7 @@
     "href": "danl-cw/danl-m1-cw-2.html",
     "title": "Classwork 2",
     "section": "",
-    "text": "The following is the Python libraries we need for this homework.\nimport pandas as pd\nimport seaborn as sns"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1a",
-    "href": "danl-cw/danl-m1-cw-2.html#q1a",
-    "title": "Classwork 2",
-    "section": "Q1a",
-    "text": "Q1a\n\nSort the DataFrame beer_markets by hh in ascending order.\n\n\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1b",
-    "href": "danl-cw/danl-m1-cw-2.html#q1b",
-    "title": "Classwork 2",
-    "section": "Q1b",
-    "text": "Q1b\nCount the number of households for each market. \nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1c",
-    "href": "danl-cw/danl-m1-cw-2.html#q1c",
-    "title": "Classwork 2",
-    "section": "Q1c",
-    "text": "Q1c\nFind the top 5 beer markets in terms of the number of households that purchased beer.\n\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1d",
-    "href": "danl-cw/danl-m1-cw-2.html#q1d",
-    "title": "Classwork 2",
-    "section": "Q1d",
-    "text": "Q1d\nSum of beer_floz for each market. \nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1e",
-    "href": "danl-cw/danl-m1-cw-2.html#q1e",
-    "title": "Classwork 2",
-    "section": "Q1e",
-    "text": "Q1e\nFind the top 5 beer markets in terms of the amount of total beer consumption. \nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1f",
-    "href": "danl-cw/danl-m1-cw-2.html#q1f",
-    "title": "Classwork 2",
-    "section": "Q1f",
-    "text": "Q1f\n\nVariable price_per_floz is continuous.\nVariable brand is categorical.\n\nDescribe the distribution of price_per_floz for each brand using seaborn.\nMake a simple comment on comparison for the distribution of price_per_floz across brands. \nAnswer\n\n\nBUD LIGHT, COORS LIGHT, and MILLER LITE have the similar distribution of price_per_floz with each other.\nBUSCH LIGHT and NATURAL LIGHT have the similar distribution of price_per_floz with each other.\nOverall, BUD LIGHT, COORS LIGHT, and MILLER LITE are more expensive than BUSCH LIGHT and NATURAL LIGHT."
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-2.html#q1g",
-    "href": "danl-cw/danl-m1-cw-2.html#q1g",
-    "title": "Classwork 2",
-    "section": "Q1g",
-    "text": "Q1g\n\nBoth variables price_per_floz and beer_floz are continuous.\nDescribe the relationship between price_per_floz and beer_floz by brand using seaborn.\nMake a simple comment on the visualization result regarding how the relationship between price_per_floz and beer_floz varies by brand. \n\nAnswer"
+    "text": "Direction\n\n\nThe nfl.csv file contains a list of players in the National Football League with similar Name, Team, Position, Birthday, and Salary variables in the nba.csv file.\n\n\n\n\n\nimport pandas as pd\nnfl = pd.read_csv(\"https://bcdanl.github.io/data/nfl.csv\")\n\n\n\n\nQuestion 1\n\nHow can we import the nfl.csv file?\nWhat is an effective way to convert the values in its Birthday variable to datetimes?\n\nAnswer:\n\n\n\nQuestion 2\nWhat are the two ways we can set the DataFrame index to store the player names?\nAnswer:\n\n\n\nQuestion 3\nHow can we count the number of players per team in this data set?\nAnswer:\n\n\n\nQuestion 4\nWho are the five highest-paid players?\nAnswer:\n\n\n\nQuestion 5\nHow can we sort the DataFrame first by Team in alphabetical order and then by Salary in descending order?\nAnswer:\n\n\n\nQuestion 6\nWho is the oldest player on the New York Jets roster, and what is his birthday?\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 2 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 2.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 2 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-7.html",
@@ -1526,123 +1477,263 @@
     "text": "Data Visualization with seaborn\nFaceting\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\nStep 1. FacetGrid()Step2. FacetGrid().map()\n\n\n\nFirst, we create a FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\n\ng = sns.FacetGrid(\n      data = titanic,\n      row='class',\n      col='sex')\n\n\n\nSecodn, we use the FacetGrid().map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\ng.map(sns.histplot, 'age', kde=True)  ## kde: kernel density (probability density function)"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-libraries",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-libraries",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics",
     "title": "Lecture 2",
-    "section": "pandas Libraries",
-    "text": "pandas Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nA library is a collection of packages that includes a bunch of related Python codes.\n\n\n\npandas is a Python library that provides high-performance data structures and data analysis tools:\n\nData manipulation and analysis\nDataFrame and Series objects\nExport and import data from files and web\nHandling of missing data"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nImporting a data set with read_csv()\n\n\nA CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., nba.csv).\nThe CSV is widely used for storing data, and we will use this throughout the module.\nWe use the read_csv() function to load a CSV data file.\n\nimport pandas as pd\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\")\ntype(nba)\nnba\n\n\nThe DataFrame is the workhorse of the pandas library and the data structure."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#importing-pandas-libraries",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#importing-pandas-libraries",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
     "title": "Lecture 2",
-    "section": "Importing pandas Libraries",
-    "text": "Importing pandas Libraries\n\nWe refer to code of libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the libraries using their canonical names.\n\n\nimport pandas as pd"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nImporting a data set with read_csv()\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\nnba\n\nWe can use the parse_dates parameter to coerce the values into datetimes"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-2",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-2",
     "title": "Lecture 2",
-    "section": "Pandas",
-    "text": "Pandas\nLoad Data Sets\n\nWhen given a data set, we first load it and begin looking at its structure and contents.\nThe simplest way of looking at a data set is to look at and subset specific rows and columns.\nWe can see what type of information is stored in each column, and can start looking for patterns by aggregating descriptive statistics."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nColab’s Interactive DataFrame Display\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display\nnba\n\nWe can use the from keyword when specifying Python package from which we want to import something (e.g., functions).\nColab includes an extension that renders pandas DataFrames into interactive displays that can be filtered, sorted, and explored dynamically."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-1",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-1",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-3",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-3",
     "title": "Lecture 2",
-    "section": "Pandas",
-    "text": "Pandas\nLoad Data Sets\n\nWith the library loaded we can use the read_csv() function to load a CSV data file.\nIn order to access the read_csv() function from pandas, we use something called “dot” notation.\n\nWe write pd.read_csv() to say: within the pandas library we just loaded, look inside for the read_csv() function.\n\n\n# *.tsv is a file of tab-separated values.\n# we can use the sep parameter and indicate a tab with \\t\ndf  = pd.read_csv('https://bcdanl.github.io/data/gapminder.tsv', sep='\\t')\ndf"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSeries and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series with an index."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas---load-data-sets",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas---load-data-sets",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-4",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-4",
     "title": "Lecture 2",
-    "section": "Pandas - Load Data Sets",
-    "text": "Pandas - Load Data Sets\n\ntype().shape.columns.dtypes\n\n\n\nWe can check to see if we are working with a Pandas Dataframe by using the built-in type() function (i.e., it comes directly from Python, not a separate library such as Pandas).\n\ntype(df)\n\nThe type() function is handy when we begin working with many different types of Python objects and need to know what object we are currently working on.\n\n\n\n\nEvery DataFrame object has a .shape attribute that will give us the number of rows and columns of the DataFrame.\n\ndf.shape\n#  It’s written as df.shape and not df.shape()\n\nSince .shape is an attribute of the DataFrame object, and not a function or method of the DataFrame object, it does not have round parentheses after the period.\n\n\n\n\nTo get a gist of what information the data set contains, we look at the column names.\nThe column names are given using the .column attribute of the DataFrame object.\n\ndf.columns\n\nQ. What is the type of the column names?\n\n\n\n\nEach column (i.e., Series) has to be the same type, whereas each row can contain mixed types.\nWe can use the .dtypes attribute or the .info() method to see the type of each column in DataFrame.\n\ndf.dtypes\ndf.info()"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDataFrame Terminologies: Variables, Observations, and Values\n\n\n\n\nEach variable is a column.\nEach observation is a row.\nEach value is a cell."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-5",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-5",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSelect and Subset Columns by Name\n\nhead()[ ][ [] ]\n\n\n\nWe can use the .head() method of a DataFrame to look at the first 5 rows of our data.\n\nThis is useful to see if our data loaded properly, and to get a better sense of the columns and contents.\n\n\ndf.head()\n\n\n\nIf we want only a specific column from our data, we can access the data using square brackets, [ ].\n\n# just get the country column and save it to its own variable\ncountry_df = df['country']\n# show the first 5 observations\ncountry_df.head()\n\n\n\nIn order to specify multiple columns by the column name, we need to pass in a Python list between the square brackets.\n\n# Looking at country, continent, and year\nsubset = df[['country', 'continent', 'year']]\nsubset"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.method()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.attribute) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-1",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-1",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-6",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-6",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSingle Value Returns DataFrame or Series\n\nSeriesDataFrame\n\n\n\nWhen we first select a single column, a Series object comes out.\n\ncountry_df = df['country']\ntype(country_df)\ncountry_df\n\n\n\nCompare df['country'] with df[ ['country'] ]\n\ncountry_df_list = df[ ['country'] ]\ntype(country_df_list)\ncountry_df_list\n\nIf we use a list to subset, we will always get a DataFrame object back."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .info()\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-2",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-2",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-7",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-7",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nUsing Dot Notation to Pull a Column of Values\n\nThere is a shorthand notation where we can pull the column by treating it as a DataFrame attribute, or using dot (.).\n\ndf['country']\ndf.country\n\nWe do have to be mindful of what our columns are named if we want to use the dot notation.\n\nIf there is a column named shape, the df.shape will return the number of rows and columns\nIf our column name has spaces or special characters, we will not be able to use the dot notation to select that column of values."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .describe()\nnba.describe()\nnba.describe(include='all')\n\n.describe() method generates descriptive statistics that summarize the central tendency, dispersion, and distribution of each variable.\n\nIt can also process string-type variables if specified explicitly (include='all')."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-3",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-3",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-8",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-8",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubset Rows\n\nRows can be subset in multiple ways, by row name or row index."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting the first/last n observations with .head() & .tail()\n\n\nnba.head()\nnba.head(10)\n\nnba.tail()\nnba.tail(10)\n\n\n\nWe can use the .head()/.tail() method of a DataFrame to keep only the first/last n observations.\n\nThis can be useful with sorting methods."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-4",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-4",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-9",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-9",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubset Rows by index Label: .loc[]\n\nIndex.loc[]last row.tail()multiple rows\n\n\n\nLet’s take a look at our gapminder data:\n\ndf\n\nWe can see on the left side of the printed DataFrame, what appear to be row numbers.\n\nThis column-less row of values is the “index” label of the DataFrame.\n\nBy default, Pandas fills in the index labels with the row numbers starting from 0.\n\n\n\n\nWe can use the .loc[] attribute on the DataFrame to subset rows based on the index label.\n\n:::: {.columns} ::: {.column width=“50%”}\n# get the first row\ndf.loc[0]\n\n# get the 100th row\ndf.loc[99]\n\n# get the last row\ndf.loc[ -1]\n\nDoes df.loc[ -1] work?\n\n\n\n\n\nHere, passing -1 to the .loc[] causes an error.\n\nIt is actually looking for the row index label (i.e., row number -1), which does not exist in our example DataFrame.\n\n\n# use the first value given from shape to get the number of rows\nnumber_of_rows = df.shape[0]\n# subtract 1 from the value since we want the last index value\nlast_row_index = number_of_rows - 1\n\n# finally do the subset using the index of the last row\ndf.loc[last_row_index]\n\n\n\nWe can use the .tail() method to return the last n = 1 row, instead of the default 5.\n\ndf.tail(n = 1)\n\nUsing .tail() and .loc[] prints out the results differently.\n\ntype( df.tail(n = 1) )\ntype( df.loc[last_row_index] )\n\n\n\nWe can filter multiple rows.\n\ndf.loc[ [0, 99, 999] ]"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-5",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-5",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-10",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-10",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubset Rows by Row Number: .iloc[]\n\n.iloc[] does the same thing as .loc[], but is used to subset by the row index number.\nIn our current example, gapminder DataFrame, .iloc[] and .loc[] behave exactly the same way because the index labels are the same as the row numbers.\n\n\n\n# get the 2nd row\ndf.iloc[1]\n\n# get the 100th row\ndf.iloc[99]\n\n# get the last row\ndf.iloc[ -1]. # does it work?\n\n# get the first, 100th, and 1000th row\ndf.iloc[ [0, 99, 999] ]"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nIt has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-6",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-6",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-11",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-11",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nMix It Up\n\nWe can use .loc[] and .iloc[] to obtain rows, columns, or both.\nThe general syntax for .loc[] and .iloc[] uses square brackets with a comma.\ndf.loc[ [rows], [columns] ]\ndf.iloc[ [rows], [columns] ]\nTo just subset columns, we can use the slicing methods.\n\nIf we are subsetting columns, we are getting all the rows for the specified column.\nSo, we need a method to capture all the rows.\nIf we have just a colon (:) when using slicing methods, it “slices” all the values in that axis."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values() and head() & tail()\n\n\ndf = nba.sort_values([\"Salary\"])\ndf.head(5)\n\ndf = nba.sort_values([\"Salary\"])\ndf.tail(5)\n\n\n\nsort_values() with .head() or .tail() can be useful to find the observations with the n smallest/largest values in a variable."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-7",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-7",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-12",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-12",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSelecting Columns\n\nWe can write df.loc[:, [columns]] or df.iloc[:, [columns]] to subset the column(s).\n\n# subset columns with loc\nsubset_1 = df.loc[:, ['year', 'pop']]\nsubset_1\n\n# subset columns with iloc\n# iloc will allow us to use integers -1 to select the last column\nsubset_2 = df.iloc[:, [2, 4, -1]]\nsubset_2\n\n# do the followings work?\nsubset = df.loc[:, [2, 4, -1]] \nsubset = df.iloc[:, ['year', 'pop']]"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-8",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-8",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-13",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-13",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubsetting with range()\n\nWe can use the built-in range() function to create a range of integer values.\n\nBy default, range(start, stop) creates all integer values between the beginning and the end (inclusive left, exclusive right).\nFYI, we can also pass in a 3rd parameter into range(start, stop, step), step, that allows us to change how to increment between the start and stop values (defaults to step=1).\n\n\n# create a range of integers from 0 to 4 inclusive\nsmall_range = list( range(5) )   # equivalent to range(0, 5)\nsmall_range\n# subset the dataframe with the range\nsubset = df.iloc[:, small_range]\nsubset"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get only the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get only the first n observations ordered by a variable in descending order."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-9",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-9",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-14",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-14",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubsetting with range()\n\nLet’s consider one more example with range():\n\n#  create a range from 3 to 5 inclusive\nsmall_range = list( range(3, 6) )\n\nsubset = df.iloc[:, small_range]\nsubset\n\nQ. What happens when you specify a range() that’s beyond the number of columns you have?"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-10",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-10",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-15",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-15",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubsetting with Slicing :\n\nUnlike the range() function, the slicing method separates the values with the colon within the square bracket, [start : end : step ].\nLet’s see the columns of the DataFrame:\n\ndf.columns\n\nSee how range() and : are used to slice the first 3 columns.\n\nsmall_range = list( range(3) )\nsubset_1 = df.iloc[ : , small_range ]\n\nsubset_2 = df.iloc[ : , :3 ]"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-11",
-    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#look-at-columns-rows-and-cells-11",
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-16",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-16",
     "title": "Lecture 2",
-    "section": "Look at Columns, Rows, and Cells",
-    "text": "Look at Columns, Rows, and Cells\nSubsetting with Slicing :\nQ. Let’s slice the columns 3 to 5 inclusive using (1) the range() function and (2) the slicing method.\nQ. What happens if we use the slicing method with 2 colons, but leave a value out? For example:\n df.iloc[: , 0 : 6 :   ]\n df.iloc[: , 0 :   : 2 ]\n df.iloc[: ,   : 6 : 2 ]\n df.iloc[: ,   :   : 2 ]\n df.iloc[: ,   :   :   ]"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each column."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-17",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-17",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-18",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-18",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-19",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-19",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# The two lines below are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True).\n\nnba.sort_index(ascending = False).\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index.\nIf we could sort the data set by index positions rather than by column values, we could return it to its original shape."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-20",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-20",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nChanging the Order of Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-21",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-21",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observations (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-22",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-22",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-23",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-23",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the chain of method operations\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-24",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-24",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting a Variable by its Name\n# just get the country column and assign it to its own variable\nnba_player_name_1 = nba['Name']   # Series\nnba_player_name_1\n\nnba_player_name_2 = nba[ ['Name'] ]   # DataFrame\nnba_player_name_2\n\nIf we want only a specific variable from a DataFrame, we can access the variable with its name using squared brackets, [ ].\n\nDataFrame[ 'var_1' ]\nDataFrame[ ['var_1'] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-25",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-25",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-26",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-26",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting Multiple Variables with select_dtypes()\n# To include only string variables\nnba.select_dtypes(include = \"object\")\n\n# To exclude string and integer variables\nnba.select_dtypes(exclude = [\"object\", \"int\"])\n\nWe can use the select_dtypes() method to select columns based on their data types.\n\nThe method accepts two parameters, include and exclude."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-27",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-27",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-28",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-28",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-29",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-29",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-30",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-30",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-31",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-31",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-32",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-32",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-33",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-33",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-34",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-34",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-35",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-35",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-36",
+    "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-36",
+    "title": "Lecture 2",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Classwork 2!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#tidy-data-1",
@@ -2167,7 +2258,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics [Classwork 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Classwork 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",

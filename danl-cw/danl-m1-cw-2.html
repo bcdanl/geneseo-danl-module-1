@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Classwork 2 | Byeong-Hak Choe">
-<meta property="og:description" content="Pandas Basics [Classwork 2 may be subject to change during the Module.]">
+<meta property="og:description" content="Pandas Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="Home">
 </head>
@@ -219,16 +219,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a>
-  <ul>
-  <li><a href="#q1a" id="toc-q1a" class="nav-link" data-scroll-target="#q1a">Q1a</a></li>
-  <li><a href="#q1b" id="toc-q1b" class="nav-link" data-scroll-target="#q1b">Q1b</a></li>
-  <li><a href="#q1c" id="toc-q1c" class="nav-link" data-scroll-target="#q1c">Q1c</a></li>
-  <li><a href="#q1d" id="toc-q1d" class="nav-link" data-scroll-target="#q1d">Q1d</a></li>
-  <li><a href="#q1e" id="toc-q1e" class="nav-link" data-scroll-target="#q1e">Q1e</a></li>
-  <li><a href="#q1f" id="toc-q1f" class="nav-link" data-scroll-target="#q1f">Q1f</a></li>
-  <li><a href="#q1g" id="toc-q1g" class="nav-link" data-scroll-target="#q1g">Q1g</a></li>
-  </ul></li>
+  <li><a href="#direction" id="toc-direction" class="nav-link active" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -238,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Classwork 2</h1>
-<p class="subtitle lead">Pandas Basics [Classwork 2 may be subject to change during the Module.]</p>
+<p class="subtitle lead">Pandas Basics</p>
 </div>
 
 
@@ -262,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 5, 2024</p>
+      <p class="date-modified">February 11, 2024</p>
     </div>
   </div>
     
@@ -271,106 +269,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<ul>
-<li>The following is the Python libraries we need for this homework.</li>
-</ul>
+<section id="direction" class="level1">
+<h1>Direction</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The <code>nfl.csv</code> file contains a list of players in the National Football League with similar <code>Name</code>, <code>Team</code>, <code>Position</code>, <code>Birthday</code>, and <code>Salary</code> variables in the <code>nba.csv</code> file.</p>
+</div><div class="column" style="width:50%;">
+<p><a href="https://bcdanl.github.io/lec_figs/nfl-logo.png"></a></p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nfl <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/nfl.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br><br></p>
+</section>
 <section id="question-1" class="level1">
 <h1>Question 1</h1>
-<p>Load the CSV file, <code>beer_markets_cleaned.csv</code>, from the class website:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>beer_markets <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets_cleaned.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <ul>
-<li>Description of DataFrame <code>beer_markets</code>
-<ul>
-<li>One single observation (row) corresponds to information regarding one household and its beer purchase.</li>
-<li>DataFrame <code>beer_markets</code> does not have any missing values.</li>
-</ul></li>
+<li>How can we import the <em>nfl.csv</em> file?</li>
+<li>What is an effective way to convert the values in its <code>Birthday</code> variable to <code>datetimes</code>?</li>
 </ul>
+<p><em>Answer:</em></p>
 <p><br></p>
-<ul>
-<li>Variable (column) description
-<ul>
-<li><code>hh</code>: an identifier of the household;</li>
-<li><code>purchase_desc</code>: details on the purchased item;</li>
-<li><code>quantity</code>: the number of items purchased;</li>
-<li><code>brand</code>: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;</li>
-<li><code>spent</code>: total dollar value of purchase;</li>
-<li><code>beer_floz</code>: total volume of beer, in fluid ounces;</li>
-<li><code>price_per_floz</code>: price per fl.oz. (i.e., beer spent/beer floz);</li>
-<li><code>container</code>: the type of container;</li>
-<li><code>promo</code>: Whether the item was promoted (coupon or otherwise);</li>
-<li><code>market</code>: Scan-track market (or state if rural);</li>
-<li>demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.</li>
-</ul></li>
-</ul>
-<p><br><br></p>
-<section id="q1a" class="level2">
-<h2 class="anchored" data-anchor-id="q1a">Q1a</h2>
-<ul>
-<li>Sort the DataFrame <code>beer_markets</code> by <code>hh</code> in ascending order.</li>
-</ul>
+</section>
+<section id="question-2" class="level1">
+<h1>Question 2</h1>
+<p>What are the two ways we can set the <code>DataFrame</code> index to store the player names?</p>
+<p><em>Answer:</em></p>
 <p><br></p>
-<p><em>Answer</em></p>
-<p><br><br></p>
 </section>
-<section id="q1b" class="level2">
-<h2 class="anchored" data-anchor-id="q1b">Q1b</h2>
-<p>Count the number of households for each market. <br></p>
-<p><em>Answer</em></p>
-<p><br><br></p>
-</section>
-<section id="q1c" class="level2">
-<h2 class="anchored" data-anchor-id="q1c">Q1c</h2>
-<p>Find the top 5 beer markets in terms of the number of households that purchased beer.</p>
+<section id="question-3" class="level1">
+<h1>Question 3</h1>
+<p>How can we count the number of players per team in this data set?</p>
+<p><em>Answer:</em></p>
 <p><br></p>
-<p><em>Answer</em></p>
-<p><br><br></p>
 </section>
-<section id="q1d" class="level2">
-<h2 class="anchored" data-anchor-id="q1d">Q1d</h2>
-<p>Sum of <code>beer_floz</code> for each <code>market</code>. <br></p>
-<p><em>Answer</em></p>
-<p><br><br></p>
-</section>
-<section id="q1e" class="level2">
-<h2 class="anchored" data-anchor-id="q1e">Q1e</h2>
-<p>Find the top 5 beer markets in terms of the amount of total beer consumption. <br></p>
-<p><em>Answer</em></p>
-<p><br><br></p>
-</section>
-<section id="q1f" class="level2">
-<h2 class="anchored" data-anchor-id="q1f">Q1f</h2>
-<ul>
-<li>Variable <code>price_per_floz</code> is continuous.</li>
-<li>Variable <code>brand</code> is categorical.</li>
-</ul>
-<p>Describe the distribution of <code>price_per_floz</code> for each <code>brand</code> using <code>seaborn</code>.</p>
-<p>Make a simple comment on comparison for the distribution of <code>price_per_floz</code> across brands. <br></p>
-<p><em>Answer</em></p>
+<section id="question-4" class="level1">
+<h1>Question 4</h1>
+<p>Who are the five highest-paid players?</p>
+<p><em>Answer:</em></p>
 <p><br></p>
-<ul>
-<li><p><code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> have the similar distribution of <code>price_per_floz</code> with each other.</p></li>
-<li><p><code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code> have the similar distribution of <code>price_per_floz</code> with each other.</p></li>
-<li><p>Overall, <code>BUD LIGHT</code>, <code>COORS LIGHT</code>, and <code>MILLER LITE</code> are more expensive than <code>BUSCH LIGHT</code> and <code>NATURAL LIGHT</code>.</p></li>
-</ul>
-<p><br><br></p>
 </section>
-<section id="q1g" class="level2">
-<h2 class="anchored" data-anchor-id="q1g">Q1g</h2>
-<ul>
-<li><p>Both variables <code>price_per_floz</code> and <code>beer_floz</code> are continuous.</p></li>
-<li><p>Describe the relationship between <code>price_per_floz</code> and <code>beer_floz</code> by brand using <code>seaborn</code>.</p></li>
-<li><p>Make a simple comment on the visualization result regarding how the relationship between <code>price_per_floz</code> and <code>beer_floz</code> varies by <code>brand</code>. <br></p></li>
-</ul>
-<p><em>Answer</em></p>
+<section id="question-5" class="level1">
+<h1>Question 5</h1>
+<p>How can we sort the <code>DataFrame</code> first by <code>Team</code> in alphabetical order and then by <code>Salary</code> in descending order?</p>
+<p><em>Answer:</em></p>
+<p><br></p>
+</section>
+<section id="question-6" class="level1">
+<h1>Question 6</h1>
+<p>Who is the oldest player on the New York Jets roster, and what is his birthday?</p>
+<p><em>Answer:</em></p>
+<p><br></p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p><font size="5">Welcome to our Classwork 2 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Classwork 2.</p>
+<p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 2 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>Let’s collaborate and learn from each other!</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -735,6 +696,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
+</script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/module-1" data-repo-id="R_kgDOLC1PIg" data-category="General" data-category-id="DIC_kwDOLC1PIs4CcsIe" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">
