@@ -1,6 +1,6 @@
 ---
 title: Lecture 2
-subtitle: Pandas basics; Filtering `DataFrame`
+subtitle: Pandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, Indexing, Renaming, and Locating Data
 format:
   clean-revealjs:
     self-contained: true
@@ -21,10 +21,33 @@ execute:
 ---
 
 
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Learning Objectives
+
+- Loading `DataFrame`
+- Getting a Summary of `DataFrame`
+- Selecting Variables in a `DataFrame` 
+- Counting Values in a `DataFrame` 
+- Sorting `DataFrame`
+- Indexing and Renaming `DataFrame`
+- Locating Data in a `DataFrame`
+
+
+# Loading Data {background-color="#1c4982"}
+
+
+## Pandas Basics
+###  `Series` and `DataFrame`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png">
+</p>
+
+- `Series`:	a collection of a one-dimensional object containing a sequence of values.
   
-
-# Loading Data; Getting a Summary of Data {background-color="#1c4982"}
-
+- `DataFrame`: a collection of `Series` with an index.
 
 
 ## Pandas Basics
@@ -76,23 +99,13 @@ nba
 
 - We can use the `from` *keyword* when specifying Python package from which we want to `import` something (e.g., functions).
 
-- Colab includes an extension that renders pandas DataFrames into interactive displays that can be filtered, sorted, and explored dynamically.
+- Colab includes an extension that renders pandas `DataFrames` into interactive displays that can be filtered, sorted, and explored dynamically.
 
 
 
-## Pandas Basics
-###  `Series` and `DataFrame`
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png">
-</p>
-
-- `Series`:	a collection of a one-dimensional object containing a sequence of values.
-  
-- `DataFrame`: a collection of `Series` with an index.
 
 
-
+# Getting a Summary of Data {background-color="#1c4982"}
 
 ## Pandas Basics
 ### DataFrame Terminologies: Variables, Observations, and Values
@@ -174,6 +187,127 @@ nba.describe(include='all')
 
 - `.describe()` method generates **descriptive statistics** that summarize the central tendency, dispersion, and distribution of each variable. 
   - It can also process `string`-type variables if specified explicitly (`include='all'`).
+
+
+
+
+# Selecting Variables {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting a Variable by its Name
+
+```{.python}
+nba_player_name_1 = nba['Name']   # Series
+nba_player_name_1
+
+nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
+nba_player_name_2
+```
+
+- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
+  - `DataFrame[ 'var_1' ]` 
+  - `DataFrame[ ['var_1'] ]`
+
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables by their Names
+
+```{.python}
+nba_player_name_team = nba[ ['Name', 'Team'] ]
+nba_player_name_team
+```
+
+- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
+  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables with `select_dtypes()`
+
+
+```{.python}
+# To include only string variables
+nba.select_dtypes(include = "object")
+
+# To exclude string and integer variables
+nba.select_dtypes(exclude = ["object", "int"])
+```
+
+- We can use the `select_dtypes()` method to select columns based on their data types.
+  - The method accepts two parameters, `include` and `exclude`.
+
+
+# Counting Methods {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Counting with `.count()` 
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba['Salary'].count()
+nba[['Salary']].count()
+```
+:::
+
+::::
+
+- The `.count()` counts <u>the number of non-missing values</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.value_counts()` 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba['Team'].value_counts()
+```
+:::
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].value_counts()
+```
+:::
+
+::::
+
+- The `.value_counts()` counts <u>the number of occurrences of each unique value</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.nunique()` 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].nunique()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.nunique()
+```
+:::
+
+::::
+
+
+- The `.nunique()` counts <u>the number of unique values</u> in each variable in a `DataFrame`. 
+
+
 
 
 # Sorting Methods {background-color="#1c4982"}
@@ -288,9 +422,9 @@ nba.nsmallest(5, 'Salary')
 nba.nlargest(5, 'Salary')
 ```
 
-- `nsmallest()` are useful to get only the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
 
-- `nlargest()` are useful to get only the first `n` observations ordered by a variable in <u>*descending*</u> order.
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
 
 
 
@@ -435,57 +569,6 @@ nba2.reset_index(inplace=True)    # Useful for the chain of method operations
   - When we need to reset the index to the default integer index. 
 
 - Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
-
-
-
-# Selecting Variables {background-color="#1c4982"}
-
-## Pandas Basics
-### Selecting a Variable by its Name
-
-```{.python}
-# just get the country column and assign it to its own variable
-nba_player_name_1 = nba['Name']   # Series
-nba_player_name_1
-
-nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
-nba_player_name_2
-```
-
-- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
-  - `DataFrame[ 'var_1' ]`
-  - `DataFrame[ ['var_1'] ]`
-
-
-
-
-## Pandas Basics
-### Selecting Multiple Variables by their Names
-
-```{.python}
-nba_player_name_team = nba[ ['Name', 'Team'] ]
-nba_player_name_team
-```
-
-- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
-  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
-
-
-
-## Pandas Basics
-### Selecting Multiple Variables with `select_dtypes()`
-
-
-```{.python}
-# To include only string variables
-nba.select_dtypes(include = "object")
-
-# To exclude string and integer variables
-nba.select_dtypes(exclude = ["object", "int"])
-```
-
-- We can use the `select_dtypes()` method to select columns based on their data types.
-  - The method accepts two parameters, `include` and `exclude`.
 
 
 # Locating Observations {background-color="#1c4982"}
