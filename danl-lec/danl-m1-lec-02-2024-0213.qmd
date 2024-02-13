@@ -363,7 +363,7 @@ nba.sort_values(["Name"], ascending = False)
 
 
 - The `sort_values()` method’s `ascending` parameter determines the sort order.
-  - It has a default argument of `True`.
+  - `ascending` has a default argument of `True`.
   - By default, pandas will sort:
     - A variable of numbers in *increasing* order;
     - A variable of strings in *alphabetical* order;
@@ -538,7 +538,7 @@ nba.sort_index(axis = 1)
 
 - We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
   - This is particularly useful when:
-    - We have a column that *uniquely identifies* each observations (e.g., ID);
+    - We have a column that *uniquely identifies* each observation (e.g., ID);
     - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
     
 

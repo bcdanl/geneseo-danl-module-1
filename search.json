@@ -1607,7 +1607,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-19",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nIt has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nascending has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-20",
@@ -1684,7 +1684,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-30",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observations (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observation (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-31",
