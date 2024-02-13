@@ -1,6 +1,6 @@
 ---
 title: Lecture 3
-subtitle: Pandas Data Structures [Lecture 3 slides may be subject to change during the Module.]
+subtitle: Locating and Querying Data [Lecture 3 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true

@@ -30,7 +30,7 @@ The `nfl.csv` file contains a list of players in the National Football League wi
 
 
 ::: {.column width="50%"}
-[](https://bcdanl.github.io/lec_figs/nfl-logo.png)
+![](https://bcdanl.github.io/lec_figs/nfl.png)
 :::
 
 ::::

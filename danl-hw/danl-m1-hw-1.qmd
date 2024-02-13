@@ -27,7 +27,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
   - `danl-m1-hw1-LASTNAME-FIRSTNAME.ipynb`\
   ( e.g., `danl-m1-hw1-choe-byeonghak.ipynb` )
 
-- The due is February 20, 2024, 3:30 P.M.
+- The due is February 13, 2024, 7:00 P.M.
 
 - Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
 

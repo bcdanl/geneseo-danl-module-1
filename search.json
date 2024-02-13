@@ -11,42 +11,42 @@
     "href": "danl-hw/danl-m1-hw-1.html",
     "title": "Homework 1",
     "section": "",
-    "text": "Direction\n\nPlease submit your Jupyter Notebook for Homework 1 to the Brightspace with the name below:\n\ndanl-m1-hw1-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw1-choe-byeonghak.ipynb )\n\nThe due is February 20, 2024, 3:30 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nWrite a Python Notebook (*.ipynb) to answer each question.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\n\n\n\n\n\nQuestion 1\nHow do you assign the value 5 to a variable named x?\nAnswer\n\n\n\nQuestion 2\nGiven lst = [1, 2, 3, 4, 5], what does lst[1:4] return?\nAnswer\n\n\n\nQuestion 3\n\nHow do you create a dictionary with keys \"apple\", \"banana\", and \"cherry\", each with the corresponding values 5, 3, and 7?\nHow do you access the value associated with the key \"banana\" in the dictionary created above?\n\nAnswer\n\n\n\nQuestion 4\nFor the expressions below, what is the value of the expression? Explain thoroughly.\n\nTrue and False\n\n\nTrue or False\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nAnswer\n\n\n\nQuestion 5\n\nCreate a new if-elif-else chain that prints \"well done\" if a score is over 90, “good” if between 40 and 90, and \"bad luck\" otherwise.\n\nAnswer\n\n\n\nQuestion 6\nWrite a for loop that prints out \"coding for data analysts\" so that each word is printed in a successive iteration.\nAnswer\n\n\n\nQuestion 7\n\nHow do you import the math module in a Python script?\nAfter importing math, how do you use its sqrt function to find the square root of 16?\n\nAnswer\n\n\n\nQuestion 8\n\nDo Question 6 in Classwork 1\n\n\n\n\n\n\n Back to top"
+    "text": "Direction\n\nPlease submit your Jupyter Notebook for Homework 1 to the Brightspace with the name below:\n\ndanl-m1-hw1-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw1-choe-byeonghak.ipynb )\n\nThe due is February 13, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nWrite a Python Notebook (*.ipynb) to answer each question.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\n\n\n\n\n\nQuestion 1\nHow do you assign the value 5 to a variable named x?\nAnswer\n\n\n\nQuestion 2\nGiven lst = [1, 2, 3, 4, 5], what does lst[1:4] return?\nAnswer\n\n\n\nQuestion 3\n\nHow do you create a dictionary with keys \"apple\", \"banana\", and \"cherry\", each with the corresponding values 5, 3, and 7?\nHow do you access the value associated with the key \"banana\" in the dictionary created above?\n\nAnswer\n\n\n\nQuestion 4\nFor the expressions below, what is the value of the expression? Explain thoroughly.\n\nTrue and False\n\n\nTrue or False\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nAnswer\n\n\n\nQuestion 5\n\nCreate a new if-elif-else chain that prints \"well done\" if a score is over 90, “good” if between 40 and 90, and \"bad luck\" otherwise.\n\nAnswer\n\n\n\nQuestion 6\nWrite a for loop that prints out \"coding for data analysts\" so that each word is printed in a successive iteration.\nAnswer\n\n\n\nQuestion 7\n\nHow do you import the math module in a Python script?\nAfter importing math, how do you use its sqrt function to find the square root of 16?\n\nAnswer\n\n\n\nQuestion 8\n\nDo Question 6 in Classwork 1\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html",
     "href": "danl-hw/danl-m1-hw-2.html",
     "title": "Homework 2",
     "section": "",
-    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files."
+    "text": "Please submit your Jupyter Notebook for Homework 2 to the Brightspace with the name below:\n\ndanl-m1-hw2-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m2-hw1-choe-byeonghak.ipynb )\n\nThe due is February 20, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nWrite a Python Notebook (*.ipynb) to answer each question.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1a",
     "href": "danl-hw/danl-m1-hw-2.html#q1a",
     "title": "Homework 2",
     "section": "Q1a",
-    "text": "Q1a\nWrite a Python code that uses the list, a, to create the following Numpy Array:\n\narray([0.1, 1.2, 2.3, 3.4, 4.5])\n\n\nAnswer"
+    "text": "Q1a\nHow many players had at least some ice time?\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1b",
     "href": "danl-hw/danl-m1-hw-2.html#q1b",
     "title": "Homework 2",
     "section": "Q1b",
-    "text": "Q1b\nWrite a Python code that uses the list, a, to create the following pandas Series:\n\n########################\n# Index      0\n\n# 0         0.1\n# 1         1.2\n# 2         2.3\n# 3         3.4\n# 4         4.5\n\n# dtype: float64    \n########################\n\n\nAnswer"
+    "text": "Q1b\nWho is the top scorer in terms of points? Answer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1c",
     "href": "danl-hw/danl-m1-hw-2.html#q1c",
     "title": "Homework 2",
     "section": "Q1c",
-    "text": "Q1c\nWrite a Python code that uses the list, a, to create the following pandas Series:\n\n########################\n# Index      0\n\n# a         0.1\n# b         1.2\n# c         2.3\n# d         3.4\n# e         4.5\n\n# dtype: float64    \n########################\n\n\nAnswer"
+    "text": "Q1c\nHow many Russian (non-goalie) players had some ice time in there 2016/2017 regular season? (Hint: Russians are indicated by “RUS”.)\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q1d",
     "href": "danl-hw/danl-m1-hw-2.html#q1d",
     "title": "Homework 2",
     "section": "Q1d",
-    "text": "Q1d\nWrite a Python code that uses (1) the Series created in Q1c and (2) Boolean indexing to get the following Series:\n\n########################\n# Index      0\n\n# c         2.3\n# d         3.4\n# e         4.5\n\n# dtype: float64    \n########################  \n\n\nAnswer"
+    "text": "Q1d\nAssign nhl_RUS to a DataFrame with only Russian players with their Last_Name and First_Name\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#q2a",
@@ -256,7 +256,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, Indexing, Renaming, and Locating Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Data Structures [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, Indexing, Renaming, and Locating Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nLocating and Querying Data [Lecture 3 slides may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -1495,7 +1495,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-2",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSeries and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series with an index."
+    "text": "Pandas Basics\nSeries and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series columns with an index."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-3",
@@ -1509,7 +1509,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-4",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nImporting a data set with read_csv()\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\nnba\n\nWe can use the parse_dates parameter to coerce the values into datetimes"
+    "text": "Pandas Basics\nImporting a data set with read_csv()\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\nnba\n\nWe can use the parse_dates parameter to coerce the values into datetimes."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-5",
@@ -2398,7 +2398,7 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics [Homework 2 may be subject to change during the Module.]\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-37",
@@ -2434,5 +2434,68 @@
     "title": "Lecture 2",
     "section": "Pandas Basics",
     "text": "Pandas Basics\nLet’s do Classwork 2!"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#variable-description",
+    "href": "danl-hw/danl-m1-hw-2.html#variable-description",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nid_player: Player ID\nBorn: Date of Birth\nCity: City of Birth\nCntry: Country of Birth\nNat: Nationality\nLast_Name: Last name\nFirst_name: First Name\nPosition: Position\nTeam: Team\nGP: The number of games\nG: The number of goals\nA: The number of assists\nTOI: The total time on ice (in second)\nTOI_GP: Average amount of playing time per game (in minute)"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#q1e",
+    "href": "danl-hw/danl-m1-hw-2.html#q1e",
+    "title": "Homework 2",
+    "section": "Q1e",
+    "text": "Q1e\nWho performed best among the Russian players in terms of G? How many goals did he have?\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#q1f",
+    "href": "danl-hw/danl-m1-hw-2.html#q1f",
+    "title": "Homework 2",
+    "section": "Q1f",
+    "text": "Q1f\nWhich three countries have the highest number of players?\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-1",
+    "href": "danl-hw/danl-m1-hw-2.html#question-1",
+    "title": "Homework 2",
+    "section": "Question 1",
+    "text": "Question 1\nHow many players had at least some ice time?\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-2",
+    "href": "danl-hw/danl-m1-hw-2.html#question-2",
+    "title": "Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nWho is the top scorer in terms of points? Answer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-3",
+    "href": "danl-hw/danl-m1-hw-2.html#question-3",
+    "title": "Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nHow many Russian (non-goalie) players had some ice time in there 2016/2017 regular season? (Hint: Russians are indicated by “RUS”.)\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-4",
+    "href": "danl-hw/danl-m1-hw-2.html#question-4",
+    "title": "Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nAssign nhl_RUS to a DataFrame with only Russian players with their Last_Name and First_Name\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-5",
+    "href": "danl-hw/danl-m1-hw-2.html#question-5",
+    "title": "Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nWho performed best among the Russian players in terms of G? How many goals did he have?\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-2.html#question-6",
+    "href": "danl-hw/danl-m1-hw-2.html#question-6",
+    "title": "Homework 2",
+    "section": "Question 6",
+    "text": "Question 6\nWhich three nationalities have the highest number of players?\nAnswer"
   }
 ]

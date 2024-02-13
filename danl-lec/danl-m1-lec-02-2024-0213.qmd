@@ -42,12 +42,12 @@ execute:
 ###  `Series` and `DataFrame`
 
 <p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
 </p>
 
 - `Series`:	a collection of a one-dimensional object containing a sequence of values.
   
-- `DataFrame`: a collection of `Series` with an index.
+- `DataFrame`: a collection of `Series` columns with an *index*.
 
 
 ## Pandas Basics
@@ -84,7 +84,7 @@ nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
 nba
 ```
 
-- We can use the `parse_dates` parameter to coerce the values into `datetime`s
+- We can use the `parse_dates` parameter to coerce the values into `datetimes`.
 
 
 ## Pandas Basics
@@ -100,9 +100,6 @@ nba
 - We can use the `from` *keyword* when specifying Python package from which we want to `import` something (e.g., functions).
 
 - Colab includes an extension that renders pandas `DataFrames` into interactive displays that can be filtered, sorted, and explored dynamically.
-
-
-
 
 
 # Getting a Summary of Data {background-color="#1c4982"}
@@ -571,6 +568,54 @@ nba2.reset_index(inplace=True)    # Useful for the chain of method operations
 - Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
 
 
+# Renaming columns or rows  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming columns with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+
 # Locating Observations {background-color="#1c4982"}
 
 
@@ -760,55 +805,6 @@ nba.iloc[
 
 - Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
   - If we are using `.iloc`, we have to provide the column position.
-
-
-
-# Renaming columns or rows  {background-color="#1c4982"}
-
-## Pandas Basics
-### Renaming columns with `nba.columns`
-
-
-:::{.nonincremental}
-
-- Do you recall the `.columns` attribute? 
-
-```{.python}
-nba.columns
-```
-
-- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
-
-```{.python}
-nba.columns = ["Team", "Position", "Date of Birth", "Income"]
-```
-
-:::
-
-
-## Pandas Basics
-### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
-
-
-```{.python}
-nba.rename( columns = { "Date of Birth": "Birthday" } )
-```
-
-- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
-
-
-
-## Pandas Basics
-### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
-
-```{.python}
-nba = nba.rename(
-    index = { "LeBron James": "LeBron Raymone James" }
-)
-```
-
-- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
-
 
 
 
