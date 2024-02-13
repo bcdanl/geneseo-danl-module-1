@@ -1481,7 +1481,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Variables in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing DataFrame"
+    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Columns in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing DataFrame"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-2",
@@ -1523,7 +1523,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-7",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.method()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.attribute) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on DataFrame.\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-8",
