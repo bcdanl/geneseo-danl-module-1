@@ -1,6 +1,6 @@
 ---
 title: Lecture 3
-subtitle: Locating and Querying Data [Lecture 3 slides may be subject to change during the Module.]
+subtitle: Renaming and Filtering Data [Lecture 3 slides may be subject to change during the Module.]
 format:
   clean-revealjs:
     self-contained: true
@@ -36,7 +36,244 @@ knitr::knit_engines$set("markdown")
 ```
 
 
-# Pandas Data Structures Basics {background-color="#1c4982"}
+
+# Renaming columns or rows  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming columns with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by index label (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the slicing syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="42%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="58%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
 
 
 ## Pandas Data Structures Basics
