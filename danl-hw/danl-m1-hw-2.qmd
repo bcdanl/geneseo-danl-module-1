@@ -33,7 +33,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 - Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
 
--   Write a Python Notebook (`*.ipynb`) to answer each question.
+-   Please prepare a Jupyter/Python Notebook (`*.ipynb`) to address all questions.
 
 -   Make at least some simple comment (`# ...`) in each question.
 
