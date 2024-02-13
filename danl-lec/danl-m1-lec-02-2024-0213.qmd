@@ -25,6 +25,7 @@ execute:
 
 ## Pandas Basics
 ### Learning Objectives
+:::{.nonincremental}
 
 - Loading `DataFrame`
 - Getting a Summary of `DataFrame`
@@ -33,6 +34,7 @@ execute:
 - Sorting `DataFrame`
 - Indexing `DataFrame`
 
+:::
 
 # Loading Data {background-color="#1c4982"}
 

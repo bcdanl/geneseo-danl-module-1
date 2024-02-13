@@ -1481,7 +1481,7 @@
     "href": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
     "title": "Lecture 2",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Columns in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing DataFrame"
+    "text": "Pandas Basics\nLearning Objectives\n\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Columns in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing DataFrame"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-2",
@@ -2370,6 +2370,6 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nFiltering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]
