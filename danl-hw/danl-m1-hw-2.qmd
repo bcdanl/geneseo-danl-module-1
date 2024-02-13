@@ -126,6 +126,7 @@ How many players had at least some ice time?
 ## Question 2
 
 Who is the top scorer in terms of points?
+
 *Answer*
 ```{python}
 
