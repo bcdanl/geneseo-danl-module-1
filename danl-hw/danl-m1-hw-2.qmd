@@ -56,8 +56,8 @@ nhl = pd.read_csv('https://bcdanl.github.io/data/NHL-1617.csv')
 ```
 
 <div style="position: relative;">
-  <button onclick="scrollTable(-200)" style="position: absolute; z-index: 1000; top: 0; left: 70px; border: 1px solid grey; width: 25px; height: 40px; background-color: #ededed;">←</button>
-  <button onclick="scrollTable(200)" style="position: absolute; z-index: 1000; top: 0; left: 95px; border: 1px solid grey; width: 25px; height: 40px; background-color: #ededed;">→</button>
+  <button onclick="scrollTable(-200)" style="position: absolute; z-index: 1000; top: 0; left: 70px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">←</button>
+  <button onclick="scrollTable(200)" style="position: absolute; z-index: 1000; top: 0; left: 95px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">→</button>
 </div>
 
 
