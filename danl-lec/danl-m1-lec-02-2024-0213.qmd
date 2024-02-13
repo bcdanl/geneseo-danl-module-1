@@ -28,7 +28,7 @@ execute:
 
 - Loading `DataFrame`
 - Getting a Summary of `DataFrame`
-- Selecting Variables in a `DataFrame` 
+- Selecting Columns in a `DataFrame` 
 - Counting Values in a `DataFrame` 
 - Sorting `DataFrame`
 - Indexing `DataFrame`
@@ -53,7 +53,7 @@ execute:
 ### Importing a data set with `read_csv()`
 
 :::{.nonincremental}
-- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba_show_na.csv)).
+- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba.csv)).
 
 - The CSV is widely used for storing data, and we will use this throughout the module.
 
