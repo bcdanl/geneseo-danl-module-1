@@ -1,6 +1,6 @@
 ---
 title: Homework 2
-subtitle: Pandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data
+subtitle: Pandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data
 date: 2024-02-13
 execute: 
   echo: false
