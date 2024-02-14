@@ -147,7 +147,7 @@ How can we count the number of NHL players for each country?
 
 
 ## Question 4
-- How many unique countries are in `nfl.csv`?
+- How many unique countries are in `nhl.csv`?
 
 *Answer*
 ```{python}
