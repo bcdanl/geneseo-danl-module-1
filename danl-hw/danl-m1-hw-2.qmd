@@ -125,7 +125,7 @@ How many players had at least some ice time?
 
 ## Question 2
 
-Who is the top scorer in terms of points?
+Who is the top scorer in terms of goals?
 
 *Answer*
 ```{python}
@@ -135,7 +135,7 @@ Who is the top scorer in terms of points?
 <br><br>
 
 ## Question 3
-How many Russian (non-goalie) players had some ice time in there 2016/2017 regular season? (Hint: Russians are indicated by "RUS".)
+How can we count the number of NHL players for each country?
 
 *Answer*
 ```{python}
@@ -147,7 +147,7 @@ How many Russian (non-goalie) players had some ice time in there 2016/2017 regul
 
 
 ## Question 4
-Create a `DataFrame` named `nhl_RUS` that includes only observations for Russian players, retaining just their `Last_Name` and `First_Name`.
+- How many unique countries are in `nfl.csv`?
 
 *Answer*
 ```{python}
@@ -155,19 +155,11 @@ Create a `DataFrame` named `nhl_RUS` that includes only observations for Russian
 ```
 
 <br><br>
+
+
+
 
 ## Question 5
-Who performed best among the Russian players in terms of `G`? How many goals did he have?
-
-*Answer*
-```{python}
-
-```
-
-<br><br>
-
-
-## Question 6
 Which three nationalities have the highest number of players?
 
 *Answer*
@@ -176,3 +168,4 @@ Which three nationalities have the highest number of players?
 ```
 
 <br><br>
+

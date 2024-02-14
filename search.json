@@ -39,28 +39,28 @@
     "href": "danl-hw/danl-m1-hw-2.html#question-2",
     "title": "Homework 2",
     "section": "Question 2",
-    "text": "Question 2\nWho is the top scorer in terms of points?\nAnswer"
+    "text": "Question 2\nWho is the top scorer in terms of goals?\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#question-3",
     "href": "danl-hw/danl-m1-hw-2.html#question-3",
     "title": "Homework 2",
     "section": "Question 3",
-    "text": "Question 3\nHow many Russian (non-goalie) players had some ice time in there 2016/2017 regular season? (Hint: Russians are indicated by “RUS”.)\nAnswer"
+    "text": "Question 3\nHow can we count the number of NHL players for each country?\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#question-4",
     "href": "danl-hw/danl-m1-hw-2.html#question-4",
     "title": "Homework 2",
     "section": "Question 4",
-    "text": "Question 4\nCreate a DataFrame named nhl_RUS that includes only observations for Russian players, retaining just their Last_Name and First_Name.\nAnswer"
+    "text": "Question 4\n\nHow many unique countries are in nfl.csv?\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#question-5",
     "href": "danl-hw/danl-m1-hw-2.html#question-5",
     "title": "Homework 2",
     "section": "Question 5",
-    "text": "Question 5\nWho performed best among the Russian players in terms of G? How many goals did he have?\nAnswer"
+    "text": "Question 5\nWhich three nationalities have the highest number of players?\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-2.html#question-6",
