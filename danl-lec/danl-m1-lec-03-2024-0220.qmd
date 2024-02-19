@@ -1,10 +1,11 @@
 ---
-title: Lecture 3
-subtitle: Renaming and Filtering Data [Lecture 3 slides may be subject to change during the Module.]
+title: Lecture 2
+subtitle: Pandas Basics - Sorting, Indexing, and Filtering Data with Missing Values and Duplicates
 format:
   clean-revealjs:
     self-contained: true
-    #### logo: logo-title-slide.png
+    incremental: true
+    # logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
@@ -14,27 +15,250 @@ callout-icon: false
 execute: 
   eval: false
   echo: true
-#### bibliography: refs.bib
-#### include-after-body: backwards.html
+# bibliography: refs.bib
+include-after-body: effect.html
+
 ---
 
 
-```{r setup}
-#| include: false
-#| eval: true
+# Pandas Basics {background-color="#1c4982"}
 
-library(knitr)
-library(tidyverse)
-#### set default options
-opts_chunk$set(echo = FALSE,
-               fig.width = 7.252,
-               fig.height = 4,
-               comment = "####",
-               dpi = 300)
+## Pandas Basics
+### Learning Objectives
+:::{.nonincremental}
 
-knitr::knit_engines$set("markdown")
+- Sorting `DataFrame`
+- Indexing `DataFrame`
+- Filtering `DataFrame`
+- Dealing with Missing Values
+- Dealing with Duplicated Values
+
+:::
+
+
+# Sorting Methods {background-color="#1c4982"}
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `nba.csv` as `nba`.
+
+```{.python}
+# Read nba.csv as nba DataFrame
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+nba
 ```
 
+:::
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"])
+nba.sort_values(by = ["Name"])
+```
+
+
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort the `DataFrame`.
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"], ascending = False)
+```
+
+
+- The `sort_values()` method’s `ascending` parameter determines the sort order.
+  - `ascending` has a default argument of `True`.
+  - By default, pandas will sort:
+    - A variable of numbers in *increasing* order;
+    - A variable of strings in *alphabetical* order;
+    - A variable of datetimes in *chronological* order.
+
+
+## Pandas Basics
+### Method Chaining
+
+```{.python}
+(
+    nba
+    .sort_values(['Salary'])
+    .head(5)
+)
+```
+
+
+-  `DataFrame` has various methods that modify the existing `DataFrame`. 
+  - **Method Chaining**: We can call methods sequentially without the need to store intermediate results.
+  
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(5, 'Salary')
+nba.nlargest(5, 'Salary')
+```
+
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
+
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(4, 'Salary', keep = "all")
+nba.nlargest(4, 'Salary', keep = "all")
+```
+
+- `keep = "all"` keeps all duplicates, even it means selecting more than `n` observations.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(["Team", "Name"])
+nba.sort_values(by = ["Team", "Name"])
+```
+
+- We can sort a `DataFrame` by multiple columns by passing a *list* to the `by` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = False)
+```
+
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each column.
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = [False, True])
+```
+
+- If we want to sort each variable in a different order, we can pass a Boolean *list* to the `ascending` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+**Q**. Which players on each team are paid the most?
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_index()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+# The two lines below are equivalent
+nba.sort_index()
+nba.sort_index(ascending = True).
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.sort_index(ascending = False).
+```
+:::
+
+::::
+
+- How can we return it to its original form of `DataFrame`?
+
+- Our `nba` `DataFrame` still has its numeric index.
+
+- If we could sort the data set by index positions rather than by column values, we could return it to its original shape.
+
+
+
+
+## Pandas Basics
+### Changing the Order of Variables with `sort_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_index(axis = "columns")
+nba.sort_index(axis = 1)
+```
+
+- The `sort_index()` method can also be used to change the order of variables in an alphabetical order. 
+  - We need to add an `axis` parameter and pass it an argument of `"columns"` or `1`.
+
+
+
+
+# Setting a New Index {background-color="#1c4982"}
+
+## Pandas Basics
+### Setting a New Index
+
+- We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
+  - This is particularly useful when:
+    - We have a column that *uniquely identifies* each observation (e.g., ID);
+    - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
+    
+
+## Pandas Basics
+### Setting a New Index with `set_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.set_index(keys = "Name")
+nba.set_index("Name")
+```
+
+- The `set_index()` method returns a new `DataFrame` with a given column set as the index. 
+  - Its first parameter, `keys`, accepts the column name.
+  
+  
+
+
+## Pandas Basics
+### Re-setting an Index with `reset_index()`
+
+```{.python}
+nba2 = nba.set_index("Name")
+nba2.reset_index(inplace=True)    # Useful for the chain of method operations
+```
+
+  
+- We use the `reset_index()` method: 
+  - When we want to convert the index back into a `DataFrame` column;
+  - When we need to reset the index to the default integer index. 
+
+- Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-4 in Part 1 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
 
 
 # Renaming columns or rows  {background-color="#1c4982"}
@@ -276,759 +500,481 @@ nba.iloc[
 
 
 
-## Pandas Data Structures Basics
-### Create Your Own Data
-
-- Knowing how to create `Series` or `DataFrames` without loading data from a file is a useful skill.
-
-  
-- `Series` is a one-dimensional container.
-- A `Series` is very similar to a Python `list`, except that each element must be the same `dtype` (`object`, `int64`, `float64`, or `datetime64`). 
-  - This is the same behavior as the NumPy array (`ndarray`).
-  - If a column contains the number 1 and the sequence of letters "pizza", the entire `dtype` of the column will be a `string` (which is `object`).
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
 
 
-- A `DataFrame` can be thought of as a dictionary of `Series` objects.
-  - Each key is the column name and the value is the `Series`.
-  
-  
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
 
-## Create Your Own Data 
-###  NumPy Array
-- Python library `NumPy` introduces an N-dimensional array object, or `ndarray`.
-  - Pandas implicitly uses `ndarray`, so here let's see what `ndarray` is.
-  - The easiest way to create an array is to use the `.array()` method.
-
-:::: {.columns}
-::: {.column width="50%"}
 ```{.python}
-import pandas as np
-data1 = [6, 7.5, 8, 0, 1]
-arr1 = np.array(data1) 
-arr1
-arr2.ndim
-arr2.shape
-```
-
-:::  
-::: {.column width="50%"}
-```{.python}
-data2 = [ [1, 2, 3, 4], 
-          [5, 6, 7, '8'] ]
-arr2 = np.array(data2)
-arr2
-arr2.ndim
-arr2.shape
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv",
+                  parse_dates = ["Start Date"])
 ```
 
 :::
-::::
 
-## Create Your Own Data 
-###  Create a `Series`
-- A `Series` is a data structure in pandas.
-  - Containing a sequence of `values` and a corresponding labels, called the `index`,
-  - A `Series` displays the `index` on the left and the `values` on the right,
-  - The default `index` consists of the integers 0 through N-1.
+- What values are in the `Mgmt` variable?
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` Method
+
+```{.python}
+emp["Mgmt"].astype(bool)
+```
+
+
+- The `astype()` method converts a `Series`' values to a different data type. 
+  - It accepts a single argument: the new data type. 
+  - We can pass either the data type or a string with its name.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` Method
+
+```{.python}
+emp["Mgmt"] = emp["Mgmt"].astype(bool)
+```
+
+- The above code overwrites the `Mgmt` variable with our new `Series` of Booleans.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` Method
+
+```{.python}
+emp["Salary"].astype(int)
+```
+
+- The above code tries to coerce the `Salary` variable's values to integers with the `astype()` method.
+  - Pandas is unable to convert the `NaN` values to integers.
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` Method
+
+```{.python}
+emp["Salary"].fillna(0)
+```
+
+- The `fillna()` method replaces a Series’ missing values with the argument we pass in. 
+- The above example provides a fill value of `0`. 
+  - Note that your choice of value can distort the data; `0` is passed solely for the sake of example.
+
+
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` Method
+
+```{.python}
+emp["Salary"] = emp["Salary"].fillna(0).astype(int)
+```
+
+- The above code overwrites the `Salary` variable with our new `Series` of integers.
+
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` Method
+
+```{.python}
+emp["Gender"] = emp["Gender"].astype("category")
+```
+
+Pandas includes a special data type called a `category`, 
+  - It is ideal for a variable consisting of a small number of unique values relative
+to its total size. 
+  - E.g., gender, weekdays, blood types, planets, and income groups. 
+
+
+
+
+## Pandas Basics
+
+Let's do Question 1 in Part 2 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
+
+
+
+# Filtering by a Single Condition {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+Series == value
+```
+
+```{.python}
+emp["First Name"] == "Maria"
+```
+
+
+- To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+
+- The above example compares each `First Name` value with "Maria".
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+DataFrame[ Boolean_Series ]
+```
+
+```{.python}
+emp[ emp["First Name"] == "Maria" ]
+```
+
+- To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
+
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+marias = emp["First Name"] == "Maria"
+emp[marias]
+```
+
+
+- If the use of multiple square brackets is confusing, we can assign the Boolean
+`Series` to a descriptive object and then pass it into the square brackets instead.
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+What if we want to extract a subset of employees who are not on the "`Finance`" team?
+
+```{.python}
+emp["Team"] != "Finance"
+emp[ emp["Team"] != "Finance" ]
+
+```
+
+- `True` denotes that the `Team` value for a given index is not "`Finance`", and `False` indicates the `Team` value is "`Finance`"
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+What if we want to retrieve all the managers in the company? Managers have a value
+of `True` in the `Mgmt` variable.
+
+```{.python}
+emp[ emp["Mgmt"] ]
+```
+
+- We could execute `emp["Mgmt"] == True`, but we do not need to.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+high_earners = employees["Salary"] > 100000
+emp[high_earners]
+```
+
+- We can also use arithmetic operands to filter columns based on mathematical conditions.
+
+
+# Filtering by a Condition {background-color="#1c4982"}
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+sales = emp["Team"] == "Sales"
+legal = emp["Team"] == "Legal"
+mktg = emp["Team"] == "Marketing"
+emp[ sales | legal | mktg ]
+```
+
+- We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria
+
+
+
+
+## Pandas Basics
+### Filtering with the `isin()` method
+
+```{.python}
+all_star_teams = ["Sales", "Legal", "Marketing"]
+on_all_star_teams = emp["Team"].isin(all_star_teams)
+emp[on_all_star_teams]
+```
+
+- What if our next report asked for employees from 15 teams instead of three? 
+
+- A better solution is the `isin()` method, which accepts an iterable of elements (`list`, `tuple`, `Series`, and so on) and returns a Boolean Series. 
+  - `True` denotes that pandas found the row's value among the iterable's values, and `False` denotes that it did not.
+
+- When we have the `Series`, we can use it to filter the `DataFrame` in the usual manner.
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- When working with numbers or dates, we often want to extract values that fall within a range. 
+  - E.g., Identify all employees with a salary between $80,000 and $90,000. 
+
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+higher_than_80 = emp["Salary"] >= 80000
+lower_than_90 = emp["Salary"] < 90000
+emp[higher_than_80 & lower_than_90]
+```
+
+- We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
+
+- Then we can use the `&` operator to mandate that both conditions are `True`:
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+
+```{.python}
+between_80k_and_90k = emp["Salary"].between(80000, 90000)
+emp[between_80k_and_90k]
+```
+
+- A slightly cleaner solution is to use a method called `between()`
+  - It accepts a lower bound and an upper bound; 
+  - It returns a Boolean Series where `True` denotes that a row's value falls between the specified interval.
+  - The first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+```{.python}
+name_starts_with_r = emp["First Name"].between("R", "S")
+emp[name_starts_with_r]
+```
+
+- We can also apply the `between()` method to string variables.
+
+
+
+
+## Pandas Basics
+
+Let's do Questions 2-6 in Part 2 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
+
+
+
+# Dealing with Missing Values {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Missing Values
+
+- Pandas marks missing text values and missing numeric values with a `NaN` (not a number) designation, and it marks missing datetime values with a `NaT` (not a time) designation.
+
+- We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].isna()
+emp["Start Date"].isna()
+```
+
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that a row's value is missing.
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].notna()
+~emp["Team"].isna()
+```
+
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that a row's value is present.
+
+- We use the tilde symbol (`~`) to invert a Boolean `Series`.
+
+- **Q**. How can we pull out employees with non-missing `First Name`?
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv",
+                  parse_dates = ["Start Date"])
+emp.dropna()
+```
+
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `how`
+
+```{.python}
+emp.dropna(how = "all")
+```
+- We can pass the `how` parameter an argument of `"all"` to remove observations in which all values are missing.
+
+- Note that the `how` parameter’s default argument is `"any"`. 
+
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Gender"])
+```
+
+- We can use the `subset` parameter to target observations with a missing value in a specific variable.
+  - The above example removes observations that have a missing value in the `Gender` variable.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Start Date", "Salary"])
+```
+
+- We can also pass the `subset` parameter a list of variables.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `thresh`
+
+```{.python}
+emp.dropna(thresh = 4)
+```
+
+- The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.
+
+
+
+
+# Dealing with Duplicates {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+```{.python}
+emp["Team"].duplicated()
+```
+
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a
+variable.
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+```{.python}
+emp["Team"].duplicated(keep = "first")
+emp["Team"].duplicated(keep = "last")
+~emp["Team"].duplicated()
+```
+
+- The `duplicated()` method’s `keep` parameter informs pandas which duplicate occurrence to keep. 
+  - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
+  - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
+
+- **Q**. How can we keep observations with the first occurrences of a value in the Team variable?
+
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates()
+```
+
+
+- The `drop_duplicates()` method removes rows in which all values are equal to those in a previously encountered observations.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"])
+```
+
+- We can pass the`drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+
+  - The above example finds the first occurrence of each unique value in the Team variable.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Gender", "Team"])
+```
+
+- The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"], keep = "last")
+emp.drop_duplicates(subset = ["Team"], keep = False)
+emp.drop_duplicates(subset = ["First Name"], keep = False)
+```
+
+- The `drop_duplicates()` method also accepts a `keep` parameter. 
+  - We can pass it an argument of `"last"` to keep the observations with each duplicate value’s last occurrence.
+  - We can pass it an argument of `False` to exclude all observations with duplicate values.
   
-  
-- `pd.Series()` creates a one-dimensional container including `values` and an `index`.
-```{.python}
-import pandas as pd
-s = pd.Series( ['banana', 42] )
-```
+- **Q**. What does `emp.drop_duplicates(subset = ["First Name"], keep = False)` do?
 
+- **Q**. Find a subset of all employees with a First Name of "Douglas" and a Gender of "Male". Then check which "Douglas" is in the DataFrame `emp.drop_duplicates(subset = ["Gender", "Team"])`.
 
 
-## Create Your Own Data 
-###  Create a `Series`
 
--  The "row number" is shown on the left of the `Series`. 
-  - This is actually the `index` for the `Series`.
-  -  It is similar to the row name and row index for `DataFrame`.
-  
-```{.python}
-## manually assign index values to a series
-## by passing a Python list
-s = pd.Series(
-  data =["Wes McKinney", "Creator of Pandas"],
-  index =["Person", "Who"],
-)
 
-s
-```
 
 
+## Pandas Basics
 
+Let's do Questions 7-8 in Part 2 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
 
-## Create Your Own Data 
-###  Create a `Series`
-
-- Pandas Series can also be created from `ndarrys`, `tuples`, and `dictionaries`.
-
-- **Q**. Use `dictdata` to create a Pandas `Series`.
-```{.python}
-dictdata = {
-    "Name": ["William Nordhaus", "Ronald Coase"],
-    "Occupation": ["Economist", "Economist"],
-    "Born": ["1941-05-31", "1910-12-29"],
-    "Died": ["", "2013-09-02"],
-    "Age": [81, 102],
-  }
-```
-
-
-
-
-## Create Your Own Data 
-###  Create a `DataFrame`
-
-- A `DataFrame` can be thought of as a dictionary of `Series` objects.
-  - `Dictionaries` are one of the most common ways of creating a `DataFrame`.
-  - The `key` represents the column name, and the `values` are the contents of the column.
-  
-```{.python}
-economists = pd.DataFrame(
- {  "Name": ["William Nordhaus", "Ronald Coase"],
-    "Occupation": ["Economist", "Economist"],
-    "Born": ["1941-05-31", "1910-12-29"],
-    "Died": ["", "2013-09-02"],
-    "Age": [81, 102]  } )
-```
-  
-
-
-
-## The `Series`
-
-- Let’s re-create our example DataFrame.
-```{.python}
-## create our example dataframe with a row index label
-economists = pd.DataFrame(
-  data = {
-    "Occupation": ["Economist", "Economist"],
-    "Born": ["1941-05-31", "1910-12-29"],
-    "Died": ["", "2013-09-02"],
-    "Age": [81, 102] },
-  index =  ["William Nordhaus", "Ronald Coase"],
-  columns =["Occupation", "Born", "Died", "Age"] 
-)
-```
-
-- **Q**. Select an economist from `economists` by the row index label to get a `Series`.
-
-
-
-## The `Series`
-### `Series` Attributes
-
-- When a series is printed (i.e., the string representation), the `index` is printed as the first “column”, and the `values` are printed as the second “column”.
-
--  There are many attributes and methods associated with a `Series` object.
-
-```{.python}
-first_row = economists.loc['William Nordhaus']
-type(first_row)
-first_row.index
-first_row.values
-type(first_row.values)
-first_row.shape
-first_row.size
-first_row.dtypes
-```
-  
-
-
-## The `Series`
-### Attributes vs. Methods
-
-- Attributes can be thought of as features of an object (in this example, our object is a Series). 
-
-- Methods can be thought of as some calculation or operation that is performed on an object. 
-  - Methods or functions have round parentheses (`()`), while attributes do not.
-
-- The subsetting syntax `.loc[]` and `.iloc[]` consists of all attributes.    
-
-
-
-
-
-## The `Series`
-### `Series` Methods
-
-- Let’s first get a series of the `Age` column from our `economists` DataFrame.
-
-```{.python}
-ages = economists['Age']
-```
-
--  When we have a vector of numbers, there are common calculations we can perform.
-```{.python}
-ages.mean()
-ages.min()
-ages.max()
-ages.std()
-```
-- `.mean()`, `.min()`, `.max()`, and `.std()` are also methods in `np.ndarray`.
-
-
-
-
-## Workflow
-### Working Directory
-
-- In Spyder, we can set the working directory.
-  - Windows: Tools > Preferences > Working directory > The following directory
-  - Mac: python > Preferences > Working directory > The following directory
-  
-
-- Download the CSV file, `scientists.csv` from the Files section in our Canvas.
-  - Create the `data` folder in your working directory.
-  - Then move the `scientists.csv` file to the `data` folder in your working directory.
-
-
-
-## Descriptive Statistics
-### `.describe()` Methods
-
-- Let’s load the CSV file, `scientists.csv`.
-
-```{.python}
-## If we set the working directory, we do not need to use the absolute path
-scientists = pd.read_csv('data/scientists.csv')  
-ages = scientists['Age']
-```
-
--  The `.describe()` method calculates multiple descriptive statistics for numeric variables.
-```{.python}
-scientists.describe()
-ages.describe()
-```
-
-
-## The `Series`
-### Boolean Subsetting on `Series`
-
-- We can not only subset values using labels and indices, but also supply a vector of **boolean values**.
-
-- Boolean subsetting of numeric Series works as follows:
-  - `Series[ Series > VALUE  ]`
-  - `Series[ Series == VALUE  ]`
-  - `Series[ Series < VALUE  ]`
-
-- **Q**. What if we wanted to subset our ages by identifying those above the mean?
-
-
-
-## The `Series`
-### Boolean Subsetting on `Series`
-- Let’s look at what `ages > ages.mean()` returns.
-```{.python}
-ages > ages.mean()
-
-cond = ages > ages.mean()
-ages[cond]
-```
-
-
-
-
-
-
-## The `Series`
-### Operations Are Automatically Aligned and Vectorized (Broadcasting)
-
--  Many of the methods that work on `Series` (and also `DataFrames`) are “vectorized”, meaning that they work on the entire vector simultaneously.
-
-  - `ages > ages.mean()` returns a vector without any `for` loops.
-
-
-::: {.panel-tabset}
-
-## same length
-- If we perform an operation between two vectors of the same length, the resulting vector will be an **element-by-element calculation** of the vectors.
-```{.python}
-ages + ages
-ages * ages
-```
-
-
-## w/ scalars
-- When we perform an operation on a vector using a scalar, the scalar will be recycled across all the elements in the vector.
-
-```{.python}
-ages + 100
-ages * 2
-```
-
-
-## w/ different length
-- When we are working with vectors of different lengths, the behavior will depend on the `type()` of the vectors.
-  -  With a `Series`, the vectors will perform an operation matched by the index.
-  - With other `types()`, the shapes must match.
-
-
-## w/ different length (e.g.,)
-```{.python}
-ages + pd.Series( [1, 100] )
-ages + np.array( [1, 100] )
-```
-
-
-:::
-
-
-
-
-## The `Series`
-### Operations Are Automatically Aligned and Vectorized (Broadcasting)
-
-- What’s convenient in Pandas is how data alignment is almost always automatic.   - If possible, things will always align themselves with the index label when actions are performed.
-
-
-- Let's consider `.sort_index()` method:
-  - `Series.sort_index(ascending=False)` sorts Series by index in descending order.
-```{.python}
-rev_ages = ages.sort_index(ascending =False) 
-rev_ages
-```
-
-- **Q**. What is `ages + rev_ages`?
-
-
-
-
-## The `DataFrame`
-### Parts of a `DataFrame` 
-
-- The `DataFrame` is the most common Pandas object. 
-  - It can be thought of as Python’s way of storing spreadsheet-like data. 
-  - Many of the features of the `Series` data structure carry over into the `DataFrame`.
-
-
-- There are 3 main parts of a Pandas `DataFrame` object: 
-  - (1) `.index`, (2) `.columns`, and (3) `.values`
-  
-```{.python}
-scientists.index
-scientists.columns
-scientists.values
-```
-  
-
-
-
-## The `DataFrame`
-### Boolean Subsetting on `DataFrames`
-
-
-- Boolean subsetting of `DataFrames` works like boolean subsetting a `Series`.
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] > VALUE  ]`
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] == VALUE  ]`
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] < VALUE  ]`
-
-```{.python}
-## boolean vectors will subset rows
-scientists.loc[ scientists['Age'] > scientists['Age'].mean() ]
-```
-
-
-
-## The `DataFrame`
-### Subsetting Multiple Rows and Columns
-
-```{r, echo = F, eval = T, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  `Type` = c("df[val]",
-"df`.`loc[val]",
-"df`.`loc[:, val]",
-"df`.`loc[val1, val2]",
-"df`.`iloc[where]",
-"df`.`iloc[:, where]",
-"df`.`iloc[w1, w2]"),
-  `Description` = c("Select single column or set of columns",
-"Select single row or set of rows",
-"Select single column or set of columns",
-"Select row and column by label",
-"Select row or set of rows by integer position",
-"Select column or set of columns by integer position",
-"Select row and column by integer position")
-  )
-
-
-# Create a DT datatable without search box and 'Show entries' dropdown
-DT::datatable(text_tbl, rownames = FALSE,
-              options = list(
-  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
-  paging = FALSE, # Disable pagination
-  columnDefs = list(list(
-    targets = "_all", # Applies to all columns
-    orderable = FALSE # Disables sorting
-  ))
-), callback = htmlwidgets::JS("
-  // Change header background and text color
-  $('thead th').css('background-color', '#1c4982');
-  $('thead th').css('color', 'white');
-
-  // Loop through each row and alternate background color
-  $('tbody tr').each(function(index) {
-    if (index % 2 == 0) {
-      $(this).css('background-color', '#d1dae6'); // Light color for even rows
-    } else {
-      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
-    }
-  });
-
-  // Set text color for all rows
-  $('tbody tr').css('color', 'black');
-
-  // Add hover effect
-  $('tbody tr').hover(
-    function() {
-      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
-    }, 
-    function() {
-      var index = $(this).index();
-      if (index % 2 == 0) {
-        $(this).css('background-color', '#d1dae6'); // Restore even row color
-      } else {
-        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
-      }
-    }
-  );
-")
-)
-
-```
-
-
-
-
-## The `DataFrame`
-### Operations Are Automatically Aligned and Vectorized (Broadcasting)
-
-- Pandas supports *broadcasting* because the `Series` and `DataFrame` objects are built on top of the `numpy` library. 
-
-  - Broadcasting describes what happens when performing operations between array-like objects. 
-  
-  - These behaviors depend on the type of object, its length, and any labels associated with the object.
-  
-
-
-
-## The `DataFrame`
-### Operations Are Automatically Aligned and Vectorized (Broadcasting)
-
-
-::: {.panel-tabset}
-
-## w/ scalars
-- When we perform an action on a dataframe with a scalar, it will try to apply the operation on each cell of the dataframe.
-```{.python}
-scientists * 2
-```
-
-
-
-
-
-
-## w/ Series
-
-- By default, arithmetic operations between `DataFrames` and `Series` match the index of the `Series` on the `DataFrame`’s columns,
-
-- The operations will be broadcasted along the rows.
-```{.python}
-pd.Series([10]) + scientists[['Age']]
-pd.Series([10], index = ['Age']) + scientists[['Age']]
-```
-
-
-
-
-:::
-
-
-
-
-##  Making Changes to Series and DataFrames
-### Add Additional Columns
-
--  The `type` of the `Born` and `Died` columns is `object`, meaning they are strings or a sequence of characters.
-
-```{.python}
-scientists.dtypes
-```
-
-- We can convert the strings to a proper `datetime` type so we can perform common date and time operations.
-```{.python}
-## format the 'Born' column as a datetime
-born_datetime = pd.to_datetime( scientists['Born'] )
-
-died_datetime = pd.to_datetime( scientists['Died'] )
-```
-
-- More examples with `datetimes` would be discussed later in March or April.
-
-
-
-##  Making Changes to Series and DataFrames
-### Add Additional Columns
-
-- We can create a new set of columns that contain the `datetime` representations of the object (string) dates. 
-```{.python}
-scientists['born_dt'], scientists['died_dt'] = (
-  born_datetime,
-  died_datetime
-)
-
-scientists.head()
-scientists.shape
-scientists.dtypes
-```
-
-
-
-
-##  Making Changes to Series and DataFrames
-###  Directly Change a Column
-
-
-::: {.panel-tabset}
-
-## (1)
-- Let’s look at the original `Age` values.
-
-```{.python}
-scientists['Age']
-```
-
-
-## (2)
-- Let’s shuffle the values using `.sample()`.
-```{.python}
-## the frac=1 tells pandas to randomly select 100% of the values
-## the random_state makes the randomization the same each time
-scientists['Age'].sample(frac=1, random_state = 210)
-```
-
-
-## (3)
-- Let’s assign `scientists['Age']` to the shuffled one.
-```{.python}
-scientists['Age'] = (
-  scientists['Age']
-  .sample(frac=1, random_state = 210)
-)
-scientists['Age']
-```
-- How is `scientists['Age']`?
-
-
-## (4)
-- We tried to randomly shuffle the values, but when we assigned the values back into the dataframe, it reverted back to the original order. 
-
-  - That’s because Pandas will try to automatically join on the `.index` values on many operations, for this example to get around this problem we need to remove that `.index` information. 
-  
-  - One way of doing that, is to assign just the `.values` of the shuffled values that does not have any `.index` value associated with it.
-
-
-## (5)
-```{.python}
-scientists['Age'] = (
-  scientists['Age']
-  .sample(frac=1, random_state = 210)
-  .values    ## remove the index so it doesn't auto align the values
-)
-
-scientists['Age']
-```
-- How is `scientists['Age']` now?
-
-
-
-:::
-
-
-
-
-##  Making Changes to Series and DataFrames
-###  Directly Change a Column
-
-- Here is how we re-calculate the real ages.
-```{.python}
-## subtracting dates will give us number of days
-scientists['age_days'] =  scientists['died_dt'] - scientists['born_dt']
-
-## we can convert the value to just the year
-## using the astype method
-scientists['age_years'] = (
-  scientists['age_days']
-  .astype('timedelta64[Y]')
-)
-
-scientists
-```
-
-
-
-##  Making Changes to Series and DataFrames
-###  Modifying Columns with `.assign()`
-
-
-::: {.panel-tabset}
-
-## (1)
-- Let’s redo the `age_years` column creation, but this time using `.assign()`.
-
-```{.python}
-scientists = scientists.assign(
-  ## new columns on the left of the equal sign
-  ## how to calculate values on the right of the equal sign
-  ## separate new columns with a comma
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = scientists['age_days'].astype('timedelta64[Y]')
-)
-```
-
-
-## (2)
-- When calculating `age_year_assign`, we did not use `age_days_assign`.
-  - To be able to use `age_days_assign` when calculating `age_year_assign` in the previous panel, we need to know about `lambda` functions.
-  
-```{.python}
-scientists = scientists.assign(
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = lambda some_df: some_df['age_days_assign'].astype('timedelta64[Y]')
-)
-```
-
-- We will cover `lambda` functions in detail later.
-
-
-
-## lambda (1)
-- Python has support for so-called anonymous or lambda functions. 
-  - Lambda functions are a way of writing functions consisting of a single statement, the result of which is the return value. 
-
-```{.python}
-def short_function(x):
-  return x * 2
-
-equiv_anon = lambda x: x * 2
-
-short_function(2)
-equiv_anon(2)
-```
-
-
-
-
-## lambda (2)
-- The power of lambda is better shown when we use them as an anonymous function inside another function.
-  - Say we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
-
-```{.python}
-def short_function(x):
-  return x * 2
-
-equiv_anon = lambda x: x * 2
-
-short_function(2)
-equiv_anon(2)
-```
-
-
-
-
-:::
-
-
-
-
-
-##  Making Changes to Series and DataFrames
-### Dropping Values
-
-
-::: {.panel-tabset}
-
-## Columns
-- To drop a column, we can select columns to drop with the `.drop()` method with `axis = 1` or `axis = "columns"` on our dataframe.
-
-```{.python}
-## all the current columns in our data
-scientists.columns
-
-## drop the shuffled age column
-## we provide the axis=1 argument to drop column-wise
-scientists_dropped = scientists.drop( ['Age'], axis ="columns")
-scientists_dropped.columns
-```
-
-
-
-## Rows
-- To drop rows, we can select rows by index to drop with the `.drop()` method with `axis = 0`, which is default.
-
-
-```{.python}
-## all the current columns in our data
-scientists.columns
-
-## drop rows by their indices
-scientists_rows_dropped = scientists.drop( [2, 4, 6] )
-scientists_rows_dropped
-```
-
-
-
-::: 
-
-
-
-
-
-
-<script>
-
-document.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        Reveal.next(); // Scroll down to go to the next slide
-    } else {
-        Reveal.prev(); // Scroll up to go to the previous slide
-    }
-}, false);
-
-window.onload = function() {
-    document.querySelectorAll('a').forEach(function(link) {
-        link.setAttribute('target', '_blank');
-    });
-};
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Query all anchor tags within code blocks (adjust the selector as needed)
-  document.querySelectorAll('pre code a').forEach(function(element) {
-    element.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent the default anchor action
-      e.stopPropagation(); // Stop the event from bubbling up
-    });
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Target all span elements within code blocks that have IDs starting with 'cb'
-    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
-        element.addEventListener('mouseenter', function() {
-            // Apply yellow background color to the hovered span element
-            this.style.backgroundColor = '#FFFF99';
-        });
-        element.addEventListener('mouseleave', function() {
-            // Revert the background color when the mouse leaves the span element
-            this.style.backgroundColor = '';
-        });
-    });
-});
-</script>

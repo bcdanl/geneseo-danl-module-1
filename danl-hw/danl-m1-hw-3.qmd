@@ -1,6 +1,6 @@
 ---
 title: Homework 3
-subtitle: Filtering, Sorting, Ranking, and Visualizing DataFrames [Homework 3 may be subject to change during the Module.]
+subtitle: Pandas Basics - Sorting and Filtering Data [Homework 3 may be subject to change during the Module.]
 date: 2024-02-20
 execute: 
   echo: false
@@ -12,7 +12,10 @@ comments: false
 ---
 
 ```{r}
-#| echo: false
+#| include: false
+
+library(tidyverse)
+library(DT)
 
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
@@ -20,84 +23,95 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Direction
 
--   Write a Python code to answer each question.
+
+- Please submit your Jupyter Notebook for Homework 2 to the Brightspace with the name below:
+
+  - `danl-m1-hw2-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-m2-hw1-choe-byeonghak.ipynb` )
+
+- The due is February 20, 2024, 7:00 P.M.
+
+- Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
+
+-   Please prepare a Jupyter/Python Notebook (`*.ipynb`) to address all questions.
 
 -   Make at least some simple comment (`# ...`) in each question.
 
--   Use your working directory with the subfolder, `data`, so that the relative pathname of CSV files in the subfolder `data` is sufficient to import the CSV files.
+-   Make one text cell to explain things in each question.
 
 # Load Libraries
 
--   Import all the Python libraries we need here.
+Import the `pandas` library.
 
 ```{python}
 #| echo: true
-#| eval: true
 import pandas as pd
 ```
 
-# Question 1
-
--   Consider the probability of survival in `titanic_1.csv`.
+Below is `nhl` `DataFrame` that reads the file `NHL-1617.csv` containing data of all non-goalie NHL players who had at least some _ice time_, i.e. playing time, in the 2016/2017 regular season - without play-offs. 
 
 ```{python}
 #| echo: true
+nhl = pd.read_csv('https://bcdanl.github.io/data/NHL-1617.csv')
+```
+
+<div style="position: relative;">
+  <button onclick="scrollTable(-200)" style="position: absolute; z-index: 1000; top: 0; left: 70px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">←</button>
+  <button onclick="scrollTable(200)" style="position: absolute; z-index: 1000; top: 0; left: 95px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">→</button>
+</div>
+
+
+<script>
+function scrollTable(offset) {
+  // Ensure we're targeting the scroll body of the DataTable specifically
+  var scrollBody = $('#exampleTable .dataTables_scrollBody');
+  
+  // Check if the scrollBody is found
+  console.log(scrollBody.length); // For debugging, should be 1 if found
+  
+  scrollBody.animate({
+    scrollLeft: '+=' + offset
+  }, 'fast');
+}
+</script>
+
+
+```{r}
 #| eval: true
-titanic_1 = pd.read_csv('https://bcdanl.github.io/data/titanic_1.csv')
+#| echo: false
+DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/NHL-1617.csv'), 
+          extensions = c('Buttons','FixedColumns'),
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv'),
+            scrollX = TRUE,
+            fixedColumns = list(leftColumns = 2)
+            ), 
+          elementId = "exampleTable"
+          )
 ```
 
-```{python}
-#| echo: true
-#| eval: true
-titanic_1.head()
-```
+## Variable Description
+- `id_player`: Player ID
+- `Born`: Date of Birth
+- `City`: City of Birth
+- `Cntry`: Country of Birth
+- `Nat`: Nationality
+- `Last_Name`: Last name
+- `First_name`: First Name
+- `Position`: Position
+- `Team`: Team
+- `GP`: The number of games
+- `G`: The number of goals
+- `A`: The number of assists
+- `TOI`: The total time on ice (in second)
+- `TOI_GP`: Average amount of playing time per game (in minute)
 
-```{python}
-#| echo: true
-#| eval: true
-titanic_1.describe()
-```
+<br><br>
 
-## Q1a
+## Question 1
 
--   Calculate the simple difference between the probability of survival when passengers are first-class and the probability of survival when they are not.
-
-
-code-tools: true
-# title-block-banner: true
-
-comments:
-  hypothesis: 
-    theme: clean
-
-## Q1b
-
--   How much does the probability of survival increase for first-class passengers relative to those who are not first-class passengers?
-
--   `SDP` tells us what would happen to the probability of survival if non-first-class passengers were first-class.
-
-    -   In other words, `SDP` means the effect of being the first-class on the probability of survival from the Titanic Disaster.
-
-## Q1c
-
--   Consider the probability of survival in `titanic_2.csv`.
-
-```{python}
-titanic_2 = pd.read_csv('https://bcdanl.github.io/data/titanic_2.csv')
-```
-
-```{python}
-titanic_2.head()
-```
-
-```{python}
-titanic_2.describe()
-```
-
--   After stratifying on gender and age, what happens to the difference in the probabilities of survival between first-class passengers and non-first-class passengers?
-
--   Explain in your own words what stratifying on gender and age did for this difference in probabilities of survival between first-class passengers and non-first-class passengers.
-<br>
+How many players had at least some ice time?
 
 *Answer*
 
@@ -106,208 +120,52 @@ titanic_2.describe()
 ```
 
 
-# Question 2
+<br><br>
 
--   Consider the data file, `NHL-1617.csv`.
 
-```{python}
-#| echo: true
-#| eval: true
-nhl1617 = pd.read_csv('https://bcdanl.github.io/data/NHL-1617.csv')
-```
+## Question 2
 
-```{python}
-#| echo: true
-#| eval: true
-nhl1617.head()
-```
-
-```{python}
-#| echo: true
-#| eval: true
-nhl1617.describe()
-```
-
-## Q2a
-
--   How many players have been recorded?
-<br>
+Who is the top scorer in terms of goals?
 
 *Answer*
-
 ```{python}
 
 ```
 
+<br><br>
 
-
-## Q2b.
-
--   A column `points` ("`P`") is missing in the data. The number of points of a player is defined as the sum of his goals ("`G`") and `assists` ("`A`").
-
--   Add the point column "`P`" to your DataFrame.
-<br>
+## Question 3
+How can we count the number of NHL players for each country?
 
 *Answer*
-
 ```{python}
 
 ```
 
 
+<br><br>
 
-## Q2c.
 
--   Who is the top scorer in terms of points?
-<br>
+## Question 4
+- How many unique countries are in `nhl.csv`?
 
 *Answer*
-
 ```{python}
 
 ```
 
+<br><br>
 
 
-## Q2d.
 
--   How many Russian (non-goalie) players had some ice time in there 2016/2017 regular season?
 
--   Hint: Nationality of a player can be found in "Nat". Russians are indicated by "RUS".
-<br>
+## Question 5
+Which three nationalities have the highest number of players?
 
 *Answer*
-
 ```{python}
 
 ```
 
-
-
-## Q2e.
-
--   What are their names?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2f.
-
--   Who performed best among the Russian players in terms of points ("`P`")?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2g.
-
--   How many points ("`P`") did he have?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2h.
-
--   How well did he perform in the entire league? Put differently, what was his rank in terms of points?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2i.
-
--   Find the top ten scorers (in terms of points) and print them including their number of point and their respective team.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2j.
-
--   What are the three countries with the most players originating from?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-# Question 3
-
--   Consider the data file, `coal_production_county.csv`.
-
-```{python}
-#| echo: true
-#| eval: true
-coal = pd.read_csv('https://bcdanl.github.io/data/coal_production_county.csv')
-```
-
-## Q3a.
-
--   For each type of mine, calculate the total coal production for each pair of state-year.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-## Q3b.
-
--   Find the top 5 coal-producing states for each year.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q3c.
-
--   Visualize the yearly trend of the total coal production from each type of mine.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
+<br><br>
 
