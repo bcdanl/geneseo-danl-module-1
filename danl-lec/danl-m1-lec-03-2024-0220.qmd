@@ -32,9 +32,9 @@ include-after-body: effect.html
 - Counting Values in `DataFrame` 
 - Sorting `DataFrame`
 - Indexing `DataFrame`
+- Locating Observations and Values in `DataFrame`
 - Renaming Variables in `DataFrame`
 - Mathematical & Vectorized Operations with `DataFrame`
-- Locating Observations and Values in `DataFrame`
 - Filtering Observations in `DataFrame`
 
 
