@@ -1005,7 +1005,7 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-2",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\n\n\nLet’s read nba.csv as nba.\n\nimport pandas as pd \n\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table  \ndata_table.enable_dataframe_formatter()\n\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\nnba"
+    "text": "Pandas Basics\n\n\nLet’s read nba.csv as nba.\n\n# Below is to import the pandas library as pd\nimport pandas as pd \n\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table  \ndata_table.enable_dataframe_formatter()\n\n# Below is to read nba.csv as nba DataFrame\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\n                  \n# Below is to view the nba DataFrame and to get a summary of it\nnba\nnba.info()\nnba.describe( include=\"all\" )"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-3",

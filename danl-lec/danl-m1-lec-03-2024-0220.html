@@ -1260,15 +1260,21 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s read <code>nba.csv</code> as <code>nba</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table  </span>
-<span id="cb1-5"><a href="#cb1-5"></a>data_table.enable_dataframe_formatter()</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>nba <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/nba.csv&quot;</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>                  parse_dates <span class="op">=</span> [<span class="st">&quot;Birthday&quot;</span>])</span>
-<span id="cb1-9"><a href="#cb1-9"></a>nba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Below is to import the pandas library as pd</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table  </span>
+<span id="cb1-6"><a href="#cb1-6"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># Below is to read nba.csv as nba DataFrame</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>nba <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/nba.csv&quot;</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>                  parse_dates <span class="op">=</span> [<span class="st">&quot;Birthday&quot;</span>])</span>
+<span id="cb1-11"><a href="#cb1-11"></a>                  </span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># Below is to view the nba DataFrame and to get a summary of it</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>nba</span>
+<span id="cb1-14"><a href="#cb1-14"></a>nba.info()</span>
+<span id="cb1-15"><a href="#cb1-15"></a>nba.describe( include<span class="op">=</span><span class="st">&quot;all&quot;</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="pandas-basics-3" class="slide level2">
@@ -2999,7 +3005,6 @@ window.QuartoSupport = function () {
         });
     };
 
-
     document.addEventListener('DOMContentLoaded', function() {
       // Query all anchor tags within code blocks (adjust the selector as needed)
       document.querySelectorAll('pre code a').forEach(function(element) {
@@ -3011,32 +3016,17 @@ window.QuartoSupport = function () {
     });
 
 
+
     document.addEventListener('DOMContentLoaded', function() {
-        // Enhance selector to ensure it captures all code blocks accurately
-        document.querySelectorAll('.reveal pre code').forEach(function(codeBlock) {
-            // Adjust this to account for any additional nesting or layout structures
-            const codeLines = codeBlock.querySelectorAll('span[id^="cb"]');
-
-            codeBlock.addEventListener('mousemove', function(e) {
-                const relativeY = e.clientY - codeBlock.getBoundingClientRect().top;
-
-                // Reset highlight for all lines in this code block
-                codeLines.forEach(line => line.style.backgroundColor = '');
-
-                // Apply highlight to the line that matches the hover position
-                codeLines.forEach(line => {
-                    const lineTop = line.offsetTop - codeBlock.offsetTop;
-                    const lineBottom = lineTop + line.offsetHeight;
-
-                    if (relativeY >= lineTop && relativeY <= lineBottom) {
-                        line.style.backgroundColor = '#FFFF99'; // Highlight color
-                    }
-                });
+        // Target all span elements within code blocks that have IDs starting with 'cb'
+        document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // Apply yellow background color to the hovered span element
+                this.style.backgroundColor = '#FFFF99';
             });
-
-            codeBlock.addEventListener('mouseleave', function() {
-                // Clear the highlight when the mouse leaves the code block
-                codeLines.forEach(line => line.style.backgroundColor = '');
+            element.addEventListener('mouseleave', function() {
+                // Revert the background color when the mouse leaves the span element
+                this.style.backgroundColor = '';
             });
         });
     });
