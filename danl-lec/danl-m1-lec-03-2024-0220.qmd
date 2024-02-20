@@ -1,6 +1,6 @@
 ---
 title: Lecture 3
-subtitle: Pandas Basics - Sorting, Indexing, and Filtering Data with Missing Values and Duplicates
+subtitle: Pandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Filtering Data
 format:
   clean-revealjs:
     self-contained: true
@@ -25,15 +25,16 @@ include-after-body: effect.html
 
 ## Pandas Basics
 ### Learning Objectives
-:::{.nonincremental}
 
+- Loading `DataFrame`
+- Getting a Summary of `DataFrame`
+- Selecting Variables in a `DataFrame` 
+- Counting Values in a `DataFrame` 
 - Sorting `DataFrame`
-- Indexing `DataFrame`
+- Indexing and Renaming `DataFrame`
+- Mathematical & Vectorized Operations in `DataFrame`
+- Locating Data in a `DataFrame`
 - Filtering `DataFrame`
-- Dealing with Missing Values
-- Dealing with Duplicated Values
-
-:::
 
 
 # Sorting Methods {background-color="#1c4982"}

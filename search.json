@@ -186,7 +186,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting, Indexing, and Filtering Data with Missing Values and Duplicates\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -998,7 +998,7 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-1",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLearning Objectives\n\n\nSorting DataFrame\nIndexing DataFrame\nFiltering DataFrame\nDealing with Missing Values\nDealing with Duplicated Values"
+    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Variables in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing and Renaming DataFrame\nMathematical & Vectorized Operations in DataFrame\nLocating Data in a DataFrame\nFiltering DataFrame"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-2",
