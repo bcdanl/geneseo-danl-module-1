@@ -1075,7 +1075,7 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-12",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
+    "text": "Pandas Basics\nSorting by Row Index with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-13",

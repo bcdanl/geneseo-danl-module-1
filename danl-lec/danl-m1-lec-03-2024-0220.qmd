@@ -201,7 +201,7 @@ nba.sort_values(by = ["Team", "Name"],
 
 
 ## Pandas Basics
-### Sorting by Multiple Variables with `sort_index()`
+### Sorting by Row Index with `sort_index()`
 
 
 :::: {.columns}
