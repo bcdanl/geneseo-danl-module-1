@@ -26,17 +26,33 @@ include-after-body: target-hover.html
 ## Pandas Basics
 ### Learning Objectives
 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.nonincremental}
 - Loading `DataFrame`
 - Getting a Summary of `DataFrame`
 - Selecting Variables in `DataFrame` 
 - Counting Values in `DataFrame` 
+
+:::
+:::
+
+::: {.column width="50%"}
+
 - Sorting `DataFrame`
 - Indexing `DataFrame`
 - Locating Observations and Values in `DataFrame`
 - Renaming Variables in `DataFrame`
 - Mathematical & Vectorized Operations with `DataFrame`
+- Converting Data Types in `DataFrame`
 - Filtering Observations in `DataFrame`
 
+:::
+
+::::
 
 # Sorting Methods {background-color="#1c4982"}
 
