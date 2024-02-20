@@ -1012,21 +1012,21 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-3",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-4",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-4",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nascending has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\nnba.sort_values([\"Name\"], ascending = False)\n\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nascending has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-5",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-5",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-6",

@@ -1293,26 +1293,30 @@ Byeong-Hak Choe
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># The two lines below are equivalent</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>nba.sort_values([<span class="st">&quot;Name&quot;</span>])</span>
 <span id="cb2-3"><a href="#cb2-3"></a>nba.sort_values(by <span class="op">=</span> [<span class="st">&quot;Name&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment">The <code>sort_values()</code> method’s first parameter, <code>by</code>, accepts the variables that pandas should use to sort the <code>DataFrame</code>.</li>
+<li>The <code>sort_values()</code> method’s first parameter, <code>by</code>, accepts the variables that pandas should use to sort the <code>DataFrame</code>.</li>
 </ul>
+</div>
 </section>
 <section id="pandas-basics-4" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="sorting-by-a-single-variable-with-sort_values-1">Sorting by a Single Variable with <code>sort_values()</code></h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>nba.sort_values([<span class="st">&quot;Name&quot;</span>], ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment">The <code>sort_values()</code> method’s <code>ascending</code> parameter determines the sort order.
+<li>The <code>sort_values()</code> method’s <code>ascending</code> parameter determines the sort order.
 <ul>
-<li class="fragment"><code>ascending</code> has a default argument of <code>True</code>.</li>
-<li class="fragment">By default, pandas will sort:
+<li><code>ascending</code> has a default argument of <code>True</code>.</li>
+<li>By default, pandas will sort:
 <ul>
-<li class="fragment">A variable of numbers in <em>increasing</em> order;</li>
-<li class="fragment">A variable of strings in <em>alphabetical</em> order;</li>
-<li class="fragment">A variable of datetimes in <em>chronological</em> order.</li>
+<li>A variable of numbers in <em>increasing</em> order;</li>
+<li>A variable of strings in <em>alphabetical</em> order;</li>
+<li>A variable of datetimes in <em>chronological</em> order.</li>
 </ul></li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="pandas-basics-5" class="slide level2">
 <h2>Pandas Basics</h2>
@@ -1322,10 +1326,12 @@ Byeong-Hak Choe
 <span id="cb4-3"><a href="#cb4-3"></a>    .sort_values([<span class="st">&#39;Salary&#39;</span>])</span>
 <span id="cb4-4"><a href="#cb4-4"></a>    .head(<span class="dv">5</span>)</span>
 <span id="cb4-5"><a href="#cb4-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment"><code>DataFrame</code> has various methods that modify the existing <code>DataFrame</code>.</li>
-<li class="fragment"><strong>Method Chaining</strong>: We can call methods sequentially without the need to store intermediate results.</li>
+<li><code>DataFrame</code> has various methods that modify the existing <code>DataFrame</code>.</li>
+<li><strong>Method Chaining</strong>: We can call methods sequentially without the need to store intermediate results.</li>
 </ul>
+</div>
 </section>
 <section id="pandas-basics-6" class="slide level2">
 <h2>Pandas Basics</h2>
