@@ -261,12 +261,6 @@ nba2.reset_index(inplace=True)    # Useful for the chain of method operations
 - Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
 
 
-
-## Pandas Basics
-
-Let's do Questions 1-4 in Part 1 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
-
-
 # Renaming columns or rows  {background-color="#1c4982"}
 
 ## Pandas Basics
@@ -505,6 +499,14 @@ nba.iloc[0:10:2] # every other rows
 - The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
   - The end value is NOT *inclusive*.
   
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-4 in Part 1 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
+
+
 
 
 # Locating Values {background-color="#1c4982"}

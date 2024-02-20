@@ -1438,17 +1438,13 @@ Byeong-Hak Choe
 </ul></li>
 <li class="fragment">Note: With <code>inplace=True</code>, the operation alters the original <code>DataFrame</code> directly.</li>
 </ul>
-</section>
-<section id="pandas-basics-17" class="slide level2">
-<h2>Pandas Basics</h2>
-<p>Let’s do Questions 1-4 in Part 1 of <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html">Classwork 3</a>!</p>
 </section></section>
 <section>
 <section id="renaming-columns-or-rows" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Renaming columns or rows</h1>
 
 </section>
-<section id="pandas-basics-18" class="slide level2">
+<section id="pandas-basics-17" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="renaming-columns-with-nba.columns">Renaming columns with <code>nba.columns</code></h3>
 <div>
@@ -1462,7 +1458,7 @@ Byeong-Hak Choe
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nba.columns <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Date of Birth&quot;</span>, <span class="st">&quot;Income&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pandas-basics-19" class="slide level2">
+<section id="pandas-basics-18" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="renaming-columns-with-rename-columns-existing-one-new-one">Renaming columns with <code>rename( columns = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>nba.rename( columns <span class="op">=</span> { <span class="st">&quot;Date of Birth&quot;</span>: <span class="st">&quot;Birthday&quot;</span> } )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1470,7 +1466,7 @@ Byeong-Hak Choe
 <li class="fragment">The above <code>rename()</code> method renames the variable <em>Date of Birth</em> to <em>Birthday</em>.</li>
 </ul>
 </section>
-<section id="pandas-basics-20" class="slide level2">
+<section id="pandas-basics-19" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="renaming-rows-with-rename-index-existing-one-new-one">Renaming rows with <code>rename( index = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>nba <span class="op">=</span> nba.rename(</span>
@@ -1485,7 +1481,7 @@ Byeong-Hak Choe
 <h1>Mathematical &amp; Vectorized Operations</h1>
 
 </section>
-<section id="pandas-basics-21" class="slide level2">
+<section id="pandas-basics-20" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="mathematical-operations">Mathematical Operations</h3>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>nba.<span class="bu">max</span>()</span>
@@ -1495,7 +1491,7 @@ Byeong-Hak Choe
 <li class="fragment">The <code>min()</code> method returns a <code>Series</code> with the minimum value from each variable.</li>
 </ul>
 </section>
-<section id="pandas-basics-22" class="slide level2">
+<section id="pandas-basics-21" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="mathematical-operations-1">Mathematical Operations</h3>
 <div class="columns">
@@ -1520,7 +1516,7 @@ Byeong-Hak Choe
 <li class="fragment">To limit the operation to numeric volumes, we can pass <code>True</code> to the <code>sum()</code>/<code>mean()</code>/<code>median()</code>/<code>std()</code> method’s <code>numeric_only</code> parameter.</li>
 </ul>
 </section>
-<section id="pandas-basics-23" class="slide level2">
+<section id="pandas-basics-22" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="vectorized-operations">Vectorized Operations</h3>
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>nba[<span class="st">&quot;Salary_2x&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">+</span> nba[<span class="st">&quot;Salary&quot;</span>]</span>
@@ -1538,7 +1534,7 @@ Byeong-Hak Choe
 <h1>Locating Observations</h1>
 
 </section>
-<section id="pandas-basics-24" class="slide level2">
+<section id="pandas-basics-23" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observationsvalues">Locating Observations/Values</h3>
 <ul>
@@ -1550,7 +1546,7 @@ Byeong-Hak Choe
 <li class="fragment"><p>We may want to target observations not by an index label but by a Boolean condition.</p></li>
 </ul>
 </section>
-<section id="pandas-basics-25" class="slide level2">
+<section id="pandas-basics-24" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
 <div>
@@ -1570,7 +1566,7 @@ Byeong-Hak Choe
 <li class="fragment">The <code>.loc</code> attribute extracts an observation by index label (row name).</li>
 </ul>
 </section>
-<section id="pandas-basics-26" class="slide level2">
+<section id="pandas-basics-25" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels-1">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>(</span>
@@ -1585,7 +1581,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-27" class="slide level2">
+<section id="pandas-basics-26" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels-2">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
 <div class="columns">
@@ -1611,7 +1607,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-28" class="slide level2">
+<section id="pandas-basics-27" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.iloc-index-positions">Locating Observations by <code>.iloc[ Index Positions ]</code></h3>
 <div class="columns">
@@ -1637,6 +1633,10 @@ Byeong-Hak Choe
 <li class="fragment">The end value is NOT <em>inclusive</em>.</li>
 </ul></li>
 </ul>
+</section>
+<section id="pandas-basics-28" class="slide level2">
+<h2>Pandas Basics</h2>
+<p>Let’s do Questions 1-4 in Part 1 of <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html">Classwork 3</a>!</p>
 </section></section>
 <section>
 <section id="locating-values" class="title-slide slide level1 center" data-background-color="#1c4982">

@@ -1110,84 +1110,84 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-17",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 1-4 in Part 1 of Classwork 3!"
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-18",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-18",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-19",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-19",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-20",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-20",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-21",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-21",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
+    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-22",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-22",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
+    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-23",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-23",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
+    "text": "Pandas Basics\nLocating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target.\n\nHowever, we often do not know the index labels and positions of the observations/variables we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-24",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-24",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target.\n\nHowever, we often do not know the index labels and positions of the observations/variables we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-25",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-25",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-26",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-26",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-27",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-27",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-28",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-28",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+    "text": "Pandas Basics\nLet’s do Questions 1-4 in Part 1 of Classwork 3!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-29",
