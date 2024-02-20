@@ -140,7 +140,7 @@ DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/netflix-2019.csv')
 
 
 ## Question 1
-Optimize the data set for limited memory use and maximum utility by using the `astype()` method.
+Optimize the DataFrame for limited memory use and maximum utility by using the `astype()` method.
 
 *Answer:*
 ```{python}
@@ -200,31 +200,7 @@ Find all observations with a director of "`Orson Welles`", "`Aditya Kripalani`",
 
 
 ## Question 6
-Find all rows with a `date_added` value between May 1, 2019 and June 1, 2019.
-
-*Answer:*
-```{python}
-
-```
-
-<br>
-
-
-
-## Question 7
-Drop all rows with a `NaN` value in the `director` variable.
-
-*Answer:*
-```{python}
-
-```
-
-<br>
-
-
-
-## Question 8
-Identify the days when Netflix added only one movie to its catalog.
+Find all observations with a `date_added` value between May 1, 2019 and June 1, 2019.
 
 *Answer:*
 ```{python}
@@ -232,6 +208,30 @@ Identify the days when Netflix added only one movie to its catalog.
 ```
 
 <br><br>
+
+
+
+<!-- ## Question 7 -->
+<!-- Drop all rows with a `NaN` value in the `director` variable. -->
+
+<!-- *Answer:* -->
+<!-- ```{python} -->
+
+<!-- ``` -->
+
+<!-- <br> -->
+
+
+
+<!-- ## Question 8 -->
+<!-- Identify the days when Netflix added only one movie to its catalog. -->
+
+<!-- *Answer:* -->
+<!-- ```{python} -->
+
+<!-- ``` -->
+
+<!-- <br><br> -->
 
 
 

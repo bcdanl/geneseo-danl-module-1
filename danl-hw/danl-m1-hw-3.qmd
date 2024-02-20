@@ -24,12 +24,12 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 # Direction
 
 
-- Please submit your Jupyter Notebook for Homework 2 to the Brightspace with the name below:
+- Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:
 
-  - `danl-m1-hw2-LASTNAME-FIRSTNAME.ipynb`\
-  ( e.g., `danl-m2-hw1-choe-byeonghak.ipynb` )
+  - `danl-m1-hw3-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-m2-hw3-choe-byeonghak.ipynb` )
 
-- The due is February 20, 2024, 7:00 P.M.
+- The due is February 27, 2024, 7:00 P.M.
 
 - Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
 
@@ -48,11 +48,11 @@ Import the `pandas` library.
 import pandas as pd
 ```
 
-Below is `nhl` `DataFrame` that reads the file `NHL-1617.csv` containing data of all non-goalie NHL players who had at least some _ice time_, i.e. playing time, in the 2016/2017 regular season - without play-offs. 
+Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
 
 ```{python}
 #| echo: true
-nhl = pd.read_csv('https://bcdanl.github.io/data/NHL-1617.csv')
+nyc_payroll = pd.read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv')
 ```
 
 <div style="position: relative;">
@@ -79,7 +79,7 @@ function scrollTable(offset) {
 ```{r}
 #| eval: true
 #| echo: false
-DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/NHL-1617.csv'), 
+DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv'), 
           extensions = c('Buttons','FixedColumns'),
           options = list(
             dom = 'Bfrtip',
@@ -92,26 +92,32 @@ DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/NHL-1617.csv'),
 ```
 
 ## Variable Description
-- `id_player`: Player ID
-- `Born`: Date of Birth
-- `City`: City of Birth
-- `Cntry`: Country of Birth
-- `Nat`: Nationality
-- `Last_Name`: Last name
-- `First_name`: First Name
-- `Position`: Position
-- `Team`: Team
-- `GP`: The number of games
-- `G`: The number of goals
-- `A`: The number of assists
-- `TOI`: The total time on ice (in second)
-- `TOI_GP`: Average amount of playing time per game (in minute)
-
+- `Fiscal Year`: Fiscal Year;
+- `Payroll Number`:	Payroll Number;
+- `Agency Name`: The Payroll agency that the employee works for;
+- `Last Name`: Last name of employee;
+- `First Name`: First name of employee;
+- `Mid Init`: Middle initial of employee;
+- `Agency Start Date`: Date which employee began working for their current agency;
+- `Work Location Borough`: Borough of employee's primary work location;
+- `Title Description`: Civil service title description of the employee;
+- `Leave Status as of June 30`: Status of employee as of the close of the relevant fiscal year;
+- `Base Salary`: Base Salary assigned to the employee;
+- `Pay Basis`: Lists whether the employee is paid on an hourly, per diem or annual basis;
+- `Regular Hours`: Number of regular hours employee worked in the fiscal year;
+- `Regular Gross Paid`: The amount paid to the employee for base salary during the fiscal year;
+- `OT Hours`: Overtime Hours worked by employee in the fiscal year;
+- `Total OT Paid`: Total overtime pay paid to the employee in the fiscal year;
+- `Total Other Pay`: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable.
 <br><br>
 
 ## Question 1
 
-How many players had at least some ice time?
+- Create a new `DataFrame` that includes employees from the "DEPARTMENT OF EDUCATION ADMIN" *agency*, where the variables are "First Name", "Last Name", "Title Description", "Base Salary", and "Total OT Paid". 
+
+- Additionally, include a new variable, "Total Compensation", which is the sum of "Base Salary" and "Total OT Paid".
+
+
 
 *Answer*
 
@@ -125,7 +131,9 @@ How many players had at least some ice time?
 
 ## Question 2
 
-Who is the top scorer in terms of goals?
+- How many employees have a "Base Salary" within the top 10% of the DataFrame?
+  - Hint: The `.quantile()` method can be useful.
+
 
 *Answer*
 ```{python}
@@ -135,7 +143,8 @@ Who is the top scorer in terms of goals?
 <br><br>
 
 ## Question 3
-How can we count the number of NHL players for each country?
+Sort the DataFrame first by "Work Location Borough" alphabetically, and then by "Total Compensation" (sum of "Base Salary" and "Total OT Paid") in descending order within each borough.
+
 
 *Answer*
 ```{python}
@@ -147,7 +156,8 @@ How can we count the number of NHL players for each country?
 
 
 ## Question 4
-- How many unique countries are in `nhl.csv`?
+Filter the DataFrame for employees who have "OT Hours" greater than 0 but less than 100, and their "Leave Status as of June 30" is "ACTIVE".
+
 
 *Answer*
 ```{python}
@@ -160,7 +170,8 @@ How can we count the number of NHL players for each country?
 
 
 ## Question 5
-Which three nationalities have the highest number of players?
+Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and count how many there are.
+
 
 *Answer*
 ```{python}
@@ -168,4 +179,33 @@ Which three nationalities have the highest number of players?
 ```
 
 <br><br>
+
+
+## Question 6
+- Identify the employee(s) with the highest "Total OT Paid" in the DataFrame. 
+  - Include their "First Name", "Last Name", and "Total OT Paid".
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 7
+- Calculate the *total* "Regular Gross Paid" for employees whose "Base Salary" is below the median salary of the DataFrame.
+  - The total "Regular Gross Paid" refers to the total amount of "Regular Gross Paid" paid to employees.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
 

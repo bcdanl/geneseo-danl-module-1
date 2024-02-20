@@ -3692,10 +3692,165 @@ Byeong-Hak Choe
 
   <p class="date">February 27, 2024</p>
 </section>
-<section>
 <section id="pandas-data-structures-basics" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Pandas Data Structures Basics</h1>
 
+</section>
+
+<section>
+<section id="dealing-with-missing-values" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Dealing with Missing Values</h1>
+
+</section>
+<section id="pandas-basics" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-1">Dealing with Missing Values</h3>
+<ul>
+<li><p>Pandas marks missing text values and missing numeric values with a <code>NaN</code> (not a number) designation, and it marks missing datetime values with a <code>NaT</code> (not a time) designation.</p></li>
+<li><p>We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-1" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-isna-and-notna-methods">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>emp[<span class="st">&quot;Team&quot;</span>].isna()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>emp[<span class="st">&quot;Start Date&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>isna()</code> method returns a Boolean <code>Series</code> in which <code>True</code> denotes that a row’s value is missing.</li>
+</ul>
+</section>
+<section id="pandas-basics-2" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-isna-and-notna-methods-1">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>emp[<span class="st">&quot;Team&quot;</span>].notna()</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>The <code>notna()</code> method returns the inverse <code>Series</code>, one in which <code>True</code> indicates that a row’s value is present.</p></li>
+<li><p>We use the tilde symbol (<code>~</code>) to invert a Boolean <code>Series</code>.</p></li>
+<li><p><strong>Q</strong>. How can we pull out employees with non-missing <code>First Name</code>?</p></li>
+</ul>
+</section>
+<section id="pandas-basics-3" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method">Dealing with Missing Values: The <code>dropna()</code> method</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>                  parse_dates <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>])</span>
+<span id="cb3-3"><a href="#cb3-3"></a>emp.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>dropna()</code> method removes observations that hold any <code>NaN</code> or <code>NaT</code> values</li>
+</ul>
+</section>
+<section id="pandas-basics-4" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-how">Dealing with Missing Values: The <code>dropna()</code> method with <code>how</code></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>emp.dropna(how <span class="op">=</span> <span class="st">&quot;all&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>We can pass the <code>how</code> parameter an argument of <code>&quot;all&quot;</code> to remove observations in which all values are missing.</p></li>
+<li><p>Note that the <code>how</code> parameter’s default argument is <code>&quot;any&quot;</code>.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-5" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-subset">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We can use the <code>subset</code> parameter to target observations with a missing value in a specific variable.
+<ul>
+<li>The above example removes observations that have a missing value in the <code>Gender</code> variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-6" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-subset-1">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>, <span class="st">&quot;Salary&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We can also pass the <code>subset</code> parameter a list of variables.</li>
+</ul>
+</section>
+<section id="pandas-basics-7" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-thresh">Dealing with Missing Values: The <code>dropna()</code> method with <code>thresh</code></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>emp.dropna(thresh <span class="op">=</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>thresh</code> parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.</li>
+</ul>
+</section></section>
+<section>
+<section id="dealing-with-duplicates" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Dealing with Duplicates</h1>
+
+</section>
+<section id="pandas-basics-8" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-duplicated-method">Dealing with Duplicates with the <code>duplicated()</code> method</h3>
+<p>Missing values are a common occurrence in messy data sets, and so are duplicate values.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>duplicated()</code> method returns a Boolean <code>Series</code> that identifies duplicates in a variable.</li>
+</ul>
+</section>
+<section id="pandas-basics-9" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-duplicated-method-1">Dealing with Duplicates with the <code>duplicated()</code> method</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;first&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>duplicated()</code> method’s <code>keep</code> parameter informs pandas which duplicate occurrence to keep.
+<ul>
+<li>Its default argument, <code>&quot;first&quot;</code>, keeps the first occurrence of each duplicate value.</li>
+<li>Its argument, <code>&quot;last&quot;</code>, keeps the last occurrence of each duplicate value.</li>
+</ul></li>
+<li><strong>Q</strong>. How can we keep observations with the first occurrences of a value in the Team variable?</li>
+</ul>
+</section>
+<section id="pandas-basics-10" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>drop_duplicates()</code> method removes rows in which all values are equal to those in a previously encountered observations.</li>
+</ul>
+</section>
+<section id="pandas-basics-11" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-1">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>We can pass the<code>drop_duplicates()</code> method a <code>subset</code> parameter with a list of columns that pandas should use to determine an observation’s uniqueness.</p>
+<ul>
+<li>The above example finds the first occurrence of each unique value in the Team variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-12" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-2">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The above example uses a combination of values across the <code>Gender</code> and <code>Team</code> variables to identify duplicates.</li>
+</ul>
+</section>
+<section id="pandas-basics-13" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-3">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb13-3"><a href="#cb13-3"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;First Name&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>The <code>drop_duplicates()</code> method also accepts a <code>keep</code> parameter.</p>
+<ul>
+<li>We can pass it an argument of <code>&quot;last&quot;</code> to keep the observations with each duplicate value’s last occurrence.</li>
+<li>We can pass it an argument of <code>False</code> to exclude all observations with duplicate values.</li>
+</ul></li>
+<li><p><strong>Q</strong>. What does <code>emp.drop_duplicates(subset = [&quot;First Name&quot;], keep = False)</code> do?</p></li>
+<li><p><strong>Q</strong>. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame <code>emp.drop_duplicates(subset = [&quot;Gender&quot;, &quot;Team&quot;])</code>.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-14" class="slide level2">
+<h2>Pandas Basics</h2>
+<p>Let’s do Questions 7-8 in Part 1 of <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html">Classwork 4</a>!</p>
 </section>
 <section id="making-changes-to-series-and-dataframes" class="slide level2">
 <h2>Making Changes to Series and DataFrames</h2>
@@ -3707,28 +3862,28 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s create a new set of columns that contain the <code>datetime</code> representations of the object (string) dates.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">## format the &#39;Born&#39; column as a datetime</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>born_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Born&#39;</span>] )</span>
-<span id="cb1-3"><a href="#cb1-3"></a>died_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Died&#39;</span>] )</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>scientists[<span class="st">&#39;born_dt&#39;</span>], scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">=</span> (</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  born_datetime,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>  died_datetime</span>
-<span id="cb1-8"><a href="#cb1-8"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>scientists[<span class="st">&#39;age_days&#39;</span>] <span class="op">=</span>  scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">## format the &#39;Born&#39; column as a datetime</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>born_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Born&#39;</span>] )</span>
+<span id="cb14-3"><a href="#cb14-3"></a>died_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Died&#39;</span>] )</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a>scientists[<span class="st">&#39;born_dt&#39;</span>], scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">=</span> (</span>
+<span id="cb14-6"><a href="#cb14-6"></a>  born_datetime,</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  died_datetime</span>
+<span id="cb14-8"><a href="#cb14-8"></a>)</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a>scientists[<span class="st">&#39;age_days&#39;</span>] <span class="op">=</span>  scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-2">
 <ul>
 <li>Let’s create the <code>age_year_assign</code> column using <code>.assign()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>scientists <span class="op">=</span> scientists.assign(</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co">## new columns on the left of the equal sign</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="co">## how to calculate values on the right of the equal sign</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="co">## separate new columns with a comma</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
-<span id="cb2-6"><a href="#cb2-6"></a>  age_year_assign <span class="op">=</span> scientists[<span class="st">&#39;age_days&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>scientists <span class="op">=</span> scientists.assign(</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="co">## new columns on the left of the equal sign</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="co">## how to calculate values on the right of the equal sign</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="co">## separate new columns with a comma</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
+<span id="cb15-6"><a href="#cb15-6"></a>  age_year_assign <span class="op">=</span> scientists[<span class="st">&#39;age_days&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>)</span>
+<span id="cb15-7"><a href="#cb15-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-3">
 <ul>
@@ -3737,12 +3892,12 @@ Byeong-Hak Choe
 <li>To be able to use <code>age_days_assign</code> when calculating <code>age_year_assign</code> in the previous panel, we need to know about <code>lambda</code> functions.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>scientists <span class="op">=</span> scientists.drop( [<span class="st">&#39;age_days&#39;</span>], axis <span class="op">=</span> <span class="dv">1</span>)  <span class="co">## to drop age_days</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>scientists <span class="op">=</span> scientists.assign(</span>
-<span id="cb3-3"><a href="#cb3-3"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
-<span id="cb3-4"><a href="#cb3-4"></a>  age_year_assign <span class="op">=</span> <span class="kw">lambda</span> some_df: </span>
-<span id="cb3-5"><a href="#cb3-5"></a>    some_df[<span class="st">&#39;age_days_assign&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>) </span>
-<span id="cb3-6"><a href="#cb3-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>scientists <span class="op">=</span> scientists.drop( [<span class="st">&#39;age_days&#39;</span>], axis <span class="op">=</span> <span class="dv">1</span>)  <span class="co">## to drop age_days</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>scientists <span class="op">=</span> scientists.assign(</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  age_year_assign <span class="op">=</span> <span class="kw">lambda</span> some_df: </span>
+<span id="cb16-5"><a href="#cb16-5"></a>    some_df[<span class="st">&#39;age_days_assign&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>) </span>
+<span id="cb16-6"><a href="#cb16-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3761,22 +3916,22 @@ Byeong-Hak Choe
 <li>A syntax for a lambda function is <code>lambda ARGUMENTS : EXPRESSION</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> short_function(x):</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>equiv_anon <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>short_function(<span class="dv">2</span>)</span>
-<span id="cb4-6"><a href="#cb4-6"></a>equiv_anon(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">def</span> short_function(x):</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>equiv_anon <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>short_function(<span class="dv">2</span>)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>equiv_anon(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-2">
 <ul>
 <li>A <code>lambda</code> function can have multiple arguments:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fn_two <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">*</span> b</span>
-<span id="cb5-2"><a href="#cb5-2"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>fn_three <span class="op">=</span> <span class="kw">lambda</span> a, b, c : a <span class="op">+</span> b <span class="op">+</span> c</span>
-<span id="cb5-5"><a href="#cb5-5"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>fn_two <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">*</span> b</span>
+<span id="cb18-2"><a href="#cb18-2"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a>fn_three <span class="op">=</span> <span class="kw">lambda</span> a, b, c : a <span class="op">+</span> b <span class="op">+</span> c</span>
+<span id="cb18-5"><a href="#cb18-5"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-3">
 <ul>
@@ -3785,8 +3940,8 @@ Byeong-Hak Choe
 <li>Say we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-4">
 <div class="columns">
@@ -3794,20 +3949,20 @@ Byeong-Hak Choe
 <ul>
 <li>Use that function definition to make a function that always doubles the number we send in:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>my_doubler <span class="op">=</span> myfunc(<span class="dv">2</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>my_doubler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>my_doubler <span class="op">=</span> myfunc(<span class="dv">2</span>)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>my_doubler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Use the same function definition to make a function that always triples the number we send in:</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>my_tripler <span class="op">=</span> myfunc(<span class="dv">3</span>)</span>
-<span id="cb8-5"><a href="#cb8-5"></a>my_tripler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a>my_tripler <span class="op">=</span> myfunc(<span class="dv">3</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a>my_tripler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3815,14 +3970,14 @@ Byeong-Hak Choe
 <ul>
 <li>Here is the example of applying a lambda function to single variable in DataFrame using <code>.assign()</code></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>values<span class="op">=</span> [[<span class="st">&#39;Rohan&#39;</span>,<span class="dv">182</span>],[<span class="st">&#39;Elvish&#39;</span>,<span class="dv">100</span>],[<span class="st">&#39;Deepak&#39;</span>,<span class="dv">198</span>],</span>
-<span id="cb9-2"><a href="#cb9-2"></a>         [<span class="st">&#39;Soni&#39;</span>,<span class="dv">160</span>],[<span class="st">&#39;Radhika&#39;</span>,<span class="dv">140</span>],[<span class="st">&#39;Vansh&#39;</span>,<span class="dv">180</span>]]</span>
-<span id="cb9-3"><a href="#cb9-3"></a>df <span class="op">=</span> pd.DataFrame(values, columns <span class="op">=</span> [<span class="st">&#39;name&#39;</span>,<span class="st">&#39;tot_marks&#39;</span>])</span>
-<span id="cb9-4"><a href="#cb9-4"></a> </span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="co">## Applying lambda function to find percentage of &#39;tot_marks&#39; column</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="co">## using df.assign()</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>df <span class="op">=</span> df.assign( percentage <span class="op">=</span> </span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="kw">lambda</span> some_name: (some_name[<span class="st">&#39;tot_marks&#39;</span>] <span class="op">/</span><span class="dv">200</span> <span class="op">*</span> <span class="dv">100</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>values<span class="op">=</span> [[<span class="st">&#39;Rohan&#39;</span>,<span class="dv">182</span>],[<span class="st">&#39;Elvish&#39;</span>,<span class="dv">100</span>],[<span class="st">&#39;Deepak&#39;</span>,<span class="dv">198</span>],</span>
+<span id="cb22-2"><a href="#cb22-2"></a>         [<span class="st">&#39;Soni&#39;</span>,<span class="dv">160</span>],[<span class="st">&#39;Radhika&#39;</span>,<span class="dv">140</span>],[<span class="st">&#39;Vansh&#39;</span>,<span class="dv">180</span>]]</span>
+<span id="cb22-3"><a href="#cb22-3"></a>df <span class="op">=</span> pd.DataFrame(values, columns <span class="op">=</span> [<span class="st">&#39;name&#39;</span>,<span class="st">&#39;tot_marks&#39;</span>])</span>
+<span id="cb22-4"><a href="#cb22-4"></a> </span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co">## Applying lambda function to find percentage of &#39;tot_marks&#39; column</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="co">## using df.assign()</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>df <span class="op">=</span> df.assign( percentage <span class="op">=</span> </span>
+<span id="cb22-8"><a href="#cb22-8"></a>  <span class="kw">lambda</span> some_name: (some_name[<span class="st">&#39;tot_marks&#39;</span>] <span class="op">/</span><span class="dv">200</span> <span class="op">*</span> <span class="dv">100</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3833,8 +3988,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-9c4c93f9c504ce5cc8d7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9c4c93f9c504ce5cc8d7">{"x":{"filter":"none","vertical":false,"data":[["df[val]","df`.`loc[val]","df`.`loc[:, val]","df`.`loc[val1, val2]","df`.`iloc[where]","df`.`iloc[:, where]","df`.`iloc[w1, w2]","df`.`query(CONDITION)"],["Select single column or set of columns","Select single row or set of rows","Select single column or set of columns","Select row and column by label","Select row or set of rows by integer position","Select column or set of columns by integer position","Select row and column by integer position","Select row by a condition"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Type<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Type","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-01f5e737a70a55a9f646" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-01f5e737a70a55a9f646">{"x":{"filter":"none","vertical":false,"data":[["df[val]","df`.`loc[val]","df`.`loc[:, val]","df`.`loc[val1, val2]","df`.`iloc[where]","df`.`iloc[:, where]","df`.`iloc[w1, w2]","df`.`query(CONDITION)"],["Select single column or set of columns","Select single row or set of rows","Select single column or set of columns","Select row and column by label","Select row or set of rows by integer position","Select column or set of columns by integer position","Select row and column by integer position","Select row by a condition"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Type<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Type","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -3864,22 +4019,22 @@ Byeong-Hak Choe
 <li><code>DataFrame[ DataFrame[&#39;VARIABLE_NAME&#39;] &lt; VALUE  ]</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb10-2"><a href="#cb10-2"></a>scientists <span class="op">=</span> read_csv(<span class="st">&#39;data/scientists.csv&#39;</span>)  </span>
-<span id="cb10-3"><a href="#cb10-3"></a></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co">## What if we want to subset our ages by identifying those above the mean?</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>scientists.loc[ scientists[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> scientists[<span class="st">&#39;Age&#39;</span>].mean() ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb23-2"><a href="#cb23-2"></a>scientists <span class="op">=</span> read_csv(<span class="st">&#39;data/scientists.csv&#39;</span>)  </span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="co">## What if we want to subset our ages by identifying those above the mean?</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>scientists.loc[ scientists[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> scientists[<span class="st">&#39;Age&#39;</span>].mean() ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-3-3">
 <ul>
 <li>Consider the two Series, <code>area</code> and <code>pop</code>:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>area <span class="op">=</span> pd.Series({<span class="st">&#39;California&#39;</span>: <span class="dv">423967</span>, <span class="st">&#39;Texas&#39;</span>: <span class="dv">695662</span>,</span>
-<span id="cb11-2"><a href="#cb11-2"></a>                  <span class="st">&#39;New York&#39;</span>: <span class="dv">141297</span>, <span class="st">&#39;Florida&#39;</span>: <span class="dv">170312</span>,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>                  <span class="st">&#39;Illinois&#39;</span>: <span class="dv">149995</span>})</span>
-<span id="cb11-4"><a href="#cb11-4"></a>pop <span class="op">=</span> pd.Series({<span class="st">&#39;California&#39;</span>: <span class="dv">38332521</span>, <span class="st">&#39;Texas&#39;</span>: <span class="dv">26448193</span>,</span>
-<span id="cb11-5"><a href="#cb11-5"></a>                 <span class="st">&#39;New York&#39;</span>: <span class="dv">19651127</span>, <span class="st">&#39;Florida&#39;</span>: <span class="dv">19552860</span>,</span>
-<span id="cb11-6"><a href="#cb11-6"></a>                 <span class="st">&#39;Illinois&#39;</span>: <span class="dv">12882135</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>area <span class="op">=</span> pd.Series({<span class="st">&#39;California&#39;</span>: <span class="dv">423967</span>, <span class="st">&#39;Texas&#39;</span>: <span class="dv">695662</span>,</span>
+<span id="cb24-2"><a href="#cb24-2"></a>                  <span class="st">&#39;New York&#39;</span>: <span class="dv">141297</span>, <span class="st">&#39;Florida&#39;</span>: <span class="dv">170312</span>,</span>
+<span id="cb24-3"><a href="#cb24-3"></a>                  <span class="st">&#39;Illinois&#39;</span>: <span class="dv">149995</span>})</span>
+<span id="cb24-4"><a href="#cb24-4"></a>pop <span class="op">=</span> pd.Series({<span class="st">&#39;California&#39;</span>: <span class="dv">38332521</span>, <span class="st">&#39;Texas&#39;</span>: <span class="dv">26448193</span>,</span>
+<span id="cb24-5"><a href="#cb24-5"></a>                 <span class="st">&#39;New York&#39;</span>: <span class="dv">19651127</span>, <span class="st">&#39;Florida&#39;</span>: <span class="dv">19552860</span>,</span>
+<span id="cb24-6"><a href="#cb24-6"></a>                 <span class="st">&#39;Illinois&#39;</span>: <span class="dv">12882135</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Use boolean subsetting to find states whose population density is greater than 100 or less than 50.</li>
 </ul>
@@ -3897,52 +4052,52 @@ Byeong-Hak Choe
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-4-1">Data</a></li><li><a href="#tabset-4-2">.query() (1)</a></li><li><a href="#tabset-4-3">(2)</a></li><li><a href="#tabset-4-4">(3)</a></li><li><a href="#tabset-4-5">(4)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>df <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>    <span class="co">## array with numbers from 0 to 35, 6 rows and 6 columns</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>    data <span class="op">=</span> np.reshape( <span class="bu">range</span>(<span class="dv">36</span>), (<span class="dv">6</span>, <span class="dv">6</span>) ),</span>
-<span id="cb12-4"><a href="#cb12-4"></a>    index <span class="op">=</span> [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>],</span>
-<span id="cb12-5"><a href="#cb12-5"></a>    columns <span class="op">=</span> [<span class="st">&quot;col&quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>)],</span>
-<span id="cb12-6"><a href="#cb12-6"></a>    dtype <span class="op">=</span> <span class="bu">float</span>,</span>
-<span id="cb12-7"><a href="#cb12-7"></a>)</span>
-<span id="cb12-8"><a href="#cb12-8"></a>df[<span class="st">&quot;col6&quot;</span>] <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;kiwi&quot;</span>, <span class="st">&quot;lemon&quot;</span>]</span>
-<span id="cb12-9"><a href="#cb12-9"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>df <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb25-2"><a href="#cb25-2"></a>    <span class="co">## array with numbers from 0 to 35, 6 rows and 6 columns</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>    data <span class="op">=</span> np.reshape( <span class="bu">range</span>(<span class="dv">36</span>), (<span class="dv">6</span>, <span class="dv">6</span>) ),</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    index <span class="op">=</span> [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>],</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    columns <span class="op">=</span> [<span class="st">&quot;col&quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>)],</span>
+<span id="cb25-6"><a href="#cb25-6"></a>    dtype <span class="op">=</span> <span class="bu">float</span>,</span>
+<span id="cb25-7"><a href="#cb25-7"></a>)</span>
+<span id="cb25-8"><a href="#cb25-8"></a>df[<span class="st">&quot;col6&quot;</span>] <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;kiwi&quot;</span>, <span class="st">&quot;lemon&quot;</span>]</span>
+<span id="cb25-9"><a href="#cb25-9"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-2">
 <ul>
 <li>Select rows if a value of <code>col6</code> is “kiwi” or “pineapple”:</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df.query(<span class="st">&quot;col6 == &#39;kiwi&#39; or col6 == &#39;pineapple&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>df.query(<span class="st">&quot;col6 == &#39;kiwi&#39; or col6 == &#39;pineapple&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Select rows if a value of <code>col0</code> is greater than 6:</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>df.query(<span class="st">&quot;col0 &gt; 6&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>df.query(<span class="st">&quot;col0 &gt; 6&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-3">
 <ul>
 <li>Select flights that departed on January 1:</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">## download NY_flights.csv from the Files section in Canvas</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>flights <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/NY_flights.csv&quot;</span>)</span>
-<span id="cb15-3"><a href="#cb15-3"></a>flights.head()</span>
-<span id="cb15-4"><a href="#cb15-4"></a></span>
-<span id="cb15-5"><a href="#cb15-5"></a>flights.query(<span class="st">&quot;month == 1 and day == 1&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">## download NY_flights.csv from the Files section in Canvas</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>flights <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/NY_flights.csv&quot;</span>)</span>
+<span id="cb28-3"><a href="#cb28-3"></a>flights.head()</span>
+<span id="cb28-4"><a href="#cb28-4"></a></span>
+<span id="cb28-5"><a href="#cb28-5"></a>flights.query(<span class="st">&quot;month == 1 and day == 1&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-4">
 <ul>
 <li>Select penguins whose <code>bill_length_mm</code> is smaller than <code>1.8 * bill_depth_mm</code>.</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb16-2"><a href="#cb16-2"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">&quot;penguins&quot;</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a>penguins.head()</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a>penguins.query(<span class="st">&#39;bill_length_mm &lt; bill_depth_mm*1.8&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb29-2"><a href="#cb29-2"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">&quot;penguins&quot;</span>)</span>
+<span id="cb29-3"><a href="#cb29-3"></a>penguins.head()</span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>penguins.query(<span class="st">&#39;bill_length_mm &lt; bill_depth_mm*1.8&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-5">
 <ul>
 <li>Objects not in DataFrame can be referenced with an <code>@</code> character like<code>@a + b</code>.</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>outside_var <span class="op">=</span> <span class="dv">21</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>penguins.query(<span class="st">&#39;bill_depth_mm &gt; @outside_var&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>outside_var <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>penguins.query(<span class="st">&#39;bill_depth_mm &gt; @outside_var&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3961,12 +4116,12 @@ Byeong-Hak Choe
 <li><code>Series.sort_index(ascending=False)</code> sorts <code>Series</code> by index in descending order.</li>
 <li><code>Series.sort_values(ascending=False)</code> sorts <code>Series</code> by value in descending order.</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>rev_ages <span class="op">=</span> ages.sort_index(ascending <span class="op">=</span><span class="va">False</span>) </span>
-<span id="cb18-2"><a href="#cb18-2"></a>sorted_ages <span class="op">=</span> ages.sort_values(ascending <span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>rev_ages <span class="op">=</span> ages.sort_index(ascending <span class="op">=</span><span class="va">False</span>) </span>
+<span id="cb31-2"><a href="#cb31-2"></a>sorted_ages <span class="op">=</span> ages.sort_values(ascending <span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>] ## DataFrame - <code>DataFrame.sort_index(ascending=False)</code> sorts <code>DataFrame</code> by index in descending order. - <code>DataFrame.sort_values(by = &quot;VAR&quot;, ascending=False)</code> sorts <code>DataFrame</code> by value of <code>VAR</code> in descending order.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>rev_ages <span class="op">=</span> scientists.sort_index(ascending <span class="op">=</span><span class="va">False</span>) </span>
-<span id="cb19-2"><a href="#cb19-2"></a>sorted_df <span class="op">=</span> scientists.sort_values(by <span class="op">=</span> <span class="st">&#39;Age&#39;</span>, </span>
-<span id="cb19-3"><a href="#cb19-3"></a>                                   ascending <span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>rev_ages <span class="op">=</span> scientists.sort_index(ascending <span class="op">=</span><span class="va">False</span>) </span>
+<span id="cb32-2"><a href="#cb32-2"></a>sorted_df <span class="op">=</span> scientists.sort_values(by <span class="op">=</span> <span class="st">&#39;Age&#39;</span>, </span>
+<span id="cb32-3"><a href="#cb32-3"></a>                                   ascending <span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3984,11 +4139,11 @@ Byeong-Hak Choe
 <ul>
 <li>Consider the following DataFrame.</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb20-2"><a href="#cb20-2"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">&#39;Animal&#39;</span>: [<span class="st">&#39;fox&#39;</span>, <span class="st">&#39;Kangaroo&#39;</span>, <span class="st">&#39;deer&#39;</span>,</span>
-<span id="cb20-3"><a href="#cb20-3"></a>                                   <span class="st">&#39;spider&#39;</span>, <span class="st">&#39;snake&#39;</span>],</span>
-<span id="cb20-4"><a href="#cb20-4"></a>                        <span class="st">&#39;Number_legs&#39;</span>: [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, np.nan]})</span>
-<span id="cb20-5"><a href="#cb20-5"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb33-2"><a href="#cb33-2"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">&#39;Animal&#39;</span>: [<span class="st">&#39;fox&#39;</span>, <span class="st">&#39;Kangaroo&#39;</span>, <span class="st">&#39;deer&#39;</span>,</span>
+<span id="cb33-3"><a href="#cb33-3"></a>                                   <span class="st">&#39;spider&#39;</span>, <span class="st">&#39;snake&#39;</span>],</span>
+<span id="cb33-4"><a href="#cb33-4"></a>                        <span class="st">&#39;Number_legs&#39;</span>: [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, np.nan]})</span>
+<span id="cb33-5"><a href="#cb33-5"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-6-2">
 <ul>
@@ -3998,10 +4153,10 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-6-3">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df[<span class="st">&#39;default_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(ascending <span class="op">=</span> <span class="va">False</span>)  <span class="co">## method = &#39;average&#39;</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>df[<span class="st">&#39;min_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(method<span class="op">=</span><span class="st">&#39;min&#39;</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb21-3"><a href="#cb21-3"></a>df[<span class="st">&#39;dense_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(method<span class="op">=</span><span class="st">&#39;dense&#39;</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb21-4"><a href="#cb21-4"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>df[<span class="st">&#39;default_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(ascending <span class="op">=</span> <span class="va">False</span>)  <span class="co">## method = &#39;average&#39;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>df[<span class="st">&#39;min_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(method<span class="op">=</span><span class="st">&#39;min&#39;</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb34-3"><a href="#cb34-3"></a>df[<span class="st">&#39;dense_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(method<span class="op">=</span><span class="st">&#39;dense&#39;</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb34-4"><a href="#cb34-4"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-6-4">
 <ul>
@@ -4009,17 +4164,17 @@ Byeong-Hak Choe
 <li><code>na_option = top</code> assign smallest rank to <code>NaN</code> values if ascending</li>
 <li><code>na_option = bottom</code> assign highest rank to <code>NaN</code> values if ascending</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>df[<span class="st">&#39;NA_bottom&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(na_option<span class="op">=</span><span class="st">&#39;bottom&#39;</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>df[<span class="st">&#39;NA_top&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(na_option<span class="op">=</span><span class="st">&#39;top&#39;</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>df[<span class="st">&#39;NA_bottom&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(na_option<span class="op">=</span><span class="st">&#39;bottom&#39;</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>df[<span class="st">&#39;NA_top&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(na_option<span class="op">=</span><span class="st">&#39;top&#39;</span>)</span>
+<span id="cb35-3"><a href="#cb35-3"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-6-5">
 <ul>
 <li><code>pct = True</code> displays the returned rankings in percentile form.<br>
 </li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df[<span class="st">&#39;pct_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(pct<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>df[<span class="st">&#39;pct_rank&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Number_legs&#39;</span>].rank(pct<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4034,24 +4189,24 @@ Byeong-Hak Choe
 <ul>
 <li>To drop a column, we can select columns to drop with the <code>.drop()</code> method with <code>axis = 1</code> or <code>axis = &quot;columns&quot;</code> on our dataframe.</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">## all the current columns in our data</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>scientists.columns</span>
-<span id="cb24-3"><a href="#cb24-3"></a></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co">## drop the shuffled age column</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="co">## we provide the axis=1 argument to drop column-wise</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a>scientists_dropped <span class="op">=</span> scientists.drop( [<span class="st">&#39;Age&#39;</span>], axis <span class="op">=</span><span class="st">&quot;columns&quot;</span>)</span>
-<span id="cb24-7"><a href="#cb24-7"></a>scientists_dropped.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co">## all the current columns in our data</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>scientists.columns</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="co">## drop the shuffled age column</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="co">## we provide the axis=1 argument to drop column-wise</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a>scientists_dropped <span class="op">=</span> scientists.drop( [<span class="st">&#39;Age&#39;</span>], axis <span class="op">=</span><span class="st">&quot;columns&quot;</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a>scientists_dropped.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-7-2">
 <ul>
 <li>To drop rows, we can select rows by index to drop with the <code>.drop()</code> method with <code>axis = 0</code>, which is default.</li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">## all the current columns in our data</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>scientists.columns</span>
-<span id="cb25-3"><a href="#cb25-3"></a></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co">## drop rows by their indices</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a>scientists_rows_dropped <span class="op">=</span> scientists.drop( [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>] )</span>
-<span id="cb25-6"><a href="#cb25-6"></a>scientists_rows_dropped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co">## all the current columns in our data</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>scientists.columns</span>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="co">## drop rows by their indices</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>scientists_rows_dropped <span class="op">=</span> scientists.drop( [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>] )</span>
+<span id="cb38-6"><a href="#cb38-6"></a>scientists_rows_dropped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4066,28 +4221,28 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s create a new set of columns that contain the <code>datetime</code> representations of the object (string) dates.</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">## format the &#39;Born&#39; column as a datetime</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>born_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Born&#39;</span>] )</span>
-<span id="cb26-3"><a href="#cb26-3"></a>died_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Died&#39;</span>] )</span>
-<span id="cb26-4"><a href="#cb26-4"></a></span>
-<span id="cb26-5"><a href="#cb26-5"></a>scientists[<span class="st">&#39;born_dt&#39;</span>], scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">=</span> (</span>
-<span id="cb26-6"><a href="#cb26-6"></a>  born_datetime,</span>
-<span id="cb26-7"><a href="#cb26-7"></a>  died_datetime</span>
-<span id="cb26-8"><a href="#cb26-8"></a>)</span>
-<span id="cb26-9"><a href="#cb26-9"></a></span>
-<span id="cb26-10"><a href="#cb26-10"></a>scientists[<span class="st">&#39;age_days&#39;</span>] <span class="op">=</span>  scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co">## format the &#39;Born&#39; column as a datetime</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>born_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Born&#39;</span>] )</span>
+<span id="cb39-3"><a href="#cb39-3"></a>died_datetime <span class="op">=</span> pd.to_datetime( scientists[<span class="st">&#39;Died&#39;</span>] )</span>
+<span id="cb39-4"><a href="#cb39-4"></a></span>
+<span id="cb39-5"><a href="#cb39-5"></a>scientists[<span class="st">&#39;born_dt&#39;</span>], scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">=</span> (</span>
+<span id="cb39-6"><a href="#cb39-6"></a>  born_datetime,</span>
+<span id="cb39-7"><a href="#cb39-7"></a>  died_datetime</span>
+<span id="cb39-8"><a href="#cb39-8"></a>)</span>
+<span id="cb39-9"><a href="#cb39-9"></a></span>
+<span id="cb39-10"><a href="#cb39-10"></a>scientists[<span class="st">&#39;age_days&#39;</span>] <span class="op">=</span>  scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-8-2">
 <ul>
 <li>Let’s create the <code>age_year_assign</code> column using <code>.assign()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>scientists <span class="op">=</span> scientists.assign(</span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="co">## new columns on the left of the equal sign</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a>  <span class="co">## how to calculate values on the right of the equal sign</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a>  <span class="co">## separate new columns with a comma</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
-<span id="cb27-6"><a href="#cb27-6"></a>  age_year_assign <span class="op">=</span> scientists[<span class="st">&#39;age_days&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>)</span>
-<span id="cb27-7"><a href="#cb27-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>scientists <span class="op">=</span> scientists.assign(</span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="co">## new columns on the left of the equal sign</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="co">## how to calculate values on the right of the equal sign</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="co">## separate new columns with a comma</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
+<span id="cb40-6"><a href="#cb40-6"></a>  age_year_assign <span class="op">=</span> scientists[<span class="st">&#39;age_days&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>)</span>
+<span id="cb40-7"><a href="#cb40-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-8-3">
 <ul>
@@ -4096,12 +4251,12 @@ Byeong-Hak Choe
 <li>To be able to use <code>age_days_assign</code> when calculating <code>age_year_assign</code> in the previous panel, we need to know about <code>lambda</code> functions.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>scientists <span class="op">=</span> scientists.drop( [<span class="st">&#39;age_days&#39;</span>], axis <span class="op">=</span> <span class="dv">1</span>)  <span class="co">## to drop age_days</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>scientists <span class="op">=</span> scientists.assign(</span>
-<span id="cb28-3"><a href="#cb28-3"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
-<span id="cb28-4"><a href="#cb28-4"></a>  age_year_assign <span class="op">=</span> <span class="kw">lambda</span> some_df: </span>
-<span id="cb28-5"><a href="#cb28-5"></a>    some_df[<span class="st">&#39;age_days_assign&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>) </span>
-<span id="cb28-6"><a href="#cb28-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>scientists <span class="op">=</span> scientists.drop( [<span class="st">&#39;age_days&#39;</span>], axis <span class="op">=</span> <span class="dv">1</span>)  <span class="co">## to drop age_days</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>scientists <span class="op">=</span> scientists.assign(</span>
+<span id="cb41-3"><a href="#cb41-3"></a>  age_days_assign <span class="op">=</span> scientists[<span class="st">&#39;died_dt&#39;</span>] <span class="op">-</span> scientists[<span class="st">&#39;born_dt&#39;</span>],</span>
+<span id="cb41-4"><a href="#cb41-4"></a>  age_year_assign <span class="op">=</span> <span class="kw">lambda</span> some_df: </span>
+<span id="cb41-5"><a href="#cb41-5"></a>    some_df[<span class="st">&#39;age_days_assign&#39;</span>].astype(<span class="st">&#39;timedelta64[Y]&#39;</span>) </span>
+<span id="cb41-6"><a href="#cb41-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4120,22 +4275,22 @@ Byeong-Hak Choe
 <li>A syntax for a lambda function is <code>lambda ARGUMENTS : EXPRESSION</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">def</span> short_function(x):</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a></span>
-<span id="cb29-4"><a href="#cb29-4"></a>equiv_anon <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>short_function(<span class="dv">2</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a>equiv_anon(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">def</span> short_function(x):</span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a></span>
+<span id="cb42-4"><a href="#cb42-4"></a>equiv_anon <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>short_function(<span class="dv">2</span>)</span>
+<span id="cb42-6"><a href="#cb42-6"></a>equiv_anon(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-2">
 <ul>
 <li>A <code>lambda</code> function can have multiple arguments:</li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>fn_two <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">*</span> b</span>
-<span id="cb30-2"><a href="#cb30-2"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb30-3"><a href="#cb30-3"></a></span>
-<span id="cb30-4"><a href="#cb30-4"></a>fn_three <span class="op">=</span> <span class="kw">lambda</span> a, b, c : a <span class="op">+</span> b <span class="op">+</span> c</span>
-<span id="cb30-5"><a href="#cb30-5"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>fn_two <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">*</span> b</span>
+<span id="cb43-2"><a href="#cb43-2"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a>fn_three <span class="op">=</span> <span class="kw">lambda</span> a, b, c : a <span class="op">+</span> b <span class="op">+</span> c</span>
+<span id="cb43-5"><a href="#cb43-5"></a>fn_two(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-3">
 <ul>
@@ -4144,8 +4299,8 @@ Byeong-Hak Choe
 <li>Say we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-4">
 <div class="columns">
@@ -4153,20 +4308,20 @@ Byeong-Hak Choe
 <ul>
 <li>Use that function definition to make a function that always doubles the number we send in:</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
-<span id="cb32-3"><a href="#cb32-3"></a></span>
-<span id="cb32-4"><a href="#cb32-4"></a>my_doubler <span class="op">=</span> myfunc(<span class="dv">2</span>)</span>
-<span id="cb32-5"><a href="#cb32-5"></a>my_doubler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a>my_doubler <span class="op">=</span> myfunc(<span class="dv">2</span>)</span>
+<span id="cb45-5"><a href="#cb45-5"></a>my_doubler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Use the same function definition to make a function that always triples the number we send in:</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">def</span> myfunc(n):</span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
-<span id="cb33-3"><a href="#cb33-3"></a></span>
-<span id="cb33-4"><a href="#cb33-4"></a>my_tripler <span class="op">=</span> myfunc(<span class="dv">3</span>)</span>
-<span id="cb33-5"><a href="#cb33-5"></a>my_tripler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">def</span> myfunc(n):</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
+<span id="cb46-3"><a href="#cb46-3"></a></span>
+<span id="cb46-4"><a href="#cb46-4"></a>my_tripler <span class="op">=</span> myfunc(<span class="dv">3</span>)</span>
+<span id="cb46-5"><a href="#cb46-5"></a>my_tripler(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4174,14 +4329,14 @@ Byeong-Hak Choe
 <ul>
 <li>Here is the example of applying a lambda function to single variable in DataFrame using <code>.assign()</code></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>values<span class="op">=</span> [[<span class="st">&#39;Rohan&#39;</span>,<span class="dv">182</span>],[<span class="st">&#39;Elvish&#39;</span>,<span class="dv">100</span>],[<span class="st">&#39;Deepak&#39;</span>,<span class="dv">198</span>],</span>
-<span id="cb34-2"><a href="#cb34-2"></a>         [<span class="st">&#39;Soni&#39;</span>,<span class="dv">160</span>],[<span class="st">&#39;Radhika&#39;</span>,<span class="dv">140</span>],[<span class="st">&#39;Vansh&#39;</span>,<span class="dv">180</span>]]</span>
-<span id="cb34-3"><a href="#cb34-3"></a>df <span class="op">=</span> pd.DataFrame(values, columns <span class="op">=</span> [<span class="st">&#39;name&#39;</span>,<span class="st">&#39;tot_marks&#39;</span>])</span>
-<span id="cb34-4"><a href="#cb34-4"></a> </span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="co">## Applying lambda function to find percentage of &#39;tot_marks&#39; column</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a><span class="co">## using df.assign()</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a>df <span class="op">=</span> df.assign( percentage <span class="op">=</span> </span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="kw">lambda</span> some_name: (some_name[<span class="st">&#39;tot_marks&#39;</span>] <span class="op">/</span><span class="dv">200</span> <span class="op">*</span> <span class="dv">100</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>values<span class="op">=</span> [[<span class="st">&#39;Rohan&#39;</span>,<span class="dv">182</span>],[<span class="st">&#39;Elvish&#39;</span>,<span class="dv">100</span>],[<span class="st">&#39;Deepak&#39;</span>,<span class="dv">198</span>],</span>
+<span id="cb47-2"><a href="#cb47-2"></a>         [<span class="st">&#39;Soni&#39;</span>,<span class="dv">160</span>],[<span class="st">&#39;Radhika&#39;</span>,<span class="dv">140</span>],[<span class="st">&#39;Vansh&#39;</span>,<span class="dv">180</span>]]</span>
+<span id="cb47-3"><a href="#cb47-3"></a>df <span class="op">=</span> pd.DataFrame(values, columns <span class="op">=</span> [<span class="st">&#39;name&#39;</span>,<span class="st">&#39;tot_marks&#39;</span>])</span>
+<span id="cb47-4"><a href="#cb47-4"></a> </span>
+<span id="cb47-5"><a href="#cb47-5"></a><span class="co">## Applying lambda function to find percentage of &#39;tot_marks&#39; column</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a><span class="co">## using df.assign()</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>df <span class="op">=</span> df.assign( percentage <span class="op">=</span> </span>
+<span id="cb47-8"><a href="#cb47-8"></a>  <span class="kw">lambda</span> some_name: (some_name[<span class="st">&#39;tot_marks&#39;</span>] <span class="op">/</span><span class="dv">200</span> <span class="op">*</span> <span class="dv">100</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4201,9 +4356,9 @@ Byeong-Hak Choe
 </ul></li>
 <li>To export <code>Series</code> or <code>DataFrame</code> as a <code>csv</code> file, we use the <code>to_csv()</code> method.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co">## index =False  does not write the row names in the CSV output</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>scientists.to_csv(<span class="st">&#39;output/scientists_df_no_index.csv&#39;</span>, </span>
-<span id="cb35-3"><a href="#cb35-3"></a>                   index <span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co">## index =False  does not write the row names in the CSV output</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>scientists.to_csv(<span class="st">&#39;output/scientists_df_no_index.csv&#39;</span>, </span>
+<span id="cb48-3"><a href="#cb48-3"></a>                   index <span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exporting-and-importing-data-2" class="slide level2">
 <h2>Exporting and Importing Data</h2>
@@ -4213,11 +4368,11 @@ Byeong-Hak Choe
 <li><p>However, Excel’s popularity and market share are unrivaled.</p></li>
 <li><p>To export <code>Series</code> or <code>DataFrame</code> as an <code>.xlsx</code> file, we use the <code>to_excel()</code> method.</p></li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co">## saving a DataFrame into Excel format</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>scientists.to_excel(</span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="st">&quot;output/scientists_df.xlsx&quot;</span>,</span>
-<span id="cb36-4"><a href="#cb36-4"></a>  sheet_name <span class="op">=</span> <span class="st">&quot;scientists&quot;</span>,</span>
-<span id="cb36-5"><a href="#cb36-5"></a>  index <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="co">## saving a DataFrame into Excel format</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>scientists.to_excel(</span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="st">&quot;output/scientists_df.xlsx&quot;</span>,</span>
+<span id="cb49-4"><a href="#cb49-4"></a>  sheet_name <span class="op">=</span> <span class="st">&quot;scientists&quot;</span>,</span>
+<span id="cb49-5"><a href="#cb49-5"></a>  index <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="exploratory-data-analysis-with-seaborn" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -4373,9 +4528,9 @@ Byeong-Hak Choe
 <li>It also provides a general improvement in the default appearance of <code>matplotlib</code>-produced plots, and so I recommend using it by default.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb37-2"><a href="#cb37-2"></a>sns.set_theme(rc<span class="op">=</span>{<span class="st">&#39;figure.dpi&#39;</span>: <span class="dv">600</span>, </span>
-<span id="cb37-3"><a href="#cb37-3"></a>                  <span class="st">&#39;figure.figsize&#39;</span>: (<span class="dv">5</span>, <span class="fl">3.75</span>)})   <span class="co">## better quality</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb50-2"><a href="#cb50-2"></a>sns.set_theme(rc<span class="op">=</span>{<span class="st">&#39;figure.dpi&#39;</span>: <span class="dv">600</span>, </span>
+<span id="cb50-3"><a href="#cb50-3"></a>                  <span class="st">&#39;figure.figsize&#39;</span>: (<span class="dv">5</span>, <span class="fl">3.75</span>)})   <span class="co">## better quality</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-1" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4383,15 +4538,15 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s get the names of <code>DataFrame</code>s provided by the <code>seaborn</code> library:</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="bu">print</span>( sns.get_dataset_names() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="bu">print</span>( sns.get_dataset_names() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Let’s use the <code>titanic</code> and <code>tips</code> DataFrames:</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>titanic <span class="op">=</span> sns.load_dataset(<span class="st">&#39;titanic&#39;</span>)</span>
-<span id="cb39-2"><a href="#cb39-2"></a>titanic.head()</span>
-<span id="cb39-3"><a href="#cb39-3"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
-<span id="cb39-4"><a href="#cb39-4"></a>tips.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>titanic <span class="op">=</span> sns.load_dataset(<span class="st">&#39;titanic&#39;</span>)</span>
+<span id="cb52-2"><a href="#cb52-2"></a>titanic.head()</span>
+<span id="cb52-3"><a href="#cb52-3"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
+<span id="cb52-4"><a href="#cb52-4"></a>tips.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-2" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4406,8 +4561,8 @@ Byeong-Hak Choe
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
-<span id="cb40-2"><a href="#cb40-2"></a>              x <span class="op">=</span>  <span class="st">&#39;sex&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
+<span id="cb53-2"><a href="#cb53-2"></a>              x <span class="op">=</span>  <span class="st">&#39;sex&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -4430,9 +4585,9 @@ Byeong-Hak Choe
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
-<span id="cb41-2"><a href="#cb41-2"></a>              x <span class="op">=</span> <span class="st">&#39;sex&#39;</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>              hue <span class="op">=</span> <span class="st">&#39;survived&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
+<span id="cb54-2"><a href="#cb54-2"></a>              x <span class="op">=</span> <span class="st">&#39;sex&#39;</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>              hue <span class="op">=</span> <span class="st">&#39;survived&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -4454,9 +4609,9 @@ Byeong-Hak Choe
 </ul></li>
 <li>We use <code>sns.histplot()</code> function to plot a histogram: :::: {.columns} ::: {.column width=“50%”}</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>sns.histplot(data <span class="op">=</span> titanic,</span>
-<span id="cb42-2"><a href="#cb42-2"></a>             x <span class="op">=</span>  <span class="st">&#39;age&#39;</span>, </span>
-<span id="cb42-3"><a href="#cb42-3"></a>             bins <span class="op">=</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>sns.histplot(data <span class="op">=</span> titanic,</span>
+<span id="cb55-2"><a href="#cb55-2"></a>             x <span class="op">=</span>  <span class="st">&#39;age&#39;</span>, </span>
+<span id="cb55-3"><a href="#cb55-3"></a>             bins <span class="op">=</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>:::</p>
 <div class="column" style="width:50%;">
 <ul>
@@ -4478,12 +4633,12 @@ Byeong-Hak Choe
 </ul></li>
 <li>We use <code>sns.histplot()</code> function to plot a histogram: :::: {.columns} ::: {.column width=“50%”}</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
-<span id="cb43-2"><a href="#cb43-2"></a>             y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
+<span id="cb56-2"><a href="#cb56-2"></a>             y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>:::</p>
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
-<span id="cb44-2"><a href="#cb44-2"></a>            x<span class="op">=</span><span class="st">&#39;time&#39;</span>, y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
+<span id="cb57-2"><a href="#cb57-2"></a>            x<span class="op">=</span><span class="st">&#39;time&#39;</span>, y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>::::</p>
 </section>
@@ -4499,9 +4654,9 @@ Byeong-Hak Choe
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb45-2"><a href="#cb45-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb45-3"><a href="#cb45-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb58-2"><a href="#cb58-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb58-3"><a href="#cb58-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -4523,10 +4678,10 @@ Byeong-Hak Choe
 <li><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb46-2"><a href="#cb46-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb46-3"><a href="#cb46-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
-<span id="cb46-4"><a href="#cb46-4"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb59-2"><a href="#cb59-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb59-3"><a href="#cb59-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
+<span id="cb59-4"><a href="#cb59-4"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-8" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4538,9 +4693,9 @@ Byeong-Hak Choe
 <li><p>On average, the fitted line describes the relationship between two continuous variables.</p></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
-<span id="cb47-2"><a href="#cb47-2"></a>           x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb47-3"><a href="#cb47-3"></a>           y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
+<span id="cb60-2"><a href="#cb60-2"></a>           x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb60-3"><a href="#cb60-3"></a>           y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-9" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4553,15 +4708,15 @@ Byeong-Hak Choe
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>sns.scatterplot(x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb48-2"><a href="#cb48-2"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
-<span id="cb48-3"><a href="#cb48-3"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>,</span>
-<span id="cb48-4"><a href="#cb48-4"></a>                alpha <span class="op">=</span> <span class="fl">.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>sns.scatterplot(x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb61-2"><a href="#cb61-2"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
+<span id="cb61-3"><a href="#cb61-3"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>,</span>
+<span id="cb61-4"><a href="#cb61-4"></a>                alpha <span class="op">=</span> <span class="fl">.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
-<span id="cb49-2"><a href="#cb49-2"></a>           x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb49-3"><a href="#cb49-3"></a>           y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
-<span id="cb49-4"><a href="#cb49-4"></a>           scatter_kws <span class="op">=</span> {<span class="st">&#39;alpha&#39;</span> : <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
+<span id="cb62-2"><a href="#cb62-2"></a>           x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb62-3"><a href="#cb62-3"></a>           y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
+<span id="cb62-4"><a href="#cb62-4"></a>           scatter_kws <span class="op">=</span> {<span class="st">&#39;alpha&#39;</span> : <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -4575,10 +4730,10 @@ Byeong-Hak Choe
 <li><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb50-2"><a href="#cb50-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
-<span id="cb50-3"><a href="#cb50-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
-<span id="cb50-4"><a href="#cb50-4"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb63-2"><a href="#cb63-2"></a>                x <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, </span>
+<span id="cb63-3"><a href="#cb63-3"></a>                y <span class="op">=</span> <span class="st">&#39;tip&#39;</span>,</span>
+<span id="cb63-4"><a href="#cb63-4"></a>                hue <span class="op">=</span> <span class="st">&#39;smoker&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-11" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4592,11 +4747,11 @@ Byeong-Hak Choe
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>path_csv <span class="op">=</span> <span class="st">&#39;https://bcdanl.github.io/data/dji.csv&#39;</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a>dow <span class="op">=</span> pd.read_csv(path_csv, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb51-3"><a href="#cb51-3"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
-<span id="cb51-4"><a href="#cb51-4"></a>             x <span class="op">=</span>  <span class="st">&#39;Date&#39;</span>, </span>
-<span id="cb51-5"><a href="#cb51-5"></a>             y <span class="op">=</span>  <span class="st">&#39;Close&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>path_csv <span class="op">=</span> <span class="st">&#39;https://bcdanl.github.io/data/dji.csv&#39;</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>dow <span class="op">=</span> pd.read_csv(path_csv, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb64-3"><a href="#cb64-3"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
+<span id="cb64-4"><a href="#cb64-4"></a>             x <span class="op">=</span>  <span class="st">&#39;Date&#39;</span>, </span>
+<span id="cb64-5"><a href="#cb64-5"></a>             y <span class="op">=</span>  <span class="st">&#39;Close&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -4614,15 +4769,15 @@ Byeong-Hak Choe
 <ul>
 <li>For line charts, we often need to group or connect observations to visualize the number of distinct lines.</li>
 </ul>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>healthexp <span class="op">=</span> ( sns.load_dataset(<span class="st">&quot;healthexp&quot;</span>)</span>
-<span id="cb52-2"><a href="#cb52-2"></a>             .sort_values([<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;Year&quot;</span>])</span>
-<span id="cb52-3"><a href="#cb52-3"></a>             .query(<span class="st">&quot;Year &lt;= 2020&quot;</span>) )</span>
-<span id="cb52-4"><a href="#cb52-4"></a>healthexp.head()</span>
-<span id="cb52-5"><a href="#cb52-5"></a></span>
-<span id="cb52-6"><a href="#cb52-6"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
-<span id="cb52-7"><a href="#cb52-7"></a>             x <span class="op">=</span>  <span class="st">&#39;Year&#39;</span>, </span>
-<span id="cb52-8"><a href="#cb52-8"></a>             y <span class="op">=</span>  <span class="st">&#39;Life_Expectancy&#39;</span>,</span>
-<span id="cb52-9"><a href="#cb52-9"></a>             color <span class="op">=</span> <span class="st">&#39;Country&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>healthexp <span class="op">=</span> ( sns.load_dataset(<span class="st">&quot;healthexp&quot;</span>)</span>
+<span id="cb65-2"><a href="#cb65-2"></a>             .sort_values([<span class="st">&quot;Country&quot;</span>, <span class="st">&quot;Year&quot;</span>])</span>
+<span id="cb65-3"><a href="#cb65-3"></a>             .query(<span class="st">&quot;Year &lt;= 2020&quot;</span>) )</span>
+<span id="cb65-4"><a href="#cb65-4"></a>healthexp.head()</span>
+<span id="cb65-5"><a href="#cb65-5"></a></span>
+<span id="cb65-6"><a href="#cb65-6"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
+<span id="cb65-7"><a href="#cb65-7"></a>             x <span class="op">=</span>  <span class="st">&#39;Year&#39;</span>, </span>
+<span id="cb65-8"><a href="#cb65-8"></a>             y <span class="op">=</span>  <span class="st">&#39;Life_Expectancy&#39;</span>,</span>
+<span id="cb65-9"><a href="#cb65-9"></a>             color <span class="op">=</span> <span class="st">&#39;Country&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualization-with-seaborn-13" class="slide level2">
 <h2>Data Visualization with <code>seaborn</code></h2>
@@ -4637,16 +4792,16 @@ Byeong-Hak Choe
 <ul>
 <li>First, we create a <code>FacetGrid()</code> object with the data we will be using and define how it will be subset with the <code>row</code> and <code>col</code> arguments:</li>
 </ul>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>g <span class="op">=</span> sns.FacetGrid(</span>
-<span id="cb53-2"><a href="#cb53-2"></a>      data <span class="op">=</span> titanic,</span>
-<span id="cb53-3"><a href="#cb53-3"></a>      row<span class="op">=</span><span class="st">&#39;class&#39;</span>,</span>
-<span id="cb53-4"><a href="#cb53-4"></a>      col<span class="op">=</span><span class="st">&#39;sex&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>g <span class="op">=</span> sns.FacetGrid(</span>
+<span id="cb66-2"><a href="#cb66-2"></a>      data <span class="op">=</span> titanic,</span>
+<span id="cb66-3"><a href="#cb66-3"></a>      row<span class="op">=</span><span class="st">&#39;class&#39;</span>,</span>
+<span id="cb66-4"><a href="#cb66-4"></a>      col<span class="op">=</span><span class="st">&#39;sex&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-11-2">
 <ul>
 <li>Secodn, we use the <code>FacetGrid().map()</code> method to run a plotting function on each of the subsets, passing along any necessary arguments.</li>
 </ul>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>g.<span class="bu">map</span>(sns.histplot, <span class="st">&#39;age&#39;</span>, kde<span class="op">=</span><span class="va">True</span>)  <span class="co">## kde: kernel density (probability density function)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>g.<span class="bu">map</span>(sns.histplot, <span class="st">&#39;age&#39;</span>, kde<span class="op">=</span><span class="va">True</span>)  <span class="co">## kde: kernel density (probability density function)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
