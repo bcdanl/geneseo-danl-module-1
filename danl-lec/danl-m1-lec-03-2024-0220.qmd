@@ -179,7 +179,7 @@ nba.sort_values(by = ["Team", "Name"],
                 ascending = False)
 ```
 
-- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each column.
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each variable.
 
 
 ## Pandas Basics
