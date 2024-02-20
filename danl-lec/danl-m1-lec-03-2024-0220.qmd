@@ -28,13 +28,14 @@ include-after-body: effect.html
 
 - Loading `DataFrame`
 - Getting a Summary of `DataFrame`
-- Selecting Variables in a `DataFrame` 
-- Counting Values in a `DataFrame` 
+- Selecting Variables in `DataFrame` 
+- Counting Values in `DataFrame` 
 - Sorting `DataFrame`
-- Indexing and Renaming `DataFrame`
-- Mathematical & Vectorized Operations in `DataFrame`
-- Locating Data in a `DataFrame`
-- Filtering `DataFrame`
+- Indexing `DataFrame`
+- Renaming Variables in `DataFrame`
+- Mathematical & Vectorized Operations with `DataFrame`
+- Locating Observations and Values in `DataFrame`
+- Filtering Observations in `DataFrame`
 
 
 # Sorting Methods {background-color="#1c4982"}
