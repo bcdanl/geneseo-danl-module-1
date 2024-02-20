@@ -1075,7 +1075,7 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-12",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# The two lines below are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True).\n\nnba.sort_index(ascending = False).\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index.\nIf we could sort the data set by index positions rather than by column values, we could return it to its original shape."
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-13",
@@ -1103,105 +1103,105 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-16",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the chain of method operations\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the method chaining\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-17",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-17",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+    "text": "Pandas Basics\nLocating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-18",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-18",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the Name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-19",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-19",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nNote: Both the starting value and the ending value are inclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-20",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-20",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-21",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-21",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-22",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-22",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
+    "text": "Pandas Basics\nLet’s do Questions 1-4 in Part 1 of Classwork 3!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-23",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-23",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target.\n\nHowever, we often do not know the index labels and positions of the observations/variables we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-24",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-24",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-25",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-25",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-26",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-26",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-27",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-27",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-28",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-28",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 1-4 in Part 1 of Classwork 3!"
+    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-29",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-29",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-30",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-30",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Name_w_Position\"] = nba[\"Name\"] + \" (\" + nba[\"Position\"] + \")\"\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-31",
@@ -1271,105 +1271,105 @@
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-40",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nSeries == value\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\nThe above example compares each First Name value with “Donna”."
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWe may often not know the index labels and positions of the observations we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-41",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-41",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nDataFrame[ Boolean_Series ]\nemp[ emp[\"First Name\"] == \"Donna\" ]\n\nTo filter observations, we provide the Boolean Series between square brackets following the DataFrame."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-42",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-42",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[donnas]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to a descriptive object and then pass it into the square brackets instead."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[ emp[\"First Name\"] == \"Donna\" ]\n\nTo filter observations, we provide the Boolean Series between square brackets following the DataFrame.\n\nDataFrame[ Boolean_Series ]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-43",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-43",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\nemp[\"Team\"] != \"Marketing\"\nemp[ emp[\"Team\"] != \"Marketing\" ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
+    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[donnas]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-44",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-44",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to retrieve all the managers in the company? Managers have a value of True in the Mgmt variable.\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-45",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-45",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nhigh_earners = emp[\"Salary\"] &gt; 100000\nemp[high_earners]\n\nWe can also use arithmetic operands to filter observations based on mathematical conditions."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to retrieve all the managers in the company? Managers have a value of True in the Mgmt variable.\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-46",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-46",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ]\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nhigh_earners = emp[\"Salary\"] &gt; 100000\nemp[ high_earners ]\n\nWe can also use arithmetic operands to filter observations based on mathematical conditions."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-47",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-47",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[on_star_teams]\n\nWhat if our next report asked for employees from 15 teams instead of three?\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, Series) and returns a Boolean Series."
+    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ]\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-48",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-48",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000."
+    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[on_star_teams]\n\nWhat if our next report asked for employees from 15 teams instead of three?\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, Series) and returns a Boolean Series."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-49",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-49",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ]\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True:"
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-50",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-50",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[between_90k_and_100k]\n\nA slightly cleaner solution is to use a method called between()\n\nIt returns a Boolean Series where True denotes that a row’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
+    "text": "Pandas Basics\nFiltering by a Condition\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ]\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True:"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-51",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-51",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[name_starts_with_t]\n\nWe can also apply the between() method to string variables."
+    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[between_90k_and_100k]\n\nA slightly cleaner solution is to use a method called between()\n\nIt returns a Boolean Series where True denotes that a row’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-52",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-52",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition with the query() method\n# Below two are equivalent\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 and Team == 'Finance'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\nThe query() method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering."
+    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[name_starts_with_t]\n\nWe can also apply the between() method to string variables."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-53",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-53",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 2-6 in Part 2 of Classwork 3!"
+    "text": "Pandas Basics\nFiltering by a Condition with the query() method\n# Below two are equivalent\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 and Team == 'Finance'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\nThe query() method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-54",
     "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-54",
     "title": "Lecture 3",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nReferenes\n\n\nPandas in Action, Boris Paskhaver (Author), 2021, Manning"
+    "text": "Pandas Basics\nLet’s do Questions 2-6 in Part 2 of Classwork 3!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics",
@@ -2630,5 +2630,12 @@
     "title": "DANL Module 1 - Homework",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
+    "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
+    "title": "Lecture 3",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nReferenes\n\n\nPandas in Action, Boris Paskhaver (Author), 2021, Manning"
   }
 ]

@@ -1367,17 +1367,17 @@ Byeong-Hak Choe
 <h3 id="sorting-by-multiple-variables-with-sort_index">Sorting by Multiple Variables with <code>sort_index()</code></h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># The two lines below are equivalent</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Below lines are equivalent</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>nba.sort_index()</span>
-<span id="cb10-3"><a href="#cb10-3"></a>nba.sort_index(ascending <span class="op">=</span> <span class="va">True</span>).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3"></a>nba.sort_index(ascending <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>nba.sort_index(ascending <span class="op">=</span> <span class="va">False</span>).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>nba.sort_index(ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
 <li class="fragment"><p>How can we return it to its original form of <code>DataFrame</code>?</p></li>
-<li class="fragment"><p>Our <code>nba</code> <code>DataFrame</code> still has its numeric index.</p></li>
-<li class="fragment"><p>If we could sort the data set by index positions rather than by column values, we could return it to its original shape.</p></li>
+<li class="fragment"><p>Our <code>nba</code> <code>DataFrame</code> still has its numeric index labels.</p></li>
+<li class="fragment"><p><code>sort_index()</code> sorts observations by their index labels (row names).</p></li>
 </ul>
 </section>
 <section id="pandas-basics-13" class="slide level2">
@@ -1429,7 +1429,7 @@ Byeong-Hak Choe
 <h2>Pandas Basics</h2>
 <h3 id="re-setting-an-index-with-reset_index">Re-setting an Index with <code>reset_index()</code></h3>
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>nba2 <span class="op">=</span> nba.set_index(<span class="st">&quot;Name&quot;</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>nba2.reset_index(inplace<span class="op">=</span><span class="va">True</span>)    <span class="co"># Useful for the chain of method operations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2"></a>nba2.reset_index(inplace<span class="op">=</span><span class="va">True</span>)    <span class="co"># Useful for the method chaining</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We use the <code>reset_index()</code> method:
 <ul>
@@ -1440,163 +1440,71 @@ Byeong-Hak Choe
 </ul>
 </section></section>
 <section>
-<section id="renaming-columns-or-rows" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>Renaming columns or rows</h1>
-
-</section>
-<section id="pandas-basics-17" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-columns-with-nba.columns">Renaming columns with <code>nba.columns</code></h3>
-<div>
-<ul>
-<li>Do you recall the <code>.columns</code> attribute?</li>
-</ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>nba.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>We can rename any or all of a DataFrame’s columns by assigning a <em>list</em> of new names to the attribute:</li>
-</ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nba.columns <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Date of Birth&quot;</span>, <span class="st">&quot;Income&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="pandas-basics-18" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-columns-with-rename-columns-existing-one-new-one">Renaming columns with <code>rename( columns = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>nba.rename( columns <span class="op">=</span> { <span class="st">&quot;Date of Birth&quot;</span>: <span class="st">&quot;Birthday&quot;</span> } )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The above <code>rename()</code> method renames the variable <em>Date of Birth</em> to <em>Birthday</em>.</li>
-</ul>
-</section>
-<section id="pandas-basics-19" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-rows-with-rename-index-existing-one-new-one">Renaming rows with <code>rename( index = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>nba <span class="op">=</span> nba.rename(</span>
-<span id="cb18-2"><a href="#cb18-2"></a>    index <span class="op">=</span> { <span class="st">&quot;LeBron James&quot;</span>: <span class="st">&quot;LeBron Raymone James&quot;</span> }</span>
-<span id="cb18-3"><a href="#cb18-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The above <code>rename()</code> method renames the observation <em>LeBron James</em> to <em>LeBron Raymone James</em>.</li>
-</ul>
-</section></section>
-<section>
-<section id="mathematical-vectorized-operations" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>Mathematical &amp; Vectorized Operations</h1>
-
-</section>
-<section id="pandas-basics-20" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="mathematical-operations">Mathematical Operations</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>nba.<span class="bu">max</span>()</span>
-<span id="cb19-2"><a href="#cb19-2"></a>nba.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>max()</code> method returns a <code>Series</code> with the maximum value from each variable.</li>
-<li class="fragment">The <code>min()</code> method returns a <code>Series</code> with the minimum value from each variable.</li>
-</ul>
-</section>
-<section id="pandas-basics-21" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="mathematical-operations-1">Mathematical Operations</h3>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>nba.<span class="bu">sum</span>()</span>
-<span id="cb20-2"><a href="#cb20-2"></a>nba.mean()</span>
-<span id="cb20-3"><a href="#cb20-3"></a>nba.median()</span>
-<span id="cb20-4"><a href="#cb20-4"></a>nba.quantile(<span class="fl">0.75</span>) <span class="co"># 0 to 1</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>nba.std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:55%;">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>nba.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>nba.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb21-3"><a href="#cb21-3"></a>nba.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb21-4"><a href="#cb21-4"></a>nba.quantile(<span class="fl">0.75</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-5"><a href="#cb21-5"></a>nba.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ul>
-<li class="fragment">The <code>sum()</code>/<code>mean()</code>/<code>median()</code> method returns a <code>Series</code> with the sum/mean/median of the values in each variable.</li>
-<li class="fragment">The <code>quantile()</code> method returns a <code>Series</code> with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).</li>
-<li class="fragment">The <code>std()</code> method returns a <code>Series</code> with the standard deviation of the values in each variable.</li>
-<li class="fragment">To limit the operation to numeric volumes, we can pass <code>True</code> to the <code>sum()</code>/<code>mean()</code>/<code>median()</code>/<code>std()</code> method’s <code>numeric_only</code> parameter.</li>
-</ul>
-</section>
-<section id="pandas-basics-22" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="vectorized-operations">Vectorized Operations</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>nba[<span class="st">&quot;Salary_2x&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">+</span> nba[<span class="st">&quot;Salary&quot;</span>]</span>
-<span id="cb22-2"><a href="#cb22-2"></a>nba[<span class="st">&quot;Salary_minus_Mean&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">-</span> nba[<span class="st">&quot;Salary&quot;</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><code>pandas</code> performs a <em>vectorized operation</em> on <code>Series</code> or a variable in <code>DataFrame</code>.
-<ul>
-<li class="fragment">This means an element-by-element operation.</li>
-<li class="fragment">This enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops.</li>
-</ul></li>
-</ul>
-</section></section>
-<section>
 <section id="locating-observations" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Locating Observations</h1>
 
 </section>
-<section id="pandas-basics-23" class="slide level2">
+<section id="pandas-basics-17" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observationsvalues">Locating Observations/Values</h3>
 <ul>
 <li class="fragment"><p>We can extract observations, variables, and values from a <code>DataFrame</code> by using the <code>loc[]</code> and <code>iloc[]</code> accessors.</p>
 <ul>
-<li class="fragment">These accessors work well when we know the index labels and positions of the observations/variables we want to target.</li>
+<li class="fragment">These accessors work well when we know the <strong>index labels and positions</strong> of the observations/variables we want to target.</li>
 </ul></li>
-<li class="fragment"><p>However, we often do not know the index labels and positions of the observations/variables we want to target.</p></li>
-<li class="fragment"><p>We may want to target observations not by an index label but by a Boolean condition.</p></li>
 </ul>
 </section>
-<section id="pandas-basics-24" class="slide level2">
+<section id="pandas-basics-18" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
 <div>
 <ul>
-<li>Let’s consider the <code>nba</code> with the <code>name</code> index.</li>
+<li>Let’s consider the <code>nba</code> with the <code>Name</code> index.</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># The two lines below are equivalent</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>nba <span class="op">=</span> nba.set_index(<span class="st">&quot;Name&quot;</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>nba.set_index(<span class="st">&quot;Name&quot;</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># The two lines below are equivalent</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>nba <span class="op">=</span> nba.set_index(<span class="st">&quot;Name&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>nba.set_index(<span class="st">&quot;Name&quot;</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Below extracts observations:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>nba.loc[ <span class="st">&quot;LeBron James&quot;</span> ]</span>
-<span id="cb24-2"><a href="#cb24-2"></a>nba.loc[ [<span class="st">&quot;Kawhi Leonard&quot;</span>, <span class="st">&quot;Paul George&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nba.loc[ <span class="st">&quot;LeBron James&quot;</span> ]</span>
+<span id="cb16-2"><a href="#cb16-2"></a>nba.loc[ [<span class="st">&quot;Kawhi Leonard&quot;</span>, <span class="st">&quot;Paul George&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">The <code>.loc</code> attribute extracts an observation by index label (row name).</li>
+<li class="fragment">The <code>.loc</code> attribute extracts an observation by <strong>index label</strong> (row name).</li>
 </ul>
 </section>
-<section id="pandas-basics-25" class="slide level2">
+<section id="pandas-basics-19" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels-1">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>(</span>
-<span id="cb25-2"><a href="#cb25-2"></a>    nba</span>
-<span id="cb25-3"><a href="#cb25-3"></a>    .sort_index()</span>
-<span id="cb25-4"><a href="#cb25-4"></a>    .loc[<span class="st">&quot;Otto Porter&quot;</span>:<span class="st">&quot;Patrick Beverley&quot;</span>]</span>
-<span id="cb25-5"><a href="#cb25-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>(</span>
+<span id="cb17-2"><a href="#cb17-2"></a>    nba</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    .sort_index()</span>
+<span id="cb17-4"><a href="#cb17-4"></a>    .loc[<span class="st">&quot;Otto Porter&quot;</span>:<span class="st">&quot;Patrick Beverley&quot;</span>]</span>
+<span id="cb17-5"><a href="#cb17-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">What is the above code doing?
 <ul>
-<li class="fragment">Both the starting value and the ending value are <strong><em>inclusive</em></strong>.</li>
+<li class="fragment">Note: Both the starting value and the ending value are <strong><em>inclusive</em></strong>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-26" class="slide level2">
+<section id="pandas-basics-20" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.loc-index-labels-2">Locating Observations by <code>.loc[ Index Labels ]</code></h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>(</span>
-<span id="cb26-2"><a href="#cb26-2"></a>    nba</span>
-<span id="cb26-3"><a href="#cb26-3"></a>    .sort_index()</span>
-<span id="cb26-4"><a href="#cb26-4"></a>    .loc[<span class="st">&quot;Zach Collins&quot;</span>:]</span>
-<span id="cb26-5"><a href="#cb26-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>(</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    nba</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    .sort_index()</span>
+<span id="cb18-4"><a href="#cb18-4"></a>    .loc[<span class="st">&quot;Zach Collins&quot;</span>:]</span>
+<span id="cb18-5"><a href="#cb18-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>(</span>
-<span id="cb27-2"><a href="#cb27-2"></a>    nba</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    .sort_index()</span>
-<span id="cb27-4"><a href="#cb27-4"></a>    .loc[:<span class="st">&quot;Al Horford&quot;</span>]</span>
-<span id="cb27-5"><a href="#cb27-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    nba</span>
+<span id="cb19-3"><a href="#cb19-3"></a>    .sort_index()</span>
+<span id="cb19-4"><a href="#cb19-4"></a>    .loc[:<span class="st">&quot;Al Horford&quot;</span>]</span>
+<span id="cb19-5"><a href="#cb19-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1607,19 +1515,19 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-27" class="slide level2">
+<section id="pandas-basics-21" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-observations-by-.iloc-index-positions">Locating Observations by <code>.iloc[ Index Positions ]</code></h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>nba.iloc[ <span class="dv">300</span> ]</span>
-<span id="cb28-2"><a href="#cb28-2"></a>nba.iloc[ [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>nba.iloc[ <span class="dv">300</span> ]</span>
+<span id="cb20-2"><a href="#cb20-2"></a>nba.iloc[ [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>nba.iloc[<span class="dv">400</span>:<span class="dv">404</span>]</span>
-<span id="cb29-2"><a href="#cb29-2"></a>nba.iloc[:<span class="dv">2</span>]</span>
-<span id="cb29-3"><a href="#cb29-3"></a>nba.iloc[<span class="dv">447</span>:]</span>
-<span id="cb29-4"><a href="#cb29-4"></a>nba.iloc[<span class="op">-</span><span class="dv">10</span>:<span class="op">-</span><span class="dv">6</span>]</span>
-<span id="cb29-5"><a href="#cb29-5"></a>nba.iloc[<span class="dv">0</span>:<span class="dv">10</span>:<span class="dv">2</span>] <span class="co"># every other rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>nba.iloc[<span class="dv">400</span>:<span class="dv">404</span>]</span>
+<span id="cb21-2"><a href="#cb21-2"></a>nba.iloc[:<span class="dv">2</span>]</span>
+<span id="cb21-3"><a href="#cb21-3"></a>nba.iloc[<span class="dv">447</span>:]</span>
+<span id="cb21-4"><a href="#cb21-4"></a>nba.iloc[<span class="op">-</span><span class="dv">10</span>:<span class="op">-</span><span class="dv">6</span>]</span>
+<span id="cb21-5"><a href="#cb21-5"></a>nba.iloc[<span class="dv">0</span>:<span class="dv">10</span>:<span class="dv">2</span>] <span class="co"># every other rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1634,7 +1542,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-28" class="slide level2">
+<section id="pandas-basics-22" class="slide level2">
 <h2>Pandas Basics</h2>
 <p>Let’s do Questions 1-4 in Part 1 of <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html">Classwork 3</a>!</p>
 </section></section>
@@ -1643,31 +1551,30 @@ Byeong-Hak Choe
 <h1>Locating Values</h1>
 
 </section>
-<section id="pandas-basics-29" class="slide level2">
+<section id="pandas-basics-23" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-values-by-locrows-columns-or-ilocrows-columns">Locating Values by <code>loc[Rows, Columns]</code> or <code>iloc[Rows, Columns]</code></h3>
 <div class="columns">
-<div class="column" style="width:42%;">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>nba.loc[</span>
-<span id="cb30-2"><a href="#cb30-2"></a>    <span class="st">&quot;LeBron James&quot;</span>,</span>
-<span id="cb30-3"><a href="#cb30-3"></a>    <span class="st">&quot;Team&quot;</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a>]</span>
-<span id="cb30-5"><a href="#cb30-5"></a></span>
-<span id="cb30-6"><a href="#cb30-6"></a></span>
-<span id="cb30-7"><a href="#cb30-7"></a>nba.loc[</span>
-<span id="cb30-8"><a href="#cb30-8"></a>     <span class="st">&quot;James Harden&quot;</span>, </span>
-<span id="cb30-9"><a href="#cb30-9"></a>      [<span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Birthday&quot;</span>] </span>
-<span id="cb30-10"><a href="#cb30-10"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:58%;">
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>nba.loc[</span>
-<span id="cb31-2"><a href="#cb31-2"></a>    [<span class="st">&quot;Russell Westbrook&quot;</span>, <span class="st">&quot;Anthony Davis&quot;</span>],</span>
-<span id="cb31-3"><a href="#cb31-3"></a>     [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Salary&quot;</span>]</span>
-<span id="cb31-4"><a href="#cb31-4"></a>]</span>
-<span id="cb31-5"><a href="#cb31-5"></a></span>
-<span id="cb31-6"><a href="#cb31-6"></a>nba.loc[</span>
-<span id="cb31-7"><a href="#cb31-7"></a>    <span class="st">&quot;Joel Embiid&quot;</span>, </span>
-<span id="cb31-8"><a href="#cb31-8"></a>    <span class="st">&quot;Position&quot;</span>:<span class="st">&quot;Salary&quot;</span></span>
-<span id="cb31-9"><a href="#cb31-9"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="column" style="width:38%;">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>nba.loc[</span>
+<span id="cb22-2"><a href="#cb22-2"></a>    <span class="st">&quot;LeBron James&quot;</span>,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="st">&quot;Team&quot;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>]</span>
+<span id="cb22-5"><a href="#cb22-5"></a></span>
+<span id="cb22-6"><a href="#cb22-6"></a>nba.loc[</span>
+<span id="cb22-7"><a href="#cb22-7"></a>     <span class="st">&quot;James Harden&quot;</span>, </span>
+<span id="cb22-8"><a href="#cb22-8"></a>      [<span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Birthday&quot;</span>] </span>
+<span id="cb22-9"><a href="#cb22-9"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:62%;">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>nba.loc[</span>
+<span id="cb23-2"><a href="#cb23-2"></a>    [<span class="st">&quot;Russell Westbrook&quot;</span>, <span class="st">&quot;Anthony Davis&quot;</span>],</span>
+<span id="cb23-3"><a href="#cb23-3"></a>     [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Salary&quot;</span>]</span>
+<span id="cb23-4"><a href="#cb23-4"></a>]</span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>nba.loc[</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="st">&quot;Joel Embiid&quot;</span>, </span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="st">&quot;Position&quot;</span>:<span class="st">&quot;Salary&quot;</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1677,26 +1584,117 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-30" class="slide level2">
+<section id="pandas-basics-24" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="locating-values-by-locrows-columns-or-ilocrows-columns-1">Locating Values by <code>loc[Rows, Columns]</code> or <code>iloc[Rows, Columns]</code></h3>
 <div class="columns">
 <div class="column" style="width:100%;">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>nba.iloc[</span>
-<span id="cb32-2"><a href="#cb32-2"></a>    <span class="dv">57</span>, </span>
-<span id="cb32-3"><a href="#cb32-3"></a>    <span class="dv">3</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>]</span>
-<span id="cb32-5"><a href="#cb32-5"></a></span>
-<span id="cb32-6"><a href="#cb32-6"></a>nba.iloc[</span>
-<span id="cb32-7"><a href="#cb32-7"></a>    <span class="dv">100</span>:<span class="dv">104</span>, </span>
-<span id="cb32-8"><a href="#cb32-8"></a>    :<span class="dv">3</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>nba.iloc[</span>
+<span id="cb24-2"><a href="#cb24-2"></a>    <span class="dv">57</span>, </span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="dv">3</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>]</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a>nba.iloc[</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    <span class="dv">100</span>:<span class="dv">104</span>, </span>
+<span id="cb24-8"><a href="#cb24-8"></a>    :<span class="dv">3</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
 <li class="fragment">Both the <code>.loc</code> and <code>.iloc</code> attributes accept a second argument representing the column(s) to extract.
 <ul>
 <li class="fragment">If we are using <code>.iloc</code>, we have to provide the column position.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="renaming-columns-or-rows" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Renaming columns or rows</h1>
+
+</section>
+<section id="pandas-basics-25" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-columns-with-nba.columns">Renaming columns with <code>nba.columns</code></h3>
+<div>
+<ul>
+<li>Do you recall the <code>.columns</code> attribute?</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>nba.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We can rename any or all of a DataFrame’s columns by assigning a <em>list</em> of new names to the attribute:</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>nba.columns <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Date of Birth&quot;</span>, <span class="st">&quot;Income&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pandas-basics-26" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-columns-with-rename-columns-existing-one-new-one">Renaming columns with <code>rename( columns = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>nba.rename( columns <span class="op">=</span> { <span class="st">&quot;Date of Birth&quot;</span>: <span class="st">&quot;Birthday&quot;</span> } )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above <code>rename()</code> method renames the variable <em>Date of Birth</em> to <em>Birthday</em>.</li>
+</ul>
+</section>
+<section id="pandas-basics-27" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-rows-with-rename-index-existing-one-new-one">Renaming rows with <code>rename( index = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>nba <span class="op">=</span> nba.rename(</span>
+<span id="cb28-2"><a href="#cb28-2"></a>    index <span class="op">=</span> { <span class="st">&quot;LeBron James&quot;</span>: <span class="st">&quot;LeBron Raymone James&quot;</span> }</span>
+<span id="cb28-3"><a href="#cb28-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above <code>rename()</code> method renames the observation <em>LeBron James</em> to <em>LeBron Raymone James</em>.</li>
+</ul>
+</section></section>
+<section>
+<section id="mathematical-vectorized-operations" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Mathematical &amp; Vectorized Operations</h1>
+
+</section>
+<section id="pandas-basics-28" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="mathematical-operations">Mathematical Operations</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>nba.<span class="bu">max</span>()</span>
+<span id="cb29-2"><a href="#cb29-2"></a>nba.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>max()</code> method returns a <code>Series</code> with the maximum value from each variable.</li>
+<li class="fragment">The <code>min()</code> method returns a <code>Series</code> with the minimum value from each variable.</li>
+</ul>
+</section>
+<section id="pandas-basics-29" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="mathematical-operations-1">Mathematical Operations</h3>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>nba.<span class="bu">sum</span>()</span>
+<span id="cb30-2"><a href="#cb30-2"></a>nba.mean()</span>
+<span id="cb30-3"><a href="#cb30-3"></a>nba.median()</span>
+<span id="cb30-4"><a href="#cb30-4"></a>nba.quantile(<span class="fl">0.75</span>) <span class="co"># 0 to 1</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>nba.std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>nba.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb31-2"><a href="#cb31-2"></a>nba.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb31-3"><a href="#cb31-3"></a>nba.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb31-4"><a href="#cb31-4"></a>nba.quantile(<span class="fl">0.75</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb31-5"><a href="#cb31-5"></a>nba.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">The <code>sum()</code>/<code>mean()</code>/<code>median()</code> method returns a <code>Series</code> with the sum/mean/median of the values in each variable.</li>
+<li class="fragment">The <code>quantile()</code> method returns a <code>Series</code> with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).</li>
+<li class="fragment">The <code>std()</code> method returns a <code>Series</code> with the standard deviation of the values in each variable.</li>
+<li class="fragment">To limit the operation to numeric volumes, we can pass <code>True</code> to the <code>sum()</code>/<code>mean()</code>/<code>median()</code>/<code>std()</code> method’s <code>numeric_only</code> parameter.</li>
+</ul>
+</section>
+<section id="pandas-basics-30" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="vectorized-operations">Vectorized Operations</h3>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>nba[<span class="st">&quot;Salary_2x&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">+</span> nba[<span class="st">&quot;Salary&quot;</span>]</span>
+<span id="cb32-2"><a href="#cb32-2"></a>nba[<span class="st">&quot;Name_w_Position&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Name&quot;</span>] <span class="op">+</span> <span class="st">&quot; (&quot;</span> <span class="op">+</span> nba[<span class="st">&quot;Position&quot;</span>] <span class="op">+</span> <span class="st">&quot;)&quot;</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>nba[<span class="st">&quot;Salary_minus_Mean&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">-</span> nba[<span class="st">&quot;Salary&quot;</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><code>pandas</code> performs a <em>vectorized operation</em> on <code>Series</code> or a variable in <code>DataFrame</code>.
+<ul>
+<li class="fragment">This means an element-by-element operation.</li>
+<li class="fragment">This enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops.</li>
 </ul></li>
 </ul>
 </section></section>
@@ -1793,90 +1791,102 @@ Byeong-Hak Choe
 </section>
 <section id="pandas-basics-40" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-1">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>Series <span class="op">==</span> value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-condition">Filtering by a Condition</h3>
 <ul>
-<li class="fragment"><p>To compare every value in <code>Series</code> with a constant value, we place the <code>Series</code> on one side of the equality operator (<code>==</code>) and the value on the other.</p></li>
-<li class="fragment"><p>The above example compares each <code>First Name</code> value with “Donna”.</p></li>
+<li class="fragment"><p>We may often not know the <strong>index labels and positions</strong> of the observations we want to target.</p></li>
+<li class="fragment"><p>We may want to target observations not by an index label but by a <strong>Boolean condition</strong>.</p></li>
 </ul>
 </section>
 <section id="pandas-basics-41" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-2">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>DataFrame[ Boolean_Series ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>emp[ emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-1">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">To filter observations, we provide the Boolean <code>Series</code> between square brackets following the <code>DataFrame</code>.</li>
+<li class="fragment">To compare every value in <code>Series</code> with a constant value, we place the <code>Series</code> on one side of the equality operator (<code>==</code>) and the value on the other.
+<ul>
+<li class="fragment"><code>Series == value</code></li>
+</ul></li>
+<li class="fragment">The above example compares each <code>First Name</code> value with “Donna”.</li>
 </ul>
 </section>
 <section id="pandas-basics-42" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-3">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>donnas <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a>emp[donnas]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-2">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>emp[ emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">If the use of multiple square brackets is confusing, we can assign the Boolean <code>Series</code> to a descriptive object and then pass it into the square brackets instead.</li>
+<li class="fragment">To filter observations, we provide the Boolean <code>Series</code> between square brackets following the <code>DataFrame</code>.
+<ul>
+<li class="fragment"><code>DataFrame[ Boolean_Series ]</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="pandas-basics-43" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-4">Filtering by a Single Condition</h3>
-<p>What if we want to extract a subset of employees who are not on the “<code>Marketing</code>” team?</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>emp[<span class="st">&quot;Team&quot;</span>] <span class="op">!=</span> <span class="st">&quot;Marketing&quot;</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a>emp[ emp[<span class="st">&quot;Team&quot;</span>] <span class="op">!=</span> <span class="st">&quot;Marketing&quot;</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-3">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>donnas <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>emp[donnas]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><code>True</code> denotes that the <code>Team</code> value for a given index is not “<code>Marketing</code>”, and <code>False</code> indicates the <code>Team</code> value is “<code>Marketing</code>”</li>
+<li class="fragment">If the use of multiple square brackets is confusing, we can assign the Boolean <code>Series</code> to an object and then pass it into the square brackets instead.</li>
 </ul>
 </section>
 <section id="pandas-basics-44" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-5">Filtering by a Single Condition</h3>
-<p>What if we want to retrieve all the managers in the company? Managers have a value of <code>True</code> in the <code>Mgmt</code> variable.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>emp[ emp[<span class="st">&quot;Mgmt&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-4">Filtering by a Single Condition</h3>
+<p>What if we want to extract a subset of employees who are not on the “<code>Marketing</code>” team?</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>non_marketing <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">!=</span> <span class="st">&quot;Marketing&quot;</span>  <span class="co"># != means &quot;not equal to&quot;</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>emp[ non_marketing ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">We could execute <code>emp[&quot;Mgmt&quot;] == True</code>, but we do not need to.</li>
+<li class="fragment"><code>True</code> denotes that the <code>Team</code> value for a given index is not “<code>Marketing</code>”, and <code>False</code> indicates the <code>Team</code> value is “<code>Marketing</code>”</li>
 </ul>
 </section>
 <section id="pandas-basics-45" class="slide level2">
 <h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-single-condition-5">Filtering by a Single Condition</h3>
+<p>What if we want to retrieve all the managers in the company? Managers have a value of <code>True</code> in the <code>Mgmt</code> variable.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>emp[ emp[<span class="st">&quot;Mgmt&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We could execute <code>emp[&quot;Mgmt&quot;] == True</code>, but we do not need to.</li>
+</ul>
+</section>
+<section id="pandas-basics-46" class="slide level2">
+<h2>Pandas Basics</h2>
 <h3 id="filtering-by-a-single-condition-6">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>high_earners <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;</span> <span class="dv">100000</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>emp[high_earners]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>high_earners <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;</span> <span class="dv">100000</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>emp[ high_earners ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We can also use arithmetic operands to filter observations based on mathematical conditions.</li>
 </ul>
 </section></section>
 <section>
-<section id="filtering-by-a-condition" class="title-slide slide level1 center" data-background-color="#1c4982">
+<section id="filtering-by-a-condition-1" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Filtering by a Condition</h1>
 
 </section>
-<section id="pandas-basics-46" class="slide level2">
+<section id="pandas-basics-47" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-1">Filtering by a Condition</h3>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>sales <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Sales&quot;</span></span>
-<span id="cb49-2"><a href="#cb49-2"></a>legal <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Legal&quot;</span></span>
-<span id="cb49-3"><a href="#cb49-3"></a>fnce <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Finance&quot;</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a>emp[ sales <span class="op">|</span> legal <span class="op">|</span> fnce ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-condition-2">Filtering by a Condition</h3>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>sales <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Sales&quot;</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>legal <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Legal&quot;</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>fnce <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Finance&quot;</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>emp[ sales <span class="op">|</span> legal <span class="op">|</span> fnce ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We could provide three separate Boolean <code>Series</code> inside the square brackets and add the <code>|</code> symbol to declare <code>OR</code> criteria.</li>
 </ul>
 </section>
-<section id="pandas-basics-47" class="slide level2">
+<section id="pandas-basics-48" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="filtering-with-the-isin-method">Filtering with the <code>isin()</code> method</h3>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>star_teams <span class="op">=</span> [<span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Legal&quot;</span>, <span class="st">&quot;Finance&quot;</span>]</span>
-<span id="cb50-2"><a href="#cb50-2"></a>on_star_teams <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>].isin(star_teams)</span>
-<span id="cb50-3"><a href="#cb50-3"></a>emp[on_star_teams]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>star_teams <span class="op">=</span> [<span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Legal&quot;</span>, <span class="st">&quot;Finance&quot;</span>]</span>
+<span id="cb48-2"><a href="#cb48-2"></a>on_star_teams <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>].isin(star_teams)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>emp[on_star_teams]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>What if our next report asked for employees from 15 teams instead of three?</p></li>
 <li class="fragment"><p>A better solution is the <code>isin()</code> method, which accepts an iterable (e.g., <code>list</code>, <code>tuple</code>, <code>Series</code>) and returns a Boolean <code>Series</code>.</p></li>
 </ul>
 </section>
-<section id="pandas-basics-48" class="slide level2">
+<section id="pandas-basics-49" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-2">Filtering by a Condition</h3>
+<h3 id="filtering-by-a-condition-3">Filtering by a Condition</h3>
 <ul>
 <li class="fragment">When working with numbers or dates, we often want to extract values that fall within a range.
 <ul>
@@ -1884,22 +1894,22 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-49" class="slide level2">
+<section id="pandas-basics-50" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-3">Filtering by a Condition</h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>higher_than_90k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;=</span> <span class="dv">90000</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a>lower_than_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&lt;</span> <span class="dv">100000</span></span>
-<span id="cb51-3"><a href="#cb51-3"></a>emp[ higher_than_90k <span class="op">&amp;</span> lower_than_100k ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-condition-4">Filtering by a Condition</h3>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>higher_than_90k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;=</span> <span class="dv">90000</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>lower_than_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&lt;</span> <span class="dv">100000</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>emp[ higher_than_90k <span class="op">&amp;</span> lower_than_100k ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>We can create two Boolean <code>Series</code>, one to declare the lower bound and one to declare the upper bound.</p></li>
 <li class="fragment"><p>Then we can use the <code>&amp;</code> operator to mandate that both conditions are <code>True</code>:</p></li>
 </ul>
 </section>
-<section id="pandas-basics-50" class="slide level2">
+<section id="pandas-basics-51" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="filtering-with-the-between-method">Filtering with the <code>between()</code> method</h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>between_90k_and_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].between(<span class="dv">90000</span>, <span class="dv">100000</span>)</span>
-<span id="cb52-2"><a href="#cb52-2"></a>emp[between_90k_and_100k]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>between_90k_and_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].between(<span class="dv">90000</span>, <span class="dv">100000</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a>emp[between_90k_and_100k]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">A slightly cleaner solution is to use a method called <code>between()</code>
 <ul>
@@ -1908,31 +1918,31 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="pandas-basics-51" class="slide level2">
+<section id="pandas-basics-52" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="filtering-with-the-between-method-1">Filtering with the <code>between()</code> method</h3>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>name_starts_with_t <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>].between(<span class="st">&quot;T&quot;</span>, <span class="st">&quot;U&quot;</span>)</span>
-<span id="cb53-2"><a href="#cb53-2"></a>emp[name_starts_with_t]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>name_starts_with_t <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>].between(<span class="st">&quot;T&quot;</span>, <span class="st">&quot;U&quot;</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a>emp[name_starts_with_t]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We can also apply the <code>between()</code> method to string variables.</li>
 </ul>
 </section>
-<section id="pandas-basics-52" class="slide level2">
+<section id="pandas-basics-53" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="filtering-by-a-condition-with-the-query-method">Filtering by a Condition with the <code>query()</code> method</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Below two are equivalent</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 &amp; Team == &#39;Finance&#39;&quot;</span>)</span>
-<span id="cb54-3"><a href="#cb54-3"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 and Team == &#39;Finance&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Below two are equivalent</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 &amp; Team == &#39;Finance&#39;&quot;</span>)</span>
+<span id="cb52-3"><a href="#cb52-3"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 and Team == &#39;Finance&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>The <code>query()</code> method filters observations using a concise, string-based query syntax.</p></li>
 <li class="fragment"><p>The <code>query()</code> method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering.</p></li>
 </ul>
 </section>
-<section id="pandas-basics-53" class="slide level2">
+<section id="pandas-basics-54" class="slide level2">
 <h2>Pandas Basics</h2>
 <p>Let’s do Questions 2-6 in Part 2 of <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html">Classwork 3</a>!</p>
 </section>
-<section id="pandas-basics-54" class="slide level2">
+<section id="pandas-basics-55" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="referenes">Referenes</h3>
 <div>

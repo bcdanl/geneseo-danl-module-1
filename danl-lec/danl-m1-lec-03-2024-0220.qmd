@@ -181,15 +181,15 @@ nba.sort_values(by = ["Team", "Name"],
 
 ::: {.column width="50%"}
 ```{.python}
-# The two lines below are equivalent
+# Below lines are equivalent
 nba.sort_index()
-nba.sort_index(ascending = True).
+nba.sort_index(ascending = True)
 ```
 :::
 
 ::: {.column width="50%"}
 ```{.python}
-nba.sort_index(ascending = False).
+nba.sort_index(ascending = False)
 ```
 :::
 
@@ -197,10 +197,9 @@ nba.sort_index(ascending = False).
 
 - How can we return it to its original form of `DataFrame`?
 
-- Our `nba` `DataFrame` still has its numeric index.
+- Our `nba` `DataFrame` still has its numeric index labels.
 
-- If we could sort the data set by index positions rather than by column values, we could return it to its original shape.
-
+- `sort_index()` sorts observations by their index labels (row names).
 
 
 
@@ -250,7 +249,7 @@ nba.set_index("Name")
 
 ```{.python}
 nba2 = nba.set_index("Name")
-nba2.reset_index(inplace=True)    # Useful for the chain of method operations
+nba2.reset_index(inplace=True)    # Useful for the method chaining
 ```
 
   
@@ -259,6 +258,213 @@ nba2.reset_index(inplace=True)    # Useful for the chain of method operations
   - When we need to reset the index to the default integer index. 
 
 - Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Observations/Values
+
+- We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
+
+  - These accessors work well when we know the **index labels and positions** of the observations/variables we want to target.
+  
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `Name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by **index label** (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Note: Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-4 in Part 1 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
+
+
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="38%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="62%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
 
 
 # Renaming columns or rows  {background-color="#1c4982"}
@@ -362,6 +568,7 @@ nba.std(numeric_only = True)
 
 ```{.python}
 nba["Salary_2x"] = nba["Salary"] + nba["Salary"]
+nba["Name_w_Position"] = nba["Name"] + " (" + nba["Position"] + ")"
 nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
 ```
 
@@ -369,217 +576,6 @@ nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
   - This means an element-by-element operation.
   - This enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops.
 
-
-
-# Locating Observations {background-color="#1c4982"}
-
-
-## Pandas Basics
-### Locating Observations/Values
-
-- We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
-  - These accessors work well when we know the index labels and positions of the observations/variables we want to target.
-  
-- However, we often do not know the index labels and positions of the observations/variables we want to target.
-
-- We may want to target observations not by an index label but by a Boolean condition.
-
-
-
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
-
-:::{.nonincremental}
-
-- Let's consider the `nba` with the `name` index.
-```{.python}
-# The two lines below are equivalent
-nba = nba.set_index("Name")
-nba.set_index("Name", inplace = True)
-```
-
-- Below extracts observations:
-
-:::
-
-
-```{.python}
-nba.loc[ "LeBron James" ]
-nba.loc[ ["Kawhi Leonard", "Paul George"] ]
-```
-
-- The `.loc` attribute extracts an observation by index label (row name).
-
-
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
-
-
-```{.python}
-(
-    nba
-    .sort_index()
-    .loc["Otto Porter":"Patrick Beverley"]
-)
-```
-
-- What is the above code doing?
-  - Both the starting value and the ending value are **_inclusive_**.
-
-
-
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.python}
-(
-    nba
-    .sort_index()
-    .loc["Zach Collins":]
-)
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-(
-    nba
-    .sort_index()
-    .loc[:"Al Horford"]
-)
-```
-:::
-
-::::
-
-- We can use `loc[:]` to pull rows:
-  - From the middle of the `DataFrame` to its end;
-  - From the beginning of the `DataFrame` to a specific index label.
-
-
-
-
-
-
-
-
-
-## Pandas Basics
-### Locating Observations by `.iloc[ Index Positions ]`
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.python}
-nba.iloc[ 300 ]
-nba.iloc[ [100, 200, 300, 400] ]
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-nba.iloc[400:404]
-nba.iloc[:2]
-nba.iloc[447:]
-nba.iloc[-10:-6]
-nba.iloc[0:10:2] # every other rows
-```
-:::
-
-::::
-
-
-- The `.iloc` (index location) attribute locates rows by index position.
-  - This can be helpful when the position of rows has significance in our data set.
-  - We pass integers.
-  
-- The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
-  - The end value is NOT *inclusive*.
-  
-
-
-
-## Pandas Basics
-
-Let's do Questions 1-4 in Part 1 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
-
-
-
-
-# Locating Values {background-color="#1c4982"}
-
-
-## Pandas Basics
-### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
-
-
-:::: {.columns}
-
-::: {.column width="42%"}
-```{.python}
-nba.loc[
-    "LeBron James",
-    "Team"
-]
-
-
-nba.loc[
-     "James Harden", 
-      ["Position", "Birthday"] 
-]
-```
-:::
-
-::: {.column width="58%"}
-```{.python}
-nba.loc[
-    ["Russell Westbrook", "Anthony Davis"],
-     ["Team", "Salary"]
-]
-
-nba.loc[
-    "Joel Embiid", 
-    "Position":"Salary"
-]
-```
-:::
-
-
-::::
-
-
-
-- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
-  - If we are using `.loc`, we have to provide the column names. 
-
-## Pandas Basics
-### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
-
-:::: {.columns}
-
-::: {.column width="100%"}
-```{.python}
-nba.iloc[
-    57, 
-    3
-]
-
-nba.iloc[
-    100:104, 
-    :3
-]
-```
-:::
-
-::::
-
-
-
-- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
-  - If we are using `.iloc`, we have to provide the column position.
 
 
 
@@ -697,12 +693,20 @@ Let's do Question 1 in Part 2 of [Classwork 3](https://bcdanl.github.io/module-1
 # Filtering by a Single Condition {background-color="#1c4982"}
 
 
+
+## Pandas Basics
+### Filtering by a Condition
+
+- We may often not know the **index labels and positions** of the observations we want to target.
+
+- We may want to target observations not by an index label but by a **Boolean condition**.
+
+
+
+
 ## Pandas Basics
 ### Filtering by a Single Condition
 
-```{.python}
-Series == value
-```
 
 ```{.python}
 emp["First Name"] == "Donna"
@@ -710,6 +714,7 @@ emp["First Name"] == "Donna"
 
 
 - To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+  - `Series == value`
 
 - The above example compares each `First Name` value with "Donna".
 
@@ -718,16 +723,13 @@ emp["First Name"] == "Donna"
 ## Pandas Basics
 ### Filtering by a Single Condition
 
-```{.python}
-DataFrame[ Boolean_Series ]
-```
 
 ```{.python}
 emp[ emp["First Name"] == "Donna" ]
 ```
 
 - To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
-
+  - `DataFrame[ Boolean_Series ]`
 
 
 
@@ -741,7 +743,7 @@ emp[donnas]
 
 
 - If the use of multiple square brackets is confusing, we can assign the Boolean
-`Series` to a descriptive object and then pass it into the square brackets instead.
+`Series` to an object and then pass it into the square brackets instead.
 
 
 
@@ -751,9 +753,8 @@ emp[donnas]
 What if we want to extract a subset of employees who are not on the "`Marketing`" team?
 
 ```{.python}
-emp["Team"] != "Marketing"
-emp[ emp["Team"] != "Marketing" ]
-
+non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
+emp[ non_marketing ]
 ```
 
 - `True` denotes that the `Team` value for a given index is not "`Marketing`", and `False` indicates the `Team` value is "`Marketing`"
@@ -778,7 +779,7 @@ emp[ emp["Mgmt"] ]
 
 ```{.python}
 high_earners = emp["Salary"] > 100000
-emp[high_earners]
+emp[ high_earners ]
 ```
 
 - We can also use arithmetic operands to filter observations based on mathematical conditions.
