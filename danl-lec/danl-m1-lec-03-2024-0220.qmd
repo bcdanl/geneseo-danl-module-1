@@ -1,5 +1,5 @@
 ---
-title: Lecture 2
+title: Lecture 3
 subtitle: Pandas Basics - Sorting, Indexing, and Filtering Data with Missing Values and Duplicates
 format:
   clean-revealjs:
@@ -43,7 +43,12 @@ include-after-body: effect.html
 - Let's read `nba.csv` as `nba`.
 
 ```{.python}
-# Read nba.csv as nba DataFrame
+import pandas as pd 
+
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table  
+data_table.enable_dataframe_formatter()
+
 nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
                   parse_dates = ["Birthday"])
 nba
@@ -68,7 +73,6 @@ nba.sort_values(by = ["Name"])
 ### Sorting by a Single Variable with `sort_values()`
 
 ```{.python}
-# The two lines below are equivalent
 nba.sort_values(["Name"], ascending = False)
 ```
 
@@ -977,4 +981,13 @@ emp.drop_duplicates(subset = ["First Name"], keep = False)
 ## Pandas Basics
 
 Let's do Questions 7-8 in Part 2 of [Classwork 3](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-3.html)!
+
+
+## Pandas Basics
+### Referenes
+
+:::{.nonincremental}
+- Pandas in Action, Boris Paskhaver (Author), 2021, Manning
+
+:::
 

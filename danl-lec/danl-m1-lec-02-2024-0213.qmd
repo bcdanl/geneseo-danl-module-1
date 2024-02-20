@@ -357,7 +357,6 @@ nba.sort_values(by = ["Name"])
 ### Sorting by a Single Variable with `sort_values()`
 
 ```{.python}
-# The two lines below are equivalent
 nba.sort_values(["Name"], ascending = False)
 ```
 
@@ -578,8 +577,13 @@ nba2.reset_index(inplace=True)    # Useful for the chain of method operations
 
 Let's do Questions 5-7 in [Classwork 2](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-2.html)!
 
+## Pandas Basics
+### Referenes
 
+:::{.nonincremental}
+- Pandas in Action, Boris Paskhaver (Author), 2021, Manning
 
+:::
 
 
 <!-- ## Pandas Basics -->
