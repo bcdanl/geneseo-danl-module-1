@@ -2587,7 +2587,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-2",
     "title": "Homework 3",
     "section": "Question 2",
-    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the columns are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new column “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
+    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-3",
@@ -2608,7 +2608,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-5",
     "title": "Homework 3",
     "section": "Question 5",
-    "text": "Question 5\nSort the dataset by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “John”.\nAnswer"
+    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “John”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-6",
@@ -2622,7 +2622,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-7",
     "title": "Homework 3",
     "section": "Question 7",
-    "text": "Question 7\nSort the dataset first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
+    "text": "Question 7\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
   },
   {
     "objectID": "listing-danl-m1-hw.html",

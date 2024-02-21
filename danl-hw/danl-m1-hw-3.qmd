@@ -127,7 +127,7 @@ Select "First Name", "Last Name", "Base Salary", and "Total OT Paid", then sort 
 
 
 ## Question 2
-Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION ADMIN" agency where the columns are "First Name", "Last Name", "Title Description", "Base Salary", and "Total OT Paid". Additionally, include a new column "Total Compensation" which is the sum of "Base Salary" and "Total OT Paid".
+Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION ADMIN" agency where the variables are "First Name", "Last Name", "Title Description", "Base Salary", and "Total OT Paid". Additionally, include a new variable "Total Compensation" which is the sum of "Base Salary" and "Total OT Paid".
 
 
 
@@ -168,7 +168,7 @@ Find the 5 employees with the highest "Regular Gross Paid" and calculate their a
 
 
 ## Question 5
-Sort the dataset by "Fiscal Year" and "Total Other Pay" in descending order, then set "First Name" as the index and use the loc accessor to retrieve the "Total Other Pay" for a specific first name, say "John".
+Sort the DataFrame by "Fiscal Year" and "Total Other Pay" in descending order, then set "First Name" as the index and use the loc accessor to retrieve the "Total Other Pay" for a specific first name, say "John".
 
 
 
@@ -196,7 +196,7 @@ Select employees who have "OT Hours" greater than 0, calculate their "OT Rate" (
 
 
 ## Question 7
-Sort the dataset first by "Work Location Borough" alphabetically, and then by "Total Compensation" (sum of "Base Salary" and "Total OT Paid") in descending order within each borough.
+Sort the DataFrame first by "Work Location Borough" alphabetically, and then by "Total Compensation" (sum of "Base Salary" and "Total OT Paid") in descending order within each borough.
 
 
 *Answer*
