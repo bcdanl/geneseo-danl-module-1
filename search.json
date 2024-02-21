@@ -2580,49 +2580,49 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-1",
     "title": "Homework 3",
     "section": "Question 1",
-    "text": "Question 1\n\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency, where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”.\nAdditionally, include a new variable, “Total Compensation”, which is the sum of “Base Salary” and “Total OT Paid”.\n\nAnswer"
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-2",
     "href": "danl-hw/danl-m1-hw-3.html#question-2",
     "title": "Homework 3",
     "section": "Question 2",
-    "text": "Question 2\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer"
+    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the columns are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new column “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-3",
     "href": "danl-hw/danl-m1-hw-3.html#question-3",
     "title": "Homework 3",
     "section": "Question 3",
-    "text": "Question 3\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
+    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “Doe”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-4",
     "href": "danl-hw/danl-m1-hw-3.html#question-4",
     "title": "Homework 3",
     "section": "Question 4",
-    "text": "Question 4\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer"
+    "text": "Question 4\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-5",
     "href": "danl-hw/danl-m1-hw-3.html#question-5",
     "title": "Homework 3",
     "section": "Question 5",
-    "text": "Question 5\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer"
+    "text": "Question 5\nSort the dataset by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “John”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-6",
     "href": "danl-hw/danl-m1-hw-3.html#question-6",
     "title": "Homework 3",
     "section": "Question 6",
-    "text": "Question 6\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer"
+    "text": "Question 6\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-7",
     "href": "danl-hw/danl-m1-hw-3.html#question-7",
     "title": "Homework 3",
     "section": "Question 7",
-    "text": "Question 7\n\nCalculate the total “Regular Gross Paid” for employees whose “Base Salary” is below the median salary of the DataFrame.\n\nThe total “Regular Gross Paid” refers to the total amount of “Regular Gross Paid” paid to employees.\n\n\nAnswer"
+    "text": "Question 7\nSort the dataset first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
   },
   {
     "objectID": "listing-danl-m1-hw.html",
