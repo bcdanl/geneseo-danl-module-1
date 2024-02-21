@@ -1,6 +1,6 @@
 ---
 title: Homework 3
-subtitle: Pandas Basics - Sorting and Filtering Data 
+subtitle: Pandas Basics - Sorting, Indexing, and Locating Data 
 date: 2024-02-20
 execute: 
   echo: false
