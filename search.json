@@ -2615,7 +2615,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-6",
     "title": "Homework 3",
     "section": "Question 6",
-    "text": "Question 6\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\nAnswer"
+    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nHint: Start with filtering observations in nyc_payroll with the following lines:\n\n\n\n# Boolean Series of whether or not 'OT Hours' is greater than 0.\npos_OT_hours = nyc_payroll['OT Hours'] &gt; 0 \n\n# Keeping only the observations with pos_OT_hours == True\nwith_ot = nyc_payroll[ pos_OT_hours ] \n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-7",

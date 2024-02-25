@@ -182,7 +182,18 @@ Sort the DataFrame by "Fiscal Year" and "Total Other Pay" in descending order, t
 
 
 ## Question 6
-Select employees who have "OT Hours" greater than 0, calculate their "OT Rate" (Total OT Paid / OT Hours), and then find the employee with the highest "OT Rate". Display their full name and OT Rate.
+- Select employees who have "OT Hours" greater than 0, calculate their "OT Rate" (Total OT Paid / OT Hours), and then find the employee with the highest "OT Rate". Display their full name and OT Rate.
+  -  Hint: Start with filtering observations in `nyc_payroll` with the following lines:
+  
+```{python}
+#| echo: true
+
+# Boolean Series of whether or not 'OT Hours' is greater than 0.
+pos_OT_hours = nyc_payroll['OT Hours'] > 0 
+
+# Keeping only the observations with pos_OT_hours == True
+with_ot = nyc_payroll[ pos_OT_hours ] 
+```
 
 
 *Answer*
