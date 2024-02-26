@@ -2594,7 +2594,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-3",
     "title": "Homework 3",
     "section": "Question 3",
-    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “Doe”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
+    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-4",
@@ -2608,7 +2608,7 @@
     "href": "danl-hw/danl-m1-hw-3.html#question-5",
     "title": "Homework 3",
     "section": "Question 5",
-    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “John”.\nAnswer"
+    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#question-6",

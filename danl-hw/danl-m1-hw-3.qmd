@@ -139,7 +139,7 @@ Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION
 <br><br>
 
 ## Question 3
-Using `set_index()`, change the DataFrame's index to "Last Name", then locate the data for a specific last name, say "Doe", and display their "Agency Name", "Base Salary", and "Total OT Paid".
+Using `set_index()`, change the DataFrame's index to "Last Name", then locate the data for a specific last name, say "BROWN", and display their "Agency Name", "Base Salary", and "Total OT Paid".
 
 
 
@@ -168,7 +168,7 @@ Find the 5 employees with the highest "Regular Gross Paid" and calculate their a
 
 
 ## Question 5
-Sort the DataFrame by "Fiscal Year" and "Total Other Pay" in descending order, then set "First Name" as the index and use the loc accessor to retrieve the "Total Other Pay" for a specific first name, say "John".
+Sort the DataFrame by "Fiscal Year" and "Total Other Pay" in descending order, then set "First Name" as the index and use the loc accessor to retrieve the "Total Other Pay" for a specific first name, say "MICHAEL".
 
 
 
