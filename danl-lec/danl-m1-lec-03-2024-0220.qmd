@@ -1,6 +1,6 @@
 ---
 title: Lecture 3
-subtitle: Pandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Filtering Data
+subtitle: Pandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations
 format:
   clean-revealjs:
     self-contained: true

@@ -74,84 +74,63 @@
     "href": "danl-hw/danl-m1-hw-4.html",
     "title": "Homework 4",
     "section": "",
-    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here."
+    "text": "Please submit your Jupyter Notebook for Homework 4 to the Brightspace with the name below:\n\ndanl-m1-hw4-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw4-choe-byeonghak.ipynb )\n\nThe due is March 5, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1a",
-    "href": "danl-hw/danl-m1-hw-4.html#q1a",
+    "objectID": "danl-hw/danl-m1-hw-4.html#variable-description",
+    "href": "danl-hw/danl-m1-hw-4.html#variable-description",
     "title": "Homework 4",
-    "section": "Q1a",
-    "text": "Q1a\nWhat are the minimum, first quartile, median, thrid quartile, maximum, mean, and standard deviation of Close and Volume for each company? \nAnswer"
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1b",
-    "href": "danl-hw/danl-m1-hw-4.html#q1b",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-1",
+    "href": "danl-hw/danl-m1-hw-4.html#question-1",
     "title": "Homework 4",
-    "section": "Q1b",
-    "text": "Q1b\nFind the 10 largest values for Volume. What are the companies and dates associated with those 10 largest values for Volume? \nAnswer"
+    "section": "Question 1",
+    "text": "Question 1\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1c",
-    "href": "danl-hw/danl-m1-hw-4.html#q1c",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-2",
+    "href": "danl-hw/danl-m1-hw-4.html#question-2",
     "title": "Homework 4",
-    "section": "Q1c",
-    "text": "Q1c\nCalculate the Z-scores of Open and Close for each company using apply(). \nAnswer"
+    "section": "Question 2",
+    "text": "Question 2\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1d",
-    "href": "danl-hw/danl-m1-hw-4.html#q1d",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-3",
+    "href": "danl-hw/danl-m1-hw-4.html#question-3",
     "title": "Homework 4",
-    "section": "Q1d",
-    "text": "Q1d\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\nTo do so, divide all values for each company by the values of the first date in the data for that company. \nAnswer"
+    "section": "Question 3",
+    "text": "Question 3\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1e",
-    "href": "danl-hw/danl-m1-hw-4.html#q1e",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-4",
+    "href": "danl-hw/danl-m1-hw-4.html#question-4",
     "title": "Homework 4",
-    "section": "Q1e",
-    "text": "Q1e\nProvide both seaborn code and a simple comment to describe the daily trend of normalized values of Close for each company in one plot. The normalized values of Close are the one calculated from Q1d. \nAnswer"
+    "section": "Question 4",
+    "text": "Question 4\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q1f",
-    "href": "danl-hw/danl-m1-hw-4.html#q1f",
+    "objectID": "danl-hw/danl-m1-hw-4.html#variable-description-1",
+    "href": "danl-hw/danl-m1-hw-4.html#variable-description-1",
     "title": "Homework 4",
-    "section": "Q1f",
-    "text": "Q1f\nCreate a box plot of Close for each company in one plot. Make a simple comment on the plot. \nAnswer"
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q2a",
-    "href": "danl-hw/danl-m1-hw-4.html#q2a",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-5",
+    "href": "danl-hw/danl-m1-hw-4.html#question-5",
     "title": "Homework 4",
-    "section": "Q2a",
-    "text": "Q2a\nHow many parties have provided or disbursed positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018? \nAnswer"
+    "section": "Question 5",
+    "text": "Question 5\n\nFind the five most popular song.\n\nA value of a song is defined as a combination of a artist_name value and a track_name value.\nWho are artists for those ten most popular song?\n\n\nAnswer"
   },
   {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q2b",
-    "href": "danl-hw/danl-m1-hw-4.html#q2b",
+    "objectID": "danl-hw/danl-m1-hw-4.html#question-6",
+    "href": "danl-hw/danl-m1-hw-4.html#question-6",
     "title": "Homework 4",
-    "section": "Q2b",
-    "text": "Q2b\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year. \nAnswer"
-  },
-  {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q2c",
-    "href": "danl-hw/danl-m1-hw-4.html#q2c",
-    "title": "Homework 4",
-    "section": "Q2c",
-    "text": "Q2c\nFor each party, calculate the ratio between adaptation contribution and mitigation contribution for each type of Status for each year. \nAnswer"
-  },
-  {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q2d",
-    "href": "danl-hw/danl-m1-hw-4.html#q2d",
-    "title": "Homework 4",
-    "section": "Q2d",
-    "text": "Q2d\nProvide both seaborn code and a simple comment to describe the distribution of the ratio between adaptation contribution and mitigation contribution, which is calculated in Q2c. \nAnswer"
-  },
-  {
-    "objectID": "danl-hw/danl-m1-hw-4.html#q2e",
-    "href": "danl-hw/danl-m1-hw-4.html#q2e",
-    "title": "Homework 4",
-    "section": "Q2e",
-    "text": "Q2e\nProvide both seaborn code and a simple comment to describe how the distribution of Contribution varies by Type of support and Status. \nAnswer"
+    "section": "Question 6",
+    "text": "Question 6\n\nCreate a DataFrame that only contains observations from playlists featuring the song “One Dance” by Drake.\n\nNext, identify the song with the highest popularity after “One Dance” in the newly created DataFrame.\n\n\nAnswer"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-03.html",
@@ -186,7 +165,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nFiltering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nGroup Opeations [Lecture 5 slides may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -326,56 +305,70 @@
     "href": "danl-cw/danl-m1-cw-4.html",
     "title": "Classwork 4",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns"
+    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category)."
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#load-libraries",
-    "href": "danl-cw/danl-m1-cw-4.html#load-libraries",
+    "objectID": "danl-cw/danl-m1-cw-4.html#direction",
+    "href": "danl-cw/danl-m1-cw-4.html#direction",
     "title": "Classwork 4",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns"
+    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category)."
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#load-dataframe",
-    "href": "danl-cw/danl-m1-cw-4.html#load-dataframe",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-1",
+    "href": "danl-cw/danl-m1-cw-4.html#question-1",
     "title": "Classwork 4",
-    "section": "Load DataFrame",
-    "text": "Load DataFrame\n\nbeer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\nbeer_mkt.head(10)\n\n\nVariable Description\n\nhh: An identifier of the purchasing household;\n_purchase_desc: Details on the purchased item;\nquantity: Number of items purchased;\nbrand: BUD LIGHT, BUSCH LIGHT, COORS LIGHT, MILLER LITE, or NATURAL LIGHT;\nspent: Total dollar value of purchase;\nbeer_floz: Total volume of beer, in fluid ounces;\nprice_per_floz: Price per fl.oz. (i.e., spent/beer_floz);\ncontainer: Type of container;\npromo: Whether the item was promoted (coupon or something else);\nmarket: Scan-track market (or state if rural);\nvarious demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher."
+    "section": "Question 1",
+    "text": "Question 1\nOptimize the DataFrame for limited memory use and maximum utility by using the astype() method.\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#q1a",
-    "href": "danl-cw/danl-m1-cw-4.html#q1a",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-2",
+    "href": "danl-cw/danl-m1-cw-4.html#question-2",
     "title": "Classwork 4",
-    "section": "Q1a",
-    "text": "Q1a\n\nSort the DataFrame beer_mkt by hh in ascending order. \n\nAnswer"
+    "section": "Question 2",
+    "text": "Question 2\nFind all observations with a title of “Limitless”.\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#q1b",
-    "href": "danl-cw/danl-m1-cw-4.html#q1b",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-3",
+    "href": "danl-cw/danl-m1-cw-4.html#question-3",
     "title": "Classwork 4",
-    "section": "Q1b",
-    "text": "Q1b\n\nFind the top 5 beer markets in terms of the number of households that purchased beer. \n\nAnswer"
+    "section": "Question 3",
+    "text": "Question 3\nFind all observations with a director of “Robert Rodriguez” and a type of “Movie”.\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#q1c",
-    "href": "danl-cw/danl-m1-cw-4.html#q1c",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-4",
+    "href": "danl-cw/danl-m1-cw-4.html#question-4",
     "title": "Classwork 4",
-    "section": "Q1c",
-    "text": "Q1c\n\nFind the top 5 beer markets in terms of the amount of total beer consumption. \n\nAnswer"
+    "section": "Question 4",
+    "text": "Question 4\nFind all observations with either a date_added of “2019-07-31” or a director of “Robert Altman”.\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#q1d",
-    "href": "danl-cw/danl-m1-cw-4.html#q1d",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-5",
+    "href": "danl-cw/danl-m1-cw-4.html#question-5",
     "title": "Classwork 4",
-    "section": "Q1d",
-    "text": "Q1d\n\nProvide (1) seaborn code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand. \n\nAnswer"
+    "section": "Question 5",
+    "text": "Question 5\nFind all observations with a director of “Orson Welles”, “Aditya Kripalani”, or “Sam Raimi”.\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-4.html#q1e",
-    "href": "danl-cw/danl-m1-cw-4.html#q1e",
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-6",
+    "href": "danl-cw/danl-m1-cw-4.html#question-6",
     "title": "Classwork 4",
-    "section": "Q1e",
-    "text": "Q1e\n\nProvide (1) seaborn code and (2) a simple comment to describe how the relationship between price_per_floz and beer_floz varies by brand. \n\nAnswer"
+    "section": "Question 6",
+    "text": "Question 6\nFind all observations with a date_added value between May 1, 2019 and June 1, 2019.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-7",
+    "href": "danl-cw/danl-m1-cw-4.html#question-7",
+    "title": "Classwork 4",
+    "section": "Question 7",
+    "text": "Question 7\nDrop all rows with a NaN value in the director variable.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-4.html#question-8",
+    "href": "danl-cw/danl-m1-cw-4.html#question-8",
+    "title": "Classwork 4",
+    "section": "Question 8",
+    "text": "Question 8\nIdentify the days when Netflix added only one movie to its catalog.\nAnswer:"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-05-2024-0305.html#groupby-operations-split-apply-combine-1",
@@ -1372,333 +1365,284 @@
     "text": "Pandas Basics\nLet’s do Questions 2-6 in Part 2 of Classwork 3!"
   },
   {
+    "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
+    "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
+    "title": "Lecture 3",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nReferenes\n\n\nPandas in Action, Boris Paskhaver (Author), 2021, Manning"
+  },
+  {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values\n\nPandas marks missing text values and missing numeric values with a NaN (not a number) designation, and it marks missing datetime values with a NaT (not a time) designation.\nWe can use several pandas methods to isolate observations with either missing or non-missing values in a given variable."
+    "text": "Pandas Basics\n\n\nLet’s read employment.csv as emp.\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\n\nWhat values are in the Mgmt variable?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-1",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-1",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].isna()\nemp[\"Start Date\"].isna()\n\nThe isna() method returns a Boolean Series in which True denotes that a row’s value is missing."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"].astype(bool)\n\nThe astype() method converts a Series’ values to a different data type.\n\nIt accepts a single argument: the new data type.\nWe can pass either the data type or a string with its name."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-2",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-2",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].notna()\n~emp[\"Team\"].isna()\n\nThe notna() method returns the inverse Series, one in which True indicates that a row’s value is present.\nWe use the tilde symbol (~) to invert a Boolean Series.\nQ. How can we pull out employees with non-missing First Name?"
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"] = emp[\"Mgmt\"].astype(bool)\n\nThe above code overwrites the Mgmt variable with our new Series of Booleans."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-3",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-3",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\",\n                  parse_dates = [\"Start Date\"])\nemp.dropna()\n\nThe dropna() method removes observations that hold any NaN or NaT values"
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Salary\"].astype(int)\n\nThe above code tries to coerce the Salary variable’s values to integers with the astype() method.\n\nPandas is unable to convert the NaN values to integers."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-4",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-4",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with how\nemp.dropna(how = \"all\")\n\nWe can pass the how parameter an argument of \"all\" to remove observations in which all values are missing.\nNote that the how parameter’s default argument is \"any\"."
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"].fillna(0)\n\nThe fillna() method replaces a Series’ missing values with the argument we pass in.\nThe above example provides a fill value of 0.\n\nNote that your choice of value can distort the data; 0 is passed solely for the sake of example."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-5",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-5",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Gender\"])\n\nWe can use the subset parameter to target observations with a missing value in a specific variable.\n\nThe above example removes observations that have a missing value in the Gender variable."
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0).astype(int)\n\nThe above code overwrites the Salary variable with our new Series of integers."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-6",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-6",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Start Date\", \"Salary\"])\n\nWe can also pass the subset parameter a list of variables."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\nPandas includes a special data type called a category, - It is ideal for a variable consisting of a small number of unique values relative to its total size. - E.g., gender, weekdays, blood types, planets, and income groups."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-7",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-7",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with thresh\nemp.dropna(thresh = 4)\n\nThe thresh parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it."
+    "text": "Pandas Basics\nConverting Data Types with the pd.to_datetime() method\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-8",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-8",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nMissing values are a common occurrence in messy data sets, and so are duplicate values.\nemp[\"Team\"].duplicated()\n\nThe duplicated() method returns a Boolean Series that identifies duplicates in a variable."
+    "text": "Pandas Basics\nLet’s do Question 1 in Classwork 4!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-9",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-9",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWe may often not know the index labels and positions of the observations we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-10",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-10",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates()\n\nThe drop_duplicates() method removes rows in which all values are equal to those in a previously encountered observations."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-11",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-11",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass thedrop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[ emp[\"First Name\"] == \"Donna\" ]\n\nTo filter observations, we provide the Boolean Series between square brackets following the DataFrame.\n\nDataFrame[ Boolean_Series ]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-12",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-12",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Gender\", \"Team\"])\n\nThe above example uses a combination of values across the Gender and Team variables to identify duplicates."
+    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[donnas]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-13",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-13",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"], keep = \"last\")\nemp.drop_duplicates(subset = [\"Team\"], keep = False)\nemp.drop_duplicates(subset = [\"First Name\"], keep = False)\n\nThe drop_duplicates() method also accepts a keep parameter.\n\nWe can pass it an argument of \"last\" to keep the observations with each duplicate value’s last occurrence.\nWe can pass it an argument of False to exclude all observations with duplicate values.\n\nQ. What does emp.drop_duplicates(subset = [\"First Name\"], keep = False) do?\nQ. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame emp.drop_duplicates(subset = [\"Gender\", \"Team\"])."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-14",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-14",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 7-8 in Part 1 of Classwork 4!"
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to retrieve all the managers in the company? Managers have a value of True in the Mgmt variable.\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-15",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-15",
     "title": "Lecture 4",
-    "section": "Making Changes to Series and DataFrames",
-    "text": "Making Changes to Series and DataFrames\nModifying Columns with .assign()\n\n(0)(1)(2)\n\n\n\nLet’s create a new set of columns that contain the datetime representations of the object (string) dates.\n\n## format the 'Born' column as a datetime\nborn_datetime = pd.to_datetime( scientists['Born'] )\ndied_datetime = pd.to_datetime( scientists['Died'] )\n\nscientists['born_dt'], scientists['died_dt'] = (\n  born_datetime,\n  died_datetime\n)\n\nscientists['age_days'] =  scientists['died_dt'] - scientists['born_dt']\n\n\n\nLet’s create the age_year_assign column using .assign().\n\nscientists = scientists.assign(\n  ## new columns on the left of the equal sign\n  ## how to calculate values on the right of the equal sign\n  ## separate new columns with a comma\n  age_days_assign = scientists['died_dt'] - scientists['born_dt'],\n  age_year_assign = scientists['age_days'].astype('timedelta64[Y]')\n)\n\n\n\nIn the previous panel, we had to use age_days to create age_year_assign.\n\nTo be able to use age_days_assign when calculating age_year_assign in the previous panel, we need to know about lambda functions.\n\n\nscientists = scientists.drop( ['age_days'], axis = 1)  ## to drop age_days\nscientists = scientists.assign(\n  age_days_assign = scientists['died_dt'] - scientists['born_dt'],\n  age_year_assign = lambda some_df: \n    some_df['age_days_assign'].astype('timedelta64[Y]') \n)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nhigh_earners = emp[\"Salary\"] &gt; 100000\nemp[ high_earners ]\n\nWe can also use arithmetic operands to filter observations based on mathematical conditions."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-data-structures-basics-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-data-structures-basics-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-16",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-16",
     "title": "Lecture 4",
-    "section": "Pandas Data Structures Basics",
-    "text": "Pandas Data Structures Basics\nLambda functions\n\n(1)(2)(3)(4)(5)\n\n\n\nPython has support for so-called anonymous or lambda functions.\n\nLambda functions are a way of writing functions consisting of a single statement, the result of which is the return value.\nA syntax for a lambda function is lambda ARGUMENTS : EXPRESSION\n\n\ndef short_function(x):\n  return x * 2\n\nequiv_anon = lambda x: x * 2\nshort_function(2)\nequiv_anon(2)\n\n\n\nA lambda function can have multiple arguments:\n\nfn_two = lambda a, b : a * b\nfn_two(1, 2)\n\nfn_three = lambda a, b, c : a + b + c\nfn_two(1, 2, 3)\n\n\n\nThe power of lambda is better shown when we use them as an anonymous function inside another function.\n\nSay we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:\n\n\ndef myfunc(n):\n  return lambda a : a * n\n\n\n\n\n\nUse that function definition to make a function that always doubles the number we send in:\n\ndef myfunc(n):\n  return lambda a : a * n\n\nmy_doubler = myfunc(2)\nmy_doubler(10)\n\n\nUse the same function definition to make a function that always triples the number we send in:\n\ndef myfunc(n):\n  return lambda a : a * n\n\nmy_tripler = myfunc(3)\nmy_tripler(10)\n\n\n\n\n\nHere is the example of applying a lambda function to single variable in DataFrame using .assign()\n\nvalues= [['Rohan',182],['Elvish',100],['Deepak',198],\n         ['Soni',160],['Radhika',140],['Vansh',180]]\ndf = pd.DataFrame(values, columns = ['name','tot_marks'])\n \n## Applying lambda function to find percentage of 'tot_marks' column\n## using df.assign()\ndf = df.assign( percentage = \n  lambda some_name: (some_name['tot_marks'] /200 * 100) )"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ]\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-17",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-17",
     "title": "Lecture 4",
-    "section": "The DataFrame",
-    "text": "The DataFrame\nSubsetting Multiple Rows and Columns"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[on_star_teams]\n\nWhat if our next report asked for employees from 15 teams instead of three?\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, Series) and returns a Boolean Series."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-18",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-18",
     "title": "Lecture 4",
-    "section": "The DataFrame",
-    "text": "The DataFrame\nBoolean Subsetting\n\nSeriesDataFrameQ.\n\n\n\nWe can not only subset values using labels and indices, but also supply a vector of boolean values.\nBoolean subsetting of numeric Series works as follows:\n\nSeries[ Series &gt; VALUE  ]\nSeries[ Series == VALUE  ]\nSeries[ Series &lt; VALUE  ]\n\n\n\n\n\nBoolean subsetting of DataFrames works like boolean subsetting a Series.\n\nDataFrame[ DataFrame['VARIABLE_NAME'] &gt; VALUE  ]\nDataFrame[ DataFrame['VARIABLE_NAME'] == VALUE  ]\nDataFrame[ DataFrame['VARIABLE_NAME'] &lt; VALUE  ]\n\n\nimport pandas as pd\nscientists = read_csv('data/scientists.csv')  \n\n## What if we want to subset our ages by identifying those above the mean?\nscientists.loc[ scientists['Age'] &gt; scientists['Age'].mean() ]\n\n\n\nConsider the two Series, area and pop:\n\narea = pd.Series({'California': 423967, 'Texas': 695662,\n                  'New York': 141297, 'Florida': 170312,\n                  'Illinois': 149995})\npop = pd.Series({'California': 38332521, 'Texas': 26448193,\n                 'New York': 19651127, 'Florida': 19552860,\n                 'Illinois': 12882135})\n\nUse boolean subsetting to find states whose population density is greater than 100 or less than 50."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#the-dataframe-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-19",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-19",
     "title": "Lecture 4",
-    "section": "The DataFrame",
-    "text": "The DataFrame\nSubsetting Rows with .query()\n\nWe can also subset rows based on a condition using DataFrame.query():\n\n\nData.query() (1)(2)(3)(4)\n\n\ndf = pd.DataFrame(\n    ## array with numbers from 0 to 35, 6 rows and 6 columns\n    data = np.reshape( range(36), (6, 6) ),\n    index = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"],\n    columns = [\"col\" + str(i) for i in range(6)],\n    dtype = float,\n)\ndf[\"col6\"] = [\"apple\", \"orange\", \"pineapple\", \"mango\", \"kiwi\", \"lemon\"]\ndf\n\n\n\nSelect rows if a value of col6 is “kiwi” or “pineapple”:\n\ndf.query(\"col6 == 'kiwi' or col6 == 'pineapple'\")\n\nSelect rows if a value of col0 is greater than 6:\n\ndf.query(\"col0 &gt; 6\")\n\n\n\nSelect flights that departed on January 1:\n\n## download NY_flights.csv from the Files section in Canvas\nflights = pd.read_csv(\"data/NY_flights.csv\")\nflights.head()\n\nflights.query(\"month == 1 and day == 1\")\n\n\n\nSelect penguins whose bill_length_mm is smaller than 1.8 * bill_depth_mm.\n\nimport seaborn as sns\npenguins = sns.load_dataset(\"penguins\")\npenguins.head()\n\npenguins.query('bill_length_mm &lt; bill_depth_mm*1.8')\n\n\n\nObjects not in DataFrame can be referenced with an @ character like@a + b.\n\noutside_var = 21\npenguins.query('bill_depth_mm &gt; @outside_var')"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ]\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True:"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#the-series-and-the-dataframe",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#the-series-and-the-dataframe",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-20",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-20",
     "title": "Lecture 4",
-    "section": "The Series and the DataFrame",
-    "text": "The Series and the DataFrame\nSorting and Ranking\n\nLet’s consider .sort_index() and .sort_values() methods:\n\n\nSeries\n\n\n\nSeries.sort_index(ascending=False) sorts Series by index in descending order.\nSeries.sort_values(ascending=False) sorts Series by value in descending order.\n\nrev_ages = ages.sort_index(ascending =False) \nsorted_ages = ages.sort_values(ascending =False) \n] ## DataFrame - DataFrame.sort_index(ascending=False) sorts DataFrame by index in descending order. - DataFrame.sort_values(by = \"VAR\", ascending=False) sorts DataFrame by value of VAR in descending order.\nrev_ages = scientists.sort_index(ascending =False) \nsorted_df = scientists.sort_values(by = 'Age', \n                                   ascending =False)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[between_90k_and_100k]\n\nA slightly cleaner solution is to use a method called between()\n\nIt returns a Boolean Series where True denotes that a row’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#the-series-and-the-dataframe-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#the-series-and-the-dataframe-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-21",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-21",
     "title": "Lecture 4",
-    "section": "The Series and the DataFrame",
-    "text": "The Series and the DataFrame\nSorting and Ranking\n\nIn Pandas, there are a variety of ranking functions with .rank().\n\n\nexamplemethod (1)method (2)na_optionpct\n\n\n\nConsider the following DataFrame.\n\nimport numpy as np\ndf = pd.DataFrame(data={'Animal': ['fox', 'Kangaroo', 'deer',\n                                   'spider', 'snake'],\n                        'Number_legs': [4, 2, 4, 8, np.nan]})\ndf\n\n\n\n.rank(method = \"min\", ascending=False) does give the largest values the smallest ranks.\n.rank(method = \"dense\", ascending=False) does give the largest values the smallest ranks without any gaps between ranks when breaking ties.\n.rank(method = \"average\", ascending=False) calculates the average rank for each unique value.\n\n\n\ndf['default_rank'] = df['Number_legs'].rank(ascending = False)  ## method = 'average'\ndf['min_rank'] = df['Number_legs'].rank(method='min', ascending = False)\ndf['dense_rank'] = df['Number_legs'].rank(method='dense', ascending = False)\ndf\n\n\n\nna_option = keep assigns NaN rank to NaN values (default).\nna_option = top assign smallest rank to NaN values if ascending\nna_option = bottom assign highest rank to NaN values if ascending\n\ndf['NA_bottom'] = df['Number_legs'].rank(na_option='bottom')\ndf['NA_top'] = df['Number_legs'].rank(na_option='top')\ndf\n\n\n\npct = True displays the returned rankings in percentile form.\n\n\ndf['pct_rank'] = df['Number_legs'].rank(pct=True)\ndf"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[name_starts_with_t]\n\nWe can also apply the between() method to string variables."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-22",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-22",
     "title": "Lecture 4",
-    "section": "Making Changes to Series and DataFrames",
-    "text": "Making Changes to Series and DataFrames\nDropping Values\n\nColumnsRows\n\n\n\nTo drop a column, we can select columns to drop with the .drop() method with axis = 1 or axis = \"columns\" on our dataframe.\n\n## all the current columns in our data\nscientists.columns\n\n## drop the shuffled age column\n## we provide the axis=1 argument to drop column-wise\nscientists_dropped = scientists.drop( ['Age'], axis =\"columns\")\nscientists_dropped.columns\n\n\n\nTo drop rows, we can select rows by index to drop with the .drop() method with axis = 0, which is default.\n\n## all the current columns in our data\nscientists.columns\n\n## drop rows by their indices\nscientists_rows_dropped = scientists.drop( [2, 4, 6] )\nscientists_rows_dropped"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition with the query() method\n# Below two are equivalent\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 and Team == 'Finance'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\nThe query() method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#making-changes-to-series-and-dataframes-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-23",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-23",
     "title": "Lecture 4",
-    "section": "Making Changes to Series and DataFrames",
-    "text": "Making Changes to Series and DataFrames\nModifying Columns with .assign()\n\n(0)(1)(2)\n\n\n\nLet’s create a new set of columns that contain the datetime representations of the object (string) dates.\n\n## format the 'Born' column as a datetime\nborn_datetime = pd.to_datetime( scientists['Born'] )\ndied_datetime = pd.to_datetime( scientists['Died'] )\n\nscientists['born_dt'], scientists['died_dt'] = (\n  born_datetime,\n  died_datetime\n)\n\nscientists['age_days'] =  scientists['died_dt'] - scientists['born_dt']\n\n\n\nLet’s create the age_year_assign column using .assign().\n\nscientists = scientists.assign(\n  ## new columns on the left of the equal sign\n  ## how to calculate values on the right of the equal sign\n  ## separate new columns with a comma\n  age_days_assign = scientists['died_dt'] - scientists['born_dt'],\n  age_year_assign = scientists['age_days'].astype('timedelta64[Y]')\n)\n\n\n\nIn the previous panel, we had to use age_days to create age_year_assign.\n\nTo be able to use age_days_assign when calculating age_year_assign in the previous panel, we need to know about lambda functions.\n\n\nscientists = scientists.drop( ['age_days'], axis = 1)  ## to drop age_days\nscientists = scientists.assign(\n  age_days_assign = scientists['died_dt'] - scientists['born_dt'],\n  age_year_assign = lambda some_df: \n    some_df['age_days_assign'].astype('timedelta64[Y]') \n)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 2-6 in Classwork 4!"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-data-structures-basics-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-data-structures-basics-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-24",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-24",
     "title": "Lecture 4",
-    "section": "Pandas Data Structures Basics",
-    "text": "Pandas Data Structures Basics\nLambda functions\n\n(1)(2)(3)(4)(5)\n\n\n\nPython has support for so-called anonymous or lambda functions.\n\nLambda functions are a way of writing functions consisting of a single statement, the result of which is the return value.\nA syntax for a lambda function is lambda ARGUMENTS : EXPRESSION\n\n\ndef short_function(x):\n  return x * 2\n\nequiv_anon = lambda x: x * 2\nshort_function(2)\nequiv_anon(2)\n\n\n\nA lambda function can have multiple arguments:\n\nfn_two = lambda a, b : a * b\nfn_two(1, 2)\n\nfn_three = lambda a, b, c : a + b + c\nfn_two(1, 2, 3)\n\n\n\nThe power of lambda is better shown when we use them as an anonymous function inside another function.\n\nSay we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:\n\n\ndef myfunc(n):\n  return lambda a : a * n\n\n\n\n\n\nUse that function definition to make a function that always doubles the number we send in:\n\ndef myfunc(n):\n  return lambda a : a * n\n\nmy_doubler = myfunc(2)\nmy_doubler(10)\n\n\nUse the same function definition to make a function that always triples the number we send in:\n\ndef myfunc(n):\n  return lambda a : a * n\n\nmy_tripler = myfunc(3)\nmy_tripler(10)\n\n\n\n\n\nHere is the example of applying a lambda function to single variable in DataFrame using .assign()\n\nvalues= [['Rohan',182],['Elvish',100],['Deepak',198],\n         ['Soni',160],['Radhika',140],['Vansh',180]]\ndf = pd.DataFrame(values, columns = ['name','tot_marks'])\n \n## Applying lambda function to find percentage of 'tot_marks' column\n## using df.assign()\ndf = df.assign( percentage = \n  lambda some_name: (some_name['tot_marks'] /200 * 100) )"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values\n\nPandas marks missing text values and missing numeric values with a NaN (not a number) designation, and it marks missing datetime values with a NaT (not a time) designation.\nWe can use several pandas methods to isolate observations with either missing or non-missing values in a given variable."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exporting-and-importing-data-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exporting-and-importing-data-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-25",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-25",
     "title": "Lecture 4",
-    "section": "Exporting and Importing Data",
-    "text": "Exporting and Importing Data\nComma-Separated Values (CSV)\n\nComma-separated values (CSV) are the most flexible data storage type.\n\nFor each row, the column information is separated with a comma.\n\nTo export Series or DataFrame as a csv file, we use the to_csv() method.\n\n## index =False  does not write the row names in the CSV output\nscientists.to_csv('output/scientists_df_no_index.csv', \n                   index =False)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].isna()\nemp[\"Start Date\"].isna()\n\nThe isna() method returns a Boolean Series in which True denotes that a row’s value is missing."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exporting-and-importing-data-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exporting-and-importing-data-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-26",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-26",
     "title": "Lecture 4",
-    "section": "Exporting and Importing Data",
-    "text": "Exporting and Importing Data\nExcel\n\nThe more of your work you can do in Python and/or R, the easier it will be to scale up to larger projects, catch and fix mistakes, and collaborate.\nHowever, Excel’s popularity and market share are unrivaled.\nTo export Series or DataFrame as an .xlsx file, we use the to_excel() method.\n\n## saving a DataFrame into Excel format\nscientists.to_excel(\n  \"output/scientists_df.xlsx\",\n  sheet_name = \"scientists\",\n  index = False)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].notna()\n~emp[\"Team\"].isna()\n\nThe notna() method returns the inverse Series, one in which True indicates that a row’s value is present.\nWe use the tilde symbol (~) to invert a Boolean Series.\nQ. How can we pull out employees with non-missing First Name?"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-27",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-27",
     "title": "Lecture 4",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\n\nHere we discuss how to use summary statistics and visualization to explore your data in a systematic way, a task that statisticians call exploratory data analysis (EDA).\nEDA is an iterative cycle. We:\n\nGenerate questions about your data.\nSearch for answers by visualizing, transforming, and modelling our data.\nUse what we learn to refine our questions and/or generate new questions.\n\nHere, we focus on the visualization part."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\",\n                  parse_dates = [\"Start Date\"])\nemp.dropna()\n\nThe dropna() method removes observations that hold any NaN or NaT values"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-28",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-28",
     "title": "Lecture 4",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nTidy data.frame\n\n\nIn a tidy DataFrame,\n\nA variable is in a column.\nAn observation is in a row.\nA value are in a cell."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with how\nemp.dropna(how = \"all\")\n\nWe can pass the how parameter an argument of \"all\" to remove observations in which all values are missing.\nNote that the how parameter’s default argument is \"any\"."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-29",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-29",
     "title": "Lecture 4",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nTidy data.frame\n\nA variable is a quantity, quality, or property that we can measure/count.\nAn observation is a set of measurements made under similar conditions (e.g, similar unit of entity, time, and/or geography).\n\nWe usually make all of the measurements in an observation at the same time and on the same object.\nAn observation will contain several values, each associated with a different variable.\nWe sometimes refer to an observation as a data point.\n\nThe value of a variable may change from measurement to measurement."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Gender\"])\n\nWe can use the subset parameter to target observations with a missing value in a specific variable.\n\nThe above example removes observations that have a missing value in the Gender variable."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-3",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-3",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-30",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-30",
     "title": "Lecture 4",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nCategorical/Discrete vs. Continuous Variables\n\nA discrete/categorical variable is a variable whose value is obtained by counting and is whole numbers.\n\nNumber of red marbles in a jar\nNumber of heads when flipping three coins\nStudents’ letter grade\nUS state/county\n\nA continuous variable is a variable whose value is obtained by measuring and can have a decimal or fractional value.\n\nHeight/weight of students\nTime it takes to get to school\nFuel efficiency of a vehicle (e.g., miles per gallon)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Start Date\", \"Salary\"])\n\nWe can also pass the subset parameter a list of variables."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-4",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#exploratory-data-analysis-4",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-31",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-31",
     "title": "Lecture 4",
-    "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nMaking Discoveries from a Data Set\n\nDistributionRelationshipStepsTypesSummary Stat.\n\n\n\nWhat type of variation occurs within a variable?\nVariation is the tendency of the values of a variable to change from measurement to measurement.\n\nWe can see variation easily in real life; if we measure any continuous variable twice, we will be likely to get two different values.\nWhich values are the most common? Why?\nWhich values are rare? Why? Does that match your expectations?\nCan we see any unusual patterns? What might explain them?\n\n\n\n\n\nCo-variation is the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\n\n\n\nFigure out whether variables of interests are categorical or continuous.\nThink which geometric objects, aesthetic mappings, and faceting are appropriate to visualize distributions and relationships.\nIf needed, transform a given DataFrame (e.g., subset of observations, new variables, summarized data) and try new visualizations.\n\n\n\n\nA distribution of a categorical variable (e.g., bar charts and more)\nA distribution of a continuous variable (e.g., histograms and more)\nA relationship between two categorical variables (e.g., bar charts and more)\nA relationship between two continuous variables (e.g., scatter plots and more)\nA relationship between a categorical variable and a continuous variable (e.g., boxplots and more)\nA time trend of a categorical variable (e.g., bar plots and more)\nA time trend of a continuous variable (e.g., line plots and more)\n\n\n\n\nUse skim(DataFrame) or .describe() to know:\n\nMean (Average, Expected Value);\nStandard Deviation (SD)\nMinimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with thresh\nemp.dropna(thresh = 4)\n\nThe thresh parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-32",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-32",
     "title": "Lecture 4",
-    "section": "Data Visualization",
-    "text": "Data Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphs and charts let us explore and learn about the structure of the information we have in DataFrame.\nGood data visualizations make it easier to communicate our ideas and findings to other people."
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nMissing values are a common occurrence in messy data sets, and so are duplicate values.\nemp[\"Team\"].duplicated()\n\nThe duplicated() method returns a Boolean Series that identifies duplicates in a variable."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#seaborn",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#seaborn",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-33",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-33",
     "title": "Lecture 4",
-    "section": "seaborn",
-    "text": "seaborn\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\nIt also provides a general improvement in the default appearance of matplotlib-produced plots, and so I recommend using it by default.\n\n\nimport seaborn as sns\nsns.set_theme(rc={'figure.dpi': 600, \n                  'figure.figsize': (5, 3.75)})   ## better quality"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-1",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-1",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-34",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-34",
     "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nGetting started with seaborn\n\nLet’s get the names of DataFrames provided by the seaborn library:\n\nimport seaborn as sns\nprint( sns.get_dataset_names() )\n\nLet’s use the titanic and tips DataFrames:\n\ntitanic = sns.load_dataset('titanic')\ntitanic.head()\ntips = sns.load_dataset('tips')\ntips.head()"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates()\n\nThe drop_duplicates() method removes rows in which all values are equal to those in a previously encountered observations."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-2",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-2",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-35",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-35",
     "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nBar Chart\n\nA bar chart is used to plot the frequency of the different categories.\n\nIt is useful to visualize how values of a categorical variable are distributed.\nA variable is categorical if it can only take one of a small set of values.\n\nWe use sns.countplot() function to plot a bar chart:\n\n\n\nsns.countplot(data = titanic,\n              x =  'sex')\n\n\nMapping\n\ndata: DataFrame.\nx: Name of a categorical variable (column) in DataFrame"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass thedrop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-3",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-3",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-36",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-36",
     "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nBar Chart\n\nWe can further break up the bars in the bar chart based on another categorical variable.\n\nThis is useful to visualize the relationship between the two categorical variables.\n\n\n\n\nsns.countplot(data = titanic,\n              x = 'sex'\n              hue = 'survived')\n\n\nMapping\n\nhue: Name of a categorical variable"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Gender\", \"Team\"])\n\nThe above example uses a combination of values across the Gender and Team variables to identify duplicates."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-4",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-4",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-37",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-37",
     "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nHistogram\n\nA histogram is a continuous version of a bar chart.\n\nIt is used to plot the frequency of the different values.\nIt is useful to visualize how values of a continuous variable are distributed.\n\nWe use sns.histplot() function to plot a histogram: :::: {.columns} ::: {.column width=“50%”}\n\nsns.histplot(data = titanic,\n             x =  'age', \n             bins = 5)\n:::\n\n\nMapping\n\nbins: Number of bins\n\n\n\n::::"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"], keep = \"last\")\nemp.drop_duplicates(subset = [\"Team\"], keep = False)\nemp.drop_duplicates(subset = [\"First Name\"], keep = False)\n\nThe drop_duplicates() method also accepts a keep parameter.\n\nWe can pass it an argument of \"last\" to keep the observations with each duplicate value’s last occurrence.\nWe can pass it an argument of False to exclude all observations with duplicate values.\n\nQ. What does emp.drop_duplicates(subset = [\"First Name\"], keep = False) do?\nQ. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame emp.drop_duplicates(subset = [\"Gender\", \"Team\"])."
   },
   {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-5",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-5",
+    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-38",
+    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-38",
     "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nHistogram\n\nA boxplot computes a summary of the distribution and then display a specially formatted box.\n\nIt is useful to visualize how values of a continuous variable are distributed across different values of another (categorical) variable.\n\nWe use sns.histplot() function to plot a histogram: :::: {.columns} ::: {.column width=“50%”}\n\nsns.boxplot(data = tips,\n             y='total_bill')\n:::\n\nsns.boxplot(data = tips,\n            x='time', y='total_bill')\n\n::::"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-6",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-6",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nScatter plot\n\nA scatter plot is used to display the relationship between two continuous variables.\n\nWe can see co-variation as a pattern in the scattered points.\n\nWe use sns.scatterplot() function to plot a scatter plot:\n\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip')\n\n\nMapping\n\nx: Name of a continuous variable on the horizontal axis\ny: Name of a continuous variable on the vertical axis"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-7",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-7",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nScatter plot\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nSuppose we are interested in the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                hue = 'smoker')"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-8",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-8",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nFitted line\n\nFrom the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.\n\nsns.lmplot() adds a line that fits well into the scattered points.\nOn average, the fitted line describes the relationship between two continuous variables.\n\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip')"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-9",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-9",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nTransparency with alpha\n\nIn a scatter plot, adding transparency with alpha helps address many data points on the same location.\n\nWe can map alpha to number between 0 and 1.\n\n\n\n\nsns.scatterplot(x = 'total_bill', \n                y = 'tip',\n                hue = 'smoker',\n                alpha = .25)\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip',\n           scatter_kws = {'alpha' : 0.2})"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-10",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-10",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nScatter plot\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nUsing the fitted lines, let’s answer the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                hue = 'smoker')"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-11",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-11",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nLine cahrt\n\nA line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.\n\nIt draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.\n\nWe use sns.lineplot() function to plot a line plot:\n\n\n\npath_csv = 'https://bcdanl.github.io/data/dji.csv'\ndow = pd.read_csv(path_csv, index_col=0, parse_dates=True)\nsns.lineplot(data = dow,\n             x =  'Date', \n             y =  'Close')\n\n\nMapping\n\nx: Name of a continuous variable (often time variable) on the horizontal axis\ny: Name of a continuous variable on the vertical axis"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-12",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-12",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nLine cahrt\n\nFor line charts, we often need to group or connect observations to visualize the number of distinct lines.\n\nhealthexp = ( sns.load_dataset(\"healthexp\")\n             .sort_values([\"Country\", \"Year\"])\n             .query(\"Year &lt;= 2020\") )\nhealthexp.head()\n\nsns.lineplot(data = dow,\n             x =  'Year', \n             y =  'Life_Expectancy',\n             color = 'Country')"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-13",
-    "href": "danl-lec/danl-m1-lec-04-2024-0227.html#data-visualization-with-seaborn-13",
-    "title": "Lecture 4",
-    "section": "Data Visualization with seaborn",
-    "text": "Data Visualization with seaborn\nFaceting\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\nStep 1. FacetGrid()Step2. FacetGrid().map()\n\n\n\nFirst, we create a FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\n\ng = sns.FacetGrid(\n      data = titanic,\n      row='class',\n      col='sex')\n\n\n\nSecodn, we use the FacetGrid().map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\ng.map(sns.histplot, 'age', kde=True)  ## kde: kernel density (probability density function)"
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 7-8 in Classwork 4!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
@@ -2436,55 +2380,6 @@
     "text": "Who is the oldest player on the Kansas City Chiefs roster, and what is his birthday?\nAnswer:"
   },
   {
-    "objectID": "danl-cw/danl-m1-cw-3.html#direction-1",
-    "href": "danl-cw/danl-m1-cw-3.html#direction-1",
-    "title": "Classwork 3",
-    "section": "Direction",
-    "text": "Direction\n\n\n\nThe netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category)."
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-1-1",
-    "href": "danl-cw/danl-m1-cw-3.html#question-1-1",
-    "title": "Classwork 3",
-    "section": "Question 1",
-    "text": "Question 1\nOptimize the DataFrame for limited memory use and maximum utility by using the astype() method.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-2-1",
-    "href": "danl-cw/danl-m1-cw-3.html#question-2-1",
-    "title": "Classwork 3",
-    "section": "Question 2",
-    "text": "Question 2\nFind all observations with a title of “Limitless”.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-3-1",
-    "href": "danl-cw/danl-m1-cw-3.html#question-3-1",
-    "title": "Classwork 3",
-    "section": "Question 3",
-    "text": "Question 3\nFind all observations with a director of “Robert Rodriguez” and a type of “Movie”.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-4-1",
-    "href": "danl-cw/danl-m1-cw-3.html#question-4-1",
-    "title": "Classwork 3",
-    "section": "Question 4",
-    "text": "Question 4\nFind all observations with either a date_added of “2019-07-31” or a director of “Robert Altman”.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-5",
-    "href": "danl-cw/danl-m1-cw-3.html#question-5",
-    "title": "Classwork 3",
-    "section": "Question 5",
-    "text": "Question 5\nFind all observations with a director of “Orson Welles”, “Aditya Kripalani”, or “Sam Raimi”.\nAnswer:"
-  },
-  {
-    "objectID": "danl-cw/danl-m1-cw-3.html#question-6",
-    "href": "danl-cw/danl-m1-cw-3.html#question-6",
-    "title": "Classwork 3",
-    "section": "Question 6",
-    "text": "Question 6\nFind all observations with a date_added value between May 1, 2019 and June 1, 2019.\nAnswer:"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
@@ -2545,7 +2440,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting, Indexing, and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
@@ -2566,7 +2461,7 @@
     "href": "danl-hw/danl-m1-hw-3.html",
     "title": "Homework 3",
     "section": "",
-    "text": "Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:\n\ndanl-m1-hw3-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m2-hw3-choe-byeonghak.ipynb )\n\nThe due is February 27, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
+    "text": "Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:\n\ndanl-m1-hw3-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw3-choe-byeonghak.ipynb )\n\nThe due is February 27, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html#variable-description",
@@ -2629,13 +2524,6 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nGroup Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
-    "href": "danl-lec/danl-m1-lec-03-2024-0220.html#pandas-basics-55",
-    "title": "Lecture 3",
-    "section": "Pandas Basics",
-    "text": "Pandas Basics\nReferenes\n\n\nPandas in Action, Boris Paskhaver (Author), 2021, Manning"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nReshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]

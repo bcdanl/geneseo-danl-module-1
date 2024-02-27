@@ -1,6 +1,6 @@
 ---
 title: Homework 4
-subtitle: Group Operations with GroupBy Objects [Homework 4 may be subject to change during the Module.]
+subtitle: Pandas Basics - Filtering Data 
 date: 2024-02-27
 execute: 
   echo: false
@@ -12,7 +12,10 @@ comments: false
 ---
 
 ```{r}
-#| echo: false
+#| include: false
+
+library(tidyverse)
+library(DT)
 
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
@@ -20,188 +23,212 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Direction
 
--   Write a Python code to answer each question.
+
+- Please submit your Jupyter Notebook for Homework 4 to the Brightspace with the name below:
+
+  - `danl-m1-hw4-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-m1-hw4-choe-byeonghak.ipynb` )
+
+- The due is March 5, 2024, 7:00 P.M.
+
+- Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
+
+-   Please prepare a Jupyter/Python Notebook (`*.ipynb`) to address all questions.
 
 -   Make at least some simple comment (`# ...`) in each question.
 
--   Import Python libraries you need here.
+-   Make one text cell to explain things in each question.
+
+<br>
+
+# Load Libraries
+
+Import the `pandas` library.
 
 ```{python}
+#| echo: true
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
+```
+
+
+<br>
+
+# Part 1
+
+Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
+
+```{python}
+#| echo: true
+nyc_payroll = pd.read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv')
+```
+
+<div style="position: relative;">
+  <button onclick="scrollTable(-200)" style="position: absolute; z-index: 1000; top: 0; left: 70px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">←</button>
+  <button onclick="scrollTable(200)" style="position: absolute; z-index: 1000; top: 0; left: 95px; border: 1px solid grey; width: 25px; height: 41px; background-color: #ededed;">→</button>
+</div>
+
+
+<script>
+function scrollTable(offset) {
+  // Ensure we're targeting the scroll body of the DataTable specifically
+  var scrollBody = $('#exampleTable .dataTables_scrollBody');
+  
+  // Check if the scrollBody is found
+  console.log(scrollBody.length); // For debugging, should be 1 if found
+  
+  scrollBody.animate({
+    scrollLeft: '+=' + offset
+  }, 'fast');
+}
+</script>
+
+
+```{r}
+#| eval: true
+#| echo: false
+DT:::datatable(readr::read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv'), 
+          extensions = c('Buttons','FixedColumns'),
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv'),
+            scrollX = TRUE,
+            fixedColumns = list(leftColumns = 2)
+            ), 
+          elementId = "exampleTable"
+          )
+```
+
+## Variable Description
+- `Fiscal Year`: Fiscal Year;
+- `Payroll Number`:	Payroll Number;
+- `Agency Name`: The Payroll agency that the employee works for;
+- `Last Name`: Last name of employee;
+- `First Name`: First name of employee;
+- `Mid Init`: Middle initial of employee;
+- `Agency Start Date`: Date which employee began working for their current agency;
+- `Work Location Borough`: Borough of employee's primary work location;
+- `Title Description`: Civil service title description of the employee;
+- `Leave Status as of June 30`: Status of employee as of the close of the relevant fiscal year;
+- `Base Salary`: Base Salary assigned to the employee;
+- `Pay Basis`: Lists whether the employee is paid on an hourly, per diem or annual basis;
+- `Regular Hours`: Number of regular hours employee worked in the fiscal year;
+- `Regular Gross Paid`: The amount paid to the employee for base salary during the fiscal year;
+- `OT Hours`: Overtime Hours worked by employee in the fiscal year;
+- `Total OT Paid`: Total overtime pay paid to the employee in the fiscal year;
+- `Total Other Pay`: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable.
+<br><br>
+
+## Question 1
+
+- How many employees have a "Base Salary" within the top 10% of the DataFrame?
+  - Hint: The `.quantile()` method can be useful.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+<br><br>
+
+
+## Question 2
+Filter the DataFrame for employees who have "OT Hours" greater than 0 but less than 100, and their "Leave Status as of June 30" is "ACTIVE".
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 3
+Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and count how many there are.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 4
+- Identify the employee(s) with the highest "Total OT Paid" in the DataFrame. 
+  - Include their "First Name", "Last Name", and "Total OT Paid".
+
+
+*Answer*
+```{python}
+
 ```
 
 <br><br><br>
 
-# Question 1
+# Part 2
 
-Consider the `stock` DataFrame for Question 1.
-
-```{python}
-#| echo: true
-path = 'https://bcdanl.github.io/data/stocks2013_2023.csv'
-stock = pd.read_csv(path)
-```
-
-## Q1a
-
-What are the minimum, first quartile, median, thrid quartile, maximum, mean, and standard deviation of `Close` and `Volume` for each `company`?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q1b
-
-Find the 10 largest values for `Volume`. What are the `companies` and `dates` associated with those 10 largest values for `Volume`?
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q1c
-
-Calculate the Z-scores of `Open` and `Close` for each company using `apply()`.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q1d
-
-Use the `transform()` method on the `stock` data to represent all the values of `Open`, `High`, `Low`, `Close`, `Adj Close`, and `Volume` in terms of the first date in the data.
-
-To do so, divide all values for each company by the values of the first date in the data for that company.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q1e
-
-Provide both seaborn code and a simple comment to describe the daily trend of normalized values of `Close` for each company in one plot. The normalized values of `Close` are the one calculated from Q1d.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q1f
-
-Create a box plot of `Close` for each `company` in one plot. Make a simple comment on the plot.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-# Question 2
-
-Load the DataFrfame for Question 2.
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
 
 ```{python}
 #| echo: true
-path = 'https://bcdanl.github.io/data/climate_finance.csv'
-climate_finance = pd.read_csv(path)
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
 ```
 
--   Adaptation involves taking actions to reduce the actual or expected damages from climate change.
-
--   Mitigation involves taking actions to reduce the emissions of greenhouse gases that are responsible for climate change.
-
-## Q2a
-
-How many `parties` have `provided` or `disbursed` positive funding `contributions` to other countries or regions for their `adaptation` projects for every single `year` from 2011 to 2018?
 <br>
 
-*Answer*
+## Variable Description
 
+- `pid`: playlist ID; unique ID for playlist
+
+- `playlist_name`: a name of playlist
+
+- `pos`: a position of the track within a playlist (starting from 0)
+
+- `artist_name`: name of the track’s primary artist
+
+- `track_name`: name of the track
+
+- `duration_ms`: duration of the track in milliseconds
+
+- `album_name`: name of the track’s album
+
+<br>
+
+## Question 5
+
+- Find the five most popular song.
+  - A value of a song is defined as a combination of a `artist_name` value and a `track_name` value.
+  - Who are artists for those ten most popular song?
+  
+
+
+*Answer*
 ```{python}
 
 ```
 
+<br><br>
 
 
-## Q2b
 
-For each `party`, calculate the total funding `contributions` that were `disbursed` or `provided` for `mitigation` projects for each `year`.
-<br>
+
+## Question 6
+- Create a DataFrame that only contains observations from playlists featuring the song "One Dance" by Drake.
+  - Next, identify the song with the highest popularity after "One Dance" in the newly created DataFrame.
+
 
 *Answer*
-
 ```{python}
 
 ```
 
-
-
-## Q2c
-
-For each `party`, calculate the ratio between `adaptation` contribution and `mitigation` contribution for each type of `Status` for each `year`.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2d
-
-Provide both seaborn code and a simple comment to describe the distribution of the ratio between `adaptation` contribution and `mitigation` contribution, which is calculated in Q2c.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
-
-## Q2e
-
-Provide both seaborn code and a simple comment to describe how the distribution of `Contribution` varies by `Type of support` and `Status`.
-<br>
-
-*Answer*
-
-```{python}
-
-```
-
-
+<br><br>
 
 

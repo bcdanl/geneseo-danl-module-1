@@ -27,7 +27,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 - Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:
 
   - `danl-m1-hw3-LASTNAME-FIRSTNAME.ipynb`\
-  ( e.g., `danl-m2-hw3-choe-byeonghak.ipynb` )
+  ( e.g., `danl-m1-hw3-choe-byeonghak.ipynb` )
 
 - The due is February 27, 2024, 7:00 P.M.
 

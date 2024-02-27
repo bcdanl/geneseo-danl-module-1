@@ -1,6 +1,6 @@
 ---
 title: Lecture 4
-subtitle: Filtering, Sorting, Ranking, and Visualization [Lecture 4 slides may be subject to change during the Module.]
+subtitle: Converting Data Types; Filtering by Conditions; Dealing with Missing Values
 format:
   clean-revealjs:
     self-contained: true
@@ -15,7 +15,7 @@ execute:
   eval: false
   echo: true
 #### bibliography: refs.bib
-#### include-after-body: backwards.html
+include-after-body: target-hover.html
 ---
 
 
@@ -36,7 +36,314 @@ knitr::knit_engines$set("markdown")
 ```
 
 
-# Pandas Data Structures Basics {background-color="#1c4982"}
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+:::
+
+- What values are in the `Mgmt` variable?
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Mgmt"].astype(bool)
+```
+
+
+- The `astype()` method converts a `Series`' values to a different data type. 
+  - It accepts a single argument: the new data type. 
+  - We can pass either the data type or a string with its name.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Mgmt"] = emp["Mgmt"].astype(bool)
+```
+
+- The above code overwrites the `Mgmt` variable with our new `Series` of Booleans.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Salary"].astype(int)
+```
+
+- The above code tries to coerce the `Salary` variable's values to integers with the `astype()` method.
+  - Pandas is unable to convert the `NaN` values to integers.
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"].fillna(0)
+```
+
+- The `fillna()` method replaces a `Series`' missing values with the argument we pass in. 
+- The above example provides a fill value of `0`. 
+  - Note that your choice of value can distort the data; `0` is passed solely for the sake of example.
+
+
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"] = emp["Salary"].fillna(0).astype(int)
+```
+
+- The above code overwrites the `Salary` variable with our new `Series` of integers.
+
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Gender"] = emp["Gender"].astype("category")
+```
+
+Pandas includes a special data type called a `category`, 
+  - It is ideal for a variable consisting of a small number of unique values relative
+to its total size. 
+  - E.g., gender, weekdays, blood types, planets, and income groups. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `pd.to_datetime()` method
+
+```{.python}
+emp["Start Date"] = pd.to_datetime(emp["Start Date"])
+```
+
+- The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
+
+
+
+## Pandas Basics
+
+Let's do Question 1 in [Classwork 4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html)!
+
+
+
+# Filtering by a Single Condition {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- We may often not know the **index labels and positions** of the observations we want to target.
+
+- We may want to target observations not by an index label but by a **Boolean condition**.
+
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp["First Name"] == "Donna"
+```
+
+
+- To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+  - `Series == value`
+
+- The above example compares each `First Name` value with "Donna".
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp[ emp["First Name"] == "Donna" ]
+```
+
+- To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
+  - `DataFrame[ Boolean_Series ]`
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+donnas = emp["First Name"] == "Donna"
+emp[donnas]
+```
+
+
+- If the use of multiple square brackets is confusing, we can assign the Boolean
+`Series` to an object and then pass it into the square brackets instead.
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+
+```{.python}
+non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
+emp[ non_marketing ]
+```
+
+- `True` denotes that the `Team` value for a given index is not "`Marketing`", and `False` indicates the `Team` value is "`Marketing`"
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+What if we want to retrieve all the managers in the company? Managers have a value
+of `True` in the `Mgmt` variable.
+
+```{.python}
+emp[ emp["Mgmt"] ]
+```
+
+- We could execute `emp["Mgmt"] == True`, but we do not need to.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+high_earners = emp["Salary"] > 100000
+emp[ high_earners ]
+```
+
+- We can also use arithmetic operands to filter observations based on mathematical conditions.
+
+
+# Filtering by a Condition {background-color="#1c4982"}
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+sales = emp["Team"] == "Sales"
+legal = emp["Team"] == "Legal"
+fnce = emp["Team"] == "Finance"
+emp[ sales | legal | fnce ]
+```
+
+- We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria.
+
+
+
+
+## Pandas Basics
+### Filtering with the `isin()` method
+
+```{.python}
+star_teams = ["Sales", "Legal", "Finance"]
+on_star_teams = emp["Team"].isin(star_teams)
+emp[on_star_teams]
+```
+
+- What if our next report asked for employees from 15 teams instead of three? 
+
+- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `Series`) and returns a Boolean `Series`. 
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- When working with numbers or dates, we often want to extract values that fall within a range. 
+  - E.g., Identify all employees with a salary between $90,000 and $100,000. 
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+higher_than_90k = emp["Salary"] >= 90000
+lower_than_100k = emp["Salary"] < 100000
+emp[ higher_than_90k & lower_than_100k ]
+```
+
+- We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
+
+- Then we can use the `&` operator to mandate that both conditions are `True`:
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+
+```{.python}
+between_90k_and_100k = emp["Salary"].between(90000, 100000)
+emp[between_90k_and_100k]
+```
+
+- A slightly cleaner solution is to use a method called `between()`
+  - It returns a Boolean Series where `True` denotes that a row's value falls between the specified interval.
+  - The first argument, the lower bound, is *inclusive*, and the second argument, the upper bound, is *exclusive*.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+```{.python}
+name_starts_with_t = emp["First Name"].between("T", "U")
+emp[name_starts_with_t]
+```
+
+- We can also apply the `between()` method to string variables.
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition with the `query()` method
+
+```{.python}
+# Below two are equivalent
+emp.query("Salary >= 100000 & Team == 'Finance'")
+emp.query("Salary >= 100000 and Team == 'Finance'")
+```
+
+- The `query()` method filters observations using a concise, string-based query syntax. 
+
+- The `query()` method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering.
+
+
+
+## Pandas Basics
+
+Let's do Questions 2-6 in [Classwork 4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html)!
+
 
 
 # Dealing with Missing Values {background-color="#1c4982"}
@@ -226,1255 +533,7 @@ emp.drop_duplicates(subset = ["First Name"], keep = False)
 
 ## Pandas Basics
 
-Let's do Questions 7-8 in Part 1 of [Classwork 4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html)!
+Let's do Questions 7-8 in [Classwork 4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html)!
 
 
 
-
-##  Making Changes to Series and DataFrames
-###  Modifying Columns with `.assign()`
-
-::: {.panel-tabset}
-
-## (0)
-- Let's create a new set of columns that contain the `datetime` representations of the object (string) dates.
-```{.python}
-## format the 'Born' column as a datetime
-born_datetime = pd.to_datetime( scientists['Born'] )
-died_datetime = pd.to_datetime( scientists['Died'] )
-
-scientists['born_dt'], scientists['died_dt'] = (
-  born_datetime,
-  died_datetime
-)
-
-scientists['age_days'] =  scientists['died_dt'] - scientists['born_dt']
-```
-
-
-
-
-## (1)
-- Let’s create the `age_year_assign` column using `.assign()`.
-
-```{.python}
-scientists = scientists.assign(
-  ## new columns on the left of the equal sign
-  ## how to calculate values on the right of the equal sign
-  ## separate new columns with a comma
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = scientists['age_days'].astype('timedelta64[Y]')
-)
-```
-
-
-## (2)
-- In the previous panel, we had to use `age_days` to create `age_year_assign`.
-  - To be able to use `age_days_assign` when calculating `age_year_assign` in the previous panel, we need to know about `lambda` functions.
-  
-```{.python}
-scientists = scientists.drop( ['age_days'], axis = 1)  ## to drop age_days
-scientists = scientists.assign(
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = lambda some_df: 
-    some_df['age_days_assign'].astype('timedelta64[Y]') 
-)
-```
-
-
-
-::: 
-
-
-
-
-## Pandas Data Structures Basics
-### Lambda functions
-::: {.panel-tabset}
-
-## (1)
-- Python has support for so-called anonymous or lambda functions. 
-  - Lambda functions are a way of writing functions consisting of a single statement, the result of which is the return value. 
-  - A syntax for a lambda function is `lambda ARGUMENTS : EXPRESSION`
-
-```{.python}
-def short_function(x):
-  return x * 2
-
-equiv_anon = lambda x: x * 2
-short_function(2)
-equiv_anon(2)
-```
-
-
-
-
-## (2)
-- A `lambda` function can have multiple arguments:
-
-```{.python}
-fn_two = lambda a, b : a * b
-fn_two(1, 2)
-
-fn_three = lambda a, b, c : a + b + c
-fn_two(1, 2, 3)
-```
-
-
-
-
-
-## (3)
-- The power of lambda is better shown when we use them as an anonymous function inside another function.
-  - Say we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
-
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-```
-
-
-
-
-## (4)
-
-:::: {.columns}
-::: {.column width="50%"}
-- Use that function definition to make a function that always doubles the number we send in:
-
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-
-my_doubler = myfunc(2)
-my_doubler(10)
-```
-:::
-
-::: {.column width="50%"}
-- Use the same function definition to make a function that always triples the number we send in:
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-
-my_tripler = myfunc(3)
-my_tripler(10)
-```
-
-:::
-::::
-
-
-## (5)
-- Here is the example of applying a lambda function to single variable in DataFrame using `.assign()`
-
-```{.python}
-values= [['Rohan',182],['Elvish',100],['Deepak',198],
-         ['Soni',160],['Radhika',140],['Vansh',180]]
-df = pd.DataFrame(values, columns = ['name','tot_marks'])
- 
-## Applying lambda function to find percentage of 'tot_marks' column
-## using df.assign()
-df = df.assign( percentage = 
-  lambda some_name: (some_name['tot_marks'] /200 * 100) )
-```
-
-
-
-::: 
-
-
-
-
-
-
-
-
-
-
-
-## The `DataFrame`
-### Subsetting Multiple Rows and Columns
-
-```{r, echo = F, eval = T, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  `Type` = c("df[val]",
-"df`.`loc[val]",
-"df`.`loc[:, val]",
-"df`.`loc[val1, val2]",
-"df`.`iloc[where]",
-"df`.`iloc[:, where]",
-"df`.`iloc[w1, w2]",
-"df`.`query(CONDITION)"),
-  `Description` = c("Select single column or set of columns",
-"Select single row or set of rows",
-"Select single column or set of columns",
-"Select row and column by label",
-"Select row or set of rows by integer position",
-"Select column or set of columns by integer position",
-"Select row and column by integer position",
-"Select row by a condition")
-  )
-
-# Create a DT datatable without search box and 'Show entries' dropdown
-DT::datatable(text_tbl, rownames = FALSE,
-              options = list(
-  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
-  paging = FALSE, # Disable pagination
-  columnDefs = list(list(
-    targets = "_all", # Applies to all columns
-    orderable = FALSE # Disables sorting
-  ))
-), callback = htmlwidgets::JS("
-  // Change header background and text color
-  $('thead th').css('background-color', '#1c4982');
-  $('thead th').css('color', 'white');
-
-  // Loop through each row and alternate background color
-  $('tbody tr').each(function(index) {
-    if (index % 2 == 0) {
-      $(this).css('background-color', '#d1dae6'); // Light color for even rows
-    } else {
-      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
-    }
-  });
-
-  // Set text color for all rows
-  $('tbody tr').css('color', 'black');
-
-  // Add hover effect
-  $('tbody tr').hover(
-    function() {
-      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
-    }, 
-    function() {
-      var index = $(this).index();
-      if (index % 2 == 0) {
-        $(this).css('background-color', '#d1dae6'); // Restore even row color
-      } else {
-        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
-      }
-    }
-  );
-")
-)
-
-```
-
-
-
-
-## The `DataFrame`
-### Boolean Subsetting
-
-::: {.panel-tabset}
-## Series
-
-- We can not only subset values using labels and indices, but also supply a vector of **boolean values**.
-
-- Boolean subsetting of numeric Series works as follows:
-  - `Series[ Series > VALUE  ]`
-  - `Series[ Series == VALUE  ]`
-  - `Series[ Series < VALUE  ]`
-
-
-
-## DataFrame
-- Boolean subsetting of `DataFrames` works like boolean subsetting a `Series`.
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] > VALUE  ]`
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] == VALUE  ]`
-  - `DataFrame[ DataFrame['VARIABLE_NAME'] < VALUE  ]`
-
-```{.python}
-import pandas as pd
-scientists = read_csv('data/scientists.csv')  
-
-## What if we want to subset our ages by identifying those above the mean?
-scientists.loc[ scientists['Age'] > scientists['Age'].mean() ]
-```
-
-
-
-## Q.
-- Consider the two Series, `area` and `pop`:
-```{.python}
-area = pd.Series({'California': 423967, 'Texas': 695662,
-                  'New York': 141297, 'Florida': 170312,
-                  'Illinois': 149995})
-pop = pd.Series({'California': 38332521, 'Texas': 26448193,
-                 'New York': 19651127, 'Florida': 19552860,
-                 'Illinois': 12882135})
-```
-
-- Use boolean subsetting to find states whose population density is greater than 100 or less than 50.
-
-
-
-
-::: 
-
-
-
-## The `DataFrame`
-### Subsetting Rows with `.query()`
-
-- We can also subset rows based on a condition using `DataFrame.query()`:
-
-::: {.panel-tabset}
-## Data
-```{.python}
-df = pd.DataFrame(
-    ## array with numbers from 0 to 35, 6 rows and 6 columns
-    data = np.reshape( range(36), (6, 6) ),
-    index = ["a", "b", "c", "d", "e", "f"],
-    columns = ["col" + str(i) for i in range(6)],
-    dtype = float,
-)
-df["col6"] = ["apple", "orange", "pineapple", "mango", "kiwi", "lemon"]
-df
-```
-
-
-## .query() (1)
-- Select rows if a value of `col6` is "kiwi" or "pineapple": 
-```{.python}
-df.query("col6 == 'kiwi' or col6 == 'pineapple'")
-```
-
-- Select rows if a value of `col0` is greater than 6:
-```{.python}
-df.query("col0 > 6")
-```
-
-
-
-
-## (2)
-- Select flights that departed on January 1:
-```{.python}
-## download NY_flights.csv from the Files section in Canvas
-flights = pd.read_csv("data/NY_flights.csv")
-flights.head()
-
-flights.query("month == 1 and day == 1")
-```
-
-
-
-
-## (3)
-- Select penguins whose `bill_length_mm` is smaller than `1.8 * bill_depth_mm`.
-```{.python}
-import seaborn as sns
-penguins = sns.load_dataset("penguins")
-penguins.head()
-
-penguins.query('bill_length_mm < bill_depth_mm*1.8')
-```
-
-
-
-## (4)
-- Objects not in DataFrame can be referenced with an `@` character like` @a + b`.
-
-
-```{.python}
-outside_var = 21
-penguins.query('bill_depth_mm > @outside_var')
-```
-
-
-
-
-::: 
-
-
-
-## The `Series` and the `DataFrame`
-### Sorting and Ranking
-
-- Let's consider `.sort_index()` and `.sort_values()` methods:
-
-::: {.panel-tabset}
-
-## Series
-  - `Series.sort_index(ascending=False)` sorts `Series` by index in descending order.
-  - `Series.sort_values(ascending=False)` sorts `Series` by value in descending order.
-```{.python}
-rev_ages = ages.sort_index(ascending =False) 
-sorted_ages = ages.sort_values(ascending =False) 
-```
-]
-## DataFrame
-  - `DataFrame.sort_index(ascending=False)` sorts `DataFrame` by index in descending order.
-  - `DataFrame.sort_values(by = "VAR", ascending=False)` sorts `DataFrame` by value of `VAR` in descending order.
-```{.python}
-rev_ages = scientists.sort_index(ascending =False) 
-sorted_df = scientists.sort_values(by = 'Age', 
-                                   ascending =False) 
-```
-
-
-
-
-::: 
-
-
-
-
-## The `Series` and the `DataFrame`
-### Sorting and Ranking
-
-- In Pandas, there are a variety of ranking functions with `.rank()`.
-
-::: {.panel-tabset}
-
-## example
-
-- Consider the following DataFrame.
-
-```{.python}
-import numpy as np
-df = pd.DataFrame(data={'Animal': ['fox', 'Kangaroo', 'deer',
-                                   'spider', 'snake'],
-                        'Number_legs': [4, 2, 4, 8, np.nan]})
-df
-```
-
-
-## method (1)
-
-- `.rank(method = "min", ascending=False)` does give the largest values the smallest ranks.
-
-- `.rank(method = "dense", ascending=False)` does give the largest values the smallest ranks without any gaps between ranks when breaking ties.
-
-- `.rank(method = "average", ascending=False)` calculates the average rank for each unique value.
-
-
-
-## method (2)
-```{.python}
-df['default_rank'] = df['Number_legs'].rank(ascending = False)  ## method = 'average'
-df['min_rank'] = df['Number_legs'].rank(method='min', ascending = False)
-df['dense_rank'] = df['Number_legs'].rank(method='dense', ascending = False)
-df
-```
-
-
-
-## na_option
-- `na_option = keep` assigns `NaN` rank to `NaN` values (default).
-- `na_option = top` assign smallest rank to `NaN` values if ascending
-- `na_option = bottom` assign highest rank to `NaN` values if ascending
-```{.python}
-df['NA_bottom'] = df['Number_legs'].rank(na_option='bottom')
-df['NA_top'] = df['Number_legs'].rank(na_option='top')
-df
-```
-
-
-## pct
-
-- `pct = True` displays the returned rankings in percentile form.	
-```{.python}
-df['pct_rank'] = df['Number_legs'].rank(pct=True)
-df
-```
-
-
-::: 
-
-
-
-##  Making Changes to Series and DataFrames
-### Dropping Values
-
-
-::: {.panel-tabset}
-
-## Columns
-- To drop a column, we can select columns to drop with the `.drop()` method with `axis = 1` or `axis = "columns"` on our dataframe.
-
-```{.python}
-## all the current columns in our data
-scientists.columns
-
-## drop the shuffled age column
-## we provide the axis=1 argument to drop column-wise
-scientists_dropped = scientists.drop( ['Age'], axis ="columns")
-scientists_dropped.columns
-```
-
-
-
-## Rows
-- To drop rows, we can select rows by index to drop with the `.drop()` method with `axis = 0`, which is default.
-
-
-```{.python}
-## all the current columns in our data
-scientists.columns
-
-## drop rows by their indices
-scientists_rows_dropped = scientists.drop( [2, 4, 6] )
-scientists_rows_dropped
-```
-
-
-
-::: 
-
-
-
-##  Making Changes to Series and DataFrames
-###  Modifying Columns with `.assign()`
-
-::: {.panel-tabset}
-
-## (0)
-- Let's create a new set of columns that contain the `datetime` representations of the object (string) dates.
-```{.python}
-## format the 'Born' column as a datetime
-born_datetime = pd.to_datetime( scientists['Born'] )
-died_datetime = pd.to_datetime( scientists['Died'] )
-
-scientists['born_dt'], scientists['died_dt'] = (
-  born_datetime,
-  died_datetime
-)
-
-scientists['age_days'] =  scientists['died_dt'] - scientists['born_dt']
-```
-
-
-
-
-## (1)
-- Let’s create the `age_year_assign` column using `.assign()`.
-
-```{.python}
-scientists = scientists.assign(
-  ## new columns on the left of the equal sign
-  ## how to calculate values on the right of the equal sign
-  ## separate new columns with a comma
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = scientists['age_days'].astype('timedelta64[Y]')
-)
-```
-
-
-## (2)
-- In the previous panel, we had to use `age_days` to create `age_year_assign`.
-  - To be able to use `age_days_assign` when calculating `age_year_assign` in the previous panel, we need to know about `lambda` functions.
-  
-```{.python}
-scientists = scientists.drop( ['age_days'], axis = 1)  ## to drop age_days
-scientists = scientists.assign(
-  age_days_assign = scientists['died_dt'] - scientists['born_dt'],
-  age_year_assign = lambda some_df: 
-    some_df['age_days_assign'].astype('timedelta64[Y]') 
-)
-```
-
-
-
-::: 
-
-
-
-
-## Pandas Data Structures Basics
-### Lambda functions
-::: {.panel-tabset}
-
-## (1)
-- Python has support for so-called anonymous or lambda functions. 
-  - Lambda functions are a way of writing functions consisting of a single statement, the result of which is the return value. 
-  - A syntax for a lambda function is `lambda ARGUMENTS : EXPRESSION`
-
-```{.python}
-def short_function(x):
-  return x * 2
-
-equiv_anon = lambda x: x * 2
-short_function(2)
-equiv_anon(2)
-```
-
-
-
-
-## (2)
-- A `lambda` function can have multiple arguments:
-
-```{.python}
-fn_two = lambda a, b : a * b
-fn_two(1, 2)
-
-fn_three = lambda a, b, c : a + b + c
-fn_two(1, 2, 3)
-```
-
-
-
-
-
-## (3)
-- The power of lambda is better shown when we use them as an anonymous function inside another function.
-  - Say we have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
-
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-```
-
-
-
-## (4)
-:::: {.columns}
-::: {.column width="50%"}
-- Use that function definition to make a function that always doubles the number we send in:
-
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-
-my_doubler = myfunc(2)
-my_doubler(10)
-```
-:::
-
-::: {.column width="50%"}
-- Use the same function definition to make a function that always triples the number we send in:
-```{.python}
-def myfunc(n):
-  return lambda a : a * n
-
-my_tripler = myfunc(3)
-my_tripler(10)
-```
-
-:::
-::::
-
-
-## (5)
-- Here is the example of applying a lambda function to single variable in DataFrame using `.assign()`
-
-```{.python}
-values= [['Rohan',182],['Elvish',100],['Deepak',198],
-         ['Soni',160],['Radhika',140],['Vansh',180]]
-df = pd.DataFrame(values, columns = ['name','tot_marks'])
- 
-## Applying lambda function to find percentage of 'tot_marks' column
-## using df.assign()
-df = df.assign( percentage = 
-  lambda some_name: (some_name['tot_marks'] /200 * 100) )
-```
-
-
-
-::: 
-
-
-
-
-
-
-# Exporting and Importing Data {background-color="#1c4982"}
-
-
-## Exporting and Importing Data
-### Comma-Separated Values (CSV)
-
-- Comma-separated values (CSV) are the most flexible data storage type.
-  - For each row, the column information is separated with a comma.
-
-
-- To export `Series` or `DataFrame` as a `csv` file, we use the `to_csv()` method.
-
-```{.python}
-## index =False  does not write the row names in the CSV output
-scientists.to_csv('output/scientists_df_no_index.csv', 
-                   index =False)
-```
-
-
-
-
-## Exporting and Importing Data
-### Excel
-
-- The more of your work you can do in Python and/or R, the easier it will be to scale up to larger projects, catch and fix mistakes, and collaborate. 
-
-- However, Excel’s popularity and market share are unrivaled. 
-
-- To export `Series` or `DataFrame` as an `.xlsx` file, we use the `to_excel()` method.
-
-```{.python}
-## saving a DataFrame into Excel format
-scientists.to_excel(
-  "output/scientists_df.xlsx",
-  sheet_name = "scientists",
-  index = False)
-```
-
-
-
-
-
-
-
-
-# Exploratory Data Analysis with `Seaborn` {background-color="#1c4982"}
-
-
-
-## Exploratory Data Analysis 
-
-- Here we discuss how to use summary statistics and visualization to explore your data in a systematic way, a task that statisticians call **exploratory data analysis** (EDA). 
-
-
-- EDA is an iterative cycle. We:
-  - Generate questions about your data.
-  - Search for answers by visualizing, transforming, and modelling our data.
-  - Use what we learn to refine our questions and/or generate new questions.
-  
-- Here, we focus on the visualization part.
-  
-
-
-
-## Exploratory Data Analysis 
-### Tidy `data.frame`
-
-```{r, echo=FALSE, eval = T, warning=F, message=F, out.width = '90%', fig.align='center'}
-knitr::include_graphics("lec_figs/tidy-1.png")
-```
-
-- In a tidy `DataFrame`,
-  - A **variable** is in a column.
-  - An **observation** is in a row. 
-  - A **value** are in a cell.
-
-
-
-## Exploratory Data Analysis 
-### Tidy `data.frame`
-
-- A **variable** is a quantity, quality, or property that we can measure/count.
-  
-  
-- An **observation** is a set of measurements made under similar conditions (e.g, similar unit of entity, time, and/or geography).
-  - We usually make all of the measurements in an observation at the same time and on the same object.
-  - An observation will contain several values, each associated with a different variable.
-  - We sometimes refer to an observation as a data point.
-
-
-- The **value** of a variable may change from measurement to measurement.
-
-
-
-## Exploratory Data Analysis 
-### Categorical/Discrete vs. Continuous Variables
-
-
-- A **discrete/categorical variable** is a variable whose value is obtained by *counting* and is whole numbers.
-  - Number of red marbles in a jar
-  - Number of heads when flipping three coins 
-  - Students’ letter grade
-  - US state/county
-
-
-- A **continuous variable** is a variable whose value is obtained by *measuring*  and can have a decimal or fractional value.
-  - Height/weight of students
-  - Time it takes to get to school
-  - Fuel efficiency of a vehicle (e.g., miles per gallon)
-
-
-
-## Exploratory Data Analysis 
-### Making Discoveries from a Data Set
-
-::: {.panel-tabset}
-
-## Distribution
-- What type of **variation** occurs within a variable?
-
-
-- **Variation** is the tendency of the values of a variable to change from measurement to measurement. 
-  - We can see variation easily in real life; if we measure any continuous variable twice, we will be likely to get two different values.
-  - Which values are the most common? Why?
-  - Which values are rare? Why? Does that match your expectations?
-  - Can we see any unusual patterns? What might explain them?
-
-
-
-## Relationship
-- **Co-variation** is the tendency for the values of two or more variables to vary together in a related way. 
-
-
-- What type of **co-variation** occurs between variables?
-
-
-
-## Steps
-
-- Figure out whether variables of interests are categorical or continuous.
-
-- Think which geometric objects, aesthetic mappings, and faceting are appropriate to visualize distributions and relationships.
-
-- If needed, transform a given `DataFrame` (e.g., subset of observations, new variables, summarized data) and try new visualizations.
-
-
-
-## Types
-
-  - A distribution of a categorical variable (e.g., bar charts and more)
-  - A distribution of a continuous variable (e.g., histograms and more)
-  - A relationship between two categorical variables (e.g., bar charts and more)
-  - A relationship between two continuous variables (e.g., scatter plots  and more)
-  - A relationship between a categorical variable and a continuous variable (e.g., boxplots and more)
-  - A time trend of a categorical variable (e.g., bar plots and more)
-  - A time trend of a continuous variable (e.g., line plots and more)
-  
-
-
-## Summary Stat.
-
-- Use `skim(DataFrame)` or `.describe()` to know:
-
-  - Mean (Average, Expected Value);
-  
-  - Standard Deviation (SD)
-  
-  - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
-
-
-
-::: 
-
-
-
-
-
-
-# Data Visualization with `seaborn` {background-color="#1c4982"}
-
-## Data Visualization
-
-:::: {.columns}
-::: {.column width="50%"}
-
-```{r, echo=FALSE, eval = T, out.width = '67%', fig.align='center'}
-knitr::include_graphics("lec_figs/lego.png")
-```
-
-:::
-::: {.column width="50%"}
-- Graphs and charts let us explore and learn about the structure of the information we have in DataFrame. 
-
-- Good data visualizations make it easier to communicate our ideas and findings to other people. 
-
-
-:::
-::::
-
-
-##  `seaborn`
-
-```{r, echo=FALSE, out.width = '20%', fig.align='center'}
-knitr::include_graphics("lec_figs/seaborn-logo.png")
-```
-
-- `seaborn` is a Python data visualization library based on `matplotlib`. 
-  - It allows us to easily create beautiful but complex graphics using a simple interface.
-  - It also provides a general improvement in the default appearance of `matplotlib`-produced plots, and so I recommend using it by default.
-
-```{.python}
-import seaborn as sns
-sns.set_theme(rc={'figure.dpi': 600, 
-                  'figure.figsize': (5, 3.75)})   ## better quality
-
-```
-
-
-
-## Data Visualization with `seaborn`
-### Getting started with `seaborn`
-
-- Let's get the names of `DataFrame`s provided by the `seaborn` library:
-
-```{.python}
-import seaborn as sns
-print( sns.get_dataset_names() )
-```
-
-
-- Let's use the `titanic` and `tips` DataFrames:
-
-```{.python}
-titanic = sns.load_dataset('titanic')
-titanic.head()
-tips = sns.load_dataset('tips')
-tips.head()
-```
-
-
-
-
-
-## Data Visualization with `seaborn`
-### Bar Chart 
-
-- A bar chart is used to plot the frequency of the different categories.
-  - It is useful to visualize how values of a **categorical variable** are distributed.
-  - A variable is **categorical** if it can only take one of a small set of values.
-  
-  
-- We use `sns.countplot()` function to plot a bar chart:
-
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.countplot(data = titanic,
-              x =  'sex')
-```
-:::
-
-::: {.column width="50%"}
-
-- Mapping
-  - `data`: DataFrame.
-  - `x`:  Name of a categorical variable (column) in DataFrame
-
-:::
-::::
-
-
-
-
-
-
-
-
-## Data Visualization with `seaborn`
-### Bar Chart 
-
-- We can further break up the bars in the bar chart based on another categorical variable. 
-
-  - This is useful to visualize the relationship between the two categorical variables.
-
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.countplot(data = titanic,
-              x = 'sex'
-              hue = 'survived')
-```
-:::
-
-::: {.column width="50%"}
-
-- Mapping
-  - `hue`:  Name of a categorical variable
-
-:::
-::::
-
-
-
-
-
-## Data Visualization with `seaborn`
-### Histogram 
-
-- A histogram is a **continuous** version of a bar chart.
-  - It is used to plot the frequency of the different values.
-  - It is useful to visualize how values of a **continuous variable** are distributed.
-
-  
-- We use `sns.histplot()` function to plot a histogram:
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.histplot(data = titanic,
-             x =  'age', 
-             bins = 5)
-```
-:::
-
-::: {.column width="50%"}
-- Mapping
-  - `bins`:  Number of bins
-
-:::
-::::
-
-
-
-
-## Data Visualization with `seaborn`
-### Histogram 
-
-- A boxplot computes a summary of the distribution and then display a specially formatted box.
-  - It is useful to visualize how values of a **continuous variable** are distributed across different values of another (categorical) variable.
-  
-  
-- We use `sns.histplot()` function to plot a histogram:
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.boxplot(data = tips,
-             y='total_bill')
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-sns.boxplot(data = tips,
-            x='time', y='total_bill')
-```
-:::
-::::
-
-
-
-
-
-
-## Data Visualization with `seaborn`
-### Scatter plot 
-
-- A scatter plot is used to display the relationship between two continuous variables.
-
-  -  We can see co-variation as a pattern in the scattered points.
-
-- We use `sns.scatterplot()` function to plot a scatter plot:
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.scatterplot(data = tips,
-                x = 'total_bill', 
-                y = 'tip')
-```
-:::
-
-::: {.column width="50%"}
-
-- Mapping
-  - `x`:  Name of a continuous variable on the horizontal axis
-  - `y`:  Name of a continuous variable on the vertical axis
-  
-:::
-
-::::
-
-
-## Data Visualization with `seaborn`
-### Scatter plot 
-
-- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
-
-- Suppose we are interested in the following question:
-  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
-
-```{.python}
-sns.scatterplot(data = tips,
-                x = 'total_bill', 
-                y = 'tip',
-                hue = 'smoker')
-```
-
-
-
-
-## Data Visualization with `seaborn`
-### Fitted line 
-
-- From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
-
-  - `sns.lmplot()` adds a line that fits well into the scattered points.
-  
-  - On average, the fitted line describes the relationship between two continuous variables.
-  
-
-```{.python}
-sns.lmplot(data = tips,
-           x = 'total_bill', 
-           y = 'tip')
-```
-
-
-
-
-
-
-## Data Visualization with `seaborn`
-### Transparency with `alpha`
-
-- In a scatter plot, adding transparency with `alpha` helps address many data points on the same location.
-  - We can map `alpha` to number between 0 and 1.
-  
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-sns.scatterplot(x = 'total_bill', 
-                y = 'tip',
-                hue = 'smoker',
-                alpha = .25)
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-sns.lmplot(data = tips,
-           x = 'total_bill', 
-           y = 'tip',
-           scatter_kws = {'alpha' : 0.2})
-```
-:::
-::::
-
-
-
-
-## Data Visualization with `seaborn`
-### Scatter plot 
-
-- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
-
-- Using the fitted lines, let's answer the following question:
-  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
-
-```{.python}
-sns.scatterplot(data = tips,
-                x = 'total_bill', 
-                y = 'tip',
-                hue = 'smoker')
-```
-
-  
-
-
-
-## Data Visualization with `seaborn`
-### Line cahrt 
-
-- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
-  - It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
-- We use `sns.lineplot()` function to plot a line plot:
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-path_csv = 'https://bcdanl.github.io/data/dji.csv'
-dow = pd.read_csv(path_csv, index_col=0, parse_dates=True)
-sns.lineplot(data = dow,
-             x =  'Date', 
-             y =  'Close')
-```
-:::
-
-::: {.column width="50%"}
-- Mapping
-  - `x`:  Name of a continuous variable (often time variable) on the horizontal axis 
-  - `y`:  Name of a continuous variable on the vertical axis
-:::
-::::
-
-
-## Data Visualization with `seaborn`
-### Line cahrt 
-
-- For line charts, we often need to group or connect observations to visualize the number of distinct lines.
-
-```{.python}
-healthexp = ( sns.load_dataset("healthexp")
-             .sort_values(["Country", "Year"])
-             .query("Year <= 2020") )
-healthexp.head()
-
-sns.lineplot(data = dow,
-             x =  'Year', 
-             y =  'Life_Expectancy',
-             color = 'Country')
-```
-
-
-
-## Data Visualization with `seaborn`
-### Faceting
-
-- Faceting allows us to plot subsets (facets) of our data across subplots. 
-
-::: {.panel-tabset}
-## Step 1. FacetGrid()
-- First, we create a `FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
-```{.python}
-g = sns.FacetGrid(
-      data = titanic,
-      row='class',
-      col='sex')
-```
-
-
-
-## Step2. FacetGrid().map()
-- Secodn, we use the `FacetGrid().map()` method to run a plotting function on each of the subsets, passing along any necessary arguments.
-```{.python}
-g.map(sns.histplot, 'age', kde=True)  ## kde: kernel density (probability density function)
-```
-
-
-::: 
-
-
-
-
-<script>
-
-document.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        Reveal.next(); // Scroll down to go to the next slide
-    } else {
-        Reveal.prev(); // Scroll up to go to the previous slide
-    }
-}, false);
-
-window.onload = function() {
-    document.querySelectorAll('a').forEach(function(link) {
-        link.setAttribute('target', '_blank');
-    });
-};
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Query all anchor tags within code blocks (adjust the selector as needed)
-  document.querySelectorAll('pre code a').forEach(function(element) {
-    element.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent the default anchor action
-      e.stopPropagation(); // Stop the event from bubbling up
-    });
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Target all span elements within code blocks that have IDs starting with 'cb'
-    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
-        element.addEventListener('mouseenter', function() {
-            // Apply yellow background color to the hovered span element
-            this.style.backgroundColor = '#FFFF99';
-        });
-        element.addEventListener('mouseleave', function() {
-            // Revert the background color when the mouse leaves the span element
-            this.style.backgroundColor = '';
-        });
-    });
-});
-
-</script>
