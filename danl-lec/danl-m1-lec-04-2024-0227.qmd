@@ -4,6 +4,7 @@ subtitle: Converting Data Types; Filtering by Conditions; Dealing with Missing V
 format:
   clean-revealjs:
     self-contained: true
+    incremental: true
     #### logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
@@ -34,6 +35,74 @@ opts_chunk$set(echo = FALSE,
 
 knitr::knit_engines$set("markdown")
 ```
+
+
+# Removing and Relocating Variables {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+## Pandas Basics
+### Adding and Removing Variables
+
+::: {.nonincremental}
+
+- Here we use `[]` to add variables:
+
+
+```{.python}
+emp['Salary_k'] = emp['Salary'] / 1000
+emp['Salary_2x'] = emp['Salary'] + emp['Salary']
+emp['Salary_3x'] = emp['Salary'] * 3
+```
+
+:::
+
+## Pandas Basics
+### Removing Variables with `drop(columns = ... )`
+
+::: {.nonincremental}
+
+- We can use `.drop(columns = ...)` to drop variables:
+
+
+```{.python}
+emp.drop(columns = "Salary_k")
+emp.drop(columns = ["Salary_2x", "Salary_3x"])
+```
+
+:::
+
+## Pandas Basics
+### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
+
+```{.python}
+ref_var = emp.columns.get_loc('Salary') 
+var_to_move = emp.pop('Mgmt')
+emp.insert(ref_var, 'Mgmt', var_to_move) # directly alters 'emp'
+```
+
+- **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
+  - Get the integer position (right before the reference variable, 'Reference_Var')
+- **Step 2**. `DataFrame.pop('Some_Var_To_Move')`
+  - Remove the variable we want to relocate from the DataFrame and store it in a `Series`
+- **Step 3**. `DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)`
+  - Insert the variable back into the DataFrame right after the reference variable.
+
 
 
 # Converting Data Types with the `astype()` Method {background-color="#1c4982"}

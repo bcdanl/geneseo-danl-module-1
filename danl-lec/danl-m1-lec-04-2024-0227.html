@@ -1229,8 +1229,8 @@ Byeong-Hak Choe
   <p class="date">February 27, 2024</p>
 </section>
 <section>
-<section id="converting-data-types-with-the-astype-method" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>Converting Data Types with the <code>astype()</code> Method</h1>
+<section id="removing-and-relocating-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Removing and Relocating Variables</h1>
 
 </section>
 <section id="pandas-basics" class="slide level2">
@@ -1239,78 +1239,141 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s read <code>employment.csv</code> as <code>emp</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb1-4"><a href="#cb1-4"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>What values are in the <code>Mgmt</code> variable?</li>
-</ul>
 </section>
 <section id="pandas-basics-1" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="converting-data-types-with-the-astype-method-1">Converting Data Types with the <code>astype()</code> method</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>emp[<span class="st">&quot;Mgmt&quot;</span>].astype(<span class="bu">bool</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="adding-and-removing-variables">Adding and Removing Variables</h3>
+<div>
 <ul>
-<li>The <code>astype()</code> method converts a <code>Series</code>’ values to a different data type.
-<ul>
-<li>It accepts a single argument: the new data type.</li>
-<li>We can pass either the data type or a string with its name.</li>
-</ul></li>
+<li>Here we use <code>[]</code> to add variables:</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>emp[<span class="st">&#39;Salary_k&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">/</span> <span class="dv">1000</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>emp[<span class="st">&#39;Salary_2x&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">+</span> emp[<span class="st">&#39;Salary&#39;</span>]</span>
+<span id="cb2-3"><a href="#cb2-3"></a>emp[<span class="st">&#39;Salary_3x&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="pandas-basics-2" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="converting-data-types-with-the-astype-method-2">Converting Data Types with the <code>astype()</code> method</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>emp[<span class="st">&quot;Mgmt&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Mgmt&quot;</span>].astype(<span class="bu">bool</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="removing-variables-with-dropcolumns-...">Removing Variables with <code>drop(columns = ... )</code></h3>
+<div>
 <ul>
-<li>The above code overwrites the <code>Mgmt</code> variable with our new <code>Series</code> of Booleans.</li>
+<li>We can use <code>.drop(columns = ...)</code> to drop variables:</li>
 </ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>emp.drop(columns <span class="op">=</span> <span class="st">&quot;Salary_k&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>emp.drop(columns <span class="op">=</span> [<span class="st">&quot;Salary_2x&quot;</span>, <span class="st">&quot;Salary_3x&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="pandas-basics-3" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="converting-data-types-with-the-astype-method-3">Converting Data Types with the <code>astype()</code> method</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>emp[<span class="st">&quot;Salary&quot;</span>].astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="relocating-variables-with-.columns.get_loc-.pop-and-.insert">Relocating Variables with <code>.columns.get_loc()</code>, <code>.pop()</code>, and <code>.insert()</code></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>ref_var <span class="op">=</span> emp.columns.get_loc(<span class="st">&#39;Salary&#39;</span>) </span>
+<span id="cb4-2"><a href="#cb4-2"></a>var_to_move <span class="op">=</span> emp.pop(<span class="st">&#39;Mgmt&#39;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>emp.insert(ref_var, <span class="st">&#39;Mgmt&#39;</span>, var_to_move) <span class="co"># directly alters &#39;emp&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>The above code tries to coerce the <code>Salary</code> variable’s values to integers with the <code>astype()</code> method.
+<li class="fragment"><strong>Step 1</strong>. <code>DataFrame.columns.get_loc(&#39;Reference_Var&#39;)</code>
 <ul>
-<li>Pandas is unable to convert the <code>NaN</code> values to integers.</li>
+<li class="fragment">Get the integer position (right before the reference variable, ‘Reference_Var’)</li>
+</ul></li>
+<li class="fragment"><strong>Step 2</strong>. <code>DataFrame.pop(&#39;Some_Var_To_Move&#39;)</code>
+<ul>
+<li class="fragment">Remove the variable we want to relocate from the DataFrame and store it in a <code>Series</code></li>
+</ul></li>
+<li class="fragment"><strong>Step 3</strong>. <code>DataFrame.insert(ref_var, &#39;Some_Var_To_Move&#39;, var_to_move)</code>
+<ul>
+<li class="fragment">Insert the variable back into the DataFrame right after the reference variable.</li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="converting-data-types-with-the-astype-method" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Converting Data Types with the <code>astype()</code> Method</h1>
+
 </section>
 <section id="pandas-basics-4" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="fill-missing-values-with-the-fillna-method">Fill Missing Values with the <code>fillna()</code> method</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>emp[<span class="st">&quot;Salary&quot;</span>].fillna(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li>The <code>fillna()</code> method replaces a <code>Series</code>’ missing values with the argument we pass in.</li>
-<li>The above example provides a fill value of <code>0</code>.
+<li>Let’s read <code>employment.csv</code> as <code>emp</code>.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
-<li>Note that your choice of value can distort the data; <code>0</code> is passed solely for the sake of example.</li>
-</ul></li>
+<li class="fragment">What values are in the <code>Mgmt</code> variable?</li>
 </ul>
 </section>
 <section id="pandas-basics-5" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="fill-missing-values-with-the-fillna-method-1">Fill Missing Values with the <code>fillna()</code> method</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].fillna(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="converting-data-types-with-the-astype-method-1">Converting Data Types with the <code>astype()</code> method</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>emp[<span class="st">&quot;Mgmt&quot;</span>].astype(<span class="bu">bool</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>The above code overwrites the <code>Salary</code> variable with our new <code>Series</code> of integers.</li>
+<li class="fragment">The <code>astype()</code> method converts a <code>Series</code>’ values to a different data type.
+<ul>
+<li class="fragment">It accepts a single argument: the new data type.</li>
+<li class="fragment">We can pass either the data type or a string with its name.</li>
+</ul></li>
 </ul>
 </section>
 <section id="pandas-basics-6" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="converting-data-types-with-the-astype-method-4">Converting Data Types with the <code>astype()</code> method</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>emp[<span class="st">&quot;Gender&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Gender&quot;</span>].astype(<span class="st">&quot;category&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pandas includes a special data type called a <code>category</code>, - It is ideal for a variable consisting of a small number of unique values relative to its total size. - E.g., gender, weekdays, blood types, planets, and income groups.</p>
+<h3 id="converting-data-types-with-the-astype-method-2">Converting Data Types with the <code>astype()</code> method</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>emp[<span class="st">&quot;Mgmt&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Mgmt&quot;</span>].astype(<span class="bu">bool</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above code overwrites the <code>Mgmt</code> variable with our new <code>Series</code> of Booleans.</li>
+</ul>
 </section>
 <section id="pandas-basics-7" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="converting-data-types-with-the-pd.to_datetime-method">Converting Data Types with the <code>pd.to_datetime()</code> method</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>emp[<span class="st">&quot;Start Date&quot;</span>] <span class="op">=</span> pd.to_datetime(emp[<span class="st">&quot;Start Date&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="converting-data-types-with-the-astype-method-3">Converting Data Types with the <code>astype()</code> method</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>emp[<span class="st">&quot;Salary&quot;</span>].astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>The <code>pd.to_datetime()</code> function is used to convert a <code>Series</code>, <code>DataFrame</code>, or a single variable of a <code>DataFrame</code> from its current data type into <code>datetime</code> format.</li>
+<li class="fragment">The above code tries to coerce the <code>Salary</code> variable’s values to integers with the <code>astype()</code> method.
+<ul>
+<li class="fragment">Pandas is unable to convert the <code>NaN</code> values to integers.</li>
+</ul></li>
 </ul>
 </section>
 <section id="pandas-basics-8" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="fill-missing-values-with-the-fillna-method">Fill Missing Values with the <code>fillna()</code> method</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>emp[<span class="st">&quot;Salary&quot;</span>].fillna(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>fillna()</code> method replaces a <code>Series</code>’ missing values with the argument we pass in.</li>
+<li class="fragment">The above example provides a fill value of <code>0</code>.
+<ul>
+<li class="fragment">Note that your choice of value can distort the data; <code>0</code> is passed solely for the sake of example.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-9" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="fill-missing-values-with-the-fillna-method-1">Fill Missing Values with the <code>fillna()</code> method</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].fillna(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above code overwrites the <code>Salary</code> variable with our new <code>Series</code> of integers.</li>
+</ul>
+</section>
+<section id="pandas-basics-10" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="converting-data-types-with-the-astype-method-4">Converting Data Types with the <code>astype()</code> method</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>emp[<span class="st">&quot;Gender&quot;</span>] <span class="op">=</span> emp[<span class="st">&quot;Gender&quot;</span>].astype(<span class="st">&quot;category&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pandas includes a special data type called a <code>category</code>, - It is ideal for a variable consisting of a small number of unique values relative to its total size. - E.g., gender, weekdays, blood types, planets, and income groups.</p>
+</section>
+<section id="pandas-basics-11" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="converting-data-types-with-the-pd.to_datetime-method">Converting Data Types with the <code>pd.to_datetime()</code> method</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>emp[<span class="st">&quot;Start Date&quot;</span>] <span class="op">=</span> pd.to_datetime(emp[<span class="st">&quot;Start Date&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>pd.to_datetime()</code> function is used to convert a <code>Series</code>, <code>DataFrame</code>, or a single variable of a <code>DataFrame</code> from its current data type into <code>datetime</code> format.</li>
+</ul>
+</section>
+<section id="pandas-basics-12" class="slide level2">
 <h2>Pandas Basics</h2>
 <p>Let’s do Question 1 in <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html">Classwork 4</a>!</p>
 </section></section>
@@ -1319,72 +1382,72 @@ Byeong-Hak Choe
 <h1>Filtering by a Single Condition</h1>
 
 </section>
-<section id="pandas-basics-9" class="slide level2">
+<section id="pandas-basics-13" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="filtering-by-a-condition">Filtering by a Condition</h3>
 <ul>
-<li><p>We may often not know the <strong>index labels and positions</strong> of the observations we want to target.</p></li>
-<li><p>We may want to target observations not by an index label but by a <strong>Boolean condition</strong>.</p></li>
-</ul>
-</section>
-<section id="pandas-basics-10" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-1">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>To compare every value in <code>Series</code> with a constant value, we place the <code>Series</code> on one side of the equality operator (<code>==</code>) and the value on the other.
-<ul>
-<li><code>Series == value</code></li>
-</ul></li>
-<li>The above example compares each <code>First Name</code> value with “Donna”.</li>
-</ul>
-</section>
-<section id="pandas-basics-11" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-2">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>emp[ emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>To filter observations, we provide the Boolean <code>Series</code> between square brackets following the <code>DataFrame</code>.
-<ul>
-<li><code>DataFrame[ Boolean_Series ]</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="pandas-basics-12" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-3">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>donnas <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>emp[donnas]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>If the use of multiple square brackets is confusing, we can assign the Boolean <code>Series</code> to an object and then pass it into the square brackets instead.</li>
-</ul>
-</section>
-<section id="pandas-basics-13" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-4">Filtering by a Single Condition</h3>
-<p>What if we want to extract a subset of employees who are not on the “<code>Marketing</code>” team?</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>non_marketing <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">!=</span> <span class="st">&quot;Marketing&quot;</span>  <span class="co"># != means &quot;not equal to&quot;</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>emp[ non_marketing ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>True</code> denotes that the <code>Team</code> value for a given index is not “<code>Marketing</code>”, and <code>False</code> indicates the <code>Team</code> value is “<code>Marketing</code>”</li>
+<li class="fragment"><p>We may often not know the <strong>index labels and positions</strong> of the observations we want to target.</p></li>
+<li class="fragment"><p>We may want to target observations not by an index label but by a <strong>Boolean condition</strong>.</p></li>
 </ul>
 </section>
 <section id="pandas-basics-14" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-5">Filtering by a Single Condition</h3>
-<p>What if we want to retrieve all the managers in the company? Managers have a value of <code>True</code> in the <code>Mgmt</code> variable.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>emp[ emp[<span class="st">&quot;Mgmt&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-1">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We could execute <code>emp[&quot;Mgmt&quot;] == True</code>, but we do not need to.</li>
+<li class="fragment">To compare every value in <code>Series</code> with a constant value, we place the <code>Series</code> on one side of the equality operator (<code>==</code>) and the value on the other.
+<ul>
+<li class="fragment"><code>Series == value</code></li>
+</ul></li>
+<li class="fragment">The above example compares each <code>First Name</code> value with “Donna”.</li>
 </ul>
 </section>
 <section id="pandas-basics-15" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-single-condition-6">Filtering by a Single Condition</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>high_earners <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;</span> <span class="dv">100000</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>emp[ high_earners ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-single-condition-2">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>emp[ emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We can also use arithmetic operands to filter observations based on mathematical conditions.</li>
+<li class="fragment">To filter observations, we provide the Boolean <code>Series</code> between square brackets following the <code>DataFrame</code>.
+<ul>
+<li class="fragment"><code>DataFrame[ Boolean_Series ]</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-16" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-single-condition-3">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>donnas <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>] <span class="op">==</span> <span class="st">&quot;Donna&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>emp[donnas]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">If the use of multiple square brackets is confusing, we can assign the Boolean <code>Series</code> to an object and then pass it into the square brackets instead.</li>
+</ul>
+</section>
+<section id="pandas-basics-17" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-single-condition-4">Filtering by a Single Condition</h3>
+<p>What if we want to extract a subset of employees who are not on the “<code>Marketing</code>” team?</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>non_marketing <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">!=</span> <span class="st">&quot;Marketing&quot;</span>  <span class="co"># != means &quot;not equal to&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>emp[ non_marketing ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><code>True</code> denotes that the <code>Team</code> value for a given index is not “<code>Marketing</code>”, and <code>False</code> indicates the <code>Team</code> value is “<code>Marketing</code>”</li>
+</ul>
+</section>
+<section id="pandas-basics-18" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-single-condition-5">Filtering by a Single Condition</h3>
+<p>What if we want to retrieve all the managers in the company? Managers have a value of <code>True</code> in the <code>Mgmt</code> variable.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>emp[ emp[<span class="st">&quot;Mgmt&quot;</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We could execute <code>emp[&quot;Mgmt&quot;] == True</code>, but we do not need to.</li>
+</ul>
+</section>
+<section id="pandas-basics-19" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-single-condition-6">Filtering by a Single Condition</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>high_earners <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;</span> <span class="dv">100000</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>emp[ high_earners ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can also use arithmetic operands to filter observations based on mathematical conditions.</li>
 </ul>
 </section></section>
 <section>
@@ -1392,83 +1455,83 @@ Byeong-Hak Choe
 <h1>Filtering by a Condition</h1>
 
 </section>
-<section id="pandas-basics-16" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-2">Filtering by a Condition</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sales <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Sales&quot;</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>legal <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Legal&quot;</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a>fnce <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Finance&quot;</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>emp[ sales <span class="op">|</span> legal <span class="op">|</span> fnce ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>We could provide three separate Boolean <code>Series</code> inside the square brackets and add the <code>|</code> symbol to declare <code>OR</code> criteria.</li>
-</ul>
-</section>
-<section id="pandas-basics-17" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-with-the-isin-method">Filtering with the <code>isin()</code> method</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>star_teams <span class="op">=</span> [<span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Legal&quot;</span>, <span class="st">&quot;Finance&quot;</span>]</span>
-<span id="cb16-2"><a href="#cb16-2"></a>on_star_teams <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>].isin(star_teams)</span>
-<span id="cb16-3"><a href="#cb16-3"></a>emp[on_star_teams]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>What if our next report asked for employees from 15 teams instead of three?</p></li>
-<li><p>A better solution is the <code>isin()</code> method, which accepts an iterable (e.g., <code>list</code>, <code>tuple</code>, <code>Series</code>) and returns a Boolean <code>Series</code>.</p></li>
-</ul>
-</section>
-<section id="pandas-basics-18" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-3">Filtering by a Condition</h3>
-<ul>
-<li>When working with numbers or dates, we often want to extract values that fall within a range.
-<ul>
-<li>E.g., Identify all employees with a salary between $90,000 and $100,000.</li>
-</ul></li>
-</ul>
-</section>
-<section id="pandas-basics-19" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-4">Filtering by a Condition</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>higher_than_90k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;=</span> <span class="dv">90000</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>lower_than_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&lt;</span> <span class="dv">100000</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>emp[ higher_than_90k <span class="op">&amp;</span> lower_than_100k ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>We can create two Boolean <code>Series</code>, one to declare the lower bound and one to declare the upper bound.</p></li>
-<li><p>Then we can use the <code>&amp;</code> operator to mandate that both conditions are <code>True</code>:</p></li>
-</ul>
-</section>
 <section id="pandas-basics-20" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-with-the-between-method">Filtering with the <code>between()</code> method</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>between_90k_and_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].between(<span class="dv">90000</span>, <span class="dv">100000</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>emp[between_90k_and_100k]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-condition-2">Filtering by a Condition</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>sales <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Sales&quot;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>legal <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Legal&quot;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>fnce <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>] <span class="op">==</span> <span class="st">&quot;Finance&quot;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>emp[ sales <span class="op">|</span> legal <span class="op">|</span> fnce ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>A slightly cleaner solution is to use a method called <code>between()</code>
-<ul>
-<li>It returns a Boolean Series where <code>True</code> denotes that a row’s value falls between the specified interval.</li>
-<li>The first argument, the lower bound, is <em>inclusive</em>, and the second argument, the upper bound, is <em>exclusive</em>.</li>
-</ul></li>
+<li class="fragment">We could provide three separate Boolean <code>Series</code> inside the square brackets and add the <code>|</code> symbol to declare <code>OR</code> criteria.</li>
 </ul>
 </section>
 <section id="pandas-basics-21" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-with-the-between-method-1">Filtering with the <code>between()</code> method</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>name_starts_with_t <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>].between(<span class="st">&quot;T&quot;</span>, <span class="st">&quot;U&quot;</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>emp[name_starts_with_t]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-with-the-isin-method">Filtering with the <code>isin()</code> method</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>star_teams <span class="op">=</span> [<span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Legal&quot;</span>, <span class="st">&quot;Finance&quot;</span>]</span>
+<span id="cb20-2"><a href="#cb20-2"></a>on_star_teams <span class="op">=</span> emp[<span class="st">&quot;Team&quot;</span>].isin(star_teams)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>emp[on_star_teams]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We can also apply the <code>between()</code> method to string variables.</li>
+<li class="fragment"><p>What if our next report asked for employees from 15 teams instead of three?</p></li>
+<li class="fragment"><p>A better solution is the <code>isin()</code> method, which accepts an iterable (e.g., <code>list</code>, <code>tuple</code>, <code>Series</code>) and returns a Boolean <code>Series</code>.</p></li>
 </ul>
 </section>
 <section id="pandas-basics-22" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="filtering-by-a-condition-with-the-query-method">Filtering by a Condition with the <code>query()</code> method</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Below two are equivalent</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 &amp; Team == &#39;Finance&#39;&quot;</span>)</span>
-<span id="cb20-3"><a href="#cb20-3"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 and Team == &#39;Finance&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="filtering-by-a-condition-3">Filtering by a Condition</h3>
 <ul>
-<li><p>The <code>query()</code> method filters observations using a concise, string-based query syntax.</p></li>
-<li><p>The <code>query()</code> method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering.</p></li>
+<li class="fragment">When working with numbers or dates, we often want to extract values that fall within a range.
+<ul>
+<li class="fragment">E.g., Identify all employees with a salary between $90,000 and $100,000.</li>
+</ul></li>
 </ul>
 </section>
 <section id="pandas-basics-23" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-condition-4">Filtering by a Condition</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>higher_than_90k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&gt;=</span> <span class="dv">90000</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>lower_than_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>] <span class="op">&lt;</span> <span class="dv">100000</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>emp[ higher_than_90k <span class="op">&amp;</span> lower_than_100k ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>We can create two Boolean <code>Series</code>, one to declare the lower bound and one to declare the upper bound.</p></li>
+<li class="fragment"><p>Then we can use the <code>&amp;</code> operator to mandate that both conditions are <code>True</code>:</p></li>
+</ul>
+</section>
+<section id="pandas-basics-24" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-with-the-between-method">Filtering with the <code>between()</code> method</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>between_90k_and_100k <span class="op">=</span> emp[<span class="st">&quot;Salary&quot;</span>].between(<span class="dv">90000</span>, <span class="dv">100000</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>emp[between_90k_and_100k]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">A slightly cleaner solution is to use a method called <code>between()</code>
+<ul>
+<li class="fragment">It returns a Boolean Series where <code>True</code> denotes that a row’s value falls between the specified interval.</li>
+<li class="fragment">The first argument, the lower bound, is <em>inclusive</em>, and the second argument, the upper bound, is <em>exclusive</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-25" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-with-the-between-method-1">Filtering with the <code>between()</code> method</h3>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>name_starts_with_t <span class="op">=</span> emp[<span class="st">&quot;First Name&quot;</span>].between(<span class="st">&quot;T&quot;</span>, <span class="st">&quot;U&quot;</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>emp[name_starts_with_t]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can also apply the <code>between()</code> method to string variables.</li>
+</ul>
+</section>
+<section id="pandas-basics-26" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="filtering-by-a-condition-with-the-query-method">Filtering by a Condition with the <code>query()</code> method</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Below two are equivalent</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 &amp; Team == &#39;Finance&#39;&quot;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a>emp.query(<span class="st">&quot;Salary &gt;= 100000 and Team == &#39;Finance&#39;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>The <code>query()</code> method filters observations using a concise, string-based query syntax.</p></li>
+<li class="fragment"><p>The <code>query()</code> method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-27" class="slide level2">
 <h2>Pandas Basics</h2>
 <p>Let’s do Questions 2-6 in <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html">Classwork 4</a>!</p>
 </section></section>
@@ -1477,78 +1540,78 @@ Byeong-Hak Choe
 <h1>Dealing with Missing Values</h1>
 
 </section>
-<section id="pandas-basics-24" class="slide level2">
+<section id="pandas-basics-28" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="dealing-with-missing-values-1">Dealing with Missing Values</h3>
 <ul>
-<li><p>Pandas marks missing text values and missing numeric values with a <code>NaN</code> (not a number) designation, and it marks missing datetime values with a <code>NaT</code> (not a time) designation.</p></li>
-<li><p>We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable.</p></li>
-</ul>
-</section>
-<section id="pandas-basics-25" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-isna-and-notna-methods">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>emp[<span class="st">&quot;Team&quot;</span>].isna()</span>
-<span id="cb21-2"><a href="#cb21-2"></a>emp[<span class="st">&quot;Start Date&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>The <code>isna()</code> method returns a Boolean <code>Series</code> in which <code>True</code> denotes that a row’s value is missing.</li>
-</ul>
-</section>
-<section id="pandas-basics-26" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-isna-and-notna-methods-1">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>emp[<span class="st">&quot;Team&quot;</span>].notna()</span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>The <code>notna()</code> method returns the inverse <code>Series</code>, one in which <code>True</code> indicates that a row’s value is present.</p></li>
-<li><p>We use the tilde symbol (<code>~</code>) to invert a Boolean <code>Series</code>.</p></li>
-<li><p><strong>Q</strong>. How can we pull out employees with non-missing <code>First Name</code>?</p></li>
-</ul>
-</section>
-<section id="pandas-basics-27" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-dropna-method">Dealing with Missing Values: The <code>dropna()</code> method</h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>,</span>
-<span id="cb23-2"><a href="#cb23-2"></a>                  parse_dates <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>])</span>
-<span id="cb23-3"><a href="#cb23-3"></a>emp.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>The <code>dropna()</code> method removes observations that hold any <code>NaN</code> or <code>NaT</code> values</li>
-</ul>
-</section>
-<section id="pandas-basics-28" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-dropna-method-with-how">Dealing with Missing Values: The <code>dropna()</code> method with <code>how</code></h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>emp.dropna(how <span class="op">=</span> <span class="st">&quot;all&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>We can pass the <code>how</code> parameter an argument of <code>&quot;all&quot;</code> to remove observations in which all values are missing.</p></li>
-<li><p>Note that the <code>how</code> parameter’s default argument is <code>&quot;any&quot;</code>.</p></li>
+<li class="fragment"><p>Pandas marks missing text values and missing numeric values with a <code>NaN</code> (not a number) designation, and it marks missing datetime values with a <code>NaT</code> (not a time) designation.</p></li>
+<li class="fragment"><p>We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable.</p></li>
 </ul>
 </section>
 <section id="pandas-basics-29" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-dropna-method-with-subset">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="dealing-with-missing-values-the-isna-and-notna-methods">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>emp[<span class="st">&quot;Team&quot;</span>].isna()</span>
+<span id="cb25-2"><a href="#cb25-2"></a>emp[<span class="st">&quot;Start Date&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We can use the <code>subset</code> parameter to target observations with a missing value in a specific variable.
-<ul>
-<li>The above example removes observations that have a missing value in the <code>Gender</code> variable.</li>
-</ul></li>
+<li class="fragment">The <code>isna()</code> method returns a Boolean <code>Series</code> in which <code>True</code> denotes that a row’s value is missing.</li>
 </ul>
 </section>
 <section id="pandas-basics-30" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-dropna-method-with-subset-1">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>, <span class="st">&quot;Salary&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="dealing-with-missing-values-the-isna-and-notna-methods-1">Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>emp[<span class="st">&quot;Team&quot;</span>].notna()</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We can also pass the <code>subset</code> parameter a list of variables.</li>
+<li class="fragment"><p>The <code>notna()</code> method returns the inverse <code>Series</code>, one in which <code>True</code> indicates that a row’s value is present.</p></li>
+<li class="fragment"><p>We use the tilde symbol (<code>~</code>) to invert a Boolean <code>Series</code>.</p></li>
+<li class="fragment"><p><strong>Q</strong>. How can we pull out employees with non-missing <code>First Name</code>?</p></li>
 </ul>
 </section>
 <section id="pandas-basics-31" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="dealing-with-missing-values-the-dropna-method-with-thresh">Dealing with Missing Values: The <code>dropna()</code> method with <code>thresh</code></h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>emp.dropna(thresh <span class="op">=</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="dealing-with-missing-values-the-dropna-method">Dealing with Missing Values: The <code>dropna()</code> method</h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>,</span>
+<span id="cb27-2"><a href="#cb27-2"></a>                  parse_dates <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>])</span>
+<span id="cb27-3"><a href="#cb27-3"></a>emp.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>The <code>thresh</code> parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.</li>
+<li class="fragment">The <code>dropna()</code> method removes observations that hold any <code>NaN</code> or <code>NaT</code> values</li>
+</ul>
+</section>
+<section id="pandas-basics-32" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-how">Dealing with Missing Values: The <code>dropna()</code> method with <code>how</code></h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>emp.dropna(how <span class="op">=</span> <span class="st">&quot;all&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>We can pass the <code>how</code> parameter an argument of <code>&quot;all&quot;</code> to remove observations in which all values are missing.</p></li>
+<li class="fragment"><p>Note that the <code>how</code> parameter’s default argument is <code>&quot;any&quot;</code>.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-33" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-subset">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can use the <code>subset</code> parameter to target observations with a missing value in a specific variable.
+<ul>
+<li class="fragment">The above example removes observations that have a missing value in the <code>Gender</code> variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-34" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-subset-1">Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">&quot;Start Date&quot;</span>, <span class="st">&quot;Salary&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can also pass the <code>subset</code> parameter a list of variables.</li>
+</ul>
+</section>
+<section id="pandas-basics-35" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-missing-values-the-dropna-method-with-thresh">Dealing with Missing Values: The <code>dropna()</code> method with <code>thresh</code></h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>emp.dropna(thresh <span class="op">=</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>thresh</code> parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.</li>
 </ul>
 </section></section>
 <section>
@@ -1556,74 +1619,74 @@ Byeong-Hak Choe
 <h1>Dealing with Duplicates</h1>
 
 </section>
-<section id="pandas-basics-32" class="slide level2">
+<section id="pandas-basics-36" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="dealing-with-duplicates-with-the-duplicated-method">Dealing with Duplicates with the <code>duplicated()</code> method</h3>
 <p>Missing values are a common occurrence in messy data sets, and so are duplicate values.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>The <code>duplicated()</code> method returns a Boolean <code>Series</code> that identifies duplicates in a variable.</li>
-</ul>
-</section>
-<section id="pandas-basics-33" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-duplicates-with-the-duplicated-method-1">Dealing with Duplicates with the <code>duplicated()</code> method</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;first&quot;</span>)</span>
-<span id="cb29-2"><a href="#cb29-2"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>The <code>duplicated()</code> method’s <code>keep</code> parameter informs pandas which duplicate occurrence to keep.
-<ul>
-<li>Its default argument, <code>&quot;first&quot;</code>, keeps the first occurrence of each duplicate value.</li>
-<li>Its argument, <code>&quot;last&quot;</code>, keeps the last occurrence of each duplicate value.</li>
-</ul></li>
-<li><strong>Q</strong>. How can we keep observations with the first occurrences of a value in the Team variable?</li>
-</ul>
-</section>
-<section id="pandas-basics-34" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>The <code>drop_duplicates()</code> method removes rows in which all values are equal to those in a previously encountered observations.</li>
-</ul>
-</section>
-<section id="pandas-basics-35" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-1">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>We can pass the<code>drop_duplicates()</code> method a <code>subset</code> parameter with a list of columns that pandas should use to determine an observation’s uniqueness.</p>
-<ul>
-<li>The above example finds the first occurrence of each unique value in the Team variable.</li>
-</ul></li>
-</ul>
-</section>
-<section id="pandas-basics-36" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-2">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>The above example uses a combination of values across the <code>Gender</code> and <code>Team</code> variables to identify duplicates.</li>
+<li class="fragment">The <code>duplicated()</code> method returns a Boolean <code>Series</code> that identifies duplicates in a variable.</li>
 </ul>
 </section>
 <section id="pandas-basics-37" class="slide level2">
 <h2>Pandas Basics</h2>
-<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-3">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
-<span id="cb33-2"><a href="#cb33-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb33-3"><a href="#cb33-3"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;First Name&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="dealing-with-duplicates-with-the-duplicated-method-1">Dealing with Duplicates with the <code>duplicated()</code> method</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;first&quot;</span>)</span>
+<span id="cb33-2"><a href="#cb33-2"></a>emp[<span class="st">&quot;Team&quot;</span>].duplicated(keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="op">~</span>emp[<span class="st">&quot;Team&quot;</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>The <code>drop_duplicates()</code> method also accepts a <code>keep</code> parameter.</p>
+<li class="fragment">The <code>duplicated()</code> method’s <code>keep</code> parameter informs pandas which duplicate occurrence to keep.
 <ul>
-<li>We can pass it an argument of <code>&quot;last&quot;</code> to keep the observations with each duplicate value’s last occurrence.</li>
-<li>We can pass it an argument of <code>False</code> to exclude all observations with duplicate values.</li>
+<li class="fragment">Its default argument, <code>&quot;first&quot;</code>, keeps the first occurrence of each duplicate value.</li>
+<li class="fragment">Its argument, <code>&quot;last&quot;</code>, keeps the last occurrence of each duplicate value.</li>
 </ul></li>
-<li><p><strong>Q</strong>. What does <code>emp.drop_duplicates(subset = [&quot;First Name&quot;], keep = False)</code> do?</p></li>
-<li><p><strong>Q</strong>. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame <code>emp.drop_duplicates(subset = [&quot;Gender&quot;, &quot;Team&quot;])</code>.</p></li>
+<li class="fragment"><strong>Q</strong>. How can we keep observations with the first occurrences of a value in the Team variable?</li>
 </ul>
 </section>
 <section id="pandas-basics-38" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>drop_duplicates()</code> method removes rows in which all values are equal to those in a previously encountered observations.</li>
+</ul>
+</section>
+<section id="pandas-basics-39" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-1">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>We can pass the<code>drop_duplicates()</code> method a <code>subset</code> parameter with a list of columns that pandas should use to determine an observation’s uniqueness.</p>
+<ul>
+<li class="fragment">The above example finds the first occurrence of each unique value in the Team variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-basics-40" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-2">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Team&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above example uses a combination of values across the <code>Gender</code> and <code>Team</code> variables to identify duplicates.</li>
+</ul>
+</section>
+<section id="pandas-basics-41" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="dealing-with-duplicates-with-the-drop_duplicates-method-3">Dealing with Duplicates with the <code>drop_duplicates()</code> method</h3>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="st">&quot;last&quot;</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">&quot;First Name&quot;</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>The <code>drop_duplicates()</code> method also accepts a <code>keep</code> parameter.</p>
+<ul>
+<li class="fragment">We can pass it an argument of <code>&quot;last&quot;</code> to keep the observations with each duplicate value’s last occurrence.</li>
+<li class="fragment">We can pass it an argument of <code>False</code> to exclude all observations with duplicate values.</li>
+</ul></li>
+<li class="fragment"><p><strong>Q</strong>. What does <code>emp.drop_duplicates(subset = [&quot;First Name&quot;], keep = False)</code> do?</p></li>
+<li class="fragment"><p><strong>Q</strong>. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame <code>emp.drop_duplicates(subset = [&quot;Gender&quot;, &quot;Team&quot;])</code>.</p></li>
+</ul>
+</section>
+<section id="pandas-basics-42" class="slide level2">
 <h2>Pandas Basics</h2>
 <p>Let’s do Questions 7-8 in <a href="https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html">Classwork 4</a>!</p>
 
