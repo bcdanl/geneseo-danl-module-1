@@ -55,6 +55,12 @@ import pandas as pd
 
 # Part 1
 
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nyc-payroll.png" width="600px">
+</p>
+
+<br>
+
 Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
 
 ```{python}
@@ -174,11 +180,27 @@ Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and cou
 
 # Part 2
 
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/spotify.png" width="400px">
+</p>
+
+<br>
+
 Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
 
 ```{python}
 #| echo: true
 spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+
+rm(list =ls())
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
+                       options = list(rows.print = 25))
 ```
 
 <br>
@@ -221,7 +243,7 @@ spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
 
 ## Question 6
 - Create a DataFrame that only contains observations from playlists featuring the song "One Dance" by Drake.
-  - Next, identify the song with the highest popularity after "One Dance" in the newly created DataFrame.
+  - Next, identify the song with the highest popularity after Drake's "One Dance" in the newly created DataFrame.
 
 
 *Answer*

@@ -130,7 +130,7 @@
     "href": "danl-hw/danl-m1-hw-4.html#question-6",
     "title": "Homework 4",
     "section": "Question 6",
-    "text": "Question 6\n\nCreate a DataFrame that only contains observations from playlists featuring the song “One Dance” by Drake.\n\nNext, identify the song with the highest popularity after “One Dance” in the newly created DataFrame.\n\n\nAnswer"
+    "text": "Question 6\n\nCreate a DataFrame that only contains observations from playlists featuring the song “One Dance” by Drake.\n\nNext, identify the song with the highest popularity after Drake’s “One Dance” in the newly created DataFrame.\n\n\nAnswer"
   },
   {
     "objectID": "danl-qa/danl-m1-qa-03.html",
