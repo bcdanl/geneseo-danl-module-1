@@ -333,35 +333,35 @@
     "href": "danl-cw/danl-m1-cw-4.html#question-3",
     "title": "Classwork 4",
     "section": "Question 3",
-    "text": "Question 3\nFind all observations with a director of “Robert Rodriguez” and a type of “Movie”.\nAnswer:"
+    "text": "Question 3\nFind all observations with a director of “Robert Altman” and a type of “Movie”.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-4.html#question-4",
     "href": "danl-cw/danl-m1-cw-4.html#question-4",
     "title": "Classwork 4",
     "section": "Question 4",
-    "text": "Question 4\nFind all observations with either a date_added of “2019-07-31” or a director of “Robert Altman”.\nAnswer:"
+    "text": "Question 4\nFind all observations with either a date_added of “2018-06-15” or a director of “Bong Joon Ho”.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-4.html#question-5",
     "href": "danl-cw/danl-m1-cw-4.html#question-5",
     "title": "Classwork 4",
     "section": "Question 5",
-    "text": "Question 5\nFind all observations with a director of “Orson Welles”, “Aditya Kripalani”, or “Sam Raimi”.\nAnswer:"
+    "text": "Question 5\nFind all observations with a director of “Ethan Coen,”Joel Coen“, and”Quentin Tarantino“.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-4.html#question-6",
     "href": "danl-cw/danl-m1-cw-4.html#question-6",
     "title": "Classwork 4",
     "section": "Question 6",
-    "text": "Question 6\nFind all observations with a date_added value between May 1, 2019 and June 1, 2019.\nAnswer:"
+    "text": "Question 6\nFind all observations with a date_added value between January 1, 2019 and February 1, 2019.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-4.html#question-7",
     "href": "danl-cw/danl-m1-cw-4.html#question-7",
     "title": "Classwork 4",
     "section": "Question 7",
-    "text": "Question 7\nDrop all rows with a NaN value in the director variable.\nAnswer:"
+    "text": "Question 7\nDrop all observations with a NaN value in the director variable.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-4.html#question-8",
