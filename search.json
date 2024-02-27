@@ -1397,63 +1397,63 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-3",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRelocating Variables with .columns.get_loc(), .pop(), and .insert()\nref_var = emp.columns.get_loc('Salary') \nvar_to_move = emp.pop('Mgmt')\nemp.insert(ref_var, 'Mgmt', var_to_move) # directly alters 'emp'\n\nStep 1. DataFrame.columns.get_loc('Reference_Var')\n\nGet the integer position (right before the reference variable, ‘Reference_Var’)\n\nStep 2. DataFrame.pop('Some_Var_To_Move')\n\nRemove the variable we want to relocate from the DataFrame and store it in a Series\n\nStep 3. DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)\n\nInsert the variable back into the DataFrame right after the reference variable."
+    "text": "Pandas Basics\nRelocating Variables with .columns.get_loc(), .pop(), and .insert()\nref_var = emp.columns.get_loc('Salary') \nvar_to_move = emp.pop('Mgmt')\nemp.insert(ref_var, 'Mgmt', var_to_move) # insert() directly alters 'emp'\n\nStep 1. DataFrame.columns.get_loc('Reference_Var')\n\nGet the integer position (right before the reference variable, ‘Reference_Var’)\n\nStep 2. DataFrame.pop('Some_Var_To_Move')\n\nRemove the variable we want to relocate from the DataFrame and store it in a Series\n\nStep 3. DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)\n\nInsert the variable back into the DataFrame right after the reference variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-4",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-4",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\n\n\nLet’s read employment.csv as emp.\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\n\nWhat values are in the Mgmt variable?"
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\n\n\nWhat values are in the Mgmt variable?\n\n\nemp[\"Mgmt\"].astype(bool)\n\nThe astype() method converts a Series’ values to a different data type.\n\nIt can accept a single argument: the new data type."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-5",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-5",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"].astype(bool)\n\nThe astype() method converts a Series’ values to a different data type.\n\nIt accepts a single argument: the new data type.\nWe can pass either the data type or a string with its name."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"] = emp[\"Mgmt\"].astype(bool)\n\nThe above code overwrites the Mgmt variable with our new Series of Booleans."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-6",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-6",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"] = emp[\"Mgmt\"].astype(bool)\n\nThe above code overwrites the Mgmt variable with our new Series of Booleans."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Salary\"].astype(int)\n\nThe above code tries to coerce the Salary variable’s values to integers with the astype() method.\n\nPandas is unable to convert the NaN values to integers."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-7",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-7",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Salary\"].astype(int)\n\nThe above code tries to coerce the Salary variable’s values to integers with the astype() method.\n\nPandas is unable to convert the NaN values to integers."
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"].fillna(0)\n\nThe fillna() method replaces a Series’ missing values with the argument we pass in.\nThe above example provides a fill value of 0.\n\nNote that our choice of value can distort the data; 0 is passed solely for the sake of example."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-8",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-8",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"].fillna(0)\n\nThe fillna() method replaces a Series’ missing values with the argument we pass in.\nThe above example provides a fill value of 0.\n\nNote that your choice of value can distort the data; 0 is passed solely for the sake of example."
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0).astype(int)\n\nThe above code overwrites the Salary variable with our new Series of integers."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-9",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-9",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0).astype(int)\n\nThe above code overwrites the Salary variable with our new Series of integers."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\n\nPandas includes a special data type called a category,\n\nIt is ideal for a variable consisting of a small number of unique values relative to its total size.\nE.g., gender, weekdays, blood types, planets, and income groups."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-10",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-10",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\nPandas includes a special data type called a category, - It is ideal for a variable consisting of a small number of unique values relative to its total size. - E.g., gender, weekdays, blood types, planets, and income groups."
+    "text": "Pandas Basics\nConverting Data Types with the pd.to_datetime() method\n# Below two are equivalent:\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\nemp[\"Start Date\"] = emp[\"Start Date\"].astype('datetime64')\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-11",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-11",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nConverting Data Types with the pd.to_datetime() method\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0)\nemp = emp.astype({'Mgmt': 'bool', \n                  'Salary': 'int',\n                  'Gender': 'category',\n                  'Start Date': 'datetime64'})\n\nWe can provide a dictionary of variable-type pairs to astype()."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-12",
@@ -1474,7 +1474,7 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-14",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”."
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”.\n\npandas performs a vectorized operation (element-by-element operation) on Series."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-15",
@@ -1488,21 +1488,21 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-16",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[donnas]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
+    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[ donnas ]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-17",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-17",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
+    "text": "Pandas Basics\nFiltering by a Single Condition\n\n\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\n\n\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-18",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-18",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to retrieve all the managers in the company? Managers have a value of True in the Mgmt variable.\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
+    "text": "Pandas Basics\nFiltering by a Single Condition\n\n\nWhat if we want to retrieve all the managers in the company?\n\nManagers have a value of True in the Mgmt variable.\n\n\n\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-19",
@@ -1516,133 +1516,133 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-20",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ]\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria."
+    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ] # '|' is 'or' opeartor\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria.\nWhat if our next report asked for employees from 30 teams instead of three?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-21",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-21",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[on_star_teams]\n\nWhat if our next report asked for employees from 15 teams instead of three?\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, Series) and returns a Boolean Series."
+    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[ on_star_teams ]\n\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, array, Series) and returns a Boolean Series."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-22",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-22",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000."
+    "text": "Pandas Basics\nFiltering by a Condition\n\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000.\n\n\n\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-23",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-23",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ]\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True:"
+    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[ between_90k_and_100k ]\n\nA slightly cleaner solution is to use a method called between().\n\nIt returns a Boolean Series where True denotes that an observation’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-24",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-24",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[between_90k_and_100k]\n\nA slightly cleaner solution is to use a method called between()\n\nIt returns a Boolean Series where True denotes that a row’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
+    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[ name_starts_with_t ]\n\nWe can also apply the between() method to string variables."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-25",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-25",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[name_starts_with_t]\n\nWe can also apply the between() method to string variables."
+    "text": "Pandas Basics\nFiltering by a Condition with the query() method!\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 & `First Name` == 'Douglas'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\n\nquery() accepts a string value that describes filtering conditions.\n\nWhen using the query() method, if we have variable names with spaces, we can wrap the variable names in backtick (`).\n\nBacktick (`) is the key located next to the number 1 in a keyboard."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-26",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-26",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nFiltering by a Condition with the query() method\n# Below two are equivalent\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 and Team == 'Finance'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\nThe query() method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering."
+    "text": "Pandas Basics\nLet’s do Questions 2-6 in Classwork 4!"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-27",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-27",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 2-6 in Classwork 4!"
+    "text": "Pandas Basics\nDealing with Missing Values\n\nPandas often marks (1) missing text values and (2) missing numeric values with a NaN (not a number);\n\nIt also marks missing datetime values with a NaT (not a time)."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-28",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-28",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values\n\nPandas marks missing text values and missing numeric values with a NaN (not a number) designation, and it marks missing datetime values with a NaT (not a time) designation.\nWe can use several pandas methods to isolate observations with either missing or non-missing values in a given variable."
+    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].isna()\nemp[\"Start Date\"].isna()\n\nThe isna() method returns a Boolean Series in which True denotes that an observation’s value is missing.\n\nIs a value of a variable “XYZ” missing?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-29",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-29",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].isna()\nemp[\"Start Date\"].isna()\n\nThe isna() method returns a Boolean Series in which True denotes that a row’s value is missing."
+    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\n# Below two are equivalent.\nemp[\"Team\"].notna()\n~emp[\"Team\"].isna()\n\nThe notna() method returns the inverse Series, one in which True indicates that an observation’s value is present.\nWe use the tilde symbol (~) to invert a Boolean Series.\nQ. How can we pull out employees with non-missing Team values?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-30",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-30",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].notna()\n~emp[\"Team\"].isna()\n\nThe notna() method returns the inverse Series, one in which True indicates that a row’s value is present.\nWe use the tilde symbol (~) to invert a Boolean Series.\nQ. How can we pull out employees with non-missing First Name?"
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\",\n                  parse_dates = [\"Start Date\"])\nemp.dropna()\n\nThe dropna() method removes observations that hold any NaN or NaT values."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-31",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-31",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\",\n                  parse_dates = [\"Start Date\"])\nemp.dropna()\n\nThe dropna() method removes observations that hold any NaN or NaT values"
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with how\nemp.dropna(how = \"all\")\n\nWe can pass the how parameter an argument of \"all\" to remove observations in which all values are missing.\nNote that the how parameter’s default argument is \"any\"."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-32",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-32",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with how\nemp.dropna(how = \"all\")\n\nWe can pass the how parameter an argument of \"all\" to remove observations in which all values are missing.\nNote that the how parameter’s default argument is \"any\"."
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Gender\"])\n\nWe can use the subset parameter to target observations with a missing value in a specific variable.\n\nThe above example removes observations that have a missing value in the Gender variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-33",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-33",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Gender\"])\n\nWe can use the subset parameter to target observations with a missing value in a specific variable.\n\nThe above example removes observations that have a missing value in the Gender variable."
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Start Date\", \"Salary\"])\n\nWe can also pass the subset parameter a list of variables."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-34",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-34",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Start Date\", \"Salary\"])\n\nWe can also pass the subset parameter a list of variables."
+    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with thresh\nemp.dropna(thresh = 4)\n\nThe thresh parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-35",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-35",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The dropna() method with thresh\nemp.dropna(thresh = 4)\n\nThe thresh parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it."
+    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\n\n\nMissing values are a common occurrence in messy data sets, and so are duplicate values.\n\n\nemp[\"Team\"].duplicated()\n\nThe duplicated() method returns a Boolean Series that identifies duplicates in a variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-36",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-36",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nMissing values are a common occurrence in messy data sets, and so are duplicate values.\nemp[\"Team\"].duplicated()\n\nThe duplicated() method returns a Boolean Series that identifies duplicates in a variable."
+    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-37",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-37",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates()\n\nThe drop_duplicates() method removes observations in which all values are equal to those in a previously encountered observations."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-38",
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-38",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates()\n\nThe drop_duplicates() method removes rows in which all values are equal to those in a previously encountered observations."
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\n\n\nBelow is an example of the drop_duplicates() method:\n\n\n# Sample DataFrame with duplicate observations\ndata = {\n    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],\n    'Age': [28, 23, 28, 32, 23],\n    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']\n}\n\n# pd.DataFrame( Series, List, or Dict ) creates a DataFrame\ndf = pd.DataFrame(data)  \ndf_unique = df.drop_duplicates()"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-02-2024-0213.html#pandas-basics-1",
@@ -2531,7 +2531,7 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-39",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass thedrop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass the drop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-40",
@@ -2545,7 +2545,7 @@
     "href": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-41",
     "title": "Lecture 4",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"], keep = \"last\")\nemp.drop_duplicates(subset = [\"Team\"], keep = False)\nemp.drop_duplicates(subset = [\"First Name\"], keep = False)\n\nThe drop_duplicates() method also accepts a keep parameter.\n\nWe can pass it an argument of \"last\" to keep the observations with each duplicate value’s last occurrence.\nWe can pass it an argument of False to exclude all observations with duplicate values.\n\nQ. What does emp.drop_duplicates(subset = [\"First Name\"], keep = False) do?\nQ. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame emp.drop_duplicates(subset = [\"Gender\", \"Team\"])."
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"], keep = \"last\")\nemp.drop_duplicates(subset = [\"Team\"], keep = False)\n\nThe drop_duplicates() method also accepts a keep parameter.\n\nWe can pass it an argument of \"last\" to keep the observations with each duplicate value’s last occurrence.\nWe can pass it an argument of False to exclude all observations with duplicate values.\n\nQ. What does emp.drop_duplicates(subset = [\"First Name\"], keep = False) do?\nQ. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame emp.drop_duplicates(subset = [\"Gender\", \"Team\"])."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-42",

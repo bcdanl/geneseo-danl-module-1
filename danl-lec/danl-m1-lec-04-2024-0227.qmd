@@ -93,7 +93,7 @@ emp.drop(columns = ["Salary_2x", "Salary_3x"])
 ```{.python}
 ref_var = emp.columns.get_loc('Salary') 
 var_to_move = emp.pop('Mgmt')
-emp.insert(ref_var, 'Mgmt', var_to_move) # directly alters 'emp'
+emp.insert(ref_var, 'Mgmt', var_to_move) # insert() directly alters 'emp'
 ```
 
 - **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
@@ -109,20 +109,13 @@ emp.insert(ref_var, 'Mgmt', var_to_move) # directly alters 'emp'
 
 
 ## Pandas Basics
-:::{.nonincremental}
-- Let's read `employment.csv` as `emp`.
+### Converting Data Types with the `astype()` method
 
-```{.python}
-emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
-```
-
-:::
+::: {.nonincremental}
 
 - What values are in the `Mgmt` variable?
 
-
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+:::
 
 ```{.python}
 emp["Mgmt"].astype(bool)
@@ -130,8 +123,7 @@ emp["Mgmt"].astype(bool)
 
 
 - The `astype()` method converts a `Series`' values to a different data type. 
-  - It accepts a single argument: the new data type. 
-  - We can pass either the data type or a string with its name.
+  - It can accept a single argument: the new data type. 
 
 
 
@@ -167,7 +159,7 @@ emp["Salary"].fillna(0)
 
 - The `fillna()` method replaces a `Series`' missing values with the argument we pass in. 
 - The above example provides a fill value of `0`. 
-  - Note that your choice of value can distort the data; `0` is passed solely for the sake of example.
+  - Note that our choice of value can distort the data; `0` is passed solely for the sake of example.
 
 
 
@@ -192,7 +184,7 @@ emp["Salary"] = emp["Salary"].fillna(0).astype(int)
 emp["Gender"] = emp["Gender"].astype("category")
 ```
 
-Pandas includes a special data type called a `category`, 
+- Pandas includes a special data type called a `category`, 
   - It is ideal for a variable consisting of a small number of unique values relative
 to its total size. 
   - E.g., gender, weekdays, blood types, planets, and income groups. 
@@ -203,11 +195,29 @@ to its total size.
 ### Converting Data Types with the `pd.to_datetime()` method
 
 ```{.python}
+# Below two are equivalent:
 emp["Start Date"] = pd.to_datetime(emp["Start Date"])
+emp["Start Date"] = emp["Start Date"].astype('datetime64')
 ```
 
 - The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
 
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+
+emp["Salary"] = emp["Salary"].fillna(0)
+emp = emp.astype({'Mgmt': 'bool', 
+                  'Salary': 'int',
+                  'Gender': 'category',
+                  'Start Date': 'datetime64'})
+```
+
+- We can provide a dictionary of variable-type pairs to `astype()`.
 
 
 ## Pandas Basics
@@ -243,7 +253,7 @@ emp["First Name"] == "Donna"
   - `Series == value`
 
 - The above example compares each `First Name` value with "Donna".
-
+  - pandas performs a vectorized operation (element-by-element operation) on `Series`.
 
 
 ## Pandas Basics
@@ -264,7 +274,7 @@ emp[ emp["First Name"] == "Donna" ]
 
 ```{.python}
 donnas = emp["First Name"] == "Donna"
-emp[donnas]
+emp[ donnas ]
 ```
 
 
@@ -276,7 +286,10 @@ emp[donnas]
 ## Pandas Basics
 ### Filtering by a Single Condition
 
-What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+::: {.nonincremental}
+- What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+
+:::
 
 ```{.python}
 non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
@@ -290,8 +303,12 @@ emp[ non_marketing ]
 ## Pandas Basics
 ### Filtering by a Single Condition
 
-What if we want to retrieve all the managers in the company? Managers have a value
-of `True` in the `Mgmt` variable.
+::: {.nonincremental}
+
+- What if we want to retrieve all the managers in the company? 
+  - Managers have a value of `True` in the `Mgmt` variable.
+
+:::
 
 ```{.python}
 emp[ emp["Mgmt"] ]
@@ -320,11 +337,12 @@ emp[ high_earners ]
 sales = emp["Team"] == "Sales"
 legal = emp["Team"] == "Legal"
 fnce = emp["Team"] == "Finance"
-emp[ sales | legal | fnce ]
+emp[ sales | legal | fnce ] # '|' is 'or' opeartor
 ```
 
 - We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria.
 
+- What if our next report asked for employees from 30 teams instead of three? 
 
 
 
@@ -334,35 +352,34 @@ emp[ sales | legal | fnce ]
 ```{.python}
 star_teams = ["Sales", "Legal", "Finance"]
 on_star_teams = emp["Team"].isin(star_teams)
-emp[on_star_teams]
+emp[ on_star_teams ]
 ```
 
-- What if our next report asked for employees from 15 teams instead of three? 
 
-- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `Series`) and returns a Boolean `Series`. 
+- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `array`, `Series`) and returns a Boolean `Series`. 
+
+
 
 
 
 ## Pandas Basics
 ### Filtering by a Condition
 
+:::{.nonincremental}
 - When working with numbers or dates, we often want to extract values that fall within a range. 
   - E.g., Identify all employees with a salary between $90,000 and $100,000. 
 
-
-
-## Pandas Basics
-### Filtering by a Condition
+:::
 
 ```{.python}
 higher_than_90k = emp["Salary"] >= 90000
 lower_than_100k = emp["Salary"] < 100000
-emp[ higher_than_90k & lower_than_100k ]
+emp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor
 ```
 
 - We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
 
-- Then we can use the `&` operator to mandate that both conditions are `True`:
+- Then we can use the `&` operator to mandate that both conditions are `True`.
 
 
 
@@ -372,12 +389,12 @@ emp[ higher_than_90k & lower_than_100k ]
 
 ```{.python}
 between_90k_and_100k = emp["Salary"].between(90000, 100000)
-emp[between_90k_and_100k]
+emp[ between_90k_and_100k ]
 ```
 
-- A slightly cleaner solution is to use a method called `between()`
-  - It returns a Boolean Series where `True` denotes that a row's value falls between the specified interval.
-  - The first argument, the lower bound, is *inclusive*, and the second argument, the upper bound, is *exclusive*.
+- A slightly cleaner solution is to use a method called `between()`.
+  - It returns a Boolean Series where `True` denotes that an observation's value falls between the specified interval.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
 
 
 
@@ -386,29 +403,28 @@ emp[between_90k_and_100k]
 
 ```{.python}
 name_starts_with_t = emp["First Name"].between("T", "U")
-emp[name_starts_with_t]
+emp[ name_starts_with_t ]
 ```
 
-- We can also apply the `between()` method to string variables.
+- We can also apply the `between()` method to *string* variables.
 
 
 
 
 ## Pandas Basics
-### Filtering by a Condition with the `query()` method
+### Filtering by a Condition with the `query()` method!
 
 ```{.python}
-# Below two are equivalent
 emp.query("Salary >= 100000 & Team == 'Finance'")
-emp.query("Salary >= 100000 and Team == 'Finance'")
+emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
 ```
 
-- The `query()` method filters observations using a concise, string-based query syntax. 
+- The `query()` method filters observations using a concise, **string**-based query syntax. 
+  - `query()` accepts a string value that describes filtering conditions.
 
-- The `query()` method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering.
-
-
-
+- When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`).
+  - Backtick (`) is the key located next to the number 1 in a keyboard.
+  
 ## Pandas Basics
 
 Let's do Questions 2-6 in [Classwork 4](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-4.html)!
@@ -420,9 +436,10 @@ Let's do Questions 2-6 in [Classwork 4](https://bcdanl.github.io/module-1/danl-c
 ## Pandas Basics
 ### Dealing with Missing Values
 
-- Pandas marks missing text values and missing numeric values with a `NaN` (not a number) designation, and it marks missing datetime values with a `NaT` (not a time) designation.
+- Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
+  - It also marks missing datetime values with a `NaT` (not a time).
 
-- We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable.
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
 
 
 
@@ -434,22 +451,23 @@ emp["Team"].isna()
 emp["Start Date"].isna()
 ```
 
-- The `isna()` method returns a Boolean `Series` in which `True` denotes that a row's value is missing.
-
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
+  - Is a value of a variable "XYZ" missing?
 
 ## Pandas Basics
 ### Dealing with Missing Values: The `isna()` and `notna()` methods
 
 ```{.python}
+# Below two are equivalent.
 emp["Team"].notna()
 ~emp["Team"].isna()
 ```
 
-- The `notna()` method returns the inverse `Series`, one in which `True` indicates that a row's value is present.
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that an observation's value is present.
 
 - We use the tilde symbol (`~`) to invert a Boolean `Series`.
 
-- **Q**. How can we pull out employees with non-missing `First Name`?
+- **Q**. How can we pull out employees with non-missing `Team` values?
 
 
 ## Pandas Basics
@@ -461,7 +479,7 @@ emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv",
 emp.dropna()
 ```
 
-- The `dropna()` method removes observations that hold any `NaN` or `NaT` values
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values.
 
 
 
@@ -516,7 +534,10 @@ emp.dropna(thresh = 4)
 ## Pandas Basics
 ### Dealing with Duplicates with the `duplicated()` method
 
-Missing values are a common occurrence in messy data sets, and so are duplicate values.
+::: {.nonincremental}
+- Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+:::
 
 ```{.python}
 emp["Team"].duplicated()
@@ -552,7 +573,31 @@ emp.drop_duplicates()
 ```
 
 
-- The `drop_duplicates()` method removes rows in which all values are equal to those in a previously encountered observations.
+- The `drop_duplicates()` method removes observations in which all values are equal to those in a previously encountered observations.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+
+::: {.nonincremental}
+- Below is an example of the `drop_duplicates()` method:
+
+:::
+
+```{.python}
+# Sample DataFrame with duplicate observations
+data = {
+    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],
+    'Age': [28, 23, 28, 32, 23],
+    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']
+}
+
+# pd.DataFrame( Series, List, or Dict ) creates a DataFrame
+df = pd.DataFrame(data)  
+df_unique = df.drop_duplicates()
+```
 
 
 
@@ -563,7 +608,7 @@ emp.drop_duplicates()
 emp.drop_duplicates(subset = ["Team"])
 ```
 
-- We can pass the`drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
 
   - The above example finds the first occurrence of each unique value in the Team variable.
 
@@ -584,7 +629,6 @@ emp.drop_duplicates(subset = ["Gender", "Team"])
 ```{.python}
 emp.drop_duplicates(subset = ["Team"], keep = "last")
 emp.drop_duplicates(subset = ["Team"], keep = False)
-emp.drop_duplicates(subset = ["First Name"], keep = False)
 ```
 
 - The `drop_duplicates()` method also accepts a `keep` parameter. 
