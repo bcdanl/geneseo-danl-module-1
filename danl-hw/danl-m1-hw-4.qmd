@@ -227,7 +227,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_al
 
 - Find the five most popular song.
   - A value of a song is defined as a combination of a `artist_name` value and a `track_name` value.
-  - Who are artists for those ten most popular song?
+  - Who are artists for those five most popular song?
   
 
 
