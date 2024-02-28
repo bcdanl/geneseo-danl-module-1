@@ -1,6 +1,6 @@
 ---
 title: Homework 4
-subtitle: Pandas Basics - Filtering Data 
+subtitle: Pandas Basics - Sorting and Filtering Data
 date: 2024-02-27
 execute: 
   echo: false
