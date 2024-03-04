@@ -1,6 +1,6 @@
 ---
 title: Classwork 4
-subtitle: Group Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]
+subtitle: Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates
 date: 2024-02-27
 execute: 
   eval: false

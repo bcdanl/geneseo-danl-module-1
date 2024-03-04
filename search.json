@@ -2440,7 +2440,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nGroup Operations with GroupBy Objects [Classwork 4 may be subject to change during the Module.]\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nReshaping and Pivoting DataFrames [Classwork 5 may be subject to change during the Module.]\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
@@ -2553,5 +2553,68 @@
     "title": "Lecture 4",
     "section": "Pandas Basics",
     "text": "Pandas Basics\nLet’s do Questions 7-8 in Classwork 4!"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html",
+    "href": "danl-m1-hw-3-a.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:\n\ndanl-m1-hw3-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw3-choe-byeonghak.ipynb )\n\nThe due is February 27, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#variable-description",
+    "href": "danl-m1-hw-3-a.html#variable-description",
+    "title": "Homework 3",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-1",
+    "href": "danl-m1-hw-3-a.html#question-1",
+    "title": "Homework 3",
+    "section": "Question 1",
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-2",
+    "href": "danl-m1-hw-3-a.html#question-2",
+    "title": "Homework 3",
+    "section": "Question 2",
+    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-3",
+    "href": "danl-m1-hw-3-a.html#question-3",
+    "title": "Homework 3",
+    "section": "Question 3",
+    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-4",
+    "href": "danl-m1-hw-3-a.html#question-4",
+    "title": "Homework 3",
+    "section": "Question 4",
+    "text": "Question 4\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-5",
+    "href": "danl-m1-hw-3-a.html#question-5",
+    "title": "Homework 3",
+    "section": "Question 5",
+    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-6",
+    "href": "danl-m1-hw-3-a.html#question-6",
+    "title": "Homework 3",
+    "section": "Question 6",
+    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nHint: Start with filtering observations in nyc_payroll with the following lines:\n\n\n\n# Boolean Series of whether or not 'OT Hours' is greater than 0.\npos_OT_hours = nyc_payroll['OT Hours'] &gt; 0 \n\n# Keeping only the observations with pos_OT_hours == True\nwith_ot = nyc_payroll[ pos_OT_hours ] \n\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-3-a.html#question-7",
+    "href": "danl-m1-hw-3-a.html#question-7",
+    "title": "Homework 3",
+    "section": "Question 7",
+    "text": "Question 7\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
   }
 ]
