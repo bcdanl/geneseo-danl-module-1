@@ -1,6 +1,6 @@
 ---
 title: Homework 5
-subtitle: Reshaping and Pivoting DataFrames [Homework 5 may be subject to change during the Module.]
+subtitle: Dealing with Missing Values; Group Operations
 date: 2024-03-05
 execute: 
   echo: false
@@ -12,57 +12,174 @@ comments: false
 ---
 
 ```{r}
-#| echo: false
+#| include: false
+
+library(tidyverse)
+library(DT)
 
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
+
 # Direction
 
--   Write a Python code to answer each question.
+
+- Please submit your Jupyter Notebook for Homework 5 to the Brightspace with the name below:
+
+  - `danl-m1-hw5-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-m1-hw5-choe-byeonghak.ipynb` )
+
+- The due is March 12, 2024, 7:00 P.M.
+
+- Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
+
+-   Please prepare a Jupyter/Python Notebook (`*.ipynb`) to address all questions.
 
 -   Make at least some simple comment (`# ...`) in each question.
 
--   Import Python libraries you need here.
+-   Make one text cell to explain things in each question.
+
+<br>
+
+
+Import the `pandas` library, and read `fao_stat.csv` as `fao`:
 
 ```{python}
+#| echo: true
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
+
+fao = pd.read_csv("https://bcdanl.github.io/data/fao_stat.csv",
+                  encoding = 'ISO-8859-1')
 ```
 
-<br><br><br>
 
-# Question 1
-Concatenate the two weeks of sales data into one DataFrame. Assign the week1 DataFrame a key of "`Week 1`" and the week2 DataFrame a key of "`Week 2`".
+## Variable Description
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/fao-logo.png" width="500px">
+</p>
+
+
+The `fao` `DataFrame` contains the country-year level observation regarding variables below:
+
+
+- `SSA`: A boolean indicating if the country is in Sub-Saharan Africa.
+- `Area`: The name of the country.
+- `Year`: The year of observation.
+- `gdp_per_capita`: GDP per capita.
+- `drinking_water`: The percentage of the population with access to safe drinking water.
+- `sanitation_service`: The percentage of the population with access to improved sanitation services.
+- `children_stunted`: The percentage of children under 5 years old who are stunted.
+- `children_overweight`: The percentage of children under 5 years old who are overweight.
+- `investment_pct`: The percentage of GDP invested in public health.
+
+<br>
+
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/fao_stat.csv')
+          )
+```
+
 
 <br><br>
 
-# Question 2
-Find the customers who ate at the restaurant both weeks.
+## Question 1
+
+What percentage of the values is missing for each variable?
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
 
 <br><br>
 
 
-# Question 3
-Find the customers who ate at the restaurant both weeks and ordered the same
-item each week.
-
-  - HINT You can join data sets on multiple columns by passing the on parameter
-a list of columns.
-
-<br><br>
+## Question 2
+Fill missing values in the `gdp_per_capita` variable with the mean value of that variable.
 
 
-# Question 4
-Identify which customers came in only on Week 1 and only on Week 2.
+*Answer*
+```{python}
+
+```
 
 <br><br>
 
 
-# Question 5
-Each row in the `week1` DataFrame identifies a customer who purchased a food item. For each row, pull in the customer’s information from the customers DataFrame.
+
+
+## Question 3
+Drop observations where `drinking_water` or `sanitation_service` information is missing.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 4
+What is the average `drinking_water` access percentage for each `Area` grouped by `SSA` status?
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 5
+Calculate the mean `sanitation_service` percentage for each combination of `SSA` status and `Year`.
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 5
+For each year, find the 5 worst countries in terms of `drinking_water`.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+
+## Question 6
+For each year, find the 5 worst countries in terms of `children_stunted`.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
 
 
 
