@@ -1,6 +1,6 @@
 ---
 title: Lecture 5
-subtitle: Dealing with Missing Values and Duplicates; Group Operations
+subtitle: "Dealing with Missing Values and Duplicates; Group Operations"
 format:
   clean-revealjs:
     self-contained: true
