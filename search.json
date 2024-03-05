@@ -2650,7 +2650,7 @@
     "href": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics-4",
     "title": "Lecture 5",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Missing Values: The value_counts(dropna = False) method\nemp[\"Mgmt\"].isna().sum()\nemp[\"Mgmt\"].value_counts()\nemp[\"Mgmt\"].value_counts(dropna = False)\n\nOne way to missing data counts is to use the isna().sum() on a Series.\n\nTrue is 1 and False is 0.\n\nAnother way to get missing data counts is to use the .value_counts() method on a Series.\n\nIf we use the dropna = False option, we can also get a missing value count."
+    "text": "Pandas Basics\nDealing with Missing Values: The value_counts(dropna = False) method\nemp[\"Mgmt\"].isna().sum()\nemp[\"Mgmt\"].value_counts()\nemp[\"Mgmt\"].value_counts(dropna = False)\n\nOne way to missing data counts is to use the isna().sum() on a Series.\n\nTrue is 1 and False is 0.\n\nAnother way to get missing data counts is to use the .value_counts() method on a Series.\n\nIf we use the dropna=False option, we can also get a missing value count."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics-5",
