@@ -2720,7 +2720,7 @@
     "href": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics-14",
     "title": "Lecture 5",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass the drop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
+    "text": "Pandas Basics\nDealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass the drop_duplicates() method a subset parameter with a list of variables that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the ‘Team’ variable."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics-15",

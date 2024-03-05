@@ -251,9 +251,9 @@ df_unique = df.drop_duplicates()
 emp.drop_duplicates(subset = ["Team"])
 ```
 
-- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of variables that pandas should use to determine an observation's uniqueness.
 
-  - The above example finds the first occurrence of each unique value in the Team variable.
+  - The above example finds the first occurrence of each unique value in the 'Team' variable.
 
 
 
