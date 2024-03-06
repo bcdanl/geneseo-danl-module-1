@@ -356,6 +356,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Calculate the mean <code>sanitation_service</code> percentage for each combination of <code>SSA</code> status and <code>Year</code>.</p>
 <p><em>Hint</em>: We can group a <code>DataFrame</code> by a list of multiple variables. Then, each group corresponds to a unique combination of values across the specified variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  fao</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  .groupby([<span class="st">'VARIABLE_1'</span>, <span class="st">'VARIABLE_2'</span>])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><em>Answer</em></p>
 <p><br><br></p>
 </section>
@@ -363,8 +369,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>For each year, find the 5 worst countries in terms of <code>drinking_water</code>.</p>
 <ul>
-<li><em>Hint</em>: We can start with the <code>sort_values()</code> method.</li>
-<li><em>Note</em>: <code>DataFrameGroupBy</code> does not support the <code>sort_values()</code> method.</li>
+<li><em>Hint</em>: It would be a good idea to start with the <code>DataFrame.sort_values()</code> method.</li>
+<li><em>Note</em>: <code>DataFrameGroupBy</code> does not support the <code>sort_values()</code> method. That is, <code>DataFrameGroupBy.sort_values()</code> will result in an error.</li>
 </ul>
 <p><em>Answer</em></p>
 <p><br><br></p>

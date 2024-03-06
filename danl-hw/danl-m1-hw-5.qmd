@@ -148,6 +148,7 @@ Calculate the mean `sanitation_service` percentage for each combination of `SSA`
 *Hint*: We can group a `DataFrame` by a list of multiple variables. Then, each group corresponds to a unique combination of values across the specified variables.
 
 ```{python}
+#| echo: true
 #| eval: false
 (
   fao
@@ -168,15 +169,9 @@ Calculate the mean `sanitation_service` percentage for each combination of `SSA`
 ## Question 6
 For each year, find the 5 worst countries in terms of `drinking_water`.
 
-- *Hint*: We can start with the `sort_values()` method.
-- *Note*: `DataFrameGroupBy` does not support the `sort_values()` method.
+- *Hint*: It would be a good idea to start with the `DataFrame.sort_values()` method.
+- *Note*: `DataFrameGroupBy` does not support the `sort_values()` method. That is, `DataFrameGroupBy.sort_values()` will result in an error.
 
-
-```{python}
-#| eval: false
-
-
-```
 
 
 *Answer*
