@@ -145,12 +145,14 @@ What is the average `drinking_water` access percentage for each `Area` grouped b
 ## Question 5
 Calculate the mean `sanitation_service` percentage for each combination of `SSA` status and `Year`.
 
-*Hint*: We can group a `DataFrame` by a list of multiple variables.
+*Hint*: We can group a `DataFrame` by a list of multiple variables. Then, each group corresponds to a unique combination of values across the specified variables.
 
 ```{python}
 #| eval: false
-
-
+(
+  fao
+  .groupby(['VARIABLE_1', 'VARIABLE_2'])
+)
 ```
 
 *Answer*
