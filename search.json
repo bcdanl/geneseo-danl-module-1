@@ -2447,7 +2447,7 @@
     "href": "danl-hw/danl-m1-hw-5.html",
     "title": "Homework 5",
     "section": "",
-    "text": "Please submit your Jupyter Notebook for Homework 5 to the Brightspace with the name below:\n\ndanl-m1-hw5-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw5-choe-byeonghak.ipynb )\n\nThe due is March 12, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\n\n\nImport the pandas library, and read fao_stat.csv as fao:\n\nimport pandas as pd\n\nfao = pd.read_csv(\"https://bcdanl.github.io/data/fao_stat.csv\",\n                  encoding = 'ISO-8859-1')\n\n\n\n\n\n\nThe fao DataFrame contains the country-year level observation regarding variables below:\n\nSSA: A boolean indicating if the country is in Sub-Saharan Africa.\nArea: The name of the country.\nYear: The year of observation.\ngdp_per_capita: GDP per capita.\ndrinking_water: The percentage of the population with access to safe drinking water.\nsanitation_service: The percentage of the population with access to improved sanitation services.\nchildren_stunted: The percentage of children under 5 years old who are stunted.\nchildren_overweight: The percentage of children under 5 years old who are overweight.\ninvestment_pct: The percentage of GDP invested in public health.\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\nWhat percentage of the values is missing for each variable?\nAnswer\n\n\n\n\n\nFill missing values in the gdp_per_capita variable with the mean value of that variable.\nAnswer\n\n\n\n\nDrop observations where drinking_water or sanitation_service information is missing.\nAnswer\n\n\n\n\nWhat is the average drinking_water access percentage for each Area grouped by SSA status?\nAnswer\n\n\n\n\nCalculate the mean sanitation_service percentage for each combination of SSA status and Year.\nAnswer\n\n\n\n\nFor each year, find the 5 worst countries in terms of drinking_water.\nAnswer\n\n\n\n\nFor each year, find the 5 worst countries in terms of children_stunted.\nAnswer"
+    "text": "Please submit your Jupyter Notebook for Homework 5 to the Brightspace with the name below:\n\ndanl-m1-hw5-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw5-choe-byeonghak.ipynb )\n\nThe due is March 12, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\n\n\nImport the pandas library, and read fao_stat.csv as fao:\n\nimport pandas as pd\n\nfao = pd.read_csv(\"https://bcdanl.github.io/data/fao_stat.csv\",\n                  encoding = 'ISO-8859-1')\n\n\n\n\n\n\nThe fao DataFrame contains the country-year level observation regarding variables below:\n\nSSA: A boolean indicating if the country is in Sub-Saharan Africa.\nArea: The name of the country.\nYear: The year of observation.\ngdp_per_capita: GDP per capita.\ndrinking_water: The percentage of the population with access to safe drinking water.\nsanitation_service: The percentage of the population with access to improved sanitation services.\nchildren_stunted: The percentage of children under 5 years old who are stunted.\nchildren_overweight: The percentage of children under 5 years old who are overweight.\ninvestment_pct: The percentage of GDP invested in public health.\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\nWhat percentage of the values is missing for each variable?\nAnswer\n\n\n\n\n\nFill missing values in the gdp_per_capita variable with the mean value of that variable.\nAnswer\n\n\n\n\nDrop observations where drinking_water or sanitation_service information is missing.\nAnswer\n\n\n\n\nWhat is the average drinking_water access percentage for each Area grouped by SSA status?\nAnswer\n\n\n\n\nCalculate the mean sanitation_service percentage for each combination of SSA status and Year.\nHint: We can group a DataFrame by a list of multiple variables.\nAnswer\n\n\n\n\nFor each year, find the 5 worst countries in terms of drinking_water.\n\nHint: We can start with the sort_values() method.\nNote: DataFrameGroupBy does not support the sort_values() method.\n\nAnswer\n\n\n\n\nFor each year, find the 5 worst countries in terms of children_stunted.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html",
@@ -3301,7 +3301,7 @@
     "href": "danl-hw/danl-m1-hw-5.html#question-5",
     "title": "Homework 5",
     "section": "",
-    "text": "Calculate the mean sanitation_service percentage for each combination of SSA status and Year.\nAnswer"
+    "text": "Calculate the mean sanitation_service percentage for each combination of SSA status and Year.\nHint: We can group a DataFrame by a list of multiple variables.\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html#question-5-1",
@@ -3315,7 +3315,7 @@
     "href": "danl-hw/danl-m1-hw-5.html#question-6",
     "title": "Homework 5",
     "section": "",
-    "text": "For each year, find the 5 worst countries in terms of children_stunted.\nAnswer"
+    "text": "For each year, find the 5 worst countries in terms of drinking_water.\n\nHint: We can start with the sort_values() method.\nNote: DataFrameGroupBy does not support the sort_values() method.\n\nAnswer"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics-17",
@@ -3330,5 +3330,12 @@
     "title": "Lecture 5",
     "section": "Group Operations",
     "text": "Group Operations\nLet’s do Question 7 in Part 2 of Classwork 5!"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-5.html#question-7",
+    "href": "danl-hw/danl-m1-hw-5.html#question-7",
+    "title": "Homework 5",
+    "section": "",
+    "text": "For each year, find the 5 worst countries in terms of children_stunted.\nAnswer"
   }
 ]

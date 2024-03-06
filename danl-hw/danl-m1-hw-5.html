@@ -230,8 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
-  <li><a href="#question-5-1" id="toc-question-5-1" class="nav-link" data-scroll-target="#question-5-1">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -355,17 +355,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Calculate the mean <code>sanitation_service</code> percentage for each combination of <code>SSA</code> status and <code>Year</code>.</p>
-<p><em>Answer</em></p>
-<p><br><br></p>
-</section>
-<section id="question-5-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-5-1">Question 5</h2>
-<p>For each year, find the 5 worst countries in terms of <code>drinking_water</code>.</p>
+<p><em>Hint</em>: We can group a <code>DataFrame</code> by a list of multiple variables.</p>
 <p><em>Answer</em></p>
 <p><br><br></p>
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>For each year, find the 5 worst countries in terms of <code>drinking_water</code>.</p>
+<ul>
+<li><em>Hint</em>: We can start with the <code>sort_values()</code> method.</li>
+<li><em>Note</em>: <code>DataFrameGroupBy</code> does not support the <code>sort_values()</code> method.</li>
+</ul>
+<p><em>Answer</em></p>
+<p><br><br></p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p>For each year, find the 5 worst countries in terms of <code>children_stunted</code>.</p>
 <p><em>Answer</em></p>
 <p><br><br></p>

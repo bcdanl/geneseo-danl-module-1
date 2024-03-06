@@ -145,32 +145,50 @@ What is the average `drinking_water` access percentage for each `Area` grouped b
 ## Question 5
 Calculate the mean `sanitation_service` percentage for each combination of `SSA` status and `Year`.
 
+*Hint*: We can group a `DataFrame` by a list of multiple variables.
+
+```{python}
+#| eval: false
+
+
+```
+
 *Answer*
 ```{python}
 
 ```
 
 <br><br>
-
-
-
-
-## Question 5
-For each year, find the 5 worst countries in terms of `drinking_water`.
-
-
-*Answer*
-```{python}
-
-```
-
-<br><br>
-
 
 
 
 
 ## Question 6
+For each year, find the 5 worst countries in terms of `drinking_water`.
+
+- *Hint*: We can start with the `sort_values()` method.
+- *Note*: `DataFrameGroupBy` does not support the `sort_values()` method.
+
+
+```{python}
+#| eval: false
+
+
+```
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+
+## Question 7
 For each year, find the 5 worst countries in terms of `children_stunted`.
 
 
