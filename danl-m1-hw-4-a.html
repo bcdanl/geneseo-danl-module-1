@@ -292,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="load-libraries" class="level1">
 <h1>Load Libraries</h1>
 <p>Import the <code>pandas</code> library.</p>
-<div class="cell" data-execution_count="44">
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_table.enable_dataframe_formatter()</span>
@@ -311,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </p>
 <p><br></p>
 <p>Below is <code>nyc_payroll</code> <code>DataFrame</code> that reads the file <code>nyc_payroll.csv</code> containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: <a href="https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data">NYC OpenData</a>).</p>
-<div class="cell" data-outputid="f8b89bdf-827e-4110-ef3b-3a5c43491fe3" data-execution_count="45">
+<div class="cell" data-outputid="f8b89bdf-827e-4110-ef3b-3a5c43491fe3" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nyc_payroll <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>show(nyc_payroll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -425,11 +425,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="cc34b255-d78a-49a8-bb84-42814ed471ff" data-execution_count="46">
+<div class="cell" data-outputid="cc34b255-d78a-49a8-bb84-42814ed471ff" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_10_percent_salary <span class="op">=</span> nyc_payroll[<span class="st">'Base Salary'</span>].quantile(<span class="fl">0.9</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> nyc_payroll[<span class="st">'Base Salary'</span>] <span class="op">&gt;</span> top_10_percent_salary</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>count_top_10_percent_salary <span class="op">=</span> nyc_payroll[ cond ].shape[<span class="dv">0</span>]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>count_top_10_percent_salary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>nyc_payroll[ cond ].shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>200</code></pre>
 </div>
@@ -441,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Filter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.</p>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="6992562e-7d5c-4489-dd35-6ec34fb619b6" data-execution_count="52">
+<div class="cell" data-outputid="6992562e-7d5c-4489-dd35-6ec34fb619b6" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>filtered_ot_df <span class="op">=</span> (</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    nyc_payroll</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>     [(nyc_payroll[<span class="st">'OT Hours'</span>] <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">&amp;</span></span>
@@ -537,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>Find the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.</p>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="1a093910-bbe1-4546-e249-af5303fe2ae9" data-execution_count="53">
+<div class="cell" data-outputid="1a093910-bbe1-4546-e249-af5303fe2ae9" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>unique_titles <span class="op">=</span> (</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    nyc_payroll[nyc_payroll[<span class="st">'Agency Name'</span>] <span class="op">==</span> <span class="st">'DEPARTMENT OF EDUCATION ADMIN'</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>     [<span class="st">'Title Description'</span>]</span>
@@ -564,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        'SCHOOL LUNCH LOADER AND HANDLER'], dtype=object)</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="47c4db45-4e63-448e-d814-dfd46cc3e21d" data-execution_count="54">
+<div class="cell" data-outputid="47c4db45-4e63-448e-d814-dfd46cc3e21d" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(unique_titles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>26</code></pre>
@@ -581,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="8849b272-0162-4c4b-887d-30450bdac277" data-execution_count="55">
+<div class="cell" data-outputid="8849b272-0162-4c4b-887d-30450bdac277" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>max_ot_paid <span class="op">=</span> nyc_payroll[<span class="st">'Total OT Paid'</span>].<span class="bu">max</span>()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> nyc_payroll[<span class="st">'Total OT Paid'</span>] <span class="op">==</span> max_ot_paid</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -762,7 +761,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </p>
 <p><br></p>
 <p>Below is <code>spotify</code> <code>DataFrame</code> that reads the file <code>spotify_all.csv</code> containing data of Spotify users’ playlist information (Source: <a href="https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge">Spotify Million Playlist Dataset Challenge</a>).</p>
-<div class="cell" data-outputid="7cea9b0f-19d1-43e0-fbce-7c6a2f29e3b3" data-execution_count="56">
+<div class="cell" data-outputid="7cea9b0f-19d1-43e0-fbce-7c6a2f29e3b3" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>spotify <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/spotify_all.csv'</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>show(spotify)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -858,7 +857,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="ad18e766-fb5c-4630-de20-0179c815147c" data-execution_count="57">
+<div class="cell" data-outputid="ad18e766-fb5c-4630-de20-0179c815147c" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>top5 <span class="op">=</span> (</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    spotify[[<span class="st">'artist_name'</span>, <span class="st">'track_name'</span>]]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>
@@ -1177,7 +1176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="b44c7903-2311-4afc-8914-f098db5e47be" data-execution_count="58">
+<div class="cell" data-outputid="b44c7903-2311-4afc-8914-f098db5e47be" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>top5[[<span class="st">'artist_name'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
 
@@ -1435,7 +1434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p><em>Answer</em></p>
-<div class="cell" data-outputid="0ab160e7-e5b0-447c-c5ba-ad07c6fb0489" data-execution_count="59">
+<div class="cell" data-outputid="0ab160e7-e5b0-447c-c5ba-ad07c6fb0489" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset to keep observations with playlists that include Drake's song "One Dance"</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>drake_one_dance_playlists <span class="op">=</span> spotify[ (spotify[<span class="st">'artist_name'</span>] <span class="op">==</span> <span class="st">'Drake'</span>) <span class="op">&amp;</span> (spotify[<span class="st">'track_name'</span>] <span class="op">==</span> <span class="st">'One Dance'</span>) ]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1523,7 +1522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell" data-outputid="082b8400-9a32-4631-b367-3d50c3a6742e" data-execution_count="60">
+<div class="cell" data-outputid="082b8400-9a32-4631-b367-3d50c3a6742e" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    with_one_dance_playlists[[<span class="st">'artist_name'</span>, <span class="st">'track_name'</span>]]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>

@@ -3357,7 +3357,7 @@
     "href": "danl-m1-hw-4-a.html#question-1",
     "title": "Homework 4 - Example Answers",
     "section": "Question 1",
-    "text": "Question 1\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer\n\ntop_10_percent_salary = nyc_payroll['Base Salary'].quantile(0.9)\ncond = nyc_payroll['Base Salary'] &gt; top_10_percent_salary\ncount_top_10_percent_salary = nyc_payroll[ cond ].shape[0]\ncount_top_10_percent_salary\n\n200"
+    "text": "Question 1\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer\n\ntop_10_percent_salary = nyc_payroll['Base Salary'].quantile(0.9)\ncond = nyc_payroll['Base Salary'] &gt; top_10_percent_salary\nnyc_payroll[ cond ].shape[0]\n\n200"
   },
   {
     "objectID": "danl-m1-hw-4-a.html#question-2",
