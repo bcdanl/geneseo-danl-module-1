@@ -3337,5 +3337,68 @@
     "title": "Homework 5",
     "section": "",
     "text": "For each year, find the 5 worst countries in terms of children_stunted.\nAnswer"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html",
+    "href": "danl-m1-hw-4-a.html",
+    "title": "Homework 4 - Example Answers",
+    "section": "",
+    "text": "Please submit your Jupyter Notebook for Homework 4 to the Brightspace with the name below:\n\ndanl-m1-hw4-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw4-choe-byeonghak.ipynb )\n\nThe due is March 5, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#variable-description",
+    "href": "danl-m1-hw-4-a.html#variable-description",
+    "title": "Homework 4 - Example Answers",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-1",
+    "href": "danl-m1-hw-4-a.html#question-1",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 1",
+    "text": "Question 1\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer\n\ntop_10_percent_salary = nyc_payroll['Base Salary'].quantile(0.9)\ncond = nyc_payroll['Base Salary'] &gt; top_10_percent_salary\ncount_top_10_percent_salary = nyc_payroll[ cond ].shape[0]\ncount_top_10_percent_salary\n\n200"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-2",
+    "href": "danl-m1-hw-4-a.html#question-2",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 2",
+    "text": "Question 2\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer\n\nfiltered_ot_df = (\n    nyc_payroll\n     [(nyc_payroll['OT Hours'] &gt; 0) &\n      (nyc_payroll['OT Hours'] &lt; 100) &\n      (nyc_payroll['Leave Status as of June 30'] == 'ACTIVE')\n     ]\n)\n\nshow(filtered_ot_df)\n\n\n\n\n\n\n    \n      \n      Fiscal Year\n      Payroll Number\n      Agency Name\n      Last Name\n      First Name\n      Mid Init\n      Agency Start Date\n      Work Location Borough\n      Title Description\n      Leave Status as of June 30\n      Base Salary\n      Pay Basis\n      Regular Hours\n      Regular Gross Paid\n      OT Hours\n      Total OT Paid\n      Total Other Pay\n    \n  Loading... (need help?)"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-3",
+    "href": "danl-m1-hw-4-a.html#question-3",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 3",
+    "text": "Question 3\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer\n\nunique_titles = (\n    nyc_payroll[nyc_payroll['Agency Name'] == 'DEPARTMENT OF EDUCATION ADMIN']\n     ['Title Description']\n    .unique()\n)\n\nunique_titles\n\narray(['SUBSTANCE ABUSE PREVENTION & INTERVENTION SPECIALIST',\n       'OCCUPATIONAL THERAPIST', 'PHYSICAL THERAPIST',\n       'COMMUNITY ASSOCIATE', 'PROCUREMENT ANALYST',\n       'ADMINISTRATIVE EDUCATION ANALYST', 'CERTIFIED IT ADMINISTRATOR',\n       'COMMUNITY COORDINATOR', 'SCHOOL BUSINESS MANAGER',\n       'RESEARCH ASSISTANT', 'SCHOOL LUNCH ASSISTANT',\n       'COMPUTER SYSTEMS MANAGER', 'ADMINISTRATIVE EDUCATION OFFICER',\n       'STAFF NURSE', 'RADIO REPAIR MECHANIC', 'THERMOSTAT REPAIRER',\n       'ADMINISTRATIVE STAFF ANALYST',\n       'DISTRICT MANAGER OF ADMINISTRATION AND BUSINESS AFFAIRS',\n       'COMMUNITY ASSISTANT', 'SCHOOL FOOD SERVICE MANAGER',\n       'ADMINISTRATIVE PROCUREMENT ANALYST',\n       'SECRETARY TO COMMUNITY SCHOOL BOARD',\n       'CUSTOMER INFORMATION REPRESENTATIVE MA L 1549',\n       'SCHOOL COMPUTER TECHNOLOGY SPECIALIST', 'SCHOOL LUNCH AIDE',\n       'SCHOOL LUNCH LOADER AND HANDLER'], dtype=object)\n\n\n\nlen(unique_titles)\n\n26"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-4",
+    "href": "danl-m1-hw-4-a.html#question-4",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 4",
+    "text": "Question 4\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer\n\nmax_ot_paid = nyc_payroll['Total OT Paid'].max()\ncond = nyc_payroll['Total OT Paid'] == max_ot_paid\n\nemployees_max_ot = (\n    nyc_payroll[ cond ]\n     [ ['First Name', 'Last Name', 'Total OT Paid'] ]\n)\n\nemployees_max_ot\n\n\n  \n    \n\n\n\n\n\n\nFirst Name\nLast Name\nTotal OT Paid\n\n\n\n\n1199\nEMMANUEL\nKOUTSOULIDAKIS\n126184.02"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#variable-description-1",
+    "href": "danl-m1-hw-4-a.html#variable-description-1",
+    "title": "Homework 4 - Example Answers",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-5",
+    "href": "danl-m1-hw-4-a.html#question-5",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 5",
+    "text": "Question 5\n\nFind the five most popular song.\n\nA value of a song is defined as a combination of a artist_name value and a track_name value.\nWho are artists for those five most popular song?\n\n\nAnswer\n\ntop5 = (\n    spotify[['artist_name', 'track_name']]\n    .value_counts()\n    .reset_index()\n    .rename(columns={0:'n'}) # by default, 0 is the variable name for count\n    .nlargest(5, 'n', keep = 'all')\n)\n\ntop5\n\n\n  \n    \n\n\n\n\n\n\nartist_name\ntrack_name\nn\n\n\n\n\n0\nDrake\nOne Dance\n143\n\n\n1\nKendrick Lamar\nHUMBLE.\n142\n\n\n2\nThe Chainsmokers\nCloser\n129\n\n\n3\nDRAM\nBroccoli (feat. Lil Yachty)\n127\n\n\n4\nPost Malone\nCongratulations\n119\n\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n\n  \n    \n    \n\n  \n    \n  \n    \n    \n  \n\n    \n  \n\n\n\ntop5[['artist_name']]\n\n\n  \n    \n\n\n\n\n\n\nartist_name\n\n\n\n\n0\nDrake\n\n\n1\nKendrick Lamar\n\n\n2\nThe Chainsmokers\n\n\n3\nDRAM\n\n\n4\nPost Malone"
+  },
+  {
+    "objectID": "danl-m1-hw-4-a.html#question-6",
+    "href": "danl-m1-hw-4-a.html#question-6",
+    "title": "Homework 4 - Example Answers",
+    "section": "Question 6",
+    "text": "Question 6\n\nCreate a DataFrame that only contains observations from playlists featuring the song “One Dance” by Drake.\n\nNext, identify the song with the highest popularity after Drake’s “One Dance” in the newly created DataFrame.\n\n\nAnswer\n\n# Filter the dataset to keep observations with playlists that include Drake's song \"One Dance\"\ndrake_one_dance_playlists = spotify[ (spotify['artist_name'] == 'Drake') & (spotify['track_name'] == 'One Dance') ]\n\n# Since the task is to keep observations in playlists that include \"One Dance\" by Drake,\n# we need to identify the playlists IDs containing this song and then filter the dataset based on those playlist IDs.\n\nplaylist_ids_with_one_dance = drake_one_dance_playlists['pid'].unique()\n\n# Instead of unique(), drop_duplicates() can be used\n  # playlist_ids_with_one_dance2 = drake_one_dance_playlists[['pid']].drop_duplicates()\n  # playlist_ids_with_one_dance2['pid']\n\n# Now, filter the entire dataset to keep observations that are in playlists with \"One Dance\" by Drake\nwith_one_dance_playlists = spotify[ spotify['pid'].isin(playlist_ids_with_one_dance) ]\n\n# Display the shape of the filtered dataset as a quick check\nshow(with_one_dance_playlists)\n\n\n\n\n\n\n    \n      \n      pid\n      playlist_name\n      pos\n      artist_name\n      track_name\n      duration_ms\n      album_name\n    \n  Loading... (need help?)\n\n\n\n\n\n\n\n\n(\n    with_one_dance_playlists[['artist_name', 'track_name']]\n    .value_counts()\n    .reset_index()\n    .rename(columns={0:'n'}) # by default, 0 is the variable name for count\n    .nlargest(5, 'n', keep = 'all')\n    .loc[[1],:]\n)\n\n\n  \n    \n\n\n\n\n\n\nartist_name\ntrack_name\nn\n\n\n\n\n1\nDRAM\nBroccoli (feat. Lil Yachty)\n45"
   }
 ]

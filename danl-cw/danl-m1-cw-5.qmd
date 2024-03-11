@@ -1,6 +1,6 @@
 ---
 title: Classwork 5
-subtitle: Dealing with Missing Values/Duplicates
+subtitle: Dealing with Missing Values/Duplicates; Group Operations
 date: 2024-03-05
 execute: 
   eval: false
