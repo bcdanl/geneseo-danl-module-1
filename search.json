@@ -2557,7 +2557,7 @@
   {
     "objectID": "danl-m1-hw-3-a.html",
     "href": "danl-m1-hw-3-a.html",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "",
     "text": "Please submit your Jupyter Notebook for Homework 3 to the Brightspace with the name below:\n\ndanl-m1-hw3-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw3-choe-byeonghak.ipynb )\n\nThe due is February 27, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question."
   },
@@ -2571,51 +2571,51 @@
   {
     "objectID": "danl-m1-hw-3-a.html#question-1",
     "href": "danl-m1-hw-3-a.html#question-1",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 1",
-    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer"
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer\n\nselected_sorted = (   # To select \"First Name\", \"Last Name\", \"Base Salary\", and \"Total OT Paid\":\n    nyc_payroll[ [\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"] ]\n\n    # To sort the observations by \"Base Salary\" in descending order:\n    .sort_values(\"Base Salary\", ascending = False)\n\n    # To display the top 10 entries:\n    .head(10)\n)\n\n\n# Below is another one with nlargest():\n\nselected_sorted = (\n    nyc_payroll[ [\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"] ]\n    .nlargest(10, \"Base Salary\", keep = \"all\")\n)\n\n\nshow(selected_sorted)\n\n\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Base Salary\n      Total OT Paid\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-2",
     "href": "danl-m1-hw-3-a.html#question-2",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 2",
-    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
+    "text": "Question 2\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer\n\n# (1) Using set_index() and .loc[]\nedu_admin_df = (\n    nyc_payroll\n    # To set \"Agency Name\" as an index label\n    .set_index(\"Agency Name\")\n\n    # To locate observations with index labels of 'DEPARTMENT OF EDUCATION ADMIN'\n    .loc['DEPARTMENT OF EDUCATION ADMIN']\n\n    # To select variables\n    [['First Name', 'Last Name', 'Title Description', 'Base Salary', 'Total OT Paid']]\n)\n\n# (2) Traditional filtering\nedu_admin = nyc_payroll['Agency Name'] == 'DEPARTMENT OF EDUCATION ADMIN'\n\nedu_admin_df = (\n    nyc_payroll[ edu_admin ]\n     [['Agency Name', 'First Name', 'Last Name', 'Title Description', 'Base Salary', 'Total OT Paid']]\n)\n\n# (3) query() filtering\nedu_admin_df = (\n    nyc_payroll.query(\"`Agency Name` == 'DEPARTMENT OF EDUCATION ADMIN'\")\n    [['Agency Name', 'First Name', 'Last Name', 'Title Description', 'Base Salary', 'Total OT Paid']]\n)\n\n# To add a new variable, 'Total Compensation':\nedu_admin_df['Total Compensation'] = edu_admin_df['Base Salary'] + edu_admin_df['Total OT Paid']\n\n\nshow(edu_admin_df)\n\n\n\n\n\n\n    \n      \n      Agency Name\n      First Name\n      Last Name\n      Title Description\n      Base Salary\n      Total OT Paid\n      Total Compensation\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-3",
     "href": "danl-m1-hw-3-a.html#question-3",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 3",
-    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
+    "text": "Question 3\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer\n\nbrown = (\n    nyc_payroll\n    .set_index('Last Name')\n    .loc['BROWN', ['Agency Name', 'Base Salary', 'Total OT Paid']]\n)\n\n\nshow(brown)\n\n\n\n\n\n\n    \n      \n      Agency Name\n      Base Salary\n      Total OT Paid\n    \n    \n      Last Name\n      \n      \n      \n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-4",
     "href": "danl-m1-hw-3-a.html#question-4",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 4",
-    "text": "Question 4\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer"
+    "text": "Question 4\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer\n\ntop_5_gross = nyc_payroll.nlargest(5, 'Regular Gross Paid', keep = \"all\")\n\n\nshow(top_5_gross)\n\n\n\n\n\n\n    \n      \n      Fiscal Year\n      Payroll Number\n      Agency Name\n      Last Name\n      First Name\n      Mid Init\n      Agency Start Date\n      Work Location Borough\n      Title Description\n      Leave Status as of June 30\n      Base Salary\n      Pay Basis\n      Regular Hours\n      Regular Gross Paid\n      OT Hours\n      Total OT Paid\n      Total Other Pay\n    \n  Loading... (need help?)\n\n\n\n\n\n\n\n\naverage_ot_hours = top_5_gross['OT Hours'].mean()\naverage_ot_hours\n\n6.5"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-5",
     "href": "danl-m1-hw-3-a.html#question-5",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 5",
-    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer"
+    "text": "Question 5\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer\n\n# Sorting with multiple variables\nsorted_data = nyc_payroll.sort_values(['Fiscal Year', 'Total Other Pay'],\n                                      ascending = [True, False])\nsorted_data.set_index('First Name', inplace=True)\n\n# Locating values (filtering observations and selecting variables)\njohns_pay = sorted_data.loc['MICHAEL', ['Total Other Pay'] ]  # Using a list for variable seelction\njohns_pay.reset_index(inplace=True)  # Resetting index if \"First Name\" is needed later\n\n\nshow(johns_pay)\n\n\n\n\n\n\n    \n      \n      First Name\n      Total Other Pay\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-6",
     "href": "danl-m1-hw-3-a.html#question-6",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 6",
-    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nHint: Start with filtering observations in nyc_payroll with the following lines:\n\n\n\n# Boolean Series of whether or not 'OT Hours' is greater than 0.\npos_OT_hours = nyc_payroll['OT Hours'] &gt; 0 \n\n# Keeping only the observations with pos_OT_hours == True\nwith_ot = nyc_payroll[ pos_OT_hours ] \n\nAnswer"
+    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nHint: Start with filtering observations in nyc_payroll with the following lines:\n\n\n\n# Boolean Series of whether or not 'OT Hours' is greater than 0.\npos_OT_hours = nyc_payroll['OT Hours'] &gt; 0\n\n# Keeping only the observations with pos_OT_hours == True\nwith_ot = nyc_payroll[ pos_OT_hours ]\n\nAnswer\n\nwith_ot['OT Rate'] = with_ot['Total OT Paid'] / with_ot['OT Hours']\n\nhighest_ot_rate = (\n  with_ot.nlargest(1, 'OT Rate', keep = \"all\")\n  [ ['First Name', 'Last Name', 'OT Rate'] ]\n)\n\n\nshow(highest_ot_rate)\n\n\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      OT Rate\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-m1-hw-3-a.html#question-7",
     "href": "danl-m1-hw-3-a.html#question-7",
-    "title": "Homework 3",
+    "title": "Homework 3 - Example Answers",
     "section": "Question 7",
-    "text": "Question 7\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
+    "text": "Question 7\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer\n\n# Adding a new variable, 'Total Compensation', to the DataFrame, nyc_payroll\nnyc_payroll['Total Compensation'] = nyc_payroll['Base Salary'] + nyc_payroll['Total OT Paid']\n\n# Sorting by multiple variables\nsorted_df = (\n    nyc_payroll\n    .sort_values(['Work Location Borough', 'Total Compensation'], \n                 ascending=[True, False])\n)\n\n\nshow(sorted_df)\n\n\n\n\n\n\n    \n      \n      Fiscal Year\n      Payroll Number\n      Agency Name\n      Last Name\n      First Name\n      Mid Init\n      Agency Start Date\n      Work Location Borough\n      Title Description\n      Leave Status as of June 30\n      Base Salary\n      Pay Basis\n      Regular Hours\n      Regular Gross Paid\n      OT Hours\n      Total OT Paid\n      Total Other Pay\n      Total Compensation\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-05-2024-0305.html#pandas-basics",
