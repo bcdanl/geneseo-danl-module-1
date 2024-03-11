@@ -1,6 +1,6 @@
 ---
 title: Classwork 5
-subtitle: Group Operations
+subtitle: Group Operations; Reshaping DataFrames; Joining DataFrames
 date: 2024-03-12
 execute: 
   eval: false
@@ -103,6 +103,74 @@ Find the minimum value in the `Fiber` variable for each manufacturer.
 
 ## Question 7 
 Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+# Part 2
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/cereals.jpeg" width="600px">
+</p>
+
+<br>
+
+
+The dataset,`cereals_oatmeal.csv`,(with its pathname `https://bcdanl.github.io/data/cereals_oatmeal.csv`) is a listing of 76 popular breakfast cereals and oatmeal.
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')
+          )
+```
+
+
+## Question 1
+Group the `cereals_oatmeal`, using the `Manufacturer` variable.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+# Part 3
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/cereals.jpeg" width="600px">
+</p>
+
+<br>
+
+
+The dataset,`cereals_oatmeal.csv`,(with its pathname `https://bcdanl.github.io/data/cereals_oatmeal.csv`) is a listing of 76 popular breakfast cereals and oatmeal.
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')
+          )
+```
+
+
+## Question 1
+Group the `cereals_oatmeal`, using the `Manufacturer` variable.
 
 *Answer:*
 ```{python}
