@@ -1027,8 +1027,8 @@ merge_outer_x = x.merge(y, on='key', how='outer')
 ::: {.column width="47.5%"}
 ```{.python}
 x = pd.DataFrame({
-    'key':[1, 2, 3],
-    'val_x':['x1', 'x2', 'x3']})
+    'key':[1, 2, 2, 3],
+    'val_x':['x1', 'x2', 'x3', 'x4']})
 ```
 
 :::
