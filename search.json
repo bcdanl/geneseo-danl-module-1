@@ -2284,7 +2284,7 @@
   {
     "objectID": "danl-cw/danl-m1-cw-6.html",
     "href": "danl-cw/danl-m1-cw-6.html",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "The dataset,cereals_oatmeal.csv,(with its pathname https://bcdanl.github.io/data/cereals_oatmeal.csv) is a listing of 76 popular breakfast cereals and oatmeal.\n\n\n\n\n  \n\n\n\n\n\nGroup the cereals_oatmeal, using the Manufacturer variable.\nAnswer:\n\n\n\n\nDetermine the total number of groups, and the number of cereals per group.\nAnswer:\n\n\n\n\nExtract the cereals that belong to the manufacturer \"Kellogg's\".\nAnswer:\n\n\n\n\nCalculate the average of values in the Calories, Fiber, and Sugars variables for each manufacturer.\nAnswer:\n\n\n\n\nFind the maximum value in the Sugars variable for each manufacturer.\nAnswer:\n\n\n\n\nFind the minimum value in the Fiber variable for each manufacturer.\nAnswer:\n\n\n\n\nExtract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.\nAnswer:"
   },
@@ -2398,7 +2398,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-weekly-q-a",
@@ -2440,7 +2440,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 5\n\n\nGroup Operations; Reshaping DataFrames; Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nGroup Operations; Reshaping DataFrames; Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
@@ -2454,7 +2454,7 @@
     "href": "danl-hw/danl-m1-hw-6.html",
     "title": "Homework 6",
     "section": "",
-    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here."
+    "text": "Please submit your Jupyter Notebook for Homework 6 to the Brightspace with the name below:\n\ndanl-m1-hw6-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw6-choe-byeonghak.ipynb )\n\nThe due is March 19, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\nImport Python libraries you need here.\n\n\nimport pandas as pd"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html",
@@ -2524,7 +2524,7 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nGroup Oeprations 2; Pivoting Data; Joining Data\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nAdvanced Group Oeprations; Pivoting Data; Joining Data\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-39",
@@ -3803,63 +3803,63 @@
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-1",
     "href": "danl-cw/danl-m1-cw-6.html#question-1",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Group the cereals_oatmeal, using the Manufacturer variable.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-2",
     "href": "danl-cw/danl-m1-cw-6.html#question-2",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Determine the total number of groups, and the number of cereals per group.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-3",
     "href": "danl-cw/danl-m1-cw-6.html#question-3",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Extract the cereals that belong to the manufacturer \"Kellogg's\".\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-4",
     "href": "danl-cw/danl-m1-cw-6.html#question-4",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Calculate the average of values in the Calories, Fiber, and Sugars variables for each manufacturer.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-5",
     "href": "danl-cw/danl-m1-cw-6.html#question-5",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Find the maximum value in the Sugars variable for each manufacturer.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-6",
     "href": "danl-cw/danl-m1-cw-6.html#question-6",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Find the minimum value in the Fiber variable for each manufacturer.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-7",
     "href": "danl-cw/danl-m1-cw-6.html#question-7",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "",
     "text": "Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-8",
     "href": "danl-cw/danl-m1-cw-6.html#question-8",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "Question 8",
     "text": "Question 8\n\nMake ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-9",
     "href": "danl-cw/danl-m1-cw-6.html#question-9",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "Question 9",
     "text": "Question 9\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
@@ -3873,14 +3873,14 @@
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-10",
     "href": "danl-cw/danl-m1-cw-6.html#question-10",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "Question 10",
     "text": "Question 10\nMerge flights with weather.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-11",
     "href": "danl-cw/danl-m1-cw-6.html#question-11",
-    "title": "Classwork 5",
+    "title": "Classwork 6",
     "section": "Question 11",
     "text": "Question 11\nIdentify the full name of the airline with the highest average dep_delay, considering only positive delays.\nAnswer:"
   },
@@ -3897,5 +3897,96 @@
     "title": "Homework 6",
     "section": "Q2b",
     "text": "Q2b\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year."
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#variable-description",
+    "href": "danl-hw/danl-m1-hw-6.html#variable-description",
+    "title": "Homework 6",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nParty: a party (country) that provides a funding contribution to recipient country/region for their cliamte change project.\nRecipient country/region: Recipient country or region\nProject/programme/activity: Details in the climate change project\nType of support:\n\nadaptation if the climate change project is related to adaptation project.\nmitigation if the climate change project is related to mitigation project.\n\nYear: Year that funding contribution is committed or provided.\nContribution: An amount of funding contribution for the climate change project (in USD).\nStatus:\n\ncommitted if a party commits to providing the funding contribution for the climate change project, but the funding contribution is NOT actually provided.\nprovided if the funding contribution was provided for the climate change project.\n\nEnergy:\n\nTRUE if the project is energy-related;\nFALSE otherwise."
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-1",
+    "href": "danl-hw/danl-m1-hw-6.html#question-1",
+    "title": "Homework 6",
+    "section": "Question 1",
+    "text": "Question 1\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-2",
+    "href": "danl-hw/danl-m1-hw-6.html#question-2",
+    "title": "Homework 6",
+    "section": "Question 2",
+    "text": "Question 2\nHow many parties have provided positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#variable-description-1",
+    "href": "danl-hw/danl-m1-hw-6.html#variable-description-1",
+    "title": "Homework 6",
+    "section": "Variable Description",
+    "text": "Variable Description\n\ndma: an identification number of a designated market (DM) area i (e.g., Boston, Los Angeles)\ntreatment_period: 0 if date is before May 22, 2012 and 1 after.\nsearch_stays_on: 1 if the paid-search goes off in dma i, 0 otherwise.\nrevenue: eBay’s sales revenue for dma i and date t"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-3",
+    "href": "danl-hw/danl-m1-hw-6.html#question-3",
+    "title": "Homework 6",
+    "section": "Question 3",
+    "text": "Question 3\nSummarize the mean vale of revenue for each group of search_stays_on and for each date.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-4",
+    "href": "danl-hw/danl-m1-hw-6.html#question-4",
+    "title": "Homework 6",
+    "section": "Question 4",
+    "text": "Question 4\nCalculate the log difference between mean revenues in each group of search_stays_on. (This is the log of the average revenue in group of search_stays_on == 1 minus the log of the average revenue in group of search_stays_on == 0.)\n\nFor example, consider the following two observations:\n\n\n# date        the daily mean vale of `revenue`   search_stays_on\n# 1-Apr-12    93650.68                           0\n# 1-Apr-12    120277.57                          1\n\n\nThe log difference of daily mean revenues between the two group of search_stays_on for date 1-Apr-12 is log(120277.57) - log(93650.68).\nHint: Below example shows how we can calculate the log of Value using np.log():\n\n\nimport pandas as pd\nimport numpy as np\n\n# Creating a DataFrame\ndata = {'Value': [1, 10, 100, 1000, 10000]}\ndf = pd.DataFrame(data)\n\n# Calculating logarithms\ndf['Log_natural'] = np.log(df['Value'])\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#variable-description-2",
+    "href": "danl-hw/danl-m1-hw-6.html#variable-description-2",
+    "title": "Homework 6",
+    "section": "Variable description",
+    "text": "Variable description\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nweek: Season week.\nposteam: String abbreviation for the team with possession.\nqtr: Quarter of the game (5 is overtime).\nhalf_seconds_remaining: Numeric seconds remaining in the half.\ndown: The down for the given play.\n\nBasically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it).\nIf you make 10 yards then you get another set of four downs.\n\npass: Binary indicator if the play was a pass play.\nwp: Estimated winning probability for the posteam given the current situation at the start of the given play."
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#q2a.",
+    "href": "danl-hw/danl-m1-hw-6.html#q2a.",
+    "title": "Homework 6",
+    "section": "Q2a.",
+    "text": "Q2a.\nIn DataFrame, NFL2022_stuffs, remove observations for which values of posteam is missing.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#q2b.",
+    "href": "danl-hw/danl-m1-hw-6.html#q2b.",
+    "title": "Homework 6",
+    "section": "Q2b.",
+    "text": "Q2b.\n\nCalculate the mean value of pass for each posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#q2d.",
+    "href": "danl-hw/danl-m1-hw-6.html#q2d.",
+    "title": "Homework 6",
+    "section": "Q2d.",
+    "text": "Q2d.\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\nCreate the DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa. by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, remove observations with NA in passer.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-5.",
+    "href": "danl-hw/danl-m1-hw-6.html#question-5.",
+    "title": "Homework 6",
+    "section": "Question 5.",
+    "text": "Question 5.\nIn DataFrame, NFL2022_stuffs, remove observations for which values of posteam is missing.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-6.",
+    "href": "danl-hw/danl-m1-hw-6.html#question-6.",
+    "title": "Homework 6",
+    "section": "Question 6.",
+    "text": "Question 6.\n\nCalculate the mean value of pass for each posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-7.",
+    "href": "danl-hw/danl-m1-hw-6.html#question-7.",
+    "title": "Homework 6",
+    "section": "Question 7.",
+    "text": "Question 7.\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa. by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, remove observations with NA in passer.\n\nAnswer:"
   }
 ]
