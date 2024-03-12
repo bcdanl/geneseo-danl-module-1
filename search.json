@@ -3728,7 +3728,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-1",
     "title": "Lecture 6",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\nRelational Data\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more DataFramesbased on common data values in those DataFrames.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+    "text": "Joining DataFrames\nRelational Data\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more DataFrames based on common data values in those DataFrames.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-2",

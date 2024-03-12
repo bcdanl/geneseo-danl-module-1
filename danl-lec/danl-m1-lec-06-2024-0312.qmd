@@ -798,7 +798,7 @@ Let's do Part 2 of [Classwork 6](https://bcdanl.github.io/module-1/danl-cw/danl-
   - E.g., `DataFrame` for county-level data and `DataFrame` for geographic information, such as longitude and latitude.
 
 
-- Sometimes we want to combine two or more `DataFrames`based on common data values in those `DataFrames`.
+- Sometimes we want to combine two or more `DataFrames` based on common data values in those `DataFrames`.
   -  This task is known in the database world as performing a "join."
   -  We can do this with the `merge()` method in Pandas.
 
