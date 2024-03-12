@@ -3854,14 +3854,14 @@
     "href": "danl-cw/danl-m1-cw-6.html#question-8",
     "title": "Classwork 5",
     "section": "Question 8",
-    "text": "Question 8\n\nMake ny_pincp longer.\n\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
+    "text": "Question 8\n\nMake ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question-9",
     "href": "danl-cw/danl-m1-cw-6.html#question-9",
     "title": "Classwork 5",
     "section": "Question 9",
-    "text": "Question 9\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\ncovid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
+    "text": "Question 9\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#question",
@@ -3882,6 +3882,6 @@
     "href": "danl-cw/danl-m1-cw-6.html#question-11",
     "title": "Classwork 5",
     "section": "Question 11",
-    "text": "Question 11\nFind the airline that has the longest positive dep_delay on average.\nAnswer:"
+    "text": "Question 11\nIdentify the full name of the airline with the highest average dep_delay, considering only positive delays.\nAnswer:"
   }
 ]

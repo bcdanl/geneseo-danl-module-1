@@ -4,7 +4,7 @@ subtitle: Group Operations; Reshaping DataFrames; Joining DataFrames
 date: 2024-03-12
 execute: 
   eval: false
-  echo: true
+  echo: false
   warning: false
   message: false
   
@@ -204,8 +204,7 @@ Merge `flights` with `weather`.
 
 ## Question 11
 
-Find the airline that has the longest positive `dep_delay` on average.
-
+Identify the full name of the airline with the highest average `dep_delay`, considering only positive delays.
 
 *Answer:*
 ```{python}
