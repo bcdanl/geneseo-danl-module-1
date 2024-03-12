@@ -1036,8 +1036,8 @@ x = pd.DataFrame({
 ::: {.column width="52.5%"}
 ```{.python}
 y = pd.DataFrame({
-    'key':[1, 2, 4],
-    'val_y':['y1', 'y2', 'y3'] })
+    'key':[1, 2],
+    'val_y':['y1', 'y2'] })
 one_to_many = x.merge(y, on='key', 
                          how='left')
 ```

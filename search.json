@@ -3784,7 +3784,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-2",
     "title": "Lecture 6",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne DataFrame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 2, 3],\n    'val_x':['x1', 'x2', 'x3', 'x4']})\n\ny = pd.DataFrame({\n    'key':[1, 2, 4],\n    'val_y':['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne DataFrame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 2, 3],\n    'val_x':['x1', 'x2', 'x3', 'x4']})\n\ny = pd.DataFrame({\n    'key':[1, 2],\n    'val_y':['y1', 'y2'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-3",
