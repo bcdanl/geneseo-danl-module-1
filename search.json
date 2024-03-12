@@ -2454,7 +2454,7 @@
     "href": "danl-hw/danl-m1-hw-6.html",
     "title": "Homework 6",
     "section": "",
-    "text": "Direction\n\nWrite a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\nCiti Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at https://www.citibikenyc.com/system-data. citibike.csv is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a citi_bike variable:\n\nciti_bike = pd.read_csv(\"citibike.csv\")\n\n\n\nQuestion 1\nConvert the start_time and stop_time columns to store datetime (Timestamp) values instead of strings.\n\n\n\nQuestion 2\nCount the rides that occurred on each day of the week (Monday, Tuesday, and so on). Which weekday is the most popular for a bike ride? Use the start_time column as your starting point.\n\n\n\nQuestion 3\nCount the rides per week for each week within the month. To do so, round each date in the start_time column to its previous or current Monday. Assume that each week starts on a Monday and ends on a Sunday. Thus, the first week of June would be Monday, June 1 through Sunday, June 7.\n\n\n\nQuestion 4\nCalculate the duration of each ride, and save the results to a new duration column.\n\n\n\nQuestion 5\nFind the average duration of a bike ride.\n\n\n\nQuestion 6\nExtract the five longest bike rides by duration from the data set.\n\n\n\n\n Back to top"
+    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html",
@@ -2524,7 +2524,7 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nMerging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nGroup Oeprations 2; Pivoting Data; Joining Data\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-39",
@@ -3883,5 +3883,19 @@
     "title": "Classwork 5",
     "section": "Question 11",
     "text": "Question 11\nIdentify the full name of the airline with the highest average dep_delay, considering only positive delays.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#q2a",
+    "href": "danl-hw/danl-m1-hw-6.html#q2a",
+    "title": "Homework 6",
+    "section": "Q2a",
+    "text": "Q2a\nHow many parties have provided or disbursed positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#q2b",
+    "href": "danl-hw/danl-m1-hw-6.html#q2b",
+    "title": "Homework 6",
+    "section": "Q2b",
+    "text": "Q2b\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year."
   }
 ]

@@ -1,6 +1,6 @@
 ---
 title: Homework 6
-subtitle: Merging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]
+subtitle: Group Oeprations 2; Pivoting Data; Joining Data
 date: 2024-03-12
 execute: 
   echo: false
@@ -27,12 +27,50 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 ```{python}
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
 ```
 
 <br><br><br>
+
+
+# Part 1
+
+Load the DataFrfame for Question 2.
+
+```{python}
+#| echo: true
+path = 'https://bcdanl.github.io/data/climate_finance.csv'
+climate_finance = pd.read_csv(path)
+```
+
+-   Adaptation involves taking actions to reduce the actual or expected damages from climate change.
+
+-   Mitigation involves taking actions to reduce the emissions of greenhouse gases that are responsible for climate change.
+
+## Q2a
+
+How many `parties` have `provided` or `disbursed` positive funding `contributions` to other countries or regions for their `adaptation` projects for every single `year` from 2011 to 2018?
+
+```{python}
+
+```
+
+<br><br>
+
+## Q2b
+
+For each `party`, calculate the total funding `contributions` that were `disbursed` or `provided` for `mitigation` projects for each `year`.
+
+```{python}
+
+```
+
+<br><br>
+
+# Part 2
+
+<br><br>
+
+# Part 3
 
 Citi Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at [https://www.citibikenyc.com/system-data](https://www.citibikenyc.com/system-data). `citibike.csv` is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a `citi_bike` variable:
 

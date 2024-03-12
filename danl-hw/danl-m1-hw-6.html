@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Homework 6 | Byeong-Hak Choe">
-<meta property="og:description" content="Merging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]">
+<meta property="og:description" content="Group Oeprations 2; Pivoting Data; Joining Data">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="Home">
 </head>
@@ -220,6 +220,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#direction" id="toc-direction" class="nav-link active" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a>
+  <ul>
+  <li><a href="#q2a" id="toc-q2a" class="nav-link" data-scroll-target="#q2a">Q2a</a></li>
+  <li><a href="#q2b" id="toc-q2b" class="nav-link" data-scroll-target="#q2b">Q2b</a></li>
+  </ul></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
@@ -235,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Homework 6</h1>
-<p class="subtitle lead">Merging, Joining, and Concaternating DataFrames [Homework 6 may be subject to change during the Module.]</p>
+<p class="subtitle lead">Group Oeprations 2; Pivoting Data; Joining Data</p>
 </div>
 
 
@@ -259,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 5, 2024</p>
+      <p class="date-modified">March 12, 2024</p>
     </div>
   </div>
     
@@ -276,9 +283,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Import Python libraries you need here.</p></li>
 </ul>
 <p><br><br><br></p>
+</section>
+<section id="part-1" class="level1">
+<h1>Part 1</h1>
+<p>Load the DataFrfame for Question 2.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'https://bcdanl.github.io/data/climate_finance.csv'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>climate_finance <span class="op">=</span> pd.read_csv(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Adaptation involves taking actions to reduce the actual or expected damages from climate change.</p></li>
+<li><p>Mitigation involves taking actions to reduce the emissions of greenhouse gases that are responsible for climate change.</p></li>
+</ul>
+<section id="q2a" class="level2">
+<h2 class="anchored" data-anchor-id="q2a">Q2a</h2>
+<p>How many <code>parties</code> have <code>provided</code> or <code>disbursed</code> positive funding <code>contributions</code> to other countries or regions for their <code>adaptation</code> projects for every single <code>year</code> from 2011 to 2018?</p>
+<p><br><br></p>
+</section>
+<section id="q2b" class="level2">
+<h2 class="anchored" data-anchor-id="q2b">Q2b</h2>
+<p>For each <code>party</code>, calculate the total funding <code>contributions</code> that were <code>disbursed</code> or <code>provided</code> for <code>mitigation</code> projects for each <code>year</code>.</p>
+<p><br><br></p>
+</section>
+</section>
+<section id="part-2" class="level1">
+<h1>Part 2</h1>
+<p><br><br></p>
+</section>
+<section id="part-3" class="level1">
+<h1>Part 3</h1>
 <p>Citi Bike NYC is New York City’s official bike-sharing program. Residents and tourists can pick up and drop off bicycles at hundreds of locations around the city. Ride data is publicly available and released monthly by the city at <a href="https://www.citibikenyc.com/system-data">https://www.citibikenyc.com/system-data</a>. <code>citibike.csv</code> is a collection of ~1.9 million rides that cyclists took in June 2020. For simplicity’s sake, the data set has been modified from its original version and includes only two columns: each ride’s start time and end time. Let’s import the data set and assign it to a <code>citi_bike</code> variable:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>citi_bike <span class="op">=</span> pd.read_csv(<span class="st">"citibike.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>citi_bike <span class="op">=</span> pd.read_csv(<span class="st">"citibike.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-1" class="level1">
