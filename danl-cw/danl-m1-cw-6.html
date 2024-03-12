@@ -188,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a>
+  <li><a href="#part-1---group-operations" id="toc-part-1---group-operations" class="nav-link active" data-scroll-target="#part-1---group-operations">Part 1 - Group Operations</a>
   <ul>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
@@ -198,13 +198,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul></li>
-  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
+  <li><a href="#part-2---pivoting-dataframes" id="toc-part-2---pivoting-dataframes" class="nav-link" data-scroll-target="#part-2---pivoting-dataframes">Part 2 - Pivoting <code>DataFrames</code></a>
   <ul>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   </ul></li>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a>
+  <li><a href="#part-3---joining-dataframes" id="toc-part-3---joining-dataframes" class="nav-link" data-scroll-target="#part-3---joining-dataframes">Part 3 - Joining <code>DataFrames</code></a>
   <ul>
+  <li><a href="#variable-description" id="toc-variable-description" class="nav-link" data-scroll-target="#variable-description">Variable Description</a></li>
   <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
   <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
   </ul></li>
@@ -251,8 +252,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="part-1" class="level1">
-<h1>Part 1</h1>
+<section id="part-1---group-operations" class="level1">
+<h1>Part 1 - Group Operations</h1>
 <p><br></p>
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/cereals.jpeg" width="600px">
@@ -312,8 +313,8 @@ ul.task-list li input[type="checkbox"] {
 <p><br><br></p>
 </section>
 </section>
-<section id="part-2" class="level1">
-<h1>Part 2</h1>
+<section id="part-2---pivoting-dataframes" class="level1">
+<h1>Part 2 - Pivoting <code>DataFrames</code></h1>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <ul>
@@ -351,8 +352,8 @@ ul.task-list li input[type="checkbox"] {
 <p><br><br></p>
 </section>
 </section>
-<section id="part-3" class="level1">
-<h1>Part 3</h1>
+<section id="part-3---joining-dataframes" class="level1">
+<h1>Part 3 - Joining <code>DataFrames</code></h1>
 <p><br></p>
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/relational-nycflights.png" width="600px">
@@ -361,7 +362,57 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>The CSV files are related each other, as described above.</li>
 </ul>
+<section id="variable-description" class="level2">
+<h2 class="anchored" data-anchor-id="variable-description">Variable Description</h2>
+<ul>
+<li><p><code>year</code>, <code>month</code>, <code>day</code></p>
+<ul>
+<li>Date of departure.</li>
+</ul></li>
+<li><p><code>dep_time</code>, <code>arr_time</code></p>
+<ul>
+<li>Actual departure and arrival times (format HHMM or HMM), local tz.</li>
+</ul></li>
+<li><p><code>sched_dep_time</code>, <code>sched_arr_time</code></p>
+<ul>
+<li>Scheduled departure and arrival times (format HHMM or HMM), local tz.</li>
+</ul></li>
+<li><p><code>dep_delay</code>, <code>arr_delay</code></p>
+<ul>
+<li>Departure and arrival delays, in minutes. Negative times represent early departures/arrivals.</li>
+</ul></li>
+<li><p><code>carrier</code></p>
+<ul>
+<li>Two letter carrier abbreviation. See <code>airlines</code> DataFrame to get full names.</li>
+</ul></li>
+<li><p><code>flight</code> Flight number.</p></li>
+<li><p><code>tailnum</code></p>
+<ul>
+<li>Plane tail number. See <code>planes</code> DataFrame for additional metadata.</li>
+</ul></li>
+<li><p><code>origin</code>, <code>dest</code></p>
+<ul>
+<li>Origin and destination. See <code>airports</code> DataFrame for additional metadata.</li>
+</ul></li>
+<li><p><code>air_time</code></p>
+<ul>
+<li>Amount of time spent in the air, in minutes.</li>
+</ul></li>
+<li><p><code>distance</code></p>
+<ul>
+<li>Distance between airports, in miles.</li>
+</ul></li>
+<li><p><code>hour</code>, <code>minute</code></p>
+<ul>
+<li>Time of scheduled departure broken into hour and minutes.</li>
+</ul></li>
+<li><p><code>time_hour</code></p>
+<ul>
+<li>Scheduled date and hour of the flight as a <code>datetime64</code>. Along with origin, can be used to join flights data to <code>weather</code> DataFrame</li>
+</ul></li>
+</ul>
 <p><br></p>
+</section>
 <section id="question-10" class="level2">
 <h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <p>Merge <code>flights</code> with <code>weather</code>.</p>

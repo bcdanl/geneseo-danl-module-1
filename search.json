@@ -3637,7 +3637,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-1",
     "title": "Lecture 6",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is the measurements that vary\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a measurement, a survey response, or any other unit of data collected.\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is the measurements that vary.\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a measurement, a survey response, or any other unit of data collected.\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-2",
@@ -3665,7 +3665,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-5",
     "title": "Lecture 6",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height.\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if we think one observation is spread across multiple rows.\nWe consider making DataFrames longer if we think one variable is spread across multiple columns."
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height.\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if one observation is spread across multiple rows.\nWe consider making DataFrames longer if one variable is spread across multiple columns."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-6",
@@ -3686,14 +3686,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-8",
     "title": "Lecture 6",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars indicates which column should be the “identifier”."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-9",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-9",
     "title": "Lecture 6",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable\nvalue_name is a string for the new column name that represents the values for the var_name."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable.\nvalue_name is a string for the new column name that represents the values for the var_name."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-10",
@@ -3707,7 +3707,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-11",
     "title": "Lecture 6",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that will be used to make the new variables of the wider DataFrame;\nvalues that provide the existing column that defines the values."
+    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-12",
@@ -3728,14 +3728,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-1",
     "title": "Lecture 6",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\n\nSometimes, we better combine various DataFrames together to analyze a set of data.\n\nThe data may have been split up into separate DataFrames to reduce the amount of redundant information.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude."
+    "text": "Joining DataFrames\nRelational Data\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more DataFramesbased on common data values in those DataFrames.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-2",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-2",
     "title": "Lecture 6",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\nRelational Data\n\nWhy is one data set sometimes scattered across multiple files?\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\n\nSometimes we may have two or more DataFrames that we want to combine based on common data values.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+    "text": "Joining DataFrames\nRelational Data\n\nWhy is one data set sometimes scattered across multiple files?\nSometimes we may have two or more DataFrames that we want to combine based on common data values.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-3",
@@ -3784,14 +3784,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-2",
     "title": "Lecture 6",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne data frame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 3],\n    'val_x':['x1', 'x2', 'x3']})\n\ny = pd.DataFrame({\n    'key':[1, 2, 4],\n    'val_y':['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth data frames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne DataFrame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 3],\n    'val_x':['x1', 'x2', 'x3']})\n\ny = pd.DataFrame({\n    'key':[1, 2, 4],\n    'val_y':['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-3",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-3",
     "title": "Lecture 6",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nDefining the key columns\n\n\nIf the left and right columns do not have the same name for the key columns, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = \n  x.merge(y, left_on = 'key_x', \n             right_on = 'key_y', \n             how = 'left')"
+    "text": "Joining DataFrames with merge()\nDefining the key columns\n\n\nIf the left and right columns do not have the same name for the key variables, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = \n  x.merge(y, left_on = 'key_x', \n             right_on = 'key_y', \n             how = 'left')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-4",
@@ -3988,5 +3988,19 @@
     "title": "Homework 6",
     "section": "Question 7.",
     "text": "Question 7.\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa. by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, remove observations with NA in passer.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#variable-description",
+    "href": "danl-cw/danl-m1-cw-6.html#variable-description",
+    "title": "Classwork 6",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nyear, month, day\n\nDate of departure.\n\ndep_time, arr_time\n\nActual departure and arrival times (format HHMM or HMM), local tz.\n\nsched_dep_time, sched_arr_time\n\nScheduled departure and arrival times (format HHMM or HMM), local tz.\n\ndep_delay, arr_delay\n\nDeparture and arrival delays, in minutes. Negative times represent early departures/arrivals.\n\ncarrier\n\nTwo letter carrier abbreviation. See airlines DataFrame to get full names.\n\nflight Flight number.\ntailnum\n\nPlane tail number. See planes DataFrame for additional metadata.\n\norigin, dest\n\nOrigin and destination. See airports DataFrame for additional metadata.\n\nair_time\n\nAmount of time spent in the air, in minutes.\n\ndistance\n\nDistance between airports, in miles.\n\nhour, minute\n\nTime of scheduled departure broken into hour and minutes.\n\ntime_hour\n\nScheduled date and hour of the flight as a datetime64. Along with origin, can be used to join flights data to weather DataFrame"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html",
+    "title": "Lecture 6",
+    "section": "",
+    "text": "Primer on Custom Functions\nGroup Operations\nReshaping DataFrames\nJoining DataFrames"
   }
 ]

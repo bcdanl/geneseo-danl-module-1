@@ -544,7 +544,7 @@ Let's do Question 7 in Part 1 of [Classwork 6](https://bcdanl.github.io/module-1
 ## Reshaping `DataFrames`
 ### Tidy `DataFrames`
 
-- A *variable* is the measurements that vary
+- A *variable* is the measurements that vary.
   - It could be anything from a person's age, the temperature on a given day, or the sales figures for a product. 
   
 - An *observation* represents a unit of analysis.
@@ -615,8 +615,8 @@ df_long = pd.DataFrame({
   - A long `DataFrame` increases in height.
 
 - The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
-  - We consider making `DataFrames` **wider** if we think one *observation* is spread across multiple *rows*.
-  - We consider making `DataFrames` **longer** if we think one *variable* is spread across multiple *columns*.
+  - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
+  - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
 
 
 
@@ -663,7 +663,7 @@ df_wide_to_long = (
 :::{.nonincremental}
 - `melt()` can take a few parameters:
   - `id_vars` is a container (`string`, `list`, `tuple`, or `array`) that represents the variables that will remain as is.
-  - `id_vars` indicates which column should be the “identifier”.
+  - `id_vars` can indicate which column should be the “identifier”.
 
 
 :::
@@ -686,7 +686,7 @@ df_wide_to_long = (
 :::{.nonincremental}
 
 - `melt()` can take a few parameters:
-  - `var_name` is a `string` for the *new column name* for the *variable*
+  - `var_name` is a `string` for the *new column name* for the *variable*.
   - `value_name` is a `string` for the *new column name* that represents the *values* for the `var_name`. 
 
 :::
@@ -727,8 +727,8 @@ df_long_to_wide = (
 
 - When using `pivot()`, we need to specify a few parameters:
   - `index` that takes the *column* to pivot on;
-  - `columns` that will be used to make the *new variables* of the wider `DataFrame`;
-  - `values` that provide the existing column that defines the *values*.
+  - `columns` that takes the *column* to be used to make the *new variable names* of the wider `DataFrame`;
+  - `values` that takes the *column* that provides the *values* of the *variables* in the wider `DataFrame`.
 
 
 
@@ -790,11 +790,17 @@ Let's do Part 2 of [Classwork 6](https://bcdanl.github.io/module-1/danl-cw/danl-
 
 
 ## Joining `DataFrames`
+### Relational Data
 
-- Sometimes, we better combine various `DataFrames` together to analyze a set of data.
-  - The data may have been split up into separate `DataFrames` to reduce the amount of redundant information.
+- Sometimes, one data set is scattered across multiple files.
+  - The size of the files can be huge.
+  - The data collection process can be scattered across time and space.
   - E.g., `DataFrame` for county-level data and `DataFrame` for geographic information, such as longitude and latitude.
 
+
+- Sometimes we want to combine two or more `DataFrames`based on common data values in those `DataFrames`.
+  -  This task is known in the database world as performing a "join."
+  -  We can do this with the `merge()` method in Pandas.
 
 
 
@@ -803,8 +809,6 @@ Let's do Part 2 of [Classwork 6](https://bcdanl.github.io/module-1/danl-cw/danl-
 ### Relational Data
 
 - Why is one data set sometimes scattered across multiple files?
-  - The size of the files can be huge.
-  - The data collection process can be scattered across time and space.
  
  
 - Sometimes we may have two or more `DataFrames` that we want to combine based on common data values.
@@ -1011,7 +1015,7 @@ merge_outer_x = x.merge(y, on='key', how='outer')
 ::: {.panel-tabset}
 
 ## one-to-many
-- One data frame has duplicate keys (a one-to-many relationship). 
+- One `DataFrame` has duplicate keys (a one-to-many relationship). 
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/join-one-to-many.png" width="375">
@@ -1045,7 +1049,7 @@ one_to_many = x.merge(y, on='key',
 
 
 ## many-to-many
-- Both data frames have duplicate keys (many-to-many relationship).
+- Both `DataFrames` have duplicate keys (many-to-many relationship).
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/join-many-to-many.png" width="350">
@@ -1087,7 +1091,7 @@ many_to_many = x.merge(y, on='key',
 ### Defining the key columns
 
 :::{.nonincremental}
-- If the left and right columns do not have the same name for the key columns, we can use the `left_on` and `right_on` parameters instead.
+- If the left and right columns do not have the same name for the key variables, we can use the `left_on` and `right_on` parameters instead.
 
 :::
 
