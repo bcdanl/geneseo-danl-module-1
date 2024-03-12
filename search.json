@@ -165,7 +165,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nTidy Data [Lecture 6 slides may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nGroup Operations; Reshaping & Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -1971,21 +1971,21 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-1",
     "title": "Lecture 6",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\nConcatenating the DataFrames on top of each other uses the concat() function. - All of the DataFrames to be concatenated are passed in a list.\nrow_concat = pd.concat([df1, df2, df3])\nrow_concat\n\nThe row names (i.e., the row indices) are simply a stacked version of the original row indices.\n\nrow_concat.iloc[3, :]"
+    "text": "Data Concatenation\nAdd Rows\n\nConcatenating the DataFrames on top of each other uses the concat() function.\n\nAll of the DataFrames to be concatenated are passed in a list.\n\n\nrow_concat = pd.concat([df1, df2, df3])\nrow_concat\n\nThe row names (i.e., the row indices) are simply a stacked version of the original row indices.\n\nrow_concat.iloc[3, :]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-2",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-2",
     "title": "Lecture 6",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\n\nLet’s consider a new Series and concatenate it with df1:\n\n## create a new row of data\nnew_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])\nnew_row_series\n\n\n## attempt to add the new row to a dataframe\ndf = pd.concat([df1, new_row_series])\ndf\n\nNot only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.\nWhy?"
+    "text": "Data Concatenation\nAdd Rows\n\nLet’s consider a new Series and concatenate it with df1:\n\n# create a new row of data\nnew_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])\nnew_row_series\n\n\n# attempt to add the new row to a dataframe\ndf = pd.concat([df1, new_row_series])\ndf\n\nNot only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.\nWhy?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-3",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-3",
     "title": "Lecture 6",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\nTo fix the problem, we need turn our series into a DataFrame. - This data frame contains one row of data, and the column names are the ones the data will bind to.\nnew_row_df = pd.DataFrame(\n  ## note the double brackets to create a \"row\" of data\n  data =[[\"n1\", \"n2\", \"n3\", \"n4\"]],\n  columns =[\"A\", \"B\", \"C\", \"D\"],\n)\n\ndf = pd.concat([df1, new_row_df])"
+    "text": "Data Concatenation\nAdd Rows\n\nTo fix the problem, we need turn our Series into a DataFrame.\n\nThis data frame contains one row of data, and the column names are the ones the data will bind to.\n\n\nnew_row_df = pd.DataFrame(\n  # note the double brackets to create a \"row\" of data\n  data =[[\"n1\", \"n2\", \"n3\", \"n4\"]],\n  columns =[\"A\", \"B\", \"C\", \"D\"],\n)\n\ndf = pd.concat([df1, new_row_df])"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-4",
@@ -2013,7 +2013,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-7",
     "title": "Lecture 6",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nConcatenate with Different Indices\nWhat would happen when the row and column indices are not aligned?\n\nLet’s modify our DataFrames for the next few examples.\n\n## rename the columns of our dataframes\ndf1.columns = ['A', 'B', 'C', 'D']\ndf2.columns = ['E', 'F', 'G', 'H']\ndf3.columns = ['A', 'C', 'F', 'H']\n\nIf we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.\n\nrow_concat = pd.concat([df1, df2, df3])"
+    "text": "Data Concatenation\nConcatenate with Different Indices\nWhat would happen when the row and column indices are not aligned?\n\nLet’s modify our DataFrames for the next few examples.\n\n# rename the columns of our dataframes\ndf1.columns = ['A', 'B', 'C', 'D']\ndf2.columns = ['E', 'F', 'G', 'H']\ndf3.columns = ['A', 'C', 'F', 'H']\n\nIf we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.\n\nrow_concat = pd.concat([df1, df2, df3])"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-8",
@@ -2027,7 +2027,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-9",
     "title": "Lecture 6",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nConcatenate with Different Indices\n\nLet’s modify our DataFrames further.\n\n## re-indexing the rows of our dataframes\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]"
+    "text": "Data Concatenation\nConcatenate with Different Indices\n\nLet’s modify our DataFrames further.\n\n# re-indexing the rows of our dataframes\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#data-concatenation-10",
@@ -2041,14 +2041,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#relational-data",
     "title": "Lecture 6",
     "section": "Relational data",
-    "text": "Relational data\nWhy is one data set sometimes scattered across multiple files? - The size of the files can be huge. - The data collection process can be scattered across time and space.\nSometimes we may have two or more DataFrames (tables) that we want to combine based on common data values. - This task is known in the database world as performing a “join.” - We can do this with the .merge() method in Pandas."
+    "text": "Relational data\n\nWhy is one data set sometimes scattered across multiple files? - The size of the files can be huge. - The data collection process can be scattered across time and space.\nSometimes we may have two or more DataFrames that we want to combine based on common data values. - This task is known in the database world as performing a “join.” - We can do this with the .merge() method in Pandas."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#relational-data-1",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#relational-data-1",
     "title": "Lecture 6",
     "section": "Relational data",
-    "text": "Relational data\n\nThe variables that are used to connect each pair of tables are called keys."
+    "text": "Relational data\n\n\nThe variables that are used to connect each pair of tables are called keys.\n\n\n\n\n\n\nPandas\nSQL\nDescription\n\n\n\n\nleft\nleft outer\nKeep all the observations from the left\n\n\nright\nright outer\nKeep all the observations from the right\n\n\nouter\nfull outer\nKeep all the observations from both left and right\n\n\ninner\ninner\nKeep only the observations whose key values exist in both"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#relational-data-2",
@@ -2062,21 +2062,21 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#merges-1",
     "title": "Lecture 6",
     "section": "Merges",
-    "text": "Merges\n\ninnerleftrightouter full\n\n\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n\n\n\n\n\n\n## the default value for 'how' is 'inner'\n## so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')\n\n\n\nA left join keeps all observations in x.\n\n\n\n\n\n\n\n\n\n\nmerge_left = pd.merge(x, y, on='key', how='left')\nmerge_left_x = x.merge(y, on='key', how='left')\n\nThe most commonly used join is the left join.\n\n\n\n\nA right join keeps all observations in y.\n\n\n\n\n\n\n\n\n\n\nmerge_right = pd.merge(x, y, on='key', how='right')\nmerge_right_x = x.merge(y, on='key', how='right')\n\n\n\nA full join keeps all observations in x and y.\n\n\n\n\n\n\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
+    "text": "Merges\n\n\ninnerleftrightouter full\n\n\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n\n\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')\n\n\n\nA left join keeps all observations in x.\n\n\n\n\n\n\n\n\n\n\nmerge_left = pd.merge(x, y, on='key', how='left')\nmerge_left_x = x.merge(y, on='key', how='left')\n\nThe most commonly used join is the left join.\n\n\n\n\nA right join keeps all observations in y.\n\n\n\n\n\n\n\n\n\n\nmerge_right = pd.merge(x, y, on='key', how='right')\nmerge_right_x = x.merge(y, on='key', how='right')\n\n\n\nA full join keeps all observations in x and y.\n\n\n\n\n\n\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#merges-2",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#merges-2",
     "title": "Lecture 6",
     "section": "Merges",
-    "text": "Merges\nDuplicate keys\n\none-to-manymany-to-many\n\n\n\nOne data frame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3'] })\n\n\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', how='left')\n\n\n\n\n\n\nBoth data frames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_x': ['x1', 'x2', 'x3', 'x4'] })\n\n\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', how='left')"
+    "text": "Merges\nDuplicate keys\n\none-to-manymany-to-many\n\n\n\nOne data frame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3'] })\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', how='left')\n\n\n\n\n\nBoth data frames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_x': ['x1', 'x2', 'x3', 'x4'] })\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', how='left')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#merges-3",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#merges-3",
     "title": "Lecture 6",
     "section": "Merges",
-    "text": "Merges\nDefining the key columns\n\nIf the left and right columns do not have the same name for the key columns, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\n\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = x.merge(y, \n                  left_on='key_x', \n                  right_on = 'key_y', \n                  how='left')"
+    "text": "Merges\nDefining the key columns\n\nIf the left and right columns do not have the same name for the key columns, we can use the left_on and right_on parameters instead.\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = x.merge(y, \n                  left_on='key_x', \n                  right_on = 'key_y', \n                  how='left')"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#missing-data-1",
@@ -2284,9 +2284,9 @@
   {
     "objectID": "danl-cw/danl-m1-cw-6.html",
     "href": "danl-cw/danl-m1-cw-6.html",
-    "title": "Classwork 6",
+    "title": "Classwork 5",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns"
+    "text": "The dataset,cereals_oatmeal.csv,(with its pathname https://bcdanl.github.io/data/cereals_oatmeal.csv) is a listing of 76 popular breakfast cereals and oatmeal.\n\n\n\n\n  \n\n\n\n\n\nGroup the cereals_oatmeal, using the Manufacturer variable.\nAnswer:\n\n\n\n\nDetermine the total number of groups, and the number of cereals per group.\nAnswer:\n\n\n\n\nExtract the cereals that belong to the manufacturer \"Kellogg's\".\nAnswer:\n\n\n\n\nCalculate the average of values in the Calories, Fiber, and Sugars variables for each manufacturer.\nAnswer:\n\n\n\n\nFind the maximum value in the Sugars variable for each manufacturer.\nAnswer:\n\n\n\n\nFind the minimum value in the Fiber variable for each manufacturer.\nAnswer:\n\n\n\n\nExtract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#load-libraries",
@@ -2326,9 +2326,9 @@
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#q2b",
     "href": "danl-cw/danl-m1-cw-6.html#q2b",
-    "title": "Classwork 6",
+    "title": "Classwork 5",
     "section": "Q2b",
-    "text": "Q2b\nFind the airline that has the longest positive dep_delay on average.\n\nAnswer"
+    "text": "Q2b\nFind the airline that has the longest positive dep_delay on average.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-6.html#q2c",
@@ -2398,7 +2398,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL Module 1: Data Preparation and Management, 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 5\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-weekly-q-a",
@@ -2440,7 +2440,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nMerging, Joining, and Concaternating DataFrames [Classwork 6 may be subject to change during the Module.]\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 5\n\n\nGroup Operations; Reshaping DataFrames; Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
@@ -3400,5 +3400,488 @@
     "title": "Homework 4 - Example Answers",
     "section": "Question 6",
     "text": "Question 6\n\nCreate a DataFrame that only contains observations from playlists featuring the song “One Dance” by Drake.\n\nNext, identify the song with the highest popularity after Drake’s “One Dance” in the newly created DataFrame.\n\n\nAnswer\n\n# Filter the dataset to keep observations with playlists that include Drake's song \"One Dance\"\ndrake_one_dance_playlists = spotify[ (spotify['artist_name'] == 'Drake') & (spotify['track_name'] == 'One Dance') ]\n\n# Since the task is to keep observations in playlists that include \"One Dance\" by Drake,\n# we need to identify the playlists IDs containing this song and then filter the dataset based on those playlist IDs.\n\nplaylist_ids_with_one_dance = drake_one_dance_playlists['pid'].unique()\n\n# Instead of unique(), drop_duplicates() can be used\n  # playlist_ids_with_one_dance2 = drake_one_dance_playlists[['pid']].drop_duplicates()\n  # playlist_ids_with_one_dance2['pid']\n\n# Now, filter the entire dataset to keep observations that are in playlists with \"One Dance\" by Drake\nwith_one_dance_playlists = spotify[ spotify['pid'].isin(playlist_ids_with_one_dance) ]\n\n# Display the shape of the filtered dataset as a quick check\nshow(with_one_dance_playlists)\n\n\n\n\n\n\n    \n      \n      pid\n      playlist_name\n      pos\n      artist_name\n      track_name\n      duration_ms\n      album_name\n    \n  Loading... (need help?)\n\n\n\n\n\n\n\n\n(\n    with_one_dance_playlists[['artist_name', 'track_name']]\n    .value_counts()\n    .reset_index()\n    .rename(columns={0:'n'}) # by default, 0 is the variable name for count\n    .nlargest(5, 'n', keep = 'all')\n    .loc[[1],:]\n)\n\n\n  \n    \n\n\n\n\n\n\nartist_name\ntrack_name\nn\n\n\n\n\n1\nDRAM\nBroccoli (feat. Lil Yachty)\n45"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#learning-objectives",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#learning-objectives",
+    "title": "Lecture 6",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nPrimer on Custom Functions\nGroup Operations\nReshaping DataFrames\nJoining DataFrames"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics",
+    "title": "Lecture 6",
+    "section": "Python Basics",
+    "text": "Python Basics\nPrimer on Custom Functions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nWe can do two things with a function:\n\nDefine it\nCall it"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics-1",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics-1",
+    "title": "Lecture 6",
+    "section": "Python Basics",
+    "text": "Python Basics\nPrimer on Custom Functions\n\n\nTo define a Python function, we type def, the function name, parentheses enclosing any input parameters to the function, and then finally, a colon (:).\nLet’s define a very simple function my_half() that has a parameter x and returns a value x / 2.\n\n\ndef my_half(x):\n    return x / 2\n    \nmy_half(2)\n\nThe values we pass into the function when we call it are known as arguments.\nWhen we call a function with arguments, the values of those arguments are copied to their corresponding parameters inside the function."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics-2",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics-2",
+    "title": "Lecture 6",
+    "section": "Python Basics",
+    "text": "Python Basics\nPrimer on Custom Functions - Lambda Functions\n\nA Python lambda function is an anonymous function expressed as a single statement.\n\nIt is defined with the lambda keyword, which has no meaning other than “we are declaring an anonymous function”:\n\n\ndef my_half(x):\n    return x / 2\n    \nequiv_my_half = lambda x: x / 2\n\nmy_half(2)\nequiv_my_half(2)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-1",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-1",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]\n\nA sector can have many companies; An industry is a subcategory within a sector.\nLet’s explore the fortune DataFrame.\n\nHow many unique sectors are in fortune?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-2",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-2",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nCreating a GroupBy object from a dataset\n\n\nLet’s pull out all companies with a Sector value of \"Retailing\".\n\nThen, calculate the Retailing sector’s average revenue:\n\n\n\nin_retailing = ( fortune[\"Sector\"] == \"Retailing\" )\nretail_companies = fortune[ in_retailing ]\nretail_companies[\"Revenues\"].mean()\n\nWithout a group operation, we may need to write a lot of additional code to apply the same logic to the other 20 sectors in fortune.\n\nPandas’ GroupBy object offers the best solution out of the box."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-3",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-3",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nCreating a GroupBy object from a dataset\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\n\nWe can count the number of groups in sectors by passing the GroupBy object into the Python’s built-in len() function\nThe size() method on the GroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-4",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-4",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAttributes and methods of a GroupBy object\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-5",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-5",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAttributes and methods of a GroupBy object\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe GroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-6",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-6",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAttributes and methods of a GroupBy object\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with a GroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-7",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-7",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAttributes and methods of a GroupBy object\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-8",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-8",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAttributes and methods of a GroupBy object\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-9",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-9",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\nWe can invoke methods on the GroupBy object to apply aggregate operations to every group.\n\nAggregation is the process of taking multiple values and returning a single value.\n\n\n\nsectors.sum()\nsectors.mean()"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-10",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-10",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\nWe can target a single variable by passing its name inside square brackets after the GroupBy object.\n\nPandas returns a new object, a SeriesGroupBy."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-11",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-11",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]  # this is a SeriesGroupBy object\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\nThe agg() method can also be used on a SeriesGroupBy.\nInstead of directly calling the aggregation method, we can call the agg() method, and pass the aggregation method we want in there."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-12",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-12",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-13",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-13",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\n\n\nWe pass in whatever aggregation we want.\n\nSome common options are in the table above."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-14",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-14",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Questions 1-6 in Part 1 of Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-15",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-15",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\n\n\nJust like the agg() method, the transform() method can accept the aggregation method (e.g., 'sum', 'mean').\nUnlike the agg() method, the transform() method does not collapse DataFrame and goes back to the original index.\n\n\nsectors['Revenues_M'].transform('min')\nsectors['Profits_M'].transform('max')\nsectors['Number_of_employees'].transform('mean')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-16",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-16",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nSince the transform() method returns a Series with the index label that is the same as in the original DataFrame, it can be used to add a new variable to the original DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-17",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-17",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd New Variables with DataFrame.assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-18",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-18",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nagg() vs. transform()\n\nUse .agg() with .groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nGroups become the new index labels.\n\nUse .transform() with .groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\nThat is, .transform() does not collapse the DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-19",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-19",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 7 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-20",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-20",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-21",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-21",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-22",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-22",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-23",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-23",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-24",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-24",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-25",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-25",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create a GroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-26",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-26",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe GroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-27",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-27",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\n(\n  sector_and_industry\n  .get_group((\"Business Services\", \"Financial Data Services\"))\n)\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-28",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-28",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index(name = \"Revenues_mean\")\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-29",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-29",
+    "title": "Lecture 6",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 7 in Part 1 of Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-1",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-1",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is the measurements that vary\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a measurement, a survey response, or any other unit of data collected.\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-2",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-2",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\n\n\n\nThere are three interrelated rules that make a DataFrame tidy:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-3",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-3",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-4",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-4",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-5",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-5",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height.\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if we think one observation is spread across multiple rows.\nWe consider making DataFrames longer if we think one variable is spread across multiple columns."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-6",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-6",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-7",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-7",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt()\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-8",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-8",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars indicates which column should be the “identifier”."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-9",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-9",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable\nvalue_name is a string for the new column name that represents the values for the var_name."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-10",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-10",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\",\n          value_vars = ['Miami', 'Rochester'])\n)\n\n\nmelt() can take a few parameters:\n\nvalue_vars parameter allows us to select which specific columns we want to “melt”.\nBy default, it will melt all the columns not specified in the id_vars parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-11",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-11",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that will be used to make the new variables of the wider DataFrame;\nvalues that provide the existing column that defines the values."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-12",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-12",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot_table() method can take both a string and a list of variables for the index parameter.\n\nThe pivot() can take only a string for index."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-13",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-13",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-1",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-1",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\n\nSometimes, we better combine various DataFrames together to analyze a set of data.\n\nThe data may have been split up into separate DataFrames to reduce the amount of redundant information.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-2",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-2",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\nWhy is one data set sometimes scattered across multiple files?\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\n\nSometimes we may have two or more DataFrames that we want to combine based on common data values.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-3",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-3",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of tables are called keys."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-14",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#reshaping-dataframes-14",
+    "title": "Lecture 6",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nLet’s do Part 2 of Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\n\nSometimes, we better combine various DataFrames together to analyze a set of data.\n\nThe data may have been split up into separate DataFrames to reduce the amount of redundant information.\ne.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#many-to-many",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#many-to-many",
+    "title": "Lecture 6",
+    "section": "many-to-many",
+    "text": "many-to-many\n\nBoth data frames have duplicate keys (many-to-many relationship).\n\n\n\n\nx = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_x': ['x1', 'x2', 'x3', 'x4'] })\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', how='left')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3']\n})\n\n\n\nThe colored column represents the “key” variable.\nThe grey column represents the “value” column."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-1",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-1",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\n\n\ninnerleftrightouter full\n\n\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')\n\n\n\nA left join keeps all observations in x.\n\n\n\n\nmerge_left = pd.merge(x, y, on='key', how='left')\nmerge_left_x = x.merge(y, on='key', how='left')\n\nThe most commonly used join is the left join.\n\n\n\n\nA right join keeps all observations in y.\n\n\n\n\nmerge_right = pd.merge(x, y, on='key', how='right')\nmerge_right_x = x.merge(y, on='key', how='right')\n\n\n\nA full join keeps all observations in x and y.\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-2",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-2",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne data frame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 3],\n    'val_x':['x1', 'x2', 'x3']})\n\ny = pd.DataFrame({\n    'key':[1, 2, 4],\n    'val_y':['y1', 'y2', 'y3'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth data frames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-3",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-3",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDefining the key columns\n\n\nIf the left and right columns do not have the same name for the key columns, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = \n  x.merge(y, left_on = 'key_x', \n             right_on = 'key_y', \n             how = 'left')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-4",
+    "href": "danl-lec/danl-m1-lec-06-2024-0312.html#joining-dataframes-with-merge-4",
+    "title": "Lecture 6",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nLet’s do Part 3 of Classwork 6!"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-1",
+    "href": "danl-cw/danl-m1-cw-6.html#question-1",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Group the cereals_oatmeal, using the Manufacturer variable.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-2",
+    "href": "danl-cw/danl-m1-cw-6.html#question-2",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Determine the total number of groups, and the number of cereals per group.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-3",
+    "href": "danl-cw/danl-m1-cw-6.html#question-3",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Extract the cereals that belong to the manufacturer \"Kellogg's\".\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-4",
+    "href": "danl-cw/danl-m1-cw-6.html#question-4",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Calculate the average of values in the Calories, Fiber, and Sugars variables for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-5",
+    "href": "danl-cw/danl-m1-cw-6.html#question-5",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Find the maximum value in the Sugars variable for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-6",
+    "href": "danl-cw/danl-m1-cw-6.html#question-6",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Find the minimum value in the Fiber variable for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-7",
+    "href": "danl-cw/danl-m1-cw-6.html#question-7",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-8",
+    "href": "danl-cw/danl-m1-cw-6.html#question-8",
+    "title": "Classwork 5",
+    "section": "Question 8",
+    "text": "Question 8\n\nMake ny_pincp longer.\n\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-9",
+    "href": "danl-cw/danl-m1-cw-6.html#question-9",
+    "title": "Classwork 5",
+    "section": "Question 9",
+    "text": "Question 9\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\ncovid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question",
+    "href": "danl-cw/danl-m1-cw-6.html#question",
+    "title": "Classwork 5",
+    "section": "Question",
+    "text": "Question\nMerge flights with weather."
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-10",
+    "href": "danl-cw/danl-m1-cw-6.html#question-10",
+    "title": "Classwork 5",
+    "section": "Question 10",
+    "text": "Question 10\nMerge flights with weather.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-6.html#question-11",
+    "href": "danl-cw/danl-m1-cw-6.html#question-11",
+    "title": "Classwork 5",
+    "section": "Question 11",
+    "text": "Question 11\nFind the airline that has the longest positive dep_delay on average.\nAnswer:"
   }
 ]
