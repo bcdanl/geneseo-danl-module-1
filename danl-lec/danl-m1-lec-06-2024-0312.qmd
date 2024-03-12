@@ -1,6 +1,6 @@
 ---
 title: Lecture 6
-subtitle: Group Operations; Reshaping & Joining `DataFrames`
+subtitle: Advanced Group Operations; Reshaping/Joining `DataFrames`
 format:
   clean-revealjs:
     self-contained: true
@@ -88,9 +88,11 @@ my_half(2)
 ## Python Basics
 ### Primer on Custom Functions - Lambda Functions
 
+:::{.nonincremental}
 - A Python *lambda* function is an *anonymous* function expressed as a single statement.
   - It is defined with the *lambda* keyword, which has no meaning other than “we are declaring an anonymous function”:
 
+:::
 ```{.python}
 def my_half(x):
     return x / 2
@@ -122,16 +124,12 @@ import pandas as pd
 # Below is for an interactive display of DataFrame in Colab
 from google.colab import data_table
 data_table.enable_dataframe_formatter()
-
 fortune1000 = pd.read_csv("https://bcdanl.github.io/data/fortune_2023.csv")
-
 varlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']
 fortune = fortune1000[varlist]
 ```
 
 - A sector can have many companies; An industry is a subcategory within a sector.
-- Let's explore the `fortune` `DataFrame`.
-  - How many unique sectors are in `fortune`?
 
 
 ## Group Operations
@@ -361,15 +359,19 @@ fortune = fortune.assign(
 ```
 
 
+- The `assign()` method allows us to create new variables or overwrite existing ones in a `DataFrame`
+  - It returns a new `DataFrame` with the new variables added.
+- The `assign()` method can be useful for method chaining.
+
 
 ## Group Operations
 ### `agg()` vs. `transform()`
 
-- Use `.agg()` with `.groupby()` when you want to take multiple values and return a single (aggregated) value for *each group*.
-  - Groups become the new index labels.
+- Use `agg()` with `groupby()` when you want to take multiple values and return a single (aggregated) value for *each group*.
+  - `agg()` does collapse the `DataFrame`, and groups become the new index labels.
 
-- Use `.transform()` with `.groupby()` when you want to perform computations on your groups but you want to return a single (aggregated) value for *each observation*.
-  -  That is, `.transform()` does not collapse the `DataFrame`.
+- Use `transform()` with `groupby()` when you want to perform computations on your groups but you want to return a single (aggregated) value for *each observation*.
+  -  `transform()` does not collapse the `DataFrame`.
 
 
 
@@ -410,7 +412,7 @@ fortune = (
 :::
 
 ```{.python}
-fortune_shuffled = (
+fortune = (
     fortune
     .sample( frac = 1 )
     .reset_index( drop = True )

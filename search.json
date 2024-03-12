@@ -165,7 +165,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nGroup Operations; Reshaping & Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nAdvanced Group Operations; Reshaping/Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -3427,14 +3427,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#python-basics-2",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nPrimer on Custom Functions - Lambda Functions\n\nA Python lambda function is an anonymous function expressed as a single statement.\n\nIt is defined with the lambda keyword, which has no meaning other than “we are declaring an anonymous function”:\n\n\ndef my_half(x):\n    return x / 2\n    \nequiv_my_half = lambda x: x / 2\n\nmy_half(2)\nequiv_my_half(2)"
+    "text": "Python Basics\nPrimer on Custom Functions - Lambda Functions\n\n\nA Python lambda function is an anonymous function expressed as a single statement.\n\nIt is defined with the lambda keyword, which has no meaning other than “we are declaring an anonymous function”:\n\n\n\ndef my_half(x):\n    return x / 2\n    \nequiv_my_half = lambda x: x / 2\n\nmy_half(2)\nequiv_my_half(2)"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-1",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-1",
     "title": "Lecture 6",
     "section": "Group Operations",
-    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]\n\nA sector can have many companies; An industry is a subcategory within a sector.\nLet’s explore the fortune DataFrame.\n\nHow many unique sectors are in fortune?"
+    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]\n\nA sector can have many companies; An industry is a subcategory within a sector."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-2",
@@ -3546,14 +3546,14 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-17",
     "title": "Lecture 6",
     "section": "Group Operations",
-    "text": "Group Operations\nAdd New Variables with DataFrame.assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+    "text": "Group Operations\nAdd New Variables with DataFrame.assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)\n\nThe assign() method allows us to create new variables or overwrite existing ones in a DataFrame\n\nIt returns a new DataFrame with the new variables added.\n\nThe assign() method can be useful for method chaining."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-18",
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-18",
     "title": "Lecture 6",
     "section": "Group Operations",
-    "text": "Group Operations\nagg() vs. transform()\n\nUse .agg() with .groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nGroups become the new index labels.\n\nUse .transform() with .groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\nThat is, .transform() does not collapse the DataFrame."
+    "text": "Group Operations\nagg() vs. transform()\n\nUse agg() with groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nagg() does collapse the DataFrame, and groups become the new index labels.\n\nUse transform() with groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\ntransform() does not collapse the DataFrame."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-19",
@@ -3574,7 +3574,7 @@
     "href": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-21",
     "title": "Lecture 6",
     "section": "Group Operations",
-    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-06-2024-0312.html#group-operations-22",
