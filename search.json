@@ -2454,7 +2454,7 @@
     "href": "danl-hw/danl-m1-hw-6.html",
     "title": "Homework 6",
     "section": "",
-    "text": "Please submit your Jupyter Notebook for Homework 6 to the Brightspace with the name below:\n\ndanl-m1-hw6-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw6-choe-byeonghak.ipynb )\n\nThe due is March 19, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\nImport Python libraries you need here.\n\n\nimport pandas as pd"
+    "text": "Please submit your Jupyter Notebook for Homework 6 to the Brightspace with the name below:\n\ndanl-m1-hw6-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-m1-hw6-choe-byeonghak.ipynb )\n\nThe due is March 19, 2024, 7:00 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions.\nPlease prepare a Jupyter/Python Notebook (*.ipynb) to address all questions.\nMake at least some simple comment (# ...) in each question.\nMake one text cell to explain things in each question.\nImport Python libraries you need here.\n\n\nimport pandas as pd\n\n\n\n\n\n\n\nLoad the DataFrame for Part 1.\n\npath = 'https://bcdanl.github.io/data/climate_finance.csv'\nclimate_finance = pd.read_csv(path)\n\n\n\n\n  \n\n\n\nClimate finance refers to local, national or transnational financing—drawn from public, private and alternative sources of financing—that seeks to support mitigation and adaptation actions that will address climate change (https://unfccc.int/topics/introduction-to-climate-finance).\n\nMitigation involves taking actions to reduce the emissions of greenhouse gases that are responsible for climate change.\nAdaptation involves taking actions to reduce the actual or expected damages from climate change (https://climate.nasa.gov/solutions/adaptation-mitigation).\n\nA unit of observation in climate_finance DataFrame is a climate change project.\n\n\n\n\n\nParty: a party (country) that provides a funding contribution to recipient country/region for their cliamte change project.\nRecipient country/region: Recipient country or region\nProject/programme/activity: Details in the climate change project\nType of support:\n\nadaptation if the climate change project is related to adaptation project.\nmitigation if the climate change project is related to mitigation project.\n\nYear: Year that funding contribution is committed or provided.\nContribution: An amount of funding contribution for the climate change project (in USD).\nStatus:\n\ncommitted if a party commits to providing the funding contribution for the climate change project, but the funding contribution is NOT actually provided.\nprovided if the funding contribution was provided for the climate change project.\n\nEnergy:\n\nTRUE if the project is energy-related;\nFALSE otherwise.\n\n\n\n\n\n\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year.\nAnswer:\n\n\n\n\nHow many parties have provided positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-3.html",
@@ -2524,7 +2524,7 @@
     "href": "listing-danl-m1-hw.html",
     "title": "DANL Module 1 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nAdvanced Group Oeprations; Pivoting Data; Joining Data\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, and Sorting Data\n\n\nFebruary 13, 2024\n\n\n\n\nHomework 3\n\n\nPandas Basics - Sorting, Indexing, and Locating Data\n\n\nFebruary 20, 2024\n\n\n\n\nHomework 4\n\n\nPandas Basics - Sorting and Filtering Data\n\n\nFebruary 27, 2024\n\n\n\n\nHomework 5\n\n\nDealing with Missing Values; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nHomework 6\n\n\nAdvanced Group Oeprations\n\n\nMarch 12, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-04-2024-0227.html#pandas-basics-39",
@@ -3902,22 +3902,22 @@
     "objectID": "danl-hw/danl-m1-hw-6.html#variable-description",
     "href": "danl-hw/danl-m1-hw-6.html#variable-description",
     "title": "Homework 6",
-    "section": "Variable Description",
-    "text": "Variable Description\n\nParty: a party (country) that provides a funding contribution to recipient country/region for their cliamte change project.\nRecipient country/region: Recipient country or region\nProject/programme/activity: Details in the climate change project\nType of support:\n\nadaptation if the climate change project is related to adaptation project.\nmitigation if the climate change project is related to mitigation project.\n\nYear: Year that funding contribution is committed or provided.\nContribution: An amount of funding contribution for the climate change project (in USD).\nStatus:\n\ncommitted if a party commits to providing the funding contribution for the climate change project, but the funding contribution is NOT actually provided.\nprovided if the funding contribution was provided for the climate change project.\n\nEnergy:\n\nTRUE if the project is energy-related;\nFALSE otherwise."
+    "section": "",
+    "text": "Party: a party (country) that provides a funding contribution to recipient country/region for their cliamte change project.\nRecipient country/region: Recipient country or region\nProject/programme/activity: Details in the climate change project\nType of support:\n\nadaptation if the climate change project is related to adaptation project.\nmitigation if the climate change project is related to mitigation project.\n\nYear: Year that funding contribution is committed or provided.\nContribution: An amount of funding contribution for the climate change project (in USD).\nStatus:\n\ncommitted if a party commits to providing the funding contribution for the climate change project, but the funding contribution is NOT actually provided.\nprovided if the funding contribution was provided for the climate change project.\n\nEnergy:\n\nTRUE if the project is energy-related;\nFALSE otherwise."
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#question-1",
     "href": "danl-hw/danl-m1-hw-6.html#question-1",
     "title": "Homework 6",
-    "section": "Question 1",
-    "text": "Question 1\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year.\nAnswer:"
+    "section": "",
+    "text": "For each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year.\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#question-2",
     "href": "danl-hw/danl-m1-hw-6.html#question-2",
     "title": "Homework 6",
-    "section": "Question 2",
-    "text": "Question 2\nHow many parties have provided positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?\nAnswer:"
+    "section": "",
+    "text": "How many parties have provided positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#variable-description-1",
@@ -3931,14 +3931,14 @@
     "href": "danl-hw/danl-m1-hw-6.html#question-3",
     "title": "Homework 6",
     "section": "Question 3",
-    "text": "Question 3\nSummarize the mean vale of revenue for each group of search_stays_on and for each date.\nAnswer:"
+    "text": "Question 3\nWhat are the minimum, first quartile, median, thrid quartile, maximum, mean, and standard deviation of Close and Volume for each company?\n\nHint: describe() is available for DataFrameGroupBy.\n\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#question-4",
     "href": "danl-hw/danl-m1-hw-6.html#question-4",
     "title": "Homework 6",
     "section": "Question 4",
-    "text": "Question 4\nCalculate the log difference between mean revenues in each group of search_stays_on. (This is the log of the average revenue in group of search_stays_on == 1 minus the log of the average revenue in group of search_stays_on == 0.)\n\nFor example, consider the following two observations:\n\n\n# date        the daily mean vale of `revenue`   search_stays_on\n# 1-Apr-12    93650.68                           0\n# 1-Apr-12    120277.57                          1\n\n\nThe log difference of daily mean revenues between the two group of search_stays_on for date 1-Apr-12 is log(120277.57) - log(93650.68).\nHint: Below example shows how we can calculate the log of Value using np.log():\n\n\nimport pandas as pd\nimport numpy as np\n\n# Creating a DataFrame\ndata = {'Value': [1, 10, 100, 1000, 10000]}\ndf = pd.DataFrame(data)\n\n# Calculating logarithms\ndf['Log_natural'] = np.log(df['Value'])\n\nAnswer:"
+    "text": "Question 4\nFind the 10 largest values for Volume for each company using a lambda function.\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#variable-description-2",
@@ -4002,5 +4002,19 @@
     "title": "Lecture 6",
     "section": "",
     "text": "Primer on Custom Functions\nGroup Operations\nReshaping DataFrames\nJoining DataFrames"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-5",
+    "href": "danl-hw/danl-m1-hw-6.html#question-5",
+    "title": "Homework 6",
+    "section": "Question 5",
+    "text": "Question 5\n\nCalculate the Z-score of Close for each company on Date.\n\nThe formula for the Z-score of Close for each company on Date \\(t\\) is as follows:\n\n\n\\[\nz_{t} = \\frac{\\text{Close}_{t} - \\text{mean}(\\text{Close}_{t})}{\\text{std}(\\text{Close}_{t})},\n\\]\nwhere\n\n\\(\\text{Close}_{t}\\) is a company’s Close price on date t;\n\\(\\text{mean}(\\text{Close}_{t})\\) is the mean value of Close for a company;\n\\(\\text{std}(\\text{Close}_{t})\\) is the standard deviation of Close for a company.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-m1-hw-6.html#question-6",
+    "href": "danl-hw/danl-m1-hw-6.html#question-6",
+    "title": "Homework 6",
+    "section": "Question 6",
+    "text": "Question 6\n\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\nTo do so, divide all values for each company by the values of the first date in the data for that company.\n\nAnswer:"
   }
 ]
