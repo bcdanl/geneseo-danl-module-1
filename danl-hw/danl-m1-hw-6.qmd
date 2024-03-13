@@ -137,18 +137,18 @@ How many `parties` have `provided` positive funding `contributions` to other cou
 
 
 
-<!-- <br> -->
+<br>
 
-<!-- <p align="center"> -->
-<!--   <img src="https://bcdanl.github.io/lec_figs/stocks.png" width="600px"> -->
-<!-- </p> -->
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/stocks.png" width="600px">
+</p>
 
-<!-- <br> -->
+<br>
 
 Consider the `stock` DataFrame for Part 2.
 
 ```{python}
-path = 'https://bcdanl.github.io/data/stocks2013_2023.csv'
+path = 'https://bcdanl.github.io/data/stock_2019_2024.csv'
 stock = pd.read_csv(path)
 ```
 
