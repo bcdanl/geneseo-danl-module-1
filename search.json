@@ -165,7 +165,7 @@
     "href": "listing-danl-m1-lec.html",
     "title": "DANL Module 1 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nAdvanced Group Operations; Reshaping/Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nMissing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 3\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 4\n\n\nConverting Data Types; Filtering by Conditions; Dealing with Missing Values\n\n\nFebruary 27, 2024\n\n\n\n\nLecture 5\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nLecture 6\n\n\nAdvanced Group Operations; Reshaping/Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nLecture 7\n\n\nReshaping DataFrames; Joining DataFrames; Data Visualization\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-1.html",
@@ -249,7 +249,7 @@
     "href": "danl-cw/danl-m1-cw-7.html",
     "title": "Classwork 7",
     "section": "",
-    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns"
+    "text": "Make ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:\n\n\n\n\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-7.html#load-libraries",
@@ -2440,7 +2440,7 @@
     "href": "listing-danl-m1-cw.html",
     "title": "DANL Module 1 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nGroup Operations; Reshaping DataFrames; Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nMissing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nClasswork 2\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 3\n\n\nPandas Basics - Sorting and Indexing Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 4\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 27, 2024\n\n\n\n\nClasswork 5\n\n\nDealing with Missing Values/Duplicates; Group Operations\n\n\nMarch 5, 2024\n\n\n\n\nClasswork 6\n\n\nGroup Operations; Reshaping DataFrames; Joining DataFrames\n\n\nMarch 12, 2024\n\n\n\n\nClasswork 7\n\n\nReshaping DataFrames; Joining DataFrames; Data Visualization\n\n\nMarch 19, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-5.html",
@@ -4008,7 +4008,7 @@
     "href": "danl-hw/danl-m1-hw-6.html#question-5",
     "title": "Homework 6",
     "section": "Question 5",
-    "text": "Question 5\n\nCalculate the Z-score of Close for each company on Date.\n\nThe formula for the Z-score of Close for each company on Date \\(t\\) is as follows:\n\n\n\\[\nz_{t} = \\frac{\\text{Close}_{t} - \\text{mean}(\\text{Close}_{t})}{\\text{std}(\\text{Close}_{t})},\n\\]\nwhere\n\n\\(\\text{Close}_{t}\\) is a company’s Close price on date t;\n\\(\\text{mean}(\\text{Close}_{t})\\) is the mean value of Close for a company;\n\\(\\text{std}(\\text{Close}_{t})\\) is the standard deviation of Close for a company.\n\nAnswer:"
+    "text": "Question 5\n\nCalculate the Z-score of Close for each company on each Date \\(t\\).\n\nThe formula for the Z-score of Close for each company on Date \\(t\\) is as follows:\n\n\n\\[\nz_{t} = \\frac{\\text{Close}_{t} - \\text{mean}(\\text{Close}_{t})}{\\text{std}(\\text{Close}_{t})},\n\\]\nwhere\n\n\\(\\text{Close}_{t}\\) is a company’s Close price on date t;\n\\(\\text{mean}(\\text{Close}_{t})\\) is the mean value of Close for a company;\n\\(\\text{std}(\\text{Close}_{t})\\) is the standard deviation of Close for a company.\n\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-m1-hw-6.html#question-6",
@@ -4016,5 +4016,425 @@
     "title": "Homework 6",
     "section": "Question 6",
     "text": "Question 6\n\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\nTo do so, divide all values for each company by the values of the first date in the data for that company.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#learning-objectives",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#learning-objectives",
+    "title": "Lecture 7",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nReshaping DataFrames\nJoining DataFrames\nData Visualization"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-1",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-1",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is the measurements that vary.\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a measurement, a survey response, or any other unit of data collected.\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-2",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-2",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\n\n\n\nThere are three interrelated rules that make a DataFrame tidy:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-5",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-5",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height.\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if one observation is spread across multiple rows.\nWe consider making DataFrames longer if one variable is spread across multiple columns."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-7",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-7",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt()\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-8",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-8",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-9",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-9",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable.\nvalue_name is a string for the new column name that represents the values for the var_name."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-10",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-10",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\",\n          value_vars = ['Miami', 'Rochester'])\n)\n\n\nmelt() can take a few parameters:\n\nvalue_vars parameter allows us to select which specific columns we want to “melt”.\nBy default, it will melt all the columns not specified in the id_vars parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-11",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-11",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-12",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-12",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot_table() method can take both a string and a list of variables for the index parameter.\n\nThe pivot() can take only a string for index."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-13",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-13",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-14",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-14",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nLet’s do Part 1 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-1",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-1",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more DataFrames based on common data values in those DataFrames.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-2",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-2",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\nWhy is one data set sometimes scattered across multiple files?\nSometimes we may have two or more DataFrames that we want to combine based on common data values.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-3",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-3",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of tables are called keys."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3']\n})\n\n\n\nThe colored column represents the “key” variable.\nThe grey column represents the “value” column."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-1",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-1",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\n\n\ninnerleftrightouter full\n\n\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')\n\n\n\nA left join keeps all observations in x.\n\n\n\n\nmerge_left = pd.merge(x, y, on='key', how='left')\nmerge_left_x = x.merge(y, on='key', how='left')\n\nThe most commonly used join is the left join.\n\n\n\n\nA right join keeps all observations in y.\n\n\n\n\nmerge_right = pd.merge(x, y, on='key', how='right')\nmerge_right_x = x.merge(y, on='key', how='right')\n\n\n\nA full join keeps all observations in x and y.\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-2",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-2",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDuplicate keys\n\n\none-to-manymany-to-many\n\n\n\nOne DataFrame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 2, 3],\n    'val_x':['x1', 'x2', 'x3', 'x4']})\n\ny = pd.DataFrame({\n    'key':[1, 2],\n    'val_y':['y1', 'y2'] })\none_to_many = x.merge(y, on='key', \n                         how='left')\n\n\n\n\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-3",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-3",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDefining the key columns\n\n\nIf the left and right columns do not have the same name for the key variables, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = \n  x.merge(y, left_on = 'key_x', \n             right_on = 'key_y', \n             how = 'left')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-4",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-with-merge-4",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nLet’s do Part 2 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-with-seaborn",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-with-seaborn",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn with Seaborn",
+    "text": "Data Visualization with seaborn with Seaborn"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nCategorical vs. Continuous Variables\n\n\nCategoricalContinuousInteger\n\n\n\nA categorical variable is a variable whose value is obtained by counting.\n\nNumber of red marbles in a jar\nNumber of heads when flipping three coins\nStudents’ letter grade\nUS state/county\n\nCategorical variables should be category or string (object in DataFrame).\n\n\n\n\nA continuous variable is a variable whose value is obtained by measuring and can have a decimal or fractional value.\n\nHeight/weight of students\nTime it takes to get to school\nFuel efficiency of a vehicle (e.g., miles per gallon)\n\nContinuous variables should be float.\n\nWe can use astype('float') to make a variable float.\n\n\n\n\n\nFor data visualization, integer-type variables could be treated as either categorical or continuous, depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.\n\nA variable of age integers (18, 19, 20, 21, …) could be continuous.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be continuous.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) is categorical.\n\nWe can use astype('int64') to make a variable int64."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#continuous",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#continuous",
+    "title": "Lecture 7",
+    "section": "Continuous",
+    "text": "Continuous\n\nA continuous variable is a variable whose value is obtained by measuring and can have a decimal or fractional value.\n\nHeight/weight of students\nTime it takes to get to school\nFuel efficiency of a vehicle (e.g., miles per gallon)\n\nContinuous variables should be float.\n\nWe can use astype('float') to make a variable float."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#integer",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#integer",
+    "title": "Lecture 7",
+    "section": "Integer",
+    "text": "Integer\n\nFor data visualization, integer-type variables could be treated as either categorical or continuous, depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.\n\nA variable of age integers (18, 19, 20, 21, …) could be continuous.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be continuous.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) is categorical.\n\nWe can use astype('int64') to make a variable int64."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-1",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-1",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nMaking Discoveries from a Data Set\n\n\nDistributionRelationshipTypesSummary Stat.\n\n\n\nFrom the distribution plots, we want to see the variation, the tendency of the values of a variable to change\n\n\nWhich values are the most common? Why?\nHow normal is the data? How many peaks are there in the distribution?\nWhich values are rare? Why? Does that match our expectations?\nCan we see any unusual patterns? What might explain them?\n\n\n\n\n\nFrom the plots with two or more variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\n\n\n\n\nA distribution of a categorical variable (e.g., bar charts and more)\nA distribution of a continuous variable (e.g., histograms and more)\nA relationship between two categorical variables (e.g., bar charts and more)\nA relationship between two continuous variables (e.g., scatter plots and more)\nA relationship between a categorical variable and a continuous variable (e.g., boxplots and more)\nA time trend of a variable (e.g., line plots and more)\n\n\n\n\nUse DataFrame.describe() or DataFrameGroupBy.describe() to know:\n\nMean (Average, Expected Value);\nStandard Deviation (SD)\nMinimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#distribution",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#distribution",
+    "title": "Lecture 7",
+    "section": "Distribution",
+    "text": "Distribution\n\nFrom the distribution plots, we want to see the variation, the tendency of the values of a variable to change\n\n\nWhich values are the most common? Why?\nHow normal is the data? How many peaks are there in the distribution?\nWhich values are rare? Why? Does that match our expectations?\nCan we see any unusual patterns? What might explain them?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#relationship",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#relationship",
+    "title": "Lecture 7",
+    "section": "Relationship",
+    "text": "Relationship\n\nFrom the plots with two or more variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#types",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#types",
+    "title": "Lecture 7",
+    "section": "Types",
+    "text": "Types\n\nA distribution of a categorical variable (e.g., bar charts and more)\nA distribution of a continuous variable (e.g., histograms and more)\nA relationship between two categorical variables (e.g., bar charts and more)\nA relationship between two continuous variables (e.g., scatter plots and more)\nA relationship between a categorical variable and a continuous variable (e.g., boxplots and more)\nA time trend of a variable (e.g., line plots and more)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#summary-stat.",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#summary-stat.",
+    "title": "Lecture 7",
+    "section": "Summary Stat.",
+    "text": "Summary Stat.\n\nUse DataFrame.describe() or DataFrameGroupBy.describe() to know:\n\nMean (Average, Expected Value);\nStandard Deviation (SD)\nMinimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-2",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-2",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nData Visualization Workflow\n\n\nStep 1Step 2Step 3Step 4\n\n\n\nRead the descriptions of variables in a data.frame if available.\nCheck the unit of an observation: Are all values in one single observation measured for:\n\nOne organization (e.g., university, company)?\nOne geographic unit (e.g., zip code, county, state, country, continent)?\nOne person?\nOne person in a specific point of time (e.g., year, month, week, day, hour)?\nOne geographic unit in a specific point of time?\nOne organization in a specific point of time?\n\n\n\n\n\nFigure out whether variables of interests are categorical or continuous.\n\nCheck what types of the variables are (e.g., float, float64, int, int64, datetime, datetime64[ns], string, object).\nUse astype(DTYPE) if needed.\n\n\n\n\n\nChoose appropriate\n\nGeometric objects (e.g., sns.histplot, sns.scatterplot)\nAesthetic mappings ((x = , y = , color = , hue = ))\nFaceting (FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES) or col/row in the function of geometric object)\n\n\n\n\n\nPay attention to the unit of x andy axes.\nIf needed, transform a given DataFrame (e.g., subset of observations, new variables, summarized DataFrame)."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#step-2",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#step-2",
+    "title": "Lecture 7",
+    "section": "Step 2",
+    "text": "Step 2\n\nFigure out whether variables of interests are categorical or continuous.\n\nCheck what types of the variables are (e.g., float, float64, int, int64, datetime, datetime64[ns], string, object).\nUse astype(DTYPE) if needed."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#step-3",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#step-3",
+    "title": "Lecture 7",
+    "section": "Step 3",
+    "text": "Step 3\n\nChoose appropriate\n\nGeometric objects (e.g., sns.histplot, sns.scatterplot)\nAesthetic mappings ((x = , y = , color = , hue = ))\nFaceting (FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES) or col/row in the function of geometric object)"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#step-4",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#step-4",
+    "title": "Lecture 7",
+    "section": "Step 4",
+    "text": "Step 4\n\nPay attention to the unit of x andy axes.\nIf needed, transform a given DataFrame (e.g., subset of observations, new variables, summarized DataFrame)."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-3",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-3",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\n\n\n\n\n\n\n\nGraphs and charts let us explore and learn about the structure of the information we have in DataFrame.\nGood data visualizations make it easier to communicate our ideas and findings to other people."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#seaborn",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#seaborn",
+    "title": "Lecture 7",
+    "section": "seaborn",
+    "text": "seaborn\n\n\n\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\nIt also provides a general improvement in the default appearance of matplotlib-produced plots, and so I recommend using it by default.\n\n\nimport seaborn as sns\nsns.set_theme(rc={'figure.dpi': 600, \n                  'figure.figsize': (5, 3.75)})   # better quality"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-4",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-4",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nKey Points in Data Visualization\n\nA graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.\nStrive for clarity.\n\nMake the data stand out.\n\nAvoid too many superimposed elements (e.g., too many curves in the same graphing space).\nAvoid having the data all skewed to one side or the other of your graph.\n\n\nVisualization is an iterative process.\n\nWe should try making data visualization informative as much as we can."
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-5",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-5",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nGetting started with seaborn\n\n\n\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\nIt also provides a general improvement in the default appearance of matplotlib-produced plots, and so I recommend using it by default.\n\n\nimport seaborn as sns\nsns.set_theme(rc={'figure.dpi': 600, \n                  'figure.figsize': (5, 3.75)})   # better quality"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-6",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-6",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nGetting started with seaborn\n\nLet’s get the names of DataFrames provided by the seaborn library:\n\nimport seaborn as sns\nprint( sns.get_dataset_names() )\n\nLet’s use the titanic and tips DataFrames:\n\ntitanic = sns.load_dataset('titanic')\ntitanic.head()\ntips = sns.load_dataset('tips')\ntips.head()"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-7",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-7",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nBar Chart\n\nA bar chart is used to plot the frequency of the different categories.\n\nIt is useful to visualize how values of a categorical variable are distributed.\nA variable is categorical if it can only take one of a small set of values.\n\nWe use sns.countplot() function to plot a bar chart:\n\n\n\nsns.countplot(data = titanic,\n              x =  'sex')\n\n\nMapping\n\ndata: DataFrame.\nx: Name of a categorical variable (column) in DataFrame"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-8",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-8",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nBar Chart\n\nWe can further break up the bars in the bar chart based on another categorical variable.\n\nThis is useful to visualize the relationship between the two categorical variables.\n\n\n\n\nsns.countplot(data = titanic,\n              x = 'sex',\n              hue = 'survived')\n\n\nMapping\n\nhue: Name of a categorical variable"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-9",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-9",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nHistogram\n\nA histogram is a continuous version of a bar chart.\n\nIt is used to plot the frequency of the different values.\nIt is useful to visualize how values of a continuous variable are distributed.\n\nWe use sns.histplot() function to plot a histogram:\n\n\n\nsns.histplot(data = titanic,\n             x =  'age', \n             bins = 5)\n\n\nMapping\n\nbins: Number of bins\nbinwidth: Width of each bin"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-10",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-10",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nHistogram\n\nA boxplot computes a summary of the distribution and then display a specially formatted box.\n\nIt is useful to visualize how values of a continuous variable are distributed across different values of another (categorical) variable.\n\nWe use sns.histplot() function to plot a histogram:\n\n\n\nsns.boxplot(data = tips,\n            y = 'total_bill')\n\nsns.boxplot(data = tips,\n            x='time', y='total_bill')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-11",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-11",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nScatter plot\n\nA scatter plot is used to display the relationship between two continuous variables.\n\nWe can see co-variation as a pattern in the scattered points.\n\nWe use sns.scatterplot() function to plot a scatter plot:\n\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip')\n\n\nMapping\n\nx: Name of a continuous variable on the horizontal axis\ny: Name of a continuous variable on the vertical axis"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-12",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-12",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nScatter plot\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nSuppose we are interested in the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                hue = 'smoker')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-13",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-13",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nFitted line\n\nFrom the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.\n\nsns.lmplot() adds a line that fits well into the scattered points.\nOn average, the fitted line describes the relationship between two continuous variables.\n\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-14",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-14",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nTransparency with alpha\n\nIn a scatter plot, adding transparency with alpha helps address many data points on the same location.\n\nWe can map alpha to number between 0 and 1.\n\n\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                alpha = .25)\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip',\n           scatter_kws = {'alpha' : 0.2})"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-15",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-15",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nScatter plot\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nUsing the fitted lines, let’s answer the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?\n\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip',\n           hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5})"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-16",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-16",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nLine cahrt\n\nA line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.\n\nIt draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.\n\nWe use sns.lineplot() function to plot a line plot:\n\n\n\npath_csv = 'https://bcdanl.github.io/data/dji.csv'\ndow = pd.read_csv(path_csv, index_col=0, parse_dates=True)\nsns.lineplot(data = dow,\n             x =  'Date', \n             y =  'Close')\n\n\nx: Name of a continuous variable (often time variable) on the horizontal axis\ny: Name of a continuous variable on the vertical axis"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#facetgrid.map",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#facetgrid.map",
+    "title": "Lecture 7",
+    "section": "FacetGrid().map()",
+    "text": "FacetGrid().map()\n(\n sns.FacetGrid(\n       data = titanic,\n       row='class',\n       col='sex')\n .map(sns.histplot, 'age')\n )"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#no-facetgrid.map",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#no-facetgrid.map",
+    "title": "Lecture 7",
+    "section": "No FacetGrid().map()",
+    "text": "No FacetGrid().map()\n\nSome geometric object, such as sns.lmplot, does not work well with sns.FacetGrid().\n\nInstead, sns.lmplot supports mapping, col = 'VAR' and row = 'VAR' to facet the plot.\n\n\nsns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5},\n*          col = 'smoker')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-17",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-17",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nLine cahrt\n\nFor line charts, we often need to group or connect observations to visualize the number of distinct lines.\n\nhealthexp = ( sns.load_dataset(\"healthexp\")\n             .sort_values([\"Country\", \"Year\"])\n             .query(\"Year &lt;= 2020\") )\nhealthexp.head()\n\nsns.lineplot(data = healthexp,\n             x =  'Year', \n             y =  'Life_Expectancy',\n             hue = 'Country')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-18",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#data-visualization-with-seaborn-18",
+    "title": "Lecture 7",
+    "section": "Data Visualization with seaborn",
+    "text": "Data Visualization with seaborn\nFaceting\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\n\nFacetingFacetGrid().map()Alternative?\n\n\n\nFirst, we create a .FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\nSecond, we then use the .map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\n\n\n(\n sns.FacetGrid(\n       data = titanic,\n       row='class',\n       col='sex')\n .map(sns.histplot, 'age')\n )\n\n\n\nSome geometric object, such as sns.lmplot, does not work well with sns.FacetGrid().\n\nInstead, sns.lmplot supports mapping, col = 'VAR' and row = 'VAR' to facet the plot.\n\n\nsns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5},\n*          col = 'smoker')"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#question-1",
+    "href": "danl-cw/danl-m1-cw-7.html#question-1",
+    "title": "Classwork 7",
+    "section": "",
+    "text": "Make ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#question-2",
+    "href": "danl-cw/danl-m1-cw-7.html#question-2",
+    "title": "Classwork 7",
+    "section": "",
+    "text": "Make a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#variable-description",
+    "href": "danl-cw/danl-m1-cw-7.html#variable-description",
+    "title": "Classwork 7",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nyear, month, day\n\nDate of departure.\n\ndep_time, arr_time\n\nActual departure and arrival times (format HHMM or HMM), local tz.\n\nsched_dep_time, sched_arr_time\n\nScheduled departure and arrival times (format HHMM or HMM), local tz.\n\ndep_delay, arr_delay\n\nDeparture and arrival delays, in minutes. Negative times represent early departures/arrivals.\n\ncarrier\n\nTwo letter carrier abbreviation. See airlines DataFrame to get full names.\n\nflight Flight number.\ntailnum\n\nPlane tail number. See planes DataFrame for additional metadata.\n\norigin, dest\n\nOrigin and destination. See airports DataFrame for additional metadata.\n\nair_time\n\nAmount of time spent in the air, in minutes.\n\ndistance\n\nDistance between airports, in miles.\n\nhour, minute\n\nTime of scheduled departure broken into hour and minutes.\n\ntime_hour\n\nScheduled date and hour of the flight as a datetime64. Along with origin, can be used to join flights data to weather DataFrame"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#question-3",
+    "href": "danl-cw/danl-m1-cw-7.html#question-3",
+    "title": "Classwork 7",
+    "section": "Question 3",
+    "text": "Question 3\nMerge flights with weather.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#question-4",
+    "href": "danl-cw/danl-m1-cw-7.html#question-4",
+    "title": "Classwork 7",
+    "section": "Question 4",
+    "text": "Question 4\nIdentify the full name of the airline with the highest average dep_delay, considering only positive delays.\nAnswer:"
   }
 ]

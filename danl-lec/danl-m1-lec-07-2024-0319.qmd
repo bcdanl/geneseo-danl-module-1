@@ -1,9 +1,10 @@
 ---
 title: Lecture 7
-subtitle: Missing Data and Time-series Data [Lecture 7 slides may be subject to change during the Module.]
+subtitle: Reshaping `DataFrames`; Joining `DataFrames`; Data Visualization
 format:
   clean-revealjs:
     self-contained: true
+    incremental: true
     #### logo: logo-title-slide.png
 author:
   - name: Byeong-Hak Choe
@@ -15,7 +16,7 @@ execute:
   eval: false
   echo: true
 #### bibliography: refs.bib
-#### include-after-body: backwards.html
+include-after-body: target-hover.html
 ---
 
 
@@ -25,6 +26,7 @@ execute:
 
 library(knitr)
 library(tidyverse)
+library(kableExtra)
 #### set default options
 opts_chunk$set(echo = FALSE,
                fig.width = 7.252,
@@ -36,297 +38,593 @@ knitr::knit_engines$set("markdown")
 ```
 
 
+## Learning Objectives
 
 
-# Missing Data {background-color="#1c4982"}
-
-## Missing Data 
-
-Rarely will we be given a data set without any missing values.
+- Reshaping `DataFrames`
+- Joining `DataFrames`
+- Data Visualization
 
 
-Pandas usually displays missing values as `NaN`.
-  - `NaN` is the actual representation of "Not a Number" values.
-  - I would prefer calling it "Not Available" (`NA`), for which some other programming languages as well as Pandas use to represent missing values.
+# Reshaping `DataFrames` {background-color="#1c4982"}
+
+
+## Reshaping `DataFrames`
+### Tidy `DataFrames`
+
+- A *variable* is the measurements that vary.
+  - It could be anything from a person's age, the temperature on a given day, or the sales figures for a product. 
+  
+- An *observation* represents a unit of analysis.
+  - It could be a measurement, a survey response, or any other unit of data collected. 
+  - E.g., In a `DataFrame` of patient information, each observation could correspond to a single patient's data record.
+  
+- A *value* is the actual data point corresponding to the variable and observation.
+
+
+
+## Reshaping `DataFrames`
+### Tidy `DataFrames`
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
+</p>
+
+- There are three interrelated rules that make a `DataFrame` tidy:
+  - Each *variable* is a *column*; each *column* is a *variable*.
+  - Each *observation* is a *row*; each *row* is an *observation*.
+  - Each *value* is a *cell*; each *cell* is a single *value*.
+
+
+
+## Reshaping `DataFrames`
+
+- A `DataFrame` can be given in a format unsuited for the analysis that we would like to perform on it.
+  - A `DataFrame` may have larger structural problems that extend beyond the data.
+  - Perhaps the `DataFrame` stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.
   
 
+- *Reshaping* a `DataFrame` means manipulating it into a different shape.
 
-## Missing Data 
+- In this section, we will discuss pandas techniques for molding `DataFrame` into the shapes we desire.
 
-- The `NaN` value in Pandas comes from Numpy.
+
+
+## Reshaping `DataFrames`
+### Wide vs. Long `DataFrames`
+
+:::{.nonincremental}
+- The following `DataFrames` measure temperatures in two cities over two days.
+
+:::
 
 ```{.python}
-from numpy import NaN
-NaN == True
-NaN == 0
-NaN == "
-NaN == NaN
+df_wide = pd.DataFrame({
+    'Weekday': ['Tuesday', 'Wednesday'],
+    'Miami': [80, 83],
+    'Rochester': [57, 62],
+    'St. Louis': [71, 75]
+})
+
+df_long = pd.DataFrame({
+    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],
+    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],
+    'Temperature': [80, 83, 57, 62, 71, 75]
+})
+```
+
+
+## Reshaping `DataFrames`
+### Wide vs. Long `DataFrames`
+- A `DataFrame` can store its values in **wide** or **long** format.
+- These names reflect the direction in which the data set expands as we add more values to it.
+  - A wide `DataFrame` increases in width. 
+  - A long `DataFrame` increases in height.
+
+- The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
+  - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
+  - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
+
+
+
+## Reshaping `DataFrames` 
+### `melt()` and `pivot()`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-melt-pivot.gif" width="400px">
+</p>
+
+- `melt()` makes `DataFrame` longer.
+- `pivot()` and `pivot_table()` make `DataFrame` wider.
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt()
+)
+
+
+
+
+```
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday")
+)
+
+
+
+
+```
+
+:::{.nonincremental}
+- `melt()` can take a few parameters:
+  - `id_vars` is a container (`string`, `list`, `tuple`, or `array`) that represents the variables that will remain as is.
+  - `id_vars` can indicate which column should be the “identifier”.
+
+
+:::
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday",
+          var_name = "City",
+          value_name = "Temperature")
+)
+
+
+```
+
+:::{.nonincremental}
+
+- `melt()` can take a few parameters:
+  - `var_name` is a `string` for the *new column name* for the *variable*.
+  - `value_name` is a `string` for the *new column name* that represents the *values* for the `var_name`. 
+
+:::
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday",
+          var_name = "City",
+          value_name = "Temperature",
+          value_vars = ['Miami', 'Rochester'])
+)
+```
+
+:::{.nonincremental}
+
+- `melt()` can take a few parameters:
+  - `value_vars` parameter allows us to select which specific columns we want to “melt”.
+  - By default, it will melt all the columns not specified in the `id_vars` parameter.
+
+:::
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Wider with `pivot()`
+```{.python}
+df_long_to_wide = (
+    df_long
+    .pivot(index = "Weekday",
+           columns = "City",
+           values = "Temperature"  # To avoid having MultiIndex
+        )
+    .reset_index()
+    )
+```
+
+- When using `pivot()`, we need to specify a few parameters:
+  - `index` that takes the *column* to pivot on;
+  - `columns` that takes the *column* to be used to make the *new variable names* of the wider `DataFrame`;
+  - `values` that takes the *column* that provides the *values* of the *variables* in the wider `DataFrame`.
+
+
+
+## Reshaping `DataFrames`
+:::{.nonincremental}
+- Let's consider the following wide-form `DataFrame`, `df`, containing information about the number of courses each student took from each department in each year.
+
+:::
+```{.python}
+dict_data = {"Name": ["Donna", "Donna", "Mike", "Mike"],
+             "Department": ["ECON", "DANL", "ECON", "DANL"],
+             "2018": [1, 2, 3, 1],
+             "2019": [2, 3, 4, 2],
+             "2020": [5, 1, 2, 2]}
+df = pd.DataFrame(dict_data)
+
+df_longer = df.melt(id_vars=["Name", "Department"], 
+                    var_name="Year", 
+                    value_name="Number of Courses")
+```
+
+- The `pivot_table()` method can take both a `string` and a `list` of variables for the `index` parameter.
+  - The `pivot()` can take only a `string` for `index`.
+
+
+
+## Reshaping `DataFrames`
+:::{.nonincremental}
+- Let's consider the following wide-form `DataFrame`, `df`, containing information about the number of courses each student took from each department in each year.
+
+:::
+```{.python}
+dict_data = {"Name": ["Donna", "Donna", "Mike", "Mike"],
+             "Department": ["ECON", "DANL", "ECON", "DANL"],
+             "2018": [1, 2, 3, 1],
+             "2019": [2, 3, 4, 2],
+             "2020": [5, 1, 2, 2]}
+df = pd.DataFrame(dict_data)
+
+df_longer = df.melt(id_vars=["Name", "Department"], 
+                    var_name="Year", 
+                    value_name="Number of Courses")
+```
+
+**Q**. How can we use the `df_longer` to create the wide-form `DataFrame`, `df_wider`, which is equivalent to the `df`?
+
+
+
+
+
+## Reshaping `DataFrames`
+
+Let's do Part 1 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-7.html)!
+
+
+
+
+# Joining `DataFrames` {background-color="#1c4982"}
+
+
+## Joining `DataFrames`
+### Relational Data
+
+- Sometimes, one data set is scattered across multiple files.
+  - The size of the files can be huge.
+  - The data collection process can be scattered across time and space.
+  - E.g., `DataFrame` for county-level data and `DataFrame` for geographic information, such as longitude and latitude.
+
+
+- Sometimes we want to combine two or more `DataFrames` based on common data values in those `DataFrames`.
+  -  This task is known in the database world as performing a "join."
+  -  We can do this with the `merge()` method in Pandas.
+
+
+
+
+## Joining `DataFrames`
+### Relational Data
+
+- Why is one data set sometimes scattered across multiple files?
+ 
+ 
+- Sometimes we may have two or more `DataFrames` that we want to combine based on common data values.
+  -  This task is known in the database world as performing a "join."
+  -  We can do this with the `merge()` method in Pandas.
+
+
+
+
+## Joining `DataFrames`
+### Relational Data
+
+:::{.nonincremental}
+-  The variables that are used to connect each pair of tables are called **keys**.
+
+:::
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Pandas = c("left", "right", "outer", "inner"),
+  SQL = c("left outer",
+"right outer", 
+"full outer",
+"inner"),
+  Description = c("Keep all the observations from the left",  
+                  "Keep all the observations from the right", 
+                  "Keep all the observations from both left and right",
+                  "Keep only the observations whose key values exist in both")
+  )
+
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+
 ```
 
 
 
-## Missing Data 
 
+## Joining `DataFrames` with `merge()`
 
-- Pandas has functions to test for missing values, `isnull()`.
-- Pandas also has functions for testing non-missing values, `notnull()`.
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-setup.png" width="300">
+</p>
 
-```{.python}
-import pandas as pd
-pd.isnull(NaN)
-pd.notnull(NaN)
-pd.notnull(210)
-pd.notnull('missing')
-```
-
-
-
-
-##  Where Can Missing Values Come From?
-### Load Data
-
-::: {.panel-tabset}
-## read_csv()
-- When we load the data, Pandas automatically finds the missing data cell and give us a DataFrame with the `NaN` value in the appropriate cell. 
-
-- In the `read_csv()` function, three parameters are related to reading missing values: `na_values` and `keep_default_na`.
-
-
-
-
-## na_values
-The `na_values` parameter allows us to specify additional missing or `NaN` values. 
-
-
-  - We can pass in either a Python `str` (i.e., string) or a list-like object to be automatically coded as missing values when the file is read. 
-  
-
-```{.python}
-path = 'https://bcdanl.github.io/data/survey_visited.csv'
-survey_visited_0 = pd.read_csv(path)
-survey_visited_1 = pd.read_csv(path, na_values = ["MSK-4"])
-```
-
-
-## keep_default_na
-The `keep_default_na` parameter is a `bool` (i.e., `True` or `False` boolean) that allows us to specify whether any additional values need to be considered as missing. 
-
-- `keep_default_na = False` will only use the missing values specified in `na_values`.
-
-
-```{.python}
-survey_visited_2 = pd.read_csv(path, keep_default_na = False)
-```
-
-::: 
-
-
-##  Where Can Missing Values Come From?
-###  Merged Data
-
-- Let's merge `survey_visited_0` with `survey`.
-```{.python}
-path = 'https://bcdanl.github.io/data/survey_survey.csv'
-survey = pd.read_csv(path)
-survey
-
-vs = survey_visited_0.merge(survey, left_on='ident', right_on='taken')
-vs
-```
-
-
-
-
-##  Where Can Missing Values Come From?
-### Reindexing
-
-::: {.panel-tabset}
-## (1)
-Another way to introduce missing values into our data is to reindex our dataframe. 
-
-  - This is useful when we want to add new indices to your dataframe, but still want to retain its original values. 
-  - A common usage is when the index represents some time interval, and we want to add more dates.
-  
-```{.python}
-gapminder = pd.read_csv('https://bcdanl.github.io/data/gapminder.tsv', sep='\t')
-life_exp = gapminder.groupby(['year'])['lifeExp'].mean()
-```
-
-
-## (2)
--  We can reindex the dataframe by using the `.reindex()` method.
-
-```{.python}
-## subset
-y2000 = life_exp[life_exp.index > 2000]
-
-## reindexing
-y2000.reindex(range(2000, 2010))
-```
-
-::: 
-
-
-
-
-
-
-
-
-##   Working With Missing Data
-### Find and Count Missing Data
-
-::: {.panel-tabset}
-## .count()
-One way to look at the number of missing values is to `count()` them.
-
-```{.python}
-ebola = pd.read_csv('https://bcdanl.github.io/data/country_timeseries.csv')
-## count the number of non-missing values
-ebola.count()
-```
-
-**Q**. Count the number of non-missing values for each variable in `ebola`.
-
-
-
-## np.count_nonzero()
-If we want to count the total number of missing values in our DataFrame, or count the number of missing values for a particular column, we can use the `np.count_nonzero()` function from numpy in conjunction with the `.isnull()` method.
-
-```{.python}
-np.count_nonzero(ebola.isnull())
-np.count_nonzero(ebola['Cases_Guinea'].isnull())
-```
-
-
-
-## .value_counts(dropna=False)
-
-Another way to get missing data counts is to use the `.value_counts()` method, giving a frequency table of values in a Series. 
-  - If we use the `dropna = False`, we can also get a missing value count.
-
-```{.python}
-cnts = ebola['Cases_Guinea'].value_counts(dropna=False)
-cnts
-```
-
-- The results are sorted so we can subset the count vector to just look at the missing values.
-
-```{.python}
-cnts.loc[pd.isnull(cnts.index)]
-```
-
-
-## .sum()
-
-- In Python, `True` values equate to the integer value 1, and `False` values equate to the integer value 0. 
-  - We can use this behavior to get the number of missing values by summing up a boolean vector with the `.sum()` method.
-
-```{.python}
-ebola.Cases_Guinea.isnull().sum()
-```
-
-::: 
-
-
-
-
-
-##   Working With Missing Data
-###  Clean Missing Data
-
-::: {.panel-tabset}
-## Cleaning NaN
-
-There are many different ways we can deal with missing data. 
-  1. We can replace the missing value with another value, 
-  2. We can fill in the cells with the missing value using existing value, 
-  3. We can drop the observations with missing values from our DataFrame.
-
-
-
-## .fillna()
-- We can use the `.fillna()` method to recode the missing values to another value.
-
-```{.python}
-## fill the missing values to 0
-ebola0 = ebola.fillna(0)
-```
-
-
-
-## .fillna(method='ffill')
-
-- We can use built-in methods to fill forward (`method = ffill`).
-
-  -  When we fill data forward, the last known value (from top to bottom) is used for the next missing value.
-  
-
-```{.python}
-ebola_f = ebola.fillna(method='ffill')
-```
-
-
-
-
-## .fillna(method='bfill')
-
-- We can also use built-in methods to fill backward (`method = bfill`).
-
-  -  When we fill data backward, the newest value (from top to bottom) is used to replace the missing data.
-
-```{.python}
-ebola_b = ebola.fillna(method='bfill')
-```
-
-
-
-
-## .interpolate()
-- Interpolation uses existing values to fill in missing values.
-  - By default, `.interpolate()` treats the missing values as if they should be equally spaced apart.
-```{.python}
-ebola_linear = ebola.interpolate()
-```
-
-- The `.interpolate()` method  behaves kind of in a forward fill fashion.
-
-
-
-
-## .dropna()
-
-If we want to keep the observations with only non-missing values, we can use `.dropna()`
-```{.python}
-ebola_dropna = ebola.dropna()
-```
-
-We are left with just one row of data!
-
-
-
-## Calculation
-
-Suppose we wanted to look at the case counts for multiple regions. 
 
 :::: {.columns}
+
 ::: {.column width="50%"}
 ```{.python}
-ebola["Cases_multiple"] = (
-  ebola["Cases_Guinea"]
-  + ebola["Cases_Liberia"]
-  + ebola["Cases_SierraLeone"]
-)
+x = pd.DataFrame({
+    'key': [1, 2, 3],
+    'val_x': ['x1', 'x2', 'x3']
+})
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+y = pd.DataFrame({
+    'key': [1, 2, 4],
+    'val_y': ['y1', 'y2', 'y3']
+})
+```
+:::
+
+::::
+
+- The colored column represents the "key" variable.
+- The grey column represents the "value" column.
+
+
+
+## Joining `DataFrames` with `merge()`
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## inner
+- An **inner join** matches pairs of observations whenever their keys are equal:
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-inner.png" width="425">
+</p>
+
+```{.python}
+# the default value for 'how' is 'inner'
+# so it doesn't actually need to be specified
+merge_inner = pd.merge(x, y, on='key', how='inner')
+merge_inner_x = x.merge(y, on='key', how='inner')
+merge_inner_x_how = x.merge(y, on='key')
+```
+
+
+
+
+## left
+
+- A **left join** keeps all observations in `x`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-left.png" width="425">
+</p>
+
+```{.python}
+merge_left = pd.merge(x, y, on='key', how='left')
+merge_left_x = x.merge(y, on='key', how='left')
+```
+
+- The most commonly used join is the left join.
+
+
+
+## right
+
+- A **right join** keeps all observations in `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-right.png" width="425">
+</p>
+
+
+```{.python}
+merge_right = pd.merge(x, y, on='key', how='right')
+merge_right_x = x.merge(y, on='key', how='right')
+```
+
+
+
+
+## outer full
+
+- A **full join** keeps all observations in `x` and `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-full.png" width="412.5">
+</p>
+
+
+```{.python}
+merge_outer = pd.merge(x, y, on='key', how='outer')
+merge_outer_x = x.merge(y, on='key', how='outer')
+```
+
+
+
+:::
+
+:::
+
+
+
+## Joining `DataFrames` with `merge()`
+### Duplicate keys
+
+:::{.nonincremental}
+
+::: {.panel-tabset}
+
+## one-to-many
+- One `DataFrame` has duplicate keys (a one-to-many relationship). 
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-one-to-many.png" width="375">
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+```{.python}
+x = pd.DataFrame({
+    'key':[1, 2, 2, 3],
+    'val_x':['x1', 'x2', 'x3', 'x4']})
+```
+
+:::
+
+::: {.column width="52.5%"}
+```{.python}
+y = pd.DataFrame({
+    'key':[1, 2],
+    'val_y':['y1', 'y2'] })
+one_to_many = x.merge(y, on='key', 
+                         how='left')
+```
+
+:::
+
+::::
+
+
+
+## many-to-many
+- Both `DataFrames` have duplicate keys (many-to-many relationship).
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-many-to-many.png" width="350">
+</p>
+
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{.python}
+x = pd.DataFrame({
+  'key':[1, 2, 2, 3],
+  'val_x':['x1','x2','x3','x4']})
+
+```
+
+:::
+
+
+::: {.column width="55%"}
+```{.python}
+y = pd.DataFrame({
+  'key': [1, 2, 2, 3],
+  'val_y': ['y1', 'y2', 'y3', 'y4'] })
+many_to_many = x.merge(y, on='key', 
+                          how='left')
+
+```
+:::
+
+::::
+
+:::
+
+:::
+
+## Joining `DataFrames` with `merge()`
+### Defining the key columns
+
+:::{.nonincremental}
+- If the left and right columns do not have the same name for the key variables, we can use the `left_on` and `right_on` parameters instead.
+
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+x = pd.DataFrame({
+  'key_x': [1, 2, 3],
+  'val_x': ['x1', 'x2', 'x3']
+})
 ```
 :::
 
 ::: {.column width="50%"}
+
 ```{.python}
-ebola_subset = ebola.loc[:,
-    ["Cases_Guinea", 
-     "Cases_Liberia", 
-     "Cases_SierraLeone",
-     "Cases_multiple"] ]
+y = pd.DataFrame({
+  'key_y': [1, 2],
+  'val_y': ['y1', 'y2'] })
+
+keys_xy = 
+  x.merge(y, left_on = 'key_x', 
+             right_on = 'key_y', 
+             how = 'left')
 ```
 :::
 ::::
@@ -334,256 +632,554 @@ ebola_subset = ebola.loc[:,
 
 
 
-## skipna
+## Joining `DataFrames` with `merge()`
 
-`.mean()` and `.sum()` can ignore missing values. 
-  - These functions will typically have a `skipna` parameter that will still calculate a value by skipping over the missing values.
-
-```{.python}
-ebola.Cases_Guinea.sum(skipna = True) ## default
-ebola.Cases_Guinea.sum(skipna = False)
-```
-
-
-::: 
+Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-m1-cw-7.html)!
 
 
 
+## Data Visualization with `seaborn` with `Seaborn`
 
 
 
-##   Working With Missing Data
-###   Pandas Built-In `NA` Missing
+## Data Visualization with `seaborn` 
+### Categorical vs. Continuous Variables
 
-Pandas 1.0 introduced a built-in `<NA>` value (`pd.NA`).
-
-```{.python}
-
-economists = pd.DataFrame(
-  {
-    "Name": ["John Forbes Nash", "William Nordhaus"],
-    "Occupation": ["Mathematician", "Climate Economist"],
-    "Born": ["1928-06-13", "1941-05-31"],
-    "Died": ["2015-05-23", ""],
-    "Age": [86, 81]
-  }
-)
-
-economists.loc[1, "Age"] = pd.NA
-
-```
-
-
-# `datetime` Data {background-color="#1c4982"}
-
-
-## Dates and Times
-### Python's `datetime` Object
-
-One of the bigger reasons for using Pandas is its ability to work with timeseries data.
-
-- We can use `datetime` to get the current date and time.
-
-```{.python}
-from datetime import datetime
-now = datetime.now()
-```
-
-- We can also create our own `datetime` manually.
-
-```{.python}
-
-t1 = datetime.now()
-t2 = datetime(2000,1,1)
-
-diff = t1 - t2
-type(diff)
-```
-
-
-
-## Dates and Times
-###  Converting to datetime
+:::{.nonincremental}
 ::: {.panel-tabset}
-## data
 
--  Let’s load up our Ebola data set and convert the Date column into a proper datetime object.
-```{.python}
-import pandas as pd
-ebola = pd.read_csv('https://bcdanl.github.io/data/country_timeseries.csv')
-ebola.info()
-
-```
-
-- The `Date` column is encoded as a generic string `object`.
-
-
-## `.to_datatime()`
--  We can use `.to_datatime()` to create a new column, `date_dt`, that converts the `Date` column into a `datetime`.
-
-```{.python}
-ebola['date_dt'] = pd.to_datetime(ebola['Date'])
-```
+## Categorical
+- A **categorical variable** is a variable whose value is obtained by *counting*.
+  - Number of red marbles in a jar
+  - Number of heads when flipping three coins 
+  - Students’ letter grade
+  - US state/county
+  
+  
+- Categorical variables should be `category` or `string` (`object` in `DataFrame`).
 
 
-## format
-
-- The `to_datetime()` method has a parameter called `format` that allows us to manually specify the format of the date.
-```{python}
-
-ebola['date_dt'] = pd.to_datetime(ebola['Date'], format='%m /%d/%Y')
-
-ebola['date_my'] = pd.to_datetime(ebola['Date'], format='%m /%Y')
-```
+## Continuous
+- A **continuous variable** is a variable whose value is obtained by *measuring*  and can have a decimal or fractional value.
+  - Height/weight of students
+  - Time it takes to get to school
+  - Fuel efficiency of a vehicle (e.g., miles per gallon)
 
 
-## parse_dates
- The `read_csv()` function has several parameters about `datetime`.
-  -  We can parse the `Date` column directly by specifying the column we want in the `parse_dates` parameter.
-```{.python}
-ebola = pd.read_csv('https://bcdanl.github.io/data/country_timeseries.csv', parse_dates=["Date"])
-```
+- Continuous variables should be `float`.
+  - We can use `astype('float')` to make a variable `float`.
 
 
 
-::: 
+## Integer
+
+- For data visualization, `integer`-type variables could be treated as either categorical or continuous, depending on the context of analysis.
 
 
-
-## Dates and Times
-### Extracting Date Components
-
-
-Now that we have a datetime object, we can extract various parts of the date, such as **year**, **month**, or **day**.
-
-Let's consider the example `datetime` object.
-
-```{.python}
-d = pd.to_datetime('2021-12-14')
-type(d)
-d.year
-d.month
-d.day
-d.quarter
-```
+- If the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.
+  - A variable of age integers (18, 19, 20, 21, ...) could be continuous.
+  - A variable of integer-valued MPG (27, 28, 29, 30, ...) could be continuous.
+  
+  
+- If not, the integer variable is categorical.
+  - A variable of month integers (1, ,2, ..., 12) is categorical.
 
 
+- We can use `astype('int64')` to make a variable `int64`.
 
+:::
+:::
 
-## Dates and Times
-### Extracting Date Components in DataFrame
+## Data Visualization with `seaborn` 
+### Making Discoveries from a Data Set
 
-- We can extract various parts of the `datetime` column in DataFrame by accessing `datetime` methods using the `.dt` accessor.
-
-```{.python}
-ebola['date_dt'] = pd.to_datetime(ebola['Date'])
-
-ebola = ebola.assign(
-    year = ebola["date_dt"].dt.year,
-    month = ebola["date_dt"].dt.month,
-    day = ebola["date_dt"].dt.day
-)
-
-ebola.info() ## what are the data types of year, month, and day?
-```
-
-
-
-
-
-## Dates and Times
-### Date Ranges
+:::{.nonincremental}
 ::: {.panel-tabset}
-## (1)
 
-- In our Ebola data set, we do not have an observation for every day in the date range.
-  - This is quite common.
+## Distribution
+- From the distribution plots, we want to see the **variation**, the tendency of the values of a variable to change
+
+  <!-- - We can see variation easily in real life; if we measure any continuous variable twice, we will be likely to get two different values. -->
+  - Which values are the most common? Why?
+  
+  - How *normal* is the data? How many peaks are there in the distribution?
+  
+  - Which values are rare? Why? Does that match our expectations?
+  
+  - Can we see any unusual patterns? What might explain them?
+
+
+
+## Relationship
+- From the plots with two or more variables, we want to see **co-variation**, the tendency for the values of two or more variables to vary together in a **related** way. 
+
+
+- What type of **co-variation** occurs between variables?
+  - Are they positively associated?
+  - Are they negatively associated?
+  - Are there no association between them?
+
+
+
+
+## Types
+
+  - A distribution of a categorical variable (e.g., bar charts and more)
+  - A distribution of a continuous variable (e.g., histograms and more)
+  - A relationship between two categorical variables (e.g., bar charts and more)
+  - A relationship between two continuous variables (e.g., scatter plots  and more)
+  - A relationship between a categorical variable and a continuous variable (e.g., boxplots and more)
+  - A time trend of a variable (e.g., line plots and more)
+  
+
+
+## Summary Stat.
+
+- Use `DataFrame.describe()` or `DataFrameGroupBy.describe()` to know:
+  - Mean (Average, Expected Value);
+  - Standard Deviation (SD)
+  - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
+
+:::
+:::
+
+## Data Visualization with `seaborn` 
+### Data Visualization Workflow
+
+:::{.nonincremental}
+::: {.panel-tabset}
+## Step 1
+- Read the descriptions of variables in a data.frame if available.
+
+
+- Check the unit of an observation: Are all values in one single observation measured for:
+  - One organization (e.g., university, company)?
+  - One geographic unit (e.g., zip code, county, state, country, continent)?
+  - One person?
+  - One person in a specific point of time (e.g., year, month, week, day, hour)?
+  - One geographic unit in a specific point of time?
+  - One organization in a specific point of time?
+
+
+## Step 2
+- Figure out whether variables of interests are **categorical** or **continuous**.
+  - Check what types of the variables are (e.g., `float`, `float64`, `int`, `int64`, `datetime`, `datetime64[ns]`, `string`, `object`).
+  - Use `astype(DTYPE)`  if needed.
+
+
+## Step 3
+- Choose appropriate
+  - Geometric objects (e.g., `sns.histplot`, `sns.scatterplot`)
+  - Aesthetic mappings (`(x = , y = , color = , hue = )`) 
+  - Faceting (`FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)` or `col`/`row` in the function of geometric object) 
+
+
+## Step 4
+- Pay attention to the unit of `x` and`y` axes.
+
+- If needed, transform a given `DataFrame` (e.g., subset of observations, new variables, summarized DataFrame).
+
+:::
+:::
+
+
+## Data Visualization with `seaborn` 
+
+:::: {.columns} 
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/lego.png" width="600px">
+</p>
+
+:::
+
+::: {.column width="50%"}
+- Graphs and charts let us explore and learn about the structure of the information we have in `DataFrame`. 
+
+- Good data visualizations make it easier to communicate our ideas and findings to other people. 
+
+
+:::
+::::
+
+
+## Data Visualization with `seaborn` 
+### Key Points in Data Visualization
+
+
+- A graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
+
+
+- Strive for clarity. 
+  - Make the data stand out.
+    - Avoid too many superimposed elements (e.g., too many curves in the same graphing space).
+    - Avoid having the data all skewed to one side or the other of your graph.
+
+
+- Visualization is an iterative process. 
+  - We should try making data visualization informative as much as we can.
+
+
+## Data Visualization with `seaborn` 
+### Getting started with `seaborn`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png" width="600px">
+</p>
+
+
+- `seaborn` is a Python data visualization library based on `matplotlib`. 
+  - It allows us to easily create beautiful but complex graphics using a simple interface.
+  - It also provides a general improvement in the default appearance of `matplotlib`-produced plots, and so I recommend using it by default.
 
 ```{.python}
-ebola = pd.read_csv(
-'https://bcdanl.github.io/data/country_timeseries.csv', parse_dates=["Date"]
-)
+import seaborn as sns
+sns.set_theme(rc={'figure.dpi': 600, 
+                  'figure.figsize': (5, 3.75)})   # better quality
+
 ```
 
-- Here, `2015-01-01` is missing.
+
+
+## Data Visualization with `seaborn`
+### Getting started with `seaborn`
+
+- Let's get the names of `DataFrame`s provided by the `seaborn` library:
+
+```{.python}
+import seaborn as sns
+print( sns.get_dataset_names() )
+```
+
+
+- Let's use the `titanic` and `tips` DataFrames:
+
+```{.python}
+titanic = sns.load_dataset('titanic')
+titanic.head()
+tips = sns.load_dataset('tips')
+tips.head()
+```
 
 
 
-## (2)
-- It’s common practice to create a date range to `.reindex()` a data set. 
-  - We can use the `date_range()`.
+
+
+## Data Visualization with `seaborn`
+### Bar Chart 
+
+- A bar chart is used to plot the frequency of the different categories.
+  - It is useful to visualize how values of a **categorical variable** are distributed.
+  - A variable is **categorical** if it can only take one of a small set of values.
+  
+  
+- We use `sns.countplot()` function to plot a bar chart:
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.countplot(data = titanic,
+              x =  'sex')
+```
+:::
+
+::: {.column width="50%"}
+
+- Mapping
+  - `data`: DataFrame.
+  - `x`:  Name of a categorical variable (column) in DataFrame
+
+:::
+
+:::: 
+
+
+
+
+
+
+
+## Data Visualization with `seaborn`
+### Bar Chart 
+
+- We can further break up the bars in the bar chart based on another categorical variable. 
+
+  - This is useful to visualize the relationship between the two categorical variables.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.countplot(data = titanic,
+              x = 'sex',
+              hue = 'survived')
+```
+:::
+
+::: {.column width="50%"}
+
+- Mapping
+  - `hue`:  Name of a categorical variable
+
+:::
+
+::::
+
+
+
+
+## Data Visualization with `seaborn`
+### Histogram 
+
+- A histogram is a **continuous** version of a bar chart.
+  - It is used to plot the frequency of the different values.
+  - It is useful to visualize how values of a **continuous variable** are distributed.
+
+  
+- We use `sns.histplot()` function to plot a histogram:
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.histplot(data = titanic,
+             x =  'age', 
+             bins = 5)
+```
+:::
+
+::: {.column width="50%"}
+- Mapping
+  - `bins`:  Number of bins
+  - `binwidth`:  Width of each bin
+
+:::
+
+::::
+
+
+
+
+## Data Visualization with `seaborn`
+### Histogram 
+
+- A boxplot computes a summary of the distribution and then display a specially formatted box.
+  - It is useful to visualize how values of a **continuous variable** are distributed across different values of another (categorical) variable.
+  
+  
+- We use `sns.histplot()` function to plot a histogram:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+sns.boxplot(data = tips,
+            y = 'total_bill')
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+sns.boxplot(data = tips,
+            x='time', y='total_bill')
+```
+:::
+
+::::
+
+
+
+
+
+## Data Visualization with `seaborn`
+### Scatter plot 
+
+- A scatter plot is used to display the relationship between two continuous variables.
+
+  -  We can see co-variation as a pattern in the scattered points.
+
+- We use `sns.scatterplot()` function to plot a scatter plot:
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.scatterplot(data = tips,
+                x = 'total_bill', 
+                y = 'tip')
+```
+:::
+
+::: {.column width="50%"}
+- Mapping
+  - `x`:  Name of a continuous variable on the horizontal axis
+  - `y`:  Name of a continuous variable on the vertical axis
+
+:::
+
+::::
+
+## Data Visualization with `seaborn`
+### Scatter plot 
+
+- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
+
+- Suppose we are interested in the following question:
+  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
+
+```{.python}
+sns.scatterplot(data = tips,
+                x = 'total_bill', 
+                y = 'tip',
+                hue = 'smoker')
+```
+
+
+
+
+## Data Visualization with `seaborn`
+### Fitted line 
+
+- From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
+
+  - `sns.lmplot()` adds a line that fits well into the scattered points.
+  
+  - On average, the fitted line describes the relationship between two continuous variables.
+  
+
+```{.python}
+sns.lmplot(data = tips,
+           x = 'total_bill', 
+           y = 'tip')
+```
+
+
+
+
+
+
+## Data Visualization with `seaborn`
+### Transparency with `alpha`
+
+- In a scatter plot, adding transparency with `alpha` helps address many data points on the same location.
+  - We can map `alpha` to number between 0 and 1.
+  
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.scatterplot(data = tips,
+                x = 'total_bill', 
+                y = 'tip',
+                alpha = .25)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+sns.lmplot(data = tips,
+           x = 'total_bill', 
+           y = 'tip',
+           scatter_kws = {'alpha' : 0.2})
+```
+:::
+
+::::
+
+
+
+## Data Visualization with `seaborn`
+### Scatter plot 
+
+- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
+
+- Using the fitted lines, let's answer the following question:
+  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
+
+```{.python}
+sns.lmplot(data = tips,
+           x = 'total_bill', 
+           y = 'tip',
+           hue = 'smoker',
+           scatter_kws = {'alpha' : 0.5})
+```
+
+
+
+## Data Visualization with `seaborn`
+### Line cahrt 
+
+- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
+  - It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
+- We use `sns.lineplot()` function to plot a line plot:
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+path_csv = 'https://bcdanl.github.io/data/dji.csv'
+dow = pd.read_csv(path_csv, index_col=0, parse_dates=True)
+sns.lineplot(data = dow,
+             x =  'Date', 
+             y =  'Close')
+```
+:::
+
+::: {.column width="50%"}
+  - `x`:  Name of a continuous variable (often time variable) on the horizontal axis 
+  - `y`:  Name of a continuous variable on the vertical axis
+
+:::
+::::
+
+## Data Visualization with `seaborn`
+### Line cahrt 
+
+- For line charts, we often need to group or connect observations to visualize the number of distinct lines.
+
+```{.python}
+healthexp = ( sns.load_dataset("healthexp")
+             .sort_values(["Country", "Year"])
+             .query("Year <= 2020") )
+healthexp.head()
+
+sns.lineplot(data = healthexp,
+             x =  'Year', 
+             y =  'Life_Expectancy',
+             hue = 'Country')
+```
+
+
+
+## Data Visualization with `seaborn`
+### Faceting
+
+- Faceting allows us to plot subsets (facets) of our data across subplots. 
+
+:::{.nonincremental}
+::: {.panel-tabset}
+## Faceting
+- First, we create a `.FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
+
+- Second, we then use the `.map()` method to run a plotting function on each of the subsets, passing along any necessary arguments.
+
+
+## `FacetGrid().map()`
+```{.python}
+(
+ sns.FacetGrid(
+       data = titanic,
+       row='class',
+       col='sex')
+ .map(sns.histplot, 'age')
+ )
+```
+
+## Alternative?
+- Some geometric object, such as `sns.lmplot`, does not work well with `sns.FacetGrid()`.
+  - Instead, `sns.lmplot` supports mapping, `col = 'VAR'` and `row = 'VAR'` to facet the plot.
   
 ```{.python}
-head_range = pd.date_range(start='2014-12-31', end='2015-01-05')
-ebola_5 = ebola.head()
-ebola_5.index = ebola_5['Date']
-ebola_5 = ebola_5.reindex(head_range)
+sns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',
+           scatter_kws = {'alpha' : 0.5},
+*          col = 'smoker')
 ```
 
-
-
-
-
-## (3)
-  
-```{.python}
-ebola = pd.read_csv(
-  "https://bcdanl.github.io/data/country_timeseries.csv",
-  index_col="Date",
-  parse_dates=["Date"],
-)
-
-new_idx = pd.date_range(ebola.index.min(), ebola.index.max())
-new_idx = reversed(new_idx) ## to reverse new_idx
-ebola = ebola.reindex(new_idx)
-
-```
-
-
-
-
-::: 
-
-
-<script>
-
-document.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        Reveal.next(); // Scroll down to go to the next slide
-    } else {
-        Reveal.prev(); // Scroll up to go to the previous slide
-    }
-}, false);
-
-window.onload = function() {
-    document.querySelectorAll('a').forEach(function(link) {
-        link.setAttribute('target', '_blank');
-    });
-};
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Query all anchor tags within code blocks (adjust the selector as needed)
-  document.querySelectorAll('pre code a').forEach(function(element) {
-    element.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent the default anchor action
-      e.stopPropagation(); // Stop the event from bubbling up
-    });
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Target all span elements within code blocks that have IDs starting with 'cb'
-    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
-        element.addEventListener('mouseenter', function() {
-            // Apply yellow background color to the hovered span element
-            this.style.backgroundColor = '#FFFF99';
-        });
-        element.addEventListener('mouseleave', function() {
-            // Revert the background color when the mouse leaves the span element
-            this.style.backgroundColor = '';
-        });
-    });
-});
-</script>
+:::
+:::

@@ -190,7 +190,7 @@ Find the 10 largest values for `Volume` for each `company` using a lambda functi
 
 ## Question 5
 
-- Calculate the Z-score of `Close` for each `company` on `Date`.
+- Calculate the Z-score of `Close` for each `company`  on each `Date` $t$.
   - The formula for the Z-score of `Close` for each `company` on `Date` $t$ is as follows:
   
 $$

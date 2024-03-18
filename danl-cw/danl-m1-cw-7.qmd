@@ -1,6 +1,6 @@
 ---
 title: Classwork 7
-subtitle: Missing Data; Time-series Data [Classwork 7 may be subject to change during the Module.]
+subtitle: Reshaping `DataFrames`; Joining `DataFrames`; Data Visualization
 date: 2024-03-19
 execute: 
   eval: false
@@ -9,139 +9,167 @@ execute:
   message: false
   
 from: markdown+emoji
-comments: false
 ---
 
-## Load Libraries
+```{r}
+#| echo: false
 
-```{python}
-#| echo: true
-import pandas as pd
-import numpy as np
-import seaborn as sns
-```
-
-<br>
-
-# Question 1
-
-
-Consider the following example DataFrames.
-```{python}
-#| echo: true
-banks = pd.read_csv('https://bcdanl.github.io/data/bank_failures.csv', parse_dates=["Closing Date"])
-
-```
-
-<br>
-
-## Q1a
-Add the new variables, `closing_quarter` and `closing_year`, to the DataFrame `banks`.
-  - `closing_quarter`:  the quarter in which the bank closed (`1`, `2`, `3`, or `4`)
-  - `closing_year`:  the year in which the bank closed
-
-
-<br>
-
-
-<br>
-
-*Answer*
-```{python}
-
-```
-
-
-
-## Q1b
-Count the number of banks that were closed for each pair of year-quarter.
-
-
-<br>
-
-*Answer*
-```{python}
-
-```
-
-
-
-<br>
-
-## Q1c
-Provide both seaborn code and a simple comment to describe the quarterly trend of bank failure.
-
-
-<br>
-
-*Answer*
-```{python}
-
-```
-
-
-
-<br><br><br>
-
-# Question 2
-
-Consider the following stock data:
-
-```{python}
-path = 'https://bcdanl.github.io/data/stocks2013_2023.csv'
-stock = pd.read_csv(path)
-```
-
-<br>
-
-## Q2a
-
-Add a variable, `date_dt`, which is a `datetime` type of `Date` variable, to the `stock` DataFrame.
-
-
-<br>
-
-*Answer*
-```{python}
-
-```
-
-
-<br>
-
-## Q2b
-
-- For each year, find the two dates, for which 
-  - `TSLA`'s `Close` was the highest of the year.
-  - `TSLA`'s `Close` was the lowest of the year.
-  
-
-
-
-<br>
-
-*Answer*
-```{python}
-
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
 
 
 
-<br>
+# Part 1 - Pivoting `DataFrames`
 
-## Q2c
-- Calculate the gap between the two adjacent dates with the highest `Close` of the year.
+## Question 1
 
-- Calculate the gap between the two adjacent dates with the lowest `Close` of the year.
-
+-  Make `ny_pincp` longer.
 
 
-<br>
+```{python}
+ny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+```
 
-*Answer*
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+          )
+```
+
+*Answer:*
 ```{python}
 
 ```
 
+<br>
+
+## Question 2
+
+- Make a wide-form DataFrame of `covid` whose variable names are from `countriesAndTerritories` and values are from `cases`.
+
+
+```{python}
+covid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+          )
+```
+
+
+*Answer:*
+```{python}
+
+```
+
+
+<br><br>
+
+
+# Part 2 - Joining `DataFrames`
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/relational-nycflights.png" width="600px">
+</p>
+
+<br>
+
+
+- The CSV files are related each other, as described above.
+
+```{python}
+flights = pd.read_csv("https://bcdanl.github.io/data/flights.zip")
+airlines = pd.read_csv("https://bcdanl.github.io/data/airlines.csv")
+airports = pd.read_csv("https://bcdanl.github.io/data/airports.csv")
+planes = pd.read_csv("https://bcdanl.github.io/data/planes.csv")
+weather = pd.read_csv("https://bcdanl.github.io/data/weather.csv")
+```
+
+## Variable Description
+
+- `year`, `month`, `day`
+  - Date of departure.
+
+- `dep_time`, `arr_time`
+  - Actual departure and arrival times (format HHMM or HMM), local tz.
+
+- `sched_dep_time`, `sched_arr_time`
+  - Scheduled departure and arrival times (format HHMM or HMM), local tz.
+
+- `dep_delay`, `arr_delay`
+  - Departure and arrival delays, in minutes. Negative times represent early departures/arrivals.
+
+- `carrier`
+  - Two letter carrier abbreviation. See `airlines` DataFrame to get full names.
+
+- `flight`
+  Flight number.
+
+- `tailnum`
+  - Plane tail number. See `planes` DataFrame for additional metadata.
+
+- `origin`, `dest`
+  - Origin and destination. See `airports` DataFrame for additional metadata.
+
+- `air_time`
+  - Amount of time spent in the air, in minutes.
+
+- `distance`
+  - Distance between airports, in miles.
+
+- `hour`, `minute`
+  - Time of scheduled departure broken into hour and minutes.
+
+- `time_hour`
+  - Scheduled date and hour of the flight as a `datetime64`. Along with origin, can be used to join flights data to `weather` DataFrame
+
+
+
+<br>
+
+## Question 3
+
+Merge `flights` with `weather`.
+
+*Answer:*
+```{python}
+
+```
+
+<br>
+
+## Question 4
+
+Identify the full name of the airline with the highest average `dep_delay`, considering only positive delays.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+# Discussion
+
+<font size = "5">Welcome to our Classwork 7 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 7.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 6 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
 
