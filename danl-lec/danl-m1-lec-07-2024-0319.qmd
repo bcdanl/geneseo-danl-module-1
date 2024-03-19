@@ -345,9 +345,9 @@ text_tbl <- data.frame(
 "right outer", 
 "full outer",
 "inner"),
-  Description = c("Keep all the observations from the left",  
-                  "Keep all the observations from the right", 
-                  "Keep all the observations from both left and right",
+  Description = c("Keep all the observations in the left",  
+                  "Keep all the observations in the right", 
+                  "Keep all the observations in both left and right",
                   "Keep only the observations whose key values exist in both")
   )
 
