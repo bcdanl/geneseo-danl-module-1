@@ -4029,7 +4029,7 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-1",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is the measurements that vary.\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a measurement, a survey response, or any other unit of data collected.\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\nA variable is a quantity, quality, or property that we can measure/count.\n\nIt could be anything from a person’s age, the temperature on a given day, or the sales figures for a product.\n\nAn observation represents a unit of analysis.\n\nIt could be a set of measurements made under similar conditions (e.g, similar unit of entity, time, and/or geography).\nE.g., In a DataFrame of patient information, each observation could correspond to a single patient’s data record.\n\nA value is the actual data point corresponding to the variable and observation."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-2",

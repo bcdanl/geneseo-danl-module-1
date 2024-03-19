@@ -52,11 +52,11 @@ knitr::knit_engines$set("markdown")
 ## Reshaping `DataFrames`
 ### Tidy `DataFrames`
 
-- A *variable* is the measurements that vary.
+- A **variable** is a quantity, quality, or property that we can measure/count.
   - It could be anything from a person's age, the temperature on a given day, or the sales figures for a product. 
   
 - An *observation* represents a unit of analysis.
-  - It could be a measurement, a survey response, or any other unit of data collected. 
+  - It could be a set of measurements made under similar conditions (e.g, similar unit of entity, time, and/or geography).
   - E.g., In a `DataFrame` of patient information, each observation could correspond to a single patient's data record.
   
 - A *value* is the actual data point corresponding to the variable and observation.
