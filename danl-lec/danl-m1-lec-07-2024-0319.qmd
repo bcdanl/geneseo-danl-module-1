@@ -80,6 +80,15 @@ knitr::knit_engines$set("markdown")
 
 ## Reshaping `DataFrames`
 
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+```
+
+
 - A `DataFrame` can be given in a format unsuited for the analysis that we would like to perform on it.
   - A `DataFrame` may have larger structural problems that extend beyond the data.
   - Perhaps the `DataFrame` stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.

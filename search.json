@@ -4043,7 +4043,7 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
