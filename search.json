@@ -4134,7 +4134,7 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-2",
     "title": "Lecture 7",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\nRelational Data\n\nWhy is one data set sometimes scattered across multiple files?\nSometimes we may have two or more DataFrames that we want to combine based on common data values.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of tables are called keys."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-3",

@@ -328,18 +328,6 @@ Let's do Part 1 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 
 
 
-## Joining `DataFrames`
-### Relational Data
-
-- Why is one data set sometimes scattered across multiple files?
- 
- 
-- Sometimes we may have two or more `DataFrames` that we want to combine based on common data values.
-  -  This task is known in the database world as performing a "join."
-  -  We can do this with the `merge()` method in Pandas.
-
-
-
 
 ## Joining `DataFrames`
 ### Relational Data
