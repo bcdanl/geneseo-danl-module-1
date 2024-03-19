@@ -1,6 +1,6 @@
 ---
 title: Lecture 7
-subtitle: Reshaping `DataFrames`; Joining `DataFrames`; Data Visualization
+subtitle: Reshaping `DataFrames`; Joining `DataFrames`; Visualizing `DataFrames`
 format:
   clean-revealjs:
     self-contained: true
@@ -43,7 +43,7 @@ knitr::knit_engines$set("markdown")
 
 - Reshaping `DataFrames`
 - Joining `DataFrames`
-- Data Visualization
+- Visualizing `DataFrames`
 
 
 # Reshaping `DataFrames` {background-color="#1c4982"}
@@ -638,11 +638,11 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 
 
 
-# Data Visualization with `seaborn` with `Seaborn`  {background-color="#1c4982"}
+# Visualizing `DataFrames` with `seaborn`   {background-color="#1c4982"}
 
 
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 
 :::: {.columns} 
 ::: {.column width="50%"}
@@ -663,7 +663,7 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 ::::
 
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 ### Key Points in Data Visualization
 
 
@@ -680,7 +680,7 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
   - We should try making data visualization informative as much as we can.
 
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 ### Getting started with `seaborn`
 
 <p align="center">
@@ -702,7 +702,7 @@ sns.set_theme(rc={'figure.dpi': 600,
 
 
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 ### Categorical vs. Continuous Variables
 
 :::{.nonincremental}
@@ -750,7 +750,7 @@ sns.set_theme(rc={'figure.dpi': 600,
 :::
 :::
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 ### Making Discoveries from a Data Set
 
 :::{.nonincremental}
@@ -798,7 +798,7 @@ sns.set_theme(rc={'figure.dpi': 600,
 :::
 :::
 
-## Data Visualization with `seaborn` 
+## Visualizing `DataFrames` with `seaborn` 
 ### Data Visualization Workflow
 
 :::{.nonincremental}
@@ -839,7 +839,7 @@ sns.set_theme(rc={'figure.dpi': 600,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Getting started with `seaborn`
 
 :::{.nonincremental}
@@ -863,7 +863,7 @@ tips = sns.load_dataset('tips')
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Bar Chart 
 
 
@@ -895,7 +895,7 @@ sns.countplot(data = titanic,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Bar Chart 
 
 :::: {.columns}
@@ -923,7 +923,7 @@ sns.countplot(data = titanic,
   - This is useful to visualize the relationship between the two categorical variables.
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Histogram 
 
 :::: {.columns}
@@ -954,7 +954,7 @@ sns.histplot(data = titanic,
 - We use `sns.histplot()` function to plot a histogram
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Histogram 
 :::: {.columns}
 
@@ -986,7 +986,7 @@ sns.boxplot(data = tips,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Scatter plot 
 
 :::: {.columns}
@@ -1017,7 +1017,7 @@ sns.scatterplot(data = tips,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Scatter plot 
 
 ```{.python}
@@ -1035,7 +1035,7 @@ sns.scatterplot(data = tips,
   - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Fitted line 
   
 
@@ -1055,7 +1055,7 @@ sns.lmplot(data = tips,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Transparency with `alpha`
   
 :::: {.columns}
@@ -1086,7 +1086,7 @@ sns.lmplot(data = tips,
   
   
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Scatter plot 
 
 ```{.python}
@@ -1104,7 +1104,7 @@ sns.lmplot(data = tips,
   - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Line cahrt 
 
 :::: {.columns}
@@ -1135,7 +1135,7 @@ sns.lineplot(data = dow,
 - We use `sns.lineplot()` function to plot a line plot.
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Line cahrt 
 
 
@@ -1155,7 +1155,7 @@ sns.lineplot(data = healthexp,
 
 
 
-## Data Visualization with `seaborn`
+## Visualizing `DataFrames` with `seaborn`
 ### Faceting
 
 :::{.nonincremental}
