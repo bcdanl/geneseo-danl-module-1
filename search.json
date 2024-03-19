@@ -4043,7 +4043,7 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+    "text": "Reshaping DataFrames\nLong vs. Wide DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
@@ -4057,14 +4057,14 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-5",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height."
+    "text": "Reshaping DataFrames\nLong vs. Wide DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA long DataFrame increases in height.\nA wide DataFrame increases in width."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if one observation is spread across multiple rows.\nWe consider making DataFrames longer if one variable is spread across multiple columns."
+    "text": "Reshaping DataFrames\nLong vs. Wide DataFrames\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames longer if one variable is spread across multiple columns.\nWe consider making DataFrames wider if one observation is spread across multiple rows."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-7",

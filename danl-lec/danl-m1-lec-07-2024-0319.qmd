@@ -88,7 +88,7 @@ data_table.enable_dataframe_formatter()
 
 
 ## Reshaping `DataFrames`
-### Wide vs. Long `DataFrames`
+### Long vs. Wide `DataFrames`
 
 :::{.nonincremental}
 - The following `DataFrames` measure temperatures in two cities over two days.
@@ -127,19 +127,19 @@ df_long = pd.DataFrame({
 
 
 ## Reshaping `DataFrames`
-### Wide vs. Long `DataFrames`
+### Long vs. Wide `DataFrames`
 - A `DataFrame` can store its values in **wide** or **long** format.
 - These names reflect the direction in which the data set expands as we add more values to it.
-  - A wide `DataFrame` increases in width. 
   - A long `DataFrame` increases in height.
+  - A wide `DataFrame` increases in width. 
 
 
 
 ## Reshaping `DataFrames`
-### Wide vs. Long `DataFrames`
+### Long vs. Wide `DataFrames`
 - The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
-  - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
   - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
+  - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
 
 
 
