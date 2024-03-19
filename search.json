@@ -4036,91 +4036,91 @@
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-2",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nTidy DataFrames\n\n\n\n\nThere are three interrelated rules that make a DataFrame tidy:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-3",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-4",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\n\n\n\nThere are three interrelated rules that make a DataFrame tidy:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-5",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-5",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height.\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if one observation is spread across multiple rows.\nWe consider making DataFrames longer if one variable is spread across multiple columns."
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA wide DataFrame increases in width.\nA long DataFrame increases in height."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-6",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
+    "text": "Reshaping DataFrames\nWide vs. Long DataFrames\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames wider if one observation is spread across multiple rows.\nWe consider making DataFrames longer if one variable is spread across multiple columns."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-7",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-7",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt()\n)"
+    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-8",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-8",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt()\n)"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-9",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-9",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable.\nvalue_name is a string for the new column name that represents the values for the var_name."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-10",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-10",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\",\n          value_vars = ['Miami', 'Rochester'])\n)\n\n\nmelt() can take a few parameters:\n\nvalue_vars parameter allows us to select which specific columns we want to “melt”.\nBy default, it will melt all the columns not specified in the id_vars parameter."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable.\nvalue_name is a string for the new column name that represents the values for the var_name."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-11",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-11",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\",\n          value_vars = ['Miami', 'Rochester'])\n)\n\n\nmelt() can take a few parameters:\n\nvalue_vars parameter allows us to select which specific columns we want to “melt”.\nBy default, it will melt all the columns not specified in the id_vars parameter."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-12",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-12",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot_table() method can take both a string and a list of variables for the index parameter.\n\nThe pivot() can take only a string for index."
+    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-13",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-13",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot_table() method can take both a string and a list of variables for the index parameter.\n\nThe pivot() can take only a string for index."
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-14",
     "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-14",
     "title": "Lecture 7",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nLet’s do Part 1 of Classwork 7!"
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
   },
   {
     "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#joining-dataframes-1",
@@ -4660,5 +4660,12 @@
     "title": "Lecture 7",
     "section": "Visualizing DataFrames with seaborn",
     "text": "Visualizing DataFrames with seaborn\nFaceting\n\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\nFacetingFacetGrid().map()Alternative?\n\n\n\nFirst, we create a .FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\nSecond, we then use the .map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\n\n\n(\n sns.FacetGrid(\n       data = titanic,\n       row='class',\n       col='sex')\n .map(sns.histplot, 'age')\n )\n\n\n\nSome geometric object, such as sns.lmplot, does not work well with sns.FacetGrid().\n\nInstead, sns.lmplot supports mapping, col = 'VAR' and row = 'VAR' to facet the plot.\n\n\nsns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5},\n*          col = 'smoker')"
+  },
+  {
+    "objectID": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-15",
+    "href": "danl-lec/danl-m1-lec-07-2024-0319.html#reshaping-dataframes-15",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nLet’s do Part 1 of Classwork 7!"
   }
 ]

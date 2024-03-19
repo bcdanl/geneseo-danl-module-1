@@ -63,19 +63,6 @@ knitr::knit_engines$set("markdown")
 
 
 
-## Reshaping `DataFrames`
-### Tidy `DataFrames`
-
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
-</p>
-
-- There are three interrelated rules that make a `DataFrame` tidy:
-  - Each *variable* is a *column*; each *column* is a *variable*.
-  - Each *observation* is a *row*; each *row* is an *observation*.
-  - Each *value* is a *cell*; each *cell* is a single *value*.
-
 
 
 ## Reshaping `DataFrames`
@@ -125,12 +112,31 @@ df_long = pd.DataFrame({
 
 
 ## Reshaping `DataFrames`
+### Tidy `DataFrames`
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
+</p>
+
+- There are three interrelated rules that make a `DataFrame` tidy:
+  - Each *variable* is a *column*; each *column* is a *variable*.
+  - Each *observation* is a *row*; each *row* is an *observation*.
+  - Each *value* is a *cell*; each *cell* is a single *value*.
+
+
+
+## Reshaping `DataFrames`
 ### Wide vs. Long `DataFrames`
 - A `DataFrame` can store its values in **wide** or **long** format.
 - These names reflect the direction in which the data set expands as we add more values to it.
   - A wide `DataFrame` increases in width. 
   - A long `DataFrame` increases in height.
 
+
+
+## Reshaping `DataFrames`
+### Wide vs. Long `DataFrames`
 - The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
   - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
   - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
