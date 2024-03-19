@@ -49,6 +49,7 @@ knitr::knit_engines$set("markdown")
 # Reshaping `DataFrames` {background-color="#1c4982"}
 
 
+
 ## Reshaping `DataFrames`
 ### Tidy `DataFrames`
 
@@ -61,6 +62,21 @@ knitr::knit_engines$set("markdown")
   
 - A *value* is the actual data point corresponding to the variable and observation.
 
+
+
+
+## Reshaping `DataFrames`
+### Tidy `DataFrames`
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
+</p>
+
+- There are three interrelated rules that make a `DataFrame` tidy:
+  - Each *variable* is a *column*; each *column* is a *variable*.
+  - Each *observation* is a *row*; each *row* is an *observation*.
+  - Each *value* is a *cell*; each *cell* is a single *value*.
 
 
 
@@ -109,21 +125,6 @@ df_long = pd.DataFrame({
     'Temperature': [80, 83, 57, 62, 71, 75]
 })
 ```
-
-
-## Reshaping `DataFrames`
-### Tidy `DataFrames`
-
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
-</p>
-
-- There are three interrelated rules that make a `DataFrame` tidy:
-  - Each *variable* is a *column*; each *column* is a *variable*.
-  - Each *observation* is a *row*; each *row* is an *observation*.
-  - Each *value* is a *cell*; each *cell* is a single *value*.
-
 
 
 ## Reshaping `DataFrames`
