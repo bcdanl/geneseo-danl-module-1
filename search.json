@@ -249,7 +249,7 @@
     "href": "danl-cw/danl-m1-cw-7.html",
     "title": "Classwork 7",
     "section": "",
-    "text": "Make ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:\n\n\n\n\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
+    "text": "Make ny_pincp longer.\n\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:\n\n\n\n\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\ncovid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-7.html#load-libraries",
@@ -4407,14 +4407,14 @@
     "href": "danl-cw/danl-m1-cw-7.html#question-1",
     "title": "Classwork 7",
     "section": "",
-    "text": "Make ny_pincp longer.\n\n\n\n\n\n  \n\n\n\nAnswer:"
+    "text": "Make ny_pincp longer.\n\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-7.html#question-2",
     "href": "danl-cw/danl-m1-cw-7.html#question-2",
     "title": "Classwork 7",
     "section": "",
-    "text": "Make a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\n\n\n\n  \n\n\n\nAnswer:"
+    "text": "Make a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\n\ncovid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')\n\n\n\n\n\n  \n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-m1-cw-7.html#variable-description",
