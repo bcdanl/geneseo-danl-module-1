@@ -638,7 +638,67 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 
 
 
-## Data Visualization with `seaborn` with `Seaborn`
+# Data Visualization with `seaborn` with `Seaborn`  {background-color="#1c4982"}
+
+
+
+## Data Visualization with `seaborn` 
+
+:::: {.columns} 
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/lego.png" width="375px">
+</p>
+
+:::
+
+::: {.column width="50%"}
+- Graphs and charts let us explore and learn about the structure of the information we have in `DataFrame`. 
+
+- Good data visualizations make it easier to communicate our ideas and findings to other people. 
+
+
+:::
+::::
+
+
+## Data Visualization with `seaborn` 
+### Key Points in Data Visualization
+
+
+- A graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
+
+
+- Strive for clarity. 
+  - Make the data stand out.
+    - Avoid too many superimposed elements (e.g., too many curves in the same graphing space).
+    - Avoid having the data all skewed to one side or the other of your graph.
+
+
+- Visualization is an iterative process. 
+  - We should try making data visualization informative as much as we can.
+
+
+## Data Visualization with `seaborn` 
+### Getting started with `seaborn`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png" width="200px">
+</p>
+
+:::{.nonincremental}
+- `seaborn` is a Python data visualization library based on `matplotlib`. 
+  - It allows us to easily create beautiful but complex graphics using a simple interface.
+
+:::
+
+```{.python}
+import seaborn as sns
+sns.set_theme(rc={'figure.dpi': 600, 
+                  'figure.figsize': (5, 3.75)})   # better quality
+```
+
 
 
 
@@ -685,7 +745,7 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
   - A variable of month integers (1, ,2, ..., 12) is categorical.
 
 
-- We can use `astype('int64')` to make a variable `int64`.
+- We can use `astype('int')` to make a variable `int`.
 
 :::
 :::
@@ -697,15 +757,10 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 ::: {.panel-tabset}
 
 ## Distribution
-- From the distribution plots, we want to see the **variation**, the tendency of the values of a variable to change
-
-  <!-- - We can see variation easily in real life; if we measure any continuous variable twice, we will be likely to get two different values. -->
+- From the distribution plots, we want to see the **variation**, the tendency of the values of a variable to change.
   - Which values are the most common? Why?
-  
   - How *normal* is the data? How many peaks are there in the distribution?
-  
   - Which values are rare? Why? Does that match our expectations?
-  
   - Can we see any unusual patterns? What might explain them?
 
 
@@ -749,21 +804,21 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 :::{.nonincremental}
 ::: {.panel-tabset}
 ## Step 1
-- Read the descriptions of variables in a data.frame if available.
+- Read the descriptions of variables in a DataFrame if available.
 
 
 - Check the unit of an observation: Are all values in one single observation measured for:
   - One organization (e.g., university, company)?
-  - One geographic unit (e.g., zip code, county, state, country, continent)?
+  - One geographic unit (e.g., zip code, county, state, country)?
   - One person?
-  - One person in a specific point of time (e.g., year, month, week, day, hour)?
+  - One person in a specific point of time (e.g., year, month, week)?
   - One geographic unit in a specific point of time?
   - One organization in a specific point of time?
 
 
 ## Step 2
 - Figure out whether variables of interests are **categorical** or **continuous**.
-  - Check what types of the variables are (e.g., `float`, `float64`, `int`, `int64`, `datetime`, `datetime64[ns]`, `string`, `object`).
+  - Check what types of the variables are (e.g., `float`, `int`, `datetime64`, `object`, `category`).
   - Use `astype(DTYPE)`  if needed.
 
 
@@ -783,73 +838,17 @@ Let's do Part 2 of [Classwork 7](https://bcdanl.github.io/module-1/danl-cw/danl-
 :::
 
 
-## Data Visualization with `seaborn` 
-
-:::: {.columns} 
-::: {.column width="50%"}
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/lego.png" width="600px">
-</p>
-
-:::
-
-::: {.column width="50%"}
-- Graphs and charts let us explore and learn about the structure of the information we have in `DataFrame`. 
-
-- Good data visualizations make it easier to communicate our ideas and findings to other people. 
-
-
-:::
-::::
-
-
-## Data Visualization with `seaborn` 
-### Key Points in Data Visualization
-
-
-- A graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
-
-
-- Strive for clarity. 
-  - Make the data stand out.
-    - Avoid too many superimposed elements (e.g., too many curves in the same graphing space).
-    - Avoid having the data all skewed to one side or the other of your graph.
-
-
-- Visualization is an iterative process. 
-  - We should try making data visualization informative as much as we can.
-
-
-## Data Visualization with `seaborn` 
-### Getting started with `seaborn`
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png" width="600px">
-</p>
-
-
-- `seaborn` is a Python data visualization library based on `matplotlib`. 
-  - It allows us to easily create beautiful but complex graphics using a simple interface.
-  - It also provides a general improvement in the default appearance of `matplotlib`-produced plots, and so I recommend using it by default.
-
-```{.python}
-import seaborn as sns
-sns.set_theme(rc={'figure.dpi': 600, 
-                  'figure.figsize': (5, 3.75)})   # better quality
-
-```
-
-
 
 ## Data Visualization with `seaborn`
 ### Getting started with `seaborn`
+
+:::{.nonincremental}
 
 - Let's get the names of `DataFrame`s provided by the `seaborn` library:
 
 ```{.python}
 import seaborn as sns
-print( sns.get_dataset_names() )
+sns.get_dataset_names() 
 ```
 
 
@@ -857,24 +856,16 @@ print( sns.get_dataset_names() )
 
 ```{.python}
 titanic = sns.load_dataset('titanic')
-titanic.head()
 tips = sns.load_dataset('tips')
-tips.head()
 ```
 
-
+:::
 
 
 
 ## Data Visualization with `seaborn`
 ### Bar Chart 
 
-- A bar chart is used to plot the frequency of the different categories.
-  - It is useful to visualize how values of a **categorical variable** are distributed.
-  - A variable is **categorical** if it can only take one of a small set of values.
-  
-  
-- We use `sns.countplot()` function to plot a bar chart:
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -895,17 +886,17 @@ sns.countplot(data = titanic,
 :::: 
 
 
+- A bar chart is used to plot the frequency of the different categories.
+  - It is useful to visualize how values of a **categorical variable** are distributed.
+  - A variable is **categorical** if it can only take one of a small set of values.
+  
 
-
+- We use `sns.countplot()` function to plot a bar chart
 
 
 
 ## Data Visualization with `seaborn`
 ### Bar Chart 
-
-- We can further break up the bars in the bar chart based on another categorical variable. 
-
-  - This is useful to visualize the relationship between the two categorical variables.
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -927,16 +918,13 @@ sns.countplot(data = titanic,
 
 
 
+- We can further break up the bars in the bar chart based on another categorical variable. 
+
+  - This is useful to visualize the relationship between the two categorical variables.
+
 
 ## Data Visualization with `seaborn`
 ### Histogram 
-
-- A histogram is a **continuous** version of a bar chart.
-  - It is used to plot the frequency of the different values.
-  - It is useful to visualize how values of a **continuous variable** are distributed.
-
-  
-- We use `sns.histplot()` function to plot a histogram:
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -958,16 +946,16 @@ sns.histplot(data = titanic,
 
 
 
+- A histogram is a **continuous** version of a bar chart.
+  - It is used to plot the frequency of the different values.
+  - It is useful to visualize how values of a **continuous variable** are distributed.
+
+  
+- We use `sns.histplot()` function to plot a histogram
+
 
 ## Data Visualization with `seaborn`
 ### Histogram 
-
-- A boxplot computes a summary of the distribution and then display a specially formatted box.
-  - It is useful to visualize how values of a **continuous variable** are distributed across different values of another (categorical) variable.
-  
-  
-- We use `sns.histplot()` function to plot a histogram:
-
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -980,7 +968,8 @@ sns.boxplot(data = tips,
 ::: {.column width="50%"}
 ```{.python}
 sns.boxplot(data = tips,
-            x='time', y='total_bill')
+            x = 'time', 
+            y = 'total_bill')
 ```
 :::
 
@@ -988,16 +977,17 @@ sns.boxplot(data = tips,
 
 
 
+- A boxplot computes a summary of the distribution and then display a specially formatted box.
+  - It is useful to visualize how values of a **continuous variable** are distributed across different values of another (categorical) variable.
+  
+  
+- We use `sns.histplot()` function to plot a histogram.
+
+
 
 
 ## Data Visualization with `seaborn`
 ### Scatter plot 
-
-- A scatter plot is used to display the relationship between two continuous variables.
-
-  -  We can see co-variation as a pattern in the scattered points.
-
-- We use `sns.scatterplot()` function to plot a scatter plot:
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -1017,13 +1007,18 @@ sns.scatterplot(data = tips,
 
 ::::
 
+
+
+- A scatter plot is used to display the relationship between two continuous variables.
+
+  -  We can see co-variation as a pattern in the scattered points.
+
+- We use `sns.scatterplot()` function to plot a scatter plot.
+
+
+
 ## Data Visualization with `seaborn`
 ### Scatter plot 
-
-- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
-
-- Suppose we are interested in the following question:
-  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 ```{.python}
 sns.scatterplot(data = tips,
@@ -1034,15 +1029,14 @@ sns.scatterplot(data = tips,
 
 
 
+- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
+
+- Suppose we are interested in the following question:
+  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
+
 
 ## Data Visualization with `seaborn`
 ### Fitted line 
-
-- From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
-
-  - `sns.lmplot()` adds a line that fits well into the scattered points.
-  
-  - On average, the fitted line describes the relationship between two continuous variables.
   
 
 ```{.python}
@@ -1052,15 +1046,17 @@ sns.lmplot(data = tips,
 ```
 
 
+- From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
+
+  - `sns.lmplot()` adds a line that fits well into the scattered points.
+  
+  - On average, the fitted line describes the relationship between two continuous variables.
 
 
 
 
 ## Data Visualization with `seaborn`
 ### Transparency with `alpha`
-
-- In a scatter plot, adding transparency with `alpha` helps address many data points on the same location.
-  - We can map `alpha` to number between 0 and 1.
   
 :::: {.columns}
 ::: {.column width="50%"}
@@ -1085,13 +1081,13 @@ sns.lmplot(data = tips,
 
 
 
+- In a scatter plot, adding transparency with `alpha` helps address many data points on the same location.
+  - We can map `alpha` to number between 0 and 1.
+  
+  
+
 ## Data Visualization with `seaborn`
 ### Scatter plot 
-
-- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
-
-- Using the fitted lines, let's answer the following question:
-  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 ```{.python}
 sns.lmplot(data = tips,
@@ -1102,19 +1098,22 @@ sns.lmplot(data = tips,
 ```
 
 
+- To the scatter plot, we can add a `hue`-`VARIABLE` mapping to display how the relationship between two continuous variables varies by `VARIABLE`.
+
+- Using the fitted lines, let's answer the following question:
+  - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
+
 
 ## Data Visualization with `seaborn`
 ### Line cahrt 
-
-- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
-  - It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
-- We use `sns.lineplot()` function to plot a line plot:
 
 :::: {.columns}
 ::: {.column width="50%"}
 ```{.python}
 path_csv = 'https://bcdanl.github.io/data/dji.csv'
-dow = pd.read_csv(path_csv, index_col=0, parse_dates=True)
+dow = pd.read_csv(path_csv)
+dow['Date'] = dow['Date'].astype('datetime64')
+
 sns.lineplot(data = dow,
              x =  'Date', 
              y =  'Close')
@@ -1122,16 +1121,23 @@ sns.lineplot(data = dow,
 :::
 
 ::: {.column width="50%"}
+- Mapping
   - `x`:  Name of a continuous variable (often time variable) on the horizontal axis 
   - `y`:  Name of a continuous variable on the vertical axis
 
 :::
 ::::
 
+
+
+- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
+  - It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
+- We use `sns.lineplot()` function to plot a line plot.
+
+
 ## Data Visualization with `seaborn`
 ### Line cahrt 
 
-- For line charts, we often need to group or connect observations to visualize the number of distinct lines.
 
 ```{.python}
 healthexp = ( sns.load_dataset("healthexp")
@@ -1145,14 +1151,16 @@ sns.lineplot(data = healthexp,
              hue = 'Country')
 ```
 
+- For line charts, we often need to group or connect observations to visualize the number of distinct lines.
+
 
 
 ## Data Visualization with `seaborn`
 ### Faceting
 
+:::{.nonincremental}
 - Faceting allows us to plot subsets (facets) of our data across subplots. 
 
-:::{.nonincremental}
 ::: {.panel-tabset}
 ## Faceting
 - First, we create a `.FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
