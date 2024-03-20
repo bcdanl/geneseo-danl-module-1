@@ -59,7 +59,7 @@ Load DataFrame for Part 1:
 
 ```{python}
 #| echo: true
-paidsearch = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
+beer_mkts = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
 ```{r}
@@ -149,6 +149,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_marke
 Load DataFrame for Part 2:
 
 ```{python}
+#| echo: true
 paidsearch = pd.read_csv('https://bcdanl.github.io/data/paidsearch.csv')
 ```
 
