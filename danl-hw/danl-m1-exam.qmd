@@ -163,7 +163,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/paidsearch
 
 ##  Variable Description
 
-- `dma`: an identification number of a designated market (DM) area `i` (e.g., Boston, Los Angeles)
+- `dma`: an identification number of a designated market (DM) area `i`, defined by Nielsen (e.g., Boston, Los Angeles. [This webpage](https://www.spstechnical.com/DMACodes.htm) provides the list of DMA names.)
 - `treatment_period`: 0 if date is before May 22, 2012 and 1 after.
 - `search_stays_on`: 1 if the paid-search goes off in dma `i`, 0 otherwise.
 - `revenue`: eBay's sales revenue for dma `i` and date `t`
