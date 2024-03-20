@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-03-19">
+
+<title>Homework 5 - Example Answers | Byeong-Hak Choe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/css/font.css">
+<meta property="og:title" content="Homework 5 - Example Answers | Byeong-Hak Choe">
+<meta property="og:description" content="Group Operations">
+<meta property="og:image" content="/assets/img/posts.png">
+<meta property="og:site-name" content="Home">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/module-1" rel="me" target="_blank">
+ <span class="dropdown-text">Website Repo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/module-1/discussions" rel="me" target="_blank">
+ <span class="dropdown-text">Discussion Boards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/module-1-colab" rel="me" target="_blank">
+ <span class="dropdown-text">Colab</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Homework 5 - Example Answers</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/microcredential-badge.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://bcdanl.github.io/module-1/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Home </b></font><font size="5" color="#194493"><i class="fa-solid fa-home" aria-label="home"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-m1-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Lecture </b></font><font size="5" color="#194493"><i class="fa-solid fa-laptop" aria-label="laptop"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-m1-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Classwork </b></font><font size="5" color="#194493"><i class="fa-solid fa-keyboard" aria-label="keyboard"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-m1-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Homework </b></font><font size="5" color="#194493"><i class="fa-solid fa-level-up" aria-label="level-up"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-m1-qa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Q &amp; A </b></font><font size="5" color="#194493"><i class="fa-solid fa-commenting" aria-label="commenting"></i></font></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#q1" id="toc-q1" class="nav-link active" data-scroll-target="#q1">Q1</a></li>
+  <li><a href="#q2" id="toc-q2" class="nav-link" data-scroll-target="#q2">Q2</a></li>
+  <li><a href="#q3" id="toc-q3" class="nav-link" data-scroll-target="#q3">Q3</a></li>
+  <li><a href="#q4" id="toc-q4" class="nav-link" data-scroll-target="#q4">Q4</a></li>
+  <li><a href="#q5" id="toc-q5" class="nav-link" data-scroll-target="#q5">Q5</a></li>
+  <li><a href="#q6" id="toc-q6" class="nav-link" data-scroll-target="#q6">Q6</a></li>
+  <li><a href="#q7" id="toc-q7" class="nav-link" data-scroll-target="#q7">Q7</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 5 - Example Answers</h1>
+<p class="subtitle lead">Group Operations</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 19, 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 20, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Below is for an interactive display of DataFrame in Colab's Jupyter Notebook</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Below is for an interactive display of DataFrame in any Jupyter Notebook</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> init_notebook_mode</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> show</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="438d1a05-202d-4c74-d1ea-4857e1ecbfa7" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The CSV file uses a character encoding that is not UTF-8.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># When we encounter such issues, a common workaround is</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   to specify a different encoding when reading the file,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   such as 'ISO-8859-1' (also known as 'latin1'),</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This can often handle files that cause issues with the default UTF-8 encoding.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fao <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fao_stat.csv"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                  encoding <span class="op">=</span> <span class="st">'ISO-8859-1'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>show(fao)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_92bcfa70_7374_460c_8eda_ee95e8420a8a" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      
+      <th>SSA</th>
+      <th>Area</th>
+      <th>Year</th>
+      <th>gdp_per_capita</th>
+      <th>drinking_water</th>
+      <th>sanitation_service</th>
+      <th>children_stunted</th>
+      <th>children_overweight</th>
+      <th>investment_pct</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_92bcfa70_7374_460c_8eda_ee95e8420a8a:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, "Afghanistan", 2012, 2075.5, 53.4, 38.0, 44.7, 5.3, 20.37867], [false, "Afghanistan", 2013, 2116.5, 56.0, 39.5, 43.4, 5.2, 17.844328], [false, "Afghanistan", 2014, 2102.4, 58.7, 41.1, 42.1, 5.0, 13.033419], [false, "Afghanistan", 2015, 2068.3, 61.3, 42.6, 41.1, 4.8, 13.702608], [false, "Afghanistan", 2016, 2057.1, 64.1, 44.2, 39.9, 4.6, 13.405886], [false, "Afghanistan", 2017, 2058.4, 66.8, 45.8, 38.6, 4.4, 14.130793], [false, "Afghanistan", 2018, 2033.8, 69.6, 47.4, 37.4, 4.3, 16.019477], [false, "Afghanistan", 2019, 2065.0, 72.4, 49.0, 36.3, 4.1, 12.75688], [false, "Afghanistan", 2020, 1970.6, 75.1, 50.5, 35.1, 3.9, 16.957702], [false, "Albania", 2012, 11228.0, 92.2, 96.2, 17.6, 21.7, 26.489152], [false, "Albania", 2013, 11361.3, 92.6, 96.7, 16.5, 20.6, 25.70817], [false, "Albania", 2014, 11586.8, 93.0, 97.2, 15.4, 19.4, 24.111203], [false, "Albania", 2015, 11878.5, 93.4, 97.7, 14.3, 18.3, 24.413499], [false, "Albania", 2016, 12291.9, 93.8, 98.1, 13.3, 17.3, 24.203795], [false, "Albania", 2017, 12771.0, 94.1, 98.5, 12.4, 16.4, 24.724268], [false, "Albania", 2018, 13317.1, 94.4, 99.0, 11.4, 15.7, 24.326608], [false, "Albania", 2019, 13653.2, 94.8, 99.0, 10.4, 15.1, 22.946652], [false, "Albania", 2020, 13253.7, 95.1, 99.0, 9.6, 14.6, 23.307444], [false, "Algeria", 2012, 11233.5, 92.7, 87.1, 12.6, 13.5, 38.284282], [false, "Algeria", 2013, 11319.1, 93.0, 87.0, 12.0, 13.4, 40.44429], [false, "Algeria", 2014, 11512.7, 93.2, 86.9, 11.6, 13.3, 41.457345], [false, "Algeria", 2015, 11697.0, 93.4, 86.7, 11.1, 13.2, 42.256908], [false, "Algeria", 2016, 11826.2, 93.6, 86.6, 10.7, 13.1, 42.379748], [false, "Algeria", 2017, 11737.4, 93.8, 86.5, 10.2, 13.1, 43.258302], [false, "Algeria", 2018, 11630.7, 94.0, 86.3, 9.9, 13.0, 44.070464], [false, "Algeria", 2019, 11522.0, 94.2, 86.1, 9.5, 12.9, 44.157905], [false, "Algeria", 2020, 10735.4, 94.4, 86.0, 9.3, 12.9, 44.111472], [false, "American Samoa", 2012, NaN, 99.0, 60.2, NaN, NaN, NaN], [false, "American Samoa", 2013, NaN, 99.0, 59.1, NaN, NaN, NaN], [false, "American Samoa", 2014, NaN, 99.0, 57.9, NaN, NaN, NaN], [false, "American Samoa", 2015, NaN, 99.0, 56.8, NaN, NaN, NaN], [false, "American Samoa", 2016, NaN, 99.0, 55.6, NaN, NaN, NaN], [false, "American Samoa", 2017, NaN, 99.0, 54.5, NaN, NaN, NaN], [false, "American Samoa", 2018, NaN, 99.0, 54.5, NaN, NaN, NaN], [false, "American Samoa", 2019, NaN, 99.0, 54.5, NaN, NaN, NaN], [false, "American Samoa", 2020, NaN, 99.0, 54.5, NaN, NaN, NaN], [false, "Andorra", 2012, NaN, 99.0, 99.0, NaN, NaN, 18.52761], [false, "Andorra", 2013, NaN, 99.0, 99.0, NaN, NaN, 17.370544], [false, "Andorra", 2014, NaN, 99.0, 99.0, NaN, NaN, 17.779739], [false, "Andorra", 2015, NaN, 99.0, 99.0, NaN, NaN, 18.014458], [false, "Andorra", 2016, NaN, 99.0, 99.0, NaN, NaN, 17.96021], [false, "Andorra", 2017, NaN, 99.0, 99.0, NaN, NaN, 18.670984], [false, "Andorra", 2018, NaN, 99.0, 99.0, NaN, NaN, 19.446852], [false, "Andorra", 2019, NaN, 99.0, 99.0, NaN, NaN, 20.081326], [false, "Andorra", 2020, NaN, 99.0, 99.0, NaN, NaN, 20.286056], [true, "Angola", 2012, 8037.7, 52.0, 43.6, 32.4, 2.9, 30.549092], [true, "Angola", 2013, 8141.2, 52.8, 44.9, 32.9, 2.9, 29.58841], [true, "Angola", 2014, 8240.3, 53.5, 46.1, 33.6, 2.9, 29.160922], [true, "Angola", 2015, 8036.6, 54.3, 47.4, 34.4, 3.0, 28.209604], [true, "Angola", 2016, 7569.2, 55.1, 48.6, 35.2, 3.1, 26.724673], [true, "Angola", 2017, 7310.9, 55.8, 49.9, 36.1, 3.1, 21.169339], [true, "Angola", 2018, 6982.1, 56.6, 51.1, 36.8, 3.2, 20.354337], [true, "Angola", 2019, 6712.0, 56.9, 51.4, 37.4, 3.4, 21.311042], [true, "Angola", 2020, 6142.0, 57.2, 51.7, 37.7, 3.5, 20.974794], [false, "Antigua and Barbuda", 2012, 17966.3, 96.9, 87.1, NaN, NaN, 21.576705], [false, "Antigua and Barbuda", 2013, 17643.1, 96.7, 87.5, NaN, NaN, 23.261637], [false, "Antigua and Barbuda", 2014, 18104.7, 96.7, 87.5, NaN, NaN, 24.49434], [false, "Antigua and Barbuda", 2015, 18594.5, 96.7, 87.5, NaN, NaN, 23.928437], [false, "Antigua and Barbuda", 2016, 19419.6, 96.7, 87.5, NaN, NaN, 24.306397], [false, "Antigua and Barbuda", 2017, 19840.3, 96.7, 87.5, NaN, NaN, 24.414627], [false, "Antigua and Barbuda", 2018, 21017.3, NaN, NaN, NaN, NaN, 39.733525], [false, "Antigua and Barbuda", 2019, 21850.1, NaN, NaN, NaN, NaN, 33.923632], [false, "Antigua and Barbuda", 2020, 17293.3, NaN, NaN, NaN, NaN, 29.206075], [false, "Argentina", 2012, 24118.9, 98.8, 93.6, 7.8, 12.4, 16.168358], [false, "Argentina", 2013, 24424.1, 98.9, 94.0, 7.8, 12.4, 16.157964], [false, "Argentina", 2014, 23550.1, 98.9, 94.5, 7.8, 12.4, 15.454723], [false, "Argentina", 2015, 23933.9, 99.0, 94.9, 7.8, 12.5, 15.564745], [false, "Argentina", 2016, 23189.5, 99.0, 95.4, 7.8, 12.6, 14.97691], [false, "Argentina", 2017, 23597.1, NaN, NaN, 7.7, 12.7, 16.515419], [false, "Argentina", 2018, 22747.2, NaN, NaN, 7.7, 12.8, 15.934219], [false, "Argentina", 2019, 22066.1, NaN, NaN, 7.7, 12.9, 13.640038], [false, "Argentina", 2020, 19690.7, NaN, NaN, 7.8, 12.9, 13.195584], [false, "Armenia", 2012, 10397.7, 98.8, 91.7, 14.0, 14.8, 24.440194], [false, "Armenia", 2013, 10691.3, 99.0, 92.1, 13.3, 14.1, 22.003935], [false, "Armenia", 2014, 11019.8, 99.0, 92.5, 12.6, 13.3, 20.767462], [false, "Armenia", 2015, 11321.3, 99.0, 92.9, 12.0, 12.6, 20.612562], [false, "Armenia", 2016, 11303.1, 99.0, 93.2, 11.2, 12.1, 18.233176], [false, "Armenia", 2017, 12115.1, 99.0, 93.5, 10.6, 11.6, 18.600482], [false, "Armenia", 2018, 12715.1, 99.0, 93.7, 10.0, 11.3, 18.5303], [false, "Armenia", 2019, 13653.8, 99.0, 93.9, 9.5, 11.0, 17.968329], [false, "Armenia", 2020, 12619.9, 99.0, 93.9, 9.1, 10.8, 17.734829], [false, "Australia", 2012, 46350.9, 99.0, 99.0, 2.1, 14.2, 29.927417], [false, "Australia", 2013, 46744.6, 99.0, 99.0, 2.1, 14.9, 28.636659], [false, "Australia", 2014, 47232.9, 99.0, 99.0, 2.1, 15.5, 26.987683], [false, "Australia", 2015, 47569.3, 99.0, 99.0, 2.1, 16.1, 25.303454], [false, "Australia", 2016, 48116.0, 99.0, 99.0, 2.1, 16.7, 24.724771], [false, "Australia", 2017, 48398.5, 99.0, 99.0, 2.1, 17.3, 25.214665], [false, "Australia", 2018, 49029.1, 99.0, 99.0, 2.1, 17.7, 24.320287], [false, "Australia", 2019, 49309.1, 99.0, 99.0, 2.1, 18.2, 23.707899], [false, "Australia", 2020, 48678.7, 99.0, 99.0, 2.1, 18.5, 24.021205], [false, "Austria", 2012, 53297.4, 99.0, 99.0, NaN, NaN, 22.93174], [false, "Austria", 2013, 52997.8, 99.0, 99.0, NaN, NaN, 23.284474], [false, "Austria", 2014, 52932.9, 99.0, 99.0, NaN, NaN, 23.038303], [false, "Austria", 2015, 52873.9, 99.0, 99.0, NaN, NaN, 23.331832], [false, "Austria", 2016, 53345.7, 99.0, 99.0, NaN, NaN, 23.861747], [false, "Austria", 2017, 54173.0, 99.0, 99.0, NaN, NaN, 24.32331], [false, "Austria", 2018, 55258.4, 99.0, 99.0, NaN, NaN, 24.774296], [false, "Austria", 2019, 55833.6, 99.0, 99.0, NaN, NaN, 25.58077], [false, "Austria", 2020, 51857.7, 99.0, 99.0, NaN, NaN, 26.003164], [false, "Azerbaijan", 2012, 14027.5, 88.5, 89.9, 17.2, 11.1, 25.347135], [false, "Azerbaijan", 2013, 14651.7, 89.8, 92.4, 16.9, 10.8, 29.072572], [false, "Azerbaijan", 2014, 14867.9, 91.2, 94.3, 16.6, 10.5, 30.628768], [false, "Azerbaijan", 2015, 14852.6, 92.4, 96.1, 16.5, 10.2, 27.825303], [false, "Azerbaijan", 2016, 14232.2, 93.2, 96.1, 16.4, 9.9, 24.829523], [false, "Azerbaijan", 2017, 14121.4, 93.9, 96.1, 16.4, 9.7, 24.865719], [false, "Azerbaijan", 2018, 14209.6, 94.7, 96.1, 16.3, 9.6, 24.204229], [false, "Azerbaijan", 2019, 14442.0, 95.4, 96.1, 16.3, 9.5, 23.878234], [false, "Azerbaijan", 2020, 13726.8, 96.0, NaN, 16.3, 9.4, 22.882515], [false, "Bahamas", 2012, 36937.2, 98.8, 93.9, NaN, NaN, 28.841352], [false, "Bahamas", 2013, 35529.6, 98.8, 94.2, NaN, NaN, 26.774629], [false, "Bahamas", 2014, 35847.9, 98.8, 94.6, NaN, NaN, 29.406592], [false, "Bahamas", 2015, 35859.3, 98.9, 94.9, NaN, NaN, 23.488129], [false, "Bahamas", 2016, 35201.5, 98.9, 94.9, NaN, NaN, 24.767725], [false, "Bahamas", 2017, 35911.7, 98.9, 94.9, NaN, NaN, 26.617011], [false, "Bahamas", 2018, 36200.7, 98.9, 94.9, NaN, NaN, 25.143222], [false, "Bahamas", 2019, 36522.4, 98.9, 94.9, NaN, NaN, 25.467136], [false, "Bahamas", 2020, 27555.7, NaN, NaN, NaN, NaN, 18.883497], [false, "Bahrain", 2012, 45036.0, 99.0, 99.0, 6.3, 5.6, 23.968747], [false, "Bahrain", 2013, 46930.8, 99.0, 99.0, 6.1, 5.7, 26.584101], [false, "Bahrain", 2014, 48201.2, 99.0, 99.0, 5.9, 5.9, 26.970337], [false, "Bahrain", 2015, 48110.7, 99.0, 99.0, 5.8, 6.0, 24.072056], [false, "Bahrain", 2016, 47937.7, 99.0, 99.0, 5.6, 6.0, 25.750905], [false, "Bahrain", 2017, 47709.8, 99.0, 99.0, 5.5, 6.1, 27.302064], [false, "Bahrain", 2018, 46377.7, 99.0, 99.0, 5.3, 6.2, 29.39204], [false, "Bahrain", 2019, 45311.9, 99.0, 99.0, 5.2, 6.3, 29.225887], [false, "Bahrain", 2020, 41545.8, 99.0, 99.0, 5.1, 6.4, 28.12837], [false, "Bangladesh", 2012, 3783.9, 96.7, 42.1, 38.1, 1.7, 27.912615], [false, "Bangladesh", 2013, 3965.4, 96.8, 43.7, 37.1, 1.8, 27.741746], [false, "Bangladesh", 2014, 4157.9, 97.0, 45.2, 36.0, 1.9, 28.734113], [false, "Bangladesh", 2015, 4381.1, 97.1, 46.7, 35.0, 1.9, 28.886691], [false, "Bangladesh", 2016, 4641.6, 97.2, 48.2, 34.0, 2.0, 29.371112], [false, "Bangladesh", 2017, 4894.6, 97.4, 49.7, 33.0, 2.0, 30.155346], [false, "Bangladesh", 2018, 5197.8, 97.5, 51.2, 32.0, 2.1, 30.892863], [false, "Bangladesh", 2019, 5550.0, 97.6, 52.7, 31.0, 2.1, 30.975401], [false, "Bangladesh", 2020, 5684.1, 97.7, 54.2, 30.2, 2.1, 31.408831], [false, "Barbados", 2012, 15338.7, 98.4, 94.9, 7.6, 10.8, 15.842142], [false, "Barbados", 2013, 15085.0, 98.5, 95.4, 7.5, 11.0, 16.842826], [false, "Barbados", 2014, 15043.7, 98.5, 95.9, 7.4, 11.1, 16.493147], [false, "Barbados", 2015, 15388.6, 98.5, 96.4, 7.2, 11.2, 16.721403], [false, "Barbados", 2016, 15752.4, 98.5, 96.9, 7.1, 11.3, 15.929408], [false, "Barbados", 2017, 15800.4, 98.5, 97.3, 6.9, 11.4, 11.055445], [false, "Barbados", 2018, 15615.7, 98.5, 97.3, 6.8, 11.4, 10.428285], [false, "Barbados", 2019, 15499.8, 98.5, 98.1, 6.6, 11.4, 9.688965], [false, "Barbados", 2020, 13316.5, 98.5, 98.1, 6.6, 11.4, 10.645112], [false, "Belarus", 2012, 18611.5, 97.0, 96.6, 4.0, 9.2, 32.590741], [false, "Belarus", 2013, 18805.4, 96.7, 97.2, 3.9, 8.7, 35.190059], [false, "Belarus", 2014, 19119.3, 96.5, 97.8, 3.9, 8.3, 32.59724], [false, "Belarus", 2015, 18362.7, 96.5, 97.8, 3.9, 7.8, 28.654316], [false, "Belarus", 2016, 17883.1, 96.5, 97.8, 3.9, 7.5, 25.126665], [false, "Belarus", 2017, 18356.1, 96.5, 97.8, 3.9, 7.2, 25.861669], [false, "Belarus", 2018, 18974.7, 96.5, 97.9, 3.9, 7.0, 26.180369], [false, "Belarus", 2019, 19279.2, 96.5, 97.9, 3.9, 6.9, 27.39503], [false, "Belarus", 2020, 19186.8, 96.5, 97.9, 3.9, 6.8, 25.733203], [false, "Belgium", 2012, 48210.9, 99.0, 99.0, 2.7, 4.5, 22.39093], [false, "Belgium", 2013, 48204.6, 99.0, 99.0, 2.6, 4.5, 21.782696], [false, "Belgium", 2014, 48748.6, 99.0, 99.0, 2.5, 4.6, 22.592844], [false, "Belgium", 2015, 49456.4, 99.0, 99.0, 2.5, 4.7, 22.969253], [false, "Belgium", 2016, 49829.9, 99.0, 99.0, 2.5, 4.8, 23.624456], [false, "Belgium", 2017, 50442.3, 99.0, 99.0, 2.4, 4.9, 23.573942], [false, "Belgium", 2018, 51139.1, 99.0, 99.0, 2.4, 4.9, 23.854275], [false, "Belgium", 2019, 51937.4, 99.0, 99.0, 2.4, 5.0, 24.400259], [false, "Belgium", 2020, 48752.5, 99.0, 99.0, 2.3, 5.1, 24.270597], [false, "Belize", 2012, 7184.1, 95.2, 86.3, 17.5, 9.0, 13.601583], [false, "Belize", 2013, 7083.4, 95.9, 86.6, 16.9, 8.9, 16.77044], [false, "Belize", 2014, 7239.3, 96.5, 86.9, 16.2, 8.7, 16.788554], [false, "Belize", 2015, 7292.8, 97.2, 87.2, 15.6, 8.6, 20.515133], [false, "Belize", 2016, 7132.1, 97.6, 87.5, 15.1, 8.5, 22.062347], [false, "Belize", 2017, 7140.9, 98.0, 87.9, 14.6, 8.4, 18.56763], [false, "Belize", 2018, 7148.1, 98.4, 88.2, 14.1, 8.2, 18.482687], [false, "Belize", 2019, 7152.7, 98.4, 88.2, 13.7, 8.1, 20.037279], [false, "Belize", 2020, 5845.7, 98.4, 88.2, 13.3, 8.0, 21.233292], [true, "Benin", 2012, 2759.8, 64.4, 13.5, 33.8, 1.6, 19.614853], [true, "Benin", 2013, 2876.9, 64.5, 14.0, 33.5, 1.6, 25.707575], [true, "Benin", 2014, 2975.9, 64.6, 14.4, 33.3, 1.6, 23.007859], [true, "Benin", 2015, 2946.0, 64.8, 14.8, 33.2, 1.7, 20.495739], [true, "Benin", 2016, 2961.4, 64.9, 15.2, 32.9, 1.8, 19.897701], [true, "Benin", 2017, 3044.5, 65.1, 15.6, 32.7, 1.8, 23.600637], [true, "Benin", 2018, 3160.8, 65.2, 16.1, 32.4, 2.0, 25.70759], [true, "Benin", 2019, 3287.3, 65.3, 16.5, 31.9, 2.1, 26.560001], [true, "Benin", 2020, 3323.1, 65.4, 17.0, 31.3, 2.2, 30.073612], [false, "Bermuda", 2012, 80982.4, 99.0, 99.0, NaN, NaN, 10.409908], [false, "Bermuda", 2013, 80503.7, 99.0, 99.0, NaN, NaN, 10.409842], [false, "Bermuda", 2014, 77361.1, 99.0, 99.0, NaN, NaN, 11.812118], [false, "Bermuda", 2015, 77842.8, 99.0, 99.0, NaN, NaN, 11.892582], [false, "Bermuda", 2016, 78149.4, 99.0, 99.0, NaN, NaN, 13.312995], [false, "Bermuda", 2017, 81835.0, 99.0, 99.0, NaN, NaN, 14.200486], [false, "Bermuda", 2018, 81423.4, 99.0, 99.0, NaN, NaN, 13.882835], [false, "Bermuda", 2019, 81681.7, 99.0, 99.0, NaN, NaN, 15.501469], [false, "Bermuda", 2020, 76105.1, 99.0, 99.0, NaN, NaN, 16.367482], [false, "Bhutan", 2012, 9084.0, 94.0, 65.6, 30.2, 6.1, 68.636034], [false, "Bhutan", 2013, 9163.6, 94.7, 67.1, 28.8, 6.1, 42.861242], [false, "Bhutan", 2014, 9574.0, 95.4, 68.5, 27.6, 6.0, 52.651694], [false, "Bhutan", 2015, 10086.1, 96.2, 69.9, 26.4, 5.9, 55.732596], [false, "Bhutan", 2016, 10775.2, 96.8, 71.3, 25.4, 5.8, 56.812545], [false, "Bhutan", 2017, 11142.5, 97.2, 72.6, 24.5, 5.7, 53.832934], [false, "Bhutan", 2018, 11348.4, 97.3, 73.9, 23.7, 5.5, 48.938334], [false, "Bhutan", 2019, 11864.8, 97.3, 75.2, 23.0, 5.4, 38.622481], [false, "Bhutan", 2020, 10551.5, 97.3, 76.5, 22.4, 5.2, 35.765604], [false, "Bolivia (Plurinational State of)", 2012, 7081.4, 88.6, 51.5, 20.3, 9.0, 19.575614], [false, "Bolivia (Plurinational State of)", 2013, 7444.5, 89.2, 53.2, 19.3, 9.0, 20.479463], [false, "Bolivia (Plurinational State of)", 2014, 7730.6, 89.9, 54.9, 18.3, 8.9, 21.343128], [false, "Bolivia (Plurinational State of)", 2015, 7984.4, 90.5, 56.7, 17.2, 8.9, 21.37106], [false, "Bolivia (Plurinational State of)", 2016, 8202.5, 91.1, 58.5, 16.1, 8.9, 21.197095], [false, "Bolivia (Plurinational State of)", 2017, 8423.7, 91.7, 60.2, 15.1, 8.9, 22.738226], [false, "Bolivia (Plurinational State of)", 2018, 8655.5, 92.3, 62.1, 14.2, 8.9, 22.521433], [false, "Bolivia (Plurinational State of)", 2019, 8724.5, 92.8, 63.9, 13.4, 8.9, 21.270348], [false, "Bolivia (Plurinational State of)", 2020, 7853.1, 93.4, 65.8, 12.7, 8.8, 17.259769], [false, "Bosnia and Herzegovina", 2012, 11257.8, 96.5, 95.3, 9.3, 18.9, 20.915084], [false, "Bosnia and Herzegovina", 2013, 11725.3, 96.4, 95.3, 9.2, 17.8, 20.175192], [false, "Bosnia and Herzegovina", 2014, 12066.6, 96.2, 95.3, 9.1, 16.7, 22.331885], [false, "Bosnia and Herzegovina", 2015, 12630.7, 96.2, 95.3, 9.0, 15.7, 21.123309], [false, "Bosnia and Herzegovina", 2016, 13194.3, 96.2, 95.3, 9.0, 14.9, 21.598591], [false, "Bosnia and Herzegovina", 2017, 13753.8, 96.1, 95.4, 9.1, 14.2, 22.573054], [false, "Bosnia and Herzegovina", 2018, 14386.7, 96.1, 95.4, 9.1, 13.6, 23.518513], [false, "Bosnia and Herzegovina", 2019, 14896.8, 96.1, NaN, 9.1, 13.2, 24.206497], [false, "Bosnia and Herzegovina", 2020, 14520.9, 96.1, NaN, 9.1, 12.8, 23.61418], [true, "Botswana", 2012, 14166.5, 85.4, 70.1, 24.4, 10.6, 34.412747], [true, "Botswana", 2013, 15597.6, 86.5, 71.7, 23.9, 10.7, 31.530911], [true, "Botswana", 2014, 16042.1, 87.5, 73.2, 23.6, 10.7, 30.720153], [true, "Botswana", 2015, 14895.9, 88.4, 74.8, 23.5, 10.7, 33.986965], [true, "Botswana", 2016, 15654.7, 89.4, 76.0, 23.5, 10.8, 33.771793], [true, "Botswana", 2017, 15948.0, 90.3, 77.3, 23.6, 10.9, 29.921509], [true, "Botswana", 2018, 16222.4, 91.2, 78.5, 23.5, 10.9, 30.965429], [true, "Botswana", 2019, 16404.4, 92.1, 79.8, 23.2, 10.9, 32.027256], [true, "Botswana", 2020, 14667.8, 92.2, 80.0, 22.8, 11.0, 31.916153], [false, "Brazil", 2012, 15478.8, 97.1, 83.5, 6.3, 6.9, 20.41891], [false, "Brazil", 2013, 15805.2, 97.3, 84.4, 6.2, 6.9, 20.978397], [false, "Brazil", 2014, 15749.5, 97.6, 85.2, 6.1, 7.0, 19.991507], [false, "Brazil", 2015, 15064.2, 97.8, 86.0, 6.1, 7.1, 17.835807], [false, "Brazil", 2016, 14451.2, 98.0, 86.9, 6.1, 7.1, 16.203157], [false, "Brazil", 2017, 14524.6, 98.5, 87.7, 6.1, 7.1, 15.582646], [false, "Brazil", 2018, 14668.3, 98.7, 88.5, 6.1, 7.2, 16.110534], [false, "Brazil", 2019, 14736.2, 98.9, 89.3, 6.1, 7.2, 16.420782], [false, "Brazil", 2020, 14064.0, 99.0, 90.1, 6.1, 7.3, 16.982579], [false, "Brunei Darussalam", 2012, 69090.3, 99.0, 96.3, 17.5, 8.4, 40.650676], [false, "Brunei Darussalam", 2013, 66715.7, 99.0, 96.3, 16.9, 8.6, 46.496561], [false, "Brunei Darussalam", 2014, 64190.8, 99.0, 96.3, 16.3, 8.7, 32.753681], [false, "Brunei Darussalam", 2015, 63147.5, 99.0, 96.3, 15.7, 8.9, 35.027985], [false, "Brunei Darussalam", 2016, 60867.3, 99.0, NaN, 15.0, 9.0, 31.902921], [false, "Brunei Darussalam", 2017, 60994.5, 99.0, NaN, 14.3, 9.1, 34.032276], [false, "Brunei Darussalam", 2018, 60389.2, 99.0, NaN, 13.7, 9.1, 43.643702], [false, "Brunei Darussalam", 2019, 62098.0, 99.0, NaN, 13.2, 9.2, 40.169349], [false, "Brunei Darussalam", 2020, 62200.9, 99.0, NaN, 12.7, 9.3, 36.01507], [false, "Bulgaria", 2012, 18911.6, 99.0, 86.0, 7.5, 8.2, 20.280192], [false, "Bulgaria", 2013, 18911.1, 99.0, 86.0, 7.4, 7.6, 20.5056], [false, "Bulgaria", 2014, 19202.8, 99.0, 86.0, 7.3, 7.1, 21.015665], [false, "Bulgaria", 2015, 19988.2, 99.0, 86.0, 7.1, 6.7, 20.858752], [false, "Bulgaria", 2016, 20740.8, 99.0, 86.0, 7.0, 6.3, 18.902], [false, "Bulgaria", 2017, 21469.9, 99.0, 86.0, 6.9, 6.0, 18.988232], [false, "Bulgaria", 2018, 22206.1, 99.0, 86.0, 6.8, 5.9, 19.491052], [false, "Bulgaria", 2019, 23265.9, 99.0, 86.0, 6.6, 5.7, 19.583154], [false, "Bulgaria", 2020, 22379.1, 99.0, 86.0, 6.4, 5.7, 20.603526], [true, "Burkina Faso", 2012, 1834.5, 51.9, 18.4, 33.9, 1.7, 20.074186], [true, "Burkina Faso", 2013, 1883.8, 51.3, 18.9, 32.2, 1.7, 20.544436], [true, "Burkina Faso", 2014, 1907.9, 50.7, 19.4, 30.7, 1.8, 17.150206], [true, "Burkina Faso", 2015, 1925.3, 50.1, 19.8, 29.3, 1.8, 19.161507], [true, "Burkina Faso", 2016, 1981.4, 49.5, 20.2, 28.3, 2.0, 20.495474], [true, "Burkina Faso", 2017, 2044.4, 49.0, 20.6, 27.4, 2.1, 21.032808], [true, "Burkina Faso", 2018, 2117.8, 48.4, 21.0, 26.7, 2.3, 24.136581], [true, "Burkina Faso", 2019, 2175.5, 47.8, 21.3, 26.1, 2.4, 26.754552], [true, "Burkina Faso", 2020, 2155.8, 47.2, 21.7, 25.5, 2.6, 24.886799], [true, "Burundi", 2012, 862.7, 57.7, 45.9, 56.8, 2.3, 13.819418], [true, "Burundi", 2013, 877.3, 58.3, 45.9, 56.6, 2.4, 13.524587], [true, "Burundi", 2014, 886.2, 59.0, 45.9, 56.4, 2.4, 13.972976], [true, "Burundi", 2015, 825.2, 59.6, 45.9, 56.3, 2.5, 12.309393], [true, "Burundi", 2016, 794.6, 60.2, 45.9, 56.3, 2.6, 12.54231], [true, "Burundi", 2017, 773.6, 60.8, 45.8, 56.5, 2.7, 12.687871], [true, "Burundi", 2018, 761.5, 61.5, 45.8, 56.8, 2.8, 12.718133], [true, "Burundi", 2019, 751.4, 62.1, 45.7, 57.2, 3.0, 12.090783], [true, "Burundi", 2020, 731.1, 62.2, 45.7, 57.6, 3.1, 11.246362], [true, "Cabo Verde", 2012, 6353.7, 83.9, 64.5, 12.2, NaN, 34.662957], [true, "Cabo Verde", 2013, 6323.4, 84.3, 66.5, 11.7, NaN, 30.253384], [true, "Cabo Verde", 2014, 6281.8, 84.7, 68.4, 11.4, NaN, 34.550539], [true, "Cabo Verde", 2015, 6266.9, 85.4, 70.3, 11.0, NaN, 28.784428], [true, "Cabo Verde", 2016, 6482.7, 86.3, 72.3, 10.7, NaN, 32.908209], [true, "Cabo Verde", 2017, 6643.2, 87.1, 74.1, 10.5, NaN, 33.659372], [true, "Cabo Verde", 2018, 6864.2, 87.6, 75.8, 10.2, NaN, 37.622151], [true, "Cabo Verde", 2019, 7171.8, 88.2, 77.5, 9.9, NaN, 33.343991], [true, "Cabo Verde", 2020, 6045.1, 88.8, 79.1, 9.7, NaN, 46.841897], [false, "Cambodia", 2012, 3022.6, 66.3, 43.9, 34.4, 2.1, 18.993823], [false, "Cambodia", 2013, 3191.9, 67.1, 47.0, 33.0, 2.1, 20.369956], [false, "Cambodia", 2014, 3364.3, 67.8, 50.0, 32.0, 2.1, 20.746437], [false, "Cambodia", 2015, 3541.4, 68.4, 53.1, 31.3, 2.0, 21.434924], [false, "Cambodia", 2016, 3728.1, 69.1, 56.2, 30.7, 2.0, 22.080115], [false, "Cambodia", 2017, 3928.4, 69.7, 59.3, 30.4, 2.0, 21.891711], [false, "Cambodia", 2018, 4159.3, 70.3, 62.5, 30.2, 2.0, 23.564342], [false, "Cambodia", 2019, 4388.8, 70.8, 65.6, 30.0, 2.0, 25.154001], [false, "Cambodia", 2020, 4193.8, 71.2, 68.8, 29.9, 2.1, 25.259394], [true, "Cameroon", 2012, 3300.9, 62.8, 41.4, 32.5, 6.9, 22.221709], [true, "Cameroon", 2013, 3372.9, 63.2, 41.8, 32.0, 7.0, 22.252782], [true, "Cameroon", 2014, 3470.8, 63.6, 42.2, 31.4, 7.2, 23.747095], [true, "Cameroon", 2015, 3570.4, 64.0, 42.6, 30.8, 7.4, 23.047366], [true, "Cameroon", 2016, 3634.4, 64.3, 43.0, 30.2, 7.8, 23.07658], [true, "Cameroon", 2017, 3665.1, 64.7, 43.4, 29.5, 8.2, 23.175001], [true, "Cameroon", 2018, 3711.9, 65.0, 43.8, 28.9, 8.6, 23.871472], [true, "Cameroon", 2019, 3742.9, 65.4, 44.2, 28.1, 9.1, 24.874429], [true, "Cameroon", 2020, 3666.4, 65.7, 44.6, 27.2, 9.6, 23.438692], [false, "Canada", 2012, 46126.5, 99.0, 99.0, NaN, 11.2, 25.701948], [false, "Canada", 2013, 46704.8, 99.0, 99.0, NaN, 11.3, 25.480867], [false, "Canada", 2014, 47564.6, 99.0, 99.0, NaN, 11.5, 25.327339], [false, "Canada", 2015, 47522.1, 99.0, 99.0, NaN, 11.6, 23.850594], [false, "Canada", 2016, 47457.6, 99.0, 99.0, NaN, 11.7, 22.515216], [false, "Canada", 2017, 48317.2, 99.0, 99.0, NaN, 11.7, 22.582244], [false, "Canada", 2018, 48962.5, 99.0, 99.0, NaN, 11.8, 22.44752], [false, "Canada", 2019, 49171.5, 99.0, 99.0, NaN, 11.8, 22.09364], [false, "Canada", 2020, 46064.3, 99.0, 99.0, NaN, 11.8, 22.461826], [true, "Central African Republic", 2012, 1300.3, 45.5, 17.1, 41.4, 3.5, 11.455579], [true, "Central African Republic", 2013, 824.9, 44.4, 16.7, 41.6, 3.2, 6.176848], [true, "Central African Republic", 2014, 822.6, 43.4, 16.3, 41.7, 3.1, 20.494199], [true, "Central African Republic", 2015, 852.7, 42.3, 16.0, 41.7, 2.9, 20.572795], [true, "Central African Republic", 2016, 884.5, 41.3, 15.6, 41.6, 2.8, 21.032317], [true, "Central African Republic", 2017, 912.8, 40.2, 15.2, 41.4, 2.7, 24.270628], [true, "Central African Republic", 2018, 933.1, 39.2, 14.8, 41.0, 2.7, 24.436751], [true, "Central African Republic", 2019, 946.1, 38.2, 14.5, 40.5, 2.6, 21.850431], [true, "Central African Republic", 2020, 937.9, 37.2, 14.1, 40.1, 2.6, 28.146001], [true, "Chad", 2012, 1765.2, 43.4, 10.6, 38.7, 2.4, 21.111756], [true, "Chad", 2013, 1804.3, 43.7, 10.7, 38.4, 2.4, 20.212959], [true, "Chad", 2014, 1866.3, 44.1, 10.9, 37.9, 2.5, 17.149816], [true, "Chad", 2015, 1857.1, 44.4, 11.0, 37.4, 2.6, 16.913964], [true, "Chad", 2016, 1687.1, 44.7, 11.2, 36.9, 2.7, 12.034936], [true, "Chad", 2017, 1587.0, 45.1, 11.4, 36.4, 2.8, 11.11012], [true, "Chad", 2018, 1576.3, 45.5, 11.6, 36.0, 3.0, 11.463159], [true, "Chad", 2019, 1579.6, 45.8, 11.8, 35.5, 3.2, 11.785959], [true, "Chad", 2020, 1509.0, 46.2, 12.1, 35.0, 3.4, 11.149891], [false, "Chile", 2012, 23389.0, 98.8, 98.0, 1.9, 10.4, 26.270486], [false, "Chile", 2013, 23927.4, 99.0, 98.5, 1.9, 10.3, 26.08569], [false, "Chile", 2014, 24099.3, 99.0, 98.9, 1.8, 10.1, 24.393838], [false, "Chile", 2015, 24329.6, 99.0, 99.0, 1.8, 10.1, 23.775296], [false, "Chile", 2016, 24430.2, 99.0, 99.0, 1.7, 10.0, 23.062766], [false, "Chile", 2017, 24411.5, 99.0, 99.0, 1.7, 10.0, 22.086911], [false, "Chile", 2018, 25034.9, 99.0, 99.0, 1.6, 9.9, 22.391728], [false, "Chile", 2019, 24931.1, 99.0, 99.0, 1.6, 9.9, 23.159943], [false, "Chile", 2020, 23239.4, 99.0, 99.0, 1.6, 9.8, 21.755936], [false, "China", 2012, 10642.4, NaN, NaN, NaN, NaN, 41.171734], [false, "China", 2013, 11383.0, NaN, NaN, NaN, NaN, 41.766123], [false, "China", 2014, 12132.5, NaN, NaN, NaN, NaN, 41.585289], [false, "China", 2015, 12879.9, NaN, NaN, NaN, NaN, 41.492275], [false, "China", 2016, 13666.8, NaN, NaN, NaN, NaN, 41.702354], [false, "China", 2017, 14520.8, NaN, NaN, NaN, NaN, 41.408418], [false, "China", 2018, 15416.7, NaN, NaN, NaN, NaN, 41.6386], [false, "China", 2019, 16247.7, NaN, NaN, NaN, NaN, 41.345228], [false, "China", 2020, 16517.0, NaN, NaN, NaN, NaN, 42.330145], [false, "China, Hong Kong SAR", 2012, 53784.0, 99.0, 96.6, NaN, NaN, 24.497956], [false, "China, Hong Kong SAR", 2013, 55229.6, 99.0, 96.6, NaN, NaN, 24.370197], [false, "China, Hong Kong SAR", 2014, 56358.1, 99.0, 96.6, NaN, NaN, 23.688138], [false, "China, Hong Kong SAR", 2015, 57214.7, 99.0, 96.6, NaN, NaN, 22.399595], [false, "China, Hong Kong SAR", 2016, 58098.4, 99.0, 96.6, NaN, NaN, 21.899069], [false, "China, Hong Kong SAR", 2017, 59842.2, 99.0, 96.5, NaN, NaN, 21.758558], [false, "China, Hong Kong SAR", 2018, 61055.3, 99.0, 96.5, NaN, NaN, 21.513743], [false, "China, Hong Kong SAR", 2019, 59588.5, 99.0, 96.5, NaN, NaN, 19.103805], [false, "China, Hong Kong SAR", 2020, 55917.6, 99.0, 96.5, NaN, NaN, 18.003216], [false, "China, Macao SAR", 2012, 149702.0, 99.0, 99.0, NaN, NaN, 13.35538], [false, "China, Macao SAR", 2013, 161972.0, 99.0, 99.0, NaN, NaN, 13.182611], [false, "China, Macao SAR", 2014, 155202.0, 99.0, 99.0, NaN, NaN, 18.461016], [false, "China, Macao SAR", 2015, 119407.0, 99.0, 99.0, NaN, NaN, 24.794473], [false, "China, Macao SAR", 2016, 116520.0, 99.0, 99.0, NaN, NaN, 22.060105], [false, "China, Macao SAR", 2017, 126144.0, 99.0, 99.0, NaN, NaN, 19.432925], [false, "China, Macao SAR", 2018, 132374.0, 99.0, 99.0, NaN, NaN, 16.462691], [false, "China, Macao SAR", 2019, 127273.0, 99.0, 99.0, NaN, NaN, 13.8939], [false, "China, Macao SAR", 2020, 57729.0, 99.0, 99.0, NaN, NaN, 27.007377], [false, "China, mainland", 2012, NaN, NaN, NaN, 7.4, 7.2, 41.869341], [false, "China, mainland", 2013, NaN, NaN, NaN, 6.9, 7.3, 42.471988], [false, "China, mainland", 2014, NaN, NaN, NaN, 6.4, 7.4, 42.237049], [false, "China, mainland", 2015, NaN, NaN, NaN, 6.1, 7.5, 42.094307], [false, "China, mainland", 2016, NaN, NaN, NaN, 5.9, 7.5, 42.306364], [false, "China, mainland", 2017, NaN, NaN, NaN, 5.5, 7.7, 42.004014], [false, "China, mainland", 2018, NaN, NaN, NaN, 5.2, 7.9, 42.239627], [false, "China, mainland", 2019, NaN, NaN, NaN, 4.9, 8.1, 41.961591], [false, "China, mainland", 2020, NaN, NaN, NaN, 4.7, 8.3, 42.873449], [false, "China, Taiwan Province of", 2012, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2013, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2014, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2015, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2016, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2017, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2018, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2019, NaN, NaN, NaN, NaN, NaN, NaN], [false, "China, Taiwan Province of", 2020, NaN, NaN, NaN, NaN, NaN, NaN], [false, "Colombia", 2012, 12852.6, 95.5, 86.2, 12.9, 5.2, 21.71194], [false, "Colombia", 2013, 13390.5, 95.8, 87.2, 12.8, 5.3, 22.402763], [false, "Colombia", 2014, 13852.2, 96.0, 88.1, 12.6, 5.3, 23.411793], [false, "Colombia", 2015, 14095.7, 96.3, 89.0, 12.4, 5.4, 23.378137], [false, "Colombia", 2016, 14194.5, 96.6, 90.0, 12.2, 5.5, 22.238399], [false, "Colombia", 2017, 14171.3, 96.9, 90.9, 12.0, 5.6, 22.346323], [false, "Colombia", 2018, 14314.9, 97.1, 91.8, 11.8, 5.6, 22.013494], [false, "Colombia", 2019, 14572.0, 97.3, 92.8, 11.6, 5.7, 21.97184], [false, "Colombia", 2020, 13400.3, 97.5, 93.7, 11.5, 5.8, 18.604695], [true, "Comoros", 2012, 2946.1, 81.8, 34.7, 32.3, 10.9, 17.109555], [true, "Comoros", 2013, 3004.4, 81.0, 34.8, 31.0, 10.6, 14.43705], [true, "Comoros", 2014, 2995.5, 80.2, 34.9, 29.8, 10.4, 13.828088], [true, "Comoros", 2015, 2959.5, 80.1, 35.8, 28.7, 10.1, 13.496332], [true, "Comoros", 2016, 2988.0, 80.1, 35.8, 27.4, 10.0, 11.630197], [true, "Comoros", 2017, 3032.3, 80.2, 35.9, 26.2, 9.9, 11.149029], [true, "Comoros", 2018, 3073.1, 80.2, 35.9, 24.9, 9.8, 13.293067], [true, "Comoros", 2019, 3059.0, 80.2, 35.9, 23.7, 9.7, 11.527035], [true, "Comoros", 2020, 2984.4, NaN, NaN, 22.6, 9.6, 11.007062], [true, "Congo", 2012, 5504.2, 68.0, 17.2, 23.4, 5.1, 52.880879], [true, "Congo", 2013, 5331.9, 69.1, 17.8, 22.7, 5.0, 59.044295], [true, "Congo", 2014, 5552.8, 70.1, 18.3, 22.0, 4.9, 64.950506], [true, "Congo", 2015, 5224.3, 71.1, 18.9, 21.5, 4.9, 80.461273], [true, "Congo", 2016, 4544.1, 72.2, 19.5, 21.0, 4.8, 78.156746], [true, "Congo", 2017, 4234.7, 73.2, 20.2, 20.3, 4.9, 41.352942], [true, "Congo", 2018, 3928.4, 73.4, 20.3, 19.6, 4.9, 33.074705], [true, "Congo", 2019, 3825.7, 73.6, 20.4, 18.8, 5.0, 34.978314], [true, "Congo", 2020, 3497.6, 73.8, 20.5, 18.0, 5.1, 29.914294], [false, "Cook Islands", 2012, NaN, 99.0, 96.8, NaN, NaN, 10.733569], [false, "Cook Islands", 2013, NaN, 99.0, 97.2, NaN, NaN, 11.001393], [false, "Cook Islands", 2014, NaN, 99.0, 97.6, NaN, NaN, 11.178946], [false, "Cook Islands", 2015, NaN, 99.0, 98.0, NaN, NaN, 10.971303], [false, "Cook Islands", 2016, NaN, 99.0, 98.3, NaN, NaN, 11.050548], [false, "Cook Islands", 2017, NaN, 99.0, 98.7, NaN, NaN, 10.313454], [false, "Cook Islands", 2018, NaN, 99.0, 99.0, NaN, NaN, 10.184223], [false, "Cook Islands", 2019, NaN, 99.0, 99.0, NaN, NaN, 9.326032], [false, "Cook Islands", 2020, NaN, 99.0, 99.0, NaN, NaN, 9.909651], [false, "Costa Rica", 2012, 17994.5, 98.6, 96.4, 7.0, 8.3, 18.521811], [false, "Costa Rica", 2013, 18233.0, 98.9, 96.6, 7.1, 8.2, 18.945244], [false, "Costa Rica", 2014, 18669.1, 99.0, 96.8, 7.3, 8.2, 19.009363], [false, "Costa Rica", 2015, 19141.7, 99.0, 97.0, 7.5, 8.2, 18.988926], [false, "Costa Rica", 2016, 19736.7, 99.0, 97.2, 7.7, 8.1, 19.315942], [false, "Costa Rica", 2017, 20347.0, 99.0, 97.4, 7.9, 8.1, 18.559459], [false, "Costa Rica", 2018, 20672.6, 99.0, 97.6, 8.2, 8.1, 18.331831], [false, "Costa Rica", 2019, 20970.5, 99.0, 97.8, 8.4, 8.1, 16.980755], [false, "Costa Rica", 2020, 19937.2, 99.0, 97.9, 8.6, 8.1, 17.065465], [false, "Croatia", 2012, 24078.3, NaN, 96.4, NaN, NaN, 18.374689], [false, "Croatia", 2013, 24057.8, NaN, 96.4, NaN, NaN, 18.618982], [false, "Croatia", 2014, 24072.4, NaN, 96.5, NaN, NaN, 18.254543], [false, "Croatia", 2015, 24884.7, NaN, 96.5, NaN, NaN, 19.300715], [false, "Croatia", 2016, 25944.3, NaN, 96.5, NaN, NaN, 19.565386], [false, "Croatia", 2017, 27154.1, NaN, 96.5, NaN, NaN, 19.203074], [false, "Croatia", 2018, 28192.3, NaN, 96.5, NaN, NaN, 19.371955], [false, "Croatia", 2019, 29336.1, NaN, 96.6, NaN, NaN, 20.558706], [false, "Croatia", 2020, 27077.0, NaN, 96.6, NaN, NaN, 21.008334], [false, "Cuba", 2012, NaN, 95.2, 89.6, 7.1, 9.2, 7.837006], [false, "Cuba", 2013, NaN, 95.4, 89.9, 7.1, 9.3, 8.106004], [false, "Cuba", 2014, NaN, 95.6, 90.1, 7.1, 9.4, 7.80658], [false, "Cuba", 2015, NaN, 95.9, 90.3, 7.1, 9.5, 8.643109], [false, "Cuba", 2016, NaN, 96.1, 90.5, 7.1, 9.6, 9.158514], [false, "Cuba", 2017, NaN, 96.3, 90.7, 7.1, 9.7, 9.29636], [false, "Cuba", 2018, NaN, 96.5, 90.9, 7.1, 9.8, 9.6614], [false, "Cuba", 2019, NaN, 96.8, 91.1, 7.0, 9.9, 9.638091], [false, "Cuba", 2020, NaN, 97.0, 91.4, 7.0, 10.0, 10.404825], [false, "Cyprus", 2012, 35642.6, 99.0, 99.0, NaN, NaN, 16.512506], [false, "Cyprus", 2013, 33384.5, 99.0, 99.0, NaN, NaN, 14.920723], [false, "Cyprus", 2014, 33136.5, 99.0, 99.0, NaN, NaN, 14.074456], [false, "Cyprus", 2015, 34453.1, 99.0, 99.0, NaN, NaN, 13.375084], [false, "Cyprus", 2016, 36509.1, 99.0, 99.0, NaN, NaN, 18.779579], [false, "Cyprus", 2017, 38288.0, 99.0, 99.0, NaN, NaN, 21.503045], [false, "Cyprus", 2018, 39977.0, 99.0, 99.0, NaN, NaN, 19.355151], [false, "Cyprus", 2019, 41521.9, 99.0, 99.0, NaN, NaN, 18.912048], [false, "Cyprus", 2020, 39007.7, 99.0, 99.0, NaN, NaN, 19.9508], [false, "Czechia", 2012, 33688.1, 99.0, 99.0, 2.4, 5.9, 25.904506], [false, "Czechia", 2013, 33661.5, 99.0, 99.0, 2.4, 6.0, 25.355147], [false, "Czechia", 2014, 34386.7, 99.0, 99.0, 2.4, 6.1, 25.601079], [false, "Czechia", 2015, 36168.4, 99.0, 99.0, 2.5, 6.2, 26.657519], [false, "Czechia", 2016, 37015.0, 99.0, 99.0, 2.5, 6.2, 25.210816], [false, "Czechia", 2017, 38824.9, 99.0, 99.0, 2.5, 6.3, 25.140601], [false, "Czechia", 2018, 39933.0, 99.0, 99.0, 2.5, 6.4, 26.804366], [false, "Czechia", 2019, 40981.1, 99.0, 99.0, 2.5, 6.5, 27.562902], [false, "Czechia", 2020, 38511.3, 99.0, 99.0, 2.5, 6.6, 27.142724], [false, "C\u00f4te d'Ivoire", 2012, 3666.6, 71.2, 28.4, 29.3, 2.5, 13.605659], [false, "C\u00f4te d'Ivoire", 2013, 3961.8, 71.1, 29.1, 28.0, 2.4, 19.265234], [false, "C\u00f4te d'Ivoire", 2014, 4226.0, 71.1, 29.9, 26.7, 2.4, 21.7396], [false, "C\u00f4te d'Ivoire", 2015, 4417.2, 71.1, 30.7, 25.3, 2.4, 23.658763], [false, "C\u00f4te d'Ivoire", 2016, 4615.7, 71.0, 31.4, 23.5, 2.4, 22.779098], [false, "C\u00f4te d'Ivoire", 2017, 4830.8, 71.0, 32.2, 22.0, 2.5, 22.457661], [false, "C\u00f4te d'Ivoire", 2018, 5033.5, 71.0, 33.1, 20.6, 2.6, 23.329639], [false, "C\u00f4te d'Ivoire", 2019, 5212.6, 70.9, 33.9, 19.1, 2.7, 24.571713], [false, "C\u00f4te d'Ivoire", 2020, 5181.3, 70.9, 34.6, 17.8, 2.8, 27.282111], [false, "Democratic People's Republic of Korea", 2012, NaN, 96.3, 79.5, 26.1, 1.3, NaN], [false, "Democratic People's Republic of Korea", 2013, NaN, 95.9, 80.2, 24.9, 1.4, NaN], [false, "Democratic People's Republic of Korea", 2014, NaN, 95.6, 80.9, 23.7, 1.4, NaN], [false, "Democratic People's Republic of Korea", 2015, NaN, 95.2, 81.7, 22.6, 1.5, NaN], [false, "Democratic People's Republic of Korea", 2016, NaN, 94.9, 82.4, 21.7, 1.5, NaN], [false, "Democratic People's Republic of Korea", 2017, NaN, 94.5, 83.2, 20.7, 1.6, NaN], [false, "Democratic People's Republic of Korea", 2018, NaN, 94.2, 83.9, 19.8, 1.7, NaN], [false, "Democratic People's Republic of Korea", 2019, NaN, 93.8, 84.6, 18.9, 1.8, NaN], [false, "Democratic People's Republic of Korea", 2020, NaN, 93.8, 84.7, 18.2, 1.9, NaN], [true, "Democratic Republic of the Congo", 2012, 926.8, 40.8, 18.7, 42.8, 4.6, 25.982952], [true, "Democratic Republic of the Congo", 2013, 972.5, 41.5, 18.3, 42.4, 4.5, 23.768131], [true, "Democratic Republic of the Congo", 2014, 1029.8, 42.1, 17.8, 42.0, 4.3, 22.875425], [true, "Democratic Republic of the Congo", 2015, 1065.2, 42.7, 17.4, 41.7, 4.3, 19.379856], [true, "Democratic Republic of the Congo", 2016, 1055.6, 43.4, 17.0, 41.7, 4.2, 19.159515], [true, "Democratic Republic of the Congo", 2017, 1059.8, 44.0, 16.6, 41.6, 4.2, 24.224404], [true, "Democratic Republic of the Congo", 2018, 1085.9, 44.6, 16.2, 41.5, 4.2, 24.870696], [true, "Democratic Republic of the Congo", 2019, 1097.9, 45.3, 15.8, 41.2, 4.2, 20.742026], [true, "Democratic Republic of the Congo", 2020, 1082.4, 46.0, 15.4, 40.8, 4.2, 23.552043], [false, "Denmark", 2012, 51216.3, 99.0, 99.0, NaN, NaN, 18.820619], [false, "Denmark", 2013, 51479.3, 99.0, 99.0, NaN, NaN, 19.164884], [false, "Denmark", 2014, 52048.3, 99.0, 99.0, NaN, NaN, 19.427381], [false, "Denmark", 2015, 52892.6, 99.0, 99.0, NaN, NaN, 20.001284], [false, "Denmark", 2016, 54185.0, 99.0, 99.0, NaN, NaN, 20.883393], [false, "Denmark", 2017, 55356.7, 99.0, 99.0, NaN, NaN, 21.133478], [false, "Denmark", 2018, 56178.8, 99.0, 99.0, NaN, NaN, 21.579909], [false, "Denmark", 2019, 57161.7, 99.0, 99.0, NaN, NaN, 21.153451], [false, "Denmark", 2020, 55819.9, 99.0, 99.0, NaN, NaN, 22.676989], [true, "Djibouti", 2012, NaN, 75.7, 57.5, 31.7, 7.2, 16.479052], [true, "Djibouti", 2013, 4031.2, 75.7, 58.8, 32.2, 7.1, 24.702097], [true, "Djibouti", 2014, 4241.9, 75.7, 60.1, 32.7, 7.0, 27.209023], [true, "Djibouti", 2015, 4484.8, 75.8, 61.4, 33.1, 6.9, 29.675157], [true, "Djibouti", 2016, 4726.1, 75.8, 62.7, 33.5, 7.0, 28.186363], [true, "Djibouti", 2017, 4905.0, 75.9, 64.0, 33.7, 7.0, 26.640195], [true, "Djibouti", 2018, 5059.7, 75.9, 65.3, 33.9, 7.1, 26.005414], [true, "Djibouti", 2019, 5260.0, 76.0, 66.6, 34.0, 7.2, 24.944016], [true, "Djibouti", 2020, 5245.4, 76.0, 66.7, 34.0, 7.2, 25.279109], [false, "Qatar", 2012, 96261.5, 99.0, 99.0, 6.0, 13.1, 35.90998], [false, "Qatar", 2013, 95499.9, 99.0, 99.0, 5.9, 13.2, 36.183533], [false, "Qatar", 2014, 95578.3, 99.0, 99.0, 5.8, 13.4, 38.225136], [false, "Qatar", 2015, 95965.3, 99.0, 99.0, 5.6, 13.5, 37.067176], [false, "Qatar", 2016, 95601.8, 99.0, 99.0, 5.4, 13.6, 44.042445], [false, "Qatar", 2017, 91738.8, 99.0, 99.0, 5.1, 13.7, 45.308807], [false, "Qatar", 2018, 90970.1, 99.0, 99.0, 4.9, 13.8, 46.450172], [false, "Qatar", 2019, 90043.8, 99.0, 99.0, 4.7, 13.9, 46.999551], [false, "Qatar", 2020, 85290.5, 99.0, 99.0, 4.6, 13.9, 41.523474], [false, "Republic of Korea", 2012, 36049.2, 99.0, 99.0, 2.2, 7.7, 28.433069], [false, "Republic of Korea", 2013, 37021.1, 99.0, 99.0, 2.2, 7.9, 28.33641], [false, "Republic of Korea", 2014, 37967.5, 99.0, 99.0, 2.2, 8.0, 28.309881], [false, "Republic of Korea", 2015, 38828.7, 99.0, 99.0, 2.2, 8.2, 29.010602], [false, "Republic of Korea", 2016, 39814.7, 99.0, 99.0, 2.2, 8.3, 30.033424], [false, "Republic of Korea", 2017, 40957.4, 99.0, 99.0, 2.2, 8.5, 31.961229], [false, "Republic of Korea", 2018, 41965.9, 99.0, 99.0, 2.2, 8.6, 30.374473], [false, "Republic of Korea", 2019, 42758.6, 99.0, 99.0, 2.2, 8.7, 29.0745], [false, "Republic of Korea", 2020, 42335.9, 99.0, 99.0, 2.2, 8.8, 30.090674], [false, "Republic of Moldova", 2012, 9000.7, 87.4, 75.5, 7.1, 6.2, 23.812748], [false, "Republic of Moldova", 2013, 9817.3, 87.8, 75.5, 6.7, 5.8, 23.042104], [false, "Republic of Moldova", 2014, 10314.4, 88.2, 75.5, 6.5, 5.4, 25.435368], [false, "Republic of Moldova", 2015, 10360.8, 88.6, 76.0, 6.2, 5.1, 24.292746], [false, "Republic of Moldova", 2016, 10942.6, 89.0, 76.5, 5.9, 4.8, 23.052606], [false, "Republic of Moldova", 2017, 11651.3, 89.4, 77.1, 5.6, 4.6, 23.773375], [false, "Republic of Moldova", 2018, 12363.1, 89.8, 77.6, 5.4, 4.5, 26.090953], [false, "Republic of Moldova", 2019, 13026.5, 90.2, 78.2, 5.1, 4.4, 28.149365], [false, "Republic of Moldova", 2020, 12269.9, 90.6, 78.7, 4.9, 4.3, 29.519924], [false, "Romania", 2012, 21311.1, 99.0, 80.7, 10.6, 9.5, 26.276607], [false, "Romania", 2013, 22197.0, 99.0, 81.4, 10.4, 9.0, 23.827581], [false, "Romania", 2014, 23084.4, 99.0, 82.2, 10.3, 8.4, 23.873324], [false, "Romania", 2015, 23878.2, 99.0, 83.0, 10.2, 7.9, 24.800869], [false, "Romania", 2016, 25145.0, 99.0, 83.8, 10.1, 7.5, 23.672192], [false, "Romania", 2017, 27141.9, 99.0, 84.6, 10.1, 7.2, 22.824633], [false, "Romania", 2018, 28523.5, 99.0, 85.4, 10.0, 7.0, 21.598805], [false, "Romania", 2019, 29875.1, 99.0, 86.2, 9.9, 6.8, 23.407103], [false, "Romania", 2020, 28925.8, 99.0, 87.1, 9.7, 6.7, 26.023655], [false, "Russian Federation", 2012, 25933.3, 96.3, 87.3, NaN, NaN, 23.234003], [false, "Russian Federation", 2013, 26332.4, 96.3, 87.6, NaN, NaN, 23.270602], [false, "Russian Federation", 2014, 26057.2, 96.4, 87.8, NaN, NaN, 22.606898], [false, "Russian Federation", 2015, 25488.1, 96.5, 88.1, NaN, NaN, 20.611548], [false, "Russian Federation", 2016, 25490.7, 96.6, 88.3, NaN, NaN, 20.83056], [false, "Russian Federation", 2017, 25926.4, 96.7, 88.6, NaN, NaN, 21.409694], [false, "Russian Federation", 2018, 26656.4, 96.8, 88.9, NaN, NaN, 20.953188], [false, "Russian Federation", 2019, 27254.6, 96.9, 89.1, NaN, NaN, 20.850393], [false, "Russian Federation", 2020, 26578.5, 97.0, 89.4, NaN, NaN, 20.552427], [true, "Rwanda", 2012, 1682.2, 54.8, 60.7, 40.5, 5.7, 21.724533], [true, "Rwanda", 2013, 1718.9, 55.5, 61.9, 39.0, 5.5, 22.251705], [true, "Rwanda", 2014, 1780.1, 56.3, 63.1, 37.8, 5.4, 21.966314], [true, "Rwanda", 2015, 1889.2, 57.1, 64.2, 36.7, 5.3, 23.979177], [true, "Rwanda", 2016, 1950.5, 57.9, 65.4, 35.9, 5.2, 24.667725], [true, "Rwanda", 2017, 1975.2, 58.7, 66.6, 35.1, 5.2, 21.300221], [true, "Rwanda", 2018, 2088.7, 59.6, 67.7, 34.3, 5.2, 20.784586], [true, "Rwanda", 2019, 2227.5, 60.4, 68.9, 33.4, 5.2, 25.066287], [true, "Rwanda", 2020, 2098.6, 60.4, 68.8, 32.6, 5.2, 24.759491], [false, "Saint Kitts and Nevis", 2012, 23428.5, 98.6, 94.3, NaN, NaN, 26.454834], [false, "Saint Kitts and Nevis", 2013, 24545.3, 98.6, 95.0, NaN, NaN, 28.03387], [false, "Saint Kitts and Nevis", 2014, 26174.6, 98.6, 95.0, NaN, NaN, 29.427118], [false, "Saint Kitts and Nevis", 2015, 26141.8, 98.6, 95.0, NaN, NaN, 30.744668], [false, "Saint Kitts and Nevis", 2016, 26938.8, 98.6, 95.0, NaN, NaN, 31.646025], [false, "Saint Kitts and Nevis", 2017, 26980.3, 98.6, 95.0, NaN, NaN, 34.030363], [false, "Saint Kitts and Nevis", 2018, 27488.3, NaN, NaN, NaN, NaN, 35.711603], [false, "Saint Kitts and Nevis", 2019, 28592.9, NaN, NaN, NaN, NaN, 37.539048], [false, "Saint Kitts and Nevis", 2020, 24308.0, NaN, NaN, NaN, NaN, 44.75683], [false, "Saint Lucia", 2012, 14667.2, 94.2, 83.2, 2.7, 6.5, 24.436769], [false, "Saint Lucia", 2013, 14133.5, 94.7, 83.0, 2.7, 6.5, 23.222631], [false, "Saint Lucia", 2014, 14317.4, 95.1, 82.7, 2.7, 6.6, 19.633908], [false, "Saint Lucia", 2015, 14057.6, 95.6, 82.9, 2.6, 6.6, 20.362926], [false, "Saint Lucia", 2016, 14497.6, 96.0, 83.1, 2.6, 6.7, 22.056831], [false, "Saint Lucia", 2017, 14928.4, 96.4, 83.3, 2.7, 6.7, 23.243306], [false, "Saint Lucia", 2018, 15286.3, 96.9, 83.4, 2.7, 6.8, 22.909702], [false, "Saint Lucia", 2019, 15200.9, 96.9, 83.4, 2.7, 6.8, 22.934151], [false, "Saint Lucia", 2020, 12048.9, 96.9, 83.4, 2.8, 6.9, 25.788135], [false, "Saint Vincent and the Grenadines", 2012, 11764.9, 94.9, 84.8, NaN, NaN, 24.394436], [false, "Saint Vincent and the Grenadines", 2013, 12033.6, 95.0, 86.0, NaN, NaN, 25.252234], [false, "Saint Vincent and the Grenadines", 2014, 12144.2, 95.1, 87.2, NaN, NaN, 25.57651], [false, "Saint Vincent and the Grenadines", 2015, 12451.9, 95.1, 87.2, NaN, NaN, 25.328238], [false, "Saint Vincent and the Grenadines", 2016, 12929.3, 95.1, 87.2, NaN, NaN, 28.020387], [false, "Saint Vincent and the Grenadines", 2017, 13102.1, 95.1, 87.2, NaN, NaN, 25.626217], [false, "Saint Vincent and the Grenadines", 2018, 13455.0, 95.1, 87.2, NaN, NaN, 26.446968], [false, "Saint Vincent and the Grenadines", 2019, 13462.6, NaN, NaN, NaN, NaN, 23.307742], [false, "Saint Vincent and the Grenadines", 2020, 12706.7, NaN, NaN, NaN, NaN, 29.023622], [false, "Samoa", 2012, 5902.4, 90.7, 95.8, 5.7, 6.7, 9.051326], [false, "Samoa", 2013, 5827.8, 90.9, 95.9, 5.6, 6.7, 9.002108], [false, "Samoa", 2014, 5785.1, 91.1, 96.1, 5.7, 6.8, 9.00243], [false, "Samoa", 2015, 5993.5, 91.3, 96.3, 5.8, 6.8, 9.018622], [false, "Samoa", 2016, 6446.2, 91.5, 96.4, 5.9, 6.8, 9.00772], [false, "Samoa", 2017, 6486.1, 91.7, 96.6, 6.1, 6.9, 9.009591], [false, "Samoa", 2018, 6381.0, 91.8, 96.8, 6.4, 7.0, 9.011978], [false, "Samoa", 2019, 6627.8, 91.8, 96.8, 6.6, 7.0, 9.009763], [false, "Samoa", 2020, 6413.3, 91.8, 96.8, 6.8, 7.1, 9.010444], [true, "Sao Tome and Principe", 2012, 3461.3, 75.6, 36.3, 18.3, 2.7, 34.961545], [true, "Sao Tome and Principe", 2013, 3558.4, 76.1, 37.8, 17.4, 2.7, 35.023353], [true, "Sao Tome and Principe", 2014, 3720.8, 76.6, 39.2, 16.4, 2.8, 35.138421], [true, "Sao Tome and Principe", 2015, 3794.4, 77.1, 40.6, 15.6, 2.9, 35.134582], [true, "Sao Tome and Principe", 2016, 3878.8, 77.6, 42.0, 14.7, 3.1, 30.323103], [true, "Sao Tome and Principe", 2017, 3952.9, 78.1, 43.4, 13.8, 3.3, 30.337999], [true, "Sao Tome and Principe", 2018, 3993.3, 78.2, 44.8, 13.1, 3.5, 30.029959], [true, "Sao Tome and Principe", 2019, 4005.3, 78.2, 46.2, 12.4, 3.8, 25.712305], [true, "Sao Tome and Principe", 2020, 4051.6, 78.2, 47.6, 11.8, 4.0, 22.35491], [false, "Saudi Arabia", 2012, 48024.4, 99.0, 99.0, 5.5, 6.2, 28.103985], [false, "Saudi Arabia", 2013, 47848.4, 99.0, 99.0, 5.2, 6.4, 28.901038], [false, "Saudi Arabia", 2014, 48209.1, 99.0, 99.0, 4.9, 6.7, 29.96975], [false, "Saudi Arabia", 2015, 48921.2, 99.0, 99.0, 4.7, 6.9, 29.852409], [false, "Saudi Arabia", 2016, 48625.8, 99.0, 99.0, 4.5, 7.1, 25.239116], [false, "Saudi Arabia", 2017, 47306.2, 99.0, 99.0, 4.4, 7.3, 25.606221], [false, "Saudi Arabia", 2018, 47630.0, 99.0, 99.0, 4.2, 7.4, 24.464442], [false, "Saudi Arabia", 2019, 46999.9, 99.0, 99.0, 4.1, 7.5, 25.365166], [false, "Saudi Arabia", 2020, 44349.5, 99.0, 99.0, 3.9, 7.6, 22.88148], [true, "Senegal", 2012, 2788.7, 74.8, 49.2, 19.8, 1.5, 19.533242], [true, "Senegal", 2013, 2777.1, 76.1, 50.1, 19.8, 1.4, 22.501985], [true, "Senegal", 2014, 2868.3, 77.3, 51.1, 19.7, 1.5, 23.336269], [true, "Senegal", 2015, 2966.5, 78.6, 52.1, 19.5, 1.5, 23.221902], [true, "Senegal", 2016, 3068.1, 79.9, 53.0, 19.2, 1.6, 25.137029], [true, "Senegal", 2017, 3203.9, 81.1, 54.0, 18.7, 1.7, 27.004475], [true, "Senegal", 2018, 3309.5, 82.4, 54.9, 18.3, 1.8, 28.900238], [true, "Senegal", 2019, 3368.3, 83.7, 55.8, 17.8, 1.9, 30.002009], [true, "Senegal", 2020, 3321.7, 84.9, 56.8, 17.2, 2.1, 30.122725], [false, "Serbia", 2012, 14894.2, 92.2, 96.9, 6.2, 15.5, 17.603478], [false, "Serbia", 2013, 15399.8, 92.6, 97.1, 6.1, 14.6, 15.063264], [false, "Serbia", 2014, 15226.3, 93.0, 97.3, 6.0, 13.8, 14.779413], [false, "Serbia", 2015, 15578.2, 93.4, 97.4, 6.0, 13.0, 16.970685], [false, "Serbia", 2016, 16182.8, 93.8, 97.6, 5.9, 12.3, 15.676684], [false, "Serbia", 2017, 16611.0, 94.1, 97.8, 5.8, 11.7, 16.373891], [false, "Serbia", 2018, 17452.8, 94.5, 97.9, 5.7, 11.3, 18.41454], [false, "Serbia", 2019, 18306.8, 94.9, 97.9, 5.5, 11.0, 20.69066], [false, "Serbia", 2020, 18255.1, 95.3, 97.9, 5.3, 10.8, 20.488318], [true, "Seychelles", 2012, 23681.3, 96.1, 99.0, 8.0, 9.6, 36.842908], [true, "Seychelles", 2013, 24647.1, 96.2, 99.0, 8.0, 9.4, 36.836618], [true, "Seychelles", 2014, 25359.8, 96.2, 99.0, 8.0, 9.3, 36.834874], [true, "Seychelles", 2015, 26198.7, 96.3, 99.0, 7.9, 9.3, 36.856891], [true, "Seychelles", 2016, 27234.4, 96.3, 99.0, 7.8, 9.3, 35.833077], [true, "Seychelles", 2017, 28116.7, 96.3, 99.0, 7.8, 9.4, 35.627622], [true, "Seychelles", 2018, 28740.5, 96.3, 99.0, 7.6, 9.5, 36.442884], [true, "Seychelles", 2019, 29366.0, 96.9, 99.0, 7.5, 9.7, 37.670598], [true, "Seychelles", 2020, 26867.6, NaN, 99.0, 7.4, 9.8, 28.514623], [true, "Sierra Leone", 2012, 1645.8, 54.2, 13.9, 35.4, 3.4, 22.91484], [true, "Sierra Leone", 2013, 1942.9, 55.5, 14.3, 34.3, 3.4, 15.991078], [true, "Sierra Leone", 2014, 1987.1, 56.7, 14.6, 33.4, 3.5, 14.482807], [true, "Sierra Leone", 2015, 1543.7, 57.8, 14.9, 32.6, 3.6, 15.444917], [true, "Sierra Leone", 2016, 1602.1, 59.0, 15.2, 31.7, 3.7, 15.746638], [true, "Sierra Leone", 2017, 1633.7, 60.2, 15.5, 30.6, 3.9, 15.830077], [true, "Sierra Leone", 2018, 1654.6, 61.4, 15.9, 28.8, 4.2, 10.140833], [true, "Sierra Leone", 2019, 1705.2, 62.6, 16.2, 27.7, 4.4, 9.947521], [true, "Sierra Leone", 2020, 1637.3, 63.8, 16.5, 26.8, 4.7, 10.739857], [false, "Singapore", 2012, 82805.6, 99.0, 99.0, 3.2, 4.0, 27.081017], [false, "Singapore", 2013, 85400.7, 99.0, 99.0, 3.1, 4.1, 27.422407], [false, "Singapore", 2014, 87616.6, 99.0, 99.0, 3.1, 4.2, 27.496871], [false, "Singapore", 2015, 89160.7, 99.0, 99.0, 3.0, 4.3, 27.222271], [false, "Singapore", 2016, 91146.1, 99.0, 99.0, 3.0, 4.4, 26.47852], [false, "Singapore", 2017, 95310.3, 99.0, 99.0, 2.9, 4.5, 26.70159], [false, "Singapore", 2018, 98337.0, 99.0, 99.0, 2.9, 4.6, 24.680983], [false, "Singapore", 2019, 98283.3, 99.0, 99.0, 2.9, 4.7, 24.639547], [false, "Singapore", 2020, 94505.6, 99.0, 99.0, 2.8, 4.8, 22.477994], [false, "Slovakia", 2012, 26478.6, 99.0, 97.9, NaN, NaN, 20.453271], [false, "Slovakia", 2013, 26623.4, 99.0, 97.7, NaN, NaN, 20.565572], [false, "Slovakia", 2014, 27322.1, 99.0, 97.5, NaN, NaN, 20.618517], [false, "Slovakia", 2015, 28719.9, 99.0, 97.5, NaN, NaN, 23.788988], [false, "Slovakia", 2016, 29236.9, 99.0, 97.5, NaN, NaN, 21.188272], [false, "Slovakia", 2017, 30061.6, 99.0, 97.5, NaN, NaN, 21.172898], [false, "Slovakia", 2018, 31159.0, 99.0, 97.5, NaN, NaN, 20.967829], [false, "Slovakia", 2019, 31927.6, 99.0, 97.5, NaN, NaN, 21.813397], [false, "Slovakia", 2020, 30509.8, 99.0, 97.5, NaN, NaN, 20.16837], [false, "Slovenia", 2012, 32613.5, 99.0, 98.0, NaN, NaN, 19.002299], [false, "Slovenia", 2013, 32234.0, 99.0, 98.0, NaN, NaN, 19.858426], [false, "Slovenia", 2014, 33093.8, 99.0, 98.0, NaN, NaN, 19.311368], [false, "Slovenia", 2015, 33799.7, 99.0, 98.1, NaN, NaN, 18.664621], [false, "Slovenia", 2016, 34853.0, 99.0, 98.1, NaN, NaN, 17.437908], [false, "Slovenia", 2017, 36507.6, 99.0, 98.1, NaN, NaN, 18.330607], [false, "Slovenia", 2018, 37984.1, 99.0, 98.1, NaN, NaN, 19.260844], [false, "Slovenia", 2019, 38946.7, 99.0, 98.1, NaN, NaN, 19.677859], [false, "Slovenia", 2020, 37050.5, 99.0, 98.1, NaN, NaN, 18.858148], [false, "Solomon Islands", 2012, 2530.4, 71.8, 28.8, 31.9, 3.5, 15.831492], [false, "Solomon Islands", 2013, 2594.1, 70.9, 29.8, 31.4, 3.5, 14.632582], [false, "Solomon Islands", 2014, 2551.0, 70.1, 30.8, 30.9, 3.6, 13.51693], [false, "Solomon Islands", 2015, 2518.3, 69.3, 31.8, 30.5, 3.7, 15.983258], [false, "Solomon Islands", 2016, 2596.0, 68.5, 32.8, 30.2, 3.7, 15.842249], [false, "Solomon Islands", 2017, 2663.5, 67.8, 33.5, 30.0, 3.8, 17.054175], [false, "Solomon Islands", 2018, 2697.2, 67.0, 34.2, 29.7, 3.8, 11.549104], [false, "Solomon Islands", 2019, 2660.5, 67.2, 34.5, 29.5, 3.9, 11.922617], [false, "Solomon Islands", 2020, 2482.4, 67.3, 34.8, 29.3, 4.0, 7.808], [true, "Somalia", 2012, NaN, 44.0, 31.0, 31.1, 3.1, 20.184147], [true, "Somalia", 2013, 877.3, 45.6, 32.0, 30.7, 3.0, 20.164474], [true, "Somalia", 2014, 917.9, 47.1, 33.0, 30.2, 2.9, 19.970024], [true, "Somalia", 2015, 1026.0, 48.7, 34.0, 29.7, 2.9, 19.950579], [true, "Somalia", 2016, 1081.8, 50.3, 35.1, 29.3, 2.9, 19.894931], [true, "Somalia", 2017, 1079.1, 51.8, 36.1, 28.8, 2.8, 20.138662], [true, "Somalia", 2018, 1129.5, 53.4, 37.2, 28.3, 2.9, 20.103473], [true, "Somalia", 2019, 1186.5, 54.9, 38.2, 27.9, 2.9, 20.048546], [true, "Somalia", 2020, 1181.0, 56.5, 39.3, 27.4, 2.9, 20.886044], [true, "South Africa", 2012, 13946.9, 90.6, 71.0, 23.6, 12.8, 19.383256], [true, "South Africa", 2013, 14066.1, 91.0, 72.0, 23.4, 12.8, 20.272153], [true, "South Africa", 2014, 14040.8, 91.4, 73.0, 23.3, 12.9, 20.043278], [true, "South Africa", 2015, 14010.1, 91.9, 73.9, 23.1, 12.9, 20.311096], [true, "South Africa", 2016, 13897.1, 92.3, 74.8, 23.0, 12.9, 19.515295], [true, "South Africa", 2017, 13860.3, 92.7, 75.8, 22.9, 12.9, 19.444454], [true, "South Africa", 2018, 13875.9, 93.1, 76.7, 23.0, 12.9, 19.014939], [true, "South Africa", 2019, 13710.0, 93.5, 77.6, 23.1, 12.9, 18.808869], [true, "South Africa", 2020, 12665.8, 93.9, 78.5, 23.2, 12.9, 16.69183], [true, "South Sudan", 2012, NaN, 41.2, 7.8, 32.1, 6.4, 37.167948], [true, "South Sudan", 2013, NaN, 41.3, 8.8, 31.8, 6.2, 28.091465], [true, "South Sudan", 2014, NaN, 41.3, 9.8, 31.6, 6.0, 21.597448], [true, "South Sudan", 2015, NaN, 41.2, 10.9, 31.4, 5.9, 19.993379], [true, "South Sudan", 2016, NaN, 41.2, 12.0, 31.3, 5.8, 16.581448], [true, "South Sudan", 2017, NaN, 41.1, 13.2, 31.2, 5.7, 18.963139], [true, "South Sudan", 2018, NaN, 41.0, 14.5, 31.0, 5.7, 21.031039], [true, "South Sudan", 2019, NaN, 40.8, 15.7, 30.8, 5.7, 18.459469], [true, "South Sudan", 2020, NaN, 41.0, 15.8, 30.6, 5.7, 19.747721], [false, "Spain", 2012, 35769.5, 99.0, 99.0, NaN, NaN, 17.798619], [false, "Spain", 2013, 35371.7, 99.0, 99.0, NaN, NaN, 17.374756], [false, "Spain", 2014, 35968.6, 99.0, 99.0, NaN, NaN, 17.836863], [false, "Spain", 2015, 37377.1, 99.0, 99.0, NaN, NaN, 18.014458], [false, "Spain", 2016, 38477.6, 99.0, 99.0, NaN, NaN, 17.896339], [false, "Spain", 2017, 39528.9, 99.0, 99.0, NaN, NaN, 18.564294], [false, "Spain", 2018, 40257.0, 99.0, 99.0, NaN, NaN, 19.29732], [false, "Spain", 2019, 40802.5, 99.0, 99.0, NaN, NaN, 19.759646], [false, "Spain", 2020, 36210.9, 99.0, 99.0, NaN, NaN, 20.042626], [false, "Sri Lanka", 2012, 10712.4, 88.0, 87.8, 16.8, 1.2, 28.354124], [false, "Sri Lanka", 2013, 10990.1, 88.7, 88.8, 16.6, 1.2, 28.807272], [false, "Sri Lanka", 2014, 11428.1, 89.4, 89.8, 16.5, 1.2, 26.686678], [false, "Sri Lanka", 2015, 11890.5, 90.1, 90.7, 16.3, 1.2, 26.038332], [false, "Sri Lanka", 2016, 12287.5, 90.8, 91.7, 16.3, 1.2, 26.867688], [false, "Sri Lanka", 2017, 12584.1, 91.5, 92.7, 16.2, 1.3, 27.533818], [false, "Sri Lanka", 2018, 12860.3, 92.2, 93.7, 16.2, 1.3, 27.153847], [false, "Sri Lanka", 2019, 13079.5, 92.2, 93.7, 16.1, 1.3, 26.826034], [false, "Sri Lanka", 2020, 12540.0, 92.2, 93.7, 16.0, 1.3, 25.187786], [false, "Sub-Saharan Africa", 2012, 3788.8, 56.6, 28.4, 36.6, 3.8, NaN], [false, "Sub-Saharan Africa", 2013, 3831.9, 57.6, 29.0, 35.9, 3.7, NaN], [false, "Sub-Saharan Africa", 2014, 3911.2, 58.7, 29.5, 35.3, 3.7, NaN], [false, "Sub-Saharan Africa", 2015, 3922.9, 59.7, 30.1, 34.8, 3.7, NaN], [false, "Sub-Saharan Africa", 2016, 3877.4, 60.7, 30.7, 34.3, 3.7, NaN], [false, "Sub-Saharan Africa", 2017, 3880.3, 61.8, 31.3, 33.9, 3.7, NaN], [false, "Sub-Saharan Africa", 2018, 3898.1, 62.8, 31.7, 33.4, 3.8, NaN], [false, "Sub-Saharan Africa", 2019, 3907.4, 63.8, 32.3, 32.8, 3.9, NaN], [false, "Sub-Saharan Africa", 2020, 3737.3, 64.7, 32.7, 32.3, 4.0, NaN], [false, "Sudan", 2012, 4576.5, 54.7, 30.9, 36.0, 2.5, 13.39972], [false, "Sudan", 2013, 4555.3, 56.1, 32.3, 35.8, 2.4, 12.445341], [false, "Sudan", 2014, 4654.1, 57.5, 33.7, 35.5, 2.4, 11.299226], [false, "Sudan", 2015, 4630.2, 59.0, 35.1, 35.3, 2.4, 11.288387], [false, "Sudan", 2016, 4677.2, 60.2, 36.5, 35.0, 2.4, 11.105772], [false, "Sudan", 2017, 4598.9, 60.3, 36.6, 34.7, 2.5, 8.548086], [false, "Sudan", 2018, 4369.8, 60.3, 36.7, 34.4, 2.6, 8.45523], [false, "Sudan", 2019, 4173.6, 60.4, 36.8, 34.1, 2.6, 8.477346], [false, "Sudan", 2020, 3927.0, 60.4, 36.9, 33.7, 2.7, 8.37429], [false, "Suriname", 2012, 20020.3, 94.4, 84.5, 8.7, 3.8, 45.031089], [false, "Suriname", 2013, 20379.9, 94.9, 85.1, 8.6, 3.8, 42.983521], [false, "Suriname", 2014, 20211.0, 95.3, 85.8, 8.6, 3.8, 45.016236], [false, "Suriname", 2015, 19317.1, 95.7, 86.5, 8.5, 3.9, 45.037533], [false, "Suriname", 2016, 18180.6, 96.2, 87.2, 8.5, 3.9, 34.419493], [false, "Suriname", 2017, 18283.7, 96.6, 87.9, 8.4, 3.9, 34.306486], [false, "Suriname", 2018, 19005.7, 97.1, 88.5, 8.3, 4.0, 39.026617], [false, "Suriname", 2019, 19036.7, 97.5, 89.2, 8.2, 4.0, 43.205372], [false, "Suriname", 2020, 15864.6, 98.0, 90.0, 8.0, 4.0, 38.846158], [false, "Sweden", 2012, 48300.8, 99.0, 99.0, NaN, NaN, 22.649236], [false, "Sweden", 2013, 48462.2, 99.0, 99.0, NaN, NaN, 22.503593], [false, "Sweden", 2014, 49259.0, 99.0, 99.0, NaN, NaN, 23.24229], [false, "Sweden", 2015, 50929.0, 99.0, 99.0, NaN, NaN, 23.778362], [false, "Sweden", 2016, 51334.4, 99.0, 99.0, NaN, NaN, 24.237383], [false, "Sweden", 2017, 51948.0, 99.0, 99.0, NaN, NaN, 24.941209], [false, "Sweden", 2018, 52349.3, 99.0, 99.0, NaN, NaN, 24.808076], [false, "Sweden", 2019, 52850.6, 99.0, 99.0, NaN, NaN, 24.242998], [false, "Sweden", 2020, 50925.2, 99.0, 99.0, NaN, NaN, 24.840654], [false, "Switzerland", 2012, 66440.3, 99.0, 99.0, NaN, NaN, 25.107806], [false, "Switzerland", 2013, 66877.2, 99.0, 99.0, NaN, NaN, 24.869881], [false, "Switzerland", 2014, 67682.7, 99.0, 99.0, NaN, NaN, 24.896112], [false, "Switzerland", 2015, 68025.9, 99.0, 99.0, NaN, NaN, 24.999096], [false, "Switzerland", 2016, 68663.2, 99.0, 99.0, NaN, NaN, 25.212981], [false, "Switzerland", 2017, 69103.6, 99.0, 99.0, NaN, NaN, 25.71094], [false, "Switzerland", 2018, 70597.3, 99.0, 99.0, NaN, NaN, 25.309385], [false, "Switzerland", 2019, 70944.4, 99.0, 99.0, NaN, NaN, 25.15555], [false, "Switzerland", 2020, 68755.4, 99.0, 99.0, NaN, NaN, 25.316344], [false, "Syrian Arab Republic", 2012, NaN, 93.2, 90.4, 27.6, 19.2, 17.474254], [false, "Syrian Arab Republic", 2013, NaN, 93.3, 90.3, 28.5, 19.0, 16.597024], [false, "Syrian Arab Republic", 2014, NaN, 93.3, 90.2, 29.5, 18.9, 18.560461], [false, "Syrian Arab Republic", 2015, NaN, 93.5, 90.1, 30.5, 18.7, 19.152343], [false, "Syrian Arab Republic", 2016, NaN, 93.7, 90.1, 31.2, 18.6, 20.355928], [false, "Syrian Arab Republic", 2017, NaN, 93.8, 90.0, 31.1, 18.5, 21.386861], [false, "Syrian Arab Republic", 2018, NaN, 93.9, 89.9, 30.9, 18.4, 22.551109], [false, "Syrian Arab Republic", 2019, NaN, 93.9, 89.8, 30.3, 18.3, 23.844909], [false, "Syrian Arab Republic", 2020, NaN, 93.9, 89.7, 29.6, 18.2, 25.548117], [false, "Tajikistan", 2012, 2637.2, 72.1, 94.2, 26.5, 5.6, 20.876127], [false, "Tajikistan", 2013, 2767.4, 73.5, 94.6, 24.8, 5.2, 25.336779], [false, "Tajikistan", 2014, 2883.7, 74.9, 94.9, 23.0, 4.8, 30.887069], [false, "Tajikistan", 2015, 2984.5, 76.2, 95.3, 21.2, 4.4, 38.716657], [false, "Tajikistan", 2016, 3113.3, 77.6, 95.7, 19.6, 4.1, 38.066533], [false, "Tajikistan", 2017, 3252.9, 79.0, 96.1, 18.2, 3.9, 32.764637], [false, "Tajikistan", 2018, 3415.3, 80.4, 96.4, 17.0, 3.7, 34.840855], [false, "Tajikistan", 2019, 3581.4, 81.8, 96.8, 16.0, 3.6, 34.079525], [false, "Tajikistan", 2020, 3654.1, 81.9, 96.8, 15.3, 3.5, 33.923759], [false, "Thailand", 2012, 15424.5, 98.4, 96.1, 13.9, 8.7, 25.966272], [false, "Thailand", 2013, 15767.4, 98.7, 96.4, 13.5, 8.8, 25.03096], [false, "Thailand", 2014, 15854.1, 99.0, 96.8, 13.1, 8.9, 24.238906], [false, "Thailand", 2015, 16285.4, 99.0, 97.1, 12.9, 9.0, 24.5285], [false, "Thailand", 2016, 16782.1, 99.0, 97.5, 12.8, 9.1, 24.396579], [false, "Thailand", 2017, 17423.0, 99.0, 97.8, 12.7, 9.1, 23.85016], [false, "Thailand", 2018, 18101.5, 99.0, 98.1, 12.6, 9.2, 23.752746], [false, "Thailand", 2019, 18438.6, 99.0, 98.4, 12.4, 9.2, 23.690656], [false, "Thailand", 2020, 17253.1, 99.0, 98.7, 12.3, 9.2, 24.008171], [false, "Timor-Leste", 2012, 3143.3, 68.6, 48.1, 52.8, 3.0, 48.83304], [false, "Timor-Leste", 2013, 3182.7, 70.8, 49.2, 52.1, 3.0, 37.301396], [false, "Timor-Leste", 2014, 3266.7, 73.0, 50.2, 51.5, 2.9, 37.883403], [false, "Timor-Leste", 2015, 3295.3, 75.3, 51.3, 50.9, 2.8, 35.53798], [false, "Timor-Leste", 2016, 3342.6, 77.5, 52.4, 50.3, 2.8, 39.648201], [false, "Timor-Leste", 2017, 3177.5, 79.8, 53.5, 49.9, 2.7, 34.082943], [false, "Timor-Leste", 2018, 3094.1, 82.1, 54.6, 49.5, 2.7, 33.818008], [false, "Timor-Leste", 2019, 3626.7, 83.8, 55.7, 49.1, 2.7, 25.243107], [false, "Timor-Leste", 2020, 3925.9, 85.5, 56.8, 48.8, 2.6, 14.892318], [true, "Togo", 2012, 1746.9, 60.0, 14.5, 27.4, 1.7, 22.45184], [true, "Togo", 2013, 1805.5, 61.2, 15.1, 26.9, 1.7, 22.599647], [true, "Togo", 2014, 1863.3, 62.4, 15.6, 26.5, 1.7, 22.865405], [true, "Togo", 2015, 1920.5, 63.6, 16.2, 26.0, 1.8, 23.2286], [true, "Togo", 2016, 1976.8, 64.8, 16.7, 25.6, 1.9, 23.645877], [true, "Togo", 2017, 2012.2, 66.0, 17.3, 25.2, 2.0, 18.03811], [true, "Togo", 2018, 2061.3, 67.2, 17.9, 24.8, 2.1, 18.723293], [true, "Togo", 2019, 2121.9, 68.4, 18.5, 24.3, 2.3, 19.24739], [true, "Togo", 2020, 2107.9, 68.6, 18.6, 23.8, 2.4, 15.410612], [false, "Tokelau", 2012, NaN, 99.0, 89.4, NaN, NaN, NaN], [false, "Tokelau", 2013, NaN, 99.0, 91.0, NaN, NaN, NaN], [false, "Tokelau", 2014, NaN, 99.0, 92.6, NaN, NaN, NaN], [false, "Tokelau", 2015, NaN, 99.0, 94.2, NaN, NaN, NaN], [false, "Tokelau", 2016, NaN, 99.0, 95.8, NaN, NaN, NaN], [false, "Tokelau", 2017, NaN, 99.0, 96.7, NaN, NaN, NaN], [false, "Tokelau", 2018, NaN, 99.0, 96.8, NaN, NaN, NaN], [false, "Tokelau", 2019, NaN, 99.0, 96.8, NaN, NaN, NaN], [false, "Tokelau", 2020, NaN, 99.0, 96.8, NaN, NaN, NaN], [false, "Tonga", 2012, 5631.4, 98.4, 93.5, 6.7, 13.2, 32.504396], [false, "Tonga", 2013, 5702.7, 98.5, 93.4, 6.1, 13.2, 20.918667], [false, "Tonga", 2014, 5860.8, 98.5, 93.4, 5.5, 13.2, 22.185624], [false, "Tonga", 2015, 5943.7, 98.5, 93.3, 4.9, 13.1, 23.344143], [false, "Tonga", 2016, 6311.6, 98.6, 93.3, 4.3, 13.1, 25.685407], [false, "Tonga", 2017, 6466.3, 98.6, 93.2, 3.8, 13.0, 28.866027], [false, "Tonga", 2018, 6410.5, 98.7, 93.1, 3.3, 12.9, 20.89297], [false, "Tonga", 2019, 6377.4, 98.7, 93.0, 3.0, 12.8, 23.617297], [false, "Tonga", 2020, 6346.2, 98.7, 92.9, 2.6, 12.6, 22.180258], [false, "Trinidad and Tobago", 2012, 29836.8, 96.5, 93.1, 8.5, 9.5, 10.738483], [false, "Trinidad and Tobago", 2013, 30313.7, 97.4, 93.3, 8.6, 9.8, 18.636828], [false, "Trinidad and Tobago", 2014, 29864.0, 97.8, 93.5, 8.7, 10.1, 22.693858], [false, "Trinidad and Tobago", 2015, 30219.3, 98.1, 93.6, 8.6, 10.4, 20.722324], [false, "Trinidad and Tobago", 2016, 28161.6, 98.5, 93.7, 8.7, 10.6, 24.242908], [false, "Trinidad and Tobago", 2017, 27277.9, 98.9, 93.8, 8.7, 10.7, 23.218826], [false, "Trinidad and Tobago", 2018, 26972.5, 98.9, 93.9, 8.7, 10.9, 17.529464], [false, "Trinidad and Tobago", 2019, 26827.3, 98.9, 93.9, 8.7, 10.9, 14.240325], [false, "Trinidad and Tobago", 2020, 24768.7, 98.9, 93.9, 8.7, 11.0, 12.261346], [false, "Tunisia", 2012, 10743.8, 93.0, 88.9, 9.1, 10.9, 21.929174], [false, "Tunisia", 2013, 10898.4, 93.6, 90.0, 9.0, 11.7, 21.376178], [false, "Tunisia", 2014, 11123.2, 94.2, 91.1, 8.9, 12.5, 20.170705], [false, "Tunisia", 2015, 11113.6, 94.8, 92.1, 8.8, 13.3, 19.847631], [false, "Tunisia", 2016, 11114.5, 95.4, 93.2, 8.8, 14.0, 19.82769], [false, "Tunisia", 2017, 11234.5, 96.0, 94.3, 8.7, 14.7, 19.508088], [false, "Tunisia", 2018, 11398.0, 96.5, 95.3, 8.7, 15.4, 19.38202], [false, "Tunisia", 2019, 11420.8, 97.0, 96.4, 8.6, 16.0, 19.239487], [false, "Tunisia", 2020, 10314.0, 97.5, 97.4, 8.6, 16.5, 19.376532], [false, "Turkmenistan", 2012, 10604.0, 95.6, 96.2, 13.0, 5.0, 38.914467], [false, "Turkmenistan", 2013, 11471.2, 96.3, 96.6, 12.1, 4.7, 45.506523], [false, "Turkmenistan", 2014, 12421.4, 97.0, 97.0, 11.3, 4.5, 47.528375], [false, "Turkmenistan", 2015, 12993.5, 97.7, 97.4, 10.4, 4.3, 49.120174], [false, "Turkmenistan", 2016, 13562.5, 98.3, 97.8, 9.7, 4.1, 55.439003], [false, "Turkmenistan", 2017, 14205.0, 99.0, 98.2, 9.1, 4.0, 55.224623], [false, "Turkmenistan", 2018, 14845.3, 99.0, 98.6, 8.5, 3.9, 55.129831], [false, "Turkmenistan", 2019, 15538.4, 99.0, 99.0, 8.0, 3.8, 55.264486], [false, "Turkmenistan", 2020, NaN, 99.0, 99.0, 7.6, 3.8, 55.206313], [false, "Tuvalu", 2012, 3423.2, 99.0, 84.4, 10.0, 6.2, 1.770161], [false, "Tuvalu", 2013, 3537.5, 99.0, 84.2, 10.0, 6.2, 3.382069], [false, "Tuvalu", 2014, 3497.5, 99.0, 83.6, 9.9, 6.3, 4.759172], [false, "Tuvalu", 2015, 3818.0, 99.0, 83.7, 9.9, 6.3, 26.994596], [false, "Tuvalu", 2016, 3986.3, 99.0, 83.7, 9.9, 6.3, 34.76313], [false, "Tuvalu", 2017, 4010.1, 99.0, 83.7, 9.9, 6.3, 22.1723], [false, "Tuvalu", 2018, 4030.7, 99.0, 83.7, 9.8, 6.3, 27.976675], [false, "Tuvalu", 2019, 4527.7, 99.0, NaN, 9.8, 6.4, 28.304036], [false, "Tuvalu", 2020, 4542.9, 99.0, NaN, 9.7, 6.4, 26.151003], [false, "T\u00fcrkiye", 2012, 22610.7, 95.8, 94.6, NaN, NaN, 27.251699], [false, "T\u00fcrkiye", 2013, 24117.7, 95.9, 95.2, NaN, NaN, 28.698087], [false, "T\u00fcrkiye", 2014, 24881.7, 96.1, 95.8, NaN, NaN, 28.690064], [false, "T\u00fcrkiye", 2015, 25958.6, 96.3, 96.4, NaN, NaN, 29.554566], [false, "T\u00fcrkiye", 2016, 26385.0, 96.4, 97.0, NaN, NaN, 29.234752], [false, "T\u00fcrkiye", 2017, 27913.8, 96.6, 97.6, NaN, NaN, 29.439939], [false, "T\u00fcrkiye", 2018, 28318.4, 96.7, 98.1, NaN, NaN, 28.518112], [false, "T\u00fcrkiye", 2019, 28197.2, 96.9, 98.7, NaN, NaN, 24.751995], [false, "T\u00fcrkiye", 2020, 28393.5, 97.0, 99.0, NaN, NaN, 26.077644], [true, "Uganda", 2012, 1996.9, 43.2, 18.7, 34.1, 3.9, 24.641946], [true, "Uganda", 2013, 2002.7, 44.7, 18.8, 32.9, 3.8, 24.99475], [true, "Uganda", 2014, 2035.6, 46.3, 19.0, 31.8, 3.8, 23.970449], [true, "Uganda", 2015, 2067.6, 47.8, 19.1, 30.7, 3.8, 23.673143], [true, "Uganda", 2016, 2088.6, 49.4, 19.3, 29.9, 3.8, 24.360296], [true, "Uganda", 2017, 2074.7, 51.0, 19.4, 29.3, 3.8, 24.653127], [true, "Uganda", 2018, 2124.8, 52.6, 19.5, 28.8, 3.8, 25.487612], [true, "Uganda", 2019, 2182.9, 54.2, 19.7, 28.4, 3.9, 25.489233], [true, "Uganda", 2020, 2175.0, 55.9, 19.8, 27.9, 4.0, 25.093459], [false, "Ukraine", 2012, 12985.1, 94.2, 96.8, 19.1, 25.7, 18.102998], [false, "Ukraine", 2013, 13020.6, 94.0, 97.0, 18.6, 24.3, 16.562799], [false, "Ukraine", 2014, 12385.8, 93.6, 97.2, 18.3, 22.9, 13.485324], [false, "Ukraine", 2015, 11216.1, 93.7, 97.4, 18.9, 21.4, 13.558161], [false, "Ukraine", 2016, 11536.3, 93.7, 97.6, 19.1, 20.2, 15.966743], [false, "Ukraine", 2017, 11860.6, 93.8, 97.7, 18.9, 19.2, 18.05018], [false, "Ukraine", 2018, 12336.9, 93.9, 97.7, 18.3, 18.3, 20.371852], [false, "Ukraine", 2019, 12805.0, 93.9, 97.7, 17.5, 17.6, 22.070018], [false, "Ukraine", 2020, 12407.8, 93.9, 97.7, 15.9, 17.0, 17.385898], [false, "United Arab Emirates", 2012, 57389.3, 99.0, 98.2, NaN, NaN, 24.694037], [false, "United Arab Emirates", 2013, 59920.2, 99.0, 98.3, NaN, NaN, 22.170001], [false, "United Arab Emirates", 2014, 62452.2, 99.0, 98.5, NaN, NaN, 23.544931], [false, "United Arab Emirates", 2015, 65267.4, 99.0, 98.6, NaN, NaN, 23.378079], [false, "United Arab Emirates", 2016, 66510.9, 99.0, 98.7, NaN, NaN, 24.7069], [false, "United Arab Emirates", 2017, 67183.6, 99.0, 98.9, NaN, NaN, 19.966252], [false, "United Arab Emirates", 2018, 66968.2, 99.0, 99.0, NaN, NaN, 20.442613], [false, "United Arab Emirates", 2019, 68263.7, 99.0, 99.0, NaN, NaN, 19.772533], [false, "United Arab Emirates", 2020, 63299.4, 99.0, 99.0, NaN, NaN, 22.295888], [false, "United Kingdom of Great Britain and Northern Ireland", 2012, 42754.5, 99.0, 99.0, NaN, NaN, 15.847107], [false, "United Kingdom of Great Britain and Northern Ireland", 2013, 43271.8, 99.0, 99.0, NaN, NaN, 16.063539], [false, "United Kingdom of Great Britain and Northern Ireland", 2014, 44239.2, 99.0, 99.0, NaN, NaN, 16.660958], [false, "United Kingdom of Great Britain and Northern Ireland", 2015, 45041.1, 99.0, 99.0, NaN, NaN, 17.264517], [false, "United Kingdom of Great Britain and Northern Ireland", 2016, 45712.8, 99.0, 99.0, NaN, NaN, 17.679591], [false, "United Kingdom of Great Britain and Northern Ireland", 2017, 46372.4, 99.0, 99.0, NaN, NaN, 17.880863], [false, "United Kingdom of Great Britain and Northern Ireland", 2018, 46853.2, 99.0, 99.0, NaN, NaN, 17.579311], [false, "United Kingdom of Great Britain and Northern Ireland", 2019, 47368.6, 99.0, 99.0, NaN, NaN, 17.384764], [false, "United Kingdom of Great Britain and Northern Ireland", 2020, 42820.6, 99.0, 99.0, NaN, NaN, 17.505651], [true, "United Republic of Tanzania", 2012, 2128.5, 47.5, 21.5, 38.3, 4.7, 29.6668], [true, "United Republic of Tanzania", 2013, 2206.0, 49.3, 22.9, 37.1, 4.6, 32.422999], [true, "United Republic of Tanzania", 2014, 2285.0, 51.1, 24.3, 36.1, 4.7, 32.536671], [true, "United Republic of Tanzania", 2015, 2354.1, 53.0, 25.7, 35.3, 4.7, 32.804932], [true, "United Republic of Tanzania", 2016, 2441.6, 54.8, 27.2, 34.8, 4.8, 35.42104], [true, "United Republic of Tanzania", 2017, 2530.6, 56.7, 28.6, 34.2, 4.9, 38.233983], [true, "United Republic of Tanzania", 2018, 2590.2, 58.5, 30.1, 33.6, 5.1, 41.184326], [true, "United Republic of Tanzania", 2019, 2660.6, 60.4, 31.6, 32.8, 5.3, 44.35789], [true, "United Republic of Tanzania", 2020, 2635.4, 60.7, 31.8, 32.0, 5.5, 45.351519], [false, "United States of America", 2012, 55796.0, 99.0, 99.0, 2.7, 8.6, 19.38561], [false, "United States of America", 2013, 56431.3, 99.0, 99.0, 2.8, 8.6, 19.714257], [false, "United States of America", 2014, 57300.6, 99.0, 99.0, 2.8, 8.7, 20.262709], [false, "United States of America", 2015, 58419.7, 99.0, 99.0, 2.9, 8.7, 20.449161], [false, "United States of America", 2016, 58965.0, 99.0, 99.0, 2.9, 8.8, 20.541807], [false, "United States of America", 2017, 59914.8, 99.0, 99.0, 3.0, 8.8, 20.85588], [false, "United States of America", 2018, 61339.8, 99.0, 99.0, 3.1, 8.8, 21.150107], [false, "United States of America", 2019, 62458.8, 99.0, 99.0, 3.1, 8.8, 21.322708], [false, "United States of America", 2020, 59755.2, 99.0, 99.0, 3.2, 8.8, 21.732157], [false, "Uruguay", 2012, 20885.1, 98.7, 95.7, 8.9, 9.8, 21.435049], [false, "Uruguay", 2013, 21786.2, 98.9, 96.0, 8.5, 9.8, 20.875465], [false, "Uruguay", 2014, 22419.0, 99.0, 96.3, 8.2, 9.9, 20.329884], [false, "Uruguay", 2015, 22425.8, 99.0, 96.6, 7.8, 10.0, 18.048689], [false, "Uruguay", 2016, 22724.0, 99.0, 96.9, 7.5, 10.1, 17.139587], [false, "Uruguay", 2017, 23009.9, 99.0, 97.2, 7.2, 10.1, 16.92786], [false, "Uruguay", 2018, 23035.1, 99.0, 97.5, 6.9, 10.2, 15.3324], [false, "Uruguay", 2019, 23032.7, 99.0, 97.8, 6.7, 10.3, 15.395728], [false, "Uruguay", 2020, 21548.1, 99.0, 98.1, 6.5, 10.3, 16.266133], [false, "Uzbekistan", 2012, 5472.8, 96.8, 99.0, 14.2, 8.6, 21.555238], [false, "Uzbekistan", 2013, 5781.2, 97.1, 99.0, 13.5, 7.8, 22.299647], [false, "Uzbekistan", 2014, 6075.2, 97.4, 99.0, 12.8, 7.1, 22.84163], [false, "Uzbekistan", 2015, 6401.1, 97.5, 99.0, 12.1, 6.6, 23.264331], [false, "Uzbekistan", 2016, 6663.9, 97.7, 99.0, 11.5, 6.1, 22.832339], [false, "Uzbekistan", 2017, 6840.7, 97.8, 99.0, 11.1, 5.7, 26.091266], [false, "Uzbekistan", 2018, 7082.9, 97.8, 99.0, 10.7, 5.4, 32.141959], [false, "Uzbekistan", 2019, 7348.1, 97.8, 99.0, 10.3, 5.2, 41.955286], [false, "Uzbekistan", 2020, 7344.2, 97.8, 99.0, 9.9, 5.0, 37.90538], [false, "Vanuatu", 2012, 3046.3, 87.9, 54.1, 27.3, 4.8, 20.074286], [false, "Vanuatu", 2013, 2975.5, 88.6, 53.9, 27.5, 4.8, 23.026848], [false, "Vanuatu", 2014, 2984.2, 89.3, 53.6, 27.7, 4.8, 24.593584], [false, "Vanuatu", 2015, 2915.3, 90.0, 53.4, 27.9, 4.9, 32.877269], [false, "Vanuatu", 2016, 2973.1, 90.7, 53.1, 28.2, 4.9, 24.814694], [false, "Vanuatu", 2017, 3081.5, 91.3, 52.9, 28.4, 4.9, 27.643567], [false, "Vanuatu", 2018, 3093.1, 91.2, 52.7, 28.5, 4.9, 30.970502], [false, "Vanuatu", 2019, 3116.6, 91.2, 52.7, 28.6, 4.9, 31.4413], [false, "Vanuatu", 2020, 2878.5, 91.2, 52.7, 28.7, 4.9, 33.851178], [false, "Venezuela (Bolivarian Republic of)", 2012, NaN, 95.1, 94.3, 12.5, 6.4, 35.511982], [false, "Venezuela (Bolivarian Republic of)", 2013, NaN, 94.9, 94.5, 12.0, 6.5, 31.875983], [false, "Venezuela (Bolivarian Republic of)", 2014, NaN, 94.7, 94.7, 11.6, 6.6, 27.557936], [false, "Venezuela (Bolivarian Republic of)", 2015, NaN, 94.6, 94.9, 11.2, 6.6, 23.395269], [false, "Venezuela (Bolivarian Republic of)", 2016, NaN, 94.4, 95.0, 10.9, 6.7, 15.469374], [false, "Venezuela (Bolivarian Republic of)", 2017, NaN, 94.2, 95.2, 10.8, 6.7, 10.040552], [false, "Venezuela (Bolivarian Republic of)", 2018, NaN, 94.0, 95.4, 10.7, 6.7, 7.802393], [false, "Venezuela (Bolivarian Republic of)", 2019, NaN, 93.9, 95.6, 10.6, 6.7, 7.692884], [false, "Venezuela (Bolivarian Republic of)", 2020, NaN, 93.7, 95.8, 10.6, 6.7, 7.681399], [false, "Viet Nam", 2012, 6911.7, 90.4, 75.2, 25.9, 4.2, 23.35975], [false, "Viet Nam", 2013, 7218.9, 91.2, 77.0, 25.7, 4.4, 23.33246], [false, "Viet Nam", 2014, 7601.9, 92.4, 78.9, 25.0, 4.6, 24.052821], [false, "Viet Nam", 2015, 8048.7, 93.3, 80.8, 24.4, 4.9, 24.655708], [false, "Viet Nam", 2016, 8498.8, 94.1, 82.6, 23.9, 5.1, 25.516318], [false, "Viet Nam", 2017, 8996.4, 94.8, 84.3, 23.6, 5.3, 26.325611], [false, "Viet Nam", 2018, 9548.7, 95.5, 86.0, 23.0, 5.6, 26.712648], [false, "Viet Nam", 2019, 10134.3, 96.2, 87.7, 22.7, 5.8, 27.032789], [false, "Viet Nam", 2020, 10338.3, 96.9, 89.2, 22.3, 6.0, 29.836346], [false, "Yemen", 2012, NaN, 52.7, 50.5, 47.4, 2.9, 70.324271], [false, "Yemen", 2013, NaN, 53.7, 50.9, 46.0, 2.8, 65.166999], [false, "Yemen", 2014, NaN, 54.8, 51.2, 44.5, 2.8, 70.75541], [false, "Yemen", 2015, NaN, 55.8, 51.6, 43.1, 2.7, 16.730717], [false, "Yemen", 2016, NaN, 56.8, 52.1, 41.7, 2.7, 15.2167], [false, "Yemen", 2017, NaN, 57.8, 52.6, 40.5, 2.6, 24.002229], [false, "Yemen", 2018, NaN, 58.8, 53.1, 39.3, 2.6, 68.203504], [false, "Yemen", 2019, NaN, 59.7, 53.6, 38.2, 2.6, 76.17062], [false, "Yemen", 2020, NaN, 60.7, 54.1, 37.2, 2.7, 68.186521], [true, "Zambia", 2012, 3339.3, 58.8, 28.3, 41.3, 6.2, 24.750586], [true, "Zambia", 2013, 3399.7, 59.7, 28.8, 40.1, 6.0, 27.466103], [true, "Zambia", 2014, 3450.0, 60.5, 29.2, 38.9, 5.9, 31.542761], [true, "Zambia", 2015, 3443.6, 61.3, 29.7, 37.6, 5.7, 39.148071], [true, "Zambia", 2016, 3467.9, 62.2, 30.2, 36.2, 5.7, 35.573717], [true, "Zambia", 2017, 3485.0, 63.0, 30.6, 35.0, 5.6, 38.808416], [true, "Zambia", 2018, 3521.5, 63.8, 31.1, 33.8, 5.6, 35.110129], [true, "Zambia", 2019, 3470.4, 64.6, 31.5, 32.9, 5.7, 35.756618], [true, "Zambia", 2020, 3277.8, 65.4, 31.9, 32.3, 5.7, 29.867511], [true, "Zimbabwe", 2012, 3674.9, 66.5, 39.9, 31.4, 4.7, 11.675259], [true, "Zimbabwe", 2013, 3681.9, 66.0, 39.3, 29.7, 4.5, 8.753779], [true, "Zimbabwe", 2014, 3703.9, 65.5, 38.7, 28.2, 4.4, 9.638975], [true, "Zimbabwe", 2015, 3707.6, 65.0, 38.1, 26.8, 4.2, 9.995567], [true, "Zimbabwe", 2016, 3678.2, 64.5, 37.5, 25.8, 4.0, 9.969622], [true, "Zimbabwe", 2017, 3795.6, 64.0, 36.9, 24.9, 3.9, 9.925806], [true, "Zimbabwe", 2018, 3923.0, 63.5, 36.4, 24.2, 3.8, 9.899619], [true, "Zimbabwe", 2019, 3630.0, 63.1, 35.8, 23.5, 3.7, 9.931683], [true, "Zimbabwe", 2020, 3353.4, 62.7, 35.2, 23.0, 3.6, 9.919036]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true, "fnInfoCallback": function (oSettings, iStart, iEnd, iMax, iTotal, sPre) { return sPre + ' (<a href="https://mwouts.github.io/itables/downsampling.html">downsampled</a> from 1,854x9 to 1,008x9 as maxBytes=65536)'; }};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="cell" data-outputid="16923c28-8326-4a21-e0ee-590a301d83a7" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fao.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1854 entries, 0 to 1853
+Data columns (total 9 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   SSA                  1854 non-null   bool   
+ 1   Area                 1854 non-null   object 
+ 2   Year                 1854 non-null   int64  
+ 3   gdp_per_capita       1698 non-null   float64
+ 4   drinking_water       1780 non-null   float64
+ 5   sanitation_service   1772 non-null   float64
+ 6   children_stunted     1404 non-null   float64
+ 7   children_overweight  1404 non-null   float64
+ 8   investment_pct       1791 non-null   float64
+dtypes: bool(1), float64(6), int64(1), object(1)
+memory usage: 117.8+ KB</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="3922c6fa-6ab5-4fa7-ac63-da69927fd60f" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fao <span class="op">=</span> fao.astype({</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Area'</span>:<span class="st">'category'</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fao.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1854 entries, 0 to 1853
+Data columns (total 9 columns):
+ #   Column               Non-Null Count  Dtype   
+---  ------               --------------  -----   
+ 0   SSA                  1854 non-null   bool    
+ 1   Area                 1854 non-null   category
+ 2   Year                 1854 non-null   int64   
+ 3   gdp_per_capita       1698 non-null   float64 
+ 4   drinking_water       1780 non-null   float64 
+ 5   sanitation_service   1772 non-null   float64 
+ 6   children_stunted     1404 non-null   float64 
+ 7   children_overweight  1404 non-null   float64 
+ 8   investment_pct       1791 non-null   float64 
+dtypes: bool(1), category(1), float64(6), int64(1)
+memory usage: 116.7 KB</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="59a03372-0139-40e7-a473-badd966c10ea" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fao.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Index(['SSA', 'Area', 'Year', 'gdp_per_capita', 'drinking_water',
+       'sanitation_service', 'children_stunted', 'children_overweight',
+       'investment_pct'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="7f6b95be-a4b0-4165-e1ac-5288b8e24fcf" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>varlist <span class="op">=</span> [<span class="st">'gdp_per_capita'</span>, <span class="st">'drinking_water'</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">'sanitation_service'</span>, <span class="st">'children_stunted'</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">'children_overweight'</span>, <span class="st">'investment_pct'</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_stat(x):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> fao.groupby(<span class="st">"SSA"</span>)[x].describe()</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> varlist:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  df <span class="op">=</span> sum_stat(x)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  df.index.name <span class="op">=</span> x <span class="op">+</span> <span class="st">' | SSA'</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_dc1c864b_eaf7_4478_92cc_ce2645e99727" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>gdp_per_capita | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_dc1c864b_eaf7_4478_92cc_ce2645e99727:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 1295.0, 25014.934981, 22792.420489, 1970.6, 9475.0, 16285.4, 35940.15, 161972.0], [true, 403.0, 5338.017122, 6332.983277, 731.1, 1767.85, 2876.9, 5272.45, 36671.4]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_962b1255_f577_459e_ac26_2fe103f60d75" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>drinking_water | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_962b1255_f577_459e_ac26_2fe103f60d75:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 1366.0, 93.681113, 9.711896, 39.2, 93.2, 97.6, 99.0, 99.0], [true, 414.0, 65.686715, 15.233651, 37.2, 54.2, 64.45, 77.25, 99.0]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_7fc51761_dfe4_44f6_995c_97c986d20f26" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>sanitation_service | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_7fc51761_dfe4_44f6_995c_97c986d20f26:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 1360.0, 87.083456, 17.584863, 18.7, 84.1, 95.3, 99.0, 99.0], [true, 412.0, 36.533495, 22.200805, 6.6, 17.375, 33.35, 47.45, 99.0]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_a3c793c2_8f32_40ca_91df_2d00c5f4b537" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>children_stunted | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_a3c793c2_8f32_40ca_91df_2d00c5f4b537:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 981.0, 15.229867, 12.013888, 1.2, 6.3, 11.3, 21.9, 52.8], [true, 423.0, 29.780378, 10.466748, 7.4, 23.2, 30.2, 36.35, 57.6]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_105a3803_1ab1_442e_a656_e1863dc280dd" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>children_overweight | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_105a3803_1ab1_442e_a656_e1863dc280dd:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 990.0, 7.795657, 4.545644, 1.2, 4.5, 6.95, 10.0, 26.0], [true, 414.0, 4.691787, 2.838908, 0.9, 2.4, 4.1, 6.0, 12.9]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_f65a4e35_dc2b_4e60_98b9_1dd1a7f4c39a" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>investment_pct | SSA</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_f65a4e35_dc2b_4e60_98b9_1dd1a7f4c39a:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 1368.0, 23.836085, 8.551471, 1.770161, 18.925933, 22.784004, 27.151865, 76.17062], [true, 423.0, 24.088348, 10.737086, 2.823165, 17.127354, 22.91484, 29.832254, 80.461273]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<section id="q1" class="level1">
+<h1>Q1</h1>
+<p>What percentage of the values is missing for each variable?</p>
+<div class="cell" data-outputid="e2a5ce6f-a0b1-4a6f-a2c5-4ba8e983e67a" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame( fao.isna().<span class="bu">sum</span>() <span class="op">/</span> <span class="bu">len</span>(fao)<span class="op">*</span> <span class="dv">100</span> )</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'pct'</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_ad5718dd_2e35_493c_b03d_99ed4a5c4c6d" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pct</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_ad5718dd_2e35_493c_b03d_99ed4a5c4c6d:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [["SSA", 0.0], ["Area", 0.0], ["Year", 0.0], ["gdp_per_capita", 8.414239], ["drinking_water", 3.99137], ["sanitation_service", 4.422869], ["children_stunted", 24.271845], ["children_overweight", 24.271845], ["investment_pct", 3.398058]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</section>
+<section id="q2" class="level1">
+<h1>Q2</h1>
+<p>Fill missing values in the <code>gdp_per_capita</code> variable with the mean value of that variable.</p>
+<div class="cell" data-outputid="2259ee49-119a-49bc-93db-3bf623d40de3" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>gdp_mean <span class="op">=</span> fao[<span class="st">'gdp_per_capita'</span>].mean()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fao[<span class="st">'gdp_per_capita'</span>].fillna( gdp_mean, inplace <span class="op">=</span> <span class="va">True</span> )</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to check the number of non-missing values</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fao.shape[<span class="dv">0</span>] <span class="op">==</span> fao[<span class="st">'gdp_per_capita'</span>].notna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="q3" class="level1">
+<h1>Q3</h1>
+<p>Drop observations where <code>drinking_water</code> or <code>sanitation_service</code> information is missing.</p>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fao.dropna(subset<span class="op">=</span>[<span class="st">'drinking_water'</span>, <span class="st">'sanitation_service'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="2adb2e1d-b0f8-4845-bbc3-cf956da037ae" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fao.shape[<span class="dv">0</span>] <span class="op">==</span> fao[<span class="st">'drinking_water'</span>].notna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="40622e9f-b4e0-4012-f02e-2d03f0327c4e" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fao.shape[<span class="dv">0</span>] <span class="op">==</span> fao[<span class="st">'sanitation_service'</span>].notna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="q4" class="level1">
+<h1>Q4</h1>
+<p>What is the average <code>drinking_water</code> access percentage for each Area grouped by <code>SSA</code> status?</p>
+<p>Hint: We can group a DataFrame by a list of multiple variables. Then, each group corresponds to a unique combination of values across the specified variables.</p>
+<div class="cell" data-outputid="a7cf0c21-9510-4b23-e0f7-0742662a2b56" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    fao</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'Area'</span>, <span class="st">'SSA'</span>])[[<span class="st">'gdp_per_capita'</span>]]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    .mean()</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    .dropna()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_d1271dd9_febd_41c1_ba24_bcc0ef114c6b" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>gdp_per_capita</th>
+    </tr>
+    <tr>
+      <th>Area</th>
+      <th>SSA</th>
+      <th></th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_d1271dd9_febd_41c1_ba24_bcc0ef114c6b:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [["Afghanistan", false, 2060.844444], ["Albania", false, 12371.277778], ["Algeria", false, 11468.222222], ["American Samoa", false, 20344.853769], ["Andorra", false, 20344.853769], ["Angola", true, 7463.555556], ["Antigua and Barbuda", false, 18594.75], ["Argentina", false, 23843.3], ["Armenia", false, 11759.677778], ["Australia", false, 47936.566667], ["Austria", false, 53618.933333], ["Azerbaijan", false, 14425.6125], ["Bahamas", false, 36001.2875], ["Bahrain", false, 46351.288889], ["Bangladesh", false, 4695.155556], ["Barbados", false, 15204.533333], ["Belarus", false, 18730.977778], ["Belgium", false, 49635.744444], ["Belize", false, 7024.344444], ["Benin", true, 3037.3], ["Bermuda", false, 79542.733333], ["Bhutan", false, 10398.9], ["Bolivia (Plurinational State of)", false, 8011.133333], ["Bosnia and Herzegovina", false, 12716.457143], ["Botswana", true, 15511.044444], ["Brazil", false, 14949.111111], ["Brunei Darussalam", false, 65786.075], ["Bulgaria", false, 20786.166667], ["Burkina Faso", true, 2002.933333], ["Burundi", true, 807.066667], ["Cabo Verde", true, 6492.533333], ["Cambodia", false, 3724.288889], ["Cameroon", true, 3570.633333], ["Canada", false, 47543.455556], ["Central African Republic", true, 934.988889], ["Chad", true, 1692.433333], ["Chile", false, 24199.155556], ["China, Hong Kong SAR", false, 57454.266667], ["China, Macao SAR", false, 127369.222222], ["Colombia", false, 13871.555556], ["Comoros", true, 3007.2375], ["Congo", true, 4627.077778], ["Cook Islands", false, 20344.853769], ["Costa Rica", false, 19522.477778], ["Cuba", false, 20344.853769], ["Cyprus", false, 36880.044444], ["Czechia", false, 37018.888889], ["C\u00f4te d'Ivoire", false, 4571.722222], ["Democratic People's Republic of Korea", false, 20344.853769], ["Democratic Republic of the Congo", true, 1041.766667], ["Denmark", false, 54037.622222], ["Djibouti", true, 6477.66153], ["Dominica", false, 11843.833333], ["Dominican Republic", false, 15864.411111], ["Ecuador", false, 11516.855556], ["Egypt", false, 10934.077778], ["El Salvador", false, 8213.288889], ["Equatorial Guinea", true, 29746.35], ["Eritrea", true, 20344.853769], ["Estonia", false, 32515.788889], ["Eswatini", true, 8324.477778], ["Ethiopia", true, 1884.066667], ["Fiji", false, 12475.933333], ["Finland", false, 46570.744444], ["France", false, 43764.288889], ["French Polynesia", false, 20344.853769], ["Gabon", true, 15083.233333], ["Gambia", true, 2112.988889], ["Georgia", false, 13073.111111], ["Germany", false, 51735.8], ["Ghana", true, 5017.511111], ["Greece", false, 28364.5], ["Greenland", false, 20344.853769], ["Grenada", false, 14654.3], ["Guatemala", false, 8158.555556], ["Guinea", true, 2281.766667], ["Guinea-Bissau", true, 1838.955556], ["Guyana", false, 12475.655556], ["Haiti", false, 3071.522222], ["Honduras", false, 5350.266667], ["Hungary", false, 28527.644444], ["Iceland", false, 53070.733333], ["India", false, 5711.888889], ["Indonesia", false, 10509.333333], ["Iran (Islamic Republic of)", false, 15079.177778], ["Iraq", false, 10240.866667], ["Ireland", false, 71858.177778], ["Israel", false, 38141.433333], ["Italy", false, 40910.9], ["Jamaica", false, 9466.577778], ["Japan", false, 40443.544444], ["Jordan", false, 10163.911111], ["Kazakhstan", false, 24600.122222], ["Kenya", true, 4142.577778], ["Kiribati", false, 2067.944444], ["Kuwait", false, 53702.6], ["Kyrgyzstan", false, 4832.755556], ["Lao People's Democratic Republic", false, 6834.666667], ["Latvia", false, 27559.677778], ["Lebanon", false, 15706.566667], ["Lesotho", true, 2632.444444], ["Liberia", true, 1572.777778], ["Libya", false, 21824.955556], ["Lithuania", false, 32436.844444], ["Luxembourg", false, 114120.0], ["Madagascar", true, 1553.611111], ["Malawi", true, 1465.377778], ["Malaysia", false, 24780.4], ["Maldives", false, 17264.833333], ["Mali", true, 2166.088889], ["Malta", false, 40111.955556], ["Marshall Islands", false, 3702.333333], ["Mauritania", true, 5030.266667], ["Mauritius", true, 19632.35], ["Mexico", false, 19121.611111], ["Micronesia (Federated States of)", false, 3469.5875], ["Mongolia", false, 11154.655556], ["Montenegro", false, 18786.877778], ["Morocco", false, 7098.788889], ["Mozambique", true, 1236.011111], ["Myanmar", false, 3998.922222], ["Namibia", true, 10011.7], ["Nauru", false, 12030.1], ["Nepal", false, 3433.6], ["Netherlands", false, 53863.0], ["New Caledonia", false, 20344.853769], ["New Zealand", false, 41236.488889], ["Nicaragua", false, 5521.811111], ["Niger", true, 1155.8], ["Nigeria", true, 5241.588889], ["Niue", false, 20344.853769], ["North Macedonia", false, 15281.177778], ["Norway", false, 63186.277778], ["Oman", false, 33913.722222], ["Pakistan", false, 4933.133333], ["Palau", false, 17275.811111], ["Palestine", false, 6102.977778], ["Panama", false, 28345.422222], ["Papua New Guinea", false, 4001.144444], ["Paraguay", false, 11970.788889], ["Peru", false, 12080.8], ["Philippines", false, 7611.833333], ["Poland", false, 29074.266667], ["Portugal", false, 31955.933333], ["Puerto Rico", false, 34055.688889], ["Qatar", false, 92994.444444], ["Republic of Korea", false, 39744.333333], ["Republic of Moldova", false, 11082.955556], ["Romania", false, 25564.666667], ["Russian Federation", false, 26190.844444], ["Rwanda", true, 1934.544444], ["Saint Kitts and Nevis", false, 25701.55], ["Saint Lucia", false, 14348.644444], ["Saint Vincent and the Grenadines", false, 12554.428571], ["Samoa", false, 6207.022222], ["Sao Tome and Principe", true, 3824.088889], ["Saudi Arabia", false, 47546.055556], ["Senegal", true, 3074.677778], ["Serbia", false, 16434.111111], ["Seychelles", true, 26668.0625], ["Sierra Leone", true, 1705.822222], ["Singapore", false, 91396.211111], ["Slovakia", false, 29115.433333], ["Slovenia", false, 35231.433333], ["Solomon Islands", false, 2588.155556], ["Somalia", true, 3202.66153], ["South Africa", true, 13785.888889], ["South Sudan", true, 20344.853769], ["Spain", false, 37751.533333], ["Sri Lanka", false, 12041.388889], ["Sub-Saharan Africa", false, 3861.7], ["Sudan", false, 4462.511111], ["Suriname", false, 18922.177778], ["Sweden", false, 50706.5], ["Switzerland", false, 68565.555556], ["Syrian Arab Republic", false, 20344.853769], ["Tajikistan", false, 3143.311111], ["Thailand", false, 16814.411111], ["Timor-Leste", false, 3339.422222], ["Togo", true, 1957.366667], ["Tokelau", false, 20344.853769], ["Tonga", false, 6116.733333], ["Trinidad and Tobago", false, 28249.088889], ["Tunisia", false, 11040.088889], ["Turkmenistan", false, 13998.46153], ["Tuvalu", false, 3757.614286], ["T\u00fcrkiye", false, 26308.511111], ["Uganda", true, 2083.2], ["Ukraine", false, 12283.8], ["United Arab Emirates", false, 64139.433333], ["United Kingdom of Great Britain and Northern Ireland", false, 44937.133333], ["United Republic of Tanzania", true, 2425.777778], ["United States of America", false, 58931.244444], ["Uruguay", false, 22318.433333], ["Uzbekistan", false, 6556.677778], ["Vanuatu", false, 3007.122222], ["Venezuela (Bolivarian Republic of)", false, 20344.853769], ["Viet Nam", false, 8588.633333], ["Yemen", false, 20344.853769], ["Zambia", true, 3428.355556], ["Zimbabwe", true, 3683.166667]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</section>
+<section id="q5" class="level1">
+<h1>Q5</h1>
+<p>Calculate the mean <code>sanitation_service</code> percentage for each combination of <code>SSA</code> status and <code>Year</code>.</p>
+<div class="cell" data-outputid="200dccc0-0331-4385-c2fe-a414a112b08d" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    fao</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'SSA'</span>, <span class="st">'Year'</span>])[[<span class="st">'sanitation_service'</span>]]</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    .mean()</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    .reset_index()</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_cbda72cd_3d52_4a8d_a87c_57c1214a9312" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      
+      <th>SSA</th>
+      <th>Year</th>
+      <th>sanitation_service</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_cbda72cd_3d52_4a8d_a87c_57c1214a9312:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[false, 2012, 85.296104], [false, 2013, 85.801948], [false, 2014, 86.281818], [false, 2015, 86.757143], [false, 2016, 87.126144], [false, 2017, 87.473684], [false, 2018, 87.984354], [false, 2019, 88.26014], [false, 2020, 88.476429], [true, 2012, 34.32766], [true, 2013, 35.019149], [true, 2014, 35.674468], [true, 2015, 36.351064], [true, 2016, 37.0], [true, 2017, 38.21087], [true, 2018, 36.911364], [true, 2019, 37.531818], [true, 2020, 36.57381]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</section>
+<section id="q6" class="level1">
+<h1>Q6</h1>
+<p>For each year, find the 5 worst countries in terms of <code>drinking_water</code>.</p>
+<div class="cell" data-outputid="2e0fe566-859b-42a4-fd1d-6c75f3dc0af7" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    fao</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">'Year'</span>, <span class="st">'drinking_water'</span>], ascending <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'Year'</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_c785c84e_c463_4694_a926_94b9054e6b3b" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SSA</th>
+      <th>Area</th>
+      <th>Year</th>
+      <th>gdp_per_capita</th>
+      <th>drinking_water</th>
+      <th>sanitation_service</th>
+      <th>children_stunted</th>
+      <th>children_overweight</th>
+      <th>investment_pct</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_c785c84e_c463_4694_a926_94b9054e6b3b:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[585, true, "Ethiopia", 2012, 1437.4, 37.4, 6.6, 42.8, 2.5, 30.171755], [1287, false, "Papua New Guinea", 2012, 3453.0, 39.2, 18.7, 47.2, 8.1, 29.342059], [477, true, "Democratic Republic of the Congo", 2012, 926.8, 40.8, 18.7, 42.8, 4.6, 25.982952], [1548, true, "South Sudan", 2012, 20344.853769, 41.2, 7.8, 32.1, 6.4, 37.167948], [1728, true, "Uganda", 2012, 1996.9, 43.2, 18.7, 34.1, 3.9, 24.641946], [586, true, "Ethiopia", 2013, 1545.2, 39.0, 6.9, 41.8, 2.4, 30.750055], [1288, false, "Papua New Guinea", 2013, 3512.6, 40.0, 18.8, 47.2, 8.2, 28.261088], [1549, true, "South Sudan", 2013, 20344.853769, 41.3, 8.8, 31.8, 6.2, 28.091465], [478, true, "Democratic Republic of the Congo", 2013, 972.5, 41.5, 18.3, 42.4, 4.5, 23.768131], [316, true, "Chad", 2013, 1804.3, 43.7, 10.7, 38.4, 2.4, 20.212959], [587, true, "Ethiopia", 2014, 1656.6, 40.5, 7.2, 41.0, 2.4, 34.980365], [1289, false, "Papua New Guinea", 2014, 3908.9, 40.7, 18.8, 47.3, 8.4, 24.890038], [1550, true, "South Sudan", 2014, 20344.853769, 41.3, 9.8, 31.6, 6.0, 21.597448], [479, true, "Democratic Republic of the Congo", 2014, 1029.8, 42.1, 17.8, 42.0, 4.3, 22.875425], [308, true, "Central African Republic", 2014, 822.6, 43.4, 16.3, 41.7, 3.1, 20.494199], [1551, true, "South Sudan", 2015, 20344.853769, 41.2, 10.9, 31.4, 5.9, 19.993379], [1290, false, "Papua New Guinea", 2015, 4083.3, 41.5, 18.9, 47.5, 8.6, 7.532394], [588, true, "Ethiopia", 2015, 1779.1, 42.1, 7.5, 40.1, 2.4, 39.171956], [309, true, "Central African Republic", 2015, 852.7, 42.3, 16.0, 41.7, 2.9, 20.572795], [480, true, "Democratic Republic of the Congo", 2015, 1065.2, 42.7, 17.4, 41.7, 4.3, 19.379856], [1552, true, "South Sudan", 2016, 20344.853769, 41.2, 12.0, 31.3, 5.8, 16.581448], [310, true, "Central African Republic", 2016, 884.5, 41.3, 15.6, 41.6, 2.8, 21.032317], [1291, false, "Papua New Guinea", 2016, 4222.0, 42.3, 18.9, 47.6, 8.7, 7.392577], [481, true, "Democratic Republic of the Congo", 2016, 1055.6, 43.4, 17.0, 41.7, 4.2, 19.159515], [589, true, "Ethiopia", 2016, 1894.9, 43.6, 7.8, 39.2, 2.4, 39.951557], [311, true, "Central African Republic", 2017, 912.8, 40.2, 15.2, 41.4, 2.7, 24.270628], [1553, true, "South Sudan", 2017, 20344.853769, 41.1, 13.2, 31.2, 5.7, 18.963139], [1292, false, "Papua New Guinea", 2017, 4285.1, 43.0, 19.0, 47.9, 8.8, 7.494033], [482, true, "Democratic Republic of the Congo", 2017, 1059.8, 44.0, 16.6, 41.6, 4.2, 24.224404], [320, true, "Chad", 2017, 1587.0, 45.1, 11.4, 36.4, 2.8, 11.11012], [312, true, "Central African Republic", 2018, 933.1, 39.2, 14.8, 41.0, 2.7, 24.436751], [1554, true, "South Sudan", 2018, 20344.853769, 41.0, 14.5, 31.0, 5.7, 21.031039], [1293, false, "Papua New Guinea", 2018, 4189.6, 43.8, 19.1, 48.1, 8.9, 7.636691], [483, true, "Democratic Republic of the Congo", 2018, 1085.9, 44.6, 16.2, 41.5, 4.2, 24.870696], [321, true, "Chad", 2018, 1576.3, 45.5, 11.6, 36.0, 3.0, 11.463159], [313, true, "Central African Republic", 2019, 946.1, 38.2, 14.5, 40.5, 2.6, 21.850431], [1555, true, "South Sudan", 2019, 20344.853769, 40.8, 15.7, 30.8, 5.7, 18.459469], [1294, false, "Papua New Guinea", 2019, 4292.6, 44.6, 19.1, 48.3, 8.9, 7.471472], [484, true, "Democratic Republic of the Congo", 2019, 1097.9, 45.3, 15.8, 41.2, 4.2, 20.742026], [322, true, "Chad", 2019, 1579.6, 45.8, 11.8, 35.5, 3.2, 11.785959], [314, true, "Central African Republic", 2020, 937.9, 37.2, 14.1, 40.1, 2.6, 28.146001], [1556, true, "South Sudan", 2020, 20344.853769, 41.0, 15.8, 30.6, 5.7, 19.747721], [1295, false, "Papua New Guinea", 2020, 4063.2, 45.3, 19.2, 48.4, 8.9, 8.053913], [485, true, "Democratic Republic of the Congo", 2020, 1082.4, 46.0, 15.4, 40.8, 4.2, 23.552043], [323, true, "Chad", 2020, 1509.0, 46.2, 12.1, 35.0, 3.4, 11.149891]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+<div class="cell" data-outputid="42ff9e3d-55c4-4a72-a816-9b3b47f6fbe1" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    fao</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'Year'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>( <span class="kw">lambda</span> x: x.nsmallest(<span class="dv">5</span>, <span class="st">'drinking_water'</span>, keep <span class="op">=</span> <span class="st">"all"</span>) )</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>) <span class="co"># Since the index will be a bit messy, let's reset it for clarity</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_f1ed0394_3173_40dc_bcec_9417d1b0d6cc" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      
+      <th>SSA</th>
+      <th>Area</th>
+      <th>Year</th>
+      <th>gdp_per_capita</th>
+      <th>drinking_water</th>
+      <th>sanitation_service</th>
+      <th>children_stunted</th>
+      <th>children_overweight</th>
+      <th>investment_pct</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_f1ed0394_3173_40dc_bcec_9417d1b0d6cc:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[true, "Ethiopia", 2012, 1437.4, 37.4, 6.6, 42.8, 2.5, 30.171755], [false, "Papua New Guinea", 2012, 3453.0, 39.2, 18.7, 47.2, 8.1, 29.342059], [true, "Democratic Republic of the Congo", 2012, 926.8, 40.8, 18.7, 42.8, 4.6, 25.982952], [true, "South Sudan", 2012, 20344.853769, 41.2, 7.8, 32.1, 6.4, 37.167948], [true, "Uganda", 2012, 1996.9, 43.2, 18.7, 34.1, 3.9, 24.641946], [true, "Ethiopia", 2013, 1545.2, 39.0, 6.9, 41.8, 2.4, 30.750055], [false, "Papua New Guinea", 2013, 3512.6, 40.0, 18.8, 47.2, 8.2, 28.261088], [true, "South Sudan", 2013, 20344.853769, 41.3, 8.8, 31.8, 6.2, 28.091465], [true, "Democratic Republic of the Congo", 2013, 972.5, 41.5, 18.3, 42.4, 4.5, 23.768131], [true, "Chad", 2013, 1804.3, 43.7, 10.7, 38.4, 2.4, 20.212959], [true, "Ethiopia", 2014, 1656.6, 40.5, 7.2, 41.0, 2.4, 34.980365], [false, "Papua New Guinea", 2014, 3908.9, 40.7, 18.8, 47.3, 8.4, 24.890038], [true, "South Sudan", 2014, 20344.853769, 41.3, 9.8, 31.6, 6.0, 21.597448], [true, "Democratic Republic of the Congo", 2014, 1029.8, 42.1, 17.8, 42.0, 4.3, 22.875425], [true, "Central African Republic", 2014, 822.6, 43.4, 16.3, 41.7, 3.1, 20.494199], [true, "South Sudan", 2015, 20344.853769, 41.2, 10.9, 31.4, 5.9, 19.993379], [false, "Papua New Guinea", 2015, 4083.3, 41.5, 18.9, 47.5, 8.6, 7.532394], [true, "Ethiopia", 2015, 1779.1, 42.1, 7.5, 40.1, 2.4, 39.171956], [true, "Central African Republic", 2015, 852.7, 42.3, 16.0, 41.7, 2.9, 20.572795], [true, "Democratic Republic of the Congo", 2015, 1065.2, 42.7, 17.4, 41.7, 4.3, 19.379856], [true, "South Sudan", 2016, 20344.853769, 41.2, 12.0, 31.3, 5.8, 16.581448], [true, "Central African Republic", 2016, 884.5, 41.3, 15.6, 41.6, 2.8, 21.032317], [false, "Papua New Guinea", 2016, 4222.0, 42.3, 18.9, 47.6, 8.7, 7.392577], [true, "Democratic Republic of the Congo", 2016, 1055.6, 43.4, 17.0, 41.7, 4.2, 19.159515], [true, "Ethiopia", 2016, 1894.9, 43.6, 7.8, 39.2, 2.4, 39.951557], [true, "Central African Republic", 2017, 912.8, 40.2, 15.2, 41.4, 2.7, 24.270628], [true, "South Sudan", 2017, 20344.853769, 41.1, 13.2, 31.2, 5.7, 18.963139], [false, "Papua New Guinea", 2017, 4285.1, 43.0, 19.0, 47.9, 8.8, 7.494033], [true, "Democratic Republic of the Congo", 2017, 1059.8, 44.0, 16.6, 41.6, 4.2, 24.224404], [true, "Chad", 2017, 1587.0, 45.1, 11.4, 36.4, 2.8, 11.11012], [true, "Ethiopia", 2017, 2021.6, 45.1, 8.1, 38.2, 2.4, 42.427458], [true, "Central African Republic", 2018, 933.1, 39.2, 14.8, 41.0, 2.7, 24.436751], [true, "South Sudan", 2018, 20344.853769, 41.0, 14.5, 31.0, 5.7, 21.031039], [false, "Papua New Guinea", 2018, 4189.6, 43.8, 19.1, 48.1, 8.9, 7.636691], [true, "Democratic Republic of the Congo", 2018, 1085.9, 44.6, 16.2, 41.5, 4.2, 24.870696], [true, "Chad", 2018, 1576.3, 45.5, 11.6, 36.0, 3.0, 11.463159], [true, "Central African Republic", 2019, 946.1, 38.2, 14.5, 40.5, 2.6, 21.850431], [true, "South Sudan", 2019, 20344.853769, 40.8, 15.7, 30.8, 5.7, 18.459469], [false, "Papua New Guinea", 2019, 4292.6, 44.6, 19.1, 48.3, 8.9, 7.471472], [true, "Democratic Republic of the Congo", 2019, 1097.9, 45.3, 15.8, 41.2, 4.2, 20.742026], [true, "Chad", 2019, 1579.6, 45.8, 11.8, 35.5, 3.2, 11.785959], [true, "Central African Republic", 2020, 937.9, 37.2, 14.1, 40.1, 2.6, 28.146001], [true, "South Sudan", 2020, 20344.853769, 41.0, 15.8, 30.6, 5.7, 19.747721], [false, "Papua New Guinea", 2020, 4063.2, 45.3, 19.2, 48.4, 8.9, 8.053913], [true, "Democratic Republic of the Congo", 2020, 1082.4, 46.0, 15.4, 40.8, 4.2, 23.552043], [true, "Chad", 2020, 1509.0, 46.2, 12.1, 35.0, 3.4, 11.149891]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</section>
+<section id="q7" class="level1">
+<h1>Q7</h1>
+<p>For each year, find the 5 worst countries in terms of <code>children_stunted</code>.</p>
+<div class="cell" data-outputid="dd0b3ef2-75f5-4071-8569-e278f883e6da" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    fao</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">'Year'</span>, <span class="st">'children_stunted'</span>], ascending <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'Year'</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>show(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<table id="itables_a726d923_c8ae_4810_b6d9_aaed0664843d" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
+<thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SSA</th>
+      <th>Area</th>
+      <th>Year</th>
+      <th>gdp_per_capita</th>
+      <th>drinking_water</th>
+      <th>sanitation_service</th>
+      <th>children_stunted</th>
+      <th>children_overweight</th>
+      <th>investment_pct</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)</td></tr></tbody>
+
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import {DataTable, jQuery as $} from 'https://www.unpkg.com/dt_for_itables@2.0.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_a726d923_c8ae_4810_b6d9_aaed0664843d:not(.dataTable)").forEach(table => {
+        // Define the table data
+        const data = [[261, true, "Burundi", 2012, 862.7, 57.7, 45.9, 56.8, 2.3, 13.819418], [1647, false, "Timor-Leste", 2012, 3143.3, 68.6, 48.1, 52.8, 3.0, 48.83304], [558, true, "Eritrea", 2012, 20344.853769, 50.3, 11.5, 50.1, 1.7, 10.549816], [1188, true, "Niger", 2012, 1084.8, 44.3, 11.2, 48.3, 0.9, 28.154115], [981, true, "Madagascar", 2012, 1538.5, 46.2, 9.1, 47.9, 1.8, 22.467511], [262, true, "Burundi", 2013, 877.3, 58.3, 45.9, 56.6, 2.4, 13.524587], [1648, false, "Timor-Leste", 2013, 3182.7, 70.8, 49.2, 52.1, 3.0, 37.301396], [559, true, "Eritrea", 2013, 20344.853769, 50.7, 11.6, 50.3, 1.7, 10.829225], [1189, true, "Niger", 2013, 1098.6, 44.7, 11.7, 47.7, 0.9, 30.225499], [1288, false, "Papua New Guinea", 2013, 3512.6, 40.0, 18.8, 47.2, 8.2, 28.261088], [263, true, "Burundi", 2014, 886.2, 59.0, 45.9, 56.4, 2.4, 13.972976], [1649, false, "Timor-Leste", 2014, 3266.7, 73.0, 50.2, 51.5, 2.9, 37.883403], [560, true, "Eritrea", 2014, 20344.853769, 51.1, 11.7, 50.3, 1.7, 7.398938], [1190, true, "Niger", 2014, 1126.8, 45.1, 12.1, 47.4, 1.0, 30.350055], [1289, false, "Papua New Guinea", 2014, 3908.9, 40.7, 18.8, 47.3, 8.4, 24.890038], [264, true, "Burundi", 2015, 825.2, 59.6, 45.9, 56.3, 2.5, 12.309393], [1650, false, "Timor-Leste", 2015, 3295.3, 75.3, 51.3, 50.9, 2.8, 35.53798], [561, true, "Eritrea", 2015, 20344.853769, 51.5, 11.8, 50.4, 1.7, 10.283713], [1290, false, "Papua New Guinea", 2015, 4083.3, 41.5, 18.9, 47.5, 8.6, 7.532394], [1191, true, "Niger", 2015, 1131.5, 45.5, 12.6, 47.2, 1.0, 32.607014], [265, true, "Burundi", 2016, 794.6, 60.2, 45.9, 56.3, 2.6, 12.54231], [562, true, "Eritrea", 2016, 20344.853769, 51.8, 11.9, 50.3, 1.8, 7.360791], [1651, false, "Timor-Leste", 2016, 3342.6, 77.5, 52.4, 50.3, 2.8, 39.648201], [1291, false, "Papua New Guinea", 2016, 4222.0, 42.3, 18.9, 47.6, 8.7, 7.392577], [1192, true, "Niger", 2016, 1151.2, 45.8, 13.0, 47.1, 1.2, 26.741401], [266, true, "Burundi", 2017, 773.6, 60.8, 45.8, 56.5, 2.7, 12.687871], [1652, false, "Timor-Leste", 2017, 3177.5, 79.8, 53.5, 49.9, 2.7, 34.082943], [1292, false, "Papua New Guinea", 2017, 4285.1, 43.0, 19.0, 47.9, 8.8, 7.494033], [1193, true, "Niger", 2017, 1163.2, 46.1, 13.4, 47.0, 1.3, 25.42845], [707, false, "Guatemala", 2017, 8322.2, 92.9, 67.2, 45.2, 5.2, 14.029605], [267, true, "Burundi", 2018, 761.5, 61.5, 45.8, 56.8, 2.8, 12.718133], [1653, false, "Timor-Leste", 2018, 3094.1, 82.1, 54.6, 49.5, 2.7, 33.818008], [1293, false, "Papua New Guinea", 2018, 4189.6, 43.8, 19.1, 48.1, 8.9, 7.636691], [1194, true, "Niger", 2018, 1200.4, 46.4, 13.9, 46.9, 1.5, 27.696816], [708, false, "Guatemala", 2018, 8462.2, 93.2, 67.4, 44.7, 5.1, 14.183565], [268, true, "Burundi", 2019, 751.4, 62.1, 45.7, 57.2, 3.0, 12.090783], [1654, false, "Timor-Leste", 2019, 3626.7, 83.8, 55.7, 49.1, 2.7, 25.243107], [1294, false, "Papua New Guinea", 2019, 4292.6, 44.6, 19.1, 48.3, 8.9, 7.471472], [1195, true, "Niger", 2019, 1224.4, 46.7, 14.3, 46.8, 1.6, 30.040945], [709, false, "Guatemala", 2019, 8653.3, 93.6, 67.7, 43.6, 5.1, 14.842092], [269, true, "Burundi", 2020, 731.1, 62.2, 45.7, 57.6, 3.1, 11.246362], [1655, false, "Timor-Leste", 2020, 3925.9, 85.5, 56.8, 48.8, 2.6, 14.892318], [1295, false, "Papua New Guinea", 2020, 4063.2, 45.3, 19.2, 48.4, 8.9, 8.053913], [1196, true, "Niger", 2020, 1221.3, 46.9, 14.8, 46.7, 1.9, 27.395692], [962, false, "Libya", 2020, 16388.8, 99.0, 92.1, 43.5, 25.4, 16.182947]];
+
+        // Define the dt_args
+        let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "order": [], "warn_on_dom": true};
+        dt_args["data"] = data;
+
+        
+        new DataTable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><span data-line-height="0.2"><font size="2">powered with github, quarto, and rstudio</font></span><br><span style="display:block; margin:-5px;"></span> <span data-line-height="0.7"><font size="2">byeong-hak choe, 2024</font></span></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<div id="scroll-padding"></div>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/posts.js"></script>
+
+
+
+</body></html>
