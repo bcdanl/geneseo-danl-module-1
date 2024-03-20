@@ -58,6 +58,7 @@ import pandas as pd
 Load DataFrame for Part 1:
 
 ```{python}
+#| echo: true
 paidsearch = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
