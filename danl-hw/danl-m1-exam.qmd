@@ -189,6 +189,7 @@ Calculate the log difference between mean revenues in each group of `search_stay
 - For example, consider the following two observations:
 
 ```{python}
+#| echo: true
 # date        the daily mean vale of `revenue`   search_stays_on
 # 1-Apr-12    93650.68                           0
 # 1-Apr-12    120277.57                          1
