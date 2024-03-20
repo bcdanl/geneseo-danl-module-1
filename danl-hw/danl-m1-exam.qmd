@@ -200,6 +200,7 @@ Calculate the log difference between mean revenues in each group of `search_stay
 - *Hint*: Below example shows how we can calculate the log of `Value` using `np.log()`:
 
 ```{python}
+#| echo: true
 import pandas as pd
 import numpy as np
 
