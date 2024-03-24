@@ -1,6 +1,6 @@
 ---
 title: Classwork 6
-subtitle: Group Operations; Reshaping DataFrames; Joining DataFrames
+subtitle: Group Operations
 date: 2024-03-12
 execute: 
   eval: false
