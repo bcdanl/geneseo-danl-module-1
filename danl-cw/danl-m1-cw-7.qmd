@@ -97,7 +97,7 @@ planes = pd.read_csv("https://bcdanl.github.io/data/planes.csv")
 weather = pd.read_csv("https://bcdanl.github.io/data/weather.csv")
 ```
 
-## Variable Description
+## Variables in `flights` DataFrame
 
 - `year`, `month`, `day`
   - Date of departure.

@@ -4723,5 +4723,12 @@
     "title": "Homework 6 - Example Answers",
     "section": "Q6",
     "text": "Q6\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\n\ndf = (\n    stock\n    .assign(\n        open_rel = stock['Open'] / stock_group['Open'].transform('first'),\n        high_rel = stock['High'] / stock_group['High'].transform('first'),\n        low_rel = stock['Low'] / stock_group['Low'].transform('first'),\n        close_rel = stock['Close'] / stock_group['Close'].transform('first'),\n        adj_close_rel = stock['Adj Close'] / stock_group['Adj Close'].transform('first'),\n        volume_rel = stock['Volume'] / stock_group['Volume'].transform('first'),\n    )[['Date', 'company', 'open_rel', 'high_rel', 'low_rel',\n       'close_rel', 'adj_close_rel', 'volume_rel']]\n)\n\nshow(df)\n\n\n\n\n    \n      \n      Date\n      company\n      open_rel\n      high_rel\n      low_rel\n      close_rel\n      adj_close_rel\n      volume_rel\n    \n  Loading... (need help?)"
+  },
+  {
+    "objectID": "danl-cw/danl-m1-cw-7.html#variables-in-flights-dataframe",
+    "href": "danl-cw/danl-m1-cw-7.html#variables-in-flights-dataframe",
+    "title": "Classwork 7",
+    "section": "Variables in flights DataFrame",
+    "text": "Variables in flights DataFrame\n\nyear, month, day\n\nDate of departure.\n\ndep_time, arr_time\n\nActual departure and arrival times (format HHMM or HMM), local tz.\n\nsched_dep_time, sched_arr_time\n\nScheduled departure and arrival times (format HHMM or HMM), local tz.\n\ndep_delay, arr_delay\n\nDeparture and arrival delays, in minutes. Negative times represent early departures/arrivals.\n\ncarrier\n\nTwo letter carrier abbreviation. See airlines DataFrame to get full names.\n\nflight Flight number.\ntailnum\n\nPlane tail number. See planes DataFrame for additional metadata.\n\norigin, dest\n\nOrigin and destination. See airports DataFrame for additional metadata.\n\nair_time\n\nAmount of time spent in the air, in minutes.\n\ndistance\n\nDistance between airports, in miles.\n\nhour, minute\n\nTime of scheduled departure broken into hour and minutes.\n\ntime_hour\n\nScheduled date and hour of the flight as a datetime64. Along with origin, can be used to join flights data to weather DataFrame"
   }
 ]
